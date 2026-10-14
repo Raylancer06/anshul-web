@@ -339,3 +339,115 @@ function anukul_get_consultation_tiers() {
         ),
     );
 }
+
+/**
+ * Navigation Menu Helpers - 100% Exact HTML preservation matching approved design
+ */
+function anukul_get_nav_items() {
+    $menu_name = 'primary';
+    $locations = get_nav_menu_locations();
+    $items = array();
+
+    if ( isset( $locations[ $menu_name ] ) ) {
+        $menu = wp_get_nav_menu_object( $locations[ $menu_name ] );
+        if ( $menu ) {
+            $menu_items = wp_get_nav_menu_items( $menu->term_id );
+            if ( ! empty( $menu_items ) ) {
+                foreach ( $menu_items as $mi ) {
+                    $slug = sanitize_title( $mi->title );
+                    if ( $mi->object === 'page' ) {
+                        $p = get_post( $mi->object_id );
+                        if ( $p ) {
+                            $slug = $p->post_name;
+                        }
+                    }
+                    $items[] = array(
+                        'title' => $mi->title,
+                        'url'   => $mi->url,
+                        'slug'  => $slug,
+                    );
+                }
+            }
+        }
+    }
+
+    if ( empty( $items ) ) {
+        $items = array(
+            array( 'title' => 'Home',      'url' => home_url( '/' ),          'slug' => 'home' ),
+            array( 'title' => 'Ayurveda',  'url' => home_url( '/ayurveda/' ),  'slug' => 'ayurveda' ),
+            array( 'title' => 'Vastu',     'url' => home_url( '/vastu/' ),     'slug' => 'vastu' ),
+            array( 'title' => 'Services',  'url' => home_url( '/services/' ),  'slug' => 'services' ),
+            array( 'title' => 'Shop',      'url' => ( function_exists( 'wc_get_page_permalink' ) ? wc_get_page_permalink( 'shop' ) : home_url( '/shop/' ) ), 'slug' => 'shop' ),
+            array( 'title' => 'Blog',      'url' => ( get_permalink( get_option( 'page_for_posts' ) ) ?: home_url( '/blog/' ) ), 'slug' => 'blog' ),
+            array( 'title' => 'Gallery',   'url' => home_url( '/gallery/' ),   'slug' => 'gallery' ),
+            array( 'title' => 'Contact',   'url' => home_url( '/contact/' ),   'slug' => 'contact' ),
+        );
+    }
+    return $items;
+}
+
+function anukul_is_nav_item_active( $item ) {
+    global $wp;
+    $current_url = trailingslashit( home_url( add_query_arg( array(), $wp->request ) ) );
+    $item_url    = trailingslashit( $item['url'] );
+
+    if ( $item['slug'] === 'home' || $item['title'] === 'Home' ) {
+        return ( is_front_page() || $current_url === trailingslashit( home_url( '/' ) ) );
+    }
+
+    if ( $item['slug'] === 'blog' || $item['title'] === 'Blog' ) {
+        return ( is_home() || is_singular( 'post' ) || is_category() || is_tag() );
+    }
+
+    if ( function_exists( 'is_woocommerce' ) && ( $item['slug'] === 'shop' || $item['title'] === 'Shop' ) ) {
+        return ( is_shop() || is_product_taxonomy() || is_product() );
+    }
+
+    if ( is_page( $item['slug'] ) ) {
+        return true;
+    }
+
+    return ( $current_url === $item_url );
+}
+
+function anukul_render_nav_desktop() {
+    $items = anukul_get_nav_items();
+    foreach ( $items as $item ) {
+        $active = anukul_is_nav_item_active( $item );
+        if ( $active ) {
+            echo '<a aria-current="page" class="font-label-md text-label-md uppercase transition-colors tracking-widest text-primary font-semibold relative after:absolute after:bottom-[-4px] after:left-0 after:w-full after:h-[1.5px] after:bg-[#B38A3E]" data-path="' . esc_attr( $item['slug'] ) . '" href="' . esc_url( $item['url'] ) . '">' . esc_html( $item['title'] ) . '</a>' . "\n";
+        } else {
+            echo '<a class="font-label-md text-label-md uppercase text-on-surface-variant hover:text-primary transition-colors tracking-widest" data-path="' . esc_attr( $item['slug'] ) . '" href="' . esc_url( $item['url'] ) . '">' . esc_html( $item['title'] ) . '</a>' . "\n";
+        }
+    }
+}
+
+function anukul_render_nav_mobile() {
+    $items = anukul_get_nav_items();
+    foreach ( $items as $item ) {
+        $active = anukul_is_nav_item_active( $item );
+        if ( $active ) {
+            echo '<a class="py-2.5 px-3 rounded-lg font-label-md text-label-md uppercase tracking-widest bg-surface-container text-primary font-semibold transition-colors" data-path="' . esc_attr( $item['slug'] ) . '" href="' . esc_url( $item['url'] ) . '">' . esc_html( $item['title'] ) . '</a>' . "\n";
+        } else {
+            echo '<a class="py-2.5 px-3 rounded-lg font-label-md text-label-md uppercase tracking-widest text-on-surface-variant hover:bg-surface-container hover:text-primary transition-colors" data-path="' . esc_attr( $item['slug'] ) . '" href="' . esc_url( $item['url'] ) . '">' . esc_html( $item['title'] ) . '</a>' . "\n";
+        }
+    }
+}
+
+function anukul_render_nav_footer() {
+    $items = anukul_get_nav_items();
+    foreach ( $items as $item ) {
+        echo '<a class="font-body-sm text-body-sm text-surface-container-high/80 hover:text-[#B38A3E] transition-colors" data-path="' . esc_attr( $item['slug'] ) . '" href="' . esc_url( $item['url'] ) . '">' . esc_html( $item['title'] ) . '</a>' . "\n";
+    }
+}
+
+/**
+ * Remove conflicting default WordPress block styles on front end
+ */
+function anukul_dequeue_conflicting_styles() {
+    wp_dequeue_style( 'wp-block-library' );
+    wp_dequeue_style( 'wp-block-library-theme' );
+    wp_dequeue_style( 'classic-theme-styles' );
+    wp_dequeue_style( 'global-styles' );
+}
+add_action( 'wp_enqueue_scripts', 'anukul_dequeue_conflicting_styles', 100 );

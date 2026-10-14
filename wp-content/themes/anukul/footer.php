@@ -11,7 +11,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 $phone   = get_theme_mod( 'anukul_phone', '+91 (011) 2614-1008' );
 $email   = get_theme_mod( 'anukul_email', 'sanctuary@anukul-harmony.com' );
-$hours   = get_theme_mod( 'anukul_hours', "Monday — Saturday\n08:00 AM – 07:00 PM IST" );
+$hours   = get_theme_mod( 'anukul_hours', "Monday &mdash; Saturday\n08:00 AM &ndash; 07:00 PM IST" );
 $address = get_theme_mod( 'anukul_address', 'Prime Vedic Enclave, Cultural Quarter' );
 ?>
 </main><!-- /main -->
@@ -29,7 +29,7 @@ $address = get_theme_mod( 'anukul_address', 'Prime Vedic Enclave, Cultural Quart
                     </a>
                 </div>
                 <p class="font-body-md text-body-md text-surface-container-high/90 max-w-md pt-2">
-                    <?php bloginfo( 'name' ); ?> — Health • Space • Lifestyle • Harmony
+                    <?php bloginfo( 'name' ); ?> &mdash; Health &bull; Space &bull; Lifestyle &bull; Harmony
                 </p>
                 <p class="font-body-sm text-body-sm text-outline-variant max-w-sm pt-1">
                     Anchored in classical Vedic sciences, spatial alignment, and holistic constitutional balance for serene modern living.
@@ -42,30 +42,7 @@ $address = get_theme_mod( 'anukul_address', 'Prime Vedic Enclave, Cultural Quart
                     <?php esc_html_e( 'Explorations', 'anukul' ); ?>
                 </h3>
                 <nav class="grid grid-cols-2 gap-y-2 gap-x-4">
-                    <?php
-                    if ( has_nav_menu( 'footer' ) ) {
-                        wp_nav_menu( array(
-                            'theme_location' => 'footer',
-                            'container'      => false,
-                            'items_wrap'     => '%3$s',
-                            'fallback_cb'    => false,
-                        ) );
-                    } else {
-                        $footer_links = array(
-                            'Home'      => home_url( '/' ),
-                            'Ayurveda'  => home_url( '/ayurveda/' ),
-                            'Vastu'     => home_url( '/vastu/' ),
-                            'Services'  => home_url( '/services/' ),
-                            'Shop'      => function_exists( 'wc_get_page_permalink' ) ? wc_get_page_permalink( 'shop' ) : home_url( '/shop/' ),
-                            'Blog'      => get_permalink( get_option( 'page_for_posts' ) ) ?: home_url( '/blog/' ),
-                            'Gallery'   => home_url( '/gallery/' ),
-                            'Contact'   => home_url( '/contact/' ),
-                        );
-                        foreach ( $footer_links as $label => $link ) {
-                            echo '<a class="font-body-sm text-body-sm text-surface-container-high/80 hover:text-[#B38A3E] transition-colors" href="' . esc_url( $link ) . '">' . esc_html( $label ) . '</a>';
-                        }
-                    }
-                    ?>
+                    <?php anukul_render_nav_footer(); ?>
                 </nav>
             </div>
 
@@ -75,7 +52,7 @@ $address = get_theme_mod( 'anukul_address', 'Prime Vedic Enclave, Cultural Quart
                     <?php esc_html_e( 'Sanctuary Hours', 'anukul' ); ?>
                 </h3>
                 <p class="font-body-sm text-body-sm text-surface-container-high/80">
-                    <?php echo nl2br( esc_html( $hours ) ); ?>
+                    <?php echo nl2br( wp_kses_post( $hours ) ); ?>
                 </p>
                 <p class="font-body-sm text-body-sm text-surface-container-high/80 pt-2">
                     <span class="text-[#B38A3E] font-medium"><?php esc_html_e( 'Location:', 'anukul' ); ?></span> <?php echo esc_html( $address ); ?>
@@ -90,9 +67,9 @@ $address = get_theme_mod( 'anukul_address', 'Prime Vedic Enclave, Cultural Quart
             </p>
             <div class="flex items-center gap-6 font-body-sm text-body-sm text-surface-container-high/70">
                 <a class="hover:text-[#B38A3E] transition-colors" href="<?php echo esc_url( home_url( '/contact/#privacy' ) ); ?>"><?php esc_html_e( 'Privacy Policy', 'anukul' ); ?></a>
-                <span class="text-[#B38A3E]/40">•</span>
+                <span class="text-[#B38A3E]/40">&bull;</span>
                 <a class="hover:text-[#B38A3E] transition-colors" href="<?php echo esc_url( home_url( '/contact/#terms' ) ); ?>"><?php esc_html_e( 'Terms', 'anukul' ); ?></a>
-                <span class="text-[#B38A3E]/40">•</span>
+                <span class="text-[#B38A3E]/40">&bull;</span>
                 <a class="hover:text-[#B38A3E] transition-colors" href="<?php echo esc_url( home_url( '/contact/#disclaimer' ) ); ?>"><?php esc_html_e( 'Disclaimer', 'anukul' ); ?></a>
             </div>
         </div>
