@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..700;1,400..700&amp;family=Manrope:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{"colors":{"outline-variant":"#c0c9c2","error-container":"#ffdad6","on-tertiary-fixed":"#400012","surface-container":"#f6ece4","on-secondary-fixed":"#311300","surface-dim":"#e2d8d0","on-secondary-container":"#6e3300","primary-fixed-dim":"#a1d1b8","tertiary":"#5d0f24","on-primary-fixed":"#002114","primary":"#023625","on-primary-fixed-variant":"#214f3c","secondary-fixed-dim":"#ffb688","surface-tint":"#3a6753","on-secondary":"#ffffff","primary-container":"#1f4d3a","surface-variant":"#ebe1d9","error":"#ba1a1a","on-secondary-fixed-variant":"#733600","background":"#fff8f4","on-background":"#1f1b16","surface-container-highest":"#ebe1d9","surface-container-low":"#fcf2ea","on-error":"#ffffff","on-primary":"#ffffff","on-tertiary":"#ffffff","on-surface":"#1f1b16","secondary-container":"#ff964c","on-tertiary-fixed-variant":"#7d283a","surface":"#fff8f4","tertiary-fixed-dim":"#ffb2bc","on-tertiary-container":"#ff93a4","surface-container-high":"#f1e6de","on-error-container":"#93000a","tertiary-container":"#7b2739","secondary-fixed":"#ffdbc7","tertiary-fixed":"#ffd9dd","on-surface-variant":"#414944","outline":"#717973","secondary":"#974800","primary-fixed":"#bceed3","inverse-surface":"#352f2a","inverse-primary":"#a1d1b8","inverse-on-surface":"#f9efe7","surface-bright":"#fff8f4","surface-container-lowest":"#ffffff","on-primary-container":"#8dbda4"},"borderRadius":{"DEFAULT":"0.125rem","lg":"0.25rem","xl":"0.5rem","full":"0.75rem"},"spacing":{"space-lg":"1.75rem","space-md":"1rem","gutter-lg":"2.5rem","space-2xl":"5rem","space-xs":"0.25rem","space-sm":"0.5rem","margin-md":"3rem","space-xl":"3rem","margin":"1.5rem","margin-lg":"5rem","gutter":"1.5rem"},"fontFamily":{"body-lg":["Manrope"],"body-sm":["Manrope"],"display-mobile":["EB Garamond"],"label-sm":["Manrope"],"display":["EB Garamond"],"headline-sm":["EB Garamond"],"body-md":["Manrope"],"editorial-quote":["EB Garamond"],"headline-lg":["EB Garamond"],"headline-lg-mobile":["EB Garamond"],"label-md":["Manrope"],"headline-md":["EB Garamond"]},"fontSize":{"body-lg":["18px",{"lineHeight":"28px","fontWeight":"400"}],"body-sm":["13px",{"lineHeight":"20px","fontWeight":"400"}],"display-mobile":["38px",{"lineHeight":"44px","letterSpacing":"-0.01em","fontWeight":"400"}],"label-sm":["10px",{"lineHeight":"14px","letterSpacing":"0.12em","fontWeight":"700"}],"display":["56px",{"lineHeight":"64px","letterSpacing":"-0.01em","fontWeight":"400"}],"headline-sm":["22px",{"lineHeight":"28px","fontWeight":"600"}],"body-md":["15px",{"lineHeight":"24px","fontWeight":"400"}],"editorial-quote":["26px",{"lineHeight":"36px","letterSpacing":"0.01em","fontWeight":"400"}],"headline-lg":["40px",{"lineHeight":"48px","fontWeight":"400"}],"headline-lg-mobile":["30px",{"lineHeight":"36px","fontWeight":"500"}],"label-md":["12px",{"lineHeight":"16px","letterSpacing":"0.08em","fontWeight":"600"}],"headline-md":["28px",{"lineHeight":"36px","fontWeight":"500"}]}}}};</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"><link rel="stylesheet" href="css/anukul-animations.css"></head><body class="bg-surface font-body-md text-on-surface antialiased selection:bg-primary-container selection:text-on-primary"><header class="fixed top-0 w-full z-50 bg-[#F7F1E3]/95 backdrop-blur-md border-b border-[#E8D8BC] shadow-[0_1px_8px_rgba(0,0,0,0.03)]"><div class="h-20 max-w-[1440px] mx-auto px-6 lg:px-margin flex items-center justify-between gap-4"><a href="home.html" data-path="home" class="flex items-center select-none py-1"><img src="images/logo.png" alt="ANUKUL Logo" class="h-14 sm:h-16 w-auto max-h-[64px] object-contain"></a><nav class="hidden xl:flex items-center gap-6 lg:gap-space-md" data-active-classes="text-primary font-semibold relative after:absolute after:bottom-[-4px] after:left-0 after:w-full after:h-[1.5px] after:bg-[#B38A3E]"><a class="font-label-md text-label-md uppercase text-on-surface-variant hover:text-primary transition-colors tracking-widest" data-path="home" href="home.html">Home</a><a class="font-label-md text-label-md uppercase text-on-surface-variant hover:text-primary transition-colors tracking-widest" data-path="ayurveda" href="ayurveda.html">Ayurveda</a><a class="font-label-md text-label-md uppercase text-on-surface-variant hover:text-primary transition-colors tracking-widest" data-path="vastu" href="vastu.html">Vastu</a><a aria-current="page" class="font-label-md text-label-md uppercase transition-colors tracking-widest text-primary font-semibold relative after:absolute after:bottom-[-4px] after:left-0 after:w-full after:h-[1.5px] after:bg-[#B38A3E]" data-path="services" href="services.html">Services</a><a class="font-label-md text-label-md uppercase text-on-surface-variant hover:text-primary transition-colors tracking-widest" data-path="shop" href="shop.html">Shop</a><a class="font-label-md text-label-md uppercase text-on-surface-variant hover:text-primary transition-colors tracking-widest" data-path="blog" href="blog.html">Blog</a><a class="font-label-md text-label-md uppercase text-on-surface-variant hover:text-primary transition-colors tracking-widest" data-path="gallery" href="gallery.html">Gallery</a><a class="font-label-md text-label-md uppercase text-on-surface-variant hover:text-primary transition-colors tracking-widest" data-path="contact" href="contact.html">Contact</a></nav><div class="flex items-center gap-2 sm:gap-3"><a href="search_result.html" data-path="search" title="Search Wisdom &amp; Remedies" class="flex items-center justify-center w-10 h-10 rounded-full text-primary hover:bg-[#E8D8BC]/60 hover:text-secondary transition-colors"><span class="material-symbols-outlined text-[22px]">search</span></a><a href="cart.html" data-path="cart" title="Shopping Cart" class="relative flex items-center justify-center w-10 h-10 rounded-full text-primary hover:bg-[#E8D8BC]/60 hover:text-secondary transition-colors"><span class="material-symbols-outlined text-[22px]">shopping_bag</span><span class="absolute top-1 right-1 w-4 h-4 bg-secondary text-on-secondary text-[10px] font-bold rounded-full flex items-center justify-center leading-none">2</span></a><a href="book_your_consultation.html" data-path="book-consultation" class="hidden sm:inline-flex items-center justify-center bg-[#1F4D3A] text-[#F7F1E3] font-label-md text-label-md px-5 py-2.5 rounded-lg tracking-wider uppercase transition-colors duration-200 hover:bg-secondary shadow-sm font-semibold">BOOK CONSULTATION</a><a href="account.html" data-path="account" title="Client Sanctuary Portal" class="w-9 h-9 rounded-full bg-primary flex items-center justify-center text-on-primary hover:bg-secondary transition-colors shadow-sm"><span class="material-symbols-outlined text-[18px]">person</span></a><button id="mobile-menu-btn" type="button" aria-label="Toggle navigation" class="xl:hidden inline-flex items-center justify-center w-10 h-10 rounded-lg text-primary hover:bg-[#E8D8BC]/60 focus:outline-none transition-colors"><span class="material-symbols-outlined text-[26px]" id="mobile-menu-icon">menu</span></button></div></div><div id="mobile-menu" class="hidden xl:hidden w-full bg-[#F7F1E3] border-b border-[#E8D8BC] shadow-lg transition-all"><div class="px-6 py-5 space-y-4 max-h-[calc(100vh-80px)] overflow-y-auto"><nav class="flex flex-col space-y-1.5"><a class="py-2.5 px-3 rounded-lg font-label-md text-label-md uppercase tracking-widest text-on-surface-variant hover:bg-surface-container hover:text-primary transition-colors" data-path="home" href="home.html">Home</a><a class="py-2.5 px-3 rounded-lg font-label-md text-label-md uppercase tracking-widest text-on-surface-variant hover:bg-surface-container hover:text-primary transition-colors" data-path="ayurveda" href="ayurveda.html">Ayurveda</a><a class="py-2.5 px-3 rounded-lg font-label-md text-label-md uppercase tracking-widest text-on-surface-variant hover:bg-surface-container hover:text-primary transition-colors" data-path="vastu" href="vastu.html">Vastu</a><a class="py-2.5 px-3 rounded-lg font-label-md text-label-md uppercase tracking-widest bg-surface-container text-primary font-semibold transition-colors" data-path="services" href="services.html">Services</a><a class="py-2.5 px-3 rounded-lg font-label-md text-label-md uppercase tracking-widest text-on-surface-variant hover:bg-surface-container hover:text-primary transition-colors" data-path="shop" href="shop.html">Shop</a><a class="py-2.5 px-3 rounded-lg font-label-md text-label-md uppercase tracking-widest text-on-surface-variant hover:bg-surface-container hover:text-primary transition-colors" data-path="blog" href="blog.html">Blog</a><a class="py-2.5 px-3 rounded-lg font-label-md text-label-md uppercase tracking-widest text-on-surface-variant hover:bg-surface-container hover:text-primary transition-colors" data-path="gallery" href="gallery.html">Gallery</a><a class="py-2.5 px-3 rounded-lg font-label-md text-label-md uppercase tracking-widest text-on-surface-variant hover:bg-surface-container hover:text-primary transition-colors" data-path="contact" href="contact.html">Contact</a></nav><div class="pt-4 border-t border-[#E8D8BC] flex flex-col gap-3"><a href="book_your_consultation.html" data-path="book-consultation" class="w-full text-center bg-[#1F4D3A] text-[#F7F1E3] font-label-md text-label-md py-3 rounded-lg tracking-wider uppercase font-semibold hover:bg-secondary transition-colors shadow-sm">BOOK CONSULTATION</a><div class="grid grid-cols-3 gap-2 pt-1 text-center text-xs font-label-md"><a href="search_result.html" class="flex flex-col items-center justify-center p-2 rounded-lg bg-surface-container hover:bg-[#E8D8BC]/70 text-primary transition-colors"><span class="material-symbols-outlined text-[20px] mb-1">search</span>Search</a><a href="cart.html" class="flex flex-col items-center justify-center p-2 rounded-lg bg-surface-container hover:bg-[#E8D8BC]/70 text-primary transition-colors relative"><span class="material-symbols-outlined text-[20px] mb-1">shopping_bag</span>Cart (2)</a><a href="account.html" class="flex flex-col items-center justify-center p-2 rounded-lg bg-surface-container hover:bg-[#E8D8BC]/70 text-primary transition-colors"><span class="material-symbols-outlined text-[20px] mb-1">person</span>Account</a></div></div></div></div><script>(function(){var btn=document.getElementById('mobile-menu-btn');var menu=document.getElementById('mobile-menu');var icon=document.getElementById('mobile-menu-icon');if(btn&&menu){btn.onclick=function(){var isHidden=menu.classList.contains('hidden');if(isHidden){menu.classList.remove('hidden');if(icon)icon.textContent='close';}else{menu.classList.add('hidden');if(icon)icon.textContent='menu';}};}})();</script></header><main class="w-full pt-20 bg-surface min-h-[calc(100vh-80px)]"><div class="flex flex-col w-full">
+<!-- SECTION 1: HERO -->
+<section class="relative w-full bg-surface-bright overflow-hidden">
+<div class="max-w-[1440px] mx-auto px-6 lg:px-margin pt-12 lg:pt-16 pb-12">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-gutter-lg items-center">
+<!-- Text Narrative (7 Cols) -->
+<div class="lg:col-span-7 flex flex-col justify-center space-y-6">
+<div class="inline-flex items-center gap-2.5 self-start bg-surface-container px-3.5 py-1.5 rounded-lg shadow-sm">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span class="font-label-sm text-label-sm text-secondary tracking-[0.16em] uppercase">Personalized Guidance · Ayurveda · Vastu</span>
+</div>
+<h1 class="font-headline-lg text-headline-lg lg:font-display lg:text-display text-primary tracking-tight leading-tight">
+            A THOUGHTFUL APPROACH TO YOUR HEALTH, SPACE &amp; HARMONY.
+          </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl leading-relaxed">
+            Explore ANUKUL’s consultation offerings through traditional Indian knowledge, individualized understanding, and practical guidance shaped around your needs and circumstances.
+          </p>
+<div class="flex flex-wrap items-center gap-4 pt-2">
+<a class="inline-flex items-center justify-center bg-primary-container text-on-primary font-label-md text-label-md px-7 py-3.5 rounded-lg tracking-wider uppercase transition-all duration-200 hover:bg-tertiary-container shadow-sm" href="#core-services">
+              EXPLORE OUR SERVICES
+            </a>
+<a class="inline-flex items-center justify-center bg-surface-container text-primary font-label-md text-label-md px-7 py-3.5 rounded-lg tracking-wider uppercase transition-colors duration-200 hover:bg-surface-variant shadow-sm" href="#enquiry-form">
+              BOOK A CONSULTATION
+            </a>
+</div>
+</div>
+<!-- Hero Visual Composition (5 Cols) -->
+<div class="lg:col-span-5 relative">
+<div class="relative bg-surface-container-high rounded-xl overflow-hidden shadow-xl aspect-[4/5] max-h-[560px] w-full">
+<img class="w-full h-full object-cover" data-alt="Authentic serene Indian consultation sanctuary corner with warm teak wood writing table, antique handcrafted brass bowl holding fresh dried medicinal herbs, soft diffused morning sunlight streaming through a stone jali screen, earthen pottery, and healthy indoor ficus foliage in warm ivory and terracotta tones." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDicSJEzWfo1aJPq8voZNGJmI8kx4AzqY1RWkEnDI5gx40Tw2WekjMBeGR2xolTxVejkW2Hc3lYWPrsnGxWqvs-B2hfAy-u6eYnXV7-J9F_68pqmDitgxun_WygwhoetILEEIuydODNOgBNx7S4bHj_gXKvCsGnpQiB3bpJUzGYwKs_m_pFWhenuZ0bE_JMe0-6krrIehw_bz3ldZxRmn9JWAWAsJ0QG_dV4KskkCxSsCPTlGlZGooLng"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/30 via-transparent to-transparent"></div>
+<!-- Tactile Corner Badge -->
+<div class="absolute bottom-6 left-6 right-6 bg-surface-container-lowest/95 backdrop-blur-md p-4 rounded-lg shadow-md flex items-center justify-between">
+<div>
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-widest block">Consultation Room</span>
+<span class="font-headline-sm text-headline-sm text-primary">Sanctum of Equilibrium</span>
+</div>
+<span class="material-symbols-outlined text-primary text-[28px]">spa</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Sub-bar Triad -->
+<div class="mt-14 pt-8 grid grid-cols-1 md:grid-cols-3 gap-6 bg-surface-container-low p-6 rounded-xl shadow-sm">
+<div class="flex items-center gap-4">
+<span class="font-display text-display text-secondary/40 select-none">01</span>
+<div>
+<h4 class="font-headline-sm text-headline-sm text-primary">Constitutional Care</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Attuned to Ayurvedic Prakriti, daily rhythm, and vitality.</p>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<span class="font-display text-display text-secondary/40 select-none">02</span>
+<div>
+<h4 class="font-headline-sm text-headline-sm text-primary">Spatial Alignment</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Honoring directional flow, structural balance, and usage.</p>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<span class="font-display text-display text-secondary/40 select-none">03</span>
+<div>
+<h4 class="font-headline-sm text-headline-sm text-primary">Integrated Equilibrium</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Uniting individual context and living environmental field.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 2: INTRODUCTION -->
+<section class="relative w-full bg-surface-container-low py-20 lg:py-24 overflow-hidden">
+<!-- Devanagari Subtle Watermark -->
+<div class="absolute -right-12 top-1/2 -translate-y-1/2 text-surface-container-highest/60 select-none pointer-events-none font-display text-[220px] lg:text-[340px] leading-none opacity-40 ambient-float">
+      अनुकूल
+    </div>
+<div class="max-w-[1440px] mx-auto px-6 lg:px-margin relative z-10">
+<div class="max-w-3xl">
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-[0.2em] block mb-3">THE ANUKUL APPROACH</span>
+<h2 class="font-headline-lg text-headline-lg lg:font-display lg:text-display text-primary leading-tight mb-8">
+          Not every person, space, or situation is the same.
+        </h2>
+<div class="space-y-6">
+<p class="font-body-lg text-body-lg text-on-surface leading-relaxed">
+            At ANUKUL, every consultation begins with understanding the context. Whether you are exploring Ayurveda, looking at your living or working environment through Vastu, or seeking a more integrated perspective on everyday harmony, the aim is to consider what is relevant to you.
+          </p>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+            Our philosophy is simple: understand the person, understand the space, and explore practical next steps with care. Guidance is never one-size-fits-all—it is distilled from classical Vedic tenets, examined through modern realities, and calibrated for your personal rhythm.
+          </p>
+<div class="pt-6">
+<p class="font-editorial-quote text-editorial-quote text-tertiary-container italic">
+              “Not More. Not Less. Just Right for You.”
+            </p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 3: CORE SERVICE CATEGORIES -->
+<section class="w-full bg-surface-bright py-20 lg:py-28" id="core-services">
+<div class="max-w-[1440px] mx-auto px-6 lg:px-margin">
+<div class="text-center max-w-2xl mx-auto mb-16">
+<span class="font-label-sm text-label-sm text-secondary tracking-[0.2em] uppercase block mb-2">Core Pathways</span>
+<h2 class="font-headline-lg text-headline-lg text-primary mb-3">EXPLORE OUR SERVICES</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Three distinct pathways to restore constitutional and spatial balance.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Card 1: Ayurveda Consultation -->
+<div class="flex flex-col bg-surface-container-lowest p-8 lg:p-10 rounded-xl shadow-md hover:shadow-xl transition-all duration-300">
+<div class="w-12 h-12 rounded-full bg-primary-container text-on-primary flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-[24px]">psychiatry</span>
+</div>
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-widest mb-2">Pathway 01</span>
+<h3 class="font-headline-md text-headline-md text-primary mb-4">Ayurveda Consultation</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6 flex-grow leading-relaxed">
+            Explore traditional Ayurvedic perspectives on individual constitution, lifestyle, food habits, daily routines, and personal wellbeing.
+          </p>
+<ul class="space-y-3 mb-8 bg-surface-container-low p-4 rounded-lg">
+<li class="flex items-start gap-2.5 font-body-sm text-body-sm text-on-surface">
+<span class="material-symbols-outlined text-secondary text-[18px] shrink-0">check_circle</span>
+<span>Individualized discussion</span>
+</li>
+<li class="flex items-start gap-2.5 font-body-sm text-body-sm text-on-surface">
+<span class="material-symbols-outlined text-secondary text-[18px] shrink-0">check_circle</span>
+<span>Lifestyle and routine considerations</span>
+</li>
+<li class="flex items-start gap-2.5 font-body-sm text-body-sm text-on-surface">
+<span class="material-symbols-outlined text-secondary text-[18px] shrink-0">check_circle</span>
+<span>Traditional Ayurvedic perspectives</span>
+</li>
+</ul>
+<a class="w-full inline-flex items-center justify-center bg-primary-container text-on-primary font-label-md text-label-md py-3.5 rounded-lg tracking-wider uppercase transition-colors duration-200 hover:bg-tertiary-container shadow-sm" data-path="ayurveda" href="ayurveda.html">
+            EXPLORE AYURVEDA
+          </a>
+</div>
+<!-- Card 2: Vastu Consultation -->
+<div class="flex flex-col bg-surface-container-lowest p-8 lg:p-10 rounded-xl shadow-md hover:shadow-xl transition-all duration-300">
+<div class="w-12 h-12 rounded-full bg-primary-container text-on-primary flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-[24px]">explore</span>
+</div>
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-widest mb-2">Pathway 02</span>
+<h3 class="font-headline-md text-headline-md text-primary mb-4">Vastu Consultation</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6 flex-grow leading-relaxed">
+            Explore traditional Vastu principles in relation to property orientation, spatial arrangement, room usage, and the experience of living or working in a space.
+          </p>
+<ul class="space-y-3 mb-8 bg-surface-container-low p-4 rounded-lg">
+<li class="flex items-start gap-2.5 font-body-sm text-body-sm text-on-surface">
+<span class="material-symbols-outlined text-secondary text-[18px] shrink-0">check_circle</span>
+<span>Residential Vastu</span>
+</li>
+<li class="flex items-start gap-2.5 font-body-sm text-body-sm text-on-surface">
+<span class="material-symbols-outlined text-secondary text-[18px] shrink-0">check_circle</span>
+<span>Commercial Vastu</span>
+</li>
+<li class="flex items-start gap-2.5 font-body-sm text-body-sm text-on-surface">
+<span class="material-symbols-outlined text-secondary text-[18px] shrink-0">check_circle</span>
+<span>Contextual spatial assessment</span>
+</li>
+</ul>
+<a class="w-full inline-flex items-center justify-center bg-primary-container text-on-primary font-label-md text-label-md py-3.5 rounded-lg tracking-wider uppercase transition-colors duration-200 hover:bg-tertiary-container shadow-sm" data-path="vastu" href="vastu.html">
+            EXPLORE VASTU
+          </a>
+</div>
+<!-- Card 3: Integrated Harmony Approach -->
+<div class="flex flex-col bg-surface-container-lowest p-8 lg:p-10 rounded-xl shadow-md hover:shadow-xl transition-all duration-300">
+<div class="w-12 h-12 rounded-full bg-tertiary-container text-on-primary flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-[24px]">all_inclusive</span>
+</div>
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-widest mb-2">Pathway 03</span>
+<h3 class="font-headline-md text-headline-md text-primary mb-4">Integrated Harmony Approach</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6 flex-grow leading-relaxed">
+            Explore how individual circumstances, lifestyle, surroundings, and traditional perspectives may be considered together where appropriate.
+          </p>
+<ul class="space-y-3 mb-8 bg-surface-container-low p-4 rounded-lg">
+<li class="flex items-start gap-2.5 font-body-sm text-body-sm text-on-surface">
+<span class="material-symbols-outlined text-secondary text-[18px] shrink-0">check_circle</span>
+<span>Person and lifestyle</span>
+</li>
+<li class="flex items-start gap-2.5 font-body-sm text-body-sm text-on-surface">
+<span class="material-symbols-outlined text-secondary text-[18px] shrink-0">check_circle</span>
+<span>Living and working environment</span>
+</li>
+<li class="flex items-start gap-2.5 font-body-sm text-body-sm text-on-surface">
+<span class="material-symbols-outlined text-secondary text-[18px] shrink-0">check_circle</span>
+<span>Practical considerations</span>
+</li>
+</ul>
+<a class="w-full inline-flex items-center justify-center bg-surface-container text-primary font-label-md text-label-md py-3.5 rounded-lg tracking-wider uppercase transition-colors duration-200 hover:bg-surface-variant shadow-sm" href="#enquiry-form">
+            DISCUSS YOUR NEEDS
+          </a>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 4: MORE FOCUSED CONSULTATION AREAS -->
+<section class="w-full bg-surface-container py-20 lg:py-24">
+<div class="max-w-[1440px] mx-auto px-6 lg:px-margin">
+<div class="max-w-xl mb-12">
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-[0.2em] block mb-2">FIND THE RIGHT DIRECTION</span>
+<h2 class="font-headline-lg text-headline-lg text-primary">Different questions. A considered approach.</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Area 1 -->
+<div class="bg-surface-bright p-8 rounded-xl shadow-md flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-4">
+<span class="font-label-sm text-label-sm text-secondary tracking-widest uppercase">Specialty Analysis</span>
+<span class="material-symbols-outlined text-primary text-[20px]">home</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-primary mb-3">Residential Vastu</h3>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed mb-6">
+              For people looking to explore traditional Vastu considerations for their home, its layout, room usage, orientation, and everyday environment.
+            </p>
+</div>
+<a class="inline-flex items-center gap-2 font-label-md text-label-md uppercase text-primary font-semibold hover:text-secondary transition-colors" data-path="vastu" href="vastu.html">
+            EXPLORE VASTU <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</div>
+<!-- Area 2 -->
+<div class="bg-surface-bright p-8 rounded-xl shadow-md flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-4">
+<span class="font-label-sm text-label-sm text-secondary tracking-widest uppercase">Professional Environments</span>
+<span class="material-symbols-outlined text-primary text-[20px]">domain</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-primary mb-3">Commercial Vastu</h3>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed mb-6">
+              For business owners and professionals interested in exploring the relationship between their workspace, its purpose, and traditional Vastu principles.
+            </p>
+</div>
+<a class="inline-flex items-center gap-2 font-label-md text-label-md uppercase text-primary font-semibold hover:text-secondary transition-colors" data-path="vastu" href="vastu.html">
+            EXPLORE VASTU <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</div>
+<!-- Area 3 -->
+<div class="bg-surface-bright p-8 rounded-xl shadow-md flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-4">
+<span class="font-label-sm text-label-sm text-secondary tracking-widest uppercase">Environmental Health</span>
+<span class="material-symbols-outlined text-primary text-[20px]">healing</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-primary mb-3">Medico-Vastu Perspective</h3>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed mb-6">
+              A complementary perspective that considers the built environment and everyday wellbeing alongside traditional spatial principles. Present this as an exploratory approach, not as medical diagnosis or treatment.
+            </p>
+</div>
+<a class="inline-flex items-center gap-2 font-label-md text-label-md uppercase text-primary font-semibold hover:text-secondary transition-colors" href="#enquiry-form">
+            MAKE AN ENQUIRY <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 5: HOW THE CONSULTATION PROCESS WORKS -->
+<section class="w-full bg-surface-bright py-20 lg:py-28">
+<div class="max-w-[1440px] mx-auto px-6 lg:px-margin">
+<div class="text-center max-w-2xl mx-auto mb-16">
+<h2 class="font-headline-lg text-headline-lg text-primary mb-3 uppercase tracking-tight">UNDERSTANDING COMES FIRST.</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">A clear, respectful consultative journey shaped around your real-life environment.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+<!-- Step 1 -->
+<div class="bg-surface-container-low p-8 rounded-xl shadow-sm relative flex flex-col justify-between">
+<div>
+<span class="font-display text-display text-secondary/30 block mb-4">01</span>
+<h3 class="font-headline-sm text-headline-sm text-primary mb-3">Tell Us About Your Needs</h3>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+              Share what you would like to explore, whether it relates to Ayurveda, your home, your workplace, or your broader circumstances.
+            </p>
+</div>
+<div class="mt-6 pt-4 border-t border-surface-variant text-right">
+<span class="font-label-sm text-label-sm text-secondary uppercase">Initial Contact</span>
+</div>
+</div>
+<!-- Step 2 -->
+<div class="bg-surface-container-low p-8 rounded-xl shadow-sm relative flex flex-col justify-between">
+<div>
+<span class="font-display text-display text-secondary/30 block mb-4">02</span>
+<h3 class="font-headline-sm text-headline-sm text-primary mb-3">Understand the Context</h3>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+              Discuss the relevant personal, lifestyle, or spatial information needed to understand your enquiry in authentic depth.
+            </p>
+</div>
+<div class="mt-6 pt-4 border-t border-surface-variant text-right">
+<span class="font-label-sm text-label-sm text-secondary uppercase">Deep Intake</span>
+</div>
+</div>
+<!-- Step 3 -->
+<div class="bg-surface-container-low p-8 rounded-xl shadow-sm relative flex flex-col justify-between">
+<div>
+<span class="font-display text-display text-secondary/30 block mb-4">03</span>
+<h3 class="font-headline-sm text-headline-sm text-primary mb-3">Explore Relevant Perspectives</h3>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+              Consider the applicable traditional principles and practical circumstances without assuming that one approach suits everyone.
+            </p>
+</div>
+<div class="mt-6 pt-4 border-t border-surface-variant text-right">
+<span class="font-label-sm text-label-sm text-secondary uppercase">Evaluation</span>
+</div>
+</div>
+<!-- Step 4 -->
+<div class="bg-surface-container-low p-8 rounded-xl shadow-sm relative flex flex-col justify-between">
+<div>
+<span class="font-display text-display text-secondary/30 block mb-4">04</span>
+<h3 class="font-headline-sm text-headline-sm text-primary mb-3">Discuss Practical Next Steps</h3>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+              Understand the options relevant to your situation and decide how you would like to proceed at your own rhythm.
+            </p>
+</div>
+<div class="mt-6 pt-4 border-t border-surface-variant text-right">
+<span class="font-label-sm text-label-sm text-secondary uppercase">Actionable Flow</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 6: WHY THE ANUKUL APPROACH? -->
+<section class="w-full bg-surface-container-high py-20 lg:py-24">
+<div class="max-w-[1440px] mx-auto px-6 lg:px-margin">
+<div class="text-center max-w-3xl mx-auto mb-16">
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-[0.2em] block mb-2">Our Guiding Standard</span>
+<h2 class="font-headline-lg text-headline-lg text-primary tracking-tight">PERSONALIZED. THOUGHTFUL. GROUNDED IN CONTEXT.</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+<!-- Pillar 1 -->
+<div class="bg-surface-container-lowest p-8 rounded-xl shadow-sm flex flex-col">
+<div class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center text-secondary mb-4">
+<span class="material-symbols-outlined text-[20px]">person_pin</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-primary mb-3">Individual Understanding</h3>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+            Every enquiry begins with understanding the person, space, and circumstances involved.
+          </p>
+</div>
+<!-- Pillar 2 -->
+<div class="bg-surface-container-lowest p-8 rounded-xl shadow-sm flex flex-col">
+<div class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center text-secondary mb-4">
+<span class="material-symbols-outlined text-[20px]">menu_book</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-primary mb-3">Traditional Indian Knowledge</h3>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+            Ayurveda and Vastu are approached with genuine respect for their traditional philosophical foundations.
+          </p>
+</div>
+<!-- Pillar 3 -->
+<div class="bg-surface-container-lowest p-8 rounded-xl shadow-sm flex flex-col">
+<div class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center text-secondary mb-4">
+<span class="material-symbols-outlined text-[20px]">tune</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-primary mb-3">Practical Considerations</h3>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+            Recommendations consider real-world needs, available options, physical reality, and individual constraints.
+          </p>
+</div>
+<!-- Pillar 4 -->
+<div class="bg-surface-container-lowest p-8 rounded-xl shadow-sm flex flex-col">
+<div class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center text-secondary mb-4">
+<span class="material-symbols-outlined text-[20px]">verified_user</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-primary mb-3">Responsible Guidance</h3>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+            Explain traditional perspectives honestly without promising guaranteed outcomes or overstating what a consultation can achieve.
+          </p>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 7: MEET THE FOUNDER -->
+<section class="w-full bg-surface-bright py-20 lg:py-28 overflow-hidden">
+<div class="max-w-[1440px] mx-auto px-6 lg:px-margin">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+<!-- Portrait Column (5 cols) -->
+<div class="lg:col-span-5">
+<div class="relative max-w-md mx-auto">
+<div class="rounded-xl overflow-hidden shadow-2xl aspect-[4/5] bg-surface-container">
+<img alt="Dr. Nishigandha Chaudhari" class="w-full h-full object-cover object-top" data-alt="Dignified, professional portrait of Dr. Nishigandha Chaudhari in elegant traditional Indian natural attire seated in a bright serene Ayurvedic clinic office, with brass consultation tools, herbal compendiums on warm timber shelving behind her, smiling with composed warmth." src="images/doctor.jpg"/>
+</div>
+<!-- Credential floating badge -->
+<div class="absolute -bottom-6 -right-4 bg-primary-container text-on-primary p-4 rounded-xl shadow-lg max-w-[240px]">
+<span class="font-headline-sm text-headline-sm block">12+ Years</span>
+<span class="font-body-sm text-body-sm text-on-primary-container">Clinical practice in Ayurveda &amp; Vastu Consulting</span>
+</div>
+</div>
+</div>
+<!-- Narrative Column (7 cols) -->
+<div class="lg:col-span-7 flex flex-col justify-center space-y-6 lg:pl-6">
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-[0.2em] block">CLINICAL LEADERSHIP</span>
+<div>
+<h2 class="font-headline-lg text-headline-lg lg:font-display lg:text-display text-primary leading-tight">Dr. Nishigandha Chaudhari</h2>
+<p class="font-body-lg text-body-lg text-secondary font-medium mt-1">Founder &amp; Director, ANUKUL Health and Vastu Harmony Clinic</p>
+</div>
+<p class="font-editorial-quote text-editorial-quote text-on-surface leading-relaxed italic border-l-2 border-secondary pl-5">
+            “ANUKUL brings together a thoughtful interest in Ayurveda, Vastu, and traditional Indian approaches to harmony, with an emphasis on understanding individual needs and the context of each consultation.”
+          </p>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+            With over a decade of disciplined consultation spanning residential layouts, commercial properties, and personalized constitutional analysis, Dr. Chaudhari approaches every client as a distinct constellation of health, space, and living purpose.
+          </p>
+<div class="pt-4">
+<a class="inline-flex items-center justify-center bg-primary-container text-on-primary font-label-md text-label-md px-8 py-3.5 rounded-lg tracking-wider uppercase transition-colors duration-200 hover:bg-tertiary-container shadow-sm" href="#enquiry-form">
+              CONNECT WITH ANUKUL
+            </a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 8: FREQUENTLY ASKED QUESTIONS -->
+<section class="w-full bg-surface-container-low py-20 lg:py-28">
+<div class="max-w-[960px] mx-auto px-6 lg:px-margin">
+<div class="text-center mb-16">
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-[0.2em] block mb-2">Clarity &amp; Protocol</span>
+<h2 class="font-headline-lg text-headline-lg text-primary">FREQUENTLY ASKED QUESTIONS</h2>
+</div>
+<div class="space-y-4" id="faq-accordion">
+<!-- Item 1 -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden transition-colors">
+<button class="faq-toggle w-full p-6 text-left flex items-center justify-between gap-4 focus:outline-none" type="button">
+<span class="font-headline-sm text-headline-sm text-primary">Which service should I choose?</span>
+<span class="material-symbols-outlined text-secondary text-[24px] transition-transform duration-300">add</span>
+</button>
+<div class="faq-content hidden px-6 pb-6 pt-0">
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+              It depends on what you would like to explore. Ayurveda consultations focus on traditional perspectives on constitution and lifestyle, while Vastu consultations focus on the relationship between people and their spaces. Contact ANUKUL if you are unsure which is appropriate for your enquiry.
+            </p>
+</div>
+</div>
+<!-- Item 2 -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden transition-colors">
+<button class="faq-toggle w-full p-6 text-left flex items-center justify-between gap-4 focus:outline-none" type="button">
+<span class="font-headline-sm text-headline-sm text-primary">Can I enquire about both Ayurveda and Vastu?</span>
+<span class="material-symbols-outlined text-secondary text-[24px] transition-transform duration-300">add</span>
+</button>
+<div class="faq-content hidden px-6 pb-6 pt-0">
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+              You may share both interests in your enquiry. The appropriate consultation scope and availability should be confirmed directly with ANUKUL.
+            </p>
+</div>
+</div>
+<!-- Item 3 -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden transition-colors">
+<button class="faq-toggle w-full p-6 text-left flex items-center justify-between gap-4 focus:outline-none" type="button">
+<span class="font-headline-sm text-headline-sm text-primary">Do you offer residential and commercial Vastu?</span>
+<span class="material-symbols-outlined text-secondary text-[24px] transition-transform duration-300">add</span>
+</button>
+<div class="faq-content hidden px-6 pb-6 pt-0">
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+              Residential and commercial Vastu are included among the areas presented by ANUKUL. Enquire to confirm the scope relevant to your property.
+            </p>
+</div>
+</div>
+<!-- Item 4 -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden transition-colors">
+<button class="faq-toggle w-full p-6 text-left flex items-center justify-between gap-4 focus:outline-none" type="button">
+<span class="font-headline-sm text-headline-sm text-primary">Can Ayurveda replace medical treatment?</span>
+<span class="material-symbols-outlined text-secondary text-[24px] transition-transform duration-300">add</span>
+</button>
+<div class="faq-content hidden px-6 pb-6 pt-0">
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+              No. Ayurveda content and consultation should not be presented as a replacement for appropriate medical diagnosis, emergency care, or prescribed treatment.
+            </p>
+</div>
+</div>
+<!-- Item 5 -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden transition-colors">
+<button class="faq-toggle w-full p-6 text-left flex items-center justify-between gap-4 focus:outline-none" type="button">
+<span class="font-headline-sm text-headline-sm text-primary">Do you guarantee particular results?</span>
+<span class="material-symbols-outlined text-secondary text-[24px] transition-transform duration-300">add</span>
+</button>
+<div class="faq-content hidden px-6 pb-6 pt-0">
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+              No particular health, financial, relationship, or business outcome should be guaranteed. Guidance should be discussed in context and without unsupported promises.
+            </p>
+</div>
+</div>
+<!-- Item 6 -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden transition-colors">
+<button class="faq-toggle w-full p-6 text-left flex items-center justify-between gap-4 focus:outline-none" type="button">
+<span class="font-headline-sm text-headline-sm text-primary">How can I book a consultation?</span>
+<span class="material-symbols-outlined text-secondary text-[24px] transition-transform duration-300">add</span>
+</button>
+<div class="faq-content hidden px-6 pb-6 pt-0">
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+              Use the consultation enquiry form below or the contact options available on the website. Do not invent contact details or booking URLs.
+            </p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 9: CONSULTATION ENQUIRY CTA & FORM -->
+<section class="w-full bg-tertiary-container py-20 lg:py-28 text-on-tertiary" id="enquiry-form">
+<div class="max-w-[1440px] mx-auto px-6 lg:px-margin">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+<!-- Form Context Column (5 cols) -->
+<div class="lg:col-span-5 space-y-6">
+<span class="font-label-sm text-label-sm text-secondary-fixed uppercase tracking-[0.2em] block">INTAKE &amp; DIALOGUE</span>
+<h2 class="font-headline-lg text-headline-lg lg:font-display lg:text-display text-on-tertiary tracking-tight leading-tight">
+            LET’S BEGIN WITH UNDERSTANDING.
+          </h2>
+<p class="font-body-lg text-body-lg text-surface-container-high/90 leading-relaxed">
+            Tell us what you would like to explore. We will use your enquiry to understand your needs and help identify the appropriate next step.
+          </p>
+<div class="pt-4 space-y-4">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary-fixed text-[20px]">check</span>
+<span class="font-body-sm text-body-sm text-surface-container-high">Direct review by clinical practitioners</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary-fixed text-[20px]">check</span>
+<span class="font-body-sm text-body-sm text-surface-container-high">Confidential and discrete handling</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary-fixed text-[20px]">check</span>
+<span class="font-body-sm text-body-sm text-surface-container-high">No unsolicited automated marketing</span>
+</div>
+</div>
+</div>
+<!-- Form Column (7 cols) -->
+<div class="lg:col-span-7 bg-surface-container-lowest text-on-surface p-8 lg:p-12 rounded-xl shadow-2xl">
+<form class="space-y-6" onsubmit="event.preventDefault(); document.getElementById('form-feedback').classList.remove('hidden'); this.reset();">
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+<!-- Full Name -->
+<div>
+<label class="block font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider mb-2">
+                  Full Name *
+                </label>
+<input class="w-full bg-surface-container-low text-on-surface px-4 py-3 rounded-lg border-0 focus:ring-2 focus:ring-primary font-body-md text-body-md placeholder:text-outline-variant" placeholder="Dr. / Mr. / Ms. ..." required="" type="text"/>
+</div>
+<!-- Email Address -->
+<div>
+<label class="block font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider mb-2">
+                  Email Address *
+                </label>
+<input class="w-full bg-surface-container-low text-on-surface px-4 py-3 rounded-lg border-0 focus:ring-2 focus:ring-primary font-body-md text-body-md placeholder:text-outline-variant" placeholder="address@domain.com" required="" type="email"/>
+</div>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+<!-- Phone Number -->
+<div>
+<label class="block font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider mb-2">
+                  Phone Number (Optional)
+                </label>
+<input class="w-full bg-surface-container-low text-on-surface px-4 py-3 rounded-lg border-0 focus:ring-2 focus:ring-primary font-body-md text-body-md placeholder:text-outline-variant" placeholder="+91 ..." type="tel"/>
+</div>
+<!-- Area of Interest -->
+<div>
+<label class="block font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider mb-2">
+                  Area of Interest *
+                </label>
+<select class="w-full bg-surface-container-low text-on-surface px-4 py-3 rounded-lg border-0 focus:ring-2 focus:ring-primary font-body-md text-body-md" required="">
+<option disabled="" selected="" value="">Select Consultation Area</option>
+<option value="Ayurveda">Ayurveda</option>
+<option value="Residential Vastu">Residential Vastu</option>
+<option value="Commercial Vastu">Commercial Vastu</option>
+<option value="Medico-Vastu">Medico-Vastu</option>
+<option value="Not sure yet">Not sure yet</option>
+</select>
+</div>
+</div>
+<!-- Description -->
+<div>
+<label class="block font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider mb-2">
+                Brief Description of Your Enquiry *
+              </label>
+<textarea class="w-full bg-surface-container-low text-on-surface p-4 rounded-lg border-0 focus:ring-2 focus:ring-primary font-body-md text-body-md placeholder:text-outline-variant" placeholder="Please outline your property, lifestyle query, or health context..." required="" rows="4"></textarea>
+</div>
+<div class="pt-2">
+<button class="w-full py-4 bg-surface text-primary font-label-md text-label-md uppercase tracking-widest font-semibold rounded-lg hover:bg-surface-variant transition-colors duration-200 shadow-md" type="submit">
+                SEND ENQUIRY
+              </button>
+</div>
+<!-- Success Feedback -->
+<div class="hidden p-4 rounded-lg bg-surface-container text-primary font-body-sm text-body-sm text-center" id="form-feedback">
+              Thank you. Your consultation enquiry has been recorded. Our clinical desk will reach out within 1 business day.
+            </div>
+</form>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 10: RESPONSIBLE PRACTICE NOTE -->
+<section class="w-full bg-surface-container-high py-8">
+<div class="max-w-[1440px] mx-auto px-6 lg:px-margin text-center">
+<p class="font-body-sm text-body-sm text-on-surface-variant max-w-3xl mx-auto leading-relaxed">
+        ANUKUL’s services draw on traditional knowledge and should be understood in context. Ayurveda guidance does not replace appropriate medical care, and Vastu guidance does not guarantee specific outcomes.
+      </p>
+</div>
+</section>
+</div>
+<script>
+  // Simple accessible Accordion for FAQ
+  document.querySelectorAll('.faq-toggle').forEach(button => {
+    button.addEventListener('click', () => {
+      const content = button.nextElementSibling;
+      const icon = button.querySelector('.material-symbols-outlined');
+      const isExpanded = !content.classList.contains('hidden');
+
+      // Close all first for clean single-view accordion
+      document.querySelectorAll('.faq-content').forEach(c => c.classList.add('hidden'));
+      document.querySelectorAll('.faq-toggle .material-symbols-outlined').forEach(i => {
+        i.textContent = 'add';
+        i.style.transform = 'rotate(0deg)';
+      });
+
+      if (!isExpanded) {
+        content.classList.remove('hidden');
+        icon.textContent = 'remove';
+        icon.style.transform = 'rotate(180deg)';
+      }
+    });
+  });
+</script></main><footer class="w-full bg-[#1F4D3A] text-[#F7F1E3] border-t border-[#B38A3E]/30"><div class="max-w-[1440px] mx-auto px-6 lg:px-margin pt-space-xl pb-space-lg"><div class="grid grid-cols-1 md:grid-cols-12 gap-8 lg:gap-gutter-lg pb-space-xl border-b border-[#B38A3E]/20"><div class="md:col-span-5 flex flex-col justify-start space-y-space-sm"><div class="flex flex-col items-start"><a href="home.html" data-path="home" class="inline-block select-none mb-2"><img src="images/logo.png" alt="ANUKUL Logo" class="h-16 w-auto object-contain bg-[#F7F1E3] p-1.5 rounded shadow-sm"></a></div><p class="font-body-md text-body-md text-surface-container-high/90 max-w-md pt-2">ANUKUL Ayur Vastu Harmony Clinic — Health • Space • Lifestyle • Harmony</p><p class="font-body-sm text-body-sm text-outline-variant max-w-sm pt-1">Anchored in classical Vedic sciences, spatial alignment, and holistic constitutional balance for serene modern living.</p></div><div class="md:col-span-4 flex flex-col justify-start space-y-3"><h3 class="font-label-md text-label-md uppercase text-[#B38A3E] tracking-widest font-semibold">Explorations</h3><nav class="grid grid-cols-2 gap-y-2 gap-x-4"><a class="font-body-sm text-body-sm text-surface-container-high/80 hover:text-[#B38A3E] transition-colors" data-path="home" href="home.html">Home</a><a class="font-body-sm text-body-sm text-surface-container-high/80 hover:text-[#B38A3E] transition-colors" data-path="ayurveda" href="ayurveda.html">Ayurveda</a><a class="font-body-sm text-body-sm text-surface-container-high/80 hover:text-[#B38A3E] transition-colors" data-path="vastu" href="vastu.html">Vastu</a><a class="font-body-sm text-body-sm text-surface-container-high/80 hover:text-[#B38A3E] transition-colors" data-path="services" href="services.html">Services</a><a class="font-body-sm text-body-sm text-surface-container-high/80 hover:text-[#B38A3E] transition-colors" data-path="shop" href="shop.html">Shop</a><a class="font-body-sm text-body-sm text-surface-container-high/80 hover:text-[#B38A3E] transition-colors" data-path="blog" href="blog.html">Blog</a><a class="font-body-sm text-body-sm text-surface-container-high/80 hover:text-[#B38A3E] transition-colors" data-path="gallery" href="gallery.html">Gallery</a><a class="font-body-sm text-body-sm text-surface-container-high/80 hover:text-[#B38A3E] transition-colors" data-path="contact" href="contact.html">Contact</a></nav></div><div class="md:col-span-3 flex flex-col justify-start space-y-3"><h3 class="font-label-md text-label-md uppercase text-[#B38A3E] tracking-widest font-semibold">Sanctuary Hours</h3><p class="font-body-sm text-body-sm text-surface-container-high/80">Monday — Saturday<br>08:00 AM – 07:00 PM IST</p><p class="font-body-sm text-body-sm text-surface-container-high/80 pt-2"><span class="text-[#B38A3E] font-medium">Location:</span> Prime Vedic Enclave, Cultural Quarter</p></div></div><div class="pt-space-md flex flex-col sm:flex-row items-center justify-between gap-4"><p class="font-body-sm text-body-sm text-outline-variant text-center sm:text-left">© 2025 ANUKUL Ayur Vastu Harmony Clinic. All rights reserved. Responsible Vedic Clinical Practice.</p><div class="flex items-center gap-6 font-body-sm text-body-sm text-surface-container-high/70"><a class="hover:text-[#B38A3E] transition-colors" data-path="privacy-policy" href="contact.html#privacy">Privacy Policy</a><span class="text-[#B38A3E]/40">•</span><a class="hover:text-[#B38A3E] transition-colors" data-path="terms" href="contact.html#terms">Terms</a><span class="text-[#B38A3E]/40">•</span><a class="hover:text-[#B38A3E] transition-colors" data-path="disclaimer" href="contact.html#disclaimer">Disclaimer</a></div></div></div></footer>
+<script src="js/anukul-scroll.js"></script></body></html>

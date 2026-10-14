@@ -1,0 +1,2132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta content="web_standard" name="shell-type"/>
+  <title>Vedic Dispensary &amp; Sacred Living Store | ANUKUL Ayur Vastu</title>
+  
+  <!-- Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""/>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..700;1,400..700&amp;family=Manrope:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"/>
+
+  <style>
+    @layer base {
+      html, body { margin: 0; padding: 0; }
+      body { overscroll-behavior: none; }
+      main > :first-child { margin-top: 0 !important; }
+      main > :last-child { margin-bottom: 0 !important; }
+    }
+    ::-webkit-scrollbar { width: 6px; height: 6px; }
+    ::-webkit-scrollbar-track { background: #f6ece4; }
+    ::-webkit-scrollbar-thumb { background: #c0c9c2; border-radius: 3px; }
+    ::-webkit-scrollbar-thumb:hover { background: #1f4d3a; }
+  </style>
+
+  <!-- Tailwind CSS Configuration matching ANUKUL Design Tokens -->
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#1F4D3A",
+            "primary-dark": "#023625",
+            "primary-container": "#1F4D3A",
+            "on-primary": "#ffffff",
+            "secondary": "#C66A22",
+            "secondary-dark": "#974800",
+            "secondary-container": "#ff964c",
+            "on-secondary": "#ffffff",
+            "gold": "#B38A3E",
+            "tertiary": "#7B2739",
+            "tertiary-container": "#5D0F24",
+            "on-tertiary": "#ffffff",
+            "background": "#FFF8F4",
+            "surface": "#FFF8F4",
+            "surface-bright": "#FFFDFB",
+            "surface-dim": "#e2d8d0",
+            "surface-container-lowest": "#ffffff",
+            "surface-container-low": "#FCF2EA",
+            "surface-container": "#F6ECE4",
+            "surface-container-high": "#F1E6DE",
+            "surface-container-highest": "#EBE1D9",
+            "surface-variant": "#EBE1D9",
+            "on-surface": "#1F1B16",
+            "on-surface-variant": "#414944",
+            "outline": "#717973",
+            "outline-variant": "#C0C9C2",
+          },
+          fontFamily: {
+            display: ["EB Garamond", "serif"],
+            "display-mobile": ["EB Garamond", "serif"],
+            "headline-lg": ["EB Garamond", "serif"],
+            "headline-md": ["EB Garamond", "serif"],
+            "headline-sm": ["EB Garamond", "serif"],
+            "editorial-quote": ["EB Garamond", "serif"],
+            body: ["Manrope", "sans-serif"],
+            "body-lg": ["Manrope", "sans-serif"],
+            "body-md": ["Manrope", "sans-serif"],
+            "body-sm": ["Manrope", "sans-serif"],
+            "label-md": ["Manrope", "sans-serif"],
+            "label-sm": ["Manrope", "sans-serif"],
+          },
+          spacing: {
+            "gutter": "1.5rem",
+            "gutter-lg": "2.5rem",
+            "space-sm": "0.5rem",
+            "space-md": "1rem",
+            "space-lg": "1.75rem",
+            "space-xl": "3rem",
+            "space-2xl": "5rem",
+            "margin": "1.5rem",
+            "margin-md": "3rem",
+            "margin-lg": "5rem",
+          }
+        }
+      }
+    };
+  </script>
+<link rel="stylesheet" href="css/anukul-animations.css"></head>
+<body class="bg-surface font-body text-on-surface antialiased selection:bg-primary-container selection:text-on-primary">
+
+  <!-- UNIFIED SITE HEADER -->
+  <header class="fixed top-0 w-full z-50 bg-[#F7F1E3]/95 backdrop-blur-md border-b border-[#E8D8BC] shadow-[0_1px_8px_rgba(0,0,0,0.03)]">
+    <div class="h-20 max-w-[1440px] mx-auto px-6 lg:px-margin flex items-center justify-between gap-4">
+      <a href="home.html" data-path="home" class="flex items-center select-none py-1">
+        <img src="images/logo.png" alt="ANUKUL Logo" class="h-14 sm:h-16 w-auto max-h-[64px] object-contain">
+      </a>
+      
+      <nav class="hidden xl:flex items-center gap-6 lg:gap-space-md" data-active-classes="text-primary font-semibold relative after:absolute after:bottom-[-4px] after:left-0 after:w-full after:h-[1.5px] after:bg-[#B38A3E]">
+        <a class="font-label-md text-label-md uppercase text-on-surface-variant hover:text-primary transition-colors tracking-widest" data-path="home" href="home.html">Home</a>
+        <a class="font-label-md text-label-md uppercase text-on-surface-variant hover:text-primary transition-colors tracking-widest" data-path="ayurveda" href="ayurveda.html">Ayurveda</a>
+        <a class="font-label-md text-label-md uppercase text-on-surface-variant hover:text-primary transition-colors tracking-widest" data-path="vastu" href="vastu.html">Vastu</a>
+        <a class="font-label-md text-label-md uppercase text-on-surface-variant hover:text-primary transition-colors tracking-widest" data-path="services" href="services.html">Services</a>
+        <a aria-current="page" class="font-label-md text-label-md uppercase transition-colors tracking-widest text-primary font-semibold relative after:absolute after:bottom-[-4px] after:left-0 after:w-full after:h-[1.5px] after:bg-[#B38A3E]" data-path="shop" href="shop.html">Shop</a>
+        <a class="font-label-md text-label-md uppercase text-on-surface-variant hover:text-primary transition-colors tracking-widest" data-path="blog" href="blog.html">Blog</a>
+        <a class="font-label-md text-label-md uppercase text-on-surface-variant hover:text-primary transition-colors tracking-widest" data-path="gallery" href="gallery.html">Gallery</a>
+        <a class="font-label-md text-label-md uppercase text-on-surface-variant hover:text-primary transition-colors tracking-widest" data-path="contact" href="contact.html">Contact</a>
+      </nav>
+
+      <div class="flex items-center gap-2 sm:gap-3">
+        <a href="search_result.html" data-path="search" title="Search Wisdom &amp; Remedies" class="flex items-center justify-center w-10 h-10 rounded-full text-primary hover:bg-[#E8D8BC]/60 hover:text-secondary transition-colors">
+          <span class="material-symbols-outlined text-[22px]">search</span>
+        </a>
+        <a href="cart.html" data-path="cart" title="Shopping Cart" class="relative flex items-center justify-center w-10 h-10 rounded-full text-primary hover:bg-[#E8D8BC]/60 hover:text-secondary transition-colors">
+          <span class="material-symbols-outlined text-[22px]">shopping_bag</span>
+          <span id="header-cart-badge" class="absolute top-1 right-1 w-4 h-4 bg-secondary text-on-secondary text-[10px] font-bold rounded-full flex items-center justify-center leading-none">2</span>
+        </a>
+        <a href="book_your_consultation.html" data-path="book-consultation" class="hidden sm:inline-flex items-center justify-center bg-[#1F4D3A] text-[#F7F1E3] font-label-md text-label-md px-5 py-2.5 rounded-lg tracking-wider uppercase transition-colors duration-200 hover:bg-secondary shadow-sm font-semibold">BOOK CONSULTATION</a>
+        <a href="account.html" data-path="account" title="Client Sanctuary Portal" class="w-9 h-9 rounded-full bg-primary flex items-center justify-center text-on-primary hover:bg-secondary transition-colors shadow-sm">
+          <span class="material-symbols-outlined text-[18px]">person</span>
+        </a>
+        <button id="mobile-menu-btn" type="button" aria-label="Toggle navigation" class="xl:hidden inline-flex items-center justify-center w-10 h-10 rounded-lg text-primary hover:bg-[#E8D8BC]/60 focus:outline-none transition-colors">
+          <span class="material-symbols-outlined text-[26px]" id="mobile-menu-icon">menu</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Navigation Drawer -->
+    <div id="mobile-menu" class="hidden xl:hidden w-full bg-[#F7F1E3] border-b border-[#E8D8BC] shadow-lg transition-all">
+      <div class="px-6 py-5 space-y-4 max-h-[calc(100vh-80px)] overflow-y-auto">
+        <nav class="flex flex-col space-y-1.5">
+          <a class="py-2.5 px-3 rounded-lg font-label-md text-label-md uppercase tracking-widest text-on-surface-variant hover:bg-surface-container hover:text-primary transition-colors" data-path="home" href="home.html">Home</a>
+          <a class="py-2.5 px-3 rounded-lg font-label-md text-label-md uppercase tracking-widest text-on-surface-variant hover:bg-surface-container hover:text-primary transition-colors" data-path="ayurveda" href="ayurveda.html">Ayurveda</a>
+          <a class="py-2.5 px-3 rounded-lg font-label-md text-label-md uppercase tracking-widest text-on-surface-variant hover:bg-surface-container hover:text-primary transition-colors" data-path="vastu" href="vastu.html">Vastu</a>
+          <a class="py-2.5 px-3 rounded-lg font-label-md text-label-md uppercase tracking-widest text-on-surface-variant hover:bg-surface-container hover:text-primary transition-colors" data-path="services" href="services.html">Services</a>
+          <a class="py-2.5 px-3 rounded-lg font-label-md text-label-md uppercase tracking-widest bg-surface-container text-primary font-semibold transition-colors" data-path="shop" href="shop.html">Shop</a>
+          <a class="py-2.5 px-3 rounded-lg font-label-md text-label-md uppercase tracking-widest text-on-surface-variant hover:bg-surface-container hover:text-primary transition-colors" data-path="blog" href="blog.html">Blog</a>
+          <a class="py-2.5 px-3 rounded-lg font-label-md text-label-md uppercase tracking-widest text-on-surface-variant hover:bg-surface-container hover:text-primary transition-colors" data-path="gallery" href="gallery.html">Gallery</a>
+          <a class="py-2.5 px-3 rounded-lg font-label-md text-label-md uppercase tracking-widest text-on-surface-variant hover:bg-surface-container hover:text-primary transition-colors" data-path="contact" href="contact.html">Contact</a>
+        </nav>
+        <div class="pt-4 border-t border-[#E8D8BC] flex flex-col gap-3">
+          <a href="book_your_consultation.html" data-path="book-consultation" class="w-full text-center bg-[#1F4D3A] text-[#F7F1E3] font-label-md text-label-md py-3 rounded-lg tracking-wider uppercase font-semibold hover:bg-secondary transition-colors shadow-sm">BOOK CONSULTATION</a>
+          <div class="grid grid-cols-3 gap-2 pt-1 text-center text-xs font-label-md">
+            <a href="search_result.html" class="flex flex-col items-center justify-center p-2 rounded-lg bg-surface-container hover:bg-[#E8D8BC]/70 text-primary transition-colors">
+              <span class="material-symbols-outlined text-[20px] mb-1">search</span>Search
+            </a>
+            <a href="cart.html" class="flex flex-col items-center justify-center p-2 rounded-lg bg-surface-container hover:bg-[#E8D8BC]/70 text-primary transition-colors relative">
+              <span class="material-symbols-outlined text-[20px] mb-1">shopping_bag</span>Cart (<span class="mobile-cart-count">2</span>)
+            </a>
+            <a href="account.html" class="flex flex-col items-center justify-center p-2 rounded-lg bg-surface-container hover:bg-[#E8D8BC]/70 text-primary transition-colors">
+              <span class="material-symbols-outlined text-[20px] mb-1">person</span>Account
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="w-full pt-20 bg-surface min-h-[calc(100vh-80px)]">
+
+    <!-- HERO SECTION: VEDIC APOTHECARY & DISPENSARY -->
+    <section class="w-full bg-gradient-to-b from-[#F7F1E3] to-surface py-12 lg:py-16 border-b border-[#E8D8BC]">
+      <div class="max-w-[1440px] mx-auto px-6 lg:px-margin">
+        <div class="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-8">
+          <div class="max-w-2xl">
+            <div class="inline-flex items-center gap-2 px-3 py-1 bg-surface-container rounded-full border border-surface-variant text-secondary text-xs uppercase tracking-widest font-semibold mb-4">
+              <span class="w-2 h-2 rounded-full bg-secondary animate-pulse"></span>
+              THE ANUKUL VEDIC DISPENSARY &amp; STORE
+            </div>
+            <h1 class="font-display text-4xl sm:text-5xl lg:text-6xl text-primary tracking-tight leading-[1.1] mb-4">
+              Sacred Remedies &amp; <span class="italic font-editorial-quote text-secondary font-normal">Vedic Living</span> Artifacts.
+            </h1>
+            <p class="font-body text-base lg:text-lg text-on-surface-variant leading-relaxed mb-6">
+              Handcrafted Kansa metallurgy, certified small-batch Rasayanas, cold-pressed classical Tailas, and energized Vastu spatial corrections curated under authentic Vaidya oversight.
+            </p>
+            <div class="flex flex-wrap items-center gap-3">
+              <a href="#product-catalog" class="inline-flex items-center gap-2 px-6 py-3 bg-primary text-white text-xs font-semibold uppercase tracking-wider rounded-lg shadow-sm hover:bg-secondary transition-colors">
+                <span>Browse Dispensary Catalogue</span>
+                <span class="material-symbols-outlined text-[18px]">south</span>
+              </a>
+              <a href="book_your_consultation.html" class="inline-flex items-center gap-2 px-5 py-3 bg-white border border-[#E8D8BC] text-primary text-xs font-semibold uppercase tracking-wider rounded-lg hover:bg-surface-container transition-colors">
+                <span>Prescription / Prakriti Query</span>
+                <span class="material-symbols-outlined text-[18px]">medical_services</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Feature Trust Badges Ribbon -->
+          <div class="grid grid-cols-2 gap-3 w-full lg:w-auto shrink-0 max-w-md">
+            <div class="p-4 bg-white/80 rounded-xl border border-[#E8D8BC] shadow-xs flex items-center gap-3">
+              <div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-primary shrink-0">
+                <span class="material-symbols-outlined text-[22px]">verified</span>
+              </div>
+              <div>
+                <h4 class="font-display text-sm font-semibold text-primary">Classical Tenets</h4>
+                <p class="text-xs text-on-surface-variant">Sharangadhara Standards</p>
+              </div>
+            </div>
+            <div class="p-4 bg-white/80 rounded-xl border border-[#E8D8BC] shadow-xs flex items-center gap-3">
+              <div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-primary shrink-0">
+                <span class="material-symbols-outlined text-[22px]">workspace_premium</span>
+              </div>
+              <div>
+                <h4 class="font-display text-sm font-semibold text-primary">78:22 Bell Metal</h4>
+                <p class="text-xs text-on-surface-variant">Lead-free Certified Kansa</p>
+              </div>
+            </div>
+            <div class="p-4 bg-white/80 rounded-xl border border-[#E8D8BC] shadow-xs flex items-center gap-3">
+              <div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-primary shrink-0">
+                <span class="material-symbols-outlined text-[22px]">auto_awesome</span>
+              </div>
+              <div>
+                <h4 class="font-display text-sm font-semibold text-primary">Muhurta Energized</h4>
+                <p class="text-xs text-on-surface-variant">Consecrated Spatial Yantras</p>
+              </div>
+            </div>
+            <div class="p-4 bg-white/80 rounded-xl border border-[#E8D8BC] shadow-xs flex items-center gap-3">
+              <div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-primary shrink-0">
+                <span class="material-symbols-outlined text-[22px]">local_shipping</span>
+              </div>
+              <div>
+                <h4 class="font-display text-sm font-semibold text-primary">Secure Delivery</h4>
+                <p class="text-xs text-on-surface-variant">Eco-Cushioned All India</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- QUICK CATEGORY PILLS BAR -->
+    <section class="w-full bg-[#F6ECE4] border-b border-[#E8D8BC] sticky top-20 z-30 shadow-xs">
+      <div class="max-w-[1440px] mx-auto px-6 lg:px-margin py-3 flex items-center justify-between gap-4 overflow-x-auto no-scrollbar">
+        <div class="flex items-center gap-2 shrink-0" id="quick-category-pills">
+          <button type="button" data-category="all" class="category-pill active-pill px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-wider transition-all bg-primary text-white border border-primary shadow-xs">
+            All Products (<span id="all-count-pill">12</span>)
+          </button>
+          <button type="button" data-category="ayurveda" class="category-pill px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-wider transition-all bg-white text-on-surface-variant hover:text-primary hover:bg-white/90 border border-surface-variant">
+            Classical Ayurveda (4)
+          </button>
+          <button type="button" data-category="wellness" class="category-pill px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-wider transition-all bg-white text-on-surface-variant hover:text-primary hover:bg-white/90 border border-surface-variant">
+            Dinacharya Tools (3)
+          </button>
+          <button type="button" data-category="vastu" class="category-pill px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-wider transition-all bg-white text-on-surface-variant hover:text-primary hover:bg-white/90 border border-surface-variant">
+            Vastu Yantras (3)
+          </button>
+          <button type="button" data-category="tea" class="category-pill px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-wider transition-all bg-white text-on-surface-variant hover:text-primary hover:bg-white/90 border border-surface-variant">
+            Tisanes &amp; Teas (2)
+          </button>
+        </div>
+
+        <!-- Mobile Filter Button (visible on small/medium screens) -->
+        <button id="mobile-filter-trigger" type="button" class="lg:hidden shrink-0 inline-flex items-center gap-1.5 px-3 py-1.5 bg-primary text-white rounded-lg text-xs font-semibold uppercase tracking-wider shadow-xs">
+          <span class="material-symbols-outlined text-[16px]">tune</span>
+          <span>Filters</span>
+          <span id="mobile-filter-badge" class="hidden w-4 h-4 bg-secondary text-white text-[10px] rounded-full flex items-center justify-center">0</span>
+        </button>
+      </div>
+    </section>
+
+    <!-- MAIN SHOP INTERACTION GRID -->
+    <section class="w-full bg-surface py-8 lg:py-12" id="product-catalog">
+      <div class="max-w-[1440px] mx-auto px-6 lg:px-margin">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+          
+          <!-- LEFT COLUMN: STICKY FILTER SIDEBAR (Desktop) -->
+          <aside class="hidden lg:block lg:col-span-3 sticky top-36 space-y-6">
+            <div class="bg-white rounded-xl border border-surface-variant p-6 shadow-sm space-y-6">
+              
+              <!-- Filter Header & Reset -->
+              <div class="flex items-center justify-between border-b border-surface-variant/80 pb-4">
+                <div class="flex items-center gap-2">
+                  <span class="material-symbols-outlined text-secondary text-[20px]">filter_alt</span>
+                  <h3 class="font-display text-lg font-bold text-primary tracking-wide uppercase">Refine Remedies</h3>
+                </div>
+                <button type="button" id="reset-filters-btn" class="text-xs text-secondary hover:text-primary underline font-semibold transition-colors">
+                  Reset All
+                </button>
+              </div>
+
+              <!-- Keyword Search Box -->
+              <div class="space-y-2">
+                <label for="shop-search-input" class="text-xs font-semibold uppercase tracking-wider text-on-surface-variant block">Search Dispensary</label>
+                <div class="relative">
+                  <input type="text" id="shop-search-input" placeholder="e.g. Kansa, Taila, Brahmi, Yantra..." class="w-full bg-surface-container-low border border-surface-variant rounded-lg pl-9 pr-8 py-2 text-xs text-on-surface placeholder:text-outline focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary transition-all">
+                  <span class="material-symbols-outlined absolute left-2.5 top-2.5 text-outline text-[16px]">search</span>
+                  <button type="button" id="clear-search-btn" class="hidden absolute right-2.5 top-2.5 text-outline hover:text-primary">
+                    <span class="material-symbols-outlined text-[16px]">close</span>
+                  </button>
+                </div>
+              </div>
+
+              <!-- Category Radio / Selection -->
+              <div class="space-y-3 pt-2 border-t border-surface-variant/80">
+                <h4 class="text-xs font-bold uppercase tracking-wider text-primary">Dispensary Category</h4>
+                <div class="space-y-1.5 text-xs text-on-surface">
+                  <label class="flex items-center justify-between cursor-pointer py-1 px-2 rounded-lg hover:bg-surface-container transition-colors">
+                    <span class="flex items-center gap-2">
+                      <input type="radio" name="sidebar-category" value="all" checked class="text-primary focus:ring-primary rounded-full">
+                      <span>All Sacred Items</span>
+                    </span>
+                    <span class="text-outline text-[11px]">12</span>
+                  </label>
+                  <label class="flex items-center justify-between cursor-pointer py-1 px-2 rounded-lg hover:bg-surface-container transition-colors">
+                    <span class="flex items-center gap-2">
+                      <input type="radio" name="sidebar-category" value="ayurveda" class="text-primary focus:ring-primary rounded-full">
+                      <span>Classical Ayurveda</span>
+                    </span>
+                    <span class="text-outline text-[11px]">4</span>
+                  </label>
+                  <label class="flex items-center justify-between cursor-pointer py-1 px-2 rounded-lg hover:bg-surface-container transition-colors">
+                    <span class="flex items-center gap-2">
+                      <input type="radio" name="sidebar-category" value="wellness" class="text-primary focus:ring-primary rounded-full">
+                      <span>Dinacharya Tools</span>
+                    </span>
+                    <span class="text-outline text-[11px]">3</span>
+                  </label>
+                  <label class="flex items-center justify-between cursor-pointer py-1 px-2 rounded-lg hover:bg-surface-container transition-colors">
+                    <span class="flex items-center gap-2">
+                      <input type="radio" name="sidebar-category" value="vastu" class="text-primary focus:ring-primary rounded-full">
+                      <span>Vastu Yantras &amp; Brass</span>
+                    </span>
+                    <span class="text-outline text-[11px]">3</span>
+                  </label>
+                  <label class="flex items-center justify-between cursor-pointer py-1 px-2 rounded-lg hover:bg-surface-container transition-colors">
+                    <span class="flex items-center gap-2">
+                      <input type="radio" name="sidebar-category" value="tea" class="text-primary focus:ring-primary rounded-full">
+                      <span>Tisanes &amp; Teas</span>
+                    </span>
+                    <span class="text-outline text-[11px]">2</span>
+                  </label>
+                </div>
+              </div>
+
+              <!-- Dosha Constitution Filter -->
+              <div class="space-y-3 pt-3 border-t border-surface-variant/80">
+                <div class="flex items-center justify-between">
+                  <h4 class="text-xs font-bold uppercase tracking-wider text-primary">Dosha / Harmony</h4>
+                  <span class="text-[11px] text-secondary font-medium">Prakriti Fit</span>
+                </div>
+                <div class="grid grid-cols-2 gap-1.5 text-xs">
+                  <button type="button" data-dosha="all" class="dosha-btn active-dosha py-1.5 px-2.5 rounded-lg border border-primary bg-primary text-white text-center font-medium transition-colors">
+                    All Doshas
+                  </button>
+                  <button type="button" data-dosha="tridoshic" class="dosha-btn py-1.5 px-2.5 rounded-lg border border-surface-variant bg-surface-container-low text-on-surface text-center font-medium hover:border-primary transition-colors">
+                    Tridoshic
+                  </button>
+                  <button type="button" data-dosha="vata" class="dosha-btn py-1.5 px-2.5 rounded-lg border border-surface-variant bg-surface-container-low text-on-surface text-center font-medium hover:border-primary transition-colors">
+                    Vata Calming
+                  </button>
+                  <button type="button" data-dosha="pitta" class="dosha-btn py-1.5 px-2.5 rounded-lg border border-surface-variant bg-surface-container-low text-on-surface text-center font-medium hover:border-primary transition-colors">
+                    Pitta Cooling
+                  </button>
+                </div>
+              </div>
+
+              <!-- Price Range Filter -->
+              <div class="space-y-3 pt-3 border-t border-surface-variant/80">
+                <div class="flex items-center justify-between">
+                  <h4 class="text-xs font-bold uppercase tracking-wider text-primary">Price Range</h4>
+                  <span id="price-display-label" class="text-xs font-semibold text-primary">Up to ₹ 5,000</span>
+                </div>
+                <input type="range" id="price-range-slider" min="400" max="5000" step="100" value="5000" class="w-full accent-primary cursor-pointer">
+                <div class="flex justify-between text-[11px] text-outline">
+                  <span>₹ 400</span>
+                  <span>₹ 2,500</span>
+                  <span>₹ 5,000+</span>
+                </div>
+                
+                <!-- Quick Price Tiers -->
+                <div class="flex flex-wrap gap-1.5 pt-1">
+                  <button type="button" data-maxprice="1000" class="price-tier-btn text-[11px] py-1 px-2 rounded bg-surface-container-low hover:bg-surface-container text-on-surface-variant border border-surface-variant transition-colors">
+                    Under ₹1,000
+                  </button>
+                  <button type="button" data-maxprice="2500" class="price-tier-btn text-[11px] py-1 px-2 rounded bg-surface-container-low hover:bg-surface-container text-on-surface-variant border border-surface-variant transition-colors">
+                    Under ₹2,500
+                  </button>
+                  <button type="button" data-maxprice="5000" class="price-tier-btn text-[11px] py-1 px-2 rounded bg-surface-container-low hover:bg-surface-container text-on-surface-variant border border-surface-variant transition-colors">
+                    All Prices
+                  </button>
+                </div>
+              </div>
+
+              <!-- Stock & Certification Checks -->
+              <div class="space-y-2 pt-3 border-t border-surface-variant/80">
+                <h4 class="text-xs font-bold uppercase tracking-wider text-primary">Dispensary Status</h4>
+                <div class="space-y-1.5 text-xs text-on-surface">
+                  <label class="flex items-center gap-2 cursor-pointer">
+                    <input type="checkbox" id="instock-only-check" class="rounded text-primary focus:ring-primary border-surface-variant">
+                    <span>In Stock Only (Ready Dispatch)</span>
+                  </label>
+                  <label class="flex items-center gap-2 cursor-pointer">
+                    <input type="checkbox" id="consecrated-only-check" class="rounded text-primary focus:ring-primary border-surface-variant">
+                    <span>Vaidya Certified / Consecrated</span>
+                  </label>
+                </div>
+              </div>
+
+              <!-- Need Guidance Banner -->
+              <div class="p-4 bg-gradient-to-br from-surface-container to-[#F7F1E3] rounded-xl border border-[#E8D8BC] space-y-2">
+                <div class="flex items-center gap-1.5 text-secondary font-semibold text-xs uppercase tracking-wider">
+                  <span class="material-symbols-outlined text-[16px]">stethoscope</span>
+                  <span>Need Doshic Guidance?</span>
+                </div>
+                <p class="text-xs text-on-surface-variant leading-relaxed">
+                  Unsure which classical formulation aligns with your constitutional Prakriti?
+                </p>
+                <a href="book_your_consultation.html" class="inline-flex items-center gap-1 text-xs font-bold text-primary hover:text-secondary uppercase tracking-wider pt-1 transition-colors">
+                  <span>Book Vaidya Session</span>
+                  <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+                </a>
+              </div>
+
+            </div>
+          </aside>
+
+          <!-- RIGHT COLUMN: PRODUCT CATALOGUE & CONTROLS -->
+          <div class="col-span-12 lg:col-span-9 space-y-6">
+
+            <!-- CATALOGUE TOOLBAR -->
+            <div class="bg-white rounded-xl border border-surface-variant p-4 shadow-sm flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+              
+              <!-- Result Count & Active Filter Indicator -->
+              <div class="flex flex-wrap items-center gap-2">
+                <p class="text-xs sm:text-sm text-on-surface-variant font-medium">
+                  Showing <span id="visible-count-text" class="font-bold text-primary">12</span> of <span class="font-bold text-primary">12</span> sacred dispensary items
+                </p>
+                <div id="active-filter-tags" class="flex flex-wrap gap-1.5">
+                  <!-- Dynamically inserted active filter chips -->
+                </div>
+              </div>
+
+              <!-- Sorting & Layout Controls -->
+              <div class="flex items-center gap-3 w-full sm:w-auto justify-between sm:justify-end">
+                <div class="flex items-center gap-2 text-xs">
+                  <label for="shop-sort-select" class="text-on-surface-variant uppercase tracking-wider font-semibold whitespace-nowrap">Sort:</label>
+                  <div class="relative">
+                    <select id="shop-sort-select" class="appearance-none bg-surface-container-low text-primary text-xs font-semibold pl-3 pr-8 py-2 rounded-lg border border-surface-variant focus:outline-none focus:border-primary cursor-pointer">
+                      <option value="featured">Vaidya Recommended</option>
+                      <option value="price-asc">Price: Low to High</option>
+                      <option value="price-desc">Price: High to Low</option>
+                      <option value="rating">Highest Rated</option>
+                      <option value="name">Alphabetical (A–Z)</option>
+                    </select>
+                    <span class="material-symbols-outlined absolute right-2 top-2 text-primary pointer-events-none text-[16px]">expand_more</span>
+                  </div>
+                </div>
+
+                <!-- Grid / List Switcher -->
+                <div class="flex items-center bg-surface-container-low p-1 rounded-lg border border-surface-variant">
+                  <button id="view-mode-grid" type="button" title="Grid View" class="p-1.5 rounded bg-white text-primary shadow-xs transition-colors">
+                    <span class="material-symbols-outlined text-[18px] block">grid_view</span>
+                  </button>
+                  <button id="view-mode-list" type="button" title="List View" class="p-1.5 rounded text-outline hover:text-primary transition-colors">
+                    <span class="material-symbols-outlined text-[18px] block">view_list</span>
+                  </button>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- PRODUCT GRID -->
+            <div id="products-grid-container" class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6 transition-all duration-300">
+
+              <!-- PRODUCT 1: Kansa Vatki Bowl -->
+              <article class="product-item group bg-white rounded-xl overflow-hidden border border-surface-variant hover:border-[#B38A3E] shadow-xs hover:shadow-md transition-all duration-300 flex flex-col justify-between"
+                       data-category="wellness"
+                       data-dosha="tridoshic"
+                       data-price="1850"
+                       data-rating="5.0"
+                       data-instock="true"
+                       data-consecrated="true"
+                       data-name="Handcrafted Bronze Kansa Vatki Bowl">
+                <div class="flex flex-col">
+                  <!-- Media Box -->
+                  <div class="relative w-full aspect-square bg-surface-container overflow-hidden">
+                    <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBy7aSAl3W3ReW2vdIEVLdvkv0kf5eJjOgS8Zf9cSUEevLbOm7X-XHElOIEesBPv2TeYk1y_geSf3x2cYWpc8tngJ-wS-99G3yVO4k5RCEDq_f_uALszwduwHP1BFsEMdokmgJxtIFci71GnJ5iTA8cZy8hsEIdoNsWuHvuqfIgSFNsvem80f6I1lgAigwHgS6fxHuur0Vh2rhlqWWZmIOSGeRdTpMSY0CUPHCWSQINiWSmvPME27m40Q"
+                         alt="Handcrafted Kansa Vatki Bowl"
+                         class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div class="absolute top-3 left-3 flex flex-col gap-1">
+                      <span class="px-2.5 py-1 rounded bg-[#1F4D3A] text-white text-[10px] font-bold uppercase tracking-wider">
+                        Dinacharya Tool
+                      </span>
+                      <span class="px-2 py-0.5 rounded bg-[#C66A22] text-white text-[10px] font-bold uppercase tracking-wider">
+                        Tridoshic
+                      </span>
+                    </div>
+                    <span class="absolute top-3 right-3 px-2 py-0.5 rounded bg-white/90 text-primary text-[10px] font-bold uppercase tracking-wider border border-surface-variant">
+                      78:22 Bronze
+                    </span>
+
+                    <!-- Quick Actions Overlay -->
+                    <div class="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-200 flex items-center justify-center gap-2">
+                      <button type="button" onclick="openQuickViewModal('Handcrafted Bronze Kansa Vatki Bowl', '₹ 1,850', '₹ 2,200', 'Dinacharya &amp; Wellness Tools', 'Tridoshic (All Types)', 'Classical 78:22 copper-tin bronze alloy bowl for evening Padabhyanga foot massage. Calms the nervous system, soothes Pitta heat, and grounds erratic Vata before sleep.', 'https://lh3.googleusercontent.com/aida-public/AB6AXuBy7aSAl3W3ReW2vdIEVLdvkv0kf5eJjOgS8Zf9cSUEevLbOm7X-XHElOIEesBPv2TeYk1y_geSf3x2cYWpc8tngJ-wS-99G3yVO4k5RCEDq_f_uALszwduwHP1BFsEMdokmgJxtIFci71GnJ5iTA8cZy8hsEIdoNsWuHvuqfIgSFNsvem80f6I1lgAigwHgS6fxHuur0Vh2rhlqWWZmIOSGeRdTpMSY0CUPHCWSQINiWSmvPME27m40Q')" class="p-2.5 bg-white text-primary rounded-full hover:bg-secondary hover:text-white transition-colors shadow-md" title="Quick View">
+                        <span class="material-symbols-outlined text-[20px] block">visibility</span>
+                      </button>
+                      <button type="button" onclick="addToCart('Handcrafted Bronze Kansa Vatki Bowl', 1850)" class="p-2.5 bg-primary text-white rounded-full hover:bg-secondary transition-colors shadow-md" title="Add to Cart">
+                        <span class="material-symbols-outlined text-[20px] block">add_shopping_cart</span>
+                      </button>
+                    </div>
+                  </div>
+
+                  <!-- Content Details -->
+                  <div class="p-5 flex flex-col gap-2">
+                    <div class="flex items-center justify-between text-[11px] text-on-surface-variant uppercase tracking-wider">
+                      <span class="text-secondary font-semibold">Padabhyanga Ritual</span>
+                      <div class="flex items-center gap-1 text-[#B38A3E]">
+                        <span class="material-symbols-outlined text-[14px]">star</span>
+                        <span class="font-bold text-on-surface">5.0</span>
+                        <span class="text-outline text-[10px]">(64)</span>
+                      </div>
+                    </div>
+
+                    <h3 class="font-display text-lg font-bold text-primary group-hover:text-secondary transition-colors leading-snug">
+                      <a href="single_product.html">Handcrafted Bronze Kansa Vatki Bowl</a>
+                    </h3>
+                    
+                    <p class="text-xs text-on-surface-variant line-clamp-2 leading-relaxed">
+                      Classical 78:22 copper-tin bronze alloy bowl for evening Padabhyanga massage, soothing Pitta heat and drawing out fatigue.
+                    </p>
+
+                    <!-- Price Box -->
+                    <div class="pt-2 flex items-baseline gap-2">
+                      <span class="font-display text-xl font-bold text-primary">₹ 1,850</span>
+                      <span class="text-xs text-outline line-through">₹ 2,200</span>
+                      <span class="text-[11px] font-semibold text-secondary">Save 16%</span>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Card Bottom Actions -->
+                <div class="p-5 pt-0 grid grid-cols-2 gap-2">
+                  <a href="single_product.html" class="py-2.5 px-3 text-center rounded-lg border border-surface-variant text-primary hover:bg-surface-container font-semibold text-xs uppercase tracking-wider transition-colors">
+                    Details
+                  </a>
+                  <button type="button" onclick="addToCart('Handcrafted Bronze Kansa Vatki Bowl', 1850)" class="py-2.5 px-3 bg-primary text-white hover:bg-secondary rounded-lg font-semibold text-xs uppercase tracking-wider transition-colors shadow-xs flex items-center justify-center gap-1">
+                    <span class="material-symbols-outlined text-[16px]">shopping_bag</span>
+                    <span>Add</span>
+                  </button>
+                </div>
+              </article>
+
+              <!-- PRODUCT 2: Shankhpushpi Medhya Rasayana -->
+              <article class="product-item group bg-white rounded-xl overflow-hidden border border-surface-variant hover:border-[#B38A3E] shadow-xs hover:shadow-md transition-all duration-300 flex flex-col justify-between"
+                       data-category="ayurveda"
+                       data-dosha="vata"
+                       data-price="980"
+                       data-rating="4.9"
+                       data-instock="true"
+                       data-consecrated="true"
+                       data-name="Shankhpushpi Medhya Rasayana (500g)">
+                <div class="flex flex-col">
+                  <div class="relative w-full aspect-square bg-surface-container overflow-hidden">
+                    <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCn4C4nGq0-WEybx_Q4SAeLyf2LIa1qqmGqxAgw-65WQDSw5adk3hlkLersofCRxd-il-LCdQ2QlMsRpvb08dXYu-s6uPJrntMZy1AqArqn5CdhiKPnCutjIOQwkZslx2h4aRpW3_ymOKdwprIuocLibL-ROW0fIrFRMBH0ZQk97wVUgnGDqq9qMhFRVoqzUaqou7bGUTX96MPVWD-ZoBgK-hOB_DewjwxDdEKu0ZHrbcS5rR0bBGsq7w"
+                         alt="Shankhpushpi Medhya Rasayana"
+                         class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div class="absolute top-3 left-3 flex flex-col gap-1">
+                      <span class="px-2.5 py-1 rounded bg-[#1F4D3A] text-white text-[10px] font-bold uppercase tracking-wider">
+                        Classical Ayurveda
+                      </span>
+                      <span class="px-2 py-0.5 rounded bg-surface-container-high text-primary text-[10px] font-bold uppercase tracking-wider border border-surface-variant">
+                        Vata-Pitta
+                      </span>
+                    </div>
+                    <span class="absolute top-3 right-3 px-2 py-0.5 rounded bg-[#C66A22] text-white text-[10px] font-bold uppercase tracking-wider">
+                      Vaidya Grade
+                    </span>
+
+                    <div class="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-200 flex items-center justify-center gap-2">
+                      <button type="button" onclick="openQuickViewModal('Shankhpushpi Medhya Rasayana (500g)', '₹ 980', '₹ 1,150', 'Classical Ayurveda', 'Vata-Pitta Calming', 'Traditional herbal paste prepared in strict accordance with Sharangadhara tenets. Enhances cognitive acuity, memory recall, and deep mental tranquility without sedation.', 'https://lh3.googleusercontent.com/aida-public/AB6AXuCn4C4nGq0-WEybx_Q4SAeLyf2LIa1qqmGqxAgw-65WQDSw5adk3hlkLersofCRxd-il-LCdQ2QlMsRpvb08dXYu-s6uPJrntMZy1AqArqn5CdhiKPnCutjIOQwkZslx2h4aRpW3_ymOKdwprIuocLibL-ROW0fIrFRMBH0ZQk97wVUgnGDqq9qMhFRVoqzUaqou7bGUTX96MPVWD-ZoBgK-hOB_DewjwxDdEKu0ZHrbcS5rR0bBGsq7w')" class="p-2.5 bg-white text-primary rounded-full hover:bg-secondary hover:text-white transition-colors shadow-md">
+                        <span class="material-symbols-outlined text-[20px] block">visibility</span>
+                      </button>
+                      <button type="button" onclick="addToCart('Shankhpushpi Medhya Rasayana (500g)', 980)" class="p-2.5 bg-primary text-white rounded-full hover:bg-secondary transition-colors shadow-md">
+                        <span class="material-symbols-outlined text-[20px] block">add_shopping_cart</span>
+                      </button>
+                    </div>
+                  </div>
+
+                  <div class="p-5 flex flex-col gap-2">
+                    <div class="flex items-center justify-between text-[11px] text-on-surface-variant uppercase tracking-wider">
+                      <span class="text-secondary font-semibold">Cognitive Nourishment</span>
+                      <div class="flex items-center gap-1 text-[#B38A3E]">
+                        <span class="material-symbols-outlined text-[14px]">star</span>
+                        <span class="font-bold text-on-surface">4.9</span>
+                        <span class="text-outline text-[10px]">(48)</span>
+                      </div>
+                    </div>
+
+                    <h3 class="font-display text-lg font-bold text-primary group-hover:text-secondary transition-colors leading-snug">
+                      <a href="single_product.html">Shankhpushpi Medhya Rasayana</a>
+                    </h3>
+                    
+                    <p class="text-xs text-on-surface-variant line-clamp-2 leading-relaxed">
+                      Wild Shankhpushpi, Brahmi, and Amla suspended in organic forest honey for cognitive clarity and emotional poise.
+                    </p>
+
+                    <div class="pt-2 flex items-baseline gap-2">
+                      <span class="font-display text-xl font-bold text-primary">₹ 980</span>
+                      <span class="text-xs text-outline line-through">₹ 1,150</span>
+                      <span class="text-[11px] font-semibold text-secondary">Save 15%</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="p-5 pt-0 grid grid-cols-2 gap-2">
+                  <a href="single_product.html" class="py-2.5 px-3 text-center rounded-lg border border-surface-variant text-primary hover:bg-surface-container font-semibold text-xs uppercase tracking-wider transition-colors">
+                    Details
+                  </a>
+                  <button type="button" onclick="addToCart('Shankhpushpi Medhya Rasayana (500g)', 980)" class="py-2.5 px-3 bg-primary text-white hover:bg-secondary rounded-lg font-semibold text-xs uppercase tracking-wider transition-colors shadow-xs flex items-center justify-center gap-1">
+                    <span class="material-symbols-outlined text-[16px]">shopping_bag</span>
+                    <span>Add</span>
+                  </button>
+                </div>
+              </article>
+
+              <!-- PRODUCT 3: Directional Brass Spatial Compass -->
+              <article class="product-item group bg-white rounded-xl overflow-hidden border border-surface-variant hover:border-[#B38A3E] shadow-xs hover:shadow-md transition-all duration-300 flex flex-col justify-between"
+                       data-category="vastu"
+                       data-dosha="tridoshic"
+                       data-price="2200"
+                       data-rating="4.9"
+                       data-instock="true"
+                       data-consecrated="true"
+                       data-name="Directional Brass Spatial Compass">
+                <div class="flex flex-col">
+                  <div class="relative w-full aspect-square bg-surface-container overflow-hidden">
+                    <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAC-7Yx0d7ZTJMTu3irF0Z9L-Hv7FuJQEd7m_mlORbrwfetEjhIiNLehqZFn1WZwri3E_4bW6kcUFBWmd8Lbt0P4jpDtZ4kSVbcA0ZKIfzprSsSIP2gBGHKko4gTnrevoemBu9aBdgsb6RyUk5cDzivcEDDuyLi25Ac2FzQqop2mJCrVeRRBTZ4mpZBpXmMsUFqgItGdl9YfWEMWX3ws_wbofM8q_DOErtw_rpsIl20lVuOeTQGtnuNbQ"
+                         alt="Directional Brass Spatial Compass"
+                         class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div class="absolute top-3 left-3 flex flex-col gap-1">
+                      <span class="px-2.5 py-1 rounded bg-[#1F4D3A] text-white text-[10px] font-bold uppercase tracking-wider">
+                        Vastu Instrument
+                      </span>
+                    </div>
+                    <span class="absolute top-3 right-3 px-2 py-0.5 rounded bg-surface-container-high text-primary text-[10px] font-bold uppercase tracking-wider border border-surface-variant">
+                      Sapphire Pivot
+                    </span>
+
+                    <div class="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-200 flex items-center justify-center gap-2">
+                      <button type="button" onclick="openQuickViewModal('Directional Brass Spatial Compass', '₹ 2,200', '₹ 2,600', 'Vastu Yantras &amp; Instruments', 'Spatial Assessment', 'Calibrated architectural orientation instrument engraved with 8 cardinal Sanskrit directional deities (Ashta Dikpalas) for residential spatial assessment.', 'https://lh3.googleusercontent.com/aida-public/AB6AXuAC-7Yx0d7ZTJMTu3irF0Z9L-Hv7FuJQEd7m_mlORbrwfetEjhIiNLehqZFn1WZwri3E_4bW6kcUFBWmd8Lbt0P4jpDtZ4kSVbcA0ZKIfzprSsSIP2gBGHKko4gTnrevoemBu9aBdgsb6RyUk5cDzivcEDDuyLi25Ac2FzQqop2mJCrVeRRBTZ4mpZBpXmMsUFqgItGdl9YfWEMWX3ws_wbofM8q_DOErtw_rpsIl20lVuOeTQGtnuNbQ')" class="p-2.5 bg-white text-primary rounded-full hover:bg-secondary hover:text-white transition-colors shadow-md">
+                        <span class="material-symbols-outlined text-[20px] block">visibility</span>
+                      </button>
+                      <button type="button" onclick="addToCart('Directional Brass Spatial Compass', 2200)" class="p-2.5 bg-primary text-white rounded-full hover:bg-secondary transition-colors shadow-md">
+                        <span class="material-symbols-outlined text-[20px] block">add_shopping_cart</span>
+                      </button>
+                    </div>
+                  </div>
+
+                  <div class="p-5 flex flex-col gap-2">
+                    <div class="flex items-center justify-between text-[11px] text-on-surface-variant uppercase tracking-wider">
+                      <span class="text-secondary font-semibold">Ishanya Alignment</span>
+                      <div class="flex items-center gap-1 text-[#B38A3E]">
+                        <span class="material-symbols-outlined text-[14px]">star</span>
+                        <span class="font-bold text-on-surface">4.9</span>
+                        <span class="text-outline text-[10px]">(26)</span>
+                      </div>
+                    </div>
+
+                    <h3 class="font-display text-lg font-bold text-primary group-hover:text-secondary transition-colors leading-snug">
+                      <a href="single_product.html">Directional Brass Spatial Compass</a>
+                    </h3>
+                    
+                    <p class="text-xs text-on-surface-variant line-clamp-2 leading-relaxed">
+                      Hand-engraved Sanskrit directional markers with sapphire bearing for home and clinic spatial alignment.
+                    </p>
+
+                    <div class="pt-2 flex items-baseline gap-2">
+                      <span class="font-display text-xl font-bold text-primary">₹ 2,200</span>
+                      <span class="text-xs text-outline line-through">₹ 2,600</span>
+                      <span class="text-[11px] font-semibold text-secondary">Save 15%</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="p-5 pt-0 grid grid-cols-2 gap-2">
+                  <a href="single_product.html" class="py-2.5 px-3 text-center rounded-lg border border-surface-variant text-primary hover:bg-surface-container font-semibold text-xs uppercase tracking-wider transition-colors">
+                    Details
+                  </a>
+                  <button type="button" onclick="addToCart('Directional Brass Spatial Compass', 2200)" class="py-2.5 px-3 bg-primary text-white hover:bg-secondary rounded-lg font-semibold text-xs uppercase tracking-wider transition-colors shadow-xs flex items-center justify-center gap-1">
+                    <span class="material-symbols-outlined text-[16px]">shopping_bag</span>
+                    <span>Add</span>
+                  </button>
+                </div>
+              </article>
+
+              <!-- PRODUCT 4: Cold-Pressed Ksheerabala Taila 101 -->
+              <article class="product-item group bg-white rounded-xl overflow-hidden border border-surface-variant hover:border-[#B38A3E] shadow-xs hover:shadow-md transition-all duration-300 flex flex-col justify-between"
+                       data-category="ayurveda"
+                       data-dosha="vata"
+                       data-price="640"
+                       data-rating="4.8"
+                       data-instock="true"
+                       data-consecrated="true"
+                       data-name="Cold-Pressed Ksheerabala Taila 101 (200ml)">
+                <div class="flex flex-col">
+                  <div class="relative w-full aspect-square bg-surface-container overflow-hidden">
+                    <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDzS8zZ9hTvmWXyEaVWRRb7ydgc1M6YKS1gbWzGeE9BKZDKaHLHr2VUFz4VJjYH4imAUA9HGIpgQxVGHHF4FHlmm7loRr5YUrWrfWNF80PTlprOxp4zkgI-0tkxvJYjkPFCBizEjj_VUrdbx7hLsKBUsgUjaoD9ITXqogppedMJtsdvadG_z_Hfod6WbSltecAewhrzhtoJ6mNWPwk-MqFAiKFDY2XnjgZktyg97f_gfKfa-tCv_xdqng"
+                         alt="Cold-Pressed Ksheerabala Taila 101"
+                         class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div class="absolute top-3 left-3 flex flex-col gap-1">
+                      <span class="px-2.5 py-1 rounded bg-[#1F4D3A] text-white text-[10px] font-bold uppercase tracking-wider">
+                        Classical Oil
+                      </span>
+                      <span class="px-2 py-0.5 rounded bg-surface-container-high text-primary text-[10px] font-bold uppercase tracking-wider border border-surface-variant">
+                        Vata Pacifying
+                      </span>
+                    </div>
+                    <span class="absolute top-3 right-3 px-2 py-0.5 rounded bg-[#C66A22] text-white text-[10px] font-bold uppercase tracking-wider">
+                      101 Avartana
+                    </span>
+
+                    <div class="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-200 flex items-center justify-center gap-2">
+                      <button type="button" onclick="openQuickViewModal('Cold-Pressed Ksheerabala Taila 101 (200ml)', '₹ 640', '₹ 750', 'Classical Ayurveda', 'Vata Pacifying', 'Traditional botanical infused carrier oil cold-pressed and potentiated 101 times for seasonal external Abhyanga and nervous grounding.', 'https://lh3.googleusercontent.com/aida-public/AB6AXuDzS8zZ9hTvmWXyEaVWRRb7ydgc1M6YKS1gbWzGeE9BKZDKaHLHr2VUFz4VJjYH4imAUA9HGIpgQxVGHHF4FHlmm7loRr5YUrWrfWNF80PTlprOxp4zkgI-0tkxvJYjkPFCBizEjj_VUrdbx7hLsKBUsgUjaoD9ITXqogppedMJtsdvadG_z_Hfod6WbSltecAewhrzhtoJ6mNWPwk-MqFAiKFDY2XnjgZktyg97f_gfKfa-tCv_xdqng')" class="p-2.5 bg-white text-primary rounded-full hover:bg-secondary hover:text-white transition-colors shadow-md">
+                        <span class="material-symbols-outlined text-[20px] block">visibility</span>
+                      </button>
+                      <button type="button" onclick="addToCart('Cold-Pressed Ksheerabala Taila 101 (200ml)', 640)" class="p-2.5 bg-primary text-white rounded-full hover:bg-secondary transition-colors shadow-md">
+                        <span class="material-symbols-outlined text-[20px] block">add_shopping_cart</span>
+                      </button>
+                    </div>
+                  </div>
+
+                  <div class="p-5 flex flex-col gap-2">
+                    <div class="flex items-center justify-between text-[11px] text-on-surface-variant uppercase tracking-wider">
+                      <span class="text-secondary font-semibold">External Snehana</span>
+                      <div class="flex items-center gap-1 text-[#B38A3E]">
+                        <span class="material-symbols-outlined text-[14px]">star</span>
+                        <span class="font-bold text-on-surface">4.8</span>
+                        <span class="text-outline text-[10px]">(37)</span>
+                      </div>
+                    </div>
+
+                    <h3 class="font-display text-lg font-bold text-primary group-hover:text-secondary transition-colors leading-snug">
+                      <a href="single_product.html">Cold-Pressed Ksheerabala Taila 101</a>
+                    </h3>
+                    
+                    <p class="text-xs text-on-surface-variant line-clamp-2 leading-relaxed">
+                      Potentiated Bala root infusion cooked in black sesame oil and organic milk for joint ease and restorative sleep.
+                    </p>
+
+                    <div class="pt-2 flex items-baseline gap-2">
+                      <span class="font-display text-xl font-bold text-primary">₹ 640</span>
+                      <span class="text-xs text-outline line-through">₹ 750</span>
+                      <span class="text-[11px] font-semibold text-secondary">Save 15%</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="p-5 pt-0 grid grid-cols-2 gap-2">
+                  <a href="single_product.html" class="py-2.5 px-3 text-center rounded-lg border border-surface-variant text-primary hover:bg-surface-container font-semibold text-xs uppercase tracking-wider transition-colors">
+                    Details
+                  </a>
+                  <button type="button" onclick="addToCart('Cold-Pressed Ksheerabala Taila 101 (200ml)', 640)" class="py-2.5 px-3 bg-primary text-white hover:bg-secondary rounded-lg font-semibold text-xs uppercase tracking-wider transition-colors shadow-xs flex items-center justify-center gap-1">
+                    <span class="material-symbols-outlined text-[16px]">shopping_bag</span>
+                    <span>Add</span>
+                  </button>
+                </div>
+              </article>
+
+              <!-- PRODUCT 5: Pure Hammered Copper Tamra Vessel -->
+              <article class="product-item group bg-white rounded-xl overflow-hidden border border-surface-variant hover:border-[#B38A3E] shadow-xs hover:shadow-md transition-all duration-300 flex flex-col justify-between"
+                       data-category="wellness"
+                       data-dosha="tridoshic"
+                       data-price="1650"
+                       data-rating="4.9"
+                       data-instock="true"
+                       data-consecrated="true"
+                       data-name="Pure Hammered Copper Tamra Vessel (950ml)">
+                <div class="flex flex-col">
+                  <div class="relative w-full aspect-square bg-surface-container overflow-hidden">
+                    <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDnp39dHEB6sqonm09KgyS9uLrEMJkVLKEFJ6nUwyWgeSxGHq71h6J8O_ZurTCgpJz7pnvsNg-CO6KFcxDxISHTbkpko1Mpofyx1-hqyFIpW8cjPoTptfPKHaivJJSu0X29LNrZTI5nL32l7QMuZ_TG2zpcouh4p9kbQ22r7q3IqJJdJwNbn27yJ4AAQE5xcwVHHxcC5Xkpch2w1ml2Da-PhSLfPdSkuJ_PRZ-9JoqteiZVwi2kZDUOyw"
+                         alt="Pure Hammered Copper Tamra Vessel"
+                         class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div class="absolute top-3 left-3 flex flex-col gap-1">
+                      <span class="px-2.5 py-1 rounded bg-[#1F4D3A] text-white text-[10px] font-bold uppercase tracking-wider">
+                        Dinacharya Tool
+                      </span>
+                    </div>
+                    <span class="absolute top-3 right-3 px-2 py-0.5 rounded bg-surface-container-high text-primary text-[10px] font-bold uppercase tracking-wider border border-surface-variant">
+                      99.7% Pure Tamra
+                    </span>
+
+                    <div class="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-200 flex items-center justify-center gap-2">
+                      <button type="button" onclick="openQuickViewModal('Pure Hammered Copper Tamra Vessel (950ml)', '₹ 1,650', '₹ 1,900', 'Dinacharya &amp; Wellness Tools', 'Tridoshic (All Types)', 'Seamless hand-hammered therapeutic copper water carafe for overnight water ionization (Tamra Jal) to nourish digestive fire.', 'https://lh3.googleusercontent.com/aida-public/AB6AXuDnp39dHEB6sqonm09KgyS9uLrEMJkVLKEFJ6nUwyWgeSxGHq71h6J8O_ZurTCgpJz7pnvsNg-CO6KFcxDxISHTbkpko1Mpofyx1-hqyFIpW8cjPoTptfPKHaivJJSu0X29LNrZTI5nL32l7QMuZ_TG2zpcouh4p9kbQ22r7q3IqJJdJwNbn27yJ4AAQE5xcwVHHxcC5Xkpch2w1ml2Da-PhSLfPdSkuJ_PRZ-9JoqteiZVwi2kZDUOyw')" class="p-2.5 bg-white text-primary rounded-full hover:bg-secondary hover:text-white transition-colors shadow-md">
+                        <span class="material-symbols-outlined text-[20px] block">visibility</span>
+                      </button>
+                      <button type="button" onclick="addToCart('Pure Hammered Copper Tamra Vessel (950ml)', 1650)" class="p-2.5 bg-primary text-white rounded-full hover:bg-secondary transition-colors shadow-md">
+                        <span class="material-symbols-outlined text-[20px] block">add_shopping_cart</span>
+                      </button>
+                    </div>
+                  </div>
+
+                  <div class="p-5 flex flex-col gap-2">
+                    <div class="flex items-center justify-between text-[11px] text-on-surface-variant uppercase tracking-wider">
+                      <span class="text-secondary font-semibold">Ushapan Ritual</span>
+                      <div class="flex items-center gap-1 text-[#B38A3E]">
+                        <span class="material-symbols-outlined text-[14px]">star</span>
+                        <span class="font-bold text-on-surface">4.9</span>
+                        <span class="text-outline text-[10px]">(53)</span>
+                      </div>
+                    </div>
+
+                    <h3 class="font-display text-lg font-bold text-primary group-hover:text-secondary transition-colors leading-snug">
+                      <a href="single_product.html">Pure Hammered Copper Tamra Vessel</a>
+                    </h3>
+                    
+                    <p class="text-xs text-on-surface-variant line-clamp-2 leading-relaxed">
+                      Handcrafted seamless pure copper vessel for morning Tamra Jal, stimulating natural digestive Agni.
+                    </p>
+
+                    <div class="pt-2 flex items-baseline gap-2">
+                      <span class="font-display text-xl font-bold text-primary">₹ 1,650</span>
+                      <span class="text-xs text-outline line-through">₹ 1,900</span>
+                      <span class="text-[11px] font-semibold text-secondary">Save 13%</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="p-5 pt-0 grid grid-cols-2 gap-2">
+                  <a href="single_product.html" class="py-2.5 px-3 text-center rounded-lg border border-surface-variant text-primary hover:bg-surface-container font-semibold text-xs uppercase tracking-wider transition-colors">
+                    Details
+                  </a>
+                  <button type="button" onclick="addToCart('Pure Hammered Copper Tamra Vessel (950ml)', 1650)" class="py-2.5 px-3 bg-primary text-white hover:bg-secondary rounded-lg font-semibold text-xs uppercase tracking-wider transition-colors shadow-xs flex items-center justify-center gap-1">
+                    <span class="material-symbols-outlined text-[16px]">shopping_bag</span>
+                    <span>Add</span>
+                  </button>
+                </div>
+              </article>
+
+              <!-- PRODUCT 6: Consecrated Pure Copper Sri Yantra -->
+              <article class="product-item group bg-white rounded-xl overflow-hidden border border-surface-variant hover:border-[#B38A3E] shadow-xs hover:shadow-md transition-all duration-300 flex flex-col justify-between"
+                       data-category="vastu"
+                       data-dosha="tridoshic"
+                       data-price="1350"
+                       data-rating="5.0"
+                       data-instock="true"
+                       data-consecrated="true"
+                       data-name="Consecrated Pure Copper Sri Yantra (6x6 inch)">
+                <div class="flex flex-col">
+                  <div class="relative w-full aspect-square bg-surface-container overflow-hidden">
+                    <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuD8juB7TBTktsdUCBiK4KbanpwQ77NnlBbrbNqBhbp37-5czt7yG2FU3SCzIVGXPwrI1KMUAG7y8ag9IW6lX5yGXlUAuBSUCq-46Nf6cM_FZIt_jpmCcW3mMDmSodkof__MGonX9MBbdHQDhLAeO4ttTZOV2tGm2Pc2DD-YWKoQE0bcec3OwMdV1bQMFt5NXgFyiXqwDmUvqllEQ_yOQyS2Z_E3xs6asw68M_fT1yY1j5CXFtTfzpM1xA"
+                         alt="Consecrated Pure Copper Sri Yantra"
+                         class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div class="absolute top-3 left-3 flex flex-col gap-1">
+                      <span class="px-2.5 py-1 rounded bg-[#1F4D3A] text-white text-[10px] font-bold uppercase tracking-wider">
+                        Vastu Remedy
+                      </span>
+                    </div>
+                    <span class="absolute top-3 right-3 px-2 py-0.5 rounded bg-[#B38A3E] text-white text-[10px] font-bold uppercase tracking-wider">
+                      Consecrated
+                    </span>
+
+                    <div class="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-200 flex items-center justify-center gap-2">
+                      <button type="button" onclick="openQuickViewModal('Consecrated Pure Copper Sri Yantra (6x6 inch)', '₹ 1,350', '₹ 1,600', 'Vastu Yantras &amp; Instruments', 'Spatial Energization', 'Deeply etched sacred geometry plate in pure heavy copper. Consecrated during auspicious lunar nakshatra to harmonize North-East residential vectors.', 'https://lh3.googleusercontent.com/aida-public/AB6AXuD8juB7TBTktsdUCBiK4KbanpwQ77NnlBbrbNqBhbp37-5czt7yG2FU3SCzIVGXPwrI1KMUAG7y8ag9IW6lX5yGXlUAuBSUCq-46Nf6cM_FZIt_jpmCcW3mMDmSodkof__MGonX9MBbdHQDhLAeO4ttTZOV2tGm2Pc2DD-YWKoQE0bcec3OwMdV1bQMFt5NXgFyiXqwDmUvqllEQ_yOQyS2Z_E3xs6asw68M_fT1yY1j5CXFtTfzpM1xA')" class="p-2.5 bg-white text-primary rounded-full hover:bg-secondary hover:text-white transition-colors shadow-md">
+                        <span class="material-symbols-outlined text-[20px] block">visibility</span>
+                      </button>
+                      <button type="button" onclick="addToCart('Consecrated Pure Copper Sri Yantra (6x6 inch)', 1350)" class="p-2.5 bg-primary text-white rounded-full hover:bg-secondary transition-colors shadow-md">
+                        <span class="material-symbols-outlined text-[20px] block">add_shopping_cart</span>
+                      </button>
+                    </div>
+                  </div>
+
+                  <div class="p-5 flex flex-col gap-2">
+                    <div class="flex items-center justify-between text-[11px] text-on-surface-variant uppercase tracking-wider">
+                      <span class="text-secondary font-semibold">Spatial Alignment</span>
+                      <div class="flex items-center gap-1 text-[#B38A3E]">
+                        <span class="material-symbols-outlined text-[14px]">star</span>
+                        <span class="font-bold text-on-surface">5.0</span>
+                        <span class="text-outline text-[10px]">(42)</span>
+                      </div>
+                    </div>
+
+                    <h3 class="font-display text-lg font-bold text-primary group-hover:text-secondary transition-colors leading-snug">
+                      <a href="single_product.html">Consecrated Pure Copper Sri Yantra</a>
+                    </h3>
+                    
+                    <p class="text-xs text-on-surface-variant line-clamp-2 leading-relaxed">
+                      Heavy gauge pure copper sheet engraved with classical 9 cosmic interlocking triangles for spatial peace.
+                    </p>
+
+                    <div class="pt-2 flex items-baseline gap-2">
+                      <span class="font-display text-xl font-bold text-primary">₹ 1,350</span>
+                      <span class="text-xs text-outline line-through">₹ 1,600</span>
+                      <span class="text-[11px] font-semibold text-secondary">Save 15%</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="p-5 pt-0 grid grid-cols-2 gap-2">
+                  <a href="single_product.html" class="py-2.5 px-3 text-center rounded-lg border border-surface-variant text-primary hover:bg-surface-container font-semibold text-xs uppercase tracking-wider transition-colors">
+                    Details
+                  </a>
+                  <button type="button" onclick="addToCart('Consecrated Pure Copper Sri Yantra (6x6 inch)', 1350)" class="py-2.5 px-3 bg-primary text-white hover:bg-secondary rounded-lg font-semibold text-xs uppercase tracking-wider transition-colors shadow-xs flex items-center justify-center gap-1">
+                    <span class="material-symbols-outlined text-[16px]">shopping_bag</span>
+                    <span>Add</span>
+                  </button>
+                </div>
+              </article>
+
+              <!-- PRODUCT 7: Natural Fibre Kusha Grass Meditation Mat -->
+              <article class="product-item group bg-white rounded-xl overflow-hidden border border-surface-variant hover:border-[#B38A3E] shadow-xs hover:shadow-md transition-all duration-300 flex flex-col justify-between"
+                       data-category="wellness"
+                       data-dosha="tridoshic"
+                       data-price="1420"
+                       data-rating="4.8"
+                       data-instock="true"
+                       data-consecrated="true"
+                       data-name="Natural Fibre Kusha Grass Meditation Mat">
+                <div class="flex flex-col">
+                  <div class="relative w-full aspect-square bg-surface-container overflow-hidden">
+                    <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuA9kEViU2A22uD9e8QNOQfRdX5oDuXGhHq4IFaXv9XB3C7e3Cjy_WmL5yFj56RW_p3N90eMlzTxzaTefRY7Lrc6u-rLSSNxhUCJRRXgcXhPncL1dEmY0tCcURGPDutavGCFSVrHX4PDVCE-8jvDGISKV0-qw3XW-OdsQdclRDOiYM1yPf1yFAqcXsZBvgSd1v0YLTT8dH_DCwOhg2fMqBrtXI1_aNAtC_f-CuKoEuXZBflZKNJBJMDD4g"
+                         alt="Natural Fibre Kusha Grass Meditation Mat"
+                         class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div class="absolute top-3 left-3 flex flex-col gap-1">
+                      <span class="px-2.5 py-1 rounded bg-[#1F4D3A] text-white text-[10px] font-bold uppercase tracking-wider">
+                        Dinacharya Tool
+                      </span>
+                    </div>
+                    <span class="absolute top-3 right-3 px-2 py-0.5 rounded bg-surface-container-high text-primary text-[10px] font-bold uppercase tracking-wider border border-surface-variant">
+                      Hand-Loomed
+                    </span>
+
+                    <div class="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-200 flex items-center justify-center gap-2">
+                      <button type="button" onclick="openQuickViewModal('Natural Fibre Kusha Grass Meditation Mat', '₹ 1,420', '₹ 1,700', 'Dinacharya &amp; Wellness Tools', 'Tridoshic (All Types)', 'Handwoven organic cotton and kusha grass mat intended for daily contemplative routines, pranayama, and grounded stillness.', 'https://lh3.googleusercontent.com/aida-public/AB6AXuA9kEViU2A22uD9e8QNOQfRdX5oDuXGhHq4IFaXv9XB3C7e3Cjy_WmL5yFj56RW_p3N90eMlzTxzaTefRY7Lrc6u-rLSSNxhUCJRRXgcXhPncL1dEmY0tCcURGPDutavGCFSVrHX4PDVCE-8jvDGISKV0-qw3XW-OdsQdclRDOiYM1yPf1yFAqcXsZBvgSd1v0YLTT8dH_DCwOhg2fMqBrtXI1_aNAtC_f-CuKoEuXZBflZKNJBJMDD4g')" class="p-2.5 bg-white text-primary rounded-full hover:bg-secondary hover:text-white transition-colors shadow-md">
+                        <span class="material-symbols-outlined text-[20px] block">visibility</span>
+                      </button>
+                      <button type="button" onclick="addToCart('Natural Fibre Kusha Grass Meditation Mat', 1420)" class="p-2.5 bg-primary text-white rounded-full hover:bg-secondary transition-colors shadow-md">
+                        <span class="material-symbols-outlined text-[20px] block">add_shopping_cart</span>
+                      </button>
+                    </div>
+                  </div>
+
+                  <div class="p-5 flex flex-col gap-2">
+                    <div class="flex items-center justify-between text-[11px] text-on-surface-variant uppercase tracking-wider">
+                      <span class="text-secondary font-semibold">Pranayama Sadhana</span>
+                      <div class="flex items-center gap-1 text-[#B38A3E]">
+                        <span class="material-symbols-outlined text-[14px]">star</span>
+                        <span class="font-bold text-on-surface">4.8</span>
+                        <span class="text-outline text-[10px]">(38)</span>
+                      </div>
+                    </div>
+
+                    <h3 class="font-display text-lg font-bold text-primary group-hover:text-secondary transition-colors leading-snug">
+                      <a href="single_product.html">Natural Fibre Kusha Meditation Mat</a>
+                    </h3>
+                    
+                    <p class="text-xs text-on-surface-variant line-clamp-2 leading-relaxed">
+                      Handwoven sacred Kusha grass interwoven with unbleached cotton for grounded seated stability.
+                    </p>
+
+                    <div class="pt-2 flex items-baseline gap-2">
+                      <span class="font-display text-xl font-bold text-primary">₹ 1,420</span>
+                      <span class="text-xs text-outline line-through">₹ 1,700</span>
+                      <span class="text-[11px] font-semibold text-secondary">Save 16%</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="p-5 pt-0 grid grid-cols-2 gap-2">
+                  <a href="single_product.html" class="py-2.5 px-3 text-center rounded-lg border border-surface-variant text-primary hover:bg-surface-container font-semibold text-xs uppercase tracking-wider transition-colors">
+                    Details
+                  </a>
+                  <button type="button" onclick="addToCart('Natural Fibre Kusha Grass Meditation Mat', 1420)" class="py-2.5 px-3 bg-primary text-white hover:bg-secondary rounded-lg font-semibold text-xs uppercase tracking-wider transition-colors shadow-xs flex items-center justify-center gap-1">
+                    <span class="material-symbols-outlined text-[16px]">shopping_bag</span>
+                    <span>Add</span>
+                  </button>
+                </div>
+              </article>
+
+              <!-- PRODUCT 8: Tejas Digestive Botanical Herbal Tisane -->
+              <article class="product-item group bg-white rounded-xl overflow-hidden border border-surface-variant hover:border-[#B38A3E] shadow-xs hover:shadow-md transition-all duration-300 flex flex-col justify-between"
+                       data-category="tea"
+                       data-dosha="tridoshic"
+                       data-price="520"
+                       data-rating="4.7"
+                       data-instock="true"
+                       data-consecrated="false"
+                       data-name="Tejas Digestive Botanical Herbal Tisane (250g)">
+                <div class="flex flex-col">
+                  <div class="relative w-full aspect-square bg-surface-container overflow-hidden">
+                    <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBROB01nkP9QXGg6FnyBdk6s5yY1ZD61TBlFzfvkfiTFl5_WLU3sTBbk0BUtoOtIWQhGFuuExi-N_qCMDiswF4pnzlwwklyAsTkh_VZx24h2Ykmm3L0ejQ0LUmASphfVRk9fccMlUj5EYYBuSZ8KkPe1anV1xa-62WQHsCEpzVdAfvljOc0CizI7aflg5dLi_1sSwKOp4OTSGu23jmXwqrYgLRVtClWkAjfVyZVbpg0bTQ5yxMdA2DfPw"
+                         alt="Tejas Digestive Botanical Herbal Tisane"
+                         class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div class="absolute top-3 left-3 flex flex-col gap-1">
+                      <span class="px-2.5 py-1 rounded bg-[#1F4D3A] text-white text-[10px] font-bold uppercase tracking-wider">
+                        Botanical Tisane
+                      </span>
+                    </div>
+                    <span class="absolute top-3 right-3 px-2 py-0.5 rounded bg-surface-container-high text-primary text-[10px] font-bold uppercase tracking-wider border border-surface-variant">
+                      Caffeine-Free
+                    </span>
+
+                    <div class="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-200 flex items-center justify-center gap-2">
+                      <button type="button" onclick="openQuickViewModal('Tejas Digestive Botanical Herbal Tisane (250g)', '₹ 520', '₹ 620', 'Tisanes &amp; Teas', 'Agni Support / Tridoshic', 'Digestive botanical infusion crafted with traditional culinary spices to support physiological metabolism and mental lightness without stimulating excess Pitta.', 'https://lh3.googleusercontent.com/aida-public/AB6AXuBROB01nkP9QXGg6FnyBdk6s5yY1ZD61TBlFzfvkfiTFl5_WLU3sTBbk0BUtoOtIWQhGFuuExi-N_qCMDiswF4pnzlwwklyAsTkh_VZx24h2Ykmm3L0ejQ0LUmASphfVRk9fccMlUj5EYYBuSZ8KkPe1anV1xa-62WQHsCEpzVdAfvljOc0CizI7aflg5dLi_1sSwKOp4OTSGu23jmXwqrYgLRVtClWkAjfVyZVbpg0bTQ5yxMdA2DfPw')" class="p-2.5 bg-white text-primary rounded-full hover:bg-secondary hover:text-white transition-colors shadow-md">
+                        <span class="material-symbols-outlined text-[20px] block">visibility</span>
+                      </button>
+                      <button type="button" onclick="addToCart('Tejas Digestive Botanical Herbal Tisane (250g)', 520)" class="p-2.5 bg-primary text-white rounded-full hover:bg-secondary transition-colors shadow-md">
+                        <span class="material-symbols-outlined text-[20px] block">add_shopping_cart</span>
+                      </button>
+                    </div>
+                  </div>
+
+                  <div class="p-5 flex flex-col gap-2">
+                    <div class="flex items-center justify-between text-[11px] text-on-surface-variant uppercase tracking-wider">
+                      <span class="text-secondary font-semibold">Agni Enhancement</span>
+                      <div class="flex items-center gap-1 text-[#B38A3E]">
+                        <span class="material-symbols-outlined text-[14px]">star</span>
+                        <span class="font-bold text-on-surface">4.7</span>
+                        <span class="text-outline text-[10px]">(49)</span>
+                      </div>
+                    </div>
+
+                    <h3 class="font-display text-lg font-bold text-primary group-hover:text-secondary transition-colors leading-snug">
+                      <a href="single_product.html">Tejas Digestive Herbal Tisane</a>
+                    </h3>
+                    
+                    <p class="text-xs text-on-surface-variant line-clamp-2 leading-relaxed">
+                      Dry ginger, cardamom, holy basil, and roasted cumin to kindle digestion without aggravating Pitta heat.
+                    </p>
+
+                    <div class="pt-2 flex items-baseline gap-2">
+                      <span class="font-display text-xl font-bold text-primary">₹ 520</span>
+                      <span class="text-xs text-outline line-through">₹ 620</span>
+                      <span class="text-[11px] font-semibold text-secondary">Save 16%</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="p-5 pt-0 grid grid-cols-2 gap-2">
+                  <a href="single_product.html" class="py-2.5 px-3 text-center rounded-lg border border-surface-variant text-primary hover:bg-surface-container font-semibold text-xs uppercase tracking-wider transition-colors">
+                    Details
+                  </a>
+                  <button type="button" onclick="addToCart('Tejas Digestive Botanical Herbal Tisane (250g)', 520)" class="py-2.5 px-3 bg-primary text-white hover:bg-secondary rounded-lg font-semibold text-xs uppercase tracking-wider transition-colors shadow-xs flex items-center justify-center gap-1">
+                    <span class="material-symbols-outlined text-[16px]">shopping_bag</span>
+                    <span>Add</span>
+                  </button>
+                </div>
+              </article>
+
+              <!-- PRODUCT 9: Brahmi Vati Gold Grade -->
+              <article class="product-item group bg-white rounded-xl overflow-hidden border border-surface-variant hover:border-[#B38A3E] shadow-xs hover:shadow-md transition-all duration-300 flex flex-col justify-between"
+                       data-category="ayurveda"
+                       data-dosha="pitta"
+                       data-price="950"
+                       data-rating="4.9"
+                       data-instock="true"
+                       data-consecrated="true"
+                       data-name="Brahmi Vati Gold Grade (60 Tablets)">
+                <div class="flex flex-col">
+                  <div class="relative w-full aspect-square bg-surface-container overflow-hidden">
+                    <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDb6QxaPzM40dQy9YjSGVey-gVhll5SEY7Ir_xH6Fzzg1NSd2Fors_n8mtyXLZvjrsxRSZqA6RRwsrEsoLscnTHQly16AhlZjB4mmff8G9Do1fqvaujacy3_G8UCM8bhpzhOdKI0r9bi-FfSB8ItNtx7gI6YbAwJ2cddqXejqchE_7RxH0ejS49E4Ndn3MWPje1I6TYDE2avBWVV6QpVGVBlJ-5xf064KYQefqsbMppdpgxfmZPfSZdqQ"
+                         alt="Brahmi Vati Gold Grade"
+                         class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div class="absolute top-3 left-3 flex flex-col gap-1">
+                      <span class="px-2.5 py-1 rounded bg-[#1F4D3A] text-white text-[10px] font-bold uppercase tracking-wider">
+                        Classical Ayurveda
+                      </span>
+                      <span class="px-2 py-0.5 rounded bg-surface-container-high text-primary text-[10px] font-bold uppercase tracking-wider border border-surface-variant">
+                        Pitta Cooling
+                      </span>
+                    </div>
+                    <span class="absolute top-3 right-3 px-2 py-0.5 rounded bg-[#C66A22] text-white text-[10px] font-bold uppercase tracking-wider">
+                      Suvarna Vati
+                    </span>
+
+                    <div class="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-200 flex items-center justify-center gap-2">
+                      <button type="button" onclick="openQuickViewModal('Brahmi Vati Gold Grade (60 Tablets)', '₹ 950', '₹ 1,100', 'Classical Ayurveda', 'Pitta-Vata Calming', 'Standardized classical tablet preparation featuring purified Bacopa monnieri, Shankhpushpi, and Swarna Bhasma traces for acute cognitive exhaustion.', 'https://lh3.googleusercontent.com/aida-public/AB6AXuDb6QxaPzM40dQy9YjSGVey-gVhll5SEY7Ir_xH6Fzzg1NSd2Fors_n8mtyXLZvjrsxRSZqA6RRwsrEsoLscnTHQly16AhlZjB4mmff8G9Do1fqvaujacy3_G8UCM8bhpzhOdKI0r9bi-FfSB8ItNtx7gI6YbAwJ2cddqXejqchE_7RxH0ejS49E4Ndn3MWPje1I6TYDE2avBWVV6QpVGVBlJ-5xf064KYQefqsbMppdpgxfmZPfSZdqQ')" class="p-2.5 bg-white text-primary rounded-full hover:bg-secondary hover:text-white transition-colors shadow-md">
+                        <span class="material-symbols-outlined text-[20px] block">visibility</span>
+                      </button>
+                      <button type="button" onclick="addToCart('Brahmi Vati Gold Grade (60 Tablets)', 950)" class="p-2.5 bg-primary text-white rounded-full hover:bg-secondary transition-colors shadow-md">
+                        <span class="material-symbols-outlined text-[20px] block">add_shopping_cart</span>
+                      </button>
+                    </div>
+                  </div>
+
+                  <div class="p-5 flex flex-col gap-2">
+                    <div class="flex items-center justify-between text-[11px] text-on-surface-variant uppercase tracking-wider">
+                      <span class="text-secondary font-semibold">Medhya Support</span>
+                      <div class="flex items-center gap-1 text-[#B38A3E]">
+                        <span class="material-symbols-outlined text-[14px]">star</span>
+                        <span class="font-bold text-on-surface">4.9</span>
+                        <span class="text-outline text-[10px]">(58)</span>
+                      </div>
+                    </div>
+
+                    <h3 class="font-display text-lg font-bold text-primary group-hover:text-secondary transition-colors leading-snug">
+                      <a href="single_product.html">Brahmi Vati Gold Grade</a>
+                    </h3>
+                    
+                    <p class="text-xs text-on-surface-variant line-clamp-2 leading-relaxed">
+                      Micro-pulverized Brahmi with Suvarna micro-traces for mental stamina, memory retention, and nervous equilibrium.
+                    </p>
+
+                    <div class="pt-2 flex items-baseline gap-2">
+                      <span class="font-display text-xl font-bold text-primary">₹ 950</span>
+                      <span class="text-xs text-outline line-through">₹ 1,100</span>
+                      <span class="text-[11px] font-semibold text-secondary">Save 14%</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="p-5 pt-0 grid grid-cols-2 gap-2">
+                  <a href="single_product.html" class="py-2.5 px-3 text-center rounded-lg border border-surface-variant text-primary hover:bg-surface-container font-semibold text-xs uppercase tracking-wider transition-colors">
+                    Details
+                  </a>
+                  <button type="button" onclick="addToCart('Brahmi Vati Gold Grade (60 Tablets)', 950)" class="py-2.5 px-3 bg-primary text-white hover:bg-secondary rounded-lg font-semibold text-xs uppercase tracking-wider transition-colors shadow-xs flex items-center justify-center gap-1">
+                    <span class="material-symbols-outlined text-[16px]">shopping_bag</span>
+                    <span>Add</span>
+                  </button>
+                </div>
+              </article>
+
+              <!-- PRODUCT 10: Vastu Brass Pyramid Energy Stabilizer -->
+              <article class="product-item group bg-white rounded-xl overflow-hidden border border-surface-variant hover:border-[#B38A3E] shadow-xs hover:shadow-md transition-all duration-300 flex flex-col justify-between"
+                       data-category="vastu"
+                       data-dosha="tridoshic"
+                       data-price="4800"
+                       data-rating="5.0"
+                       data-instock="true"
+                       data-consecrated="true"
+                       data-name="Vastu Brass Pyramid Energy Stabilizer (Set of 9)">
+                <div class="flex flex-col">
+                  <div class="relative w-full aspect-square bg-surface-container overflow-hidden">
+                    <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDG3b7zIrv33h2LYwhCoyPOHqkymSSlMyK_sZEGTIH8dqMfS8Os5x6IOGsW4dZ_YyGtlmGrsmIjQfRDGlyM3FL5P0clSVLzeZrRg_av2Anp2pxaoSHsP8k8uzc2Hi9N65vTxEhFSNUyEh1_tFDcO_FDu4jReOmNt7bhz9jqWac8cDm7ENDczBmYWeE9oprMHlcu5WEnfmfbaPUPdzZ4XaAnnIa5o5n5wf0ikii1-BVF0P6Ihx2W-X_7Lg"
+                         alt="Vastu Brass Pyramid Energy Stabilizer"
+                         class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div class="absolute top-3 left-3 flex flex-col gap-1">
+                      <span class="px-2.5 py-1 rounded bg-[#1F4D3A] text-white text-[10px] font-bold uppercase tracking-wider">
+                        Vastu Remedy
+                      </span>
+                    </div>
+                    <span class="absolute top-3 right-3 px-2 py-0.5 rounded bg-[#B38A3E] text-white text-[10px] font-bold uppercase tracking-wider">
+                      Master Instrument
+                    </span>
+
+                    <div class="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-200 flex items-center justify-center gap-2">
+                      <button type="button" onclick="openQuickViewModal('Vastu Brass Pyramid Energy Stabilizer (Set of 9)', '₹ 4,800', '₹ 5,400', 'Vastu Yantras &amp; Instruments', 'Spatial Energization', 'Solid bell-brass pyramid grid engineered to harmonize directional faults without structural demolition in residences and workspaces.', 'https://lh3.googleusercontent.com/aida-public/AB6AXuDG3b7zIrv33h2LYwhCoyPOHqkymSSlMyK_sZEGTIH8dqMfS8Os5x6IOGsW4dZ_YyGtlmGrsmIjQfRDGlyM3FL5P0clSVLzeZrRg_av2Anp2pxaoSHsP8k8uzc2Hi9N65vTxEhFSNUyEh1_tFDcO_FDu4jReOmNt7bhz9jqWac8cDm7ENDczBmYWeE9oprMHlcu5WEnfmfbaPUPdzZ4XaAnnIa5o5n5wf0ikii1-BVF0P6Ihx2W-X_7Lg')" class="p-2.5 bg-white text-primary rounded-full hover:bg-secondary hover:text-white transition-colors shadow-md">
+                        <span class="material-symbols-outlined text-[20px] block">visibility</span>
+                      </button>
+                      <button type="button" onclick="addToCart('Vastu Brass Pyramid Energy Stabilizer (Set of 9)', 4800)" class="p-2.5 bg-primary text-white rounded-full hover:bg-secondary transition-colors shadow-md">
+                        <span class="material-symbols-outlined text-[20px] block">add_shopping_cart</span>
+                      </button>
+                    </div>
+                  </div>
+
+                  <div class="p-5 flex flex-col gap-2">
+                    <div class="flex items-center justify-between text-[11px] text-on-surface-variant uppercase tracking-wider">
+                      <span class="text-secondary font-semibold">Bio-Geometric Rectification</span>
+                      <div class="flex items-center gap-1 text-[#B38A3E]">
+                        <span class="material-symbols-outlined text-[14px]">star</span>
+                        <span class="font-bold text-on-surface">5.0</span>
+                        <span class="text-outline text-[10px]">(21)</span>
+                      </div>
+                    </div>
+
+                    <h3 class="font-display text-lg font-bold text-primary group-hover:text-secondary transition-colors leading-snug">
+                      <a href="single_product.html">Vastu Brass Pyramid Energy Stabilizer</a>
+                    </h3>
+                    
+                    <p class="text-xs text-on-surface-variant line-clamp-2 leading-relaxed">
+                      Solid brass 9-pyramid grid engineered for non-destructive energy amplification in compromised floor plans.
+                    </p>
+
+                    <div class="pt-2 flex items-baseline gap-2">
+                      <span class="font-display text-xl font-bold text-primary">₹ 4,800</span>
+                      <span class="text-xs text-outline line-through">₹ 5,400</span>
+                      <span class="text-[11px] font-semibold text-secondary">Save 11%</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="p-5 pt-0 grid grid-cols-2 gap-2">
+                  <a href="single_product.html" class="py-2.5 px-3 text-center rounded-lg border border-surface-variant text-primary hover:bg-surface-container font-semibold text-xs uppercase tracking-wider transition-colors">
+                    Details
+                  </a>
+                  <button type="button" onclick="addToCart('Vastu Brass Pyramid Energy Stabilizer (Set of 9)', 4800)" class="py-2.5 px-3 bg-primary text-white hover:bg-secondary rounded-lg font-semibold text-xs uppercase tracking-wider transition-colors shadow-xs flex items-center justify-center gap-1">
+                    <span class="material-symbols-outlined text-[16px]">shopping_bag</span>
+                    <span>Add</span>
+                  </button>
+                </div>
+              </article>
+
+              <!-- PRODUCT 11: Kumkumadi Tailam Miraculous Saffron Oil -->
+              <article class="product-item group bg-white rounded-xl overflow-hidden border border-surface-variant hover:border-[#B38A3E] shadow-xs hover:shadow-md transition-all duration-300 flex flex-col justify-between"
+                       data-category="ayurveda"
+                       data-dosha="tridoshic"
+                       data-price="1650"
+                       data-rating="5.0"
+                       data-instock="true"
+                       data-consecrated="true"
+                       data-name="Kumkumadi Tailam Saffron Beauty Oil (30ml)">
+                <div class="flex flex-col">
+                  <div class="relative w-full aspect-square bg-surface-container overflow-hidden">
+                    <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDzS8zZ9hTvmWXyEaVWRRb7ydgc1M6YKS1gbWzGeE9BKZDKaHLHr2VUFz4VJjYH4imAUA9HGIpgQxVGHHF4FHlmm7loRr5YUrWrfWNF80PTlprOxp4zkgI-0tkxvJYjkPFCBizEjj_VUrdbx7hLsKBUsgUjaoD9ITXqogppedMJtsdvadG_z_Hfod6WbSltecAewhrzhtoJ6mNWPwk-MqFAiKFDY2XnjgZktyg97f_gfKfa-tCv_xdqng"
+                         alt="Kumkumadi Tailam Saffron Beauty Oil"
+                         class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div class="absolute top-3 left-3 flex flex-col gap-1">
+                      <span class="px-2.5 py-1 rounded bg-[#1F4D3A] text-white text-[10px] font-bold uppercase tracking-wider">
+                        Classical Ayurveda
+                      </span>
+                    </div>
+                    <span class="absolute top-3 right-3 px-2 py-0.5 rounded bg-[#C66A22] text-white text-[10px] font-bold uppercase tracking-wider">
+                      Pure Saffron
+                    </span>
+
+                    <div class="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-200 flex items-center justify-center gap-2">
+                      <button type="button" onclick="openQuickViewModal('Kumkumadi Tailam Saffron Beauty Oil (30ml)', '₹ 1,650', '₹ 1,950', 'Classical Ayurveda', 'Tridoshic Beauty', 'Formulated according to Ashtanga Hridaya using 26 precious herbs, Kashmiri saffron, red sandalwood, and organic goat milk for cellular radiance.', 'https://lh3.googleusercontent.com/aida-public/AB6AXuDzS8zZ9hTvmWXyEaVWRRb7ydgc1M6YKS1gbWzGeE9BKZDKaHLHr2VUFz4VJjYH4imAUA9HGIpgQxVGHHF4FHlmm7loRr5YUrWrfWNF80PTlprOxp4zkgI-0tkxvJYjkPFCBizEjj_VUrdbx7hLsKBUsgUjaoD9ITXqogppedMJtsdvadG_z_Hfod6WbSltecAewhrzhtoJ6mNWPwk-MqFAiKFDY2XnjgZktyg97f_gfKfa-tCv_xdqng')" class="p-2.5 bg-white text-primary rounded-full hover:bg-secondary hover:text-white transition-colors shadow-md">
+                        <span class="material-symbols-outlined text-[20px] block">visibility</span>
+                      </button>
+                      <button type="button" onclick="addToCart('Kumkumadi Tailam Saffron Beauty Oil (30ml)', 1650)" class="p-2.5 bg-primary text-white rounded-full hover:bg-secondary transition-colors shadow-md">
+                        <span class="material-symbols-outlined text-[20px] block">add_shopping_cart</span>
+                      </button>
+                    </div>
+                  </div>
+
+                  <div class="p-5 flex flex-col gap-2">
+                    <div class="flex items-center justify-between text-[11px] text-on-surface-variant uppercase tracking-wider">
+                      <span class="text-secondary font-semibold">Varnya Radiance</span>
+                      <div class="flex items-center gap-1 text-[#B38A3E]">
+                        <span class="material-symbols-outlined text-[14px]">star</span>
+                        <span class="font-bold text-on-surface">5.0</span>
+                        <span class="text-outline text-[10px]">(91)</span>
+                      </div>
+                    </div>
+
+                    <h3 class="font-display text-lg font-bold text-primary group-hover:text-secondary transition-colors leading-snug">
+                      <a href="single_product.html">Kumkumadi Tailam Saffron Oil</a>
+                    </h3>
+                    
+                    <p class="text-xs text-on-surface-variant line-clamp-2 leading-relaxed">
+                      Classical Ashtanga formulation cooked with pure Kashmiri saffron for cellular brightness and tone clarity.
+                    </p>
+
+                    <div class="pt-2 flex items-baseline gap-2">
+                      <span class="font-display text-xl font-bold text-primary">₹ 1,650</span>
+                      <span class="text-xs text-outline line-through">₹ 1,950</span>
+                      <span class="text-[11px] font-semibold text-secondary">Save 15%</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="p-5 pt-0 grid grid-cols-2 gap-2">
+                  <a href="single_product.html" class="py-2.5 px-3 text-center rounded-lg border border-surface-variant text-primary hover:bg-surface-container font-semibold text-xs uppercase tracking-wider transition-colors">
+                    Details
+                  </a>
+                  <button type="button" onclick="addToCart('Kumkumadi Tailam Saffron Beauty Oil (30ml)', 1650)" class="py-2.5 px-3 bg-primary text-white hover:bg-secondary rounded-lg font-semibold text-xs uppercase tracking-wider transition-colors shadow-xs flex items-center justify-center gap-1">
+                    <span class="material-symbols-outlined text-[16px]">shopping_bag</span>
+                    <span>Add</span>
+                  </button>
+                </div>
+              </article>
+
+              <!-- PRODUCT 12: Shanti Ayurvedic Herbal Sleep Tisane -->
+              <article class="product-item group bg-white rounded-xl overflow-hidden border border-surface-variant hover:border-[#B38A3E] shadow-xs hover:shadow-md transition-all duration-300 flex flex-col justify-between"
+                       data-category="tea"
+                       data-dosha="vata"
+                       data-price="480"
+                       data-rating="4.8"
+                       data-instock="true"
+                       data-consecrated="false"
+                       data-name="Shanti Ayurvedic Herbal Sleep Tisane (200g)">
+                <div class="flex flex-col">
+                  <div class="relative w-full aspect-square bg-surface-container overflow-hidden">
+                    <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBROB01nkP9QXGg6FnyBdk6s5yY1ZD61TBlFzfvkfiTFl5_WLU3sTBbk0BUtoOtIWQhGFuuExi-N_qCMDiswF4pnzlwwklyAsTkh_VZx24h2Ykmm3L0ejQ0LUmASphfVRk9fccMlUj5EYYBuSZ8KkPe1anV1xa-62WQHsCEpzVdAfvljOc0CizI7aflg5dLi_1sSwKOp4OTSGu23jmXwqrYgLRVtClWkAjfVyZVbpg0bTQ5yxMdA2DfPw"
+                         alt="Shanti Ayurvedic Herbal Sleep Tisane"
+                         class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div class="absolute top-3 left-3 flex flex-col gap-1">
+                      <span class="px-2.5 py-1 rounded bg-[#1F4D3A] text-white text-[10px] font-bold uppercase tracking-wider">
+                        Botanical Tisane
+                      </span>
+                    </div>
+                    <span class="absolute top-3 right-3 px-2 py-0.5 rounded bg-surface-container-high text-primary text-[10px] font-bold uppercase tracking-wider border border-surface-variant">
+                      Night Elixir
+                    </span>
+
+                    <div class="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-200 flex items-center justify-center gap-2">
+                      <button type="button" onclick="openQuickViewModal('Shanti Ayurvedic Herbal Sleep Tisane (200g)', '₹ 480', '₹ 580', 'Tisanes &amp; Teas', 'Vata-Pitta Relaxing', 'Soothing bedtime infusion of Indian valerian (Tagara), Shankhpushpi, nutmeg, and organic chamomile to promote deep, uninterrupted REM rest.', 'https://lh3.googleusercontent.com/aida-public/AB6AXuBROB01nkP9QXGg6FnyBdk6s5yY1ZD61TBlFzfvkfiTFl5_WLU3sTBbk0BUtoOtIWQhGFuuExi-N_qCMDiswF4pnzlwwklyAsTkh_VZx24h2Ykmm3L0ejQ0LUmASphfVRk9fccMlUj5EYYBuSZ8KkPe1anV1xa-62WQHsCEpzVdAfvljOc0CizI7aflg5dLi_1sSwKOp4OTSGu23jmXwqrYgLRVtClWkAjfVyZVbpg0bTQ5yxMdA2DfPw')" class="p-2.5 bg-white text-primary rounded-full hover:bg-secondary hover:text-white transition-colors shadow-md">
+                        <span class="material-symbols-outlined text-[20px] block">visibility</span>
+                      </button>
+                      <button type="button" onclick="addToCart('Shanti Ayurvedic Herbal Sleep Tisane (200g)', 480)" class="p-2.5 bg-primary text-white rounded-full hover:bg-secondary transition-colors shadow-md">
+                        <span class="material-symbols-outlined text-[20px] block">add_shopping_cart</span>
+                      </button>
+                    </div>
+                  </div>
+
+                  <div class="p-5 flex flex-col gap-2">
+                    <div class="flex items-center justify-between text-[11px] text-on-surface-variant uppercase tracking-wider">
+                      <span class="text-secondary font-semibold">Nidra Support</span>
+                      <div class="flex items-center gap-1 text-[#B38A3E]">
+                        <span class="material-symbols-outlined text-[14px]">star</span>
+                        <span class="font-bold text-on-surface">4.8</span>
+                        <span class="text-outline text-[10px]">(34)</span>
+                      </div>
+                    </div>
+
+                    <h3 class="font-display text-lg font-bold text-primary group-hover:text-secondary transition-colors leading-snug">
+                      <a href="single_product.html">Shanti Herbal Sleep Tisane</a>
+                    </h3>
+                    
+                    <p class="text-xs text-on-surface-variant line-clamp-2 leading-relaxed">
+                      Tagara, Shankhpushpi, and fragrant chamomile blended to soothe nervous over-stimulation before nightfall.
+                    </p>
+
+                    <div class="pt-2 flex items-baseline gap-2">
+                      <span class="font-display text-xl font-bold text-primary">₹ 480</span>
+                      <span class="text-xs text-outline line-through">₹ 580</span>
+                      <span class="text-[11px] font-semibold text-secondary">Save 17%</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="p-5 pt-0 grid grid-cols-2 gap-2">
+                  <a href="single_product.html" class="py-2.5 px-3 text-center rounded-lg border border-surface-variant text-primary hover:bg-surface-container font-semibold text-xs uppercase tracking-wider transition-colors">
+                    Details
+                  </a>
+                  <button type="button" onclick="addToCart('Shanti Ayurvedic Herbal Sleep Tisane (200g)', 480)" class="py-2.5 px-3 bg-primary text-white hover:bg-secondary rounded-lg font-semibold text-xs uppercase tracking-wider transition-colors shadow-xs flex items-center justify-center gap-1">
+                    <span class="material-symbols-outlined text-[16px]">shopping_bag</span>
+                    <span>Add</span>
+                  </button>
+                </div>
+              </article>
+
+            </div>
+
+            <!-- EMPTY STATE: NO MATCHING REMEDIES -->
+            <div id="no-products-state" class="hidden bg-white rounded-xl border border-surface-variant p-12 text-center space-y-4">
+              <div class="w-16 h-16 rounded-full bg-surface-container flex items-center justify-center mx-auto text-secondary">
+                <span class="material-symbols-outlined text-[32px]">filter_list_off</span>
+              </div>
+              <h3 class="font-display text-2xl font-bold text-primary">No Dispensary Remedies Found</h3>
+              <p class="text-sm text-on-surface-variant max-w-md mx-auto leading-relaxed">
+                No items match your active filter criteria. Try expanding your price range, searching for different botanical herbs, or clearing your filters.
+              </p>
+              <button type="button" onclick="resetAllFilters()" class="inline-flex items-center gap-2 px-6 py-2.5 bg-primary text-white text-xs font-semibold uppercase tracking-wider rounded-lg hover:bg-secondary transition-colors">
+                <span class="material-symbols-outlined text-[16px]">restart_alt</span>
+                <span>Reset All Filters</span>
+              </button>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ASSURANCE & ETHICAL SOURCING PILLARS -->
+    <section class="w-full bg-[#F6ECE4] py-16 border-t border-[#E8D8BC]">
+      <div class="max-w-[1440px] mx-auto px-6 lg:px-margin">
+        <div class="text-center max-w-2xl mx-auto mb-12">
+          <span class="text-xs uppercase font-bold tracking-widest text-secondary block mb-2">The ANUKUL Dispensary Standard</span>
+          <h2 class="font-display text-3xl sm:text-4xl text-primary font-bold tracking-tight">Authentic Vaidya Oversight &amp; Metallurgy</h2>
+          <p class="text-sm text-on-surface-variant mt-3 leading-relaxed">
+            Every botanical batch and sacred metal instrument is prepared under verified classical protocols, free from commercial shortcuts.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div class="bg-white rounded-xl p-6 border border-[#E8D8BC] shadow-xs flex flex-col justify-between">
+            <div class="space-y-3">
+              <div class="w-12 h-12 rounded-lg bg-surface-container flex items-center justify-center text-primary">
+                <span class="material-symbols-outlined text-[26px]">biotech</span>
+              </div>
+              <h3 class="font-display text-lg font-bold text-primary">Certified Heavy Metal Testing</h3>
+              <p class="text-xs text-on-surface-variant leading-relaxed">
+                All classical herbs, Rasayanas, and Bhasma compounds are rigorously laboratory-tested for purity, microbial safety, and permissible mineral trace integrity.
+              </p>
+            </div>
+            <div class="pt-4 mt-4 border-t border-surface-variant text-[11px] font-bold uppercase tracking-wider text-secondary">
+              100% Classical Purity
+            </div>
+          </div>
+
+          <div class="bg-white rounded-xl p-6 border border-[#E8D8BC] shadow-xs flex flex-col justify-between">
+            <div class="space-y-3">
+              <div class="w-12 h-12 rounded-lg bg-surface-container flex items-center justify-center text-primary">
+                <span class="material-symbols-outlined text-[26px]">balance</span>
+              </div>
+              <h3 class="font-display text-lg font-bold text-primary">78:22 Bell Metal Guarantee</h3>
+              <p class="text-xs text-on-surface-variant leading-relaxed">
+                Our Kansa Vatki massage bowls and puja utensils are forged by traditional hereditary bronze smiths with exact 78% copper and 22% tin ratios, zero lead, and zero zinc.
+              </p>
+            </div>
+            <div class="pt-4 mt-4 border-t border-surface-variant text-[11px] font-bold uppercase tracking-wider text-secondary">
+              Hand-Beaten Metallurgy
+            </div>
+          </div>
+
+          <div class="bg-white rounded-xl p-6 border border-[#E8D8BC] shadow-xs flex flex-col justify-between">
+            <div class="space-y-3">
+              <div class="w-12 h-12 rounded-lg bg-surface-container flex items-center justify-center text-primary">
+                <span class="material-symbols-outlined text-[26px]">psychology_alt</span>
+              </div>
+              <h3 class="font-display text-lg font-bold text-primary">Prakriti &amp; Nadi Harmony</h3>
+              <p class="text-xs text-on-surface-variant leading-relaxed">
+                We believe in tailored wellness over mass consumption. You can schedule a direct constitutional consultation to verify exact herbal compatibility.
+              </p>
+            </div>
+            <div class="pt-4 mt-4 border-t border-surface-variant text-[11px] font-bold uppercase tracking-wider text-secondary">
+              Direct Clinical Advice
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DISPENSARY FAQ ACCORDION -->
+    <section class="w-full bg-white py-16 border-t border-surface-variant" id="shop-faqs">
+      <div class="max-w-[1000px] mx-auto px-6 lg:px-margin">
+        <div class="text-center mb-12">
+          <span class="text-xs uppercase font-bold tracking-widest text-secondary block mb-2">Clarity &amp; Dispensary Care</span>
+          <h2 class="font-display text-3xl sm:text-4xl text-primary font-bold tracking-tight">Frequently Asked Questions</h2>
+          <p class="text-sm text-on-surface-variant mt-2 max-w-lg mx-auto">
+            Practical guidance regarding classical formulations, shipping timelines, and practitioner consultation.
+          </p>
+        </div>
+
+        <div class="space-y-3" id="faq-accordion">
+          
+          <div class="faq-item rounded-xl bg-surface-container-low border border-surface-variant overflow-hidden transition-all">
+            <button type="button" aria-expanded="false" class="faq-toggle w-full px-6 py-4 flex items-center justify-between text-left focus:outline-none">
+              <span class="font-display text-base sm:text-lg font-semibold text-primary">How do I verify which products suit my biological constitution (Prakriti)?</span>
+              <span class="material-symbols-outlined text-secondary transition-transform duration-200">add</span>
+            </button>
+            <div class="faq-content hidden px-6 pb-5 text-xs sm:text-sm text-on-surface-variant border-t border-surface-variant/40 pt-3 leading-relaxed">
+              Every remedy features clear Doshic indicators (Vata, Pitta, Kapha, or Tridoshic). If you are uncertain about your current biological state (Vikriti), we strongly recommend booking a brief pulse analysis (Nadi Pariksha) or introductory clinical video consultation before initiating intensive internal Rasayanas.
+            </div>
+          </div>
+
+          <div class="faq-item rounded-xl bg-surface-container-low border border-surface-variant overflow-hidden transition-all">
+            <button type="button" aria-expanded="false" class="faq-toggle w-full px-6 py-4 flex items-center justify-between text-left focus:outline-none">
+              <span class="font-display text-base sm:text-lg font-semibold text-primary">What makes ANUKUL Kansa Vatki bowls distinct from mass commercial bronze?</span>
+              <span class="material-symbols-outlined text-secondary transition-transform duration-200">add</span>
+            </button>
+            <div class="faq-content hidden px-6 pb-5 text-xs sm:text-sm text-on-surface-variant border-t border-surface-variant/40 pt-3 leading-relaxed">
+              Commercial bronze often contains traces of lead, nickel, or zinc to reduce manufacturing costs. ANUKUL Kansa bowls are strictly crafted from 78% pure copper and 22% pure tin bell-metal alloys, hand-hammered by hereditary artisan families and verified safe for prolonged skin contact with warm ghee or medicated oils.
+            </div>
+          </div>
+
+          <div class="faq-item rounded-xl bg-surface-container-low border border-surface-variant overflow-hidden transition-all">
+            <button type="button" aria-expanded="false" class="faq-toggle w-full px-6 py-4 flex items-center justify-between text-left focus:outline-none">
+              <span class="font-display text-base sm:text-lg font-semibold text-primary">What are your domestic dispatch and temperature-cushioned delivery timelines?</span>
+              <span class="material-symbols-outlined text-secondary transition-transform duration-200">add</span>
+            </button>
+            <div class="faq-content hidden px-6 pb-5 text-xs sm:text-sm text-on-surface-variant border-t border-surface-variant/40 pt-3 leading-relaxed">
+              All physical orders are processed within 24 to 48 hours. Classical herbal oils and sensitive Rasayanas are packaged in recyclable, temperature-buffered natural fibers. Standard surface delivery spans 3 to 6 business days across India, with live tracking sent via SMS and WhatsApp.
+            </div>
+          </div>
+
+          <div class="faq-item rounded-xl bg-surface-container-low border border-surface-variant overflow-hidden transition-all">
+            <button type="button" aria-expanded="false" class="faq-toggle w-full px-6 py-4 flex items-center justify-between text-left focus:outline-none">
+              <span class="font-display text-base sm:text-lg font-semibold text-primary">Are your Vastu Yantras consecrated prior to shipment?</span>
+              <span class="material-symbols-outlined text-secondary transition-transform duration-200">add</span>
+            </button>
+            <div class="faq-content hidden px-6 pb-5 text-xs sm:text-sm text-on-surface-variant border-t border-surface-variant/40 pt-3 leading-relaxed">
+              Yes. All copper Sri Yantras and directional brass implements undergo classical Vedic consecration (Prana Pratishtha) during auspicious planetary hours (Shubh Muhurta) by our senior sanctuary priests before being sealed and dispatched.
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- CONSULTATION CALL-TO-ACTION BANNER -->
+    <section class="w-full bg-[#1F4D3A] text-white py-14 border-t border-[#B38A3E]/30">
+      <div class="max-w-[1000px] mx-auto px-6 lg:px-margin text-center space-y-4">
+        <span class="inline-block text-xs uppercase font-bold tracking-[0.2em] text-[#B38A3E]">Personalized Vaidya Guidance</span>
+        <h2 class="font-display text-3xl sm:text-4xl lg:text-5xl font-normal leading-tight">
+          Not Sure Which Formulation Suits You?
+        </h2>
+        <p class="font-body text-sm sm:text-base text-white/80 max-w-xl mx-auto leading-relaxed">
+          Book an individual clinical assessment with Dr. Anshul to receive customized constitutional advice, herbal prescriptions, and residential Vastu recommendations.
+        </p>
+        <div class="pt-4 flex flex-wrap items-center justify-center gap-4">
+          <a href="book_your_consultation.html" class="px-8 py-3.5 bg-[#B38A3E] text-white hover:bg-secondary text-xs uppercase font-bold tracking-wider rounded-lg shadow-md transition-colors">
+            Book Nadi Pariksha Session
+          </a>
+          <a href="services.html" class="px-6 py-3.5 bg-transparent border border-white/40 hover:bg-white/10 text-white text-xs uppercase font-bold tracking-wider rounded-lg transition-colors">
+            Explore Clinical Services
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- DISCLAIMER NOTICE -->
+    <aside class="w-full bg-surface-container-high py-4 border-b border-surface-variant text-xs text-on-surface-variant">
+      <div class="max-w-[1440px] mx-auto px-6 lg:px-margin flex flex-col md:flex-row items-center justify-between gap-2">
+        <div class="flex items-center gap-2">
+          <span class="material-symbols-outlined text-secondary text-[18px]">info</span>
+          <p>
+            <strong>Responsible Practice Note:</strong> Products and information are presented for verified traditional Ayurvedic wellness and spatial study. These are not intended to replace licensed medical emergency treatment.
+          </p>
+        </div>
+        <a href="contact.html#disclaimer" class="font-semibold text-secondary hover:text-primary underline whitespace-nowrap">
+          Read Disclaimer →
+        </a>
+      </div>
+    </aside>
+
+  </main>
+
+  <!-- QUICK VIEW MODAL -->
+  <div id="quick-view-modal" class="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm hidden p-4">
+    <div class="bg-white rounded-2xl max-w-2xl w-full p-6 sm:p-8 border border-surface-variant shadow-2xl relative overflow-hidden max-h-[90vh] overflow-y-auto">
+      <button type="button" onclick="closeQuickViewModal()" class="absolute top-5 right-5 text-outline hover:text-primary transition-colors">
+        <span class="material-symbols-outlined text-[24px]">close</span>
+      </button>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 items-center">
+        <div class="aspect-square bg-surface-container rounded-xl overflow-hidden border border-surface-variant">
+          <img id="modal-img" src="" alt="Product" class="w-full h-full object-cover">
+        </div>
+
+        <div class="space-y-4">
+          <div>
+            <span id="modal-category" class="text-[10px] font-bold uppercase tracking-wider text-secondary block mb-1">Category</span>
+            <h3 id="modal-title" class="font-display text-2xl font-bold text-primary leading-tight">Product Title</h3>
+            <span id="modal-dosha" class="inline-block mt-1 px-2.5 py-0.5 rounded-full bg-surface-container text-primary text-[10px] font-semibold uppercase tracking-wider">Dosha</span>
+          </div>
+
+          <div class="flex items-baseline gap-2">
+            <span id="modal-price" class="font-display text-2xl font-bold text-primary">₹ 0</span>
+            <span id="modal-original-price" class="text-sm text-outline line-through">₹ 0</span>
+          </div>
+
+          <p id="modal-desc" class="text-xs text-on-surface-variant leading-relaxed">
+            Description
+          </p>
+
+          <div class="space-y-2 pt-2 border-t border-surface-variant">
+            <div class="flex items-center gap-3">
+              <span class="text-xs uppercase font-bold text-primary">Quantity:</span>
+              <div class="flex items-center bg-surface-container rounded-lg border border-surface-variant overflow-hidden">
+                <button type="button" onclick="adjustModalQty(-1)" class="px-3 py-1 text-primary hover:bg-surface-container-high font-bold">−</button>
+                <span id="modal-qty" class="px-4 py-1 text-xs font-bold text-primary select-none">1</span>
+                <button type="button" onclick="adjustModalQty(1)" class="px-3 py-1 text-primary hover:bg-surface-container-high font-bold">+</button>
+              </div>
+            </div>
+
+            <div class="grid grid-cols-2 gap-2 pt-2">
+              <button type="button" id="modal-add-btn" class="w-full py-2.5 px-4 bg-primary text-white hover:bg-secondary rounded-lg font-semibold text-xs uppercase tracking-wider transition-colors shadow-xs flex items-center justify-center gap-1.5">
+                <span class="material-symbols-outlined text-[16px]">shopping_bag</span>
+                <span>Add to Cart</span>
+              </button>
+              <a href="single_product.html" class="w-full py-2.5 px-4 text-center rounded-lg border border-surface-variant text-primary hover:bg-surface-container font-semibold text-xs uppercase tracking-wider transition-colors">
+                Full Page
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MOBILE FILTER SLIDE-OVER DRAWER -->
+  <div id="mobile-filter-drawer" class="fixed inset-0 z-50 flex justify-end bg-black/50 backdrop-blur-xs hidden transition-opacity">
+    <div class="w-full max-w-xs bg-white h-full shadow-2xl p-6 overflow-y-auto space-y-6 flex flex-col justify-between">
+      <div class="space-y-6">
+        <div class="flex items-center justify-between border-b border-surface-variant pb-4">
+          <div class="flex items-center gap-2">
+            <span class="material-symbols-outlined text-secondary text-[20px]">tune</span>
+            <h3 class="font-display text-lg font-bold text-primary">Filter Remedies</h3>
+          </div>
+          <button type="button" onclick="toggleMobileFilterDrawer(false)" class="text-outline hover:text-primary">
+            <span class="material-symbols-outlined text-[24px]">close</span>
+          </button>
+        </div>
+
+        <!-- Search in Mobile -->
+        <div class="space-y-1">
+          <label class="text-xs font-semibold uppercase text-on-surface-variant">Search</label>
+          <input type="text" id="mobile-search-input" placeholder="Search remedies..." class="w-full bg-surface-container-low border border-surface-variant rounded-lg px-3 py-2 text-xs">
+        </div>
+
+        <!-- Categories Mobile -->
+        <div class="space-y-2">
+          <h4 class="text-xs font-bold uppercase text-primary">Category</h4>
+          <div class="space-y-1 text-xs">
+            <button type="button" onclick="setCategoryFilter('all')" class="w-full text-left py-1.5 px-2 rounded hover:bg-surface-container">All Products</button>
+            <button type="button" onclick="setCategoryFilter('ayurveda')" class="w-full text-left py-1.5 px-2 rounded hover:bg-surface-container">Classical Ayurveda</button>
+            <button type="button" onclick="setCategoryFilter('wellness')" class="w-full text-left py-1.5 px-2 rounded hover:bg-surface-container">Dinacharya Tools</button>
+            <button type="button" onclick="setCategoryFilter('vastu')" class="w-full text-left py-1.5 px-2 rounded hover:bg-surface-container">Vastu Yantras</button>
+            <button type="button" onclick="setCategoryFilter('tea')" class="w-full text-left py-1.5 px-2 rounded hover:bg-surface-container">Tisanes &amp; Teas</button>
+          </div>
+        </div>
+
+        <!-- Dosha Mobile -->
+        <div class="space-y-2">
+          <h4 class="text-xs font-bold uppercase text-primary">Dosha</h4>
+          <div class="grid grid-cols-2 gap-1 text-xs">
+            <button type="button" onclick="setDoshaFilter('all')" class="py-1 px-2 border rounded text-center">All</button>
+            <button type="button" onclick="setDoshaFilter('tridoshic')" class="py-1 px-2 border rounded text-center">Tridoshic</button>
+            <button type="button" onclick="setDoshaFilter('vata')" class="py-1 px-2 border rounded text-center">Vata</button>
+            <button type="button" onclick="setDoshaFilter('pitta')" class="py-1 px-2 border rounded text-center">Pitta</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="pt-4 border-t border-surface-variant space-y-2">
+        <button type="button" onclick="toggleMobileFilterDrawer(false)" class="w-full py-3 bg-primary text-white font-semibold text-xs uppercase tracking-wider rounded-lg shadow-sm">
+          Apply Filters
+        </button>
+        <button type="button" onclick="resetAllFilters(); toggleMobileFilterDrawer(false);" class="w-full py-2 text-center text-xs text-secondary font-semibold uppercase">
+          Reset Filters
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- FLOATING CART TOAST -->
+  <div id="cart-toast" class="fixed bottom-6 right-6 z-50 hidden bg-[#1F4D3A] text-white px-5 py-3 rounded-xl shadow-xl flex items-center gap-3 border border-[#B38A3E] transition-all transform translate-y-4">
+    <span class="material-symbols-outlined text-[#B38A3E] text-[22px]">check_circle</span>
+    <div>
+      <div class="text-xs font-bold uppercase tracking-wider">Added to Sanctuary Cart</div>
+      <div id="toast-item-name" class="text-xs text-white/90">Product name</div>
+    </div>
+    <a href="cart.html" class="ml-2 text-xs font-bold text-[#B38A3E] hover:underline uppercase tracking-wider">View Cart →</a>
+  </div>
+
+  <!-- UNIFIED SITE FOOTER -->
+  <footer class="w-full bg-[#1F4D3A] text-[#F7F1E3] border-t border-[#B38A3E]/30">
+    <div class="max-w-[1440px] mx-auto px-6 lg:px-margin pt-space-xl pb-space-lg">
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-8 lg:gap-gutter-lg pb-space-xl border-b border-[#B38A3E]/20">
+        <div class="md:col-span-5 flex flex-col justify-start space-y-space-sm">
+          <div class="flex flex-col items-start">
+            <a href="home.html" data-path="home" class="inline-block select-none mb-2">
+              <img src="images/logo.png" alt="ANUKUL Logo" class="h-16 w-auto object-contain bg-[#F7F1E3] p-1.5 rounded shadow-sm">
+            </a>
+          </div>
+          <p class="font-body text-sm text-[#F7F1E3]/90 max-w-md pt-2">ANUKUL Ayur Vastu Harmony Clinic — Health • Space • Lifestyle • Harmony</p>
+          <p class="font-body text-xs text-outline-variant max-w-sm pt-1">Anchored in classical Vedic sciences, spatial alignment, and holistic constitutional balance for serene modern living.</p>
+        </div>
+
+        <div class="md:col-span-4 flex flex-col justify-start space-y-3">
+          <h3 class="text-xs uppercase text-[#B38A3E] tracking-widest font-semibold">Explorations</h3>
+          <nav class="grid grid-cols-2 gap-y-2 gap-x-4">
+            <a class="text-xs text-[#F7F1E3]/80 hover:text-[#B38A3E] transition-colors" data-path="home" href="home.html">Home</a>
+            <a class="text-xs text-[#F7F1E3]/80 hover:text-[#B38A3E] transition-colors" data-path="ayurveda" href="ayurveda.html">Ayurveda</a>
+            <a class="text-xs text-[#F7F1E3]/80 hover:text-[#B38A3E] transition-colors" data-path="vastu" href="vastu.html">Vastu</a>
+            <a class="text-xs text-[#F7F1E3]/80 hover:text-[#B38A3E] transition-colors" data-path="services" href="services.html">Services</a>
+            <a class="text-xs text-[#F7F1E3]/80 hover:text-[#B38A3E] transition-colors" data-path="shop" href="shop.html">Shop</a>
+            <a class="text-xs text-[#F7F1E3]/80 hover:text-[#B38A3E] transition-colors" data-path="blog" href="blog.html">Blog</a>
+            <a class="text-xs text-[#F7F1E3]/80 hover:text-[#B38A3E] transition-colors" data-path="gallery" href="gallery.html">Gallery</a>
+            <a class="text-xs text-[#F7F1E3]/80 hover:text-[#B38A3E] transition-colors" data-path="contact" href="contact.html">Contact</a>
+          </nav>
+        </div>
+
+        <div class="md:col-span-3 flex flex-col justify-start space-y-3">
+          <h3 class="text-xs uppercase text-[#B38A3E] tracking-widest font-semibold">Sanctuary Hours</h3>
+          <p class="text-xs text-[#F7F1E3]/80">Monday — Saturday<br>08:00 AM – 07:00 PM IST</p>
+          <p class="text-xs text-[#F7F1E3]/80 pt-2"><span class="text-[#B38A3E] font-medium">Location:</span> Prime Vedic Enclave, Cultural Quarter</p>
+        </div>
+      </div>
+
+      <div class="pt-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <p class="text-xs text-outline-variant text-center sm:text-left">© 2025 ANUKUL Ayur Vastu Harmony Clinic. All rights reserved. Responsible Vedic Clinical Practice.</p>
+        <div class="flex items-center gap-6 text-xs text-[#F7F1E3]/70">
+          <a class="hover:text-[#B38A3E] transition-colors" data-path="privacy-policy" href="contact.html#privacy">Privacy Policy</a>
+          <span class="text-[#B38A3E]/40">•</span>
+          <a class="hover:text-[#B38A3E] transition-colors" data-path="terms" href="contact.html#terms">Terms</a>
+          <span class="text-[#B38A3E]/40">•</span>
+          <a class="hover:text-[#B38A3E] transition-colors" data-path="disclaimer" href="contact.html#disclaimer">Disclaimer</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JAVASCRIPT: FILTERING, SEARCH, SORTING, CART, MODALS -->
+  <script>
+    // State
+    const state = {
+      category: 'all',
+      dosha: 'all',
+      maxPrice: 5000,
+      search: '',
+      inStockOnly: false,
+      consecratedOnly: false,
+      sort: 'featured',
+      cartCount: 2
+    };
+
+    // DOM Elements
+    const productItems = Array.from(document.querySelectorAll('.product-item'));
+    const visibleCountText = document.getElementById('visible-count-text');
+    const noProductsState = document.getElementById('no-products-state');
+    const productsGrid = document.getElementById('products-grid-container');
+    const searchInput = document.getElementById('shop-search-input');
+    const clearSearchBtn = document.getElementById('clear-search-btn');
+    const priceSlider = document.getElementById('price-range-slider');
+    const priceLabel = document.getElementById('price-display-label');
+    const sortSelect = document.getElementById('shop-sort-select');
+    const headerCartBadge = document.getElementById('header-cart-badge');
+    const mobileCartBadge = document.querySelector('.mobile-cart-count');
+
+    // Filter Logic
+    function applyFilters() {
+      let visibleCount = 0;
+
+      productItems.forEach(item => {
+        const itemCategory = item.getAttribute('data-category');
+        const itemDosha = item.getAttribute('data-dosha');
+        const itemPrice = parseFloat(item.getAttribute('data-price')) || 0;
+        const itemInStock = item.getAttribute('data-instock') === 'true';
+        const itemConsecrated = item.getAttribute('data-consecrated') === 'true';
+        const itemName = (item.getAttribute('data-name') || '').toLowerCase();
+
+        let matches = true;
+
+        // Category filter
+        if (state.category !== 'all' && itemCategory !== state.category) {
+          matches = false;
+        }
+
+        // Dosha filter
+        if (state.dosha !== 'all') {
+          if (state.dosha === 'tridoshic' && itemDosha !== 'tridoshic') matches = false;
+          if (state.dosha === 'vata' && !itemDosha.includes('vata')) matches = false;
+          if (state.dosha === 'pitta' && !itemDosha.includes('pitta')) matches = false;
+        }
+
+        // Price filter
+        if (itemPrice > state.maxPrice) {
+          matches = false;
+        }
+
+        // In Stock filter
+        if (state.inStockOnly && !itemInStock) {
+          matches = false;
+        }
+
+        // Consecrated filter
+        if (state.consecratedOnly && !itemConsecrated) {
+          matches = false;
+        }
+
+        // Search Keyword
+        if (state.search) {
+          const q = state.search.toLowerCase().trim();
+          if (!itemName.includes(q)) {
+            matches = false;
+          }
+        }
+
+        if (matches) {
+          item.style.display = '';
+          visibleCount++;
+        } else {
+          item.style.display = 'none';
+        }
+      });
+
+      // Update counters
+      visibleCountText.textContent = visibleCount;
+      if (visibleCount === 0) {
+        noProductsState.classList.remove('hidden');
+      } else {
+        noProductsState.classList.add('hidden');
+      }
+
+      // Sort visible items
+      sortProducts();
+      updateActiveFilterTags();
+    }
+
+    // Sorting Logic
+    function sortProducts() {
+      const parent = productsGrid;
+      const sorted = productItems.slice().sort((a, b) => {
+        const priceA = parseFloat(a.getAttribute('data-price')) || 0;
+        const priceB = parseFloat(b.getAttribute('data-price')) || 0;
+        const ratingA = parseFloat(a.getAttribute('data-rating')) || 0;
+        const ratingB = parseFloat(b.getAttribute('data-rating')) || 0;
+        const nameA = a.getAttribute('data-name') || '';
+        const nameB = b.getAttribute('data-name') || '';
+
+        switch (state.sort) {
+          case 'price-asc': return priceA - priceB;
+          case 'price-desc': return priceB - priceA;
+          case 'rating': return ratingB - ratingA;
+          case 'name': return nameA.localeCompare(nameB);
+          default: return 0;
+        }
+      });
+
+      sorted.forEach(item => parent.appendChild(item));
+    }
+
+    // Active Filter Tags Renderer
+    function updateActiveFilterTags() {
+      const container = document.getElementById('active-filter-tags');
+      if (!container) return;
+      container.innerHTML = '';
+
+      if (state.category !== 'all') {
+        createFilterTag(`Category: ${state.category}`, () => setCategoryFilter('all'));
+      }
+      if (state.dosha !== 'all') {
+        createFilterTag(`Dosha: ${state.dosha}`, () => setDoshaFilter('all'));
+      }
+      if (state.maxPrice < 5000) {
+        createFilterTag(`≤ ₹${state.maxPrice}`, () => {
+          state.maxPrice = 5000;
+          priceSlider.value = 5000;
+          priceLabel.textContent = 'Up to ₹ 5,000';
+          applyFilters();
+        });
+      }
+      if (state.search) {
+        createFilterTag(`"${state.search}"`, () => {
+          state.search = '';
+          searchInput.value = '';
+          clearSearchBtn.classList.add('hidden');
+          applyFilters();
+        });
+      }
+    }
+
+    function createFilterTag(label, onRemove) {
+      const container = document.getElementById('active-filter-tags');
+      const tag = document.createElement('span');
+      tag.className = 'inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-surface-container text-primary text-[10px] font-semibold border border-surface-variant';
+      tag.innerHTML = `<span>${label}</span><button type="button" class="hover:text-secondary ml-1">×</button>`;
+      tag.querySelector('button').onclick = onRemove;
+      container.appendChild(tag);
+    }
+
+    // Category Buttons
+    function setCategoryFilter(cat) {
+      state.category = cat;
+      // Quick pills
+      document.querySelectorAll('.category-pill').forEach(btn => {
+        if (btn.getAttribute('data-category') === cat) {
+          btn.classList.add('bg-primary', 'text-white', 'border-primary', 'shadow-xs');
+          btn.classList.remove('bg-white', 'text-on-surface-variant');
+        } else {
+          btn.classList.remove('bg-primary', 'text-white', 'border-primary', 'shadow-xs');
+          btn.classList.add('bg-white', 'text-on-surface-variant');
+        }
+      });
+
+      // Sidebar Radio
+      const radio = document.querySelector(`input[name="sidebar-category"][value="${cat}"]`);
+      if (radio) radio.checked = true;
+
+      applyFilters();
+    }
+
+    document.querySelectorAll('.category-pill').forEach(btn => {
+      btn.addEventListener('click', () => {
+        setCategoryFilter(btn.getAttribute('data-category'));
+      });
+    });
+
+    document.querySelectorAll('input[name="sidebar-category"]').forEach(radio => {
+      radio.addEventListener('change', () => {
+        setCategoryFilter(radio.value);
+      });
+    });
+
+    // Dosha Filter
+    function setDoshaFilter(dosha) {
+      state.dosha = dosha;
+      document.querySelectorAll('.dosha-btn').forEach(btn => {
+        if (btn.getAttribute('data-dosha') === dosha) {
+          btn.classList.add('bg-primary', 'text-white', 'border-primary');
+          btn.classList.remove('bg-surface-container-low', 'text-on-surface');
+        } else {
+          btn.classList.remove('bg-primary', 'text-white', 'border-primary');
+          btn.classList.add('bg-surface-container-low', 'text-on-surface');
+        }
+      });
+      applyFilters();
+    }
+
+    document.querySelectorAll('.dosha-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        setDoshaFilter(btn.getAttribute('data-dosha'));
+      });
+    });
+
+    // Price Slider
+    if (priceSlider) {
+      priceSlider.addEventListener('input', (e) => {
+        state.maxPrice = parseInt(e.target.value);
+        priceLabel.textContent = `Up to ₹ ${state.maxPrice.toLocaleString('en-IN')}`;
+        applyFilters();
+      });
+    }
+
+    document.querySelectorAll('.price-tier-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const max = parseInt(btn.getAttribute('data-maxprice'));
+        state.maxPrice = max;
+        if (priceSlider) priceSlider.value = max;
+        if (priceLabel) priceLabel.textContent = `Up to ₹ ${max.toLocaleString('en-IN')}`;
+        applyFilters();
+      });
+    });
+
+    // Checkboxes
+    const inStockCheck = document.getElementById('instock-only-check');
+    if (inStockCheck) {
+      inStockCheck.addEventListener('change', (e) => {
+        state.inStockOnly = e.target.checked;
+        applyFilters();
+      });
+    }
+
+    const consecratedCheck = document.getElementById('consecrated-only-check');
+    if (consecratedCheck) {
+      consecratedCheck.addEventListener('change', (e) => {
+        state.consecratedOnly = e.target.checked;
+        applyFilters();
+      });
+    }
+
+    // Search Input
+    if (searchInput) {
+      searchInput.addEventListener('input', (e) => {
+        state.search = e.target.value;
+        if (state.search) {
+          clearSearchBtn.classList.remove('hidden');
+        } else {
+          clearSearchBtn.classList.add('hidden');
+        }
+        applyFilters();
+      });
+    }
+
+    if (clearSearchBtn) {
+      clearSearchBtn.addEventListener('click', () => {
+        state.search = '';
+        searchInput.value = '';
+        clearSearchBtn.classList.add('hidden');
+        applyFilters();
+      });
+    }
+
+    // Mobile Search Input
+    const mobileSearchInput = document.getElementById('mobile-search-input');
+    if (mobileSearchInput) {
+      mobileSearchInput.addEventListener('input', (e) => {
+        state.search = e.target.value;
+        if (searchInput) searchInput.value = e.target.value;
+        applyFilters();
+      });
+    }
+
+    // Sorting Dropdown
+    if (sortSelect) {
+      sortSelect.addEventListener('change', (e) => {
+        state.sort = e.target.value;
+        sortProducts();
+      });
+    }
+
+    // Reset All Filters
+    function resetAllFilters() {
+      state.category = 'all';
+      state.dosha = 'all';
+      state.maxPrice = 5000;
+      state.search = '';
+      state.inStockOnly = false;
+      state.consecratedOnly = false;
+      state.sort = 'featured';
+
+      if (searchInput) searchInput.value = '';
+      if (clearSearchBtn) clearSearchBtn.classList.add('hidden');
+      if (priceSlider) priceSlider.value = 5000;
+      if (priceLabel) priceLabel.textContent = 'Up to ₹ 5,000';
+      if (inStockCheck) inStockCheck.checked = false;
+      if (consecratedCheck) consecratedCheck.checked = false;
+      if (sortSelect) sortSelect.value = 'featured';
+
+      setCategoryFilter('all');
+      setDoshaFilter('all');
+      applyFilters();
+    }
+
+    const resetBtn = document.getElementById('reset-filters-btn');
+    if (resetBtn) resetBtn.addEventListener('click', resetAllFilters);
+
+    // View Modes (Grid / List)
+    const viewGridBtn = document.getElementById('view-mode-grid');
+    const viewListBtn = document.getElementById('view-mode-list');
+
+    if (viewGridBtn && viewListBtn && productsGrid) {
+      viewGridBtn.addEventListener('click', () => {
+        productsGrid.classList.remove('grid-cols-1');
+        productsGrid.classList.add('sm:grid-cols-2', 'xl:grid-cols-3');
+        viewGridBtn.classList.add('bg-white', 'text-primary', 'shadow-xs');
+        viewGridBtn.classList.remove('text-outline');
+        viewListBtn.classList.remove('bg-white', 'text-primary', 'shadow-xs');
+        viewListBtn.classList.add('text-outline');
+      });
+
+      viewListBtn.addEventListener('click', () => {
+        productsGrid.classList.remove('sm:grid-cols-2', 'xl:grid-cols-3');
+        productsGrid.classList.add('grid-cols-1');
+        viewListBtn.classList.add('bg-white', 'text-primary', 'shadow-xs');
+        viewListBtn.classList.remove('text-outline');
+        viewGridBtn.classList.remove('bg-white', 'text-primary', 'shadow-xs');
+        viewGridBtn.classList.add('text-outline');
+      });
+    }
+
+    // Mobile Filter Drawer Toggle
+    const mobileFilterTrigger = document.getElementById('mobile-filter-trigger');
+    const mobileFilterDrawer = document.getElementById('mobile-filter-drawer');
+
+    function toggleMobileFilterDrawer(show) {
+      if (!mobileFilterDrawer) return;
+      if (show) {
+        mobileFilterDrawer.classList.remove('hidden');
+        document.body.style.overflow = 'hidden';
+      } else {
+        mobileFilterDrawer.classList.add('hidden');
+        document.body.style.overflow = '';
+      }
+    }
+
+    if (mobileFilterTrigger) {
+      mobileFilterTrigger.addEventListener('click', () => toggleMobileFilterDrawer(true));
+    }
+
+    // Quick View Modal
+    let modalCurrentProduct = null;
+    let modalQty = 1;
+
+    function openQuickViewModal(name, price, origPrice, cat, dosha, desc, img) {
+      modalCurrentProduct = { name, price };
+      modalQty = 1;
+
+      document.getElementById('modal-title').textContent = name;
+      document.getElementById('modal-price').textContent = price;
+      document.getElementById('modal-original-price').textContent = origPrice;
+      document.getElementById('modal-category').textContent = cat;
+      document.getElementById('modal-dosha').textContent = dosha;
+      document.getElementById('modal-desc').textContent = desc;
+      document.getElementById('modal-img').src = img;
+      document.getElementById('modal-qty').textContent = '1';
+
+      const addBtn = document.getElementById('modal-add-btn');
+      addBtn.onclick = () => {
+        addToCart(name, parseInt(price.replace(/[^0-9]/g, '')) || 1000, modalQty);
+        closeQuickViewModal();
+      };
+
+      document.getElementById('quick-view-modal').classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeQuickViewModal() {
+      document.getElementById('quick-view-modal').classList.add('hidden');
+      document.body.style.overflow = '';
+    }
+
+    function adjustModalQty(delta) {
+      modalQty = Math.max(1, modalQty + delta);
+      document.getElementById('modal-qty').textContent = modalQty;
+    }
+
+    // Cart Notification Toast
+    function addToCart(name, price, qty = 1) {
+      state.cartCount += qty;
+      if (headerCartBadge) headerCartBadge.textContent = state.cartCount;
+      if (mobileCartBadge) mobileCartBadge.textContent = state.cartCount;
+
+      const toast = document.getElementById('cart-toast');
+      const toastName = document.getElementById('toast-item-name');
+      if (toast && toastName) {
+        toastName.textContent = `${name} (${qty > 1 ? qty + ' units' : '1 unit'})`;
+        toast.classList.remove('hidden');
+        setTimeout(() => {
+          toast.classList.remove('translate-y-4');
+        }, 10);
+
+        setTimeout(() => {
+          toast.classList.add('translate-y-4');
+          setTimeout(() => toast.classList.add('hidden'), 300);
+        }, 3500);
+      }
+    }
+
+    // FAQ Accordion
+    document.querySelectorAll('.faq-toggle').forEach(button => {
+      button.addEventListener('click', () => {
+        const item = button.closest('.faq-item');
+        const content = item.querySelector('.faq-content');
+        const isExpanded = button.getAttribute('aria-expanded') === 'true';
+        const icon = button.querySelector('.material-symbols-outlined');
+
+        // Close all
+        document.querySelectorAll('.faq-content').forEach(c => c.classList.add('hidden'));
+        document.querySelectorAll('.faq-toggle').forEach(b => {
+          b.setAttribute('aria-expanded', 'false');
+          const ic = b.querySelector('.material-symbols-outlined');
+          if (ic) ic.textContent = 'add';
+        });
+
+        if (!isExpanded) {
+          content.classList.remove('hidden');
+          button.setAttribute('aria-expanded', 'true');
+          if (icon) icon.textContent = 'remove';
+        }
+      });
+    });
+
+    // Mobile Navbar Menu
+    (function(){
+      var btn = document.getElementById('mobile-menu-btn');
+      var menu = document.getElementById('mobile-menu');
+      var icon = document.getElementById('mobile-menu-icon');
+      if (btn && menu) {
+        btn.onclick = function() {
+          var isHidden = menu.classList.contains('hidden');
+          if (isHidden) {
+            menu.classList.remove('hidden');
+            if (icon) icon.textContent = 'close';
+          } else {
+            menu.classList.add('hidden');
+            if (icon) icon.textContent = 'menu';
+          }
+        };
+      }
+    })();
+  </script>
+<script src="js/anukul-scroll.js"></script></body>
+</html>

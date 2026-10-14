@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..700;1,400..700&amp;family=Manrope:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{"colors":{"outline-variant":"#c0c9c2","error-container":"#ffdad6","on-tertiary-fixed":"#400012","surface-container":"#f6ece4","on-secondary-fixed":"#311300","surface-dim":"#e2d8d0","on-secondary-container":"#6e3300","primary-fixed-dim":"#a1d1b8","tertiary":"#5d0f24","on-primary-fixed":"#002114","primary":"#023625","on-primary-fixed-variant":"#214f3c","secondary-fixed-dim":"#ffb688","surface-tint":"#3a6753","on-secondary":"#ffffff","primary-container":"#1f4d3a","surface-variant":"#ebe1d9","error":"#ba1a1a","on-secondary-fixed-variant":"#733600","background":"#fff8f4","on-background":"#1f1b16","surface-container-highest":"#ebe1d9","surface-container-low":"#fcf2ea","on-error":"#ffffff","on-primary":"#ffffff","on-tertiary":"#ffffff","on-surface":"#1f1b16","secondary-container":"#ff964c","on-tertiary-fixed-variant":"#7d283a","surface":"#fff8f4","tertiary-fixed-dim":"#ffb2bc","on-tertiary-container":"#ff93a4","surface-container-high":"#f1e6de","on-error-container":"#93000a","tertiary-container":"#7b2739","secondary-fixed":"#ffdbc7","tertiary-fixed":"#ffd9dd","on-surface-variant":"#414944","outline":"#717973","secondary":"#974800","primary-fixed":"#bceed3","inverse-surface":"#352f2a","inverse-primary":"#a1d1b8","inverse-on-surface":"#f9efe7","surface-bright":"#fff8f4","surface-container-lowest":"#ffffff","on-primary-container":"#8dbda4"},"borderRadius":{"DEFAULT":"0.125rem","lg":"0.25rem","xl":"0.5rem","full":"0.75rem"},"spacing":{"space-lg":"1.75rem","space-md":"1rem","gutter-lg":"2.5rem","space-2xl":"5rem","space-xs":"0.25rem","space-sm":"0.5rem","margin-md":"3rem","space-xl":"3rem","margin":"1.5rem","margin-lg":"5rem","gutter":"1.5rem"},"fontFamily":{"body-lg":["Manrope"],"body-sm":["Manrope"],"display-mobile":["EB Garamond"],"label-sm":["Manrope"],"display":["EB Garamond"],"headline-sm":["EB Garamond"],"body-md":["Manrope"],"editorial-quote":["EB Garamond"],"headline-lg":["EB Garamond"],"headline-lg-mobile":["EB Garamond"],"label-md":["Manrope"],"headline-md":["EB Garamond"]},"fontSize":{"body-lg":["18px",{"lineHeight":"28px","fontWeight":"400"}],"body-sm":["13px",{"lineHeight":"20px","fontWeight":"400"}],"display-mobile":["38px",{"lineHeight":"44px","letterSpacing":"-0.01em","fontWeight":"400"}],"label-sm":["10px",{"lineHeight":"14px","letterSpacing":"0.12em","fontWeight":"700"}],"display":["56px",{"lineHeight":"64px","letterSpacing":"-0.01em","fontWeight":"400"}],"headline-sm":["22px",{"lineHeight":"28px","fontWeight":"600"}],"body-md":["15px",{"lineHeight":"24px","fontWeight":"400"}],"editorial-quote":["26px",{"lineHeight":"36px","letterSpacing":"0.01em","fontWeight":"400"}],"headline-lg":["40px",{"lineHeight":"48px","fontWeight":"400"}],"headline-lg-mobile":["30px",{"lineHeight":"36px","fontWeight":"500"}],"label-md":["12px",{"lineHeight":"16px","letterSpacing":"0.08em","fontWeight":"600"}],"headline-md":["28px",{"lineHeight":"36px","fontWeight":"500"}]}}}};</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"><link rel="stylesheet" href="css/anukul-animations.css"></head><body class="bg-surface font-body-md text-on-surface antialiased selection:bg-primary-container selection:text-on-primary"><header class="fixed top-0 w-full z-50 bg-[#F7F1E3]/95 backdrop-blur-md border-b border-[#E8D8BC] shadow-[0_1px_8px_rgba(0,0,0,0.03)]"><div class="h-20 max-w-[1440px] mx-auto px-6 lg:px-margin flex items-center justify-between gap-4"><a href="home.html" data-path="home" class="flex items-center select-none py-1"><img src="images/logo.png" alt="ANUKUL Logo" class="h-14 sm:h-16 w-auto max-h-[64px] object-contain"></a><nav class="hidden xl:flex items-center gap-6 lg:gap-space-md" data-active-classes="text-primary font-semibold relative after:absolute after:bottom-[-4px] after:left-0 after:w-full after:h-[1.5px] after:bg-[#B38A3E]"><a class="font-label-md text-label-md uppercase text-on-surface-variant hover:text-primary transition-colors tracking-widest" data-path="home" href="home.html">Home</a><a class="font-label-md text-label-md uppercase text-on-surface-variant hover:text-primary transition-colors tracking-widest" data-path="ayurveda" href="ayurveda.html">Ayurveda</a><a class="font-label-md text-label-md uppercase text-on-surface-variant hover:text-primary transition-colors tracking-widest" data-path="vastu" href="vastu.html">Vastu</a><a class="font-label-md text-label-md uppercase text-on-surface-variant hover:text-primary transition-colors tracking-widest" data-path="services" href="services.html">Services</a><a class="font-label-md text-label-md uppercase text-on-surface-variant hover:text-primary transition-colors tracking-widest" data-path="shop" href="shop.html">Shop</a><a class="font-label-md text-label-md uppercase text-on-surface-variant hover:text-primary transition-colors tracking-widest" data-path="blog" href="blog.html">Blog</a><a class="font-label-md text-label-md uppercase text-on-surface-variant hover:text-primary transition-colors tracking-widest" data-path="gallery" href="gallery.html">Gallery</a><a class="font-label-md text-label-md uppercase text-on-surface-variant hover:text-primary transition-colors tracking-widest" data-path="contact" href="contact.html">Contact</a></nav><div class="flex items-center gap-2 sm:gap-3"><a href="search_result.html" data-path="search" title="Search Wisdom &amp; Remedies" class="flex items-center justify-center w-10 h-10 rounded-full text-primary hover:bg-[#E8D8BC]/60 hover:text-secondary transition-colors"><span class="material-symbols-outlined text-[22px]">search</span></a><a href="cart.html" data-path="cart" title="Shopping Cart" class="relative flex items-center justify-center w-10 h-10 rounded-full text-primary hover:bg-[#E8D8BC]/60 hover:text-secondary transition-colors"><span class="material-symbols-outlined text-[22px]">shopping_bag</span><span class="absolute top-1 right-1 w-4 h-4 bg-secondary text-on-secondary text-[10px] font-bold rounded-full flex items-center justify-center leading-none">2</span></a><a href="book_your_consultation.html" data-path="book-consultation" class="hidden sm:inline-flex items-center justify-center bg-[#1F4D3A] text-[#F7F1E3] font-label-md text-label-md px-5 py-2.5 rounded-lg tracking-wider uppercase transition-colors duration-200 hover:bg-secondary shadow-sm font-semibold">BOOK CONSULTATION</a><a href="account.html" data-path="account" title="Client Sanctuary Portal" class="w-9 h-9 rounded-full bg-primary flex items-center justify-center text-on-primary hover:bg-secondary transition-colors shadow-sm"><span class="material-symbols-outlined text-[18px]">person</span></a><button id="mobile-menu-btn" type="button" aria-label="Toggle navigation" class="xl:hidden inline-flex items-center justify-center w-10 h-10 rounded-lg text-primary hover:bg-[#E8D8BC]/60 focus:outline-none transition-colors"><span class="material-symbols-outlined text-[26px]" id="mobile-menu-icon">menu</span></button></div></div><div id="mobile-menu" class="hidden xl:hidden w-full bg-[#F7F1E3] border-b border-[#E8D8BC] shadow-lg transition-all"><div class="px-6 py-5 space-y-4 max-h-[calc(100vh-80px)] overflow-y-auto"><nav class="flex flex-col space-y-1.5"><a class="py-2.5 px-3 rounded-lg font-label-md text-label-md uppercase tracking-widest text-on-surface-variant hover:bg-surface-container hover:text-primary transition-colors" data-path="home" href="home.html">Home</a><a class="py-2.5 px-3 rounded-lg font-label-md text-label-md uppercase tracking-widest text-on-surface-variant hover:bg-surface-container hover:text-primary transition-colors" data-path="ayurveda" href="ayurveda.html">Ayurveda</a><a class="py-2.5 px-3 rounded-lg font-label-md text-label-md uppercase tracking-widest text-on-surface-variant hover:bg-surface-container hover:text-primary transition-colors" data-path="vastu" href="vastu.html">Vastu</a><a class="py-2.5 px-3 rounded-lg font-label-md text-label-md uppercase tracking-widest text-on-surface-variant hover:bg-surface-container hover:text-primary transition-colors" data-path="services" href="services.html">Services</a><a class="py-2.5 px-3 rounded-lg font-label-md text-label-md uppercase tracking-widest text-on-surface-variant hover:bg-surface-container hover:text-primary transition-colors" data-path="shop" href="shop.html">Shop</a><a class="py-2.5 px-3 rounded-lg font-label-md text-label-md uppercase tracking-widest text-on-surface-variant hover:bg-surface-container hover:text-primary transition-colors" data-path="blog" href="blog.html">Blog</a><a class="py-2.5 px-3 rounded-lg font-label-md text-label-md uppercase tracking-widest text-on-surface-variant hover:bg-surface-container hover:text-primary transition-colors" data-path="gallery" href="gallery.html">Gallery</a><a class="py-2.5 px-3 rounded-lg font-label-md text-label-md uppercase tracking-widest text-on-surface-variant hover:bg-surface-container hover:text-primary transition-colors" data-path="contact" href="contact.html">Contact</a></nav><div class="pt-4 border-t border-[#E8D8BC] flex flex-col gap-3"><a href="book_your_consultation.html" data-path="book-consultation" class="w-full text-center bg-[#1F4D3A] text-[#F7F1E3] font-label-md text-label-md py-3 rounded-lg tracking-wider uppercase font-semibold hover:bg-secondary transition-colors shadow-sm">BOOK CONSULTATION</a><div class="grid grid-cols-3 gap-2 pt-1 text-center text-xs font-label-md"><a href="search_result.html" class="flex flex-col items-center justify-center p-2 rounded-lg bg-surface-container hover:bg-[#E8D8BC]/70 text-primary transition-colors"><span class="material-symbols-outlined text-[20px] mb-1">search</span>Search</a><a href="cart.html" class="flex flex-col items-center justify-center p-2 rounded-lg bg-surface-container hover:bg-[#E8D8BC]/70 text-primary transition-colors relative"><span class="material-symbols-outlined text-[20px] mb-1">shopping_bag</span>Cart (2)</a><a href="account.html" class="flex flex-col items-center justify-center p-2 rounded-lg bg-surface-container hover:bg-[#E8D8BC]/70 text-primary transition-colors"><span class="material-symbols-outlined text-[20px] mb-1">person</span>Account</a></div></div></div></div><script>(function(){var btn=document.getElementById('mobile-menu-btn');var menu=document.getElementById('mobile-menu');var icon=document.getElementById('mobile-menu-icon');if(btn&&menu){btn.onclick=function(){var isHidden=menu.classList.contains('hidden');if(isHidden){menu.classList.remove('hidden');if(icon)icon.textContent='close';}else{menu.classList.add('hidden');if(icon)icon.textContent='menu';}};}})();</script></header><main class="w-full pt-20 bg-surface min-h-[calc(100vh-80px)]"><div class="flex flex-col w-full">
+<!-- Interactive Diagnostic Gateway Switcher (Simulation Bar) -->
+<section class="w-full bg-surface-container-high text-on-surface py-3 px-6 border-b border-outline-variant/30">
+<div class="max-w-[1440px] mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[18px]">tune</span>
+<span class="font-label-md text-label-md uppercase tracking-wider text-primary">Gateway Diagnostic Mode:</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant hidden lg:inline">Simulate gateway webhook &amp; settlement responses</span>
+</div>
+<div aria-label="Transaction state switcher" class="flex flex-wrap items-center gap-1.5" role="tablist">
+<button aria-selected="true" class="state-pill px-3 py-1.5 rounded-lg font-label-sm text-label-sm uppercase transition-all bg-primary text-on-primary shadow-sm" id="btn-state-a" onclick="switchState('A')" role="tab">
+          State A: Failed / Declined
+        </button>
+<button aria-selected="false" class="state-pill px-3 py-1.5 rounded-lg font-label-sm text-label-sm uppercase transition-all bg-surface text-on-surface-variant hover:bg-surface-variant" id="btn-state-b" onclick="switchState('B')" role="tab">
+          State B: Awaiting Confirmation
+        </button>
+<button aria-selected="false" class="state-pill px-3 py-1.5 rounded-lg font-label-sm text-label-sm uppercase transition-all bg-surface text-on-surface-variant hover:bg-surface-variant" id="btn-state-c" onclick="switchState('C')" role="tab">
+          State C: Status Verification
+        </button>
+<button aria-selected="false" class="state-pill px-3 py-1.5 rounded-lg font-label-sm text-label-sm uppercase transition-all bg-surface text-on-surface-variant hover:bg-surface-variant" id="btn-state-d" onclick="switchState('D')" role="tab">
+          State D: Session Expired
+        </button>
+<button aria-selected="false" class="state-pill px-3 py-1.5 rounded-lg font-label-sm text-label-sm uppercase transition-all bg-surface text-on-surface-variant hover:bg-surface-variant" id="btn-state-e" onclick="switchState('E')" role="tab">
+          State E: Gateway Retrying
+        </button>
+</div>
+</div>
+</section>
+<!-- Editorial Breadcrumb & Cardinal Spatial Orientation -->
+<div class="w-full bg-surface border-b border-surface-variant/70">
+<div class="max-w-[1440px] mx-auto px-6 lg:px-margin py-4 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+<nav aria-label="Breadcrumb" class="flex items-center gap-2 font-body-sm text-body-sm text-on-surface-variant">
+<a class="hover:text-primary transition-colors" href="home.html">Sanctuary Home</a>
+<span class="text-outline-variant text-[11px]">/</span>
+<a class="hover:text-primary transition-colors" href="shop.html">Vedic Dispensary</a>
+<span class="text-outline-variant text-[11px]">/</span>
+<a class="hover:text-primary transition-colors" href="checkout.html">Checkout</a>
+<span class="text-outline-variant text-[11px]">/</span>
+<span aria-current="page" class="text-primary font-medium">Transaction Recovery</span>
+</nav>
+<div class="flex items-center gap-4 text-outline font-label-sm text-label-sm tracking-widest uppercase">
+<span class="inline-flex items-center gap-1.5 text-secondary">
+<span class="w-2 h-2 rounded-full bg-secondary animate-pulse"></span>
+          MUHURTA ALIGNED
+        </span>
+<span class="hidden md:inline text-outline-variant">|</span>
+<span class="hidden md:inline font-mono text-[11px] text-on-surface-variant">ORDER #ANK-84920</span>
+</div>
+</div>
+</div>
+<!-- Reassuring Sanctuary Header -->
+<header class="w-full bg-surface-container-low border-b border-surface-variant py-10 lg:py-14 relative overflow-hidden">
+<div class="max-w-[1440px] mx-auto px-6 lg:px-margin relative z-10">
+<div class="max-w-4xl">
+<div class="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-lg bg-surface-container border border-outline-variant/40 mb-5">
+<span class="material-symbols-outlined text-secondary text-[18px]" id="hero-badge-icon">verified_user</span>
+<span class="font-label-sm text-label-sm uppercase tracking-[0.14em] text-on-surface font-semibold" id="hero-badge-text">
+            PAYMENT STATUS · SECURE TRANSACTION RECOVERY
+          </span>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-primary tracking-tight mb-4" id="hero-heading">
+          We Couldn't Confirm Your Payment.
+        </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-3xl leading-relaxed mb-6" id="hero-description">
+          Your payment attempt has not been completed by your banking gateway. Please review your order below to safely complete your dispensary acquisition without risk of duplicate orders.
+        </p>
+<!-- Sanctuary Assurance Callout -->
+<div class="p-4 rounded-xl bg-surface border-l-4 border-secondary shadow-sm flex items-start gap-4" id="hero-reassurance-box">
+<span class="material-symbols-outlined text-secondary text-[24px] shrink-0 mt-0.5">spa</span>
+<div>
+<h2 class="font-headline-sm text-headline-sm text-primary mb-1">Rest assured — your apothecary remedies remain reserved.</h2>
+<p class="font-body-md text-body-md text-on-surface-variant" id="hero-reassurance-copy">
+              No duplicate transaction has taken place. Your artisanal Kansa tools and cold-pressed botanical oils remain secured under Order <strong class="text-primary font-semibold">#ANK-84920</strong> in temperature-regulated care while we re-attempt authorization.
+            </p>
+</div>
+</div>
+</div>
+</div>
+</header>
+<!-- Main Recovery Architecture (2-Column Grid) -->
+<main class="w-full bg-surface py-10 lg:py-16">
+<div class="max-w-[1440px] mx-auto px-6 lg:px-margin">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-gutter-lg items-start">
+<!-- Left Main Column: Safe Action Center & Troubleshooting (Cols 1-7) -->
+<div class="lg:col-span-7 flex flex-col space-y-8">
+<!-- Primary Recovery Panel -->
+<section class="bg-surface-container-lowest p-6 lg:p-8 rounded-xl border border-outline-variant/40 shadow-sm transition-all duration-300" id="retry-card">
+<div class="flex items-center justify-between pb-4 border-b border-surface-variant">
+<div>
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-widest block">SECURE ACTION</span>
+<h3 class="font-headline-md text-headline-md text-primary mt-0.5">Let's Help You Complete Your Order</h3>
+</div>
+<div class="w-10 h-10 rounded-full bg-primary-fixed flex items-center justify-center">
+<span class="material-symbols-outlined text-on-primary-fixed text-[20px]">lock_reset</span>
+</div>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mt-4 leading-relaxed" id="retry-intro-text">
+              You may safely retry the transaction for this existing order using your preferred payment method below. Your order number will remain identical, ensuring no redundant charges.
+            </p>
+<!-- Dynamic State E Processing Alert (Hidden by Default) -->
+<div class="hidden my-5 p-4 rounded-lg bg-surface-container border border-secondary/40 flex items-center gap-3" id="processing-banner">
+<span class="material-symbols-outlined text-secondary text-[24px] animate-spin">sync</span>
+<p class="font-body-sm text-body-sm text-on-surface">Connecting to Razorpay Banking Gateway Rails. Please do not refresh or close your browser tab...</p>
+</div>
+<!-- Dynamic State D Expired Alert (Hidden by Default) -->
+<div class="hidden my-5 p-4 rounded-lg bg-surface-container-high border border-outline/30 flex items-center gap-3" id="expired-banner">
+<span class="material-symbols-outlined text-secondary text-[24px]">timer_off</span>
+<p class="font-body-sm text-body-sm text-on-surface">The 24-hour muhurta payment reservation has expired for this cart session. A new checkout session is required to guarantee fresh apothecary formulations.</p>
+</div>
+<!-- Payment Method Accordion / Selector -->
+<form class="mt-6 space-y-3" id="payment-recovery-form" onsubmit="event.preventDefault(); initiateRetry();">
+<fieldset>
+<legend class="font-label-md text-label-md text-primary uppercase tracking-wider mb-3">Select Verified Banking Method</legend>
+<!-- Option 1: Razorpay UPI (Default Preferred) -->
+<label class="payment-method-label flex items-start gap-4 p-4 rounded-lg border-2 border-primary bg-surface-container-low/60 cursor-pointer hover:bg-surface-container transition-all">
+<input checked="" class="mt-1 text-primary focus:ring-primary h-4 w-4" name="payment_method" onchange="highlightMethod(this)" type="radio" value="upi"/>
+<div class="flex-1">
+<div class="flex items-center justify-between">
+<span class="font-body-md text-body-md font-semibold text-primary">Instant UPI Transfer (Razorpay)</span>
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded bg-primary-fixed text-on-primary-fixed uppercase">Recommended</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Google Pay, PhonePe, Paytm, BHIM, or Any Verified VPA</p>
+<div class="flex items-center gap-3 mt-2 text-outline text-[12px]">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">bolt</span> Zero Processing Latency</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">shield</span> Instant Reversal Protection</span>
+</div>
+</div>
+</label>
+<!-- Option 2: Netbanking -->
+<label class="payment-method-label flex items-start gap-4 p-4 rounded-lg border border-outline-variant/60 bg-surface cursor-pointer hover:bg-surface-container-low transition-all mt-3">
+<input class="mt-1 text-primary focus:ring-primary h-4 w-4" name="payment_method" onchange="highlightMethod(this)" type="radio" value="netbanking"/>
+<div class="flex-1">
+<div class="flex items-center justify-between">
+<span class="font-body-md text-body-md font-semibold text-primary">Vedic Institutional Netbanking</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">50+ Banks</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">HDFC Bank, ICICI, State Bank of India, Axis Bank, Kotak</p>
+</div>
+</label>
+<!-- Option 3: Cards -->
+<label class="payment-method-label flex items-start gap-4 p-4 rounded-lg border border-outline-variant/60 bg-surface cursor-pointer hover:bg-surface-container-low transition-all mt-3">
+<input class="mt-1 text-primary focus:ring-primary h-4 w-4" name="payment_method" onchange="highlightMethod(this)" type="radio" value="cards"/>
+<div class="flex-1">
+<div class="flex items-center justify-between">
+<span class="font-body-md text-body-md font-semibold text-primary">Credit &amp; Debit Cards</span>
+<div class="flex items-center gap-1.5 text-on-surface-variant font-label-sm text-label-sm">
+<span>VISA</span> · <span>MC</span> · <span>RUPAY</span>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Protected with 3D Secure 2.0 RBI Compliant Two-Factor Auth</p>
+</div>
+</label>
+</fieldset>
+<!-- Action CTAs Container -->
+<div class="pt-5 space-y-4">
+<button class="w-full inline-flex items-center justify-center gap-3 bg-primary text-on-primary font-label-md text-label-md py-4 px-8 rounded-lg uppercase tracking-widest hover:bg-primary-container transition-all duration-200 shadow-md group" id="primary-cta-btn" type="submit">
+<span class="material-symbols-outlined text-[18px] group-hover:scale-110 transition-transform">lock</span>
+<span id="primary-cta-label">RETRY PAYMENT NOW — ₹ 2,970</span>
+</button>
+<div class="flex flex-col sm:flex-row items-center justify-between gap-3 pt-2 text-center">
+<button class="font-body-sm text-body-sm text-primary hover:text-secondary transition-colors inline-flex items-center gap-1.5 font-medium" onclick="window.location.reload()" type="button">
+<span class="material-symbols-outlined text-[16px]">refresh</span>
+                    Check Gateway Re-Verification Status
+                  </button>
+<a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors underline decoration-outline-variant underline-offset-4" href="cart.html">
+                    Change Delivery Address or Items
+                  </a>
+</div>
+</div>
+<!-- ANUKUL Security Guarantee Notice -->
+<div class="mt-6 pt-4 border-t border-surface-variant/50 flex items-start gap-2.5">
+<span class="material-symbols-outlined text-secondary text-[16px] shrink-0 mt-0.5">verified</span>
+<p class="font-body-sm text-[12px] text-on-surface-variant leading-relaxed">
+<strong>Encrypted Sanctuary Rails:</strong> ANUKUL employs Sanctuary 256-bit SSL encrypted tokenization. Our clinic staff will never ask for your card PIN, CVV, or one-time verification password.
+                </p>
+</div>
+</form>
+</section>
+<!-- Diagnostic Troubleshooting Cards ("What Can You Do Next?") -->
+<section class="space-y-4">
+<div class="flex items-center justify-between">
+<h3 class="font-headline-sm text-headline-sm text-primary">What Can You Do Next?</h3>
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-widest">CLINICAL GUIDELINES</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+<!-- Card 1 -->
+<div class="bg-surface-container-low p-5 rounded-lg border border-surface-variant hover:border-outline-variant transition-all">
+<div class="w-8 h-8 rounded-full bg-surface-container-high flex items-center justify-center mb-3 text-secondary">
+<span class="material-symbols-outlined text-[18px]">credit_card</span>
+</div>
+<h4 class="font-headline-sm text-[18px] text-primary mb-1.5">1. Check Bank Limits</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+                  Verify UPI daily transaction ceilings, expired card credentials, or off-peak banking server downtimes.
+                </p>
+</div>
+<!-- Card 2 -->
+<div class="bg-surface-container-low p-5 rounded-lg border border-surface-variant hover:border-outline-variant transition-all">
+<div class="w-8 h-8 rounded-full bg-surface-container-high flex items-center justify-center mb-3 text-secondary">
+<span class="material-symbols-outlined text-[18px]">account_balance</span>
+</div>
+<h4 class="font-headline-sm text-[18px] text-primary mb-1.5">2. Check Debits</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+                  If money was debited from your account, refrain from re-paying. Interbank reconciliation reconciles within 15–30 minutes.
+                </p>
+</div>
+<!-- Card 3 -->
+<div class="bg-surface-container-low p-5 rounded-lg border border-surface-variant hover:border-outline-variant transition-all">
+<div class="w-8 h-8 rounded-full bg-surface-container-high flex items-center justify-center mb-3 text-secondary">
+<span class="material-symbols-outlined text-[18px]">sync_alt</span>
+</div>
+<h4 class="font-headline-sm text-[18px] text-primary mb-1.5">3. Switch Rail</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+                  Switching from traditional cards to direct Razorpay UPI or Netbanking frequently bypasses SMS OTP failure delays.
+                </p>
+</div>
+</div>
+</section>
+<!-- Dedicated Customer Care Sanctuary Concierge Block -->
+<section class="bg-surface-container p-6 rounded-xl border border-secondary/20 flex flex-col sm:flex-row items-center justify-between gap-6">
+<div class="space-y-1.5">
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-widest font-semibold">Still Need Personal Assistance?</span>
+<h4 class="font-headline-sm text-headline-sm text-primary">Our Apothecary Concierge is on Standby</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant max-w-md">
+                If your banking app displays a deduction without order confirmation, please share your Transaction ID with our clinic accounts desk.
+              </p>
+</div>
+<div class="flex flex-col sm:flex-row items-center gap-3 w-full sm:w-auto shrink-0">
+<a class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-3 rounded-lg border border-primary text-primary font-label-md text-label-md uppercase tracking-wider hover:bg-primary hover:text-on-primary transition-all" href="#">
+<span class="material-symbols-outlined text-[18px]">support_agent</span>
+                Contact Concierge
+              </a>
+<a class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-3 rounded-lg bg-surface text-on-surface font-label-md text-label-md uppercase tracking-wider hover:bg-surface-variant transition-all" href="client_portal_order_history.html">
+                My Orders
+              </a>
+</div>
+</section>
+</div>
+<!-- Right Column: Order Reference & Reserved Dispensary Items (Cols 8-12) -->
+<aside class="lg:col-span-5 space-y-6">
+<!-- Order Reference Snapshot Card -->
+<div class="bg-surface-container-lowest p-6 rounded-xl border border-outline-variant/40 shadow-sm">
+<div class="flex items-center justify-between pb-3 border-b border-surface-variant">
+<h3 class="font-headline-sm text-headline-sm text-primary">Your Order Details</h3>
+<span class="font-label-sm text-label-sm uppercase px-2.5 py-1 rounded bg-secondary-fixed text-on-secondary-fixed font-semibold tracking-wider" id="order-status-pill">
+                Unconfirmed Payment
+              </span>
+</div>
+<!-- Key Metadata Table -->
+<dl class="divide-y divide-surface-variant font-body-sm text-body-sm">
+<div class="py-2.5 flex items-center justify-between">
+<dt class="text-on-surface-variant">Order Identifier</dt>
+<dd class="font-mono font-medium text-primary">#ANK-84920</dd>
+</div>
+<div class="py-2.5 flex items-center justify-between">
+<dt class="text-on-surface-variant">Placed Timestamp</dt>
+<dd class="text-right text-on-surface">Oct 24, 2025 · 14:38 IST</dd>
+</div>
+<div class="py-2.5 flex items-center justify-between">
+<dt class="text-on-surface-variant">Gateway Reference</dt>
+<dd class="font-mono text-[11px] text-on-surface-variant">TXN_ANK_9381048194</dd>
+</div>
+<div class="py-2.5 flex items-center justify-between">
+<dt class="text-on-surface-variant">Reserved Expiry</dt>
+<dd class="text-secondary font-medium flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">timelapse</span>
+                  23 hrs 42 mins remaining
+                </dd>
+</div>
+</dl>
+</div>
+<!-- Reserved Cart Items Architectural List -->
+<div class="bg-surface-container-lowest p-6 rounded-xl border border-outline-variant/40 shadow-sm space-y-5">
+<div class="flex items-center justify-between">
+<h3 class="font-headline-sm text-headline-sm text-primary">Reserved Items (2)</h3>
+<span class="font-label-sm text-label-sm text-on-surface-variant tracking-wider">PRICE (INR)</span>
+</div>
+<div class="space-y-4">
+<!-- Item 1: Handcrafted Kansa Vatki Bowl -->
+<div class="flex items-center gap-4 pb-4 border-b border-surface-variant">
+<div class="w-16 h-16 rounded-lg bg-surface-container overflow-hidden shrink-0 relative border border-outline-variant/20">
+<img class="w-full h-full object-cover" data-alt="Traditional handcrafted Ayurvedic Kansa Vatki massage bowl made of sacred bronze and copper bell metal, resting on raw textured linen cloth in an authentic herbal clinic setting with warm natural sunlight." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAxYGUVMaUT06OrJI6PjK0vhmqBg5073Vsq7sm-GsrI-h68n5snYNAH7hp6JzLNfw8lqDnx9wLC1T2japHddKFqD-4b-1iLk2He3rLdNE5HP3veZ_rzFQmMhe-CADZoiXpWsHfEkYyssfCBZvxECQxQ2DETE-zpNUKOebniBICUs4VZQTLWAExhdZcx1BI-F-RybYz8kaBNqDoa03BESfqoUeBjScxzditLe49zbQq8ImtFGSsTiVxE6A"/>
+</div>
+<div class="flex-1 min-w-0">
+<h4 class="font-headline-sm text-[16px] text-primary truncate leading-tight">Handcrafted Kansa Vatki Bowl</h4>
+<p class="font-body-sm text-[12px] text-on-surface-variant mt-0.5">Personal 7.5cm · 160g sacred bell alloy</p>
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-wider block mt-1">QTY: 1</span>
+</div>
+<div class="text-right shrink-0">
+<span class="font-body-md text-body-md font-semibold text-primary">₹ 2,450</span>
+</div>
+</div>
+<!-- Item 2: Cold-Pressed Herbal Taila -->
+<div class="flex items-center gap-4 pb-4 border-b border-surface-variant">
+<div class="w-16 h-16 rounded-lg bg-surface-container overflow-hidden shrink-0 relative border border-outline-variant/20">
+<img class="w-full h-full object-cover" data-alt="Dark amber glass apothecary bottle filled with consecrated Ayurvedic medicinal herbal oil, sealed with artisanal cork and branded botanical label, illuminated by soft golden temple sanctuary lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDFGsanl7q_-kLZbay-b1eOOXRRXzP2_jMojpMOImvRdA_VNLcrOJx5uFSguUF4JhQu7i4kiXOAkklWvru6PC-RjQSE5ql-dSrfdm6cs3rLUUAPFI83GhbLcDysqkNecvEfo-WI3gOVuCNFTuDp5L2kJ95IRZRDVL2Bo5XZMaaf0AeWfAhMRm2535-GqpiTkW5o1xpptz0OUFIqrXJLw9a6zHuSp7re-T8ZUgxGkRWbuGvmIi604roZjg"/>
+</div>
+<div class="flex-1 min-w-0">
+<h4 class="font-headline-sm text-[16px] text-primary truncate leading-tight">Cold-Pressed Herbal Taila</h4>
+<p class="font-body-sm text-[12px] text-on-surface-variant mt-0.5">200ml Amber Dispensary Vessel</p>
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-wider block mt-1">QTY: 1</span>
+</div>
+<div class="text-right shrink-0">
+<span class="font-body-md text-body-md font-semibold text-primary">₹ 850</span>
+</div>
+</div>
+</div>
+<!-- Price Breakdown Calculation -->
+<div class="pt-2 space-y-2 font-body-sm text-body-sm">
+<div class="flex justify-between text-on-surface-variant">
+<span>Subtotal</span>
+<span>₹ 3,300</span>
+</div>
+<div class="flex justify-between text-secondary">
+<span class="inline-flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">sell</span>
+                  Solstice Gift Coupon (VEDICSOLSTICE)
+                </span>
+<span>- ₹ 330</span>
+</div>
+<div class="flex justify-between text-on-surface-variant">
+<span>Sacred Surface Shipping (Vedic Care)</span>
+<span class="text-primary font-medium uppercase font-label-sm text-label-sm">Complimentary</span>
+</div>
+<div class="pt-3 border-t border-primary/20 flex justify-between items-baseline">
+<span class="font-headline-sm text-headline-sm text-primary">Total Payable</span>
+<span class="font-headline-md text-headline-md text-primary font-semibold">₹ 2,970</span>
+</div>
+</div>
+<!-- Holding Assurance Ribbon -->
+<div class="p-3 bg-surface-container-low rounded-lg border border-surface-variant flex items-center gap-2.5">
+<span class="material-symbols-outlined text-secondary text-[18px]">shelves</span>
+<p class="font-body-sm text-[12px] text-on-surface-variant">
+                Preserved in temperature-controlled sandalwood apothecary storage for <strong class="text-primary">24 hours</strong>.
+              </p>
+</div>
+<div class="pt-2">
+<a class="w-full py-2.5 inline-flex items-center justify-center gap-1 font-body-sm text-body-sm text-primary hover:text-secondary font-medium transition-colors" href="client_portal_order_history.html">
+                View Full Invoiced Order in Account
+                <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- Spatial Vastu Harmony Note / Energy Alignment Card -->
+<div class="bg-surface-container-high p-5 rounded-xl border border-outline-variant/30 relative">
+<div class="flex items-center gap-2 text-secondary font-label-sm text-label-sm uppercase tracking-widest font-semibold mb-2">
+<span class="material-symbols-outlined text-[16px]">explore</span>
+              Vastu Spatial Orientation
+            </div>
+<p class="font-body-sm text-body-sm text-on-surface leading-relaxed">
+              Every package leaves our sacred sanctuary calibrated with Ishanya (North-East) consecration rituals to assure purity and spiritual equilibrium during transit.
+            </p>
+</div>
+</aside>
+</div>
+</div>
+</main>
+<!-- Interactive JavaScript for Multi-State Simulation Bar -->
+<script>
+    function highlightMethod(input) {
+      document.querySelectorAll('.payment-method-label').forEach(el => {
+        el.classList.remove('border-primary', 'bg-surface-container-low/60');
+        el.classList.add('border-outline-variant/60', 'bg-surface');
+      });
+      const selected = input.closest('.payment-method-label');
+      selected.classList.remove('border-outline-variant/60', 'bg-surface');
+      selected.classList.add('border-primary', 'bg-surface-container-low/60');
+    }
+
+    function switchState(state) {
+      // Button states
+      document.querySelectorAll('.state-pill').forEach(btn => {
+        btn.classList.remove('bg-primary', 'text-on-primary', 'shadow-sm');
+        btn.classList.add('bg-surface', 'text-on-surface-variant');
+        btn.setAttribute('aria-selected', 'false');
+      });
+      const currentBtn = document.getElementById('btn-state-' + state.toLowerCase());
+      if (currentBtn) {
+        currentBtn.classList.remove('bg-surface', 'text-on-surface-variant');
+        currentBtn.classList.add('bg-primary', 'text-on-primary', 'shadow-sm');
+        currentBtn.setAttribute('aria-selected', 'true');
+      }
+
+      // Elements
+      const badgeIcon = document.getElementById('hero-badge-icon');
+      const badgeText = document.getElementById('hero-badge-text');
+      const heading = document.getElementById('hero-heading');
+      const desc = document.getElementById('hero-description');
+      const reassuranceCopy = document.getElementById('hero-reassurance-copy');
+      const primaryCta = document.getElementById('primary-cta-btn');
+      const primaryLabel = document.getElementById('primary-cta-label');
+      const orderStatusPill = document.getElementById('order-status-pill');
+      const processingBanner = document.getElementById('processing-banner');
+      const expiredBanner = document.getElementById('expired-banner');
+      const form = document.getElementById('payment-recovery-form');
+
+      // Reset dynamic banners
+      processingBanner.classList.add('hidden');
+      expiredBanner.classList.add('hidden');
+      primaryCta.disabled = false;
+      primaryCta.classList.remove('opacity-50', 'cursor-not-allowed', 'bg-surface-variant', 'text-on-surface-variant');
+      primaryCta.classList.add('bg-primary', 'text-on-primary');
+
+      if (state === 'A') {
+        badgeIcon.innerText = 'verified_user';
+        badgeText.innerText = 'PAYMENT STATUS · SECURE TRANSACTION RECOVERY';
+        heading.innerText = "We Couldn't Confirm Your Payment.";
+        desc.innerText = "Your payment attempt has not been completed by your banking gateway. Please review your order below to safely complete your dispensary acquisition without risk of duplicate orders.";
+        reassuranceCopy.innerHTML = 'No duplicate transaction has taken place. Your artisanal Kansa tools and cold-pressed botanical oils remain secured under Order <strong class="text-primary font-semibold">#ANK-84920</strong> in temperature-regulated care while we re-attempt authorization.';
+        primaryLabel.innerText = 'RETRY PAYMENT NOW — ₹ 2,970';
+        orderStatusPill.className = 'font-label-sm text-label-sm uppercase px-2.5 py-1 rounded bg-secondary-fixed text-on-secondary-fixed font-semibold tracking-wider';
+        orderStatusPill.innerText = 'Declined / Failed';
+      } else if (state === 'B') {
+        badgeIcon.innerText = 'hourglass_top';
+        badgeText.innerText = 'TRANSACTION PENDING · CLEARING IN PROGRESS';
+        heading.innerText = 'Your Payment is Awaiting Confirmation.';
+        desc.innerText = 'Your banking partner has received the authorization request. Interbank clearing can take between 5 to 20 minutes to settle on our clinic gateway.';
+        reassuranceCopy.innerHTML = 'Please do not initiate a fresh order. If funds are deducted, Order <strong class="text-primary font-semibold">#ANK-84920</strong> will auto-confirm and dispatch details will be sent via SMS/Email.';
+        primaryLabel.innerText = 'CHECK CLEARING STATUS';
+        orderStatusPill.className = 'font-label-sm text-label-sm uppercase px-2.5 py-1 rounded bg-primary-fixed text-on-primary-fixed font-semibold tracking-wider';
+        orderStatusPill.innerText = 'Awaiting Settlement';
+      } else if (state === 'C') {
+        badgeIcon.innerText = 'contactless';
+        badgeText.innerText = 'STATUS UNVERIFIED · ACTIVE GATEWAY AUDIT';
+        heading.innerText = "We're Checking Your Payment Status.";
+        desc.innerText = 'We are currently polling the Razorpay settlement ledger to confirm if your transaction was captured before allowing a retry.';
+        reassuranceCopy.innerHTML = 'Our automated clinic sync will update this screen automatically. Your reserved botanicals are in locked queue.';
+        primaryLabel.innerText = 'REFRESH VERIFICATION DATA';
+        orderStatusPill.className = 'font-label-sm text-label-sm uppercase px-2.5 py-1 rounded bg-surface-variant text-on-surface font-semibold tracking-wider';
+        orderStatusPill.innerText = 'Verifying Gateway';
+      } else if (state === 'D') {
+        badgeIcon.innerText = 'cancel';
+        badgeText.innerText = 'SESSION EXPIRED · RESERVATION TIMED OUT';
+        heading.innerText = 'Payment Retry Currently Unavailable.';
+        desc.innerText = 'The 24-hour reservation window for Order #ANK-84920 has elapsed. The items have been safely returned to apothecary inventory.';
+        reassuranceCopy.innerHTML = 'To ensure herbal freshness and alignment with current astrological timings, kindly reconstruct your sacred cart.';
+        primaryLabel.innerText = 'RELOAD ITEMS INTO NEW CART';
+        orderStatusPill.className = 'font-label-sm text-label-sm uppercase px-2.5 py-1 rounded bg-surface-container-high text-outline font-semibold tracking-wider';
+        orderStatusPill.innerText = 'Session Closed';
+        expiredBanner.classList.remove('hidden');
+      } else if (state === 'E') {
+        badgeIcon.innerText = 'sync';
+        badgeText.innerText = 'GATEWAY ACTIVE · HANDSHAKE IN FLIGHT';
+        heading.innerText = 'Initiating Secure Payment Rail...';
+        desc.innerText = 'Please wait while we establish a direct encrypted channel with your selected banking institution.';
+        reassuranceCopy.innerHTML = 'Do not press back or reload your browser window.';
+        primaryLabel.innerText = 'TRANSACTION IN FLIGHT...';
+        orderStatusPill.className = 'font-label-sm text-label-sm uppercase px-2.5 py-1 rounded bg-primary text-on-primary font-semibold tracking-wider';
+        orderStatusPill.innerText = 'Processing Rail';
+        processingBanner.classList.remove('hidden');
+        primaryCta.disabled = true;
+        primaryCta.classList.remove('bg-primary', 'text-on-primary');
+        primaryCta.classList.add('bg-surface-variant', 'text-on-surface-variant', 'cursor-not-allowed');
+      }
+    }
+
+    function initiateRetry() {
+      switchState('E');
+      setTimeout(() => {
+        alert('Secure Test Mode: Redirecting to 256-bit secure Razorpay checkout gateway modal for ₹ 2,970.');
+        switchState('B');
+      }, 1800);
+    }
+  </script>
+</div></main><footer class="w-full bg-[#1F4D3A] text-[#F7F1E3] border-t border-[#B38A3E]/30"><div class="max-w-[1440px] mx-auto px-6 lg:px-margin pt-space-xl pb-space-lg"><div class="grid grid-cols-1 md:grid-cols-12 gap-8 lg:gap-gutter-lg pb-space-xl border-b border-[#B38A3E]/20"><div class="md:col-span-5 flex flex-col justify-start space-y-space-sm"><div class="flex flex-col items-start"><a href="home.html" data-path="home" class="inline-block select-none mb-2"><img src="images/logo.png" alt="ANUKUL Logo" class="h-16 w-auto object-contain bg-[#F7F1E3] p-1.5 rounded shadow-sm"></a></div><p class="font-body-md text-body-md text-surface-container-high/90 max-w-md pt-2">ANUKUL Ayur Vastu Harmony Clinic — Health • Space • Lifestyle • Harmony</p><p class="font-body-sm text-body-sm text-outline-variant max-w-sm pt-1">Anchored in classical Vedic sciences, spatial alignment, and holistic constitutional balance for serene modern living.</p></div><div class="md:col-span-4 flex flex-col justify-start space-y-3"><h3 class="font-label-md text-label-md uppercase text-[#B38A3E] tracking-widest font-semibold">Explorations</h3><nav class="grid grid-cols-2 gap-y-2 gap-x-4"><a class="font-body-sm text-body-sm text-surface-container-high/80 hover:text-[#B38A3E] transition-colors" data-path="home" href="home.html">Home</a><a class="font-body-sm text-body-sm text-surface-container-high/80 hover:text-[#B38A3E] transition-colors" data-path="ayurveda" href="ayurveda.html">Ayurveda</a><a class="font-body-sm text-body-sm text-surface-container-high/80 hover:text-[#B38A3E] transition-colors" data-path="vastu" href="vastu.html">Vastu</a><a class="font-body-sm text-body-sm text-surface-container-high/80 hover:text-[#B38A3E] transition-colors" data-path="services" href="services.html">Services</a><a class="font-body-sm text-body-sm text-surface-container-high/80 hover:text-[#B38A3E] transition-colors" data-path="shop" href="shop.html">Shop</a><a class="font-body-sm text-body-sm text-surface-container-high/80 hover:text-[#B38A3E] transition-colors" data-path="blog" href="blog.html">Blog</a><a class="font-body-sm text-body-sm text-surface-container-high/80 hover:text-[#B38A3E] transition-colors" data-path="gallery" href="gallery.html">Gallery</a><a class="font-body-sm text-body-sm text-surface-container-high/80 hover:text-[#B38A3E] transition-colors" data-path="contact" href="contact.html">Contact</a></nav></div><div class="md:col-span-3 flex flex-col justify-start space-y-3"><h3 class="font-label-md text-label-md uppercase text-[#B38A3E] tracking-widest font-semibold">Sanctuary Hours</h3><p class="font-body-sm text-body-sm text-surface-container-high/80">Monday — Saturday<br>08:00 AM – 07:00 PM IST</p><p class="font-body-sm text-body-sm text-surface-container-high/80 pt-2"><span class="text-[#B38A3E] font-medium">Location:</span> Prime Vedic Enclave, Cultural Quarter</p></div></div><div class="pt-space-md flex flex-col sm:flex-row items-center justify-between gap-4"><p class="font-body-sm text-body-sm text-outline-variant text-center sm:text-left">© 2025 ANUKUL Ayur Vastu Harmony Clinic. All rights reserved. Responsible Vedic Clinical Practice.</p><div class="flex items-center gap-6 font-body-sm text-body-sm text-surface-container-high/70"><a class="hover:text-[#B38A3E] transition-colors" data-path="privacy-policy" href="contact.html#privacy">Privacy Policy</a><span class="text-[#B38A3E]/40">•</span><a class="hover:text-[#B38A3E] transition-colors" data-path="terms" href="contact.html#terms">Terms</a><span class="text-[#B38A3E]/40">•</span><a class="hover:text-[#B38A3E] transition-colors" data-path="disclaimer" href="contact.html#disclaimer">Disclaimer</a></div></div></div></footer>
+<script src="js/anukul-scroll.js"></script></body></html>

@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&amp;family=Manrope:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{"colors":{"error-container":"#ffdad6","on-tertiary-fixed":"#400012","primary-container":"#1f4d3a","on-surface":"#1f1b16","secondary-container":"#ff964c","on-primary-container":"#8dbda4","surface-tint":"#3a6753","inverse-on-surface":"#f9efe7","primary":"#023625","secondary-fixed-dim":"#ffb688","secondary-fixed":"#ffdbc7","on-primary-fixed-variant":"#214f3c","inverse-surface":"#352f2a","outline":"#717973","background":"#fff8f4","outline-variant":"#c0c9c2","surface-bright":"#fff8f4","secondary":"#974800","primary-fixed":"#bceed3","tertiary":"#5d0f24","on-tertiary-container":"#ff93a4","on-tertiary":"#ffffff","on-background":"#1f1b16","on-secondary-fixed-variant":"#733600","tertiary-container":"#7b2739","on-surface-variant":"#414944","surface-container-low":"#fcf2ea","on-error":"#ffffff","on-primary":"#ffffff","error":"#ba1a1a","primary-fixed-dim":"#a1d1b8","inverse-primary":"#a1d1b8","tertiary-fixed":"#ffd9dd","on-secondary-container":"#6e3300","surface-variant":"#ebe1d9","surface-container":"#f6ece4","on-secondary":"#ffffff","surface":"#fff8f4","on-primary-fixed":"#002114","on-secondary-fixed":"#311300","on-tertiary-fixed-variant":"#7d283a","surface-container-lowest":"#ffffff","surface-container-highest":"#ebe1d9","tertiary-fixed-dim":"#ffb2bc","on-error-container":"#93000a","surface-dim":"#e2d8d0","surface-container-high":"#f1e6de"},"borderRadius":{"DEFAULT":"0.125rem","lg":"0.25rem","xl":"0.5rem","full":"0.75rem"},"spacing":{"space-sm":"0.5rem","margin-lg":"5rem","margin-md":"3rem","space-2xl":"5rem","space-md":"1rem","space-lg":"1.75rem","gutter":"1.5rem","space-xs":"0.25rem","gutter-lg":"2.5rem","space-xl":"3rem","margin":"1.5rem"},"fontFamily":{"headline-lg-mobile":["EB Garamond"],"headline-lg":["EB Garamond"],"body-lg":["Manrope"],"body-md":["Manrope"],"label-sm":["Manrope"],"editorial-quote":["EB Garamond"],"display":["EB Garamond"],"headline-sm":["EB Garamond"],"headline-md":["EB Garamond"],"body-sm":["Manrope"],"display-mobile":["EB Garamond"],"label-md":["Manrope"]},"fontSize":{"headline-lg-mobile":["30px",{"lineHeight":"36px","fontWeight":"500"}],"headline-lg":["40px",{"lineHeight":"48px","fontWeight":"400"}],"body-lg":["18px",{"lineHeight":"28px","fontWeight":"400"}],"body-md":["15px",{"lineHeight":"24px","fontWeight":"400"}],"label-sm":["10px",{"lineHeight":"14px","letterSpacing":"0.12em","fontWeight":"700"}],"editorial-quote":["26px",{"lineHeight":"36px","letterSpacing":"0.01em","fontWeight":"400"}],"display":["56px",{"lineHeight":"64px","letterSpacing":"-0.01em","fontWeight":"400"}],"headline-sm":["22px",{"lineHeight":"28px","fontWeight":"600"}],"headline-md":["28px",{"lineHeight":"36px","fontWeight":"500"}],"body-sm":["13px",{"lineHeight":"20px","fontWeight":"400"}],"display-mobile":["38px",{"lineHeight":"44px","letterSpacing":"-0.01em","fontWeight":"400"}],"label-md":["12px",{"lineHeight":"16px","letterSpacing":"0.08em","fontWeight":"600"}]}}}}</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"><link rel="stylesheet" href="css/anukul-animations.css"></head><body class="bg-surface font-body-md text-body-md text-on-surface antialiased"><header class="fixed top-0 w-full z-50 bg-[#F7F1E3]/95 backdrop-blur-md border-b border-[#E8D8BC] shadow-[0_1px_8px_rgba(0,0,0,0.03)]"><div class="h-20 max-w-[1440px] mx-auto px-6 lg:px-margin flex items-center justify-between gap-4"><a href="home.html" data-path="home" class="flex items-center select-none py-1"><img src="images/logo.png" alt="ANUKUL Logo" class="h-14 sm:h-16 w-auto max-h-[64px] object-contain"></a><nav class="hidden xl:flex items-center gap-6 lg:gap-space-md" data-active-classes="text-primary font-semibold relative after:absolute after:bottom-[-4px] after:left-0 after:w-full after:h-[1.5px] after:bg-[#B38A3E]"><a class="font-label-md text-label-md uppercase text-on-surface-variant hover:text-primary transition-colors tracking-widest" data-path="home" href="home.html">Home</a><a class="font-label-md text-label-md uppercase text-on-surface-variant hover:text-primary transition-colors tracking-widest" data-path="ayurveda" href="ayurveda.html">Ayurveda</a><a class="font-label-md text-label-md uppercase text-on-surface-variant hover:text-primary transition-colors tracking-widest" data-path="vastu" href="vastu.html">Vastu</a><a class="font-label-md text-label-md uppercase text-on-surface-variant hover:text-primary transition-colors tracking-widest" data-path="services" href="services.html">Services</a><a class="font-label-md text-label-md uppercase text-on-surface-variant hover:text-primary transition-colors tracking-widest" data-path="shop" href="shop.html">Shop</a><a class="font-label-md text-label-md uppercase text-on-surface-variant hover:text-primary transition-colors tracking-widest" data-path="blog" href="blog.html">Blog</a><a class="font-label-md text-label-md uppercase text-on-surface-variant hover:text-primary transition-colors tracking-widest" data-path="gallery" href="gallery.html">Gallery</a><a class="font-label-md text-label-md uppercase text-on-surface-variant hover:text-primary transition-colors tracking-widest" data-path="contact" href="contact.html">Contact</a></nav><div class="flex items-center gap-2 sm:gap-3"><a href="search_result.html" data-path="search" title="Search Wisdom &amp; Remedies" class="flex items-center justify-center w-10 h-10 rounded-full text-primary hover:bg-[#E8D8BC]/60 hover:text-secondary transition-colors"><span class="material-symbols-outlined text-[22px]">search</span></a><a href="cart.html" data-path="cart" title="Shopping Cart" class="relative flex items-center justify-center w-10 h-10 rounded-full text-primary hover:bg-[#E8D8BC]/60 hover:text-secondary transition-colors"><span class="material-symbols-outlined text-[22px]">shopping_bag</span><span class="absolute top-1 right-1 w-4 h-4 bg-secondary text-on-secondary text-[10px] font-bold rounded-full flex items-center justify-center leading-none">2</span></a><a href="book_your_consultation.html" data-path="book-consultation" class="hidden sm:inline-flex items-center justify-center bg-[#1F4D3A] text-[#F7F1E3] font-label-md text-label-md px-5 py-2.5 rounded-lg tracking-wider uppercase transition-colors duration-200 hover:bg-secondary shadow-sm font-semibold">BOOK CONSULTATION</a><a href="account.html" data-path="account" title="Client Sanctuary Portal" class="w-9 h-9 rounded-full bg-primary flex items-center justify-center text-on-primary hover:bg-secondary transition-colors shadow-sm"><span class="material-symbols-outlined text-[18px]">person</span></a><button id="mobile-menu-btn" type="button" aria-label="Toggle navigation" class="xl:hidden inline-flex items-center justify-center w-10 h-10 rounded-lg text-primary hover:bg-[#E8D8BC]/60 focus:outline-none transition-colors"><span class="material-symbols-outlined text-[26px]" id="mobile-menu-icon">menu</span></button></div></div><div id="mobile-menu" class="hidden xl:hidden w-full bg-[#F7F1E3] border-b border-[#E8D8BC] shadow-lg transition-all"><div class="px-6 py-5 space-y-4 max-h-[calc(100vh-80px)] overflow-y-auto"><nav class="flex flex-col space-y-1.5"><a class="py-2.5 px-3 rounded-lg font-label-md text-label-md uppercase tracking-widest text-on-surface-variant hover:bg-surface-container hover:text-primary transition-colors" data-path="home" href="home.html">Home</a><a class="py-2.5 px-3 rounded-lg font-label-md text-label-md uppercase tracking-widest text-on-surface-variant hover:bg-surface-container hover:text-primary transition-colors" data-path="ayurveda" href="ayurveda.html">Ayurveda</a><a class="py-2.5 px-3 rounded-lg font-label-md text-label-md uppercase tracking-widest text-on-surface-variant hover:bg-surface-container hover:text-primary transition-colors" data-path="vastu" href="vastu.html">Vastu</a><a class="py-2.5 px-3 rounded-lg font-label-md text-label-md uppercase tracking-widest text-on-surface-variant hover:bg-surface-container hover:text-primary transition-colors" data-path="services" href="services.html">Services</a><a class="py-2.5 px-3 rounded-lg font-label-md text-label-md uppercase tracking-widest text-on-surface-variant hover:bg-surface-container hover:text-primary transition-colors" data-path="shop" href="shop.html">Shop</a><a class="py-2.5 px-3 rounded-lg font-label-md text-label-md uppercase tracking-widest text-on-surface-variant hover:bg-surface-container hover:text-primary transition-colors" data-path="blog" href="blog.html">Blog</a><a class="py-2.5 px-3 rounded-lg font-label-md text-label-md uppercase tracking-widest text-on-surface-variant hover:bg-surface-container hover:text-primary transition-colors" data-path="gallery" href="gallery.html">Gallery</a><a class="py-2.5 px-3 rounded-lg font-label-md text-label-md uppercase tracking-widest text-on-surface-variant hover:bg-surface-container hover:text-primary transition-colors" data-path="contact" href="contact.html">Contact</a></nav><div class="pt-4 border-t border-[#E8D8BC] flex flex-col gap-3"><a href="book_your_consultation.html" data-path="book-consultation" class="w-full text-center bg-[#1F4D3A] text-[#F7F1E3] font-label-md text-label-md py-3 rounded-lg tracking-wider uppercase font-semibold hover:bg-secondary transition-colors shadow-sm">BOOK CONSULTATION</a><div class="grid grid-cols-3 gap-2 pt-1 text-center text-xs font-label-md"><a href="search_result.html" class="flex flex-col items-center justify-center p-2 rounded-lg bg-surface-container hover:bg-[#E8D8BC]/70 text-primary transition-colors"><span class="material-symbols-outlined text-[20px] mb-1">search</span>Search</a><a href="cart.html" class="flex flex-col items-center justify-center p-2 rounded-lg bg-surface-container hover:bg-[#E8D8BC]/70 text-primary transition-colors relative"><span class="material-symbols-outlined text-[20px] mb-1">shopping_bag</span>Cart (2)</a><a href="account.html" class="flex flex-col items-center justify-center p-2 rounded-lg bg-surface-container hover:bg-[#E8D8BC]/70 text-primary transition-colors"><span class="material-symbols-outlined text-[20px] mb-1">person</span>Account</a></div></div></div></div><script>(function(){var btn=document.getElementById('mobile-menu-btn');var menu=document.getElementById('mobile-menu');var icon=document.getElementById('mobile-menu-icon');if(btn&&menu){btn.onclick=function(){var isHidden=menu.classList.contains('hidden');if(isHidden){menu.classList.remove('hidden');if(icon)icon.textContent='close';}else{menu.classList.add('hidden');if(icon)icon.textContent='menu';}};}})();</script></header><main class="w-full pt-20 bg-surface min-h-[calc(100vh-80px)]"><div class="flex flex-col w-full">
+<!-- Interactive Reviewer State Controller Banner -->
+<aside aria-label="Reviewer state switcher" class="w-full bg-surface-container-high py-3 px-6 lg:px-12 sticky top-20 z-40 shadow-sm">
+<div class="max-w-[1440px] mx-auto flex flex-col md:flex-row items-start md:items-center justify-between gap-3">
+<div class="flex items-center gap-2">
+<span class="inline-block w-2 h-2 rounded-full bg-secondary animate-pulse"></span>
+<span class="font-label-sm text-label-sm tracking-wider uppercase text-on-surface-variant">Reviewer Switcher • Transaction State Matrix</span>
+</div>
+<div class="flex flex-wrap gap-1.5 sm:gap-2">
+<button class="state-btn active-state px-3 py-1.5 rounded font-label-sm text-label-sm uppercase tracking-wider bg-primary text-on-primary transition-all shadow-sm" data-state-btn="state-confirmed" onclick="switchBookingState('state-confirmed')" type="button">
+          A: Confirmed (Success)
+        </button>
+<button class="state-btn px-3 py-1.5 rounded font-label-sm text-label-sm uppercase tracking-wider bg-surface-container text-on-surface hover:bg-surface-variant transition-all" data-state-btn="state-pending" onclick="switchBookingState('state-pending')" type="button">
+          B: Payment Pending
+        </button>
+<button class="state-btn px-3 py-1.5 rounded font-label-sm text-label-sm uppercase tracking-wider bg-surface-container text-on-surface hover:bg-surface-variant transition-all" data-state-btn="state-failed" onclick="switchBookingState('state-failed')" type="button">
+          C: Declined / Retry
+        </button>
+<button class="state-btn px-3 py-1.5 rounded font-label-sm text-label-sm uppercase tracking-wider bg-surface-container text-on-surface hover:bg-surface-variant transition-all" data-state-btn="state-unavailable" onclick="switchBookingState('state-unavailable')" type="button">
+          D: Slot Unavailable
+        </button>
+<button class="state-btn px-3 py-1.5 rounded font-label-sm text-label-sm uppercase tracking-wider bg-surface-container text-on-surface hover:bg-surface-variant transition-all" data-state-btn="state-loading" onclick="switchBookingState('state-loading')" type="button">
+          E: Verifying (Loading)
+        </button>
+</div>
+</div>
+</aside>
+<!-- Main View Container -->
+<div class="w-full max-w-[1440px] mx-auto px-6 lg:px-12 py-10 lg:py-16">
+<!-- ========================================================================= -->
+<!-- STATE A: CONFIRMED (DEFAULT ACTIVE)                                       -->
+<!-- ========================================================================= -->
+<section class="state-view flex flex-col space-y-12" id="state-confirmed">
+<!-- Confirmation Header Band -->
+<div class="relative bg-surface-container-low rounded-xl p-8 lg:p-12 shadow-sm overflow-hidden">
+<!-- Directional Crosshair & Sacred Geometry Motif (Subtle Top-Right Accent) -->
+<div class="absolute -right-8 -top-8 w-64 h-64 opacity-[0.06] pointer-events-none text-primary">
+<svg class="w-full h-full stroke-current" fill="none" stroke-width="1.2" viewbox="0 0 200 200">
+<circle cx="100" cy="100" r="90"></circle>
+<circle cx="100" cy="100" r="65"></circle>
+<circle cx="100" cy="100" r="40"></circle>
+<line x1="100" x2="100" y1="0" y2="200"></line>
+<line x1="0" x2="200" y1="100" y2="100"></line>
+<rect height="90" transform="rotate(45 100 100)" width="90" x="55" y="55"></rect>
+</svg>
+</div>
+<div class="max-w-3xl space-y-4 relative z-10">
+<div class="flex flex-wrap items-center gap-3">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded bg-primary-fixed text-on-primary-fixed font-label-sm text-label-sm uppercase tracking-widest">
+<span class="material-symbols-outlined text-[14px]">check_circle</span>
+<span>Consultation Appointment Confirmed • Server Verified</span>
+</div>
+<span class="font-label-sm text-label-sm tracking-wider uppercase text-secondary font-mono">Ishanya Axis • Sanctum Slot 04-A</span>
+</div>
+<h1 class="font-display text-display text-primary leading-tight">
+            Your consultation is confirmed.
+          </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl leading-relaxed">
+            Thank you for choosing ANUKUL. Your appointment details are sealed and registered. A calendar invite, cardinal intake brief, and confidential preparation dossier have been dispatched to your verified email.
+          </p>
+<div class="pt-2 flex flex-wrap items-center gap-4">
+<div class="inline-flex items-center gap-2 px-4 py-2 bg-surface-container rounded font-label-md text-label-md text-on-surface">
+<span class="w-2.5 h-2.5 rounded-full bg-primary-container"></span>
+<span class="font-semibold text-primary">Payment Confirmed &amp; Slot Reserved</span>
+<span class="text-outline">•</span>
+<span class="font-mono text-secondary">Reference #ANK-CNS-94812</span>
+</div>
+<div class="text-body-sm font-body-sm text-outline flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px]">verified_user</span>
+<span>Encrypted Vedic Clinical Record</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Two-Column Asymmetrical Grid -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
+<!-- Left Column: Detailed Appointment & Practitioner Overview (7 Columns) -->
+<div class="lg:col-span-7 space-y-8">
+<!-- Card 1: Confirmed Appointment Details -->
+<div class="bg-surface-container-lowest rounded-xl p-8 shadow-sm space-y-6">
+<div class="flex items-center justify-between pb-4 border-b border-surface-variant">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-[22px]">calendar_today</span>
+</div>
+<div>
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-secondary block">Session Profile</span>
+<h2 class="font-headline-sm text-headline-sm text-primary">Confirmed Appointment Record</h2>
+</div>
+</div>
+<span class="hidden sm:inline-block px-3 py-1 rounded bg-secondary-fixed text-on-secondary-fixed-variant font-label-sm text-label-sm uppercase tracking-wider">
+                Vedic Diagnostic
+              </span>
+</div>
+<!-- Practitioner & Diagnostic Overview -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-6 bg-surface-container-low p-5 rounded-lg">
+<div class="space-y-1">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline block">Consultation Type</span>
+<p class="font-body-md text-body-md font-semibold text-primary">
+                  Integrated Health &amp; Space Consultation
+                </p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+                  Ayurveda (Dosha Analysis) + Vastu Shastra Spatial Harmony
+                </p>
+</div>
+<div class="space-y-1 sm:pl-4 sm:border-l sm:border-surface-variant">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline block">Lead Consultant</span>
+<p class="font-body-md text-body-md font-semibold text-primary">
+                  Dr. Nishigandha Chaudhari
+                </p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+                  Founder &amp; Director, Senior Ayur-Vastu Physician
+                </p>
+</div>
+</div>
+<!-- Date, Time, Duration & Modality -->
+<div class="space-y-4">
+<div class="flex flex-col sm:flex-row sm:items-start justify-between gap-3 p-4 bg-surface-container rounded-lg">
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary text-[22px] mt-0.5">schedule</span>
+<div>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline block">Confirmed Timing</span>
+<p class="font-body-md text-body-md font-medium text-on-surface">
+                      Thursday, November 14, 2025 • 10:30 AM – 11:45 AM IST
+                    </p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+                      Indian Standard Time (GMT+5:30) • Planetary Hora: Mercury / Budha
+                    </p>
+</div>
+</div>
+<div class="sm:text-right shrink-0">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline block">Session Duration</span>
+<span class="font-body-md text-body-md font-semibold text-primary">75 Minutes Full Diagnostic</span>
+</div>
+</div>
+<div class="flex items-start gap-3 p-4 bg-surface-container rounded-lg">
+<span class="material-symbols-outlined text-primary text-[22px] mt-0.5">videocam</span>
+<div class="space-y-1">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline block">Format &amp; Mode</span>
+<p class="font-body-md text-body-md font-medium text-on-surface">
+                    Private Video Sanctuary (Encrypted Tele-Consultation)
+                  </p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+                    Your unique, end-to-end encrypted video meeting link will be dispatched to your email and SMS 30 minutes prior to session commencement.
+                  </p>
+</div>
+</div>
+</div>
+<!-- Calendar Synchronisation Actions -->
+<div class="pt-2 flex flex-wrap items-center gap-3">
+<a class="inline-flex items-center gap-2 bg-primary text-on-primary hover:bg-tertiary transition-colors px-5 py-3 rounded font-label-md text-label-md tracking-wider uppercase" href="#add-to-calendar" onclick="alert('Adding appointment to Google Calendar...')">
+<span class="material-symbols-outlined text-[18px]">event_available</span>
+<span>Add to Google Calendar</span>
+</a>
+<a class="inline-flex items-center gap-2 bg-surface-container text-primary hover:bg-surface-variant transition-colors px-5 py-3 rounded font-label-md text-label-md tracking-wider uppercase" href="#download-ical" onclick="alert('Downloading iCal (.ics) invite...')">
+<span class="material-symbols-outlined text-[18px]">download</span>
+<span>Download iCal / Outlook</span>
+</a>
+</div>
+</div>
+<!-- Card 2: What Happens Next & How to Prepare -->
+<div class="bg-surface-container-lowest rounded-xl p-8 shadow-sm space-y-6">
+<div class="flex items-center gap-3 pb-3 border-b border-surface-variant">
+<div class="w-10 h-10 rounded-full bg-secondary-fixed text-on-secondary-fixed flex items-center justify-center">
+<span class="material-symbols-outlined text-[22px]">self_improvement</span>
+</div>
+<div>
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-secondary block">Pre-Session Protocols</span>
+<h2 class="font-headline-sm text-headline-sm text-primary">What Happens Next &amp; How to Prepare</h2>
+</div>
+</div>
+<div class="space-y-5">
+<!-- Step 1 -->
+<div class="flex items-start gap-4">
+<div class="w-8 h-8 rounded-full bg-primary-container text-on-primary font-headline-sm text-headline-sm flex items-center justify-center italic shrink-0">
+                  1
+                </div>
+<div class="space-y-1">
+<h3 class="font-body-md text-body-md font-semibold text-primary">Preparation Dossier Formulation</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+                    Note down your past 14 days of dietary rhythms, sleep-wake cycles, and major digestive cues. If seeking residential Vastu analysis, have your floor plan sketch and rough compass orientations (East / North openings) handy.
+                  </p>
+</div>
+</div>
+<!-- Step 2 -->
+<div class="flex items-start gap-4">
+<div class="w-8 h-8 rounded-full bg-primary-container text-on-primary font-headline-sm text-headline-sm flex items-center justify-center italic shrink-0">
+                  2
+                </div>
+<div class="space-y-1">
+<h3 class="font-body-md text-body-md font-semibold text-primary">5-Minute Prakriti Intake Questionnaire</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+                    A personalized constitutional questionnaire has been sent to your inbox. Please complete this at least 24 hours prior to our session to enable Dr. Chaudhari to calculate elemental ratios (Vata, Pitta, Kapha).
+                  </p>
+</div>
+</div>
+<!-- Step 3 -->
+<div class="flex items-start gap-4">
+<div class="w-8 h-8 rounded-full bg-primary-container text-on-primary font-headline-sm text-headline-sm flex items-center justify-center italic shrink-0">
+                  3
+                </div>
+<div class="space-y-1">
+<h3 class="font-body-md text-body-md font-semibold text-primary">Establish a Calm Sanctuary Space</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+                    Join the consultation from an undisturbed, well-lit space facing East or North if possible. Keep fresh drinking water, a journal, and pen accessible for dietary guidelines and energetic recommendations.
+                  </p>
+</div>
+</div>
+</div>
+</div>
+<!-- Card 3: Rescheduling & Cancellation Policy -->
+<div class="bg-surface-container-low rounded-xl p-6 shadow-sm space-y-4">
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-secondary text-[24px]">policy</span>
+<div class="space-y-2">
+<h3 class="font-headline-sm text-headline-sm text-primary">Rescheduling &amp; Cancellation Policy</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+                  We recognize that unpredictable cycles emerge. Rescheduling is complimentary up to 24 hours prior to your scheduled consultation. Changes within 24 hours incur a 50% reservation retention to honor our consultant’s devoted study time.
+                </p>
+<div class="pt-2 flex items-center gap-4">
+<a class="inline-flex items-center gap-1 font-label-md text-label-md uppercase tracking-wider text-primary hover:text-secondary font-semibold transition-colors" href="#manage-booking" onclick="alert('Redirecting to Secure Appointment Management Portal...')">
+<span>Manage Booking / Request Reschedule</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Column: Financial & Verification Breakdown (5 Columns) -->
+<div class="lg:col-span-5 space-y-8">
+<!-- Card 1: Verified Booking Record & Receipt Summary -->
+<div class="bg-surface-container-lowest rounded-xl p-8 shadow-sm space-y-6">
+<div class="flex items-center justify-between pb-4 border-b border-surface-variant">
+<div>
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-secondary block">Official Ledger</span>
+<h2 class="font-headline-sm text-headline-sm text-primary">Receipt &amp; Tax Invoice</h2>
+</div>
+<span class="px-2.5 py-1 rounded bg-primary-fixed text-on-primary-fixed font-label-sm text-label-sm uppercase tracking-wider font-semibold">
+                Settled
+              </span>
+</div>
+<!-- Booking & Payment Metadata -->
+<div class="space-y-3 font-body-sm text-body-sm">
+<div class="flex items-center justify-between py-2 border-b border-surface-container">
+<span class="text-on-surface-variant">Booking Reference</span>
+<span class="font-mono font-semibold text-primary">#ANK-CNS-94812</span>
+</div>
+<div class="flex items-center justify-between py-2 border-b border-surface-container">
+<span class="text-on-surface-variant">Transaction ID</span>
+<span class="font-mono text-on-surface">TXN_RAZOR_ANK_773192</span>
+</div>
+<div class="flex items-start justify-between py-2 border-b border-surface-container">
+<span class="text-on-surface-variant">Billed Client</span>
+<div class="text-right">
+<span class="font-medium text-primary block">Ananya Sharma</span>
+<span class="text-on-surface-variant block">ananya.sharma@example.com</span>
+<span class="text-outline font-mono block">+91 98112 00482</span>
+</div>
+</div>
+<div class="flex items-center justify-between py-2 border-b border-surface-container">
+<span class="text-on-surface-variant">Payment Channel</span>
+<span class="text-on-surface">Razorpay UPI (Verified)</span>
+</div>
+</div>
+<!-- Price Breakdown Calculation -->
+<div class="bg-surface-container-low p-4 rounded-lg space-y-2.5">
+<div class="flex items-center justify-between font-body-sm text-body-sm">
+<span class="text-on-surface-variant">Consultation Base Fee</span>
+<span class="font-mono text-on-surface">₹ 4,500.00</span>
+</div>
+<div class="flex items-center justify-between font-body-sm text-body-sm">
+<span class="text-on-surface-variant">GST / Integrated Services Tax (18%)</span>
+<span class="font-mono text-on-surface">₹ 810.00</span>
+</div>
+<div class="pt-2 border-t border-surface-variant flex items-center justify-between font-body-md text-body-md font-semibold">
+<span class="text-primary">Total Paid</span>
+<span class="font-headline-sm text-headline-sm text-primary">₹ 5,310.00</span>
+</div>
+</div>
+<!-- Invoice Actions -->
+<div class="space-y-3 pt-2">
+<button class="w-full flex items-center justify-center gap-2 bg-primary text-on-primary hover:bg-tertiary transition-colors py-3 px-4 rounded font-label-md text-label-md uppercase tracking-wider" onclick="window.print()" type="button">
+<span class="material-symbols-outlined text-[18px]">download</span>
+<span>Download Tax Invoice (PDF)</span>
+</button>
+<button class="w-full flex items-center justify-center gap-2 bg-surface-container text-primary hover:bg-surface-variant transition-colors py-3 px-4 rounded font-label-md text-label-md uppercase tracking-wider" onclick="window.print()" type="button">
+<span class="material-symbols-outlined text-[18px]">print</span>
+<span>Print Confirmation</span>
+</button>
+</div>
+</div>
+<!-- Card 2: Need Assistance or Urgent Inquiries? -->
+<div class="bg-surface-container-lowest rounded-xl p-8 shadow-sm space-y-5">
+<div class="flex items-center gap-3 pb-3 border-b border-surface-variant">
+<div class="w-10 h-10 rounded-full bg-secondary-fixed text-on-secondary-fixed flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]">support_agent</span>
+</div>
+<div>
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-secondary block">Sanctuary Concierge</span>
+<h3 class="font-headline-sm text-headline-sm text-primary">Need Assistance?</h3>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+              If your intake files fail to arrive or you require cardinal architectural clarification ahead of your slot, our administrative Vaidya desk is at your service.
+            </p>
+<div class="space-y-2 font-body-sm text-body-sm">
+<div class="flex items-center gap-2 text-on-surface">
+<span class="material-symbols-outlined text-[18px] text-primary">mail</span>
+<span class="font-mono text-primary font-medium">sanctuary@anukul-harmony.org</span>
+</div>
+<div class="flex items-center gap-2 text-on-surface">
+<span class="material-symbols-outlined text-[18px] text-primary">call</span>
+<span class="font-mono text-primary font-medium">+91 98112 00482</span>
+</div>
+<div class="flex items-center gap-2 text-on-surface-variant pt-1">
+<span class="material-symbols-outlined text-[18px] text-outline">schedule</span>
+<span>Clinical Desk: Mon – Sat 09:00 – 17:30 IST</span>
+</div>
+</div>
+</div>
+<!-- Card 3: Complementary Sanctuary Dispatch (Visual Accent) -->
+<div class="relative rounded-xl overflow-hidden shadow-sm bg-primary text-on-primary p-6 space-y-4">
+<div class="space-y-1">
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-secondary-fixed block">Vedic Environmental Wisdom</span>
+<h4 class="font-headline-sm text-headline-sm text-surface">Brahma Sthan Orientation</h4>
+</div>
+<p class="font-body-sm text-body-sm text-primary-fixed-dim leading-relaxed">
+              Prior to your diagnostic, consider inspecting the exact center of your home (the Brahma Sthan). Keeping this spatial locus uncluttered fosters immediate coherence with the clinical recommendations to follow.
+            </p>
+<div class="pt-2 flex items-center justify-between text-secondary-fixed font-label-sm text-label-sm uppercase tracking-wider">
+<span>Sanctuary Dispatch #12</span>
+<span class="material-symbols-outlined text-[18px]">explore</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- ========================================================================= -->
+<!-- STATE B: PAYMENT PENDING / RECONCILIATION                                 -->
+<!-- ========================================================================= -->
+<section class="state-view hidden flex flex-col space-y-8" id="state-pending">
+<div class="bg-surface-container-low rounded-xl p-8 lg:p-12 shadow-sm max-w-4xl mx-auto w-full">
+<div class="flex items-start gap-4 pb-6 border-b border-surface-variant">
+<div class="w-12 h-12 rounded-full bg-secondary-fixed text-on-secondary-fixed-variant flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[28px] animate-spin">sync</span>
+</div>
+<div class="space-y-2">
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-secondary block">Gateway Reconciliation • Reserved Hold</span>
+<h1 class="font-headline-lg text-headline-lg text-primary">Your payment is being verified.</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed">
+              Your banking gateway transaction is currently undergoing inter-bank reconciliation. Your selected consultation slot is temporarily held for <strong>15 minutes</strong> while verification finishes. Please do not re-book or submit another payment to prevent duplicate charges.
+            </p>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-4 py-6">
+<div class="p-4 bg-surface-container rounded-lg">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline block">Hold Expiration</span>
+<span class="font-headline-sm text-headline-sm text-secondary font-mono">13:42 mins</span>
+</div>
+<div class="p-4 bg-surface-container rounded-lg">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline block">Pending Order ID</span>
+<span class="font-body-md text-body-md font-mono text-primary font-semibold">ORD_ANK_992147</span>
+</div>
+<div class="p-4 bg-surface-container rounded-lg">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline block">Gateway Status</span>
+<span class="font-body-md text-body-md text-on-surface font-medium flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-secondary animate-ping"></span>
+              Awaiting NPCI settlement
+            </span>
+</div>
+</div>
+<div class="pt-4 flex flex-wrap gap-4">
+<button class="inline-flex items-center gap-2 bg-primary text-on-primary hover:bg-tertiary transition-colors px-6 py-3 rounded font-label-md text-label-md uppercase tracking-wider" onclick="simulateVerificationRefresh()" type="button">
+<span class="material-symbols-outlined text-[18px]">refresh</span>
+<span>Refresh Verification Status</span>
+</button>
+<a class="inline-flex items-center gap-2 bg-surface-container text-primary hover:bg-surface-variant transition-colors px-6 py-3 rounded font-label-md text-label-md uppercase tracking-wider" href="mailto:sanctuary@anukul-harmony.org">
+<span class="material-symbols-outlined text-[18px]">support</span>
+<span>Contact Clinic Accounts</span>
+</a>
+</div>
+</div>
+</section>
+<!-- ========================================================================= -->
+<!-- STATE C: PAYMENT DECLINED / RETRY                                         -->
+<!-- ========================================================================= -->
+<section class="state-view hidden flex flex-col space-y-8" id="state-failed">
+<div class="bg-surface-container-low rounded-xl p-8 lg:p-12 shadow-sm max-w-4xl mx-auto w-full">
+<div class="flex items-start gap-4 pb-6 border-b border-surface-variant">
+<div class="w-12 h-12 rounded-full bg-error-container text-error flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[28px]">error</span>
+</div>
+<div class="space-y-2">
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-error block">Transaction Unsuccessful • No Debits Captured</span>
+<h1 class="font-headline-lg text-headline-lg text-primary">We couldn't confirm your payment.</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed">
+              Your transaction was interrupted or declined by your financial institution. No charges were captured and no duplicate consultation was booked. Your selected slot will remain locked for the next 8 minutes so you can re-attempt without losing your date.
+            </p>
+</div>
+</div>
+<div class="bg-error-container/30 border border-error/20 p-5 rounded-lg space-y-2 my-6">
+<div class="flex items-center gap-2 text-error font-semibold font-body-md text-body-md">
+<span class="material-symbols-outlined text-[20px]">warning</span>
+<span>Issuer Response: 05 – Transaction Not Authorized by Issuing Bank</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+            Common reasons include daily card limits, OTP timeouts, or 2FA cancellation. You may use a different UPI App (Google Pay, PhonePe, Paytm) or NetBanking.
+          </p>
+</div>
+<div class="pt-2 flex flex-wrap gap-4">
+<button class="inline-flex items-center gap-2 bg-primary text-on-primary hover:bg-tertiary transition-colors px-6 py-3 rounded font-label-md text-label-md uppercase tracking-wider" onclick="alert('Launching Razorpay checkout modal with reserved slot token...')" type="button">
+<span class="material-symbols-outlined text-[18px]">payment</span>
+<span>Retry Payment for Reserved Slot</span>
+</button>
+<button class="inline-flex items-center gap-2 bg-surface-container text-primary hover:bg-surface-variant transition-colors px-6 py-3 rounded font-label-md text-label-md uppercase tracking-wider" onclick="alert('Opening alternate payment rails (Card / NetBanking / NEFT)...')" type="button">
+<span class="material-symbols-outlined text-[18px]">account_balance</span>
+<span>Select Another Payment Method</span>
+</button>
+</div>
+</div>
+</section>
+<!-- ========================================================================= -->
+<!-- STATE D: APPOINTMENT SLOT UNAVAILABLE                                     -->
+<!-- ========================================================================= -->
+<section class="state-view hidden flex flex-col space-y-8" id="state-unavailable">
+<div class="bg-surface-container-low rounded-xl p-8 lg:p-12 shadow-sm max-w-4xl mx-auto w-full">
+<div class="flex items-start gap-4 pb-6 border-b border-surface-variant">
+<div class="w-12 h-12 rounded-full bg-secondary-fixed text-on-secondary-fixed flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[28px]">event_busy</span>
+</div>
+<div class="space-y-2">
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-secondary block">Slot Released • Automatic Refund Guard</span>
+<h1 class="font-headline-lg text-headline-lg text-primary">Appointment slot no longer available.</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed">
+              The requested time slot was reserved by another client during checkout or has closed. Any pending transaction authorization will be automatically reversed to your original payment rail within 24–48 banking hours.
+            </p>
+</div>
+</div>
+<div class="p-6 bg-surface-container rounded-lg space-y-4 my-6">
+<h2 class="font-headline-sm text-headline-sm text-primary">Recommended Alternate Consultation Windows</h2>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+<div class="p-4 bg-surface-container-lowest rounded flex items-center justify-between">
+<div>
+<span class="font-body-md text-body-md font-semibold text-primary block">Friday, Nov 15, 2025</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">02:30 PM – 03:45 PM IST</span>
+</div>
+<button class="px-3 py-1.5 bg-primary text-on-primary rounded font-label-sm text-label-sm uppercase" onclick="alert('Reserving Friday Nov 15 slot...')" type="button">Select</button>
+</div>
+<div class="p-4 bg-surface-container-lowest rounded flex items-center justify-between">
+<div>
+<span class="font-body-md text-body-md font-semibold text-primary block">Monday, Nov 18, 2025</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">11:00 AM – 12:15 PM IST</span>
+</div>
+<button class="px-3 py-1.5 bg-primary text-on-primary rounded font-label-sm text-label-sm uppercase" onclick="alert('Reserving Monday Nov 18 slot...')" type="button">Select</button>
+</div>
+</div>
+</div>
+<div class="pt-2 flex flex-wrap gap-4">
+<a class="inline-flex items-center gap-2 bg-primary text-on-primary hover:bg-tertiary transition-colors px-6 py-3 rounded font-label-md text-label-md uppercase tracking-wider" data-path="book-consultation" href="book_your_consultation.html">
+<span class="material-symbols-outlined text-[18px]">calendar_month</span>
+<span>Choose Another Appointment Date</span>
+</a>
+<a class="inline-flex items-center gap-2 bg-surface-container text-primary hover:bg-surface-variant transition-colors px-6 py-3 rounded font-label-md text-label-md uppercase tracking-wider" data-path="services" href="services.html">
+<span class="material-symbols-outlined text-[18px]">person_search</span>
+<span>View Consultant Availability</span>
+</a>
+</div>
+</div>
+</section>
+<!-- ========================================================================= -->
+<!-- STATE E: VERIFYING WITH SERVER (LOADING)                                 -->
+<!-- ========================================================================= -->
+<section class="state-view hidden flex flex-col items-center justify-center py-20" id="state-loading">
+<div class="bg-surface-container-lowest rounded-xl p-12 max-w-lg w-full text-center space-y-6 shadow-sm">
+<div class="relative w-20 h-20 mx-auto">
+<!-- Animated Concentric Rings for Vedic Aura -->
+<div class="absolute inset-0 rounded-full border-2 border-primary/20 animate-ping"></div>
+<div class="w-full h-full rounded-full bg-primary-container text-on-primary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-[36px] animate-spin">hourglass_top</span>
+</div>
+</div>
+<div class="space-y-2">
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-secondary block">Cryptographic Handshake</span>
+<h2 class="font-headline-md text-headline-md text-primary">Verifying Session with Server...</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">
+            Confirming your digital reservation tokens and allocating your confidential tele-sanctuary stream.
+          </p>
+</div>
+<div class="w-full bg-surface-container-high h-1.5 rounded-full overflow-hidden">
+<div class="bg-primary h-full rounded-full animate-pulse w-3/4"></div>
+</div>
+<p class="font-label-sm text-label-sm text-outline uppercase tracking-wider">Securing connection to Ishanya Gateway • Reference #ANK-CNS-94812</p>
+</div>
+</section>
+<!-- ========================================================================= -->
+<!-- BOTTOM CLOSING BANNER (SHARED ACROSS FLOW)                                -->
+<!-- ========================================================================= -->
+<div class="mt-16 pt-12 border-t border-surface-variant">
+<div class="bg-surface-container rounded-xl p-8 lg:p-12 flex flex-col md:flex-row items-center justify-between gap-6">
+<div class="space-y-2 text-center md:text-left">
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-secondary block">Continuous Harmony</span>
+<h2 class="font-headline-lg text-headline-lg text-primary">We look forward to connecting with you.</h2>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-xl">
+            May your transition toward equilibrium be supported by pure elements and auspicious spatial alignments.
+          </p>
+</div>
+<div class="flex flex-wrap items-center gap-4 shrink-0">
+<a class="inline-flex items-center justify-center bg-primary text-on-primary hover:bg-tertiary transition-colors px-6 py-3.5 rounded font-label-md text-label-md tracking-wider uppercase" data-path="home" href="home.html">
+<span>Return to Home</span>
+</a>
+<a class="inline-flex items-center justify-center bg-surface-container-lowest text-primary hover:bg-surface-variant transition-colors px-6 py-3.5 rounded font-label-md text-label-md tracking-wider uppercase border border-surface-variant" data-path="ayurveda" href="ayurveda.html">
+<span>Explore Ayurveda &amp; Vastu</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+<!-- Vanilla JS Interactive State Switcher -->
+<script>
+    function switchBookingState(stateId) {
+      // Hide all states
+      const views = document.querySelectorAll('.state-view');
+      views.forEach(v => {
+        v.classList.add('hidden');
+      });
+
+      // Show requested state
+      const targetView = document.getElementById(stateId);
+      if (targetView) {
+        targetView.classList.remove('hidden');
+      }
+
+      // Update button styles
+      const buttons = document.querySelectorAll('.state-btn');
+      buttons.forEach(btn => {
+        if (btn.getAttribute('data-state-btn') === stateId) {
+          btn.classList.add('bg-primary', 'text-on-primary', 'shadow-sm');
+          btn.classList.remove('bg-surface-container', 'text-on-surface');
+        } else {
+          btn.classList.remove('bg-primary', 'text-on-primary', 'shadow-sm');
+          btn.classList.add('bg-surface-container', 'text-on-surface');
+        }
+      });
+
+      // Smooth scroll if scrolled far down
+      if (window.scrollY > 150) {
+        window.scrollTo({ top: 80, behavior: 'smooth' });
+      }
+    }
+
+    function simulateVerificationRefresh() {
+      switchBookingState('state-loading');
+      setTimeout(() => {
+        switchBookingState('state-confirmed');
+      }, 1500);
+    }
+  </script>
+</div></main><footer class="w-full bg-[#1F4D3A] text-[#F7F1E3] border-t border-[#B38A3E]/30"><div class="max-w-[1440px] mx-auto px-6 lg:px-margin pt-space-xl pb-space-lg"><div class="grid grid-cols-1 md:grid-cols-12 gap-8 lg:gap-gutter-lg pb-space-xl border-b border-[#B38A3E]/20"><div class="md:col-span-5 flex flex-col justify-start space-y-space-sm"><div class="flex flex-col items-start"><a href="home.html" data-path="home" class="inline-block select-none mb-2"><img src="images/logo.png" alt="ANUKUL Logo" class="h-16 w-auto object-contain bg-[#F7F1E3] p-1.5 rounded shadow-sm"></a></div><p class="font-body-md text-body-md text-surface-container-high/90 max-w-md pt-2">ANUKUL Ayur Vastu Harmony Clinic — Health • Space • Lifestyle • Harmony</p><p class="font-body-sm text-body-sm text-outline-variant max-w-sm pt-1">Anchored in classical Vedic sciences, spatial alignment, and holistic constitutional balance for serene modern living.</p></div><div class="md:col-span-4 flex flex-col justify-start space-y-3"><h3 class="font-label-md text-label-md uppercase text-[#B38A3E] tracking-widest font-semibold">Explorations</h3><nav class="grid grid-cols-2 gap-y-2 gap-x-4"><a class="font-body-sm text-body-sm text-surface-container-high/80 hover:text-[#B38A3E] transition-colors" data-path="home" href="home.html">Home</a><a class="font-body-sm text-body-sm text-surface-container-high/80 hover:text-[#B38A3E] transition-colors" data-path="ayurveda" href="ayurveda.html">Ayurveda</a><a class="font-body-sm text-body-sm text-surface-container-high/80 hover:text-[#B38A3E] transition-colors" data-path="vastu" href="vastu.html">Vastu</a><a class="font-body-sm text-body-sm text-surface-container-high/80 hover:text-[#B38A3E] transition-colors" data-path="services" href="services.html">Services</a><a class="font-body-sm text-body-sm text-surface-container-high/80 hover:text-[#B38A3E] transition-colors" data-path="shop" href="shop.html">Shop</a><a class="font-body-sm text-body-sm text-surface-container-high/80 hover:text-[#B38A3E] transition-colors" data-path="blog" href="blog.html">Blog</a><a class="font-body-sm text-body-sm text-surface-container-high/80 hover:text-[#B38A3E] transition-colors" data-path="gallery" href="gallery.html">Gallery</a><a class="font-body-sm text-body-sm text-surface-container-high/80 hover:text-[#B38A3E] transition-colors" data-path="contact" href="contact.html">Contact</a></nav></div><div class="md:col-span-3 flex flex-col justify-start space-y-3"><h3 class="font-label-md text-label-md uppercase text-[#B38A3E] tracking-widest font-semibold">Sanctuary Hours</h3><p class="font-body-sm text-body-sm text-surface-container-high/80">Monday — Saturday<br>08:00 AM – 07:00 PM IST</p><p class="font-body-sm text-body-sm text-surface-container-high/80 pt-2"><span class="text-[#B38A3E] font-medium">Location:</span> Prime Vedic Enclave, Cultural Quarter</p></div></div><div class="pt-space-md flex flex-col sm:flex-row items-center justify-between gap-4"><p class="font-body-sm text-body-sm text-outline-variant text-center sm:text-left">© 2025 ANUKUL Ayur Vastu Harmony Clinic. All rights reserved. Responsible Vedic Clinical Practice.</p><div class="flex items-center gap-6 font-body-sm text-body-sm text-surface-container-high/70"><a class="hover:text-[#B38A3E] transition-colors" data-path="privacy-policy" href="contact.html#privacy">Privacy Policy</a><span class="text-[#B38A3E]/40">•</span><a class="hover:text-[#B38A3E] transition-colors" data-path="terms" href="contact.html#terms">Terms</a><span class="text-[#B38A3E]/40">•</span><a class="hover:text-[#B38A3E] transition-colors" data-path="disclaimer" href="contact.html#disclaimer">Disclaimer</a></div></div></div></footer><script src="js/anukul-scroll.js"></script></body></html>

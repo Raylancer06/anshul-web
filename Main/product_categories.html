@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..700;1,400..700&amp;family=Manrope:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{"colors":{"outline-variant":"#c0c9c2","error-container":"#ffdad6","on-tertiary-fixed":"#400012","surface-container":"#f6ece4","on-secondary-fixed":"#311300","surface-dim":"#e2d8d0","on-secondary-container":"#6e3300","primary-fixed-dim":"#a1d1b8","tertiary":"#5d0f24","on-primary-fixed":"#002114","primary":"#023625","on-primary-fixed-variant":"#214f3c","secondary-fixed-dim":"#ffb688","surface-tint":"#3a6753","on-secondary":"#ffffff","primary-container":"#1f4d3a","surface-variant":"#ebe1d9","error":"#ba1a1a","on-secondary-fixed-variant":"#733600","background":"#fff8f4","on-background":"#1f1b16","surface-container-highest":"#ebe1d9","surface-container-low":"#fcf2ea","on-error":"#ffffff","on-primary":"#ffffff","on-tertiary":"#ffffff","on-surface":"#1f1b16","secondary-container":"#ff964c","on-tertiary-fixed-variant":"#7d283a","surface":"#fff8f4","tertiary-fixed-dim":"#ffb2bc","on-tertiary-container":"#ff93a4","surface-container-high":"#f1e6de","on-error-container":"#93000a","tertiary-container":"#7b2739","secondary-fixed":"#ffdbc7","tertiary-fixed":"#ffd9dd","on-surface-variant":"#414944","outline":"#717973","secondary":"#974800","primary-fixed":"#bceed3","inverse-surface":"#352f2a","inverse-primary":"#a1d1b8","inverse-on-surface":"#f9efe7","surface-bright":"#fff8f4","surface-container-lowest":"#ffffff","on-primary-container":"#8dbda4"},"borderRadius":{"DEFAULT":"0.125rem","lg":"0.25rem","xl":"0.5rem","full":"0.75rem"},"spacing":{"space-lg":"1.75rem","space-md":"1rem","gutter-lg":"2.5rem","space-2xl":"5rem","space-xs":"0.25rem","space-sm":"0.5rem","margin-md":"3rem","space-xl":"3rem","margin":"1.5rem","margin-lg":"5rem","gutter":"1.5rem"},"fontFamily":{"body-lg":["Manrope"],"body-sm":["Manrope"],"display-mobile":["EB Garamond"],"label-sm":["Manrope"],"display":["EB Garamond"],"headline-sm":["EB Garamond"],"body-md":["Manrope"],"editorial-quote":["EB Garamond"],"headline-lg":["EB Garamond"],"headline-lg-mobile":["EB Garamond"],"label-md":["Manrope"],"headline-md":["EB Garamond"]},"fontSize":{"body-lg":["18px",{"lineHeight":"28px","fontWeight":"400"}],"body-sm":["13px",{"lineHeight":"20px","fontWeight":"400"}],"display-mobile":["38px",{"lineHeight":"44px","letterSpacing":"-0.01em","fontWeight":"400"}],"label-sm":["10px",{"lineHeight":"14px","letterSpacing":"0.12em","fontWeight":"700"}],"display":["56px",{"lineHeight":"64px","letterSpacing":"-0.01em","fontWeight":"400"}],"headline-sm":["22px",{"lineHeight":"28px","fontWeight":"600"}],"body-md":["15px",{"lineHeight":"24px","fontWeight":"400"}],"editorial-quote":["26px",{"lineHeight":"36px","letterSpacing":"0.01em","fontWeight":"400"}],"headline-lg":["40px",{"lineHeight":"48px","fontWeight":"400"}],"headline-lg-mobile":["30px",{"lineHeight":"36px","fontWeight":"500"}],"label-md":["12px",{"lineHeight":"16px","letterSpacing":"0.08em","fontWeight":"600"}],"headline-md":["28px",{"lineHeight":"36px","fontWeight":"500"}]}}}};</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"><link rel="stylesheet" href="css/anukul-animations.css"></head><body class="bg-surface font-body-md text-on-surface antialiased"><header class="fixed top-0 w-full z-50 bg-[#F7F1E3]/95 backdrop-blur-md border-b border-[#E8D8BC] shadow-[0_1px_8px_rgba(0,0,0,0.03)]"><div class="h-20 max-w-[1440px] mx-auto px-6 lg:px-margin flex items-center justify-between gap-4"><a href="home.html" data-path="home" class="flex items-center select-none py-1"><img src="images/logo.png" alt="ANUKUL Logo" class="h-14 sm:h-16 w-auto max-h-[64px] object-contain"></a><nav class="hidden xl:flex items-center gap-6 lg:gap-space-md" data-active-classes="text-primary font-semibold relative after:absolute after:bottom-[-4px] after:left-0 after:w-full after:h-[1.5px] after:bg-[#B38A3E]"><a class="font-label-md text-label-md uppercase text-on-surface-variant hover:text-primary transition-colors tracking-widest" data-path="home" href="home.html">Home</a><a class="font-label-md text-label-md uppercase text-on-surface-variant hover:text-primary transition-colors tracking-widest" data-path="ayurveda" href="ayurveda.html">Ayurveda</a><a class="font-label-md text-label-md uppercase text-on-surface-variant hover:text-primary transition-colors tracking-widest" data-path="vastu" href="vastu.html">Vastu</a><a class="font-label-md text-label-md uppercase text-on-surface-variant hover:text-primary transition-colors tracking-widest" data-path="services" href="services.html">Services</a><a aria-current="page" class="font-label-md text-label-md uppercase transition-colors tracking-widest text-primary font-semibold relative after:absolute after:bottom-[-4px] after:left-0 after:w-full after:h-[1.5px] after:bg-[#B38A3E]" data-path="shop" href="shop.html">Shop</a><a class="font-label-md text-label-md uppercase text-on-surface-variant hover:text-primary transition-colors tracking-widest" data-path="blog" href="blog.html">Blog</a><a class="font-label-md text-label-md uppercase text-on-surface-variant hover:text-primary transition-colors tracking-widest" data-path="gallery" href="gallery.html">Gallery</a><a class="font-label-md text-label-md uppercase text-on-surface-variant hover:text-primary transition-colors tracking-widest" data-path="contact" href="contact.html">Contact</a></nav><div class="flex items-center gap-2 sm:gap-3"><a href="search_result.html" data-path="search" title="Search Wisdom &amp; Remedies" class="flex items-center justify-center w-10 h-10 rounded-full text-primary hover:bg-[#E8D8BC]/60 hover:text-secondary transition-colors"><span class="material-symbols-outlined text-[22px]">search</span></a><a href="cart.html" data-path="cart" title="Shopping Cart" class="relative flex items-center justify-center w-10 h-10 rounded-full text-primary hover:bg-[#E8D8BC]/60 hover:text-secondary transition-colors"><span class="material-symbols-outlined text-[22px]">shopping_bag</span><span class="absolute top-1 right-1 w-4 h-4 bg-secondary text-on-secondary text-[10px] font-bold rounded-full flex items-center justify-center leading-none">2</span></a><a href="book_your_consultation.html" data-path="book-consultation" class="hidden sm:inline-flex items-center justify-center bg-[#1F4D3A] text-[#F7F1E3] font-label-md text-label-md px-5 py-2.5 rounded-lg tracking-wider uppercase transition-colors duration-200 hover:bg-secondary shadow-sm font-semibold">BOOK CONSULTATION</a><a href="account.html" data-path="account" title="Client Sanctuary Portal" class="w-9 h-9 rounded-full bg-primary flex items-center justify-center text-on-primary hover:bg-secondary transition-colors shadow-sm"><span class="material-symbols-outlined text-[18px]">person</span></a><button id="mobile-menu-btn" type="button" aria-label="Toggle navigation" class="xl:hidden inline-flex items-center justify-center w-10 h-10 rounded-lg text-primary hover:bg-[#E8D8BC]/60 focus:outline-none transition-colors"><span class="material-symbols-outlined text-[26px]" id="mobile-menu-icon">menu</span></button></div></div><div id="mobile-menu" class="hidden xl:hidden w-full bg-[#F7F1E3] border-b border-[#E8D8BC] shadow-lg transition-all"><div class="px-6 py-5 space-y-4 max-h-[calc(100vh-80px)] overflow-y-auto"><nav class="flex flex-col space-y-1.5"><a class="py-2.5 px-3 rounded-lg font-label-md text-label-md uppercase tracking-widest text-on-surface-variant hover:bg-surface-container hover:text-primary transition-colors" data-path="home" href="home.html">Home</a><a class="py-2.5 px-3 rounded-lg font-label-md text-label-md uppercase tracking-widest text-on-surface-variant hover:bg-surface-container hover:text-primary transition-colors" data-path="ayurveda" href="ayurveda.html">Ayurveda</a><a class="py-2.5 px-3 rounded-lg font-label-md text-label-md uppercase tracking-widest text-on-surface-variant hover:bg-surface-container hover:text-primary transition-colors" data-path="vastu" href="vastu.html">Vastu</a><a class="py-2.5 px-3 rounded-lg font-label-md text-label-md uppercase tracking-widest text-on-surface-variant hover:bg-surface-container hover:text-primary transition-colors" data-path="services" href="services.html">Services</a><a class="py-2.5 px-3 rounded-lg font-label-md text-label-md uppercase tracking-widest bg-surface-container text-primary font-semibold transition-colors" data-path="shop" href="shop.html">Shop</a><a class="py-2.5 px-3 rounded-lg font-label-md text-label-md uppercase tracking-widest text-on-surface-variant hover:bg-surface-container hover:text-primary transition-colors" data-path="blog" href="blog.html">Blog</a><a class="py-2.5 px-3 rounded-lg font-label-md text-label-md uppercase tracking-widest text-on-surface-variant hover:bg-surface-container hover:text-primary transition-colors" data-path="gallery" href="gallery.html">Gallery</a><a class="py-2.5 px-3 rounded-lg font-label-md text-label-md uppercase tracking-widest text-on-surface-variant hover:bg-surface-container hover:text-primary transition-colors" data-path="contact" href="contact.html">Contact</a></nav><div class="pt-4 border-t border-[#E8D8BC] flex flex-col gap-3"><a href="book_your_consultation.html" data-path="book-consultation" class="w-full text-center bg-[#1F4D3A] text-[#F7F1E3] font-label-md text-label-md py-3 rounded-lg tracking-wider uppercase font-semibold hover:bg-secondary transition-colors shadow-sm">BOOK CONSULTATION</a><div class="grid grid-cols-3 gap-2 pt-1 text-center text-xs font-label-md"><a href="search_result.html" class="flex flex-col items-center justify-center p-2 rounded-lg bg-surface-container hover:bg-[#E8D8BC]/70 text-primary transition-colors"><span class="material-symbols-outlined text-[20px] mb-1">search</span>Search</a><a href="cart.html" class="flex flex-col items-center justify-center p-2 rounded-lg bg-surface-container hover:bg-[#E8D8BC]/70 text-primary transition-colors relative"><span class="material-symbols-outlined text-[20px] mb-1">shopping_bag</span>Cart (2)</a><a href="account.html" class="flex flex-col items-center justify-center p-2 rounded-lg bg-surface-container hover:bg-[#E8D8BC]/70 text-primary transition-colors"><span class="material-symbols-outlined text-[20px] mb-1">person</span>Account</a></div></div></div></div><script>(function(){var btn=document.getElementById('mobile-menu-btn');var menu=document.getElementById('mobile-menu');var icon=document.getElementById('mobile-menu-icon');if(btn&&menu){btn.onclick=function(){var isHidden=menu.classList.contains('hidden');if(isHidden){menu.classList.remove('hidden');if(icon)icon.textContent='close';}else{menu.classList.add('hidden');if(icon)icon.textContent='menu';}};}})();</script></header><main class="w-full pt-20 bg-surface min-h-screen"><div class="flex flex-col w-full">
+<!-- Top Subtle Coordinate Scrim / Marquee Bar -->
+<section class="w-full bg-surface-container-low px-margin md:px-margin-md lg:px-margin-lg py-space-sm">
+<div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-space-xs text-on-surface-variant">
+<div class="flex items-center gap-space-xs">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-primary">Sthapatya · Dinacharya Dispensary</span>
+<span class="text-outline-variant font-label-sm text-label-sm">/</span>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant">Vedic Material Standards · Shastra Verified</span>
+</div>
+<div class="hidden md:flex items-center gap-space-md font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant">
+<span>Brahma Muhurta Batching</span>
+<span>·</span>
+<span>Lead &amp; Cadmium-Free Alloys</span>
+<span>·</span>
+<span>Consecrated Dispatch</span>
+</div>
+</div>
+</section>
+<!-- Editorial Breadcrumb & Category Hero -->
+<section class="w-full bg-surface px-margin md:px-margin-md lg:px-margin-lg pt-space-xl pb-space-lg">
+<div class="max-w-7xl mx-auto flex flex-col gap-space-md">
+<!-- Breadcrumb -->
+<nav class="flex items-center gap-space-xs font-label-sm text-label-sm uppercase tracking-[0.14em] text-on-surface-variant">
+<a class="hover:text-primary transition-colors" data-path="home" href="home.html">Home</a>
+<span class="text-outline-variant">/</span>
+<a class="hover:text-primary transition-colors" data-path="shop" href="shop.html">Shop</a>
+<span class="text-outline-variant">/</span>
+<span class="text-secondary font-semibold">Wellness &amp; Daily Living</span>
+</nav>
+<!-- Asymmetric Editorial Header Block -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter-lg items-end pt-space-xs">
+<div class="lg:col-span-8 flex flex-col gap-space-sm">
+<div class="inline-flex items-center gap-space-xs">
+<span class="px-3 py-1 rounded bg-surface-container text-secondary font-label-sm text-label-sm uppercase tracking-widest">
+              Shop by Category • Dinacharya &amp; Ayurvedic Tools
+            </span>
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant hidden sm:inline">Ritual Instruments</span>
+</div>
+<h1 class="font-display text-display text-primary tracking-tight leading-none">
+            WELLNESS &amp; DAILY LIVING
+          </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-3xl leading-relaxed pt-space-xs">
+            Physical instruments and foundational tools curated to sustain daily bodily harmony, padabhyanga grounding rituals, and traditional Ayurvedic dinacharya routines. Crafted from therapeutic alloys and sustainably harvested fibers.
+          </p>
+<!-- Metadata Badges -->
+<div class="flex flex-wrap items-center gap-space-sm pt-space-sm">
+<div class="inline-flex items-center gap-2 px-3 py-1.5 rounded bg-surface-container-high text-primary font-label-sm text-label-sm uppercase tracking-wider">
+<span class="w-2 h-2 rounded-full bg-primary-container"></span>
+<span id="category-count-badge">4 Curated Artifacts</span>
+</div>
+<div class="inline-flex items-center gap-2 px-3 py-1.5 rounded bg-surface-container-low text-on-surface font-label-sm text-label-sm uppercase tracking-wider">
+<span class="material-symbols-outlined text-[14px] text-secondary">verified</span>
+              Classical Metallurgy &amp; Natural Fibers
+            </div>
+<div class="inline-flex items-center gap-2 px-3 py-1.5 rounded bg-surface-container-low text-on-surface font-label-sm text-label-sm uppercase tracking-wider">
+<span class="material-symbols-outlined text-[14px] text-primary">eco</span>
+              Verified Vaidya Standards
+            </div>
+</div>
+</div>
+<!-- Cardinal Geometry Stamp / Marginalia -->
+<div class="lg:col-span-4 flex flex-col justify-end">
+<div class="p-space-md bg-surface-container-low rounded-lg flex flex-col gap-space-xs shadow-sm">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-secondary font-semibold">Ritual Discipline</span>
+<span class="font-headline-sm text-headline-sm text-primary italic">01 — Dinacharya</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+              “Through morning purification and evening grounding, the sthula sharira (physical vessel) remains receptive to natural cosmic rhythm.”
+            </p>
+<div class="flex items-center justify-between pt-space-xs text-on-surface font-label-sm text-label-sm uppercase tracking-widest">
+<span>Sthira · Grounding</span>
+<span class="text-primary font-bold">Element: Earth / Bronze</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Category Sub-Navigation Bar -->
+<section class="w-full bg-surface-container px-margin md:px-margin-md lg:px-margin-lg py-space-sm">
+<div class="max-w-7xl mx-auto flex items-center justify-between gap-space-md overflow-x-auto no-scrollbar">
+<div class="flex items-center gap-space-xs shrink-0 py-1">
+<a class="px-4 py-2 rounded-lg font-label-md text-label-md uppercase tracking-wider text-on-surface-variant hover:text-primary hover:bg-surface-container-high transition-colors" data-path="shop" href="shop.html">
+          All Products
+        </a>
+<a class="px-4 py-2 rounded-lg bg-primary text-on-primary font-label-md text-label-md uppercase tracking-wider transition-colors shadow-sm" data-path="shop" href="shop.html">
+          Wellness &amp; Daily Living
+        </a>
+<a class="px-4 py-2 rounded-lg font-label-md text-label-md uppercase tracking-wider text-on-surface-variant hover:text-primary hover:bg-surface-container-high transition-colors" data-path="shop" href="shop.html">
+          Ayurveda &amp; Herbal Preparations
+        </a>
+<a class="px-4 py-2 rounded-lg font-label-md text-label-md uppercase tracking-wider text-on-surface-variant hover:text-primary hover:bg-surface-container-high transition-colors" data-path="shop" href="shop.html">
+          Sacred Space &amp; Vastu Yantras
+        </a>
+<a class="px-4 py-2 rounded-lg font-label-md text-label-md uppercase tracking-wider text-on-surface-variant hover:text-primary hover:bg-surface-container-high transition-colors" data-path="shop" href="shop.html">
+          Books &amp; Learning Resources
+        </a>
+</div>
+<!-- Quick Interactive Switcher between Active / Empty Demo State -->
+<div class="hidden xl:flex items-center gap-space-xs shrink-0 pl-space-md">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant">Dispensary Stock Mode:</span>
+<button class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded bg-surface-container-highest text-primary font-label-sm text-label-sm uppercase tracking-wider hover:bg-surface-container-high transition-colors" id="toggle-stock-view" type="button">
+<span class="material-symbols-outlined text-[16px]">sync_alt</span>
+<span id="stock-view-label">Simulate Empty Category</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Toolbar: Results Count, ANUKUL Sorting & Grid/List Toggle -->
+<section class="w-full bg-surface px-margin md:px-margin-md lg:px-margin-lg pt-space-lg pb-space-sm">
+<div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-start sm:items-center justify-between gap-space-md">
+<!-- Result Count -->
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[20px]">filter_list</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant" id="results-count-text">
+          Showing <span class="font-semibold text-primary">1–4 of 4</span> sacred artifacts in <span class="text-on-surface font-semibold">Wellness &amp; Daily Living</span>
+</p>
+</div>
+<!-- Controls: Sorting + View Modes -->
+<div class="flex flex-wrap items-center gap-space-md w-full sm:w-auto justify-between sm:justify-end">
+<!-- Sorting Form Dropdown -->
+<div class="relative inline-flex items-center">
+<label class="sr-only" for="anukul-sort-select">Sort products</label>
+<select class="appearance-none bg-surface-container-low text-primary font-label-md text-label-md uppercase tracking-wider pl-3.5 pr-8 py-2 rounded-lg cursor-pointer focus:outline-none focus:ring-1 focus:ring-primary shadow-sm transition-colors" id="anukul-sort-select">
+<option selected="" value="default">Default sorting</option>
+<option value="price-asc">Price: low to high</option>
+<option value="price-desc">Price: high to low</option>
+<option value="latest">Latest items</option>
+<option value="popularity">Popularity</option>
+</select>
+<span class="material-symbols-outlined pointer-events-none absolute right-2 text-primary text-[18px]">expand_more</span>
+</div>
+<!-- View Layout Toggle -->
+<div class="flex items-center gap-1 bg-surface-container-low p-1 rounded-lg">
+<button aria-label="Grid View" class="p-1.5 rounded text-primary bg-surface shadow-xs transition-colors" id="view-mode-grid" type="button">
+<span class="material-symbols-outlined text-[18px] block">grid_view</span>
+</button>
+<button aria-label="Editorial List View" class="p-1.5 rounded text-on-surface-variant hover:text-primary transition-colors" id="view-mode-list" type="button">
+<span class="material-symbols-outlined text-[18px] block">view_agenda</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Main Category Product Showcase Container -->
+<section class="w-full bg-surface px-margin md:px-margin-md lg:px-margin-lg py-space-md">
+<div class="max-w-7xl mx-auto">
+<!-- Active Grid View (Default) -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter-lg" id="category-products-container">
+<!-- Card 1: Handcrafted Kansa Vatki Bowl -->
+<article class="product-card group flex flex-col justify-between bg-surface-container-low rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-all duration-300" data-date="2025-01-15" data-popularity="98" data-price="2450" data-title="Handcrafted Kansa Vatki Bowl">
+<div class="flex flex-col">
+<!-- Product Media Container -->
+<div class="relative w-full aspect-[4/3] bg-surface-container overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="Handcrafted authentic Kansa Vatki massage bowl made from classical copper and tin bronze alloy, warm glowing metal surface resting on raw linen cloth in serene temple sunlight with subtle shadow casting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBy7aSAl3W3ReW2vdIEVLdvkv0kf5eJjOgS8Zf9cSUEevLbOm7X-XHElOIEesBPv2TeYk1y_geSf3x2cYWpc8tngJ-wS-99G3yVO4k5RCEDq_f_uALszwduwHP1BFsEMdokmgJxtIFci71GnJ5iTA8cZy8hsEIdoNsWuHvuqfIgSFNsvem80f6I1lgAigwHgS6fxHuur0Vh2rhlqWWZmIOSGeRdTpMSY0CUPHCWSQINiWSmvPME27m40Q"/>
+<div class="absolute top-3 left-3 flex flex-col gap-1">
+<span class="px-2.5 py-1 rounded bg-primary/95 text-on-primary font-label-sm text-label-sm uppercase tracking-wider backdrop-blur-sm">
+                  Dinacharya Ritual • Craft Artifact
+                </span>
+</div>
+<div class="absolute top-3 right-3">
+<span class="px-2 py-0.5 rounded bg-surface-bright/90 text-primary font-label-sm text-label-sm uppercase font-semibold">
+                  Authentic Kansa
+                </span>
+</div>
+</div>
+<!-- Product Editorial Details -->
+<div class="p-space-md flex flex-col gap-space-xs">
+<div class="flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm uppercase tracking-widest">
+<span>Metals of Ayur</span>
+<span class="text-secondary font-semibold">In Stock • Ready</span>
+</div>
+<h2 class="font-headline-sm text-headline-sm text-primary group-hover:text-tertiary transition-colors leading-snug">
+                Handcrafted Kansa Vatki Bowl
+              </h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-3 leading-relaxed">
+                Traditional bell-metal bronze alloy bowl for evening grounding massage (Padabhyanga), soothing Pitta heat and grounding Vata.
+              </p>
+<!-- Sacred Material Spec Sheet -->
+<div class="mt-space-xs pt-space-xs bg-surface-container rounded p-2 text-on-surface flex flex-col gap-1">
+<div class="flex justify-between font-label-sm text-label-sm">
+<span class="text-on-surface-variant">Alloy Composition:</span>
+<span class="font-semibold text-primary">78% Copper · 22% Tin</span>
+</div>
+<div class="flex justify-between font-label-sm text-label-sm">
+<span class="text-on-surface-variant">Recommended Oil:</span>
+<span class="font-semibold text-primary">Ksheerabala / Ghee</span>
+</div>
+</div>
+<!-- Price & Status -->
+<div class="flex items-baseline justify-between pt-space-sm">
+<div class="flex flex-col">
+<span class="font-headline-md text-headline-md text-primary font-medium tracking-tight">
+                    $ 2,450
+                  </span>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">
+                    Inclusive of Vedic Taxes
+                  </span>
+</div>
+<span class="inline-flex items-center gap-1 font-label-sm text-label-sm text-primary uppercase font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-primary-container"></span>
+                  Ready to Dispatch
+                </span>
+</div>
+</div>
+</div>
+<!-- Actions -->
+<div class="p-space-md pt-0 flex flex-col gap-2">
+<a class="w-full py-2.5 px-4 text-center rounded bg-primary text-on-primary font-label-md text-label-md uppercase tracking-wider hover:bg-tertiary transition-colors shadow-xs" data-path="product" href="single_product.html">
+              Add to Cart
+            </a>
+<a class="w-full py-2 text-center rounded bg-surface-container-high text-primary font-label-sm text-label-sm uppercase tracking-wider hover:bg-surface-container transition-colors" data-path="product" href="single_product.html">
+              View Details &amp; Enquire
+            </a>
+</div>
+</article>
+<!-- Card 2: Natural Fibre Meditation Mat -->
+<article class="product-card group flex flex-col justify-between bg-surface-container-low rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-all duration-300" data-date="2025-01-20" data-popularity="92" data-price="1950" data-title="Natural Fibre Meditation Mat">
+<div class="flex flex-col">
+<!-- Product Media Container -->
+<div class="relative w-full aspect-[4/3] bg-surface-container overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="Authentic handwoven organic cotton and sacred kusha grass meditation mat unrolled cleanly over natural warm timber sanctuary floor with soft morning light." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA9kEViU2A22uD9e8QNOQfRdX5oDuXGhHq4IFaXv9XB3C7e3Cjy_WmL5yFj56RW_p3N90eMlzTxzaTefRY7Lrc6u-rLSSNxhUCJRRXgcXhPncL1dEmY0tCcURGPDutavGCFSVrHX4PDVCE-8jvDGISKV0-qw3XW-OdsQdclRDOiYM1yPf1yFAqcXsZBvgSd1v0YLTT8dH_DCwOhg2fMqBrtXI1_aNAtC_f-CuKoEuXZBflZKNJBJMDD4g"/>
+<div class="absolute top-3 left-3 flex flex-col gap-1">
+<span class="px-2.5 py-1 rounded bg-primary/95 text-on-primary font-label-sm text-label-sm uppercase tracking-wider backdrop-blur-sm">
+                  Sacred Space • Organic Weave
+                </span>
+</div>
+<div class="absolute top-3 right-3">
+<span class="px-2 py-0.5 rounded bg-surface-bright/90 text-primary font-label-sm text-label-sm uppercase font-semibold">
+                  Consecrated
+                </span>
+</div>
+</div>
+<!-- Product Editorial Details -->
+<div class="p-space-md flex flex-col gap-space-xs">
+<div class="flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm uppercase tracking-widest">
+<span>Living Fibers</span>
+<span class="text-secondary font-semibold">Consecrated • Ready</span>
+</div>
+<h2 class="font-headline-sm text-headline-sm text-primary group-hover:text-tertiary transition-colors leading-snug">
+                Natural Fibre Meditation Mat
+              </h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-3 leading-relaxed">
+                Handwoven organic cotton and kusha grass mat intended for daily contemplative routines, pranayama, and grounded stillness.
+              </p>
+<!-- Sacred Material Spec Sheet -->
+<div class="mt-space-xs pt-space-xs bg-surface-container rounded p-2 text-on-surface flex flex-col gap-1">
+<div class="flex justify-between font-label-sm text-label-sm">
+<span class="text-on-surface-variant">Weave Type:</span>
+<span class="font-semibold text-primary">Hand-Loomed Kusha · Cotton Warp</span>
+</div>
+<div class="flex justify-between font-label-sm text-label-sm">
+<span class="text-on-surface-variant">Dimensions:</span>
+<span class="font-semibold text-primary">180 cm × 65 cm · Rollable</span>
+</div>
+</div>
+<!-- Price & Status -->
+<div class="flex items-baseline justify-between pt-space-sm">
+<div class="flex flex-col">
+<span class="font-headline-md text-headline-md text-primary font-medium tracking-tight">
+                    $ 1,950
+                  </span>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">
+                    Pre-washed with Ganga water
+                  </span>
+</div>
+<span class="inline-flex items-center gap-1 font-label-sm text-label-sm text-primary uppercase font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-primary-container"></span>
+                  In Stock
+                </span>
+</div>
+</div>
+</div>
+<!-- Actions -->
+<div class="p-space-md pt-0 flex flex-col gap-2">
+<a class="w-full py-2.5 px-4 text-center rounded bg-primary text-on-primary font-label-md text-label-md uppercase tracking-wider hover:bg-tertiary transition-colors shadow-xs" data-path="product" href="single_product.html">
+              Add to Cart
+            </a>
+<a class="w-full py-2 text-center rounded bg-surface-container-high text-primary font-label-sm text-label-sm uppercase tracking-wider hover:bg-surface-container transition-colors" data-path="product" href="single_product.html">
+              View Details &amp; Enquire
+            </a>
+</div>
+</article>
+<!-- Card 3: Directional Brass Spatial Compass -->
+<article class="product-card group flex flex-col justify-between bg-surface-container-low rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-all duration-300" data-date="2025-02-01" data-popularity="85" data-price="3200" data-title="Directional Brass Spatial Compass">
+<div class="flex flex-col">
+<!-- Product Media Container -->
+<div class="relative w-full aspect-[4/3] bg-surface-container overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="Solid antiqued brass Vastu spatial orientation compass featuring 8 cardinal Sanskrit deity markings, delicately resting on warm parchment architectural blueprints." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAC-7Yx0d7ZTJMTu3irF0Z9L-Hv7FuJQEd7m_mlORbrwfetEjhIiNLehqZFn1WZwri3E_4bW6kcUFBWmd8Lbt0P4jpDtZ4kSVbcA0ZKIfzprSsSIP2gBGHKko4gTnrevoemBu9aBdgsb6RyUk5cDzivcEDDuyLi25Ac2FzQqop2mJCrVeRRBTZ4mpZBpXmMsUFqgItGdl9YfWEMWX3ws_wbofM8q_DOErtw_rpsIl20lVuOeTQGtnuNbQ"/>
+<div class="absolute top-3 left-3 flex flex-col gap-1">
+<span class="px-2.5 py-1 rounded bg-secondary text-on-primary font-label-sm text-label-sm uppercase tracking-wider backdrop-blur-sm">
+                  Vastu Instrument • Precision Brass
+                </span>
+</div>
+<div class="absolute top-3 right-3">
+<span class="px-2 py-0.5 rounded bg-surface-bright/90 text-secondary font-label-sm text-label-sm uppercase font-semibold">
+                  Awaiting Release
+                </span>
+</div>
+</div>
+<!-- Product Editorial Details -->
+<div class="p-space-md flex flex-col gap-space-xs">
+<div class="flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm uppercase tracking-widest">
+<span>Vedic Orientation</span>
+<span class="text-tertiary font-semibold">Pre-Order Open</span>
+</div>
+<h2 class="font-headline-sm text-headline-sm text-primary group-hover:text-tertiary transition-colors leading-snug">
+                Directional Brass Spatial Compass
+              </h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-3 leading-relaxed">
+                Calibrated orientation instrument marked with 8 classical directional deities for home sanctuary and workspace alignment.
+              </p>
+<!-- Sacred Material Spec Sheet -->
+<div class="mt-space-xs pt-space-xs bg-surface-container rounded p-2 text-on-surface flex flex-col gap-1">
+<div class="flex justify-between font-label-sm text-label-sm">
+<span class="text-on-surface-variant">Calibration:</span>
+<span class="font-semibold text-primary">Ishanya · Nairutya Dial Axes</span>
+</div>
+<div class="flex justify-between font-label-sm text-label-sm">
+<span class="text-on-surface-variant">Material:</span>
+<span class="font-semibold text-primary">Pure Bell-Brass · Sapphire Pivot</span>
+</div>
+</div>
+<!-- Price & Status -->
+<div class="flex items-baseline justify-between pt-space-sm">
+<div class="flex flex-col">
+<span class="font-headline-md text-headline-md text-primary font-medium tracking-tight">
+                    $ 3,200
+                  </span>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">
+                    Next Batch: Solar Eclipse Transit
+                  </span>
+</div>
+<span class="inline-flex items-center gap-1 font-label-sm text-label-sm text-secondary uppercase font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+                  Pre-Order
+                </span>
+</div>
+</div>
+</div>
+<!-- Actions -->
+<div class="p-space-md pt-0 flex flex-col gap-2">
+<a class="w-full py-2.5 px-4 text-center rounded bg-secondary text-on-primary font-label-md text-label-md uppercase tracking-wider hover:bg-tertiary transition-colors shadow-xs" data-path="product" href="single_product.html">
+              Pre-Order Allocation
+            </a>
+<a class="w-full py-2 text-center rounded bg-surface-container-high text-primary font-label-sm text-label-sm uppercase tracking-wider hover:bg-surface-container transition-colors" data-path="product" href="single_product.html">
+              View Details &amp; Enquire
+            </a>
+</div>
+</article>
+<!-- Card 4: Pure Copper Water Tamra Vessel -->
+<article class="product-card group flex flex-col justify-between bg-surface-container-low rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-all duration-300" data-date="2025-01-28" data-popularity="95" data-price="1650" data-title="Pure Copper Water Tamra Vessel">
+<div class="flex flex-col">
+<!-- Product Media Container -->
+<div class="relative w-full aspect-[4/3] bg-surface-container overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="Hand-hammered pure copper water carafe with matching snug cap resting on raw teak surface with fresh basil leaves and water droplets." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDnp39dHEB6sqonm09KgyS9uLrEMJkVLKEFJ6nUwyWgeSxGHq71h6J8O_ZurTCgpJz7pnvsNg-CO6KFcxDxISHTbkpko1Mpofyx1-hqyFIpW8cjPoTptfPKHaivJJSu0X29LNrZTI5nL32l7QMuZ_TG2zpcouh4p9kbQ22r7q3IqJJdJwNbn27yJ4AAQE5xcwVHHxcC5Xkpch2w1ml2Da-PhSLfPdSkuJ_PRZ-9JoqteiZVwi2kZDUOyw"/>
+<div class="absolute top-3 left-3 flex flex-col gap-1">
+<span class="px-2.5 py-1 rounded bg-primary/95 text-on-primary font-label-sm text-label-sm uppercase tracking-wider backdrop-blur-sm">
+                  Ritual Hydration • 100% Copper
+                </span>
+</div>
+<div class="absolute top-3 right-3">
+<span class="px-2 py-0.5 rounded bg-surface-bright/90 text-primary font-label-sm text-label-sm uppercase font-semibold">
+                  Certified Purity
+                </span>
+</div>
+</div>
+<!-- Product Editorial Details -->
+<div class="p-space-md flex flex-col gap-space-xs">
+<div class="flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm uppercase tracking-widest">
+<span>Tamra Jal</span>
+<span class="text-secondary font-semibold">In Stock • Certified</span>
+</div>
+<h2 class="font-headline-sm text-headline-sm text-primary group-hover:text-tertiary transition-colors leading-snug">
+                Pure Copper Water Tamra Vessel
+              </h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-3 leading-relaxed">
+                Traditional hammered copper carafe designed for overnight water ionization (Tamra Jal) to support digestive Agni.
+              </p>
+<!-- Sacred Material Spec Sheet -->
+<div class="mt-space-xs pt-space-xs bg-surface-container rounded p-2 text-on-surface flex flex-col gap-1">
+<div class="flex justify-between font-label-sm text-label-sm">
+<span class="text-on-surface-variant">Purity Grade:</span>
+<span class="font-semibold text-primary">99.7% Therapeutic Tamra</span>
+</div>
+<div class="flex justify-between font-label-sm text-label-sm">
+<span class="text-on-surface-variant">Capacity:</span>
+<span class="font-semibold text-primary">950 mL · Jointless Hammered</span>
+</div>
+</div>
+<!-- Price & Status -->
+<div class="flex items-baseline justify-between pt-space-sm">
+<div class="flex flex-col">
+<span class="font-headline-md text-headline-md text-primary font-medium tracking-tight">
+                    $ 1,650
+                  </span>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">
+                    Naturally Antimicrobial
+                  </span>
+</div>
+<span class="inline-flex items-center gap-1 font-label-sm text-label-sm text-primary uppercase font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-primary-container"></span>
+                  In Stock
+                </span>
+</div>
+</div>
+</div>
+<!-- Actions -->
+<div class="p-space-md pt-0 flex flex-col gap-2">
+<a class="w-full py-2.5 px-4 text-center rounded bg-primary text-on-primary font-label-md text-label-md uppercase tracking-wider hover:bg-tertiary transition-colors shadow-xs" data-path="product" href="single_product.html">
+              Add to Cart
+            </a>
+<a class="w-full py-2 text-center rounded bg-surface-container-high text-primary font-label-sm text-label-sm uppercase tracking-wider hover:bg-surface-container transition-colors" data-path="product" href="single_product.html">
+              View Details &amp; Enquire
+            </a>
+</div>
+</article>
+</div>
+<!-- Empty Category State Container (Hidden by default, triggered via interactive stock toggle) -->
+<div class="hidden flex-col items-center justify-center text-center py-space-2xl px-space-md bg-surface-container-low rounded-xl shadow-xs my-space-md" id="category-empty-state">
+<div class="w-16 h-16 rounded-full bg-surface-container-high flex items-center justify-center text-secondary mb-space-md">
+<span class="material-symbols-outlined text-[32px]">spa</span>
+</div>
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-secondary font-semibold mb-2">
+          Dispensary Cycle • Rest &amp; Transit
+        </span>
+<h2 class="font-headline-lg text-headline-lg text-primary tracking-wide mb-space-xs">
+          NOTHING TO DISPLAY JUST YET
+        </h2>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-xl leading-relaxed mb-space-lg">
+          There are currently no products to display in this category. Our Vaidya dispensary periodically introduces formulations aligned with solar and lunar transits.
+        </p>
+<div class="flex flex-wrap items-center justify-center gap-space-md">
+<a class="px-6 py-3 rounded-lg bg-primary text-on-primary font-label-md text-label-md tracking-wider uppercase hover:bg-tertiary transition-colors shadow-sm" data-path="shop" href="shop.html">
+            Explore All Products
+          </a>
+<button class="px-6 py-3 rounded-lg bg-surface-container-high text-primary font-label-md text-label-md tracking-wider uppercase hover:bg-surface-container transition-colors" id="restore-products-btn" type="button">
+            Return to Active View
+          </button>
+</div>
+</div>
+</div>
+</section>
+<!-- Editorial Dinacharya Ritual Guidance & Advisory Banner -->
+<section class="w-full bg-surface-container px-margin md:px-margin-md lg:px-margin-lg py-space-2xl">
+<div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-gutter-lg items-center">
+<!-- Visual Column / Sacred Compass Graphic -->
+<div class="lg:col-span-5 flex flex-col gap-space-sm">
+<div class="bg-surface rounded-lg p-space-lg shadow-sm flex flex-col gap-space-md relative overflow-hidden">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-secondary">Diagnostic Harmony</span>
+<span class="material-symbols-outlined text-primary text-[20px]">architecture</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-primary">
+            Padabhyanga &amp; Elemental Resonance
+          </h3>
+<!-- Mini Inline Ayurvedic Chart -->
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center justify-between font-body-sm text-body-sm">
+<span class="text-on-surface-variant">Pitta Heat Discharge (Sole of Feet)</span>
+<span class="font-semibold text-primary">Kansa (Bell-Alloy)</span>
+</div>
+<div class="w-full bg-surface-container h-1.5 rounded-full overflow-hidden">
+<div class="bg-secondary h-full rounded-full w-[88%]"></div>
+</div>
+<div class="flex items-center justify-between font-body-sm text-body-sm pt-2">
+<span class="text-on-surface-variant">Vata Grounding &amp; Agni Ignition</span>
+<span class="font-semibold text-primary">Tamra (Copper Jal)</span>
+</div>
+<div class="w-full bg-surface-container h-1.5 rounded-full overflow-hidden">
+<div class="bg-primary h-full rounded-full w-[94%]"></div>
+</div>
+<div class="flex items-center justify-between font-body-sm text-body-sm pt-2">
+<span class="text-on-surface-variant">Pranic Insulation &amp; Earth Contact</span>
+<span class="font-semibold text-primary">Kusha Grass Fiber</span>
+</div>
+<div class="w-full bg-surface-container h-1.5 rounded-full overflow-hidden">
+<div class="bg-primary-container h-full rounded-full w-[82%]"></div>
+</div>
+</div>
+<p class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant pt-space-xs">
+            All utensils hand-tested for resonant sonic frequency and metallurgical authenticity before consecration.
+          </p>
+</div>
+</div>
+<!-- Narrative & Consultation Guidance Pathway -->
+<div class="lg:col-span-7 flex flex-col gap-space-md lg:pl-space-md">
+<div class="inline-flex items-center gap-space-xs">
+<span class="px-2.5 py-1 rounded bg-surface-bright text-secondary font-label-sm text-label-sm uppercase tracking-widest">
+            Vaidya Guidance
+          </span>
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant">
+            Prakriti Alignment
+          </span>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-primary tracking-tight leading-snug">
+          Need Guidance Selecting a Dinacharya Tool?
+        </h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed">
+          Not all metals and fibers interact identically with individual constitutions. While a <strong class="text-on-surface font-semibold">Kansa Vatki</strong> draws excess solar fire (*Pitta*) through the nerve plexuses of the feet, those experiencing agitated movement (*Vata*) often benefit first from insulating organic kusha weaves and grounding tamra water carafes.
+        </p>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-md pt-space-xs">
+<div class="p-space-md bg-surface-container-low rounded-lg flex flex-col gap-1">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-secondary font-semibold">Pitta-Pacifying Protocol</span>
+<span class="font-headline-sm text-headline-sm text-primary">Evening Padabhyanga</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-normal">
+              10-minute bronze friction with medicated cow ghee to calm hyperactive ocular energy and insomnia.
+            </p>
+</div>
+<div class="p-space-md bg-surface-container-low rounded-lg flex flex-col gap-1">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-primary font-semibold">Vata-Settling Protocol</span>
+<span class="font-headline-sm text-headline-sm text-primary">Solar Orientation &amp; Fiber</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-normal">
+              North-East meditative posture over insulating kusha weave preserves personal bio-electric field.
+            </p>
+</div>
+</div>
+<div class="pt-space-sm flex flex-wrap items-center gap-space-md">
+<a class="px-6 py-3 rounded-lg bg-primary text-on-primary font-label-md text-label-md tracking-wider uppercase hover:bg-tertiary transition-colors shadow-sm" data-path="book-consultation" href="book_your_consultation.html">
+            Schedule Dinacharya Advisory
+          </a>
+<a class="font-label-md text-label-md text-primary uppercase tracking-wider hover:text-tertiary transition-colors flex items-center gap-1 underline underline-offset-4 decoration-1" data-path="ayurveda" href="ayurveda.html">
+            Read Clinical Dinacharya Treatise
+            <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+</section>
+<!-- Responsible Practice Notice (Consecration & Vedic Disclosure Bar) -->
+<section class="w-full bg-surface px-margin md:px-margin-md lg:px-margin-lg py-space-xl">
+<div class="max-w-7xl mx-auto p-space-lg bg-surface-container-low rounded-xl shadow-xs">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-space-md items-center">
+<div class="md:col-span-1 flex items-center justify-center">
+<div class="w-12 h-12 rounded-full bg-surface-container-high flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[24px]">verified_user</span>
+</div>
+</div>
+<div class="md:col-span-8 flex flex-col gap-1">
+<div class="flex items-center gap-space-xs">
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-secondary font-bold">Consecration Notice &amp; Material Ethics</span>
+<span class="w-1 h-1 rounded-full bg-outline-variant"></span>
+<span class="font-label-sm text-label-sm uppercase text-on-surface-variant">ANUKUL Shastra Standard</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+            All metals used in our dispensary artifacts are verified free from industrial lead, nickel, and synthetic chemical binders. Traditional Kansa is forged using the classical ratio of 78 parts pure copper to 22 parts tin. These artifacts are instruments of sacred discipline and daily dinacharya, intended to complement a balanced lifestyle and conscious Vaidya supervision.
+          </p>
+</div>
+<div class="md:col-span-3 flex md:justify-end">
+<a class="inline-flex items-center gap-1.5 px-4 py-2 rounded bg-surface text-primary font-label-sm text-label-sm uppercase tracking-widest hover:bg-surface-container transition-colors shadow-xs" data-path="contact" href="contact.html">
+<span class="material-symbols-outlined text-[16px]">policy</span>
+            Apothecary Charter
+          </a>
+</div>
+</div>
+</div>
+</section>
+</div>
+<script>
+  (function() {
+    // Interactive sorting logic
+    const sortSelect = document.getElementById('anukul-sort-select');
+    const container = document.getElementById('category-products-container');
+    const viewGridBtn = document.getElementById('view-mode-grid');
+    const viewListBtn = document.getElementById('view-mode-list');
+    const stockToggleBtn = document.getElementById('toggle-stock-view');
+    const emptyStateContainer = document.getElementById('category-empty-state');
+    const restoreProductsBtn = document.getElementById('restore-products-btn');
+    const resultsCountText = document.getElementById('results-count-text');
+    const stockViewLabel = document.getElementById('stock-view-label');
+    const categoryCountBadge = document.getElementById('category-count-badge');
+
+    let isEmpty = false;
+
+    // Sorting implementation
+    if (sortSelect && container) {
+      sortSelect.addEventListener('change', function() {
+        const val = this.value;
+        const items = Array.from(container.children);
+
+        items.sort(function(a, b) {
+          const priceA = parseFloat(a.dataset.price || '0');
+          const priceB = parseFloat(b.dataset.price || '0');
+          const titleA = a.dataset.title || '';
+          const titleB = b.dataset.title || '';
+          const popA = parseInt(a.dataset.popularity || '0', 10);
+          const popB = parseInt(b.dataset.popularity || '0', 10);
+          const dateA = new Date(a.dataset.date || '2025-01-01').getTime();
+          const dateB = new Date(b.dataset.date || '2025-01-01').getTime();
+
+          if (val === 'price-asc') return priceA - priceB;
+          if (val === 'price-desc') return priceB - priceA;
+          if (val === 'popularity') return popB - popA;
+          if (val === 'latest') return dateB - dateA;
+          return titleA.localeCompare(titleB);
+        });
+
+        items.forEach(function(item) {
+          container.appendChild(item);
+        });
+      });
+    }
+
+    // Grid vs Editorial List layout toggle
+    if (viewGridBtn && viewListBtn && container) {
+      viewGridBtn.addEventListener('click', function() {
+        container.classList.remove('lg:grid-cols-1', 'gap-space-lg');
+        container.classList.add('lg:grid-cols-4', 'md:grid-cols-2');
+        viewGridBtn.classList.add('bg-surface', 'text-primary', 'shadow-xs');
+        viewGridBtn.classList.remove('text-on-surface-variant');
+        viewListBtn.classList.remove('bg-surface', 'text-primary', 'shadow-xs');
+        viewListBtn.classList.add('text-on-surface-variant');
+
+        // Reset child cards to standard vertical stacking
+        const cards = container.querySelectorAll('.product-card');
+        cards.forEach(function(card) {
+          card.classList.remove('md:flex-row');
+        });
+      });
+
+      viewListBtn.addEventListener('click', function() {
+        container.classList.remove('lg:grid-cols-4', 'md:grid-cols-2');
+        container.classList.add('lg:grid-cols-1', 'gap-space-lg');
+        viewListBtn.classList.add('bg-surface', 'text-primary', 'shadow-xs');
+        viewListBtn.classList.remove('text-on-surface-variant');
+        viewGridBtn.classList.remove('bg-surface', 'text-primary', 'shadow-xs');
+        viewGridBtn.classList.add('text-on-surface-variant');
+
+        // Enhance cards for list orientation
+        const cards = container.querySelectorAll('.product-card');
+        cards.forEach(function(card) {
+          card.classList.add('md:flex-row');
+        });
+      });
+    }
+
+    // Interactive Empty Category State Toggle Demo
+    function setCategoryState(empty) {
+      isEmpty = empty;
+      if (isEmpty) {
+        container.classList.add('hidden');
+        emptyStateContainer.classList.remove('hidden');
+        emptyStateContainer.classList.add('flex');
+        if (resultsCountText) {
+          resultsCountText.innerHTML = 'Showing <span class="font-semibold text-primary">0 of 0</span> sacred artifacts in <span class="text-on-surface font-semibold">Wellness &amp; Daily Living</span>';
+        }
+        if (stockViewLabel) stockViewLabel.textContent = 'Restore Active Products';
+        if (categoryCountBadge) categoryCountBadge.textContent = '0 Curated Artifacts';
+      } else {
+        container.classList.remove('hidden');
+        emptyStateContainer.classList.add('hidden');
+        emptyStateContainer.classList.remove('flex');
+        if (resultsCountText) {
+          resultsCountText.innerHTML = 'Showing <span class="font-semibold text-primary">1&ndash;4 of 4</span> sacred artifacts in <span class="text-on-surface font-semibold">Wellness &amp; Daily Living</span>';
+        }
+        if (stockViewLabel) stockViewLabel.textContent = 'Simulate Empty Category';
+        if (categoryCountBadge) categoryCountBadge.textContent = '4 Curated Artifacts';
+      }
+    }
+
+    if (stockToggleBtn) {
+      stockToggleBtn.addEventListener('click', function() {
+        setCategoryState(!isEmpty);
+      });
+    }
+
+    if (restoreProductsBtn) {
+      restoreProductsBtn.addEventListener('click', function() {
+        setCategoryState(false);
+      });
+    }
+  })();
+</script></main><footer class="w-full bg-[#1F4D3A] text-[#F7F1E3] border-t border-[#B38A3E]/30"><div class="max-w-[1440px] mx-auto px-6 lg:px-margin pt-space-xl pb-space-lg"><div class="grid grid-cols-1 md:grid-cols-12 gap-8 lg:gap-gutter-lg pb-space-xl border-b border-[#B38A3E]/20"><div class="md:col-span-5 flex flex-col justify-start space-y-space-sm"><div class="flex flex-col items-start"><a href="home.html" data-path="home" class="inline-block select-none mb-2"><img src="images/logo.png" alt="ANUKUL Logo" class="h-16 w-auto object-contain bg-[#F7F1E3] p-1.5 rounded shadow-sm"></a></div><p class="font-body-md text-body-md text-surface-container-high/90 max-w-md pt-2">ANUKUL Ayur Vastu Harmony Clinic — Health • Space • Lifestyle • Harmony</p><p class="font-body-sm text-body-sm text-outline-variant max-w-sm pt-1">Anchored in classical Vedic sciences, spatial alignment, and holistic constitutional balance for serene modern living.</p></div><div class="md:col-span-4 flex flex-col justify-start space-y-3"><h3 class="font-label-md text-label-md uppercase text-[#B38A3E] tracking-widest font-semibold">Explorations</h3><nav class="grid grid-cols-2 gap-y-2 gap-x-4"><a class="font-body-sm text-body-sm text-surface-container-high/80 hover:text-[#B38A3E] transition-colors" data-path="home" href="home.html">Home</a><a class="font-body-sm text-body-sm text-surface-container-high/80 hover:text-[#B38A3E] transition-colors" data-path="ayurveda" href="ayurveda.html">Ayurveda</a><a class="font-body-sm text-body-sm text-surface-container-high/80 hover:text-[#B38A3E] transition-colors" data-path="vastu" href="vastu.html">Vastu</a><a class="font-body-sm text-body-sm text-surface-container-high/80 hover:text-[#B38A3E] transition-colors" data-path="services" href="services.html">Services</a><a class="font-body-sm text-body-sm text-surface-container-high/80 hover:text-[#B38A3E] transition-colors" data-path="shop" href="shop.html">Shop</a><a class="font-body-sm text-body-sm text-surface-container-high/80 hover:text-[#B38A3E] transition-colors" data-path="blog" href="blog.html">Blog</a><a class="font-body-sm text-body-sm text-surface-container-high/80 hover:text-[#B38A3E] transition-colors" data-path="gallery" href="gallery.html">Gallery</a><a class="font-body-sm text-body-sm text-surface-container-high/80 hover:text-[#B38A3E] transition-colors" data-path="contact" href="contact.html">Contact</a></nav></div><div class="md:col-span-3 flex flex-col justify-start space-y-3"><h3 class="font-label-md text-label-md uppercase text-[#B38A3E] tracking-widest font-semibold">Sanctuary Hours</h3><p class="font-body-sm text-body-sm text-surface-container-high/80">Monday — Saturday<br>08:00 AM – 07:00 PM IST</p><p class="font-body-sm text-body-sm text-surface-container-high/80 pt-2"><span class="text-[#B38A3E] font-medium">Location:</span> Prime Vedic Enclave, Cultural Quarter</p></div></div><div class="pt-space-md flex flex-col sm:flex-row items-center justify-between gap-4"><p class="font-body-sm text-body-sm text-outline-variant text-center sm:text-left">© 2025 ANUKUL Ayur Vastu Harmony Clinic. All rights reserved. Responsible Vedic Clinical Practice.</p><div class="flex items-center gap-6 font-body-sm text-body-sm text-surface-container-high/70"><a class="hover:text-[#B38A3E] transition-colors" data-path="privacy-policy" href="contact.html#privacy">Privacy Policy</a><span class="text-[#B38A3E]/40">•</span><a class="hover:text-[#B38A3E] transition-colors" data-path="terms" href="contact.html#terms">Terms</a><span class="text-[#B38A3E]/40">•</span><a class="hover:text-[#B38A3E] transition-colors" data-path="disclaimer" href="contact.html#disclaimer">Disclaimer</a></div></div></div></footer><script src="js/anukul-scroll.js"></script></body></html>
