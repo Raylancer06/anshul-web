@@ -26,3 +26,7 @@ __pycache__/
 .netlify/
 dist/
 build/
+
+# Local WordPress Environment
+wordpress/
+wp-cli.phar
