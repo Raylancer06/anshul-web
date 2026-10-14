@@ -1,0 +1,849 @@
+<?php
+/**
+ * Template Name: Book Your Consultation
+ *
+ * @package Anukul
+ */
+
+if ( ! defined( 'ABSPATH' ) ) {
+    exit;
+}
+
+get_header();
+?>
+
+<div class="flex flex-col w-full">
+<!-- Subtle Status Ribbon & Coordinates -->
+<div class="w-full bg-surface-container py-2.5 px-margin md:px-margin-md lg:px-margin-lg">
+<div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-space-xs text-on-surface-variant font-label-md text-label-md tracking-wider">
+<div class="flex items-center gap-space-sm">
+<span class="w-2 h-2 rounded-full bg-primary-container animate-pulse"></span>
+<span class="text-on-surface uppercase font-semibold">Indian Standard Time (IST · UTC+5:30)</span>
+<span class="hidden md:inline text-outline">·</span>
+<span class="hidden md:inline">256-Bit SSL Encrypted Healthcare Gateway</span>
+</div>
+<div class="flex items-center gap-space-sm font-label-sm text-label-sm text-secondary tracking-widest uppercase">
+<span class="material-symbols-outlined text-[15px]">verified_user</span>
+<span>NABH &amp; Ayush Aligned Protocols</span>
+</div>
+</div>
+</div>
+<!-- Interactive Prototype Controller Bar -->
+<aside aria-label="Reviewer Prototype Switcher" class="w-full bg-primary text-on-primary py-2 px-margin md:px-margin-md lg:px-margin-lg">
+<div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-space-sm">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[16px] text-primary-fixed">tune</span>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-primary-fixed font-bold">Reviewer Step Switcher:</span>
+</div>
+<div class="flex flex-wrap items-center gap-1.5" id="prototype-controls">
+<button class="proto-btn px-2.5 py-1 rounded bg-primary-container text-on-primary hover:bg-tertiary font-label-sm text-label-sm uppercase tracking-wider transition-colors duration-200" data-step-target="1" onclick="goToStep(1)" type="button">1. Type</button>
+<button class="proto-btn px-2.5 py-1 rounded bg-primary-container text-on-primary hover:bg-tertiary font-label-sm text-label-sm uppercase tracking-wider transition-colors duration-200" data-step-target="2" onclick="goToStep(2)" type="button">2. Slot</button>
+<button class="proto-btn px-2.5 py-1 rounded bg-primary-container text-on-primary hover:bg-tertiary font-label-sm text-label-sm uppercase tracking-wider transition-colors duration-200" data-step-target="3" onclick="goToStep(3)" type="button">3. Details</button>
+<button class="proto-btn px-2.5 py-1 rounded bg-primary-container text-on-primary hover:bg-tertiary font-label-sm text-label-sm uppercase tracking-wider transition-colors duration-200" data-step-target="4" onclick="goToStep(4)" type="button">4. Payment</button>
+<span class="text-primary-fixed-dim/40 px-1">|</span>
+<button class="px-2 py-1 rounded bg-surface-container-highest text-on-surface font-label-sm text-label-sm uppercase tracking-wider hover:bg-error hover:text-on-error transition-colors duration-200" onclick="simulateState('conflict')" type="button">State: Slot Held</button>
+<button class="px-2 py-1 rounded bg-secondary-container text-on-secondary-container font-label-sm text-label-sm uppercase tracking-wider hover:bg-secondary hover:text-on-secondary transition-colors duration-200" onclick="simulateState('success')" type="button">State: Confirmed</button>
+</div>
+</div>
+</aside>
+<!-- Page Header & Stepper Section -->
+<section class="w-full bg-surface pt-space-lg pb-space-xl px-margin md:px-margin-md lg:px-margin-lg">
+<div class="max-w-7xl mx-auto">
+<!-- Breadcrumb -->
+<nav aria-label="Breadcrumb" class="flex items-center gap-space-xs font-label-md text-label-md text-on-surface-variant mb-space-md">
+<a class="hover:text-primary transition-colors" href="<?php echo esc_url( home_url( "/" ) ); ?>">Home</a>
+<span class="text-outline text-[12px]">/</span>
+<a class="hover:text-primary transition-colors" href="<?php echo esc_url( home_url( "/services/" ) ); ?>">Consultations</a>
+<span class="text-outline text-[12px]">/</span>
+<span class="text-primary font-semibold">Book Your Consultation</span>
+</nav>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-end pb-space-lg">
+<div class="lg:col-span-8 flex flex-col gap-space-xs">
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-[0.2em] font-bold">ANUKUL CONSULTATIONS · CLINICAL SCHEDULING &amp; HARMONY</span>
+<h1 class="font-headline-lg text-headline-lg text-primary tracking-tight">Book Your Consultation</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mt-space-xs">
+            Choose your therapeutic consultation modality, select an auspicious appointment slot in accordance with diurnal rhythm, and secure your session through our clinical gateway.
+          </p>
+</div>
+<div class="lg:col-span-4 flex lg:justify-end">
+<div class="p-space-md bg-surface-container rounded-lg flex items-center gap-space-md w-full sm:w-auto shadow-sm">
+<div class="w-10 h-10 rounded-full bg-primary-container text-on-primary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[20px]">timer</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-secondary">Slot Hold Timer</span>
+<span class="font-headline-sm text-headline-sm text-primary leading-tight" id="countdown-timer">14:59</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant text-[11px]">Held exclusively for your session</span>
+</div>
+</div>
+</div>
+</div>
+<!-- 4-Step Interactive Progress Tracker -->
+<div class="w-full bg-surface-container-low p-space-md md:p-space-lg rounded-xl shadow-sm">
+<ol class="grid grid-cols-2 md:grid-cols-4 gap-space-md relative">
+<!-- Step 1 Indicator -->
+<li class="cursor-pointer group" onclick="goToStep(1)">
+<div class="flex items-center gap-space-sm pb-space-xs">
+<div class="w-8 h-8 rounded-full bg-primary text-on-primary font-headline-sm text-[16px] flex items-center justify-center font-bold" id="badge-step-1">1</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-secondary font-bold">Step 01</span>
+<span class="font-body-md text-body-md font-semibold text-primary" id="title-step-1">Consultation</span>
+</div>
+</div>
+<div class="h-1 w-full bg-primary rounded-full transition-all duration-300" id="bar-step-1"></div>
+</li>
+<!-- Step 2 Indicator -->
+<li class="cursor-pointer group" onclick="goToStep(2)">
+<div class="flex items-center gap-space-sm pb-space-xs">
+<div class="w-8 h-8 rounded-full bg-surface-container-highest text-on-surface-variant font-headline-sm text-[16px] flex items-center justify-center font-bold" id="badge-step-2">2</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-outline font-bold">Step 02</span>
+<span class="font-body-md text-body-md font-normal text-on-surface-variant" id="title-step-2">Time Slot</span>
+</div>
+</div>
+<div class="h-1 w-full bg-surface-container-highest rounded-full transition-all duration-300" id="bar-step-2"></div>
+</li>
+<!-- Step 3 Indicator -->
+<li class="cursor-pointer group" onclick="goToStep(3)">
+<div class="flex items-center gap-space-sm pb-space-xs">
+<div class="w-8 h-8 rounded-full bg-surface-container-highest text-on-surface-variant font-headline-sm text-[16px] flex items-center justify-center font-bold" id="badge-step-3">3</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-outline font-bold">Step 03</span>
+<span class="font-body-md text-body-md font-normal text-on-surface-variant" id="title-step-3">Your Details</span>
+</div>
+</div>
+<div class="h-1 w-full bg-surface-container-highest rounded-full transition-all duration-300" id="bar-step-3"></div>
+</li>
+<!-- Step 4 Indicator -->
+<li class="cursor-pointer group" onclick="goToStep(4)">
+<div class="flex items-center gap-space-sm pb-space-xs">
+<div class="w-8 h-8 rounded-full bg-surface-container-highest text-on-surface-variant font-headline-sm text-[16px] flex items-center justify-center font-bold" id="badge-step-4">4</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-outline font-bold">Step 04</span>
+<span class="font-body-md text-body-md font-normal text-on-surface-variant" id="title-step-4">Payment</span>
+</div>
+</div>
+<div class="h-1 w-full bg-surface-container-highest rounded-full transition-all duration-300" id="bar-step-4"></div>
+</li>
+</ol>
+</div>
+</div>
+</section>
+<!-- Notification Banner (State: Slot conflict or alerts) -->
+<div class="hidden w-full bg-error-container text-on-error-container py-3 px-margin md:px-margin-md lg:px-margin-lg shadow-sm" id="alert-banner">
+<div class="max-w-7xl mx-auto flex items-center justify-between gap-space-md">
+<div class="flex items-center gap-space-sm font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-error">notification_important</span>
+<span><strong>Attention:</strong> The previously selected slot on 11:00 AM IST was claimed by another patient during verification. Please choose another muhurta from Step 2.</span>
+</div>
+<button class="text-on-error-container hover:text-error" onclick="dismissAlert()">
+<span class="material-symbols-outlined text-[18px]">close</span>
+</button>
+</div>
+</div>
+<!-- Primary Dynamic Content Container -->
+<main class="w-full bg-surface py-space-xl px-margin md:px-margin-md lg:px-margin-lg flex-1">
+<div class="max-w-7xl mx-auto">
+<!-- ================= STEP 1: CONSULTATION SELECTION ================= -->
+<section class="step-view flex flex-col gap-space-xl" id="step-content-1">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-space-md pb-space-sm">
+<div>
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-secondary font-bold">Primary Diagnostic Modality</span>
+<h2 class="font-headline-md text-headline-md text-primary">Select Clinical Consultation</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1">Our certified vaidyas and vastu shastra acharyas offer individualized evaluations rooted in foundational Vedic manuscripts.</p>
+</div>
+<div class="flex items-center gap-space-sm font-label-md text-label-md text-on-surface-variant shrink-0">
+<span class="material-symbols-outlined text-primary text-[18px]">verified</span>
+<span>All fees inclusive of statutory GST (18%)</span>
+</div>
+</div>
+<!-- 4 Cards Responsive Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-space-md">
+<!-- CARD 1: Only Online Health Consultation -->
+<div class="consultation-card cursor-pointer bg-surface-container-lowest p-space-md lg:p-space-lg rounded-xl flex flex-col justify-between transition-all duration-300 shadow-sm hover:shadow-md relative group" id="card-health" onclick="selectConsultation('health', 1000, 'Only Online Health Consultation', '45 mins', 'Video Call (Secure Tele-Health)')">
+<div class="flex flex-col">
+<div class="flex items-start justify-between gap-space-sm mb-space-sm">
+<span class="px-2 py-0.5 rounded bg-surface-container text-on-surface-variant font-label-sm text-[11px] uppercase tracking-wider font-semibold">Prakriti &amp; Health</span>
+<span class="font-label-sm text-[11px] uppercase tracking-widest text-secondary font-bold">45 Mins</span>
+</div>
+<h3 class="font-headline-sm text-[20px] text-primary mb-1 leading-snug">Only Online Health Consultation</h3>
+<p class="font-label-sm text-secondary font-semibold mb-space-xs text-[12px]">Classical Prakriti &amp; Constitutional Assessment</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-md leading-relaxed">
+  In-depth clinical discussion of Ayurvedic principles, doshic balance, dinacharya routines, tailored herbal formulations, and dietary guidance.
+</p>
+<div class="bg-surface-container-low p-space-sm rounded-lg flex flex-col gap-1.5 font-body-sm text-[12px] text-on-surface-variant mb-space-md">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px] text-primary">video_camera_front</span>
+<span>Video Call (Secure Tele-Health)</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px] text-primary">clinical_notes</span>
+<span>Personalized Ahara-Vihara Dossier</span>
+</div>
+</div>
+</div>
+<div class="pt-space-sm border-t border-surface-container flex items-center justify-between">
+<div>
+<span class="font-label-sm text-[11px] uppercase text-outline">Fee</span>
+<div class="font-headline-sm text-[22px] text-primary font-bold">₹ 1,000</div>
+</div>
+<button class="select-btn px-4 py-1.5 rounded-lg bg-surface-container-high text-on-surface font-label-sm uppercase tracking-wider group-hover:bg-primary group-hover:text-on-primary transition-colors" type="button">
+  Select
+</button>
+</div>
+</div>
+
+<!-- CARD 2: Medico-Vastu Consultation -->
+<div class="consultation-card cursor-pointer bg-surface-container-lowest p-space-md lg:p-space-lg rounded-xl flex flex-col justify-between transition-all duration-300 shadow-sm hover:shadow-md relative group" id="card-medico-vastu" onclick="selectConsultation('medico-vastu', 3100, 'Medico-Vastu Consultation', '60 mins', 'Floor Plan Audit &amp; Video Analysis')">
+<div class="flex flex-col">
+<div class="flex items-start justify-between gap-space-sm mb-space-sm">
+<span class="px-2 py-0.5 rounded bg-surface-container text-on-surface-variant font-label-sm text-[11px] uppercase tracking-wider font-semibold">Spatial Geometry</span>
+<span class="font-label-sm text-[11px] uppercase tracking-widest text-secondary font-bold">60 Mins</span>
+</div>
+<h3 class="font-headline-sm text-[20px] text-primary mb-1 leading-snug">Medico-Vastu Consultation</h3>
+<p class="font-label-sm text-secondary font-semibold mb-space-xs text-[12px]">Residential &amp; Workspace Spatial Audit</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-md leading-relaxed">
+  Evaluation of architectural layout, directional orientation, Ishanya/Brahmasthan flow, room usage, and non-destructive remedial harmonizers.
+</p>
+<div class="bg-surface-container-low p-space-sm rounded-lg flex flex-col gap-1.5 font-body-sm text-[12px] text-on-surface-variant mb-space-md">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px] text-primary">architecture</span>
+<span>Blueprint Review &amp; Video Analysis</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px] text-primary">compass_calibration</span>
+<span>Mandala Grid &amp; Remedial Overlay</span>
+</div>
+</div>
+</div>
+<div class="pt-space-sm border-t border-surface-container flex items-center justify-between">
+<div>
+<span class="font-label-sm text-[11px] uppercase text-outline">Fee</span>
+<div class="font-headline-sm text-[22px] text-primary font-bold">₹ 3,100</div>
+</div>
+<button class="select-btn px-4 py-1.5 rounded-lg bg-surface-container-high text-on-surface font-label-sm uppercase tracking-wider group-hover:bg-primary group-hover:text-on-primary transition-colors" type="button">
+  Select
+</button>
+</div>
+</div>
+
+<!-- CARD 3: Medico-Astro-Vastu Construction -->
+<div class="consultation-card cursor-pointer bg-surface-container-lowest p-space-md lg:p-space-lg rounded-xl flex flex-col justify-between transition-all duration-300 shadow-sm hover:shadow-md relative group" id="card-astro-construction" onclick="selectConsultation('astro-construction', 4100, 'Medico-Astro-Vastu Construction', '75 mins', 'Architectural &amp; Planetary Blueprint Audit')">
+<div class="flex flex-col">
+<div class="flex items-start justify-between gap-space-sm mb-space-sm">
+<span class="px-2 py-0.5 rounded bg-surface-container text-on-surface-variant font-label-sm text-[11px] uppercase tracking-wider font-semibold">Architectural &amp; Astro</span>
+<span class="font-label-sm text-[11px] uppercase tracking-widest text-secondary font-bold">75 Mins</span>
+</div>
+<h3 class="font-headline-sm text-[20px] text-primary mb-1 leading-snug">Medico-Astro-Vastu Construction</h3>
+<p class="font-label-sm text-secondary font-semibold mb-space-xs text-[12px]">Site Planning &amp; Planetary Construction Alignment</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-md leading-relaxed">
+  Architectural blueprint guidance aligning structural construction or renovation with planetary influences, cardinal energy grids, and health energetics.
+</p>
+<div class="bg-surface-container-low p-space-sm rounded-lg flex flex-col gap-1.5 font-body-sm text-[12px] text-on-surface-variant mb-space-md">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px] text-primary">domain_add</span>
+<span>Structural &amp; Site Blueprint Audit</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px] text-primary">auto_graph</span>
+<span>Planetary &amp; Energetic Grid Calibration</span>
+</div>
+</div>
+</div>
+<div class="pt-space-sm border-t border-surface-container flex items-center justify-between">
+<div>
+<span class="font-label-sm text-[11px] uppercase text-outline">Fee</span>
+<div class="font-headline-sm text-[22px] text-primary font-bold">₹ 4,100</div>
+</div>
+<button class="select-btn px-4 py-1.5 rounded-lg bg-surface-container-high text-on-surface font-label-sm uppercase tracking-wider group-hover:bg-primary group-hover:text-on-primary transition-colors" type="button">
+  Select
+</button>
+</div>
+</div>
+
+<!-- CARD 4: Complete Medico-Astro Vastu Numerology Consultation (RECOMMENDED DEFAULT) -->
+<div class="consultation-card active-card cursor-pointer bg-surface-container-lowest p-space-md lg:p-space-lg rounded-xl flex flex-col justify-between transition-all duration-300 shadow-md relative group ring-2 ring-primary" id="card-complete" onclick="selectConsultation('complete', 5100, 'Complete Medico-Astro Vastu Numerology Consultation', '90 mins', 'Complete 4-Pillar Master Consultation')">
+<!-- Active Recommended Badge -->
+<div class="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-secondary text-on-secondary px-3 py-0.5 rounded-full font-label-sm text-[10px] uppercase tracking-widest font-bold shadow-sm flex items-center gap-1 whitespace-nowrap">
+<span class="material-symbols-outlined text-[13px]">auto_awesome</span>
+Recommended Protocol
+</div>
+<div class="flex flex-col">
+<div class="flex items-start justify-between gap-space-sm mb-space-sm pt-1">
+<span class="px-2 py-0.5 rounded bg-secondary-fixed text-on-secondary-fixed font-label-sm text-[11px] uppercase tracking-wider font-semibold">4-Pillar Master Alignment</span>
+<span class="font-label-sm text-[11px] uppercase tracking-widest text-secondary font-bold">90 Mins</span>
+</div>
+<h3 class="font-headline-sm text-[20px] text-primary mb-1 leading-snug">Complete Medico-Astro Vastu Numerology Consultation</h3>
+<p class="font-label-sm text-secondary font-semibold mb-space-xs text-[12px]">Unified 4-Pillar Master Alignment Protocol</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-md leading-relaxed">
+  Definitive master consultation integrating Ayurvedic somatic diagnostics, astrological horoscopy, Vastu architecture, and sacred numerological analysis.
+</p>
+<div class="bg-surface-container-low p-space-sm rounded-lg flex flex-col gap-1.5 font-body-sm text-[12px] text-on-surface-variant mb-space-md">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px] text-primary">workspace_premium</span>
+<span>Complete 4-Pillar Master Consultation</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px] text-primary">folder_special</span>
+<span>Unified Multi-Dossier &amp; Blueprint Plan</span>
+</div>
+</div>
+</div>
+<div class="pt-space-sm border-t border-surface-container flex items-center justify-between">
+<div>
+<span class="font-label-sm text-[11px] uppercase text-outline">Fee</span>
+<div class="font-headline-sm text-[22px] text-primary font-bold">₹ 5,100</div>
+</div>
+<button class="select-btn px-4 py-1.5 rounded-lg bg-primary text-on-primary font-label-sm uppercase tracking-wider" type="button">
+  Selected
+</button>
+</div>
+</div>
+</div>
+<!-- Step 1 Actions -->
+<div class="flex justify-end pt-space-lg">
+<button class="inline-flex items-center gap-space-sm px-8 py-3.5 rounded-lg bg-primary text-on-primary font-label-md text-label-md uppercase tracking-wider hover:bg-tertiary transition-colors duration-200 shadow-md" onclick="goToStep(2)" type="button">
+<span>Proceed to Choose Slot</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+</div>
+</section>
+<!-- ================= STEP 2: CHOOSE APPOINTMENT (CALENDAR & SLOTS) ================= -->
+<section class="step-view hidden flex-col gap-space-xl" id="step-content-2">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-space-md pb-space-sm">
+<div>
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-secondary font-bold">Rhythmic Chronobiology</span>
+<h2 class="font-headline-md text-headline-md text-primary">Select Auspicious Appointment Slot</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1">Calendar slots are calibrated against diurnal bio-rhythms (Brahma Muhurta, Pitta metabolic peak, and Vata twilight calmness).</p>
+</div>
+<div class="bg-surface-container px-4 py-2 rounded-lg flex items-center gap-space-xs text-primary font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-[18px]">schedule</span>
+<span class="font-semibold" id="active-consultation-banner">Complete Medico-Astro Vastu Numerology Consultation (90 Mins)</span>
+</div>
+</div>
+<!-- Dual Column: Calendar & Time Grid -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg">
+<!-- Left: Calendar Widget (7 Cols) -->
+<div class="lg:col-span-7 bg-surface-container-lowest p-space-lg rounded-xl shadow-sm flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between pb-space-md mb-space-md">
+<div class="flex items-center gap-space-sm">
+<h3 class="font-headline-sm text-headline-sm text-primary">November 2025</h3>
+<span class="px-2 py-0.5 rounded bg-surface-container text-secondary font-label-sm text-label-sm uppercase tracking-wider">Margashirsha Masa</span>
+</div>
+<div class="flex items-center gap-1">
+<button class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center text-on-surface-variant hover:text-primary hover:bg-surface-container-high transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">chevron_left</span>
+</button>
+<button class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center text-on-surface-variant hover:text-primary hover:bg-surface-container-high transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">chevron_right</span>
+</button>
+</div>
+</div>
+<!-- Day Headers -->
+<div class="grid grid-cols-7 gap-1 text-center font-label-md text-label-md text-on-surface-variant pb-2">
+<span>SUN</span><span>MON</span><span>TUE</span><span>WED</span><span>THU</span><span>FRI</span><span>SAT</span>
+</div>
+<!-- Calendar Days Grid -->
+<div class="grid grid-cols-7 gap-2 text-center font-body-md text-body-md" id="calendar-days">
+<!-- Row 1: Disabled / Past -->
+<span class="p-2.5 rounded text-outline-variant opacity-40">26</span>
+<span class="p-2.5 rounded text-outline-variant opacity-40">27</span>
+<span class="p-2.5 rounded text-outline-variant opacity-40">28</span>
+<span class="p-2.5 rounded text-outline-variant opacity-40">29</span>
+<span class="p-2.5 rounded text-outline-variant opacity-40">30</span>
+<span class="p-2.5 rounded text-outline-variant opacity-40">31</span>
+<span class="p-2.5 rounded text-on-surface-variant/40">1</span>
+<!-- Row 2 -->
+<span class="p-2.5 rounded text-on-surface-variant/40">2</span>
+<span class="p-2.5 rounded text-on-surface-variant/40">3</span>
+<span class="p-2.5 rounded text-on-surface-variant/40">4</span>
+<span class="p-2.5 rounded text-on-surface-variant/40">5</span>
+<span class="p-2.5 rounded text-on-surface-variant/40">6</span>
+<span class="p-2.5 rounded text-on-surface-variant/40">7</span>
+<span class="p-2.5 rounded text-on-surface-variant/40">8</span>
+<!-- Row 3 -->
+<span class="p-2.5 rounded text-on-surface-variant/40">9</span>
+<span class="p-2.5 rounded text-on-surface-variant/40">10</span>
+<span class="p-2.5 rounded text-on-surface-variant/40">11</span>
+<span class="p-2.5 rounded text-on-surface-variant/40">12</span>
+<span class="p-2.5 rounded text-on-surface-variant/40">13</span>
+<span class="p-2.5 rounded text-on-surface-variant/40">14</span>
+<span class="p-2.5 rounded text-on-surface-variant/40">15</span>
+<!-- Row 4: Active Dates -->
+<button class="cal-day p-2.5 rounded-lg hover:bg-surface-container font-medium text-on-surface transition-colors" onclick="selectDate('Sun, Nov 16, 2025', this)" type="button">16</button>
+<button class="cal-day p-2.5 rounded-lg hover:bg-surface-container font-medium text-on-surface transition-colors" onclick="selectDate('Mon, Nov 17, 2025', this)" type="button">17</button>
+<!-- Selected Date (Nov 18) -->
+<button class="cal-day p-2.5 rounded-lg bg-primary text-on-primary font-bold shadow-sm relative transition-colors" onclick="selectDate('Tue, Nov 18, 2025', this)" type="button">
+                  18
+                  <span class="w-1.5 h-1.5 rounded-full bg-secondary-fixed absolute bottom-1 left-1/2 -translate-x-1/2"></span>
+</button>
+<button class="cal-day p-2.5 rounded-lg hover:bg-surface-container font-medium text-on-surface transition-colors relative" onclick="selectDate('Wed, Nov 19, 2025', this)" type="button">
+                  19
+                  <span class="w-1.5 h-1.5 rounded-full bg-secondary absolute bottom-1 left-1/2 -translate-x-1/2"></span>
+</button>
+<button class="cal-day p-2.5 rounded-lg hover:bg-surface-container font-medium text-on-surface transition-colors" onclick="selectDate('Thu, Nov 20, 2025', this)" type="button">20</button>
+<button class="cal-day p-2.5 rounded-lg hover:bg-surface-container font-medium text-on-surface transition-colors" onclick="selectDate('Fri, Nov 21, 2025', this)" type="button">21</button>
+<button class="cal-day p-2.5 rounded-lg hover:bg-surface-container font-medium text-on-surface transition-colors" onclick="selectDate('Sat, Nov 22, 2025', this)" type="button">22</button>
+<!-- Row 5 -->
+<button class="cal-day p-2.5 rounded-lg hover:bg-surface-container font-medium text-on-surface transition-colors" onclick="selectDate('Sun, Nov 23, 2025', this)" type="button">23</button>
+<button class="cal-day p-2.5 rounded-lg hover:bg-surface-container font-medium text-on-surface transition-colors" onclick="selectDate('Mon, Nov 24, 2025', this)" type="button">24</button>
+<button class="cal-day p-2.5 rounded-lg hover:bg-surface-container font-medium text-on-surface transition-colors" onclick="selectDate('Tue, Nov 25, 2025', this)" type="button">25</button>
+<button class="cal-day p-2.5 rounded-lg hover:bg-surface-container font-medium text-on-surface transition-colors" onclick="selectDate('Wed, Nov 26, 2025', this)" type="button">26</button>
+<button class="cal-day p-2.5 rounded-lg hover:bg-surface-container font-medium text-on-surface transition-colors" onclick="selectDate('Thu, Nov 27, 2025', this)" type="button">27</button>
+<button class="cal-day p-2.5 rounded-lg hover:bg-surface-container font-medium text-on-surface transition-colors" onclick="selectDate('Fri, Nov 28, 2025', this)" type="button">28</button>
+<button class="cal-day p-2.5 rounded-lg hover:bg-surface-container font-medium text-on-surface transition-colors" onclick="selectDate('Sat, Nov 29, 2025', this)" type="button">29</button>
+</div>
+</div>
+<!-- Calendar Legend -->
+<div class="pt-space-md mt-space-md flex flex-wrap items-center justify-between gap-space-sm font-label-sm text-label-sm text-on-surface-variant">
+<div class="flex items-center gap-1.5">
+<span class="w-3 h-3 rounded-full bg-primary inline-block"></span>
+<span>Selected Date</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-secondary inline-block"></span>
+<span>Shubha Muhurta (Optimal Vitality)</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="w-3 h-3 rounded-full bg-surface-container-highest inline-block"></span>
+<span>Completed / Reserved</span>
+</div>
+</div>
+</div>
+<!-- Right: Time Slot Selector (5 Cols) -->
+<div class="lg:col-span-5 bg-surface-container-lowest p-space-lg rounded-xl shadow-sm flex flex-col justify-between">
+<div class="flex flex-col gap-space-md">
+<div class="flex items-center justify-between pb-space-sm">
+<div>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-secondary font-bold">Selected Consultation Day</span>
+<h3 class="font-headline-sm text-headline-sm text-primary" id="current-chosen-date">Tuesday, November 18, 2025</h3>
+</div>
+<span class="material-symbols-outlined text-primary text-[24px]">event_available</span>
+</div>
+<!-- Time Slot Section 1: Morning -->
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface font-semibold">Morning Muhurta (09:00 – 12:30 IST)</span>
+<span class="font-label-sm text-label-sm text-outline">High Bio-Prana Flow</span>
+</div>
+<div class="grid grid-cols-2 gap-space-sm pt-1">
+<button class="time-slot-btn px-4 py-3 rounded-lg bg-surface-container text-on-surface font-body-sm text-body-sm font-medium hover:bg-surface-container-high transition-all text-left flex items-center justify-between" onclick="selectTimeSlot('09:30 AM – 11:00 AM IST', this)" type="button">
+<span>09:30 AM IST</span>
+<span class="material-symbols-outlined text-[16px] text-primary">circle</span>
+</button>
+<!-- Active Selected Slot (11:00 AM) -->
+<button class="time-slot-btn selected-slot px-4 py-3 rounded-lg bg-primary text-on-primary font-body-sm text-body-sm font-semibold shadow-sm transition-all text-left flex items-center justify-between" onclick="selectTimeSlot('11:00 AM – 12:30 PM IST', this)" type="button">
+<span>11:00 AM IST</span>
+<span class="material-symbols-outlined text-[16px] text-on-primary">check_circle</span>
+</button>
+</div>
+</div>
+<!-- Time Slot Section 2: Afternoon & Evening -->
+<div class="flex flex-col gap-space-xs pt-space-xs">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface font-semibold">Afternoon &amp; Twilight (14:00 – 18:30 IST)</span>
+<span class="font-label-sm text-label-sm text-outline">Reflective Analysis</span>
+</div>
+<div class="grid grid-cols-2 gap-space-sm pt-1">
+<!-- Disabled / Booked Slot -->
+<div class="px-4 py-3 rounded-lg bg-surface-container-highest text-on-surface-variant/50 font-body-sm text-body-sm flex items-center justify-between cursor-not-allowed">
+<span class="line-through">02:30 PM IST</span>
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-outline text-[9px]">Booked</span>
+</div>
+<button class="time-slot-btn px-4 py-3 rounded-lg bg-surface-container text-on-surface font-body-sm text-body-sm font-medium hover:bg-surface-container-high transition-all text-left flex items-center justify-between" onclick="selectTimeSlot('04:00 PM – 05:30 PM IST', this)" type="button">
+<span>04:00 PM IST</span>
+<span class="material-symbols-outlined text-[16px] text-primary">circle</span>
+</button>
+<button class="time-slot-btn px-4 py-3 rounded-lg bg-surface-container text-on-surface font-body-sm text-body-sm font-medium hover:bg-surface-container-high transition-all text-left flex items-center justify-between" onclick="selectTimeSlot('05:30 PM – 07:00 PM IST', this)" type="button">
+<span>05:30 PM IST</span>
+<span class="material-symbols-outlined text-[16px] text-primary">circle</span>
+</button>
+<div class="px-4 py-3 rounded-lg bg-surface-container-highest text-on-surface-variant/50 font-body-sm text-body-sm flex items-center justify-between cursor-not-allowed">
+<span class="line-through">07:00 PM IST</span>
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-outline text-[9px]">Reserved</span>
+</div>
+</div>
+</div>
+<!-- Timezone & Notification Notice -->
+<div class="bg-surface-container p-space-sm rounded-lg flex items-start gap-space-xs text-on-surface-variant font-body-sm text-body-sm text-[12px] leading-relaxed">
+<span class="material-symbols-outlined text-primary text-[18px] shrink-0">public</span>
+<p>All consultation times are shown in Indian Standard Time (IST · UTC+5:30). An automatic calendar invite with local timezone conversion will be dispatched upon confirmation.</p>
+</div>
+</div>
+<!-- Step 2 Navigation -->
+<div class="pt-space-md flex items-center justify-between">
+<button class="px-5 py-2.5 rounded-lg bg-surface-container text-on-surface font-label-md text-label-md uppercase tracking-wider hover:bg-surface-container-high transition-colors" onclick="goToStep(1)" type="button">
+                Back
+              </button>
+<button class="inline-flex items-center gap-space-xs px-6 py-2.5 rounded-lg bg-primary text-on-primary font-label-md text-label-md uppercase tracking-wider hover:bg-tertiary transition-colors shadow-sm" onclick="goToStep(3)" type="button">
+<span>Continue to Details</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- ================= STEP 3: CUSTOMER DETAILS & INTAKE ================= -->
+<section class="step-view hidden flex-col gap-space-xl" id="step-content-3">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-space-md pb-space-sm">
+<div>
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-secondary font-bold">Confidential Dossier Preparation</span>
+<h2 class="font-headline-md text-headline-md text-primary">Enter Patient &amp; Spatial Details</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1">This intake equips Dr. Chaudhari and the spatial audit team with initial context prior to your session.</p>
+</div>
+<div class="flex items-center gap-2 text-on-surface-variant font-label-md text-label-md">
+<span class="material-symbols-outlined text-primary text-[18px]">lock</span>
+<span>HIPAA &amp; Digital Health Data Compliant</span>
+</div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg">
+<!-- Left: Structured Form (8 cols) -->
+<form class="lg:col-span-8 bg-surface-container-lowest p-space-lg md:p-space-xl rounded-xl shadow-sm flex flex-col gap-space-md" id="intake-form" onsubmit="event.preventDefault(); goToStep(4);">
+<!-- Full Name & Email -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-md">
+<div class="flex flex-col gap-1.5">
+<label class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface font-bold" for="full-name">Full Legal Name <span class="text-error">*</span></label>
+<input class="w-full bg-surface-container-low px-4 py-3 rounded-lg text-on-surface font-body-md text-body-md placeholder:text-outline focus:outline-none focus:ring-1 focus:ring-primary shadow-inner" id="full-name" placeholder="e.g. Ananya Deshmukh" required="" type="text" value="Ananya Deshmukh"/>
+</div>
+<div class="flex flex-col gap-1.5">
+<label class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface font-bold" for="email">Email Address <span class="text-error">*</span></label>
+<input class="w-full bg-surface-container-low px-4 py-3 rounded-lg text-on-surface font-body-md text-body-md placeholder:text-outline focus:outline-none focus:ring-1 focus:ring-primary shadow-inner" id="email" placeholder="name@domain.com" required="" type="email" value="ananya.deshmukh@wellness.in"/>
+<span class="font-body-sm text-body-sm text-outline text-[11px]">Appointment calendar invites and prep dossier will be sent here.</span>
+</div>
+</div>
+<!-- Phone Number & Mode Selector -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-md">
+<div class="flex flex-col gap-1.5">
+<label class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface font-bold" for="phone">Phone Number (WhatsApp Ready) <span class="text-error">*</span></label>
+<div class="flex">
+<span class="inline-flex items-center px-3 rounded-l-lg bg-surface-container text-on-surface font-body-md text-body-md select-none">+91</span>
+<input class="w-full bg-surface-container-low px-4 py-3 rounded-r-lg text-on-surface font-body-md text-body-md placeholder:text-outline focus:outline-none focus:ring-1 focus:ring-primary shadow-inner" id="phone" placeholder="98201 44521" required="" type="tel" value="98201 44521"/>
+</div>
+</div>
+<div class="flex flex-col gap-1.5">
+<label class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface font-bold">Consultation Medium <span class="text-error">*</span></label>
+<select class="w-full bg-surface-container-low px-4 py-3 rounded-lg text-on-surface font-body-md text-body-md focus:outline-none focus:ring-1 focus:ring-primary shadow-inner" id="consultation-format">
+<option selected="" value="video">Secure Video Call (Google Meet / Zoom Healthcare)</option>
+<option value="clinic">In-Clinic Sanctuary Visit (Bengaluru Center)</option>
+</select>
+</div>
+</div>
+<!-- Health & Space Focus / Intake Notes -->
+<div class="flex flex-col gap-1.5">
+<div class="flex items-center justify-between">
+<label class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface font-bold" for="intake-notes">Health &amp; Space Focus / Preliminary Notes</label>
+<span class="font-label-sm text-label-sm text-outline">Optional</span>
+</div>
+<textarea class="w-full bg-surface-container-low p-4 rounded-lg text-on-surface font-body-md text-body-md placeholder:text-outline focus:outline-none focus:ring-1 focus:ring-primary shadow-inner" id="intake-notes" placeholder="Briefly describe recurring symptoms, current lifestyle imbalances, or specific spatial questions regarding your residence or workspace layout..." rows="4">Experiencing chronic evening fatigue and erratic sleep cycles over the past 4 months. We recently relocated our master bedroom toward the Northeast quadrant of our apartment and would like guidance on harmonizing the layout alongside dietary balancing.</textarea>
+</div>
+<!-- Consent Checkbox -->
+<div class="flex items-start gap-space-sm pt-space-xs">
+<input checked="" class="w-4 h-4 mt-1 rounded text-primary focus:ring-primary cursor-pointer" id="terms-consent" required="" type="checkbox"/>
+<label class="font-body-sm text-body-sm text-on-surface-variant cursor-pointer select-none" for="terms-consent">
+                I acknowledge the consultation terms, cancellation guidelines (full refund or complimentary reschedule up to 24 hours prior), and the clinic's confidential health records charter.
+              </label>
+</div>
+<!-- Step 3 Navigation -->
+<div class="pt-space-md flex items-center justify-between">
+<button class="px-5 py-2.5 rounded-lg bg-surface-container text-on-surface font-label-md text-label-md uppercase tracking-wider hover:bg-surface-container-high transition-colors" onclick="goToStep(2)" type="button">
+                Back to Time Slot
+              </button>
+<button class="inline-flex items-center gap-space-xs px-6 py-2.5 rounded-lg bg-primary text-on-primary font-label-md text-label-md uppercase tracking-wider hover:bg-tertiary transition-colors shadow-sm" type="submit">
+<span>Proceed to Payment</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</button>
+</div>
+</form>
+<!-- Right: Summary Sidebar (4 cols) -->
+<div class="lg:col-span-4 flex flex-col gap-space-md">
+<div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm flex flex-col gap-space-md">
+<div class="flex items-center gap-space-sm pb-space-sm">
+<span class="material-symbols-outlined text-secondary text-[22px]">medical_services</span>
+<h3 class="font-headline-sm text-headline-sm text-primary">Session Overview</h3>
+</div>
+<div class="flex flex-col gap-space-sm font-body-sm text-body-sm">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm uppercase text-outline">Selected Type</span>
+<span class="font-semibold text-primary" id="summary-sidebar-type">Complete Medico-Astro Vastu Numerology Consultation</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm uppercase text-outline">Scheduled Slot</span>
+<span class="font-semibold text-on-surface" id="summary-sidebar-slot">Tuesday, November 18, 2025 · 11:00 AM IST</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm uppercase text-outline">Duration</span>
+<span class="text-on-surface" id="summary-sidebar-duration">90 Minutes Master Assessment</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm uppercase text-outline">Assigned Lead</span>
+<span class="text-on-surface">Dr. Nishigandha Chaudhari &amp; Master Panel</span>
+</div>
+</div>
+<div class="bg-surface-container p-space-sm rounded-lg flex items-center justify-between">
+<span class="font-label-md text-label-md uppercase tracking-wider text-on-surface-variant font-bold">Total Payable</span>
+<span class="font-headline-sm text-headline-sm text-primary" id="summary-sidebar-total">₹ 5,100</span>
+</div>
+</div>
+<!-- Sanctuary Guarantee Card -->
+<div class="bg-surface-container p-space-md rounded-xl flex items-start gap-space-sm">
+<span class="material-symbols-outlined text-secondary text-[24px] shrink-0">spa</span>
+<div class="flex flex-col gap-1">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-primary font-bold">Preparation Dossier Included</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant text-[12px] leading-relaxed">
+                  Upon completion, you will receive a digital intake questionnaire and an orientation kit explaining how to photograph your floor plan and prepare your pulse assessment.
+                </p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- ================= STEP 4: PAYMENT & CONFIRMATION SUMMARY ================= -->
+<section class="step-view hidden flex-col gap-space-xl" id="step-content-4">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-space-md pb-space-sm">
+<div>
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-secondary font-bold">Step 04 · Verification &amp; Gateway</span>
+<h2 class="font-headline-md text-headline-md text-primary">Payment &amp; Booking Summary</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1">Review your consultation details and complete authorization via our encrypted banking rails.</p>
+</div>
+<div class="flex items-center gap-space-xs font-label-sm text-label-sm uppercase tracking-wider text-secondary font-bold">
+<span class="material-symbols-outlined text-[18px]">lock</span>
+<span>256-Bit SSL Encrypted Gateway</span>
+</div>
+</div>
+<!-- 2 Column Sticky Layout -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-start">
+<!-- LEFT: Payment Rail Configuration (7 cols) -->
+<div class="lg:col-span-7 flex flex-col gap-space-lg">
+<!-- Gateway Accordion Options -->
+<div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm flex flex-col gap-space-md">
+<h3 class="font-headline-sm text-headline-sm text-primary">Select Preferred Payment Method</h3>
+<!-- Tab 1: Instant UPI (Selected Default) -->
+<div class="pay-option rounded-lg p-space-md bg-surface-container-low transition-all cursor-pointer">
+<label class="flex items-start justify-between cursor-pointer">
+<div class="flex items-start gap-space-sm">
+<input checked="" class="mt-1 text-primary focus:ring-primary" name="pay-method" onchange="togglePayTab('upi')" type="radio" value="upi"/>
+<div class="flex flex-col">
+<span class="font-body-md text-body-md font-semibold text-primary">Instant UPI (Recommended)</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Zero transaction surcharges · Instant receipt dispatch</span>
+</div>
+</div>
+<div class="flex items-center gap-1.5 opacity-80">
+<span class="px-1.5 py-0.5 rounded bg-surface-container font-label-sm text-label-sm font-bold text-on-surface">GPay</span>
+<span class="px-1.5 py-0.5 rounded bg-surface-container font-label-sm text-label-sm font-bold text-on-surface">PhonePe</span>
+<span class="px-1.5 py-0.5 rounded bg-surface-container font-label-sm text-label-sm font-bold text-on-surface">Paytm</span>
+</div>
+</label>
+<!-- Nested UPI Input -->
+<div class="mt-space-md pt-space-sm flex flex-col gap-space-xs" id="tab-content-upi">
+<label class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface font-semibold" for="upi-vpa">Enter your UPI ID / VPA</label>
+<div class="flex gap-2">
+<input class="flex-1 bg-surface-container px-4 py-2.5 rounded-lg text-on-surface font-body-md text-body-md focus:outline-none focus:ring-1 focus:ring-primary shadow-inner" id="upi-vpa" placeholder="username@okhdfcbank" type="text" value="ananya@upi"/>
+<button class="px-4 py-2.5 rounded-lg bg-surface-container-high text-primary font-label-sm text-label-sm uppercase tracking-wider font-semibold hover:bg-surface-container-highest transition-colors" type="button">Verify</button>
+</div>
+<span class="font-body-sm text-body-sm text-outline text-[11px]">A payment collect request will be sent to your UPI app.</span>
+</div>
+</div>
+<!-- Tab 2: Netbanking -->
+<div class="pay-option rounded-lg p-space-md bg-surface-container-lowest hover:bg-surface-container-low transition-all cursor-pointer">
+<label class="flex items-start justify-between cursor-pointer">
+<div class="flex items-start gap-space-sm">
+<input class="mt-1 text-primary focus:ring-primary" name="pay-method" onchange="togglePayTab('netbanking')" type="radio" value="netbanking"/>
+<div class="flex flex-col">
+<span class="font-body-md text-body-md font-semibold text-primary">Indian Netbanking</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">All primary retail &amp; corporate scheduled banks</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-outline text-[20px]">account_balance</span>
+</label>
+<div class="hidden mt-space-md pt-space-sm flex flex-col gap-space-xs" id="tab-content-netbanking">
+<label class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface font-semibold">Choose Financial Institution</label>
+<select class="w-full bg-surface-container-low px-4 py-2.5 rounded-lg text-on-surface font-body-md text-body-md focus:outline-none focus:ring-1 focus:ring-primary shadow-inner">
+<option>HDFC Bank</option>
+<option>ICICI Bank</option>
+<option>State Bank of India (SBI)</option>
+<option>Axis Bank</option>
+<option>Kotak Mahindra Bank</option>
+</select>
+</div>
+</div>
+<!-- Tab 3: Cards -->
+<div class="pay-option rounded-lg p-space-md bg-surface-container-lowest hover:bg-surface-container-low transition-all cursor-pointer">
+<label class="flex items-start justify-between cursor-pointer">
+<div class="flex items-start gap-space-sm">
+<input class="mt-1 text-primary focus:ring-primary" name="pay-method" onchange="togglePayTab('card')" type="radio" value="card"/>
+<div class="flex flex-col">
+<span class="font-body-md text-body-md font-semibold text-primary">Credit / Debit Cards</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Visa, Mastercard, RuPay with 3D Secure 2.0</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-outline text-[20px]">credit_card</span>
+</label>
+<div class="hidden mt-space-md pt-space-sm flex flex-col gap-space-sm" id="tab-content-card">
+<input class="w-full bg-surface-container-low px-4 py-2.5 rounded-lg text-on-surface font-body-md text-body-md focus:outline-none focus:ring-1 focus:ring-primary shadow-inner" placeholder="Card Number (•••• •••• •••• ••••)" type="text"/>
+<div class="grid grid-cols-2 gap-2">
+<input class="bg-surface-container-low px-4 py-2.5 rounded-lg text-on-surface font-body-md text-body-md focus:outline-none focus:ring-1 focus:ring-primary shadow-inner" placeholder="MM / YY" type="text"/>
+<input class="bg-surface-container-low px-4 py-2.5 rounded-lg text-on-surface font-body-md text-body-md focus:outline-none focus:ring-1 focus:ring-primary shadow-inner" maxlength="4" placeholder="CVV" type="password"/>
+</div>
+</div>
+</div>
+</div>
+<!-- Trust & Policy Badges -->
+<div class="bg-surface-container-low p-space-lg rounded-xl flex flex-col gap-space-sm shadow-sm">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-primary text-[22px]">shield</span>
+<span class="font-headline-sm text-headline-sm text-primary text-[18px]">Clinical Appointment Guarantees</span>
+</div>
+<ul class="flex flex-col gap-2 font-body-sm text-body-sm text-on-surface-variant">
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-[16px] text-secondary mt-0.5">check_circle</span>
+<span><strong>Instant Dispatch:</strong> Telehealth meeting link &amp; clinical intake form delivered via WhatsApp and Email upon confirmation.</span>
+</li>
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-[16px] text-secondary mt-0.5">check_circle</span>
+<span><strong>Slot Lock Protocol:</strong> This appointment is temporarily held for 15 minutes during checkout to avoid double booking.</span>
+</li>
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-[16px] text-secondary mt-0.5">check_circle</span>
+<span><strong>Flexible Rescheduling:</strong> Free reschedule or 100% refund up to 24 hours prior to appointment time.</span>
+</li>
+</ul>
+</div>
+</div>
+<!-- RIGHT: Order Summary Card (Sticky Rail - 5 cols) -->
+<div class="lg:col-span-5 sticky top-24">
+<div class="bg-surface-container-lowest p-space-lg md:p-space-xl rounded-xl shadow-md flex flex-col gap-space-lg">
+<div class="flex items-center justify-between pb-space-sm">
+<h3 class="font-headline-sm text-headline-sm text-primary">Booking Summary</h3>
+<span class="px-2.5 py-1 rounded bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm uppercase tracking-wider font-bold">Confirmed Hold</span>
+</div>
+<!-- Line item details -->
+<div class="flex flex-col gap-space-md">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm uppercase text-outline">Consultation Modality</span>
+<span class="font-headline-sm text-headline-sm text-primary text-[20px]" id="checkout-title">Complete Medico-Astro Vastu Numerology Consultation</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant" id="checkout-duration">90 Minutes Master Assessment Protocol</span>
+</div>
+<div class="bg-surface-container-low p-space-md rounded-lg flex flex-col gap-2 font-body-sm text-body-sm">
+<div class="flex items-center justify-between">
+<span class="text-on-surface-variant">Consultation Date:</span>
+<span class="font-semibold text-primary" id="checkout-date">Tuesday, Nov 18, 2025</span>
+</div>
+<div class="flex items-center justify-between">
+<span class="text-on-surface-variant">Muhurta Time:</span>
+<span class="font-semibold text-primary" id="checkout-time">11:00 AM – 12:30 PM IST</span>
+</div>
+<div class="flex items-center justify-between">
+<span class="text-on-surface-variant">Attending Specialist:</span>
+<span class="font-semibold text-primary">Dr. Nishigandha Chaudhari</span>
+</div>
+<div class="flex items-center justify-between">
+<span class="text-on-surface-variant">Consultation Format:</span>
+<span class="font-semibold text-primary" id="checkout-format">Complete 4-Pillar Master Consultation</span>
+</div>
+</div>
+<!-- Price Breakdown -->
+<div class="flex flex-col gap-space-xs pt-space-xs font-body-sm text-body-sm">
+<div class="flex items-center justify-between text-on-surface-variant">
+<span>Clinical Consultation Base Fee</span>
+<span id="checkout-base-fee">₹ 4,322.03</span>
+</div>
+<div class="flex items-center justify-between text-on-surface-variant">
+<span>Statutory GST (18%)</span>
+<span id="checkout-gst">₹ 777.97</span>
+</div>
+<div class="flex items-center justify-between font-label-sm text-label-sm text-secondary">
+<span>Platform &amp; Health Records Fee</span>
+<span>WAIVED (₹ 0)</span>
+</div>
+<div class="pt-space-md mt-space-xs flex items-center justify-between">
+<span class="font-headline-sm text-headline-sm text-primary text-[20px]">Final Amount Payable</span>
+<span class="font-headline-sm text-headline-sm text-primary text-[26px] font-bold" id="checkout-grand-total">₹ 5,100</span>
+</div>
+<span class="font-body-sm text-body-sm text-outline text-[11px] text-right">All Taxes &amp; GST Included in INR</span>
+</div>
+</div>
+<!-- Main Action CTA Button -->
+<div class="flex flex-col gap-space-xs">
+<button class="w-full py-4 rounded-lg bg-primary text-on-primary font-label-md text-label-md uppercase tracking-widest font-bold hover:bg-tertiary transition-all duration-200 shadow-md flex items-center justify-center gap-space-sm group" id="pay-button" onclick="executePayment()" type="button">
+<span id="pay-btn-label">PAY &amp; CONFIRM BOOKING — ₹ 5,100</span>
+<span class="material-symbols-outlined text-[18px] group-hover:translate-x-1 transition-transform">lock</span>
+</button>
+<div class="flex items-center justify-center gap-2 pt-1 font-label-sm text-label-sm text-outline uppercase tracking-wider">
+<span class="material-symbols-outlined text-[14px] text-primary">verified</span>
+<span>Authorized by ANUKUL Clinical Board</span>
+</div>
+</div>
+<div class="flex items-center justify-between pt-space-xs">
+<button class="text-on-surface-variant hover:text-primary font-label-sm text-label-sm uppercase tracking-wider underline underline-offset-4" onclick="goToStep(3)" type="button">
+                  Edit Personal Details
+                </button>
+<span class="font-body-sm text-body-sm text-secondary font-semibold">Step 4 of 4</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- ================= CONFIRMATION SUCCESS VIEW (Triggered on Complete) ================= -->
+<section class="step-view hidden flex-col items-center justify-center py-space-xl text-center max-w-3xl mx-auto" id="step-content-success">
+<div class="w-20 h-20 rounded-full bg-primary-fixed text-on-primary-fixed flex items-center justify-center mb-space-md shadow-md animate-bounce">
+<span class="material-symbols-outlined text-[42px]">check</span>
+</div>
+<span class="font-label-sm text-label-sm uppercase tracking-[0.2em] text-secondary font-bold">RESERVATION AUTHORIZED &amp; SECURED</span>
+<h2 class="font-headline-lg text-headline-lg text-primary mt-1 mb-space-xs">Consultation Confirmed</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-space-lg max-w-xl">
+          Your sacred appointment has been scheduled and recorded in the clinic register. A confirmation dossier along with your encrypted meeting gateway link has been dispatched to <strong class="text-primary" id="success-email">ananya.deshmukh@wellness.in</strong>.
+        </p>
+<!-- Booking Pass Card -->
+<div class="w-full bg-surface-container-lowest p-space-lg md:p-space-xl rounded-xl shadow-md text-left mb-space-lg">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm pb-space-md">
+<div>
+<span class="font-label-sm text-label-sm uppercase text-outline">Booking Reference</span>
+<div class="font-headline-sm text-headline-sm text-primary tracking-wider">ANKL-2025-8841</div>
+</div>
+<div class="flex items-center gap-2">
+<span class="px-3 py-1 rounded-full bg-surface-container text-primary font-label-sm text-label-sm uppercase tracking-wider font-semibold">Payment Received</span>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-md py-space-md font-body-sm text-body-sm">
+<div>
+<span class="font-label-sm text-label-sm uppercase text-outline">Consultation Type</span>
+<p class="font-semibold text-primary" id="success-type">Complete Medico-Astro Vastu Numerology Consultation</p>
+</div>
+<div>
+<span class="font-label-sm text-label-sm uppercase text-outline">Date &amp; Muhurta Time</span>
+<p class="font-semibold text-primary" id="success-slot">Tuesday, Nov 18, 2025 · 11:00 AM IST</p>
+</div>
+<div>
+<span class="font-label-sm text-label-sm uppercase text-outline">Patient</span>
+<p class="font-semibold text-on-surface" id="success-name">Ananya Deshmukh</p>
+</div>
+<div>
+<span class="font-label-sm text-label-sm uppercase text-outline">Channel</span>
+<p class="font-semibold text-on-surface">Secure Video Call (Google Meet)</p>
+</div>
+</div>
+<div class="bg-surface-container-low p-space-md rounded-lg flex items-center justify-between mt-space-sm">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-secondary text-[24px]">calendar_add_on</span>
+<div class="flex flex-col">
+<span class="font-body-md text-body-md font-semibold text-primary">Add to Personal Calendar</span>
+<span class="font-body-sm text-body-sm text-outline text-[12px]">Google Calendar · Apple Calendar · Outlook</span>
+</div>
+</div>
+<a class="px-4 py-2 rounded bg-surface-container text-primary font-label-sm text-label-sm uppercase tracking-wider font-bold hover:bg-surface-container-high transition-colors" href="#">Download .ICS</a>
+</div>
+</div>
+<div class="flex flex-wrap items-center justify-center gap-space-md">
+<button class="px-6 py-3 rounded-lg bg-surface-container text-on-surface font-label-md text-label-md uppercase tracking-wider hover:bg-surface-container-high transition-colors" onclick="goToStep(1)" type="button">
+            Book Another Consultation
+          </button>
+<a class="px-8 py-3 rounded-lg bg-primary text-on-primary font-label-md text-label-md uppercase tracking-wider hover:bg-tertiary transition-colors shadow-md" href="<?php echo esc_url( home_url( "/" ) ); ?>">
+            Return to Sanctuary Home
+          </a>
+</div>
+</section>
+</div>
+
+<?php
+get_footer();

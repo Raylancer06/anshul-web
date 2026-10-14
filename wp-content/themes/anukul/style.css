@@ -1,0 +1,138 @@
+/*
+Theme Name: ANUKUL Ayur Vastu Harmony Clinic
+Theme URI: https://github.com/Raylancer06/anshul-web
+Author: ANUKUL Clinical Board
+Author URI: https://anukul-harmony.com
+Description: Official custom classic WordPress & WooCommerce theme for ANUKUL Ayur Vastu Harmony Clinic. Preserves the exact sacred Vedic aesthetic, responsive layouts, typography, animations, and booking workflows.
+Version: 1.0.0
+Requires at least: 6.0
+Tested up to: 6.6
+Requires PHP: 7.4
+License: Proprietary
+Text Domain: anukul
+Tags: e-commerce, custom-menu, featured-images, full-width-template, theme-options, translation-ready, woocommerce
+*/
+
+/* ==========================================================================
+   ANUKUL DESIGN SYSTEM BASE & TOKENS
+   ========================================================================== */
+:root {
+  --anukul-primary: #1F4D3A;
+  --anukul-primary-dark: #023625;
+  --anukul-secondary: #B38A3E;
+  --anukul-tertiary: #C66A22;
+  --anukul-maroon: #7A2638;
+  --anukul-surface: #F7F1E3;
+  --anukul-surface-low: #FFF8F4;
+  --anukul-surface-card: #FFFFFF;
+  --anukul-border: #E8D8BC;
+  --anukul-border-gold: rgba(179, 138, 62, 0.35);
+  --anukul-text: #2E2924;
+  --anukul-text-muted: #5D544C;
+}
+
+/* Typography Root */
+body {
+  font-family: 'Manrope', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  color: var(--anukul-text);
+  background-color: var(--anukul-surface-low);
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6, .font-display, .font-serif {
+  font-family: 'EB Garamond', Georgia, serif;
+}
+
+/* Mandala Rotation Utility */
+@keyframes mandalaSpin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.mandala-rotate {
+  animation: mandalaSpin 65s linear infinite;
+  transform-origin: 50% 50%;
+  will-change: transform;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mandala-rotate {
+    animation: none;
+  }
+}
+
+/* Base Form & Button Scoping */
+button, input, select, textarea {
+  font-family: inherit;
+}
+
+/* Scoped WooCommerce Enhancements */
+.woocommerce .woocommerce-breadcrumb {
+  margin-bottom: 2rem;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--anukul-text-muted);
+}
+
+.woocommerce .woocommerce-breadcrumb a {
+  color: var(--anukul-primary);
+  text-decoration: none;
+}
+
+.woocommerce .woocommerce-breadcrumb a:hover {
+  color: var(--anukul-secondary);
+}
+
+.woocommerce span.onsale {
+  background-color: var(--anukul-secondary) !important;
+  color: #FFFFFF !important;
+  border-radius: 4px !important;
+  font-size: 0.75rem !important;
+  letter-spacing: 0.1em !important;
+  text-transform: uppercase !important;
+  font-weight: 700 !important;
+  padding: 4px 8px !important;
+}
+
+.woocommerce a.button, 
+.woocommerce button.button, 
+.woocommerce input.button, 
+.woocommerce #respond input#submit {
+  background-color: var(--anukul-primary) !important;
+  color: var(--anukul-surface) !important;
+  font-family: 'Manrope', sans-serif !important;
+  font-size: 0.8rem !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.1em !important;
+  font-weight: 600 !important;
+  padding: 0.75rem 1.5rem !important;
+  border-radius: 6px !important;
+  transition: all 0.2s ease !important;
+}
+
+.woocommerce a.button:hover, 
+.woocommerce button.button:hover, 
+.woocommerce input.button:hover, 
+.woocommerce #respond input#submit:hover {
+  background-color: var(--anukul-tertiary) !important;
+  color: #FFFFFF !important;
+}
+
+.woocommerce .woocommerce-message, 
+.woocommerce .woocommerce-info {
+  background-color: var(--anukul-surface) !important;
+  border-top-color: var(--anukul-secondary) !important;
+  color: var(--anukul-primary) !important;
+  border-radius: 8px !important;
+}
+
+.woocommerce .woocommerce-error {
+  background-color: #FFF0F0 !important;
+  border-top-color: #BA1A1A !important;
+  color: #BA1A1A !important;
+  border-radius: 8px !important;
+}
