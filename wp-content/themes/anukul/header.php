@@ -40,6 +40,35 @@ if ( ! defined( 'ABSPATH' ) ) {
         transform-origin: 50% 50%;
         will-change: transform;
     }
+
+    /* Clean Google Translate Integration - Suppress Intrusive Banners & Toolbars */
+    .goog-te-banner-frame.skiptranslate,
+    .goog-te-banner-frame,
+    #goog-gt-tt,
+    .goog-te-balloon-frame {
+        display: none !important;
+        visibility: hidden !important;
+    }
+    body {
+        top: 0px !important;
+    }
+    .skiptranslate iframe {
+        visibility: hidden !important;
+        display: none !important;
+    }
+    .goog-logo-link {
+        display: none !important;
+    }
+    .goog-te-gadget {
+        font-size: 0 !important;
+    }
+    .goog-te-gadget .goog-te-combo {
+        display: none !important;
+    }
+    .goog-text-highlight {
+        background: none !important;
+        box-shadow: none !important;
+    }
     </style>
 
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
@@ -165,6 +194,35 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 <!-- Header / Navigation Bar -->
 <header id="site-header" class="fixed top-0 w-full z-50 bg-[#F7F1E3]/95 backdrop-blur-md border-b border-[#E8D8BC] shadow-[0_1px_8px_rgba(0,0,0,0.03)] transition-[top] duration-200">
+    <!-- Top Utility Bar: Sanskrit Invocation & Language Translation -->
+    <div id="top-utility-bar" class="w-full bg-[#1F4D3A] text-[#F7F1E3] text-[11px] font-label-md uppercase tracking-wider py-1.5 px-6 lg:px-margin border-b border-[#023625]">
+        <div class="max-w-[1440px] mx-auto flex items-center justify-between gap-4">
+            <!-- Left: Sacred Clinic Motto -->
+            <div class="flex items-center gap-2">
+                <span class="inline-block w-1.5 h-1.5 rounded-full bg-[#B38A3E] animate-pulse"></span>
+                <span class="hidden md:inline font-medium tracking-widest text-[#E8D8BC]">सर्वे भवन्तु सुखिनः सर्वे सन्तु निरामयाः</span>
+                <span class="hidden md:inline text-[#B38A3E]/60">·</span>
+                <span class="text-xs tracking-wider text-white/90">ANUKUL Ayur Vastu Harmony Clinic</span>
+            </div>
+
+            <!-- Right: Google Translate Language Switcher -->
+            <div class="flex items-center gap-3">
+                <!-- Hidden Google Translate Element -->
+                <div id="google_translate_element" style="display:none;"></div>
+
+                <div class="relative inline-flex items-center gap-1.5 bg-[#023625]/60 hover:bg-[#023625] px-2.5 py-1 rounded-md border border-[#B38A3E]/40 transition-colors">
+                    <span class="material-symbols-outlined text-[15px] text-[#B38A3E]">translate</span>
+                    <label for="anukul-lang-select" class="sr-only"><?php esc_html_e( 'Select Language', 'anukul' ); ?></label>
+                    <select id="anukul-lang-select" onchange="changeSanctuaryLanguage(this.value)" class="bg-transparent text-[#F7F1E3] text-[11px] font-semibold tracking-wider cursor-pointer focus:outline-none pr-3 appearance-none border-0 p-0 m-0" style="background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2210%22%20height%3D%2210%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22%23B38A3E%22%3E%3Cpath%20d%3D%22M7%2010l5%205%205-5z%22%2F%3E%3C%2Fsvg%3E'); background-repeat: no-repeat; background-position: right 0 center;">
+                        <option value="en" class="bg-[#1F4D3A] text-white">English (Default)</option>
+                        <option value="hi" class="bg-[#1F4D3A] text-white">हिन्दी (Hindi)</option>
+                        <option value="mr" class="bg-[#1F4D3A] text-white">मराठी (Marathi)</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <div class="h-20 max-w-[1440px] mx-auto px-6 lg:px-margin flex items-center justify-between gap-4">
         
         <!-- Logo -->
@@ -220,7 +278,20 @@ if ( ! defined( 'ABSPATH' ) ) {
 
     <!-- Mobile Drawer Content -->
     <div id="mobile-menu" class="hidden xl:hidden w-full bg-[#F7F1E3] border-b border-[#E8D8BC] shadow-lg transition-all">
-        <div class="px-6 py-5 space-y-4 max-h-[calc(100vh-80px)] overflow-y-auto">
+        <div class="px-6 py-5 space-y-4 max-h-[calc(100vh-114px)] overflow-y-auto">
+            <!-- Mobile Language Selector -->
+            <div class="flex items-center justify-between p-3 rounded-lg bg-surface-container border border-[#E8D8BC]">
+                <span class="flex items-center gap-2 text-primary font-semibold text-xs uppercase tracking-wider">
+                    <span class="material-symbols-outlined text-[18px] text-secondary">translate</span>
+                    <?php esc_html_e( 'Language / भाषा', 'anukul' ); ?>
+                </span>
+                <select id="anukul-lang-select-mobile" onchange="changeSanctuaryLanguage(this.value)" class="bg-surface-container-lowest text-primary text-xs font-semibold rounded border border-[#E8D8BC] px-3 py-1.5 focus:outline-none focus:border-secondary">
+                    <option value="en">English (Default)</option>
+                    <option value="hi">हिन्दी (Hindi)</option>
+                    <option value="mr">मराठी (Marathi)</option>
+                </select>
+            </div>
+
             <nav class="flex flex-col space-y-1.5">
                 <?php anukul_render_nav_mobile(); ?>
             </nav>
@@ -244,5 +315,59 @@ if ( ! defined( 'ABSPATH' ) ) {
     </div>
 </header>
 
+<!-- Google Translate Integration Script -->
+<script type="text/javascript">
+  function googleTranslateElementInit() {
+    new google.translate.TranslateElement({
+      pageLanguage: 'en',
+      includedLanguages: 'en,hi,mr',
+      autoDisplay: false
+    }, 'google_translate_element');
+    syncLanguageSelectors();
+  }
+
+  function syncLanguageSelectors() {
+    let currentLang = 'en';
+    const cookieMatch = document.cookie.match(/googtrans=\/en\/([a-z]{2})/i);
+    if (cookieMatch && cookieMatch[1]) {
+      currentLang = cookieMatch[1];
+    } else {
+      const stored = localStorage.getItem('anukul_preferred_lang');
+      if (stored) currentLang = stored;
+    }
+
+    const selectDesktop = document.getElementById('anukul-lang-select');
+    const selectMobile = document.getElementById('anukul-lang-select-mobile');
+    if (selectDesktop) selectDesktop.value = currentLang;
+    if (selectMobile) selectMobile.value = currentLang;
+  }
+
+  function changeSanctuaryLanguage(lang) {
+    localStorage.setItem('anukul_preferred_lang', lang);
+    const domain = window.location.hostname;
+    const pair = (lang === 'en') ? '/en/en' : `/en/${lang}`;
+
+    // Update googtrans cookies
+    document.cookie = `googtrans=${pair}; path=/`;
+    document.cookie = `googtrans=${pair}; domain=${domain}; path=/`;
+    if (domain.indexOf('.') !== -1) {
+      const rootDomain = domain.split('.').slice(-2).join('.');
+      document.cookie = `googtrans=${pair}; domain=.${rootDomain}; path=/`;
+    }
+
+    // Trigger select element inside Google Translate widget if loaded
+    const combo = document.querySelector('.goog-te-combo');
+    if (combo) {
+      combo.value = lang;
+      combo.dispatchEvent(new Event('change'));
+    } else {
+      window.location.reload();
+    }
+  }
+
+  document.addEventListener('DOMContentLoaded', syncLanguageSelectors);
+</script>
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
 <!-- Main Sanctuary Wrapper -->
-<main class="w-full pt-20 bg-surface min-h-[calc(100vh-80px)]">
+<main class="w-full pt-[114px] bg-surface min-h-[calc(100vh-114px)]">
