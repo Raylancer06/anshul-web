@@ -437,7 +437,7 @@ function anukul_render_nav_mobile() {
 function anukul_render_nav_footer() {
     $items = anukul_get_nav_items();
     foreach ( $items as $item ) {
-        echo '<a class="font-body-sm text-body-sm text-surface-container-high/80 hover:text-[#B38A3E] transition-colors" data-path="' . esc_attr( $item['slug'] ) . '" href="' . esc_url( $item['url'] ) . '">' . esc_html( $item['title'] ) . '</a>' . "\n";
+        echo '<a class="font-body-sm text-body-sm text-[#E8D8BC]/85 hover:text-[#B38A3E] transition-colors" data-path="' . esc_attr( $item['slug'] ) . '" href="' . esc_url( $item['url'] ) . '">' . esc_html( $item['title'] ) . '</a>' . "\n";
     }
 }
 

@@ -155,9 +155,24 @@ get_header();
 <div class="max-w-[1440px] mx-auto">
 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter-lg" id="articlesGrid">
 
-<!-- Dynamic WordPress Posts (if any published) -->
-<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-<article class="article-card group flex flex-col bg-surface-container rounded-xl overflow-hidden shadow-sm transition-all duration-300 hover:-translate-y-1" data-category="ayurveda" data-title="<?php echo esc_attr( get_the_title() ); ?>">
+<!-- Dynamic WordPress Posts -->
+<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); 
+    $post_cat_slug = 'ayurveda';
+    $post_cat_name = 'Ayurveda';
+    $cats = get_the_category();
+    if ( ! empty( $cats ) ) {
+        $post_cat_name = $cats[0]->name;
+        $cat_lower = strtolower( $cats[0]->name );
+        if ( strpos( $cat_lower, 'medico' ) !== false ) {
+            $post_cat_slug = 'medico-vastu';
+        } elseif ( strpos( $cat_lower, 'vastu' ) !== false ) {
+            $post_cat_slug = 'vastu';
+        } else {
+            $post_cat_slug = 'ayurveda';
+        }
+    }
+?>
+<article class="article-card group flex flex-col bg-surface-container rounded-xl overflow-hidden shadow-sm transition-all duration-300 hover:-translate-y-1" data-category="<?php echo esc_attr( $post_cat_slug ); ?>" data-title="<?php echo esc_attr( get_the_title() ); ?>">
 <div class="relative w-full aspect-[16/10] overflow-hidden bg-surface-dim">
 <?php if ( has_post_thumbnail() ) : ?>
     <?php the_post_thumbnail( 'medium_large', array( 'class' => 'w-full h-full object-cover transition-transform duration-500 group-hover:scale-105' ) ); ?>
@@ -165,10 +180,7 @@ get_header();
     <img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAIjpZynZordYyeTns2CLCikcnqMQ8HD54GAyAgTkkUargqEjq32qvBf-JdPnqHvn4QH47WpNBa4cXd8X-XE4QGmwVZDZbRs9pZVxUUX-u7aSEkCrlO-JuWbf9S_e5oLK_IDHwDYACTuEj18KPKhlHUYNtBDijICHazoyP04pU-gBB2ztngEjNn00-qCtKbr9uv8_mP6LueGUcVB2BrXmlwtqG59cY_j9ALGbTxW2Kvz7Am0ro_5tV0JQ" alt="<?php echo esc_attr( get_the_title() ); ?>"/>
 <?php endif; ?>
 <span class="absolute top-3 left-3 bg-primary text-surface font-label-sm text-label-sm uppercase px-space-sm py-1 rounded-sm tracking-wider">
-    <?php
-    $cats = get_the_category();
-    echo ! empty( $cats ) ? esc_html( $cats[0]->name ) : 'Ayurveda';
-    ?>
+    <?php echo esc_html( $post_cat_name ); ?>
 </span>
 </div>
 <div class="p-space-lg flex flex-col flex-grow justify-between gap-space-md">
@@ -189,7 +201,7 @@ get_header();
 </div>
 </div>
 </article>
-<?php endwhile; endif; ?>
+<?php endwhile; else : ?>
 
 <!-- Curated Baseline Article Cards Matching Approved Source -->
 <!-- Card 1 -->
@@ -351,8 +363,8 @@ get_header();
                 Read Article <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
 </span>
 </div>
-</div>
 </article>
+<?php endif; ?>
 
 </div>
 

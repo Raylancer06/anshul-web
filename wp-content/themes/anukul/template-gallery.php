@@ -162,282 +162,146 @@ get_header();
 <!-- Grid Gallery with Varied Editorial Spans -->
 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="gallery-grid">
 <!-- CARD 1: Landscape 2-col span -->
-<article class="gallery-card group md:col-span-2 rounded-xl overflow-hidden bg-surface-container-low shadow-sm flex flex-col cursor-pointer transition-all duration-300 hover:shadow-md" data-cat-label="Vastu &amp; Architecture" data-category="vastu" data-id="1" data-note="Traditional stone corridor oriented towards the North-Eastern quadrant, capturing diffused solar wavelengths that ground bio-energetic diurnal stability." data-title="Sanctuary Courtyard &amp; Morning Prana">
+<article class="gallery-card group md:col-span-2 rounded-xl overflow-hidden bg-surface-container-low shadow-sm cursor-pointer transition-all duration-300 hover:shadow-lg" data-cat-label="Vastu &amp; Architecture" data-category="vastu" data-id="1" data-note="Traditional stone corridor oriented towards the North-Eastern quadrant, capturing diffused solar wavelengths that ground bio-energetic diurnal stability." data-title="Sanctuary Courtyard &amp; Morning Prana">
 <div class="relative w-full h-[320px] sm:h-[400px] overflow-hidden bg-surface-container-high">
 <div class="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-105" data-alt="Photographic composition of a stone corridor in a traditional Indian architectural pavilion, early morning sunlight raking across smooth flagstones, natural teak rafters, framed arches leading to a quiet garden, serene quietude, architectural precision." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBmW3NNDfnWCGbxGeQdgW7oPhhpf43ZCGsjL7slKsmmSaFazCq1FV5HIqfhnNmJB9q30XTvCM8c3U7grByhxOGZJVG6BxWEs2vfgxJTEmei2sJCNiB0gAlxRx4VhO75jkqNBpSImnGGFz9nYZPKvSKdcpy5TDVlonTsHve8k3jiKSeGJbZxiS5WDXRDvMJAFVLpeo00lXl_khgfmQgcSIV65fz9wq2BUNivSGE02VIoTLNCDbiiB72RAw')">
 </div>
 <div class="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-<span class="w-12 h-12 rounded-full bg-surface/90 text-primary flex items-center justify-center shadow-lg">
+<span class="w-12 h-12 rounded-full bg-surface/90 text-primary flex items-center justify-center shadow-lg transform scale-90 group-hover:scale-100 transition-transform">
 <span class="material-symbols-outlined text-[24px]">zoom_in</span>
 </span>
 </div>
-<span class="absolute top-4 left-4 bg-surface/95 backdrop-blur-sm text-primary font-label-sm text-label-sm uppercase tracking-wider px-3 py-1.5 rounded-lg">
-              Vastu &amp; Architecture
-            </span>
-</div>
-<div class="p-6 flex flex-col justify-between flex-grow">
-<div>
-<div class="flex items-center justify-between text-outline text-label-sm font-label-sm uppercase tracking-widest mb-1">
-<span>Ref: ARC-01</span>
-<span>Courtyard Orientation</span>
-</div>
-<h3 class="font-headline-sm text-headline-sm text-primary">Sanctuary Courtyard &amp; Morning Prana</h3>
-<p class="font-body-md text-body-md text-on-surface-variant mt-2">
-                Traditional stone corridor with diffused morning sun, structured along the directional Ishanya axis to welcome revitalizing bio-pranic sunlight.
-              </p>
-</div>
-<div class="pt-4 flex items-center justify-between">
-<span class="font-label-sm text-label-sm uppercase text-secondary tracking-wider">Click to Inspect Archive</span>
-<span class="material-symbols-outlined text-secondary text-[20px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
-</div>
+<span class="absolute top-4 left-4 bg-surface/95 backdrop-blur-sm text-primary font-label-sm text-label-sm uppercase tracking-wider px-3 py-1.5 rounded-lg shadow-sm">
+Vastu &amp; Architecture
+</span>
 </div>
 </article>
+
 <!-- CARD 2: Portrait -->
-<article class="gallery-card group md:col-span-1 rounded-xl overflow-hidden bg-surface-container-low shadow-sm flex flex-col cursor-pointer transition-all duration-300 hover:shadow-md" data-cat-label="Ayurveda &amp; Nature" data-category="ayurveda" data-id="2" data-note="Fresh sacred tulsi leaves, dried haritaki, wild amla, and freshly crushed herbal extracts resting within an antique heavy bronze mortar for dravya-guna testing." data-title="Classical Botanical Dravyas">
+<article class="gallery-card group md:col-span-1 rounded-xl overflow-hidden bg-surface-container-low shadow-sm cursor-pointer transition-all duration-300 hover:shadow-lg" data-cat-label="Ayurveda &amp; Nature" data-category="ayurveda" data-id="2" data-note="Fresh sacred tulsi leaves, dried haritaki, wild amla, and freshly crushed herbal extracts resting within an antique heavy bronze mortar for dravya-guna testing." data-title="Classical Botanical Dravyas">
 <div class="relative w-full h-[320px] sm:h-[400px] overflow-hidden bg-surface-container-high">
 <div class="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-105" data-alt="Editorial still life of Ayurvedic botanical ingredients, dark stone surface with fresh green holy basil leaves, dried golden emblic myrobalan fruits, hand-carved brass mortar, raw turmeric rhizomes, natural soft studio lighting, organic earthy colors." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAb2PxX_lZYUJClYVyLXOMIplFKx8B6_rSatmP_Rf_7AmZMdGHS7gIxryMNyHAQ9w3ERuoM7yzLn7llqNjFF01WreYU8ps4qjmuLHMcFgoqcxVaX_7UzCC2Fpq8CSDjIAyNKQwwWnb1zBxJunA1IMyrMzzSxj9dBeaylDPEURqFkWPGdb5Vosbdqt03g_adDsXkNNy-m-slTPhVB8FGHdZIpUCUsP-TIFgHNEa0mnJ4logW4L5jZL7BVA')">
 </div>
 <div class="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-<span class="w-12 h-12 rounded-full bg-surface/90 text-primary flex items-center justify-center shadow-lg">
+<span class="w-12 h-12 rounded-full bg-surface/90 text-primary flex items-center justify-center shadow-lg transform scale-90 group-hover:scale-100 transition-transform">
 <span class="material-symbols-outlined text-[24px]">zoom_in</span>
 </span>
 </div>
-<span class="absolute top-4 left-4 bg-surface/95 backdrop-blur-sm text-secondary font-label-sm text-label-sm uppercase tracking-wider px-3 py-1.5 rounded-lg">
-              Ayurveda &amp; Nature
-            </span>
-</div>
-<div class="p-6 flex flex-col justify-between flex-grow">
-<div>
-<div class="flex items-center justify-between text-outline text-label-sm font-label-sm uppercase tracking-widest mb-1">
-<span>Ref: BOT-04</span>
-<span>Herbal Dravyas</span>
-</div>
-<h3 class="font-headline-sm text-headline-sm text-primary">Classical Botanical Dravyas</h3>
-<p class="font-body-md text-body-md text-on-surface-variant mt-2">
-                Fresh tulsi, dried seasonal herbs, brass mortar, and cold-pressed botanical extracts ready for decoction analysis.
-              </p>
-</div>
-<div class="pt-4 flex items-center justify-between">
-<span class="font-label-sm text-label-sm uppercase text-secondary tracking-wider">Click to Inspect Archive</span>
-<span class="material-symbols-outlined text-secondary text-[20px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
-</div>
+<span class="absolute top-4 left-4 bg-surface/95 backdrop-blur-sm text-secondary font-label-sm text-label-sm uppercase tracking-wider px-3 py-1.5 rounded-lg shadow-sm">
+Ayurveda &amp; Nature
+</span>
 </div>
 </article>
-<!-- CARD 3: Square / Founder Focus -->
-<article class="gallery-card group md:col-span-1 rounded-xl overflow-hidden bg-surface-container-low shadow-sm flex flex-col cursor-pointer transition-all duration-300 hover:shadow-md" data-cat-label="Founder &amp; Activities" data-category="founder" data-id="3" data-note="Founder and Clinical Director reviewing individualized Nadi Pariksha diagnostic journals and constitutional charts in her quiet Pune-based clinical consultation room." data-title="Dr. Nishigandha Chaudhari">
-<div class="relative w-full h-[300px] overflow-hidden bg-surface-container-high">
+
+<!-- CARD 3: Founder & Activities Focus -->
+<article class="gallery-card group md:col-span-1 rounded-xl overflow-hidden bg-surface-container-low shadow-sm cursor-pointer transition-all duration-300 hover:shadow-lg" data-cat-label="Founder &amp; Activities" data-category="founder" data-id="3" data-note="Founder and Clinical Director reviewing individualized Nadi Pariksha diagnostic journals and constitutional charts in her quiet Pune-based clinical consultation room." data-title="Dr. Nishigandha Chaudhari">
+<div class="relative w-full h-[320px] sm:h-[400px] overflow-hidden bg-surface-container-high">
 <div class="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-105" data-alt="Dignified portrait of Dr. Nishigandha Chaudhari, Founder and Clinical Director" style="background-image: url('<?php echo esc_url( ANUKUL_URI . '/assets/images/monal_doc.jpeg' ); ?>')">
 </div>
 <div class="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-<span class="w-12 h-12 rounded-full bg-surface/90 text-primary flex items-center justify-center shadow-lg">
+<span class="w-12 h-12 rounded-full bg-surface/90 text-primary flex items-center justify-center shadow-lg transform scale-90 group-hover:scale-100 transition-transform">
 <span class="material-symbols-outlined text-[24px]">zoom_in</span>
 </span>
 </div>
-<span class="absolute top-4 left-4 bg-surface/95 backdrop-blur-sm text-primary font-label-sm text-label-sm uppercase tracking-wider px-3 py-1.5 rounded-lg">
-              Founder &amp; Activities
-            </span>
-</div>
-<div class="p-6 flex flex-col justify-between flex-grow">
-<div>
-<div class="flex items-center justify-between text-outline text-label-sm font-label-sm uppercase tracking-widest mb-1">
-<span>Ref: DIR-01</span>
-<span>Clinical Directorate</span>
-</div>
-<h3 class="font-headline-sm text-headline-sm text-primary">Dr. Nishigandha Chaudhari</h3>
-<p class="font-body-md text-body-md text-on-surface-variant mt-2">
-                Founder in consultative clinical space reviewing Nadi diagnostic records and personalized lifestyle regimens.
-              </p>
-</div>
-<div class="pt-4 flex items-center justify-between">
-<span class="font-label-sm text-label-sm uppercase text-secondary tracking-wider">Inspect Profile Record</span>
-<span class="material-symbols-outlined text-secondary text-[20px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
-</div>
+<span class="absolute top-4 left-4 bg-surface/95 backdrop-blur-sm text-primary font-label-sm text-label-sm uppercase tracking-wider px-3 py-1.5 rounded-lg shadow-sm">
+Founder &amp; Activities
+</span>
 </div>
 </article>
+
 <!-- CARD 4: Portrait -->
-<article class="gallery-card group md:col-span-1 rounded-xl overflow-hidden bg-surface-container-low shadow-sm flex flex-col cursor-pointer transition-all duration-300 hover:shadow-md" data-cat-label="Vastu &amp; Architecture" data-category="vastu" data-id="4" data-note="Heavy brass directional magnetic mariner compass resting upon an architectural Vastu Purusha Mandala layout parchment with precision hand-inked crosshairs." data-title="Sacred Directional Spatial Alignment">
-<div class="relative w-full h-[300px] overflow-hidden bg-surface-container-high">
+<article class="gallery-card group md:col-span-1 rounded-xl overflow-hidden bg-surface-container-low shadow-sm cursor-pointer transition-all duration-300 hover:shadow-lg" data-cat-label="Vastu &amp; Architecture" data-category="vastu" data-id="4" data-note="Heavy brass directional magnetic mariner compass resting upon an architectural Vastu Purusha Mandala layout parchment with precision hand-inked crosshairs." data-title="Sacred Directional Spatial Alignment">
+<div class="relative w-full h-[320px] sm:h-[400px] overflow-hidden bg-surface-container-high">
 <div class="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-105" data-alt="Macro overhead photograph of a finely crafted antique brass compass resting upon hand-drawn geometric architectural plans of a residential floor plan annotated with Vastu Purusha mandala grids, soft golden hour lighting, parchment texture, precision engineering tools." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCcVsE3L9EN_PwYg9eOecKmYX9oDdwZYnU2YUKU9yr73QQZJzYn4EQzfluXORCL1Jpa7hcmQdC1BqvphjAprhhVT6bBMFchqxDNhgKQfkURrWeKkDdu8f9Ly03MVOxaN2lnuqwNyKr44WnlQSqw5IptiXduuj-ortWu7pXFdi8xvgcdJIZYgEsjvyVl6uff2KTtmnMKT3aJJ7Dj4PTf5yl0sl1cZ3HgbxfRN-OHZU5YIKMbEkCgLtYpoQ')">
 </div>
 <div class="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-<span class="w-12 h-12 rounded-full bg-surface/90 text-primary flex items-center justify-center shadow-lg">
+<span class="w-12 h-12 rounded-full bg-surface/90 text-primary flex items-center justify-center shadow-lg transform scale-90 group-hover:scale-100 transition-transform">
 <span class="material-symbols-outlined text-[24px]">zoom_in</span>
 </span>
 </div>
-<span class="absolute top-4 left-4 bg-surface/95 backdrop-blur-sm text-primary font-label-sm text-label-sm uppercase tracking-wider px-3 py-1.5 rounded-lg">
-              Vastu &amp; Architecture
-            </span>
-</div>
-<div class="p-6 flex flex-col justify-between flex-grow">
-<div>
-<div class="flex items-center justify-between text-outline text-label-sm font-label-sm uppercase tracking-widest mb-1">
-<span>Ref: GEO-09</span>
-<span>Mandala Blueprint</span>
-</div>
-<h3 class="font-headline-sm text-headline-sm text-primary">Sacred Directional Spatial Alignment</h3>
-<p class="font-body-md text-body-md text-on-surface-variant mt-2">
-                Brass directional mariner compass and architectural vastu purusha blueprint validating cardinal geomagnetic balance.
-              </p>
-</div>
-<div class="pt-4 flex items-center justify-between">
-<span class="font-label-sm text-label-sm uppercase text-secondary tracking-wider">Click to Inspect Archive</span>
-<span class="material-symbols-outlined text-secondary text-[20px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
-</div>
+<span class="absolute top-4 left-4 bg-surface/95 backdrop-blur-sm text-primary font-label-sm text-label-sm uppercase tracking-wider px-3 py-1.5 rounded-lg shadow-sm">
+Vastu &amp; Architecture
+</span>
 </div>
 </article>
+
 <!-- CARD 5: Square -->
-<article class="gallery-card group md:col-span-1 rounded-xl overflow-hidden bg-surface-container-low shadow-sm flex flex-col cursor-pointer transition-all duration-300 hover:shadow-md" data-cat-label="Ayurveda &amp; Nature" data-category="ayurveda" data-id="5" data-note="Traditional bell-metal (kansa) dinacharya foot bowls and beaten copper storage ewers shown with heated organic black sesame oils and rose floral water." data-title="Handcrafted Kansa &amp; Copper Vessels">
-<div class="relative w-full h-[300px] overflow-hidden bg-surface-container-high">
+<article class="gallery-card group md:col-span-1 rounded-xl overflow-hidden bg-surface-container-low shadow-sm cursor-pointer transition-all duration-300 hover:shadow-lg" data-cat-label="Ayurveda &amp; Nature" data-category="ayurveda" data-id="5" data-note="Traditional bell-metal (kansa) dinacharya foot bowls and beaten copper storage ewers shown with heated organic black sesame oils and rose floral water." data-title="Handcrafted Kansa &amp; Copper Vessels">
+<div class="relative w-full h-[320px] sm:h-[400px] overflow-hidden bg-surface-container-high">
 <div class="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-105" data-alt="Artisanal still-life of hand-hammered kansa bronze bowls and pure copper water jars placed on an unvarnished teakwood shelf, delicate dried chamomile flowers, glass decanter of golden sesame massage oil, warm ambient atmosphere, refined traditional crafts." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDjXRoOC0zpUPlrHuCcXZjCELzKZU9N75RuecTB-M-jULLoW8AOkJoAqCu5jwnyXdPv6BiUnYACm2dJEyzSvCZfA1AsFvFQ5WBcNZs15UmuRvBHxMYvE9z3aHbuSVAwORKAmSyM5Q-EMH3UTFJWguH5OFfZfxKVny0b1qTFm4aD7t6DPInIurw6-sGoUw2X9UXpo823NO98rGjpOSU_e2R5CEMdArOGIJv9lRK4YMH_3WuCm-f73NQAew')">
 </div>
 <div class="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-<span class="w-12 h-12 rounded-full bg-surface/90 text-primary flex items-center justify-center shadow-lg">
+<span class="w-12 h-12 rounded-full bg-surface/90 text-primary flex items-center justify-center shadow-lg transform scale-90 group-hover:scale-100 transition-transform">
 <span class="material-symbols-outlined text-[24px]">zoom_in</span>
 </span>
 </div>
-<span class="absolute top-4 left-4 bg-surface/95 backdrop-blur-sm text-secondary font-label-sm text-label-sm uppercase tracking-wider px-3 py-1.5 rounded-lg">
-              Ayurveda &amp; Nature
-            </span>
-</div>
-<div class="p-6 flex flex-col justify-between flex-grow">
-<div>
-<div class="flex items-center justify-between text-outline text-label-sm font-label-sm uppercase tracking-widest mb-1">
-<span>Ref: ART-03</span>
-<span>Dinacharya Utensils</span>
-</div>
-<h3 class="font-headline-sm text-headline-sm text-primary">Handcrafted Kansa &amp; Copper Vessels</h3>
-<p class="font-body-md text-body-md text-on-surface-variant mt-2">
-                Traditional Dinacharya therapeutic metal vessels, medicated sesame tailas, and natural bio-alloy implements.
-              </p>
-</div>
-<div class="pt-4 flex items-center justify-between">
-<span class="font-label-sm text-label-sm uppercase text-secondary tracking-wider">Click to Inspect Archive</span>
-<span class="material-symbols-outlined text-secondary text-[20px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
-</div>
+<span class="absolute top-4 left-4 bg-surface/95 backdrop-blur-sm text-secondary font-label-sm text-label-sm uppercase tracking-wider px-3 py-1.5 rounded-lg shadow-sm">
+Ayurveda &amp; Nature
+</span>
 </div>
 </article>
+
 <!-- CARD 6: Landscape 2-col span -->
-<article class="gallery-card group md:col-span-2 rounded-xl overflow-hidden bg-surface-container-low shadow-sm flex flex-col cursor-pointer transition-all duration-300 hover:shadow-md" data-cat-label="ANUKUL Spaces" data-category="spaces" data-id="6" data-note="Calm private clinic consultation sanctuary featuring solid reclaimed teak furniture, natural unbleached linen screens, acoustic baffle wall panels, and indirect northern daylight." data-title="Consultation &amp; Pulse Assessment Room">
+<article class="gallery-card group md:col-span-2 rounded-xl overflow-hidden bg-surface-container-low shadow-sm cursor-pointer transition-all duration-300 hover:shadow-lg" data-cat-label="ANUKUL Spaces" data-category="spaces" data-id="6" data-note="Calm private clinic consultation sanctuary featuring solid reclaimed teak furniture, natural unbleached linen screens, acoustic baffle wall panels, and indirect northern daylight." data-title="Consultation &amp; Pulse Assessment Room">
 <div class="relative w-full h-[320px] sm:h-[400px] overflow-hidden bg-surface-container-high">
 <div class="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-105" data-alt="Interior architectural photograph of a high-end serene clinical consultation room in an Ayurvedic center, minimalist wooden desk, handcrafted cotton cushions, brass lamp glowing warmly, ceramic tea set on side table, clean walls in soft ivory tone, inviting and calm sanctuary ambiance." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuALGzX7DcncBgWId4KmUimmaEWegWo0SW6-MzeO1SDpqwqBXkvSbpUpV58MjhDlemrL1IbzLOJtnC9na7GxLysKJ0H8CFtKrv3tqpHYZzrYLIaUo3Jf0LVkEaCYuMu1Uvrf9VPviJXkWzOr6-UCeVOYcLer44iYMIlRsTyNCaNdpWEs5Icr9L6MMxi_S-WeoHx9OQUSYJwDK6k2rfdyKKBZFiRrIics3UBiSRQ65A5dcXAwz5v7kEnOGw')">
 </div>
 <div class="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-<span class="w-12 h-12 rounded-full bg-surface/90 text-primary flex items-center justify-center shadow-lg">
+<span class="w-12 h-12 rounded-full bg-surface/90 text-primary flex items-center justify-center shadow-lg transform scale-90 group-hover:scale-100 transition-transform">
 <span class="material-symbols-outlined text-[24px]">zoom_in</span>
 </span>
 </div>
-<span class="absolute top-4 left-4 bg-surface/95 backdrop-blur-sm text-primary font-label-sm text-label-sm uppercase tracking-wider px-3 py-1.5 rounded-lg">
-              ANUKUL Spaces
-            </span>
-</div>
-<div class="p-6 flex flex-col justify-between flex-grow">
-<div>
-<div class="flex items-center justify-between text-outline text-label-sm font-label-sm uppercase tracking-widest mb-1">
-<span>Ref: SPC-02</span>
-<span>Clinical Sanctuary</span>
-</div>
-<h3 class="font-headline-sm text-headline-sm text-primary">Consultation &amp; Pulse Assessment Room</h3>
-<p class="font-body-md text-body-md text-on-surface-variant mt-2">
-                Calm private clinic consultation sanctuary with teakwood desk, hand-woven linens, and acoustic stillness for deep diagnostic assessment.
-              </p>
-</div>
-<div class="pt-4 flex items-center justify-between">
-<span class="font-label-sm text-label-sm uppercase text-secondary tracking-wider">Click to Inspect Archive</span>
-<span class="material-symbols-outlined text-secondary text-[20px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
-</div>
+<span class="absolute top-4 left-4 bg-surface/95 backdrop-blur-sm text-primary font-label-sm text-label-sm uppercase tracking-wider px-3 py-1.5 rounded-lg shadow-sm">
+ANUKUL Spaces
+</span>
 </div>
 </article>
+
 <!-- CARD 7: Square -->
-<article class="gallery-card group md:col-span-1 rounded-xl overflow-hidden bg-surface-container-low shadow-sm flex flex-col cursor-pointer transition-all duration-300 hover:shadow-md" data-cat-label="Events &amp; Learning" data-category="events" data-id="7" data-note="Sharangadhara Samhita and Caraka Samhita study editions open beside botanical herbarium sheets, magnifying lens, and analytical formulation logs." data-title="Vedic Herbology &amp; Classical Texts">
-<div class="relative w-full h-[300px] overflow-hidden bg-surface-container-high">
+<article class="gallery-card group md:col-span-1 rounded-xl overflow-hidden bg-surface-container-low shadow-sm cursor-pointer transition-all duration-300 hover:shadow-lg" data-cat-label="Events &amp; Learning" data-category="events" data-id="7" data-note="Sharangadhara Samhita and Caraka Samhita study editions open beside botanical herbarium sheets, magnifying lens, and analytical formulation logs." data-title="Vedic Herbology &amp; Classical Texts">
+<div class="relative w-full h-[320px] sm:h-[400px] overflow-hidden bg-surface-container-high">
 <div class="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-105" data-alt="Editorial desk arrangement of ancient Sanskrit Ayurvedic manuscripts and modern research journals side-by-side, pressed botanical herbarium specimen of Ashwagandha root, brass magnifying glass, notebook with handwritten notes, warm scholarly study environment." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBatnwGUDgsGnK77iGMroJWw3d6C_kcjtcAra3c8zmWjCCwl_ZVEqu3WjNga6M6lKj-m5vBNjnkYk9JT3d5DAg2Cujrzyfc2WvUcSQC0kehYqAAvMUAHgh7rWGQ8hAZctf0IxLkc0StFF2fvN2nYug_EYhh1iEGHhYd8Tg1QsKS9P1k94BkXmHzAiamMnOrbuT178LCvSEi4f5FxLtNm5NCs-VuEASIIQVpKxC8vhV_pdHUdFwZrPhxXg')">
 </div>
 <div class="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-<span class="w-12 h-12 rounded-full bg-surface/90 text-primary flex items-center justify-center shadow-lg">
+<span class="w-12 h-12 rounded-full bg-surface/90 text-primary flex items-center justify-center shadow-lg transform scale-90 group-hover:scale-100 transition-transform">
 <span class="material-symbols-outlined text-[24px]">zoom_in</span>
 </span>
 </div>
-<span class="absolute top-4 left-4 bg-surface/95 backdrop-blur-sm text-primary font-label-sm text-label-sm uppercase tracking-wider px-3 py-1.5 rounded-lg">
-              Events &amp; Learning
-            </span>
-</div>
-<div class="p-6 flex flex-col justify-between flex-grow">
-<div>
-<div class="flex items-center justify-between text-outline text-label-sm font-label-sm uppercase tracking-widest mb-1">
-<span>Ref: TXT-06</span>
-<span>Classical Scholarship</span>
-</div>
-<h3 class="font-headline-sm text-headline-sm text-primary">Vedic Herbology &amp; Classical Texts</h3>
-<p class="font-body-md text-body-md text-on-surface-variant mt-2">
-                Sharangadhara and Caraka Samhita study journals alongside verified botanical specimens for continuing clinical study.
-              </p>
-</div>
-<div class="pt-4 flex items-center justify-between">
-<span class="font-label-sm text-label-sm uppercase text-secondary tracking-wider">Click to Inspect Archive</span>
-<span class="material-symbols-outlined text-secondary text-[20px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
-</div>
+<span class="absolute top-4 left-4 bg-surface/95 backdrop-blur-sm text-primary font-label-sm text-label-sm uppercase tracking-wider px-3 py-1.5 rounded-lg shadow-sm">
+Events &amp; Learning
+</span>
 </div>
 </article>
+
 <!-- CARD 8: Portrait -->
-<article class="gallery-card group md:col-span-1 rounded-xl overflow-hidden bg-surface-container-low shadow-sm flex flex-col cursor-pointer transition-all duration-300 hover:shadow-md" data-cat-label="Vastu &amp; Architecture" data-category="vastu" data-id="8" data-note="Serene residential bedroom designed under Vastu guidelines with south-western master resting stability, natural lime wash finishes, and clean uninterrupted lines." data-title="Meditative Living Quarters">
-<div class="relative w-full h-[300px] overflow-hidden bg-surface-container-high">
+<article class="gallery-card group md:col-span-1 rounded-xl overflow-hidden bg-surface-container-low shadow-sm cursor-pointer transition-all duration-300 hover:shadow-lg" data-cat-label="Vastu &amp; Architecture" data-category="vastu" data-id="8" data-note="Serene residential bedroom designed under Vastu guidelines with south-western master resting stability, natural lime wash finishes, and clean uninterrupted lines." data-title="Meditative Living Quarters">
+<div class="relative w-full h-[320px] sm:h-[400px] overflow-hidden bg-surface-container-high">
 <div class="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-105" data-alt="Interior architectural photograph of a tranquil modern bedroom designed in accordance with Vastu Shastra principles, natural oak wood low-profile bed, neutral warm beige lime-washed plaster walls, subtle bronze lighting fixtures, large window framing green foliage, clutter-free peaceful zen aesthetic." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDPcV4PEXHLPwBIWYONUS03bo5a9T7konkY8II424PUMIoo-D-KXi0Be7A10mUuVloAwOcVkv1FXp1hPmmESurqv19o8--kdIkpyEzETkhbw8xS9LpwkiaVlj51XEO8CEQR8Iif4_svUsnpFu00mcTSgVdhutj_ZnT3hXzqR7dpexIRLOXcigV_HuekP99xpyJdpo0iKQregqvCtr0hwuMG7u92eOI3L0v5ZPidtMolaPe0NKdXDGm1zQ')">
 </div>
 <div class="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-<span class="w-12 h-12 rounded-full bg-surface/90 text-primary flex items-center justify-center shadow-lg">
+<span class="w-12 h-12 rounded-full bg-surface/90 text-primary flex items-center justify-center shadow-lg transform scale-90 group-hover:scale-100 transition-transform">
 <span class="material-symbols-outlined text-[24px]">zoom_in</span>
 </span>
 </div>
-<span class="absolute top-4 left-4 bg-surface/95 backdrop-blur-sm text-primary font-label-sm text-label-sm uppercase tracking-wider px-3 py-1.5 rounded-lg">
-              Vastu &amp; Architecture
-            </span>
-</div>
-<div class="p-6 flex flex-col justify-between flex-grow">
-<div>
-<div class="flex items-center justify-between text-outline text-label-sm font-label-sm uppercase tracking-widest mb-1">
-<span>Ref: DOM-11</span>
-<span>Nairutya Zone</span>
-</div>
-<h3 class="font-headline-sm text-headline-sm text-primary">Meditative Living Quarters</h3>
-<p class="font-body-md text-body-md text-on-surface-variant mt-2">
-                Residential interior aligned with directional airflow, earth-element anchoring, and natural cross-ventilation.
-              </p>
-</div>
-<div class="pt-4 flex items-center justify-between">
-<span class="font-label-sm text-label-sm uppercase text-secondary tracking-wider">Click to Inspect Archive</span>
-<span class="material-symbols-outlined text-secondary text-[20px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
-</div>
+<span class="absolute top-4 left-4 bg-surface/95 backdrop-blur-sm text-primary font-label-sm text-label-sm uppercase tracking-wider px-3 py-1.5 rounded-lg shadow-sm">
+Vastu &amp; Architecture
+</span>
 </div>
 </article>
+
 <!-- CARD 9: Landscape -->
-<article class="gallery-card group md:col-span-1 rounded-xl overflow-hidden bg-surface-container-low shadow-sm flex flex-col cursor-pointer transition-all duration-300 hover:shadow-md" data-cat-label="Events &amp; Learning" data-category="events" data-id="9" data-note="Traditional woven bamboo sieves holding hand-harvested medicinal blossoms drying in clean shaded solar dryers under monitored humidity conditions." data-title="Conscious Herb Sourcing &amp; Drying">
-<div class="relative w-full h-[300px] overflow-hidden bg-surface-container-high">
+<article class="gallery-card group md:col-span-1 rounded-xl overflow-hidden bg-surface-container-low shadow-sm cursor-pointer transition-all duration-300 hover:shadow-lg" data-cat-label="Events &amp; Learning" data-category="events" data-id="9" data-note="Traditional woven bamboo sieves holding hand-harvested medicinal blossoms drying in clean shaded solar dryers under monitored humidity conditions." data-title="Conscious Herb Sourcing &amp; Drying">
+<div class="relative w-full h-[320px] sm:h-[400px] overflow-hidden bg-surface-container-high">
 <div class="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-105" data-alt="Close-up photograph of artisan herbal harvesting, hand-woven bamboo trays laden with drying bright orange calendula flowers and pink damask rose petals under a shade-canopy, skilled hands gently sifting the botanicals, sunny warm countryside backdrop." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBCj_T94srCpLH11lsKALcMIUslz5C4qrAjbg-mSJtACoD-htXN42hXv0Mrkz8LNTz8XgnSHCIxU9Low0jH2tntmfFe_3GAfDrKrfCJRdn1uG7Y3ScTEao7mc3aKfPdK5ec2mywC2ufmqPPcmleVwpP7ulpeQiI5EtSMhUdOkR6P8yvMIAva_W4ja8kfoLcI9o-1hgqHj2l5kjWOWJdawpff7HAb0WHmNG8UzpyKjEQSI3jEhiDFdOjBA')">
 </div>
 <div class="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-<span class="w-12 h-12 rounded-full bg-surface/90 text-primary flex items-center justify-center shadow-lg">
+<span class="w-12 h-12 rounded-full bg-surface/90 text-primary flex items-center justify-center shadow-lg transform scale-90 group-hover:scale-100 transition-transform">
 <span class="material-symbols-outlined text-[24px]">zoom_in</span>
 </span>
 </div>
-<span class="absolute top-4 left-4 bg-surface/95 backdrop-blur-sm text-primary font-label-sm text-label-sm uppercase tracking-wider px-3 py-1.5 rounded-lg">
-              Events &amp; Learning
-            </span>
-</div>
-<div class="p-6 flex flex-col justify-between flex-grow">
-<div>
-<div class="flex items-center justify-between text-outline text-label-sm font-label-sm uppercase tracking-widest mb-1">
-<span>Ref: FLD-08</span>
-<span>Harvest Protocol</span>
-</div>
-<h3 class="font-headline-sm text-headline-sm text-primary">Conscious Herb Sourcing &amp; Drying</h3>
-<p class="font-body-md text-body-md text-on-surface-variant mt-2">
-                Sun-drying sacred herbs and hand-sorting botanical petals according to seasonal Ritucharya purity standards.
-              </p>
-</div>
-<div class="pt-4 flex items-center justify-between">
-<span class="font-label-sm text-label-sm uppercase text-secondary tracking-wider">Click to Inspect Archive</span>
-<span class="material-symbols-outlined text-secondary text-[20px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
-</div>
+<span class="absolute top-4 left-4 bg-surface/95 backdrop-blur-sm text-primary font-label-sm text-label-sm uppercase tracking-wider px-3 py-1.5 rounded-lg shadow-sm">
+Events &amp; Learning
+</span>
 </div>
 </article>
 </div>

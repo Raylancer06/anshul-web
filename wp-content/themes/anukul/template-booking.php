@@ -28,24 +28,6 @@ get_header();
 </div>
 </div>
 </div>
-<!-- Interactive Prototype Controller Bar -->
-<aside aria-label="Reviewer Prototype Switcher" class="w-full bg-primary text-on-primary py-2 px-margin md:px-margin-md lg:px-margin-lg">
-<div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-space-sm">
-<div class="flex items-center gap-space-xs">
-<span class="material-symbols-outlined text-[16px] text-primary-fixed">tune</span>
-<span class="font-label-sm text-label-sm uppercase tracking-wider text-primary-fixed font-bold">Reviewer Step Switcher:</span>
-</div>
-<div class="flex flex-wrap items-center gap-1.5" id="prototype-controls">
-<button class="proto-btn px-2.5 py-1 rounded bg-primary-container text-on-primary hover:bg-tertiary font-label-sm text-label-sm uppercase tracking-wider transition-colors duration-200" data-step-target="1" onclick="goToStep(1)" type="button">1. Type</button>
-<button class="proto-btn px-2.5 py-1 rounded bg-primary-container text-on-primary hover:bg-tertiary font-label-sm text-label-sm uppercase tracking-wider transition-colors duration-200" data-step-target="2" onclick="goToStep(2)" type="button">2. Slot</button>
-<button class="proto-btn px-2.5 py-1 rounded bg-primary-container text-on-primary hover:bg-tertiary font-label-sm text-label-sm uppercase tracking-wider transition-colors duration-200" data-step-target="3" onclick="goToStep(3)" type="button">3. Details</button>
-<button class="proto-btn px-2.5 py-1 rounded bg-primary-container text-on-primary hover:bg-tertiary font-label-sm text-label-sm uppercase tracking-wider transition-colors duration-200" data-step-target="4" onclick="goToStep(4)" type="button">4. Payment</button>
-<span class="text-primary-fixed-dim/40 px-1">|</span>
-<button class="px-2 py-1 rounded bg-surface-container-highest text-on-surface font-label-sm text-label-sm uppercase tracking-wider hover:bg-error hover:text-on-error transition-colors duration-200" onclick="simulateState('conflict')" type="button">State: Slot Held</button>
-<button class="px-2 py-1 rounded bg-secondary-container text-on-secondary-container font-label-sm text-label-sm uppercase tracking-wider hover:bg-secondary hover:text-on-secondary transition-colors duration-200" onclick="simulateState('success')" type="button">State: Confirmed</button>
-</div>
-</div>
-</aside>
 <!-- Page Header & Stepper Section -->
 <section class="w-full bg-surface pt-space-lg pb-space-xl px-margin md:px-margin-md lg:px-margin-lg">
 <div class="max-w-7xl mx-auto">
@@ -799,7 +781,7 @@ Recommended Protocol
 <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm pb-space-md">
 <div>
 <span class="font-label-sm text-label-sm uppercase text-outline">Booking Reference</span>
-<div class="font-headline-sm text-headline-sm text-primary tracking-wider">ANKL-2025-8841</div>
+<div class="font-headline-sm text-headline-sm text-primary tracking-wider" id="success-reference">ANKL-2025-8841</div>
 </div>
 <div class="flex items-center gap-2">
 <span class="px-3 py-1 rounded-full bg-surface-container text-primary font-label-sm text-label-sm uppercase tracking-wider font-semibold">Payment Received</span>
@@ -844,6 +826,329 @@ Recommended Protocol
 </div>
 </section>
 </div>
+</main>
+
+<script>
+  // ANUKUL Booking Engine State Store
+  const state = {
+    step: 1,
+    consultationId: 'complete',
+    consultationTitle: 'Complete Medico-Astro Vastu Numerology Consultation',
+    duration: '90 mins',
+    format: 'Complete 4-Pillar Master Consultation',
+    price: 5100,
+    date: 'Tuesday, November 18, 2025',
+    slot: '11:00 AM – 12:30 PM IST',
+    name: 'Ananya Deshmukh',
+    email: 'ananya.deshmukh@wellness.in',
+    phone: '98201 44521'
+  };
+
+  // Step Navigation
+  function goToStep(stepNumber) {
+    state.step = stepNumber;
+    
+    // Hide all step sections
+    document.querySelectorAll('.step-view').forEach(view => {
+      view.classList.add('hidden');
+      view.classList.remove('flex');
+    });
+
+    // Show target section
+    const targetSection = document.getElementById(`step-content-${stepNumber}`);
+    if (targetSection) {
+      targetSection.classList.remove('hidden');
+      targetSection.classList.add('flex');
+    }
+
+    // Update Progress Stepper UI
+    updateStepperUI(stepNumber);
+    window.scrollTo({ top: 120, behavior: 'smooth' });
+  }
+
+  function updateStepperUI(currentStep) {
+    for (let i = 1; i <= 4; i++) {
+      const badge = document.getElementById(`badge-step-${i}`);
+      const title = document.getElementById(`title-step-${i}`);
+      const bar = document.getElementById(`bar-step-${i}`);
+
+      if (!badge || !title || !bar) continue;
+
+      if (i < currentStep) {
+        badge.className = "w-8 h-8 rounded-full bg-primary text-on-primary font-headline-sm text-[16px] flex items-center justify-center font-bold";
+        badge.innerHTML = `<span class="material-symbols-outlined text-[16px]">check</span>`;
+        title.className = "font-body-md text-body-md font-semibold text-primary";
+        bar.className = "h-1 w-full bg-primary rounded-full transition-all duration-300";
+      } else if (i === currentStep) {
+        badge.className = "w-8 h-8 rounded-full bg-primary text-on-primary font-headline-sm text-[16px] flex items-center justify-center font-bold ring-4 ring-primary/20";
+        badge.textContent = i;
+        title.className = "font-body-md text-body-md font-bold text-primary";
+        bar.className = "h-1 w-full bg-primary rounded-full transition-all duration-300";
+      } else {
+        badge.className = "w-8 h-8 rounded-full bg-surface-container-highest text-on-surface-variant font-headline-sm text-[16px] flex items-center justify-center font-bold";
+        badge.textContent = i;
+        title.className = "font-body-md text-body-md font-normal text-on-surface-variant";
+        bar.className = "h-1 w-full bg-surface-container-highest rounded-full transition-all duration-300";
+      }
+    }
+  }
+
+  // Step 1: Select Consultation Card
+  function selectConsultation(type, price, title, duration, format) {
+    state.consultationId = type;
+    state.price = price;
+    state.consultationTitle = title;
+    state.duration = duration;
+    state.format = format;
+
+    // Reset card borders
+    const cards = document.querySelectorAll('.consultation-card');
+    cards.forEach(c => {
+      c.classList.remove('active-card', 'ring-2', 'ring-primary');
+      const btn = c.querySelector('.select-btn');
+      if (btn) {
+        btn.className = "select-btn px-4 py-1.5 rounded-lg bg-surface-container-high text-on-surface font-label-sm uppercase tracking-wider group-hover:bg-primary group-hover:text-on-primary transition-colors";
+        btn.textContent = "Select";
+      }
+    });
+
+    // Mark current selected card
+    const targetCard = document.getElementById(`card-${type}`);
+    if (targetCard) {
+      targetCard.classList.add('active-card', 'ring-2', 'ring-primary');
+      const activeBtn = targetCard.querySelector('.select-btn');
+      if (activeBtn) {
+        activeBtn.className = "select-btn px-4 py-1.5 rounded-lg bg-primary text-on-primary font-label-sm uppercase tracking-wider";
+        activeBtn.textContent = "Selected";
+      }
+    }
+
+    updateSummaryViews();
+  }
+
+  // Step 2: Select Date & Time
+  function selectDate(dateString, element) {
+    state.date = dateString;
+    document.querySelectorAll('.cal-day').forEach(b => {
+      b.classList.remove('bg-primary', 'text-on-primary', 'shadow-sm');
+      b.classList.add('hover:bg-surface-container', 'text-on-surface');
+    });
+    if (element) {
+      element.classList.remove('hover:bg-surface-container', 'text-on-surface');
+      element.classList.add('bg-primary', 'text-on-primary', 'shadow-sm');
+    }
+    const chosenDateElem = document.getElementById('current-chosen-date');
+    if (chosenDateElem) chosenDateElem.textContent = dateString;
+    updateSummaryViews();
+  }
+
+  function selectTimeSlot(slotString, element) {
+    state.slot = slotString;
+    document.querySelectorAll('.time-slot-btn').forEach(btn => {
+      btn.classList.remove('bg-primary', 'text-on-primary', 'selected-slot', 'shadow-sm');
+      btn.classList.add('bg-surface-container', 'text-on-surface');
+      const icon = btn.querySelector('.material-symbols-outlined');
+      if (icon) {
+        icon.textContent = 'circle';
+        icon.className = 'material-symbols-outlined text-[16px] text-primary';
+      }
+    });
+
+    if (element) {
+      element.classList.remove('bg-surface-container', 'text-on-surface');
+      element.classList.add('bg-primary', 'text-on-primary', 'selected-slot', 'shadow-sm');
+      const activeIcon = element.querySelector('.material-symbols-outlined');
+      if (activeIcon) {
+        activeIcon.textContent = 'check_circle';
+        activeIcon.className = 'material-symbols-outlined text-[16px] text-on-primary';
+      }
+    }
+
+    updateSummaryViews();
+  }
+
+  // Payment Tabs Toggle
+  function togglePayTab(tabName) {
+    ['upi', 'netbanking', 'card'].forEach(t => {
+      const panel = document.getElementById(`tab-content-${t}`);
+      if (panel) {
+        if (t === tabName) {
+          panel.classList.remove('hidden');
+        } else {
+          panel.classList.add('hidden');
+        }
+      }
+    });
+  }
+
+  // Update Summary Views
+  function updateSummaryViews() {
+    const banner = document.getElementById('active-consultation-banner');
+    if (banner) banner.textContent = `${state.consultationTitle} (${state.duration})`;
+
+    const sideType = document.getElementById('summary-sidebar-type');
+    const sideSlot = document.getElementById('summary-sidebar-slot');
+    const sideDur = document.getElementById('summary-sidebar-duration');
+    const sideTotal = document.getElementById('summary-sidebar-total');
+    if (sideType) sideType.textContent = state.consultationTitle;
+    if (sideSlot) sideSlot.textContent = `${state.date} · ${state.slot.split('–')[0].trim()}`;
+    if (sideDur) sideDur.textContent = `${state.duration} Assessment`;
+    if (sideTotal) sideTotal.textContent = `₹ ${state.price.toLocaleString('en-IN')}`;
+
+    const checkTitle = document.getElementById('checkout-title');
+    const checkDur = document.getElementById('checkout-duration');
+    const checkDate = document.getElementById('checkout-date');
+    const checkTime = document.getElementById('checkout-time');
+    const checkGrand = document.getElementById('checkout-grand-total');
+    const payLabel = document.getElementById('pay-btn-label');
+
+    if (checkTitle) checkTitle.textContent = state.consultationTitle;
+    if (checkDur) checkDur.textContent = `${state.duration} Assessment Protocol`;
+    if (checkDate) checkDate.textContent = state.date;
+    if (checkTime) checkTime.textContent = state.slot;
+    if (checkGrand) checkGrand.textContent = `₹ ${state.price.toLocaleString('en-IN')}`;
+    if (payLabel) payLabel.textContent = `PAY & CONFIRM BOOKING — ₹ ${state.price.toLocaleString('en-IN')}`;
+
+    const gstRate = 0.18;
+    const baseFee = Math.round((state.price / (1 + gstRate)) * 100) / 100;
+    const gstVal = Math.round((state.price - baseFee) * 100) / 100;
+    const baseElem = document.getElementById('checkout-base-fee');
+    const gstElem = document.getElementById('checkout-gst');
+    if (baseElem) baseElem.textContent = `₹ ${baseFee.toLocaleString('en-IN', {minimumFractionDigits: 2})}`;
+    if (gstElem) gstElem.textContent = `₹ ${gstVal.toLocaleString('en-IN', {minimumFractionDigits: 2})}`;
+  }
+
+  function dismissAlert() {
+    const banner = document.getElementById('alert-banner');
+    if (banner) banner.classList.add('hidden');
+  }
+
+  // Execute Payment and Register Real Booking via AJAX
+  function executePayment() {
+    const payBtn = document.getElementById('pay-button');
+    const label = document.getElementById('pay-btn-label');
+    if (payBtn) {
+      payBtn.disabled = true;
+      if (label) label.textContent = "VERIFYING AUTHORIZATION...";
+    }
+
+    const inputName = document.getElementById('full-name');
+    const inputEmail = document.getElementById('email');
+    const inputPhone = document.getElementById('phone');
+
+    const clientName = (inputName && inputName.value) ? inputName.value : state.name;
+    const clientEmail = (inputEmail && inputEmail.value) ? inputEmail.value : state.email;
+    const clientPhone = (inputPhone && inputPhone.value) ? inputPhone.value : state.phone;
+
+    const formData = new FormData();
+    formData.append('action', 'anukul_book_slot');
+    formData.append('nonce', '<?php echo wp_create_nonce( "anukul_booking_nonce" ); ?>');
+    formData.append('tier', state.consultationId);
+    formData.append('date', state.date);
+    formData.append('slot', state.slot);
+    formData.append('name', clientName);
+    formData.append('email', clientEmail);
+    formData.append('phone', clientPhone);
+
+    fetch('<?php echo esc_url( admin_url( "admin-ajax.php" ) ); ?>', {
+      method: 'POST',
+      body: formData
+    })
+    .then(res => res.json())
+    .then(data => {
+      if (data.success) {
+        document.querySelectorAll('.step-view').forEach(view => {
+          view.classList.add('hidden');
+          view.classList.remove('flex');
+        });
+
+        const succ = document.getElementById('step-content-success');
+        if (succ) {
+          succ.classList.remove('hidden');
+          succ.classList.add('flex');
+        }
+
+        const succEmail = document.getElementById('success-email');
+        const succType = document.getElementById('success-type');
+        const succSlot = document.getElementById('success-slot');
+        const succName = document.getElementById('success-name');
+        const succRef = document.getElementById('success-reference');
+
+        if (succEmail) succEmail.textContent = clientEmail;
+        if (succType) succType.textContent = state.consultationTitle;
+        if (succSlot) succSlot.textContent = `${state.date} · ${state.slot}`;
+        if (succName) succName.textContent = clientName;
+        if (succRef && data.data && data.data.reference) succRef.textContent = data.data.reference;
+
+        for (let i = 1; i <= 4; i++) {
+          const badge = document.getElementById(`badge-step-${i}`);
+          const bar = document.getElementById(`bar-step-${i}`);
+          if (badge) {
+            badge.className = "w-8 h-8 rounded-full bg-primary text-on-primary font-headline-sm text-[16px] flex items-center justify-center font-bold";
+            badge.innerHTML = `<span class="material-symbols-outlined text-[16px]">check</span>`;
+          }
+          if (bar) bar.className = "h-1 w-full bg-primary rounded-full";
+        }
+
+        window.scrollTo({ top: 120, behavior: 'smooth' });
+      } else {
+        if (payBtn) {
+          payBtn.disabled = false;
+          if (label) label.textContent = `PAY & CONFIRM BOOKING — ₹ ${state.price.toLocaleString('en-IN')}`;
+        }
+        const banner = document.getElementById('alert-banner');
+        if (banner) {
+          if (data.data && data.data.message) {
+            const msgSpan = banner.querySelector('span');
+            if (msgSpan) msgSpan.innerHTML = `<strong>Attention:</strong> ${data.data.message}`;
+          }
+          banner.classList.remove('hidden');
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+        goToStep(2);
+      }
+    })
+    .catch(err => {
+      console.error(err);
+      if (payBtn) {
+        payBtn.disabled = false;
+        if (label) label.textContent = `PAY & CONFIRM BOOKING — ₹ ${state.price.toLocaleString('en-IN')}`;
+      }
+    });
+  }
+
+  // Real-time Countdown timer (15 mins)
+  let timeRemaining = 14 * 60 + 59;
+  const timerElem = document.getElementById('countdown-timer');
+  setInterval(() => {
+    if (timeRemaining > 0) {
+      timeRemaining--;
+      const mins = Math.floor(timeRemaining / 60);
+      const secs = timeRemaining % 60;
+      if (timerElem) {
+        timerElem.textContent = `${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
+      }
+    }
+  }, 1000);
+
+  // Initialize view on load
+  document.addEventListener('DOMContentLoaded', () => {
+    const urlParams = new URLSearchParams(window.location.search);
+    const type = urlParams.get('type');
+    if (type === 'health' || type === 'ayurveda') {
+      selectConsultation('health', 1000, 'Only Online Health Consultation', '45 mins', 'Video Call (Secure Tele-Health)');
+    } else if (type === 'medico-vastu' || type === 'vastu') {
+      selectConsultation('medico-vastu', 3100, 'Medico-Vastu Consultation', '60 mins', 'Floor Plan Audit & Video Analysis');
+    } else if (type === 'astro-construction' || type === 'construction') {
+      selectConsultation('astro-construction', 4100, 'Medico-Astro-Vastu Construction', '75 mins', 'Architectural & Planetary Blueprint Audit');
+    } else if (type === 'complete' || type === 'integrated') {
+      selectConsultation('complete', 5100, 'Complete Medico-Astro Vastu Numerology Consultation', '90 mins', 'Complete 4-Pillar Master Consultation');
+    } else {
+      updateSummaryViews();
+    }
+  });
+</script>
 
 <?php
 get_footer();
+
