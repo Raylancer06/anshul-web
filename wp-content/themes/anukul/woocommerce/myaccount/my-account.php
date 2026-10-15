@@ -36,21 +36,32 @@ foreach ( $customer_orders as $ord ) {
     }
 }
 
-// Fetch Real Latest Booking
-$latest_booking = get_posts( array(
+// Fetch All Real Consultation Bookings for this Client
+$customer_bookings = get_posts( array(
     'post_type'      => 'anukul_booking',
-    'post_status'    => 'publish',
-    'posts_per_page' => 1,
+    'post_status'    => array( 'publish' ),
+    'posts_per_page' => -1,
     'meta_query'     => array(
+        'relation' => 'OR',
+        array(
+            'key'     => '_anukul_customer_id',
+            'value'   => $user_id,
+            'compare' => '=',
+        ),
         array(
             'key'     => '_anukul_client_email',
             'value'   => $user_email,
             'compare' => '=',
         ),
     ),
+    'orderby'        => 'date',
+    'order'          => 'DESC',
 ) );
-$has_booking = ! empty( $latest_booking );
-$booking_post = $has_booking ? $latest_booking[0] : null;
+
+$booking_count  = count( $customer_bookings );
+$has_booking    = ! empty( $customer_bookings );
+$latest_booking = $has_booking ? $customer_bookings[0] : null;
+$booking_post   = $latest_booking;
 
 // Formatted Addresses
 $billing_address = function_exists( 'wc_get_account_formatted_address' ) ? wc_get_account_formatted_address( 'billing' ) : '';
@@ -130,7 +141,21 @@ $shipping_address = function_exists( 'wc_get_account_formatted_address' ) ? wc_g
           <span class="material-symbols-outlined text-[16px] text-primary-fixed tab-chevron">arrow_forward</span>
         </button>
 
-        <!-- Tab 2: Orders -->
+        <!-- Tab 2: Consultations & Sessions -->
+        <button type="button" onclick="switchAccountTab('bookings')" id="nav-tab-bookings" class="account-nav-btn flex items-center justify-between px-4 py-3 rounded-lg font-body-sm text-sm text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all w-full text-left">
+          <div class="flex items-center gap-3">
+            <span class="material-symbols-outlined text-[20px]">calendar_month</span>
+            <span>Consultations</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <span class="px-2 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm text-[11px] font-bold">
+              <?php echo esc_html( $booking_count ); ?> booked
+            </span>
+            <span class="material-symbols-outlined text-[16px] text-outline-variant tab-chevron">chevron_right</span>
+          </div>
+        </button>
+
+        <!-- Tab 3: Orders -->
         <button type="button" onclick="switchAccountTab('orders')" id="nav-tab-orders" class="account-nav-btn flex items-center justify-between px-4 py-3 rounded-lg font-body-sm text-sm text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all w-full text-left">
           <div class="flex items-center gap-3">
             <span class="material-symbols-outlined text-[20px]">inventory_2</span>
@@ -270,13 +295,13 @@ $shipping_address = function_exists( 'wc_get_account_formatted_address' ) ? wc_g
             <p class="font-body-sm text-xs text-secondary mt-1 flex items-center gap-1 font-medium">View dispatches <span class="material-symbols-outlined text-[14px]">arrow_forward</span></p>
           </div>
 
-          <div class="bg-surface-container-low p-5 rounded-xl border border-[#E8D8BC]/60 shadow-sm relative overflow-hidden group hover:border-primary/40 transition-colors">
+          <div onclick="switchAccountTab('bookings')" class="bg-surface-container-low p-5 rounded-xl border border-[#E8D8BC]/60 shadow-sm relative overflow-hidden group hover:border-primary/40 transition-colors cursor-pointer">
             <div class="flex items-center justify-between mb-2">
-              <span class="font-label-sm text-[11px] uppercase tracking-wider text-secondary font-bold">Spatial Equilibrium</span>
-              <span class="material-symbols-outlined text-primary text-[20px]">explore</span>
+              <span class="font-label-sm text-[11px] uppercase tracking-wider text-secondary font-bold">Consultations</span>
+              <span class="material-symbols-outlined text-primary text-[20px]">calendar_month</span>
             </div>
-            <p class="font-headline-sm text-2xl text-primary font-serif whitespace-nowrap">Ishanya 98.4%</p>
-            <p class="font-body-sm text-xs text-on-surface-variant mt-1">Brahmasthan Consecrated</p>
+            <p class="font-headline-sm text-2xl text-primary font-serif whitespace-nowrap"><?php echo esc_html( $booking_count ); ?> Booked <span class="text-xs font-sans text-secondary font-semibold"><?php echo $has_booking ? '(Active)' : ''; ?></span></p>
+            <p class="font-body-sm text-xs text-secondary mt-1 flex items-center gap-1 font-medium">View history <span class="material-symbols-outlined text-[14px]">arrow_forward</span></p>
           </div>
 
           <div onclick="switchAccountTab('downloads')" class="bg-surface-container-low p-5 rounded-xl border border-[#E8D8BC]/60 shadow-sm relative overflow-hidden group hover:border-primary/40 transition-colors cursor-pointer">
@@ -412,8 +437,13 @@ $shipping_address = function_exists( 'wc_get_account_formatted_address' ) ? wc_g
               <?php endif; ?>
             </div>
             <div class="pt-4 mt-4 border-t border-[#E8D8BC]/30 flex items-center justify-between">
-              <a href="<?php echo esc_url( home_url( '/book-your-consultation/' ) ); ?>" class="text-xs uppercase font-label-sm text-secondary hover:text-primary transition-colors font-bold flex items-center gap-1">
-                <?php echo $has_booking ? 'Reschedule or Book Another' : 'Book Consultation Now'; ?> <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+              <?php if ( $has_booking ) : ?>
+                <button type="button" onclick="switchAccountTab('bookings')" class="text-xs uppercase font-label-sm text-secondary hover:text-primary transition-colors font-bold flex items-center gap-1">
+                  View Consultation History (<?php echo esc_html( $booking_count ); ?>) <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+                </button>
+              <?php endif; ?>
+              <a href="<?php echo esc_url( home_url( '/book-your-consultation/' ) ); ?>" class="text-xs uppercase font-label-sm text-primary hover:text-secondary transition-colors font-bold flex items-center gap-1">
+                Book Consultation Now <span class="material-symbols-outlined text-[14px]">add_circle</span>
               </a>
             </div>
           </div>
@@ -421,7 +451,152 @@ $shipping_address = function_exists( 'wc_get_account_formatted_address' ) ? wc_g
       </div>
 
       <!-- ====================================== -->
-      <!-- 2. ORDERS TAB PANE                     -->
+      <!-- 2. CONSULTATIONS TAB PANE              -->
+      <!-- ====================================== -->
+      <div id="tab-pane-bookings" class="hidden space-y-6">
+        <!-- Header Panel -->
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 pb-3 border-b border-[#E8D8BC]">
+          <div>
+            <div class="flex items-center gap-2 mb-1.5">
+              <span class="font-label-sm text-xs uppercase tracking-widest text-secondary font-bold">CLINICAL REGISTRY &bull; MUHURTA APPOINTMENTS</span>
+              <span class="text-outline-variant">&bull;</span>
+              <span class="font-label-sm text-xs text-outline uppercase tracking-wider">Consultation History</span>
+            </div>
+            <h1 class="font-headline-lg text-3xl sm:text-4xl text-primary tracking-tight">MY CONSULTATIONS &amp; SESSIONS</h1>
+            <p class="font-body-md text-sm text-on-surface-variant max-w-2xl mt-1 leading-relaxed">
+              Your personalized Ayurvedic clinical assessments, Vastu architectural audits, and Muhurta alignment sessions conducted with our panel of specialists.
+            </p>
+          </div>
+          <div class="flex items-center gap-2">
+            <a href="<?php echo esc_url( home_url( '/book-your-consultation/' ) ); ?>" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-primary text-on-primary font-label-md text-xs uppercase tracking-wider font-semibold hover:bg-secondary transition-colors shadow-sm">
+              <span class="material-symbols-outlined text-[16px]">add_circle</span>
+              Book New Consultation
+            </a>
+          </div>
+        </div>
+
+        <?php if ( ! empty( $customer_bookings ) ) : ?>
+          <!-- Consultation Cards List -->
+          <div class="space-y-4">
+            <?php foreach ( $customer_bookings as $booking ) : 
+              $b_id       = $booking->ID;
+              $ref        = get_post_meta( $b_id, '_anukul_reference', true );
+              $tier_title = get_post_meta( $b_id, '_anukul_tier_title', true );
+              $price      = get_post_meta( $b_id, '_anukul_price', true );
+              $duration   = get_post_meta( $b_id, '_anukul_duration', true );
+              $slot_date  = get_post_meta( $b_id, '_anukul_slot_date', true );
+              $slot_time  = get_post_meta( $b_id, '_anukul_slot_time', true );
+              $pay_status = get_post_meta( $b_id, '_anukul_payment_status', true );
+              $order_id   = get_post_meta( $b_id, '_anukul_order_id', true );
+              $notes      = get_post_meta( $b_id, '_anukul_intake_notes', true );
+
+              $linked_order = $order_id ? wc_get_order( $order_id ) : null;
+              $is_confirmed = in_array( $pay_status, array( 'confirmed', 'completed' ) ) || ( $linked_order && in_array( $linked_order->get_status(), array( 'processing', 'completed' ) ) );
+              $is_pending   = in_array( $pay_status, array( 'pending', 'pending_verification' ) ) || ( $linked_order && in_array( $linked_order->get_status(), array( 'pending', 'on-hold' ) ) );
+            ?>
+              <div class="bg-surface-container-low rounded-xl border border-[#E8D8BC]/60 p-6 shadow-sm hover:border-primary/40 transition-colors">
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-4 border-b border-[#E8D8BC]/50">
+                  <div>
+                    <div class="flex items-center gap-2">
+                      <span class="font-headline-sm text-xl text-primary font-serif font-bold"><?php echo esc_html( $tier_title ); ?></span>
+                      <?php if ( $is_confirmed ) : ?>
+                        <span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-primary/10 text-primary text-[11px] font-label-md uppercase tracking-wider font-bold">
+                          <span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+                          Confirmed &bull; Scheduled
+                        </span>
+                      <?php elseif ( $is_pending ) : ?>
+                        <span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed text-[11px] font-label-md uppercase tracking-wider font-bold">
+                          <span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+                          Payment / Verification Pending
+                        </span>
+                      <?php else : ?>
+                        <span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-surface-container-high text-outline text-[11px] font-label-md uppercase tracking-wider font-bold">
+                          <?php echo esc_html( ucfirst( $pay_status ) ); ?>
+                        </span>
+                      <?php endif; ?>
+                    </div>
+                    <p class="font-body-sm text-xs text-on-surface-variant mt-1">
+                      Booking Ref: <strong class="text-secondary"><?php echo esc_html( $ref ); ?></strong> &bull; Attending: <strong>Dr. Nishigandha Chaudhari &amp; Master Panel</strong>
+                    </p>
+                  </div>
+                  <div class="text-left sm:text-right">
+                    <p class="font-headline-sm text-2xl text-primary font-bold">₹ <?php echo esc_html( number_format( (float) $price, 0 ) ); ?></p>
+                    <p class="font-body-sm text-xs text-outline"><?php echo esc_html( $duration ); ?> Allocated Session</p>
+                  </div>
+                </div>
+
+                <!-- Appointment details -->
+                <div class="py-4 grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs bg-surface-container/40 p-3.5 rounded-lg my-3">
+                  <div class="flex items-center gap-2">
+                    <span class="material-symbols-outlined text-secondary text-[18px]">calendar_today</span>
+                    <div>
+                      <span class="text-outline uppercase font-label-sm block text-[10px]">Date</span>
+                      <span class="font-semibold text-primary"><?php echo esc_html( $slot_date ); ?></span>
+                    </div>
+                  </div>
+                  <div class="flex items-center gap-2">
+                    <span class="material-symbols-outlined text-secondary text-[18px]">schedule</span>
+                    <div>
+                      <span class="text-outline uppercase font-label-sm block text-[10px]">Muhurta Slot</span>
+                      <span class="font-semibold text-primary"><?php echo esc_html( $slot_time ); ?> IST</span>
+                    </div>
+                  </div>
+                  <div class="flex items-center gap-2">
+                    <span class="material-symbols-outlined text-secondary text-[18px]">videocam</span>
+                    <div>
+                      <span class="text-outline uppercase font-label-sm block text-[10px]">Session Delivery</span>
+                      <span class="font-semibold text-primary">Private Video &amp; Tele-Health</span>
+                    </div>
+                  </div>
+                </div>
+
+                <?php if ( ! empty( $notes ) ) : ?>
+                  <div class="text-xs text-on-surface-variant bg-surface-container-lowest p-3 rounded-lg border border-[#E8D8BC]/40 mb-3">
+                    <strong class="text-primary block mb-0.5">Clinical Intake Focus:</strong>
+                    <?php echo esc_html( $notes ); ?>
+                  </div>
+                <?php endif; ?>
+
+                <div class="pt-3 border-t border-[#E8D8BC]/50 flex flex-wrap items-center justify-between gap-3 text-xs">
+                  <div class="flex items-center gap-2 text-on-surface-variant">
+                    <span class="material-symbols-outlined text-secondary text-[16px]">verified</span>
+                    <span>Status: <strong class="text-primary font-semibold"><?php echo $is_confirmed ? 'Slot Consecrated &amp; Confirmed' : 'Awaiting Settlement'; ?></strong></span>
+                    <?php if ( $linked_order ) : ?>
+                      <span class="text-outline-variant">&bull;</span>
+                      <span>WooCommerce Order: <strong>#<?php echo esc_html( $linked_order->get_order_number() ); ?></strong></span>
+                    <?php endif; ?>
+                  </div>
+                  <div class="flex items-center gap-2">
+                    <?php if ( $linked_order ) : ?>
+                      <a href="<?php echo esc_url( $linked_order->get_view_order_url() ); ?>" class="px-3.5 py-1.5 rounded-lg bg-surface-container text-primary font-label-md text-xs uppercase tracking-wider font-semibold hover:bg-surface-container-high transition-colors">
+                        View Order
+                      </a>
+                    <?php endif; ?>
+                    <a href="<?php echo esc_url( home_url( '/book-your-consultation/' ) ); ?>" class="px-3.5 py-1.5 rounded-lg bg-primary text-on-primary font-label-md text-xs uppercase tracking-wider font-semibold hover:bg-secondary transition-colors">
+                      Book Another
+                    </a>
+                  </div>
+                </div>
+              </div>
+            <?php endforeach; ?>
+          </div>
+        <?php else : ?>
+          <div class="bg-surface-container-low rounded-xl border border-[#E8D8BC]/60 p-12 text-center space-y-4">
+            <span class="material-symbols-outlined text-secondary text-[48px]">calendar_month</span>
+            <h3 class="font-headline-sm text-2xl text-primary">No Consultations Reserved Yet</h3>
+            <p class="font-body-md text-sm text-on-surface-variant max-w-md mx-auto">
+              Reserve your personalized Vedic health diagnosis, floor plan audit, or Muhurta alignment session directly through our consultation portal.
+            </p>
+            <a href="<?php echo esc_url( home_url( '/book-your-consultation/' ) ); ?>" class="inline-flex items-center gap-2 px-6 py-2.5 rounded-lg bg-[#1F4D3A] text-on-primary font-label-md text-xs uppercase tracking-wider font-semibold hover:bg-secondary transition-colors shadow-sm">
+              <span class="material-symbols-outlined text-[16px]">event_available</span>
+              Book Your Consultation Now
+            </a>
+          </div>
+        <?php endif; ?>
+      </div>
+
+      <!-- ====================================== -->
+      <!-- 3. ORDERS TAB PANE                     -->
       <!-- ====================================== -->
       <div id="tab-pane-orders" class="hidden space-y-6">
         <!-- Header Panel -->
@@ -734,8 +909,8 @@ $shipping_address = function_exists( 'wc_get_account_formatted_address' ) ? wc_g
 
 <!-- Tab Navigation Switching Script -->
 <script>
-  function switchAccountTab(tabKey) {
-    const tabs = ['dashboard', 'orders', 'addresses', 'account-details', 'downloads'];
+  function switchAccountTab(tabKey, scroll = true) {
+    const tabs = ['dashboard', 'bookings', 'orders', 'addresses', 'account-details', 'downloads'];
     
     tabs.forEach(t => {
       const pane = document.getElementById(`tab-pane-${t}`);
@@ -776,6 +951,7 @@ $shipping_address = function_exists( 'wc_get_account_formatted_address' ) ? wc_g
     if (crumbElem) {
       const names = {
         'dashboard': 'Sanctuary Overview',
+        'bookings': 'Consultations & Sessions',
         'orders': 'Orders & Dispatches',
         'addresses': 'Premises Coordinates',
         'account-details': 'Account Credentials',
@@ -784,6 +960,16 @@ $shipping_address = function_exists( 'wc_get_account_formatted_address' ) ? wc_g
       crumbElem.textContent = names[tabKey] || 'Account';
     }
 
-    window.scrollTo({ top: 80, behavior: 'smooth' });
+    if (scroll) {
+      window.scrollTo({ top: 80, behavior: 'smooth' });
+    }
   }
+
+  document.addEventListener('DOMContentLoaded', function() {
+    const hash = window.location.hash.replace('#', '');
+    const validTabs = ['dashboard', 'bookings', 'orders', 'addresses', 'account-details', 'downloads'];
+    if (hash && validTabs.includes(hash)) {
+      switchAccountTab(hash, false);
+    }
+  });
 </script>

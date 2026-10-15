@@ -40,6 +40,7 @@ class ANUKUL_Booking_Engine {
         // WooCommerce Order Payment Synchronization
         add_action( 'woocommerce_order_status_completed', array( $this, 'on_payment_verified' ) );
         add_action( 'woocommerce_order_status_processing', array( $this, 'on_payment_verified' ) );
+        add_action( 'woocommerce_order_status_on-hold', array( $this, 'on_payment_on_hold' ) );
         add_action( 'woocommerce_order_status_failed', array( $this, 'on_payment_failed' ) );
         add_action( 'woocommerce_order_status_cancelled', array( $this, 'on_payment_cancelled' ) );
     }
@@ -50,30 +51,59 @@ class ANUKUL_Booking_Engine {
     public static function get_tiers() {
         return array(
             'health' => array(
+                'sku'      => 'ANK-MED-01',
                 'title'    => 'Only Online Health Consultation',
                 'price'    => 1000,
                 'duration' => '45 mins',
                 'format'   => 'Video Call (Secure Tele-Health)',
             ),
             'medico-vastu' => array(
+                'sku'      => 'ANK-MED-02',
                 'title'    => 'Medico-Vastu Consultation',
                 'price'    => 3100,
                 'duration' => '60 mins',
                 'format'   => 'Floor Plan Audit & Video Analysis',
             ),
             'astro-construction' => array(
+                'sku'      => 'ANK-MED-03',
                 'title'    => 'Medico-Astro-Vastu Construction',
                 'price'    => 4100,
                 'duration' => '75 mins',
                 'format'   => 'Architectural & Planetary Blueprint Audit',
             ),
             'complete' => array(
+                'sku'      => 'ANK-MED-04',
                 'title'    => 'Complete Medico-Astro Vastu Numerology Consultation',
                 'price'    => 5100,
                 'duration' => '90 mins',
                 'format'   => 'Complete 4-Pillar Master Consultation',
             ),
         );
+    }
+
+    /**
+     * Get or create consultation virtual product in WooCommerce
+     */
+    public static function get_tier_product_id( $tier_key ) {
+        $tiers = self::get_tiers();
+        if ( ! isset( $tiers[ $tier_key ] ) || ! class_exists( 'WooCommerce' ) ) {
+            return 0;
+        }
+        $info = $tiers[ $tier_key ];
+        $product_id = wc_get_product_id_by_sku( $info['sku'] );
+        if ( $product_id ) {
+            return $product_id;
+        }
+
+        // Create if missing
+        $product = new WC_Product_Simple();
+        $product->set_name( $info['title'] );
+        $product->set_sku( $info['sku'] );
+        $product->set_regular_price( $info['price'] );
+        $product->set_price( $info['price'] );
+        $product->set_virtual( true );
+        $product->set_status( 'publish' );
+        return $product->save();
     }
 
     /**
@@ -216,12 +246,14 @@ class ANUKUL_Booking_Engine {
     public function ajax_book_slot() {
         check_ajax_referer( 'anukul_booking_nonce', 'nonce' );
 
-        $tier_key = isset( $_POST['tier'] ) ? sanitize_text_field( $_POST['tier'] ) : '';
-        $date     = isset( $_POST['date'] ) ? sanitize_text_field( $_POST['date'] ) : '';
-        $slot     = isset( $_POST['slot'] ) ? sanitize_text_field( $_POST['slot'] ) : '';
-        $name     = isset( $_POST['name'] ) ? sanitize_text_field( $_POST['name'] ) : '';
-        $email    = isset( $_POST['email'] ) ? sanitize_email( $_POST['email'] ) : '';
-        $phone    = isset( $_POST['phone'] ) ? sanitize_text_field( $_POST['phone'] ) : '';
+        $tier_key       = isset( $_POST['tier'] ) ? sanitize_text_field( $_POST['tier'] ) : '';
+        $date           = isset( $_POST['date'] ) ? sanitize_text_field( $_POST['date'] ) : '';
+        $slot           = isset( $_POST['slot'] ) ? sanitize_text_field( $_POST['slot'] ) : '';
+        $name           = isset( $_POST['name'] ) ? sanitize_text_field( $_POST['name'] ) : '';
+        $email          = isset( $_POST['email'] ) ? sanitize_email( $_POST['email'] ) : '';
+        $phone          = isset( $_POST['phone'] ) ? sanitize_text_field( $_POST['phone'] ) : '';
+        $notes          = isset( $_POST['notes'] ) ? sanitize_textarea_field( $_POST['notes'] ) : '';
+        $payment_method = isset( $_POST['payment_method'] ) ? sanitize_text_field( $_POST['payment_method'] ) : 'bacs';
 
         $tiers = self::get_tiers();
         if ( ! isset( $tiers[ $tier_key ] ) ) {
@@ -235,10 +267,19 @@ class ANUKUL_Booking_Engine {
 
         $tier_info = $tiers[ $tier_key ];
 
+        // Identify Customer (logged-in or existing by email)
+        $user_id = get_current_user_id();
+        if ( ! $user_id && ! empty( $email ) ) {
+            $existing_user = get_user_by( 'email', $email );
+            if ( $existing_user ) {
+                $user_id = $existing_user->ID;
+            }
+        }
+
         // Create Booking Record in CPT
         $booking_id = wp_insert_post( array(
             'post_type'   => 'anukul_booking',
-            'post_title'  => sprintf( '%s - %s (%s)', $name, $tier_info['title'], $date ),
+            'post_title'  => sprintf( '%s - %s (%s @ %s)', $name, $tier_info['title'], $date, $slot ),
             'post_status' => 'publish',
         ) );
 
@@ -259,24 +300,61 @@ class ANUKUL_Booking_Engine {
         update_post_meta( $booking_id, '_anukul_client_name', $name );
         update_post_meta( $booking_id, '_anukul_client_email', $email );
         update_post_meta( $booking_id, '_anukul_client_phone', $phone );
+        update_post_meta( $booking_id, '_anukul_intake_notes', $notes );
+        update_post_meta( $booking_id, '_anukul_payment_method', $payment_method );
         update_post_meta( $booking_id, '_anukul_payment_status', 'pending_verification' );
+        if ( $user_id ) {
+            update_post_meta( $booking_id, '_anukul_customer_id', $user_id );
+        }
 
-        // If WooCommerce is active, create real order
-        $checkout_url = home_url( '/booking-confirmation/?ref=' . $reference );
+        $redirect_url = home_url( '/booking-confirmation/?ref=' . $reference );
 
+        // If WooCommerce is active, create real order and process payment
         if ( class_exists( 'WooCommerce' ) ) {
-            $order = wc_create_order();
-            $order->add_product( null, 1, array(
-                'name'     => $tier_info['title'] . ' (' . $date . ' @ ' . $slot . ')',
-                'subtotal' => $tier_info['price'],
-                'total'    => $tier_info['price'],
+            $order = wc_create_order( array(
+                'customer_id' => $user_id ? $user_id : 0,
             ) );
+
+            $product_id = self::get_tier_product_id( $tier_key );
+            $product    = $product_id ? wc_get_product( $product_id ) : null;
+
+            if ( $product ) {
+                $item_id = $order->add_product( $product, 1, array(
+                    'subtotal' => $tier_info['price'],
+                    'total'    => $tier_info['price'],
+                ) );
+            } else {
+                $item_id = $order->add_product( null, 1, array(
+                    'name'     => $tier_info['title'] . ' (' . $date . ' @ ' . $slot . ')',
+                    'subtotal' => $tier_info['price'],
+                    'total'    => $tier_info['price'],
+                ) );
+            }
+
+            if ( $item_id ) {
+                wc_add_order_item_meta( $item_id, 'Booking Reference', $reference );
+                wc_add_order_item_meta( $item_id, 'Appointment Date', $date );
+                wc_add_order_item_meta( $item_id, 'Appointment Slot', $slot );
+                wc_add_order_item_meta( $item_id, 'Specialist', 'Dr. Nishigandha Chaudhari & Master Panel' );
+            }
 
             $order->set_address( array(
                 'first_name' => $name,
                 'email'      => $email,
                 'phone'      => $phone,
             ), 'billing' );
+
+            if ( ! empty( $notes ) ) {
+                $order->set_customer_note( $notes );
+            }
+
+            // Bind chosen payment gateway
+            $gateways = WC()->payment_gateways->get_available_payment_gateways();
+            $chosen_gw = isset( $gateways[ $payment_method ] ) ? $gateways[ $payment_method ] : ( ! empty( $gateways ) ? reset( $gateways ) : null );
+
+            if ( $chosen_gw ) {
+                $order->set_payment_method( $chosen_gw );
+            }
 
             $order->calculate_totals();
             $order->update_status( 'pending', sprintf( __( 'ANUKUL Consultation Booking Reservation: %s', 'anukul-booking' ), $reference ) );
@@ -285,15 +363,36 @@ class ANUKUL_Booking_Engine {
             update_post_meta( $booking_id, '_anukul_order_id', $order_id );
             update_post_meta( $order_id, '_anukul_booking_id', $booking_id );
 
-            $checkout_url = $order->get_checkout_payment_url();
+            // Process payment through WooCommerce gateway
+            if ( $chosen_gw ) {
+                $result = $chosen_gw->process_payment( $order_id );
+                if ( isset( $result['result'] ) && 'success' === $result['result'] && ! empty( $result['redirect'] ) ) {
+                    $redirect_url = $result['redirect'];
+                }
+            }
+
+            if ( empty( $redirect_url ) ) {
+                $redirect_url = $order->get_checkout_payment_url();
+            }
         }
 
         wp_send_json_success( array(
             'booking_id'   => $booking_id,
+            'order_id'     => isset( $order_id ) ? $order_id : 0,
             'reference'    => $reference,
-            'checkout_url' => $checkout_url,
+            'redirect_url' => $redirect_url,
             'message'      => __( 'Slot provisionally secured. Proceeding to settlement.', 'anukul-booking' ),
         ) );
+    }
+
+    /**
+     * Server-side Hook: On Payment On-Hold (BACS / Bank Transfer)
+     */
+    public function on_payment_on_hold( $order_id ) {
+        $booking_id = get_post_meta( $order_id, '_anukul_booking_id', true );
+        if ( $booking_id ) {
+            update_post_meta( $booking_id, '_anukul_payment_status', 'pending_verification' );
+        }
     }
 
     /**

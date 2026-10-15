@@ -597,78 +597,66 @@ Recommended Protocol
 <div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-start">
 <!-- LEFT: Payment Rail Configuration (7 cols) -->
 <div class="lg:col-span-7 flex flex-col gap-space-lg">
-<!-- Gateway Accordion Options -->
+<!-- Gateway Accordion Options (Connected to WooCommerce Payment Gateways) -->
+<?php
+$wc_gateways = function_exists( 'WC' ) && WC()->payment_gateways ? WC()->payment_gateways->get_available_payment_gateways() : array();
+?>
 <div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm flex flex-col gap-space-md">
-<h3 class="font-headline-sm text-headline-sm text-primary">Select Preferred Payment Method</h3>
-<!-- Tab 1: Instant UPI (Selected Default) -->
-<div class="pay-option rounded-lg p-space-md bg-surface-container-low transition-all cursor-pointer">
-<label class="flex items-start justify-between cursor-pointer">
-<div class="flex items-start gap-space-sm">
-<input checked="" class="mt-1 text-primary focus:ring-primary" name="pay-method" onchange="togglePayTab('upi')" type="radio" value="upi"/>
-<div class="flex flex-col">
-<span class="font-body-md text-body-md font-semibold text-primary">Instant UPI (Recommended)</span>
-<span class="font-body-sm text-body-sm text-on-surface-variant">Zero transaction surcharges · Instant receipt dispatch</span>
-</div>
-</div>
-<div class="flex items-center gap-1.5 opacity-80">
-<span class="px-1.5 py-0.5 rounded bg-surface-container font-label-sm text-label-sm font-bold text-on-surface">GPay</span>
-<span class="px-1.5 py-0.5 rounded bg-surface-container font-label-sm text-label-sm font-bold text-on-surface">PhonePe</span>
-<span class="px-1.5 py-0.5 rounded bg-surface-container font-label-sm text-label-sm font-bold text-on-surface">Paytm</span>
-</div>
-</label>
-<!-- Nested UPI Input -->
-<div class="mt-space-md pt-space-sm flex flex-col gap-space-xs" id="tab-content-upi">
-<label class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface font-semibold" for="upi-vpa">Enter your UPI ID / VPA</label>
-<div class="flex gap-2">
-<input class="flex-1 bg-surface-container px-4 py-2.5 rounded-lg text-on-surface font-body-md text-body-md focus:outline-none focus:ring-1 focus:ring-primary shadow-inner" id="upi-vpa" placeholder="username@okhdfcbank" type="text" value="ananya@upi"/>
-<button class="px-4 py-2.5 rounded-lg bg-surface-container-high text-primary font-label-sm text-label-sm uppercase tracking-wider font-semibold hover:bg-surface-container-highest transition-colors" type="button">Verify</button>
-</div>
-<span class="font-body-sm text-body-sm text-outline text-[11px]">A payment collect request will be sent to your UPI app.</span>
-</div>
-</div>
-<!-- Tab 2: Netbanking -->
-<div class="pay-option rounded-lg p-space-md bg-surface-container-lowest hover:bg-surface-container-low transition-all cursor-pointer">
-<label class="flex items-start justify-between cursor-pointer">
-<div class="flex items-start gap-space-sm">
-<input class="mt-1 text-primary focus:ring-primary" name="pay-method" onchange="togglePayTab('netbanking')" type="radio" value="netbanking"/>
-<div class="flex flex-col">
-<span class="font-body-md text-body-md font-semibold text-primary">Indian Netbanking</span>
-<span class="font-body-sm text-body-sm text-on-surface-variant">All primary retail &amp; corporate scheduled banks</span>
-</div>
-</div>
-<span class="material-symbols-outlined text-outline text-[20px]">account_balance</span>
-</label>
-<div class="hidden mt-space-md pt-space-sm flex flex-col gap-space-xs" id="tab-content-netbanking">
-<label class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface font-semibold">Choose Financial Institution</label>
-<select class="w-full bg-surface-container-low px-4 py-2.5 rounded-lg text-on-surface font-body-md text-body-md focus:outline-none focus:ring-1 focus:ring-primary shadow-inner">
-<option>HDFC Bank</option>
-<option>ICICI Bank</option>
-<option>State Bank of India (SBI)</option>
-<option>Axis Bank</option>
-<option>Kotak Mahindra Bank</option>
-</select>
-</div>
-</div>
-<!-- Tab 3: Cards -->
-<div class="pay-option rounded-lg p-space-md bg-surface-container-lowest hover:bg-surface-container-low transition-all cursor-pointer">
-<label class="flex items-start justify-between cursor-pointer">
-<div class="flex items-start gap-space-sm">
-<input class="mt-1 text-primary focus:ring-primary" name="pay-method" onchange="togglePayTab('card')" type="radio" value="card"/>
-<div class="flex flex-col">
-<span class="font-body-md text-body-md font-semibold text-primary">Credit / Debit Cards</span>
-<span class="font-body-sm text-body-sm text-on-surface-variant">Visa, Mastercard, RuPay with 3D Secure 2.0</span>
-</div>
-</div>
-<span class="material-symbols-outlined text-outline text-[20px]">credit_card</span>
-</label>
-<div class="hidden mt-space-md pt-space-sm flex flex-col gap-space-sm" id="tab-content-card">
-<input class="w-full bg-surface-container-low px-4 py-2.5 rounded-lg text-on-surface font-body-md text-body-md focus:outline-none focus:ring-1 focus:ring-primary shadow-inner" placeholder="Card Number (•••• •••• •••• ••••)" type="text"/>
-<div class="grid grid-cols-2 gap-2">
-<input class="bg-surface-container-low px-4 py-2.5 rounded-lg text-on-surface font-body-md text-body-md focus:outline-none focus:ring-1 focus:ring-primary shadow-inner" placeholder="MM / YY" type="text"/>
-<input class="bg-surface-container-low px-4 py-2.5 rounded-lg text-on-surface font-body-md text-body-md focus:outline-none focus:ring-1 focus:ring-primary shadow-inner" maxlength="4" placeholder="CVV" type="password"/>
-</div>
-</div>
-</div>
+  <div class="flex items-center justify-between pb-2 border-b border-[#E8D8BC]/50">
+    <div>
+      <h3 class="font-headline-sm text-headline-sm text-primary">Select Preferred Payment Gateway</h3>
+      <p class="font-body-sm text-xs text-on-surface-variant">Processed securely through WooCommerce Payment Rails</p>
+    </div>
+    <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded bg-[#1F4D3A]/10 text-primary font-label-sm text-xs font-semibold">
+      <span class="material-symbols-outlined text-[14px]">lock</span> Verified Gateway
+    </span>
+  </div>
+
+  <?php if ( ! empty( $wc_gateways ) ) : ?>
+    <div class="flex flex-col gap-3" id="wc-payment-options">
+      <?php 
+      $first = true;
+      foreach ( $wc_gateways as $gw_id => $gateway ) : 
+        $is_checked = $first ? 'checked' : '';
+        $first = false;
+        $icon_name = 'account_balance';
+        if ( in_array( $gw_id, array( 'cod' ) ) ) {
+          $icon_name = 'medical_services';
+        } elseif ( in_array( $gw_id, array( 'bacs' ) ) ) {
+          $icon_name = 'account_balance';
+        } elseif ( in_array( $gw_id, array( 'razorpay', 'stripe', 'card' ) ) ) {
+          $icon_name = 'credit_card';
+        }
+      ?>
+        <div class="pay-option rounded-xl p-space-md border border-[#E8D8BC]/60 hover:border-primary/50 transition-all cursor-pointer bg-surface-container-low" onclick="selectPayGateway('<?php echo esc_attr( $gw_id ); ?>')">
+          <label class="flex items-start justify-between cursor-pointer w-full">
+            <div class="flex items-start gap-space-sm">
+              <input <?php echo $is_checked; ?> class="mt-1 text-primary focus:ring-primary h-4 w-4" name="pay-method" type="radio" value="<?php echo esc_attr( $gw_id ); ?>" id="pay-gw-<?php echo esc_attr( $gw_id ); ?>"/>
+              <div class="flex flex-col">
+                <span class="font-body-md text-body-md font-semibold text-primary flex items-center gap-2">
+                  <?php echo esc_html( $gateway->get_title() ); ?>
+                  <?php if ( $gw_id === 'bacs' ) : ?>
+                    <span class="px-2 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm text-[10px] uppercase font-bold">NEFT / IMPS / UPI</span>
+                  <?php endif; ?>
+                </span>
+                <?php if ( $gateway->get_description() ) : ?>
+                  <span class="font-body-sm text-xs text-on-surface-variant mt-1 leading-relaxed">
+                    <?php echo wp_kses_post( $gateway->get_description() ); ?>
+                  </span>
+                <?php endif; ?>
+              </div>
+            </div>
+            <span class="material-symbols-outlined text-secondary text-[22px] shrink-0"><?php echo esc_html( $icon_name ); ?></span>
+          </label>
+        </div>
+      <?php endforeach; ?>
+    </div>
+  <?php else : ?>
+    <div class="p-4 rounded-lg bg-surface-container text-on-surface-variant font-body-sm text-sm">
+      Direct Sanctuary Settlement will be confirmed via WooCommerce.
+      <input type="hidden" name="pay-method" value="bacs" />
+    </div>
+  <?php endif; ?>
 </div>
 <!-- Trust & Policy Badges -->
 <div class="bg-surface-container-low p-space-lg rounded-xl flex flex-col gap-space-sm shadow-sm">
@@ -1023,22 +1011,35 @@ Recommended Protocol
     if (banner) banner.classList.add('hidden');
   }
 
+  // Select Payment Gateway Helper
+  function selectPayGateway(gwId) {
+    const radio = document.getElementById(`pay-gw-${gwId}`);
+    if (radio) {
+      radio.checked = true;
+    }
+  }
+
   // Execute Payment and Register Real Booking via AJAX
   function executePayment() {
     const payBtn = document.getElementById('pay-button');
     const label = document.getElementById('pay-btn-label');
     if (payBtn) {
       payBtn.disabled = true;
-      if (label) label.textContent = "VERIFYING AUTHORIZATION...";
+      if (label) label.textContent = "VERIFYING AUTHORIZATION & CONNECTING WOOCOMMERCE...";
     }
 
     const inputName = document.getElementById('full-name');
     const inputEmail = document.getElementById('email');
     const inputPhone = document.getElementById('phone');
+    const inputNotes = document.getElementById('intake-notes');
 
     const clientName = (inputName && inputName.value) ? inputName.value : state.name;
     const clientEmail = (inputEmail && inputEmail.value) ? inputEmail.value : state.email;
     const clientPhone = (inputPhone && inputPhone.value) ? inputPhone.value : state.phone;
+    const clientNotes = inputNotes ? inputNotes.value : '';
+
+    const selectedPayRadio = document.querySelector('input[name="pay-method"]:checked');
+    const paymentMethod = selectedPayRadio ? selectedPayRadio.value : 'bacs';
 
     const formData = new FormData();
     formData.append('action', 'anukul_book_slot');
@@ -1049,6 +1050,8 @@ Recommended Protocol
     formData.append('name', clientName);
     formData.append('email', clientEmail);
     formData.append('phone', clientPhone);
+    formData.append('notes', clientNotes);
+    formData.append('payment_method', paymentMethod);
 
     fetch('<?php echo esc_url( admin_url( "admin-ajax.php" ) ); ?>', {
       method: 'POST',
@@ -1056,7 +1059,15 @@ Recommended Protocol
     })
     .then(res => res.json())
     .then(data => {
-      if (data.success) {
+      if (data.success && data.data) {
+        if (label) label.textContent = "MUHURTA SECURED · REDIRECTING TO SETTLEMENT...";
+        
+        // If a redirect URL is provided by WooCommerce, seamlessly redirect there
+        if (data.data.redirect_url) {
+          window.location.href = data.data.redirect_url;
+          return;
+        }
+
         document.querySelectorAll('.step-view').forEach(view => {
           view.classList.add('hidden');
           view.classList.remove('flex');
