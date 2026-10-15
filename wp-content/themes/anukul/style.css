@@ -136,3 +136,34 @@ button, input, select, textarea {
   color: #BA1A1A !important;
   border-radius: 8px !important;
 }
+
+/* ==========================================================================
+   WordPress Admin Bar Compatibility
+   ========================================================================== */
+body.admin-bar #site-header,
+body.admin-bar header.fixed,
+body.admin-bar header[class*="fixed"] {
+  top: 32px !important;
+}
+
+body.admin-bar #mobile-menu > div {
+  max-height: calc(100vh - 80px - 32px) !important;
+}
+
+@media screen and (max-width: 782px) {
+  body.admin-bar #site-header,
+  body.admin-bar header.fixed,
+  body.admin-bar header[class*="fixed"] {
+    top: 46px !important;
+  }
+
+  body.admin-bar #mobile-menu > div {
+    max-height: calc(100vh - 80px - 46px) !important;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  #wpadminbar {
+    position: fixed !important;
+  }
+}

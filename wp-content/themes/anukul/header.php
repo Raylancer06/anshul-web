@@ -153,12 +153,18 @@ if ( ! defined( 'ABSPATH' ) ) {
     </script>
     
     <?php wp_head(); ?>
+    <style>
+      body.admin-bar #site-header { top: 32px !important; }
+      @media screen and (max-width: 782px) {
+        body.admin-bar #site-header { top: 46px !important; }
+      }
+    </style>
 </head>
 <body <?php body_class( 'bg-surface font-body-md text-on-surface antialiased selection:bg-primary-container selection:text-on-primary' ); ?>>
 <?php wp_body_open(); ?>
 
 <!-- Header / Navigation Bar -->
-<header class="fixed top-0 w-full z-50 bg-[#F7F1E3]/95 backdrop-blur-md border-b border-[#E8D8BC] shadow-[0_1px_8px_rgba(0,0,0,0.03)]">
+<header id="site-header" class="fixed top-0 w-full z-50 bg-[#F7F1E3]/95 backdrop-blur-md border-b border-[#E8D8BC] shadow-[0_1px_8px_rgba(0,0,0,0.03)] transition-[top] duration-200">
     <div class="h-20 max-w-[1440px] mx-auto px-6 lg:px-margin flex items-center justify-between gap-4">
         
         <!-- Logo -->
