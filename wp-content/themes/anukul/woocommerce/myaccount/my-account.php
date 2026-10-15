@@ -257,7 +257,7 @@ $shipping_address = function_exists( 'wc_get_account_formatted_address' ) ? wc_g
               <span class="font-label-sm text-[11px] uppercase tracking-wider text-secondary font-bold">Prakriti Status</span>
               <span class="material-symbols-outlined text-primary text-[20px]">spa</span>
             </div>
-            <p class="font-headline-sm text-2xl text-primary font-serif">Pitta-Vata</p>
+            <p class="font-headline-sm text-2xl text-primary font-serif whitespace-nowrap">Pitta-Vata</p>
             <p class="font-body-sm text-xs text-on-surface-variant mt-1">Holistic Harmony Regimen</p>
           </div>
 
@@ -266,7 +266,7 @@ $shipping_address = function_exists( 'wc_get_account_formatted_address' ) ? wc_g
               <span class="font-label-sm text-[11px] uppercase tracking-wider text-secondary font-bold">Dispensary Orders</span>
               <span class="material-symbols-outlined text-primary text-[20px]">inventory_2</span>
             </div>
-            <p class="font-headline-sm text-2xl text-primary font-serif"><?php echo esc_html( $order_count ); ?> Total <span class="text-xs font-sans text-secondary font-semibold">(<?php echo esc_html( $active_orders ); ?> Active)</span></p>
+            <p class="font-headline-sm text-2xl text-primary font-serif whitespace-nowrap"><?php echo esc_html( $order_count ); ?> Total <span class="text-xs font-sans text-secondary font-semibold">(<?php echo esc_html( $active_orders ); ?> Active)</span></p>
             <p class="font-body-sm text-xs text-secondary mt-1 flex items-center gap-1 font-medium">View dispatches <span class="material-symbols-outlined text-[14px]">arrow_forward</span></p>
           </div>
 
@@ -275,7 +275,7 @@ $shipping_address = function_exists( 'wc_get_account_formatted_address' ) ? wc_g
               <span class="font-label-sm text-[11px] uppercase tracking-wider text-secondary font-bold">Spatial Equilibrium</span>
               <span class="material-symbols-outlined text-primary text-[20px]">explore</span>
             </div>
-            <p class="font-headline-sm text-2xl text-primary font-serif">Ishanya 98.4%</p>
+            <p class="font-headline-sm text-2xl text-primary font-serif whitespace-nowrap">Ishanya 98.4%</p>
             <p class="font-body-sm text-xs text-on-surface-variant mt-1">Brahmasthan Consecrated</p>
           </div>
 
@@ -284,7 +284,7 @@ $shipping_address = function_exists( 'wc_get_account_formatted_address' ) ? wc_g
               <span class="font-label-sm text-[11px] uppercase tracking-wider text-secondary font-bold">Vedic Blueprints</span>
               <span class="material-symbols-outlined text-primary text-[20px]">file_download</span>
             </div>
-            <p class="font-headline-sm text-2xl text-primary font-serif">4 Documents</p>
+            <p class="font-headline-sm text-2xl text-primary font-serif whitespace-nowrap">4 Documents</p>
             <p class="font-body-sm text-xs text-secondary mt-1 flex items-center gap-1 font-medium">Download PDFs <span class="material-symbols-outlined text-[14px]">arrow_forward</span></p>
           </div>
         </div>
