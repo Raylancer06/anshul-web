@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 /**
  * Template Name: Vastu Shastra & Space Harmonisation
  *
@@ -69,7 +69,7 @@ get_header();
 <span class="font-headline-sm text-headline-sm text-primary">Spatial Calibration</span>
 </div>
 <div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary">
-<span class="material-symbols-outlined text-[20px]">explore</span>
+<span class="material-symbols-outlined notranslate text-[20px]" translate="no">explore</span>
 </div>
 </div>
 </div>
@@ -126,7 +126,7 @@ get_header();
 <img class="w-full h-full object-cover" data-alt="Interior architectural photography of a tranquil minimalist living room with warm limewashed walls, natural teak wood furniture, diffused morning sunlight through slatted timber screens, subtle woven brass decor, and potted botanical jasmine, evoking harmonious Vedic spatial symmetry." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD00nXsDZ2r-oFlI6vMjO1eYtCqPwsthARR5-lLMOVzlGNWCHXZghrovQxSQXSqQy6UMdu2DPfgwWyu4P8b9nya8JH0vdZqeVXXdZu30xHFM7xNdfXgGqzMaI_Yb9VIRMcpGiqTpc3LQsvxGBvI-I0aU52v1MCtBksNUfE3kbnox1vF5Ng8m3izT-6oseKncfEGBBc2gLde3r-m7c2eNUu7bVqtuK3CnEtE5POGmiaDhp-l28u7Xz0RDQ"/>
 </div>
 <div class="p-8 rounded-xl bg-surface border-l-4 border-tertiary-container shadow-sm space-y-3">
-<span class="material-symbols-outlined text-secondary text-2xl">format_quote</span>
+<span class="material-symbols-outlined notranslate text-secondary text-2xl" translate="no">format_quote</span>
 <p class="font-editorial-quote text-editorial-quote text-primary italic leading-snug">
               “When space, light, and movement are considered together, the environment nurtures the mind and everyday life.”
             </p>
@@ -165,7 +165,7 @@ get_header();
 <span class="px-3 py-1 rounded bg-secondary-fixed/50 text-on-secondary-fixed font-label-sm text-label-sm uppercase tracking-wider">
                 Living Spaces
               </span>
-<span class="material-symbols-outlined text-primary text-2xl">cottage</span>
+<span class="material-symbols-outlined notranslate text-primary text-2xl" translate="no">cottage</span>
 </div>
 <h3 class="font-headline-md text-headline-md text-primary pt-2">Residential Vastu</h3>
 <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
@@ -173,15 +173,15 @@ get_header();
             </p>
 <div class="pt-4 border-t border-[#B38A3E]/15 space-y-2">
 <div class="flex items-center gap-2 font-body-sm text-body-sm text-on-surface">
-<span class="material-symbols-outlined text-secondary text-sm">check_circle</span>
+<span class="material-symbols-outlined notranslate text-secondary text-sm" translate="no">check_circle</span>
 <span>Living room orientation &amp; entryways</span>
 </div>
 <div class="flex items-center gap-2 font-body-sm text-body-sm text-on-surface">
-<span class="material-symbols-outlined text-secondary text-sm">check_circle</span>
+<span class="material-symbols-outlined notranslate text-secondary text-sm" translate="no">check_circle</span>
 <span>Kitchen (Agni) &amp; primary bedroom zoning</span>
 </div>
 <div class="flex items-center gap-2 font-body-sm text-body-sm text-on-surface">
-<span class="material-symbols-outlined text-secondary text-sm">check_circle</span>
+<span class="material-symbols-outlined notranslate text-secondary text-sm" translate="no">check_circle</span>
 <span>Calm family rest zones &amp; sanctuary alignment</span>
 </div>
 </div>
@@ -189,7 +189,7 @@ get_header();
 <div class="pt-8">
 <a class="inline-flex items-center gap-2 font-label-md text-label-md uppercase tracking-wider text-primary hover:text-secondary transition-colors group" href="#consultation-inquiry">
 <span>Explore Residential Vastu</span>
-<span class="material-symbols-outlined text-base transition-transform group-hover:translate-x-1">arrow_forward</span>
+<span class="material-symbols-outlined notranslate text-base transition-transform group-hover:translate-x-1" translate="no">arrow_forward</span>
 </a>
 </div>
 </div>
@@ -200,7 +200,7 @@ get_header();
 <span class="px-3 py-1 rounded bg-primary-fixed/60 text-on-primary-fixed font-label-sm text-label-sm uppercase tracking-wider">
                 Work &amp; Commerce
               </span>
-<span class="material-symbols-outlined text-primary text-2xl">corporate_fare</span>
+<span class="material-symbols-outlined notranslate text-primary text-2xl" translate="no">corporate_fare</span>
 </div>
 <h3 class="font-headline-md text-headline-md text-primary pt-2">Commercial Vastu</h3>
 <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
@@ -208,15 +208,15 @@ get_header();
             </p>
 <div class="pt-4 border-t border-[#B38A3E]/15 space-y-2">
 <div class="flex items-center gap-2 font-body-sm text-body-sm text-on-surface">
-<span class="material-symbols-outlined text-secondary text-sm">check_circle</span>
+<span class="material-symbols-outlined notranslate text-secondary text-sm" translate="no">check_circle</span>
 <span>Executive seating &amp; leadership direction</span>
 </div>
 <div class="flex items-center gap-2 font-body-sm text-body-sm text-on-surface">
-<span class="material-symbols-outlined text-secondary text-sm">check_circle</span>
+<span class="material-symbols-outlined notranslate text-secondary text-sm" translate="no">check_circle</span>
 <span>Team collaboration flow &amp; circulation paths</span>
 </div>
 <div class="flex items-center gap-2 font-body-sm text-body-sm text-on-surface">
-<span class="material-symbols-outlined text-secondary text-sm">check_circle</span>
+<span class="material-symbols-outlined notranslate text-secondary text-sm" translate="no">check_circle</span>
 <span>Financial counters, cash office, &amp; client reception</span>
 </div>
 </div>
@@ -224,7 +224,7 @@ get_header();
 <div class="pt-8">
 <a class="inline-flex items-center gap-2 font-label-md text-label-md uppercase tracking-wider text-primary hover:text-secondary transition-colors group" href="#consultation-inquiry">
 <span>Explore Commercial Vastu</span>
-<span class="material-symbols-outlined text-base transition-transform group-hover:translate-x-1">arrow_forward</span>
+<span class="material-symbols-outlined notranslate text-base transition-transform group-hover:translate-x-1" translate="no">arrow_forward</span>
 </a>
 </div>
 </div>
@@ -235,7 +235,7 @@ get_header();
 <span class="px-3 py-1 rounded bg-tertiary-fixed/70 text-on-tertiary-fixed font-label-sm text-label-sm uppercase tracking-wider">
                 Health &amp; Rest
               </span>
-<span class="material-symbols-outlined text-primary text-2xl">spa</span>
+<span class="material-symbols-outlined notranslate text-primary text-2xl" translate="no">spa</span>
 </div>
 <h3 class="font-headline-md text-headline-md text-primary pt-2">Medico-Vastu Perspective</h3>
 <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
@@ -243,15 +243,15 @@ get_header();
             </p>
 <div class="pt-4 border-t border-[#B38A3E]/15 space-y-2">
 <div class="flex items-center gap-2 font-body-sm text-body-sm text-on-surface">
-<span class="material-symbols-outlined text-secondary text-sm">check_circle</span>
+<span class="material-symbols-outlined notranslate text-secondary text-sm" translate="no">check_circle</span>
 <span>Subtle environmental stressors &amp; geopathic zones</span>
 </div>
 <div class="flex items-center gap-2 font-body-sm text-body-sm text-on-surface">
-<span class="material-symbols-outlined text-secondary text-sm">check_circle</span>
+<span class="material-symbols-outlined notranslate text-secondary text-sm" translate="no">check_circle</span>
 <span>Natural cross-ventilation &amp; circadian daylight</span>
 </div>
 <div class="flex items-center gap-2 font-body-sm text-body-sm text-on-surface">
-<span class="material-symbols-outlined text-secondary text-sm">check_circle</span>
+<span class="material-symbols-outlined notranslate text-secondary text-sm" translate="no">check_circle</span>
 <span>Sleep hygiene head orientation (South/East)</span>
 </div>
 </div>
@@ -259,7 +259,7 @@ get_header();
 <div class="pt-8">
 <a class="inline-flex items-center gap-2 font-label-md text-label-md uppercase tracking-wider text-primary hover:text-secondary transition-colors group" href="#consultation-inquiry">
 <span>Discover Medico-Vastu</span>
-<span class="material-symbols-outlined text-base transition-transform group-hover:translate-x-1">arrow_forward</span>
+<span class="material-symbols-outlined notranslate text-base transition-transform group-hover:translate-x-1" translate="no">arrow_forward</span>
 </a>
 </div>
 </div>
@@ -661,7 +661,7 @@ get_header();
 <section class="w-full bg-surface-container-highest py-6 border-t border-[#B38A3E]/20">
 <div class="max-w-[1440px] mx-auto px-6 lg:px-margin">
 <div class="flex items-center justify-center gap-3 text-center">
-<span class="material-symbols-outlined text-secondary text-base">info</span>
+<span class="material-symbols-outlined notranslate text-secondary text-base" translate="no">info</span>
 <p class="font-body-sm text-body-sm text-on-surface-variant max-w-4xl">
 <strong class="font-semibold text-primary">Responsible Practice Note:</strong> Vastu guidance is based on classical Vedic traditions and must be evaluated in contextual perspective. Recommendations do not guarantee specific outcomes and should not replace accredited architectural, civil engineering, financial, or medical advice.
         </p>

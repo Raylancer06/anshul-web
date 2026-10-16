@@ -61,7 +61,7 @@ get_header();
 <div class="max-w-3xl space-y-4 relative z-10">
 <div class="flex flex-wrap items-center gap-3">
 <div class="inline-flex items-center gap-2 px-3 py-1 rounded bg-primary-fixed text-on-primary-fixed font-label-sm text-label-sm uppercase tracking-widest">
-<span class="material-symbols-outlined text-[14px]">check_circle</span>
+<span class="material-symbols-outlined notranslate text-[14px]" translate="no">check_circle</span>
 <span>Consultation Appointment Confirmed • Server Verified</span>
 </div>
 <span class="font-label-sm text-label-sm tracking-wider uppercase text-secondary font-mono">Ishanya Axis • Sanctum Slot 04-A</span>
@@ -80,7 +80,7 @@ get_header();
 <span class="font-mono text-secondary">Reference #ANK-CNS-94812</span>
 </div>
 <div class="text-body-sm font-body-sm text-outline flex items-center gap-1.5">
-<span class="material-symbols-outlined text-[16px]">verified_user</span>
+<span class="material-symbols-outlined notranslate text-[16px]" translate="no">verified_user</span>
 <span>Encrypted Vedic Clinical Record</span>
 </div>
 </div>
@@ -95,7 +95,7 @@ get_header();
 <div class="flex items-center justify-between pb-4 border-b border-surface-variant">
 <div class="flex items-center gap-3">
 <div class="w-10 h-10 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center">
-<span class="material-symbols-outlined text-[22px]">calendar_today</span>
+<span class="material-symbols-outlined notranslate text-[22px]" translate="no">calendar_today</span>
 </div>
 <div>
 <span class="font-label-sm text-label-sm uppercase tracking-widest text-secondary block">Session Profile</span>
@@ -131,7 +131,7 @@ get_header();
 <div class="space-y-4">
 <div class="flex flex-col sm:flex-row sm:items-start justify-between gap-3 p-4 bg-surface-container rounded-lg">
 <div class="flex items-start gap-3">
-<span class="material-symbols-outlined text-primary text-[22px] mt-0.5">schedule</span>
+<span class="material-symbols-outlined notranslate text-primary text-[22px] mt-0.5" translate="no">schedule</span>
 <div>
 <span class="font-label-sm text-label-sm uppercase tracking-wider text-outline block">Confirmed Timing</span>
 <p class="font-body-md text-body-md font-medium text-on-surface">
@@ -148,7 +148,7 @@ get_header();
 </div>
 </div>
 <div class="flex items-start gap-3 p-4 bg-surface-container rounded-lg">
-<span class="material-symbols-outlined text-primary text-[22px] mt-0.5">videocam</span>
+<span class="material-symbols-outlined notranslate text-primary text-[22px] mt-0.5" translate="no">videocam</span>
 <div class="space-y-1">
 <span class="font-label-sm text-label-sm uppercase tracking-wider text-outline block">Format &amp; Mode</span>
 <p class="font-body-md text-body-md font-medium text-on-surface">
@@ -163,11 +163,11 @@ get_header();
 <!-- Calendar Synchronisation Actions -->
 <div class="pt-2 flex flex-wrap items-center gap-3">
 <a class="inline-flex items-center gap-2 bg-primary text-on-primary hover:bg-tertiary transition-colors px-5 py-3 rounded font-label-md text-label-md tracking-wider uppercase" href="#add-to-calendar" onclick="alert('Adding appointment to Google Calendar...')">
-<span class="material-symbols-outlined text-[18px]">event_available</span>
+<span class="material-symbols-outlined notranslate text-[18px]" translate="no">event_available</span>
 <span>Add to Google Calendar</span>
 </a>
 <a class="inline-flex items-center gap-2 bg-surface-container text-primary hover:bg-surface-variant transition-colors px-5 py-3 rounded font-label-md text-label-md tracking-wider uppercase" href="#download-ical" onclick="alert('Downloading iCal (.ics) invite...')">
-<span class="material-symbols-outlined text-[18px]">download</span>
+<span class="material-symbols-outlined notranslate text-[18px]" translate="no">download</span>
 <span>Download iCal / Outlook</span>
 </a>
 </div>
@@ -176,7 +176,7 @@ get_header();
 <div class="bg-surface-container-lowest rounded-xl p-8 shadow-sm space-y-6">
 <div class="flex items-center gap-3 pb-3 border-b border-surface-variant">
 <div class="w-10 h-10 rounded-full bg-secondary-fixed text-on-secondary-fixed flex items-center justify-center">
-<span class="material-symbols-outlined text-[22px]">self_improvement</span>
+<span class="material-symbols-outlined notranslate text-[22px]" translate="no">self_improvement</span>
 </div>
 <div>
 <span class="font-label-sm text-label-sm uppercase tracking-widest text-secondary block">Pre-Session Protocols</span>
@@ -225,7 +225,7 @@ get_header();
 <!-- Card 3: Rescheduling & Cancellation Policy -->
 <div class="bg-surface-container-low rounded-xl p-6 shadow-sm space-y-4">
 <div class="flex items-start gap-3">
-<span class="material-symbols-outlined text-secondary text-[24px]">policy</span>
+<span class="material-symbols-outlined notranslate text-secondary text-[24px]" translate="no">policy</span>
 <div class="space-y-2">
 <h3 class="font-headline-sm text-headline-sm text-primary">Rescheduling &amp; Cancellation Policy</h3>
 <p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
@@ -234,7 +234,7 @@ get_header();
 <div class="pt-2 flex items-center gap-4">
 <a class="inline-flex items-center gap-1 font-label-md text-label-md uppercase tracking-wider text-primary hover:text-secondary font-semibold transition-colors" href="#manage-booking" onclick="alert('Redirecting to Secure Appointment Management Portal...')">
 <span>Manage Booking / Request Reschedule</span>
-<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+<span class="material-symbols-outlined notranslate text-[16px]" translate="no">arrow_forward</span>
 </a>
 </div>
 </div>
@@ -295,11 +295,11 @@ get_header();
 <!-- Invoice Actions -->
 <div class="space-y-3 pt-2">
 <button class="w-full flex items-center justify-center gap-2 bg-primary text-on-primary hover:bg-tertiary transition-colors py-3 px-4 rounded font-label-md text-label-md uppercase tracking-wider" onclick="window.print()" type="button">
-<span class="material-symbols-outlined text-[18px]">download</span>
+<span class="material-symbols-outlined notranslate text-[18px]" translate="no">download</span>
 <span>Download Tax Invoice (PDF)</span>
 </button>
 <button class="w-full flex items-center justify-center gap-2 bg-surface-container text-primary hover:bg-surface-variant transition-colors py-3 px-4 rounded font-label-md text-label-md uppercase tracking-wider" onclick="window.print()" type="button">
-<span class="material-symbols-outlined text-[18px]">print</span>
+<span class="material-symbols-outlined notranslate text-[18px]" translate="no">print</span>
 <span>Print Confirmation</span>
 </button>
 </div>
@@ -308,7 +308,7 @@ get_header();
 <div class="bg-surface-container-lowest rounded-xl p-8 shadow-sm space-y-5">
 <div class="flex items-center gap-3 pb-3 border-b border-surface-variant">
 <div class="w-10 h-10 rounded-full bg-secondary-fixed text-on-secondary-fixed flex items-center justify-center">
-<span class="material-symbols-outlined text-[20px]">support_agent</span>
+<span class="material-symbols-outlined notranslate text-[20px]" translate="no">support_agent</span>
 </div>
 <div>
 <span class="font-label-sm text-label-sm uppercase tracking-widest text-secondary block">Sanctuary Concierge</span>
@@ -318,18 +318,18 @@ get_header();
 <p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
               If your intake files fail to arrive or you require cardinal architectural clarification ahead of your slot, our administrative Vaidya desk is at your service.
             </p>
-<div class="space-y-2 font-body-sm text-body-sm">
+<div class="space-y-2 font-body-sm text-body-sm notranslate" translate="no">
 <div class="flex items-center gap-2 text-on-surface">
-<span class="material-symbols-outlined text-[18px] text-primary">mail</span>
-<span class="font-mono text-primary font-medium">sanctuary@anukul-harmony.org</span>
+<span class="material-symbols-outlined notranslate text-[18px] text-primary" translate="no">mail</span>
+<span class="font-mono text-primary font-medium">sanctuary@anukul-harmony.com</span>
 </div>
 <div class="flex items-center gap-2 text-on-surface">
-<span class="material-symbols-outlined text-[18px] text-primary">call</span>
-<span class="font-mono text-primary font-medium">+91 98112 00482</span>
+<span class="material-symbols-outlined notranslate text-[18px] text-primary" translate="no">call</span>
+<span class="font-mono text-primary font-medium"><a href="https://wa.me/917624012501" target="_blank" class="hover:underline">+91 7624012501</a> · <a href="tel:+916356019951" class="hover:underline">+91 63560 19951</a></span>
 </div>
 <div class="flex items-center gap-2 text-on-surface-variant pt-1">
-<span class="material-symbols-outlined text-[18px] text-outline">schedule</span>
-<span>Clinical Desk: Mon – Sat 09:00 – 17:30 IST</span>
+<span class="material-symbols-outlined notranslate text-[18px] text-outline" translate="no">schedule</span>
+<span>Clinical Desk: Mon – Sat 9:30 AM TO 6:30 PM</span>
 </div>
 </div>
 </div>
@@ -344,7 +344,7 @@ get_header();
             </p>
 <div class="pt-2 flex items-center justify-between text-secondary-fixed font-label-sm text-label-sm uppercase tracking-wider">
 <span>Sanctuary Dispatch #12</span>
-<span class="material-symbols-outlined text-[18px]">explore</span>
+<span class="material-symbols-outlined notranslate text-[18px]" translate="no">explore</span>
 </div>
 </div>
 </div>
@@ -357,7 +357,7 @@ get_header();
 <div class="bg-surface-container-low rounded-xl p-8 lg:p-12 shadow-sm max-w-4xl mx-auto w-full">
 <div class="flex items-start gap-4 pb-6 border-b border-surface-variant">
 <div class="w-12 h-12 rounded-full bg-secondary-fixed text-on-secondary-fixed-variant flex items-center justify-center shrink-0">
-<span class="material-symbols-outlined text-[28px] animate-spin">sync</span>
+<span class="material-symbols-outlined notranslate text-[28px] animate-spin" translate="no">sync</span>
 </div>
 <div class="space-y-2">
 <span class="font-label-sm text-label-sm uppercase tracking-widest text-secondary block">Gateway Reconciliation • Reserved Hold</span>
@@ -386,11 +386,11 @@ get_header();
 </div>
 <div class="pt-4 flex flex-wrap gap-4">
 <button class="inline-flex items-center gap-2 bg-primary text-on-primary hover:bg-tertiary transition-colors px-6 py-3 rounded font-label-md text-label-md uppercase tracking-wider" onclick="simulateVerificationRefresh()" type="button">
-<span class="material-symbols-outlined text-[18px]">refresh</span>
+<span class="material-symbols-outlined notranslate text-[18px]" translate="no">refresh</span>
 <span>Refresh Verification Status</span>
 </button>
 <a class="inline-flex items-center gap-2 bg-surface-container text-primary hover:bg-surface-variant transition-colors px-6 py-3 rounded font-label-md text-label-md uppercase tracking-wider" href="mailto:sanctuary@anukul-harmony.org">
-<span class="material-symbols-outlined text-[18px]">support</span>
+<span class="material-symbols-outlined notranslate text-[18px]" translate="no">support</span>
 <span>Contact Clinic Accounts</span>
 </a>
 </div>
@@ -403,7 +403,7 @@ get_header();
 <div class="bg-surface-container-low rounded-xl p-8 lg:p-12 shadow-sm max-w-4xl mx-auto w-full">
 <div class="flex items-start gap-4 pb-6 border-b border-surface-variant">
 <div class="w-12 h-12 rounded-full bg-error-container text-error flex items-center justify-center shrink-0">
-<span class="material-symbols-outlined text-[28px]">error</span>
+<span class="material-symbols-outlined notranslate text-[28px]" translate="no">error</span>
 </div>
 <div class="space-y-2">
 <span class="font-label-sm text-label-sm uppercase tracking-widest text-error block">Transaction Unsuccessful • No Debits Captured</span>
@@ -415,7 +415,7 @@ get_header();
 </div>
 <div class="bg-error-container/30 border border-error/20 p-5 rounded-lg space-y-2 my-6">
 <div class="flex items-center gap-2 text-error font-semibold font-body-md text-body-md">
-<span class="material-symbols-outlined text-[20px]">warning</span>
+<span class="material-symbols-outlined notranslate text-[20px]" translate="no">warning</span>
 <span>Issuer Response: 05 – Transaction Not Authorized by Issuing Bank</span>
 </div>
 <p class="font-body-sm text-body-sm text-on-surface-variant">
@@ -424,11 +424,11 @@ get_header();
 </div>
 <div class="pt-2 flex flex-wrap gap-4">
 <button class="inline-flex items-center gap-2 bg-primary text-on-primary hover:bg-tertiary transition-colors px-6 py-3 rounded font-label-md text-label-md uppercase tracking-wider" onclick="alert('Launching Razorpay checkout modal with reserved slot token...')" type="button">
-<span class="material-symbols-outlined text-[18px]">payment</span>
+<span class="material-symbols-outlined notranslate text-[18px]" translate="no">payment</span>
 <span>Retry Payment for Reserved Slot</span>
 </button>
 <button class="inline-flex items-center gap-2 bg-surface-container text-primary hover:bg-surface-variant transition-colors px-6 py-3 rounded font-label-md text-label-md uppercase tracking-wider" onclick="alert('Opening alternate payment rails (Card / NetBanking / NEFT)...')" type="button">
-<span class="material-symbols-outlined text-[18px]">account_balance</span>
+<span class="material-symbols-outlined notranslate text-[18px]" translate="no">account_balance</span>
 <span>Select Another Payment Method</span>
 </button>
 </div>
@@ -441,7 +441,7 @@ get_header();
 <div class="bg-surface-container-low rounded-xl p-8 lg:p-12 shadow-sm max-w-4xl mx-auto w-full">
 <div class="flex items-start gap-4 pb-6 border-b border-surface-variant">
 <div class="w-12 h-12 rounded-full bg-secondary-fixed text-on-secondary-fixed flex items-center justify-center shrink-0">
-<span class="material-symbols-outlined text-[28px]">event_busy</span>
+<span class="material-symbols-outlined notranslate text-[28px]" translate="no">event_busy</span>
 </div>
 <div class="space-y-2">
 <span class="font-label-sm text-label-sm uppercase tracking-widest text-secondary block">Slot Released • Automatic Refund Guard</span>
@@ -472,11 +472,11 @@ get_header();
 </div>
 <div class="pt-2 flex flex-wrap gap-4">
 <a class="inline-flex items-center gap-2 bg-primary text-on-primary hover:bg-tertiary transition-colors px-6 py-3 rounded font-label-md text-label-md uppercase tracking-wider" data-path="book-consultation" href="<?php echo esc_url( home_url( "/book-your-consultation/" ) ); ?>">
-<span class="material-symbols-outlined text-[18px]">calendar_month</span>
+<span class="material-symbols-outlined notranslate text-[18px]" translate="no">calendar_month</span>
 <span>Choose Another Appointment Date</span>
 </a>
 <a class="inline-flex items-center gap-2 bg-surface-container text-primary hover:bg-surface-variant transition-colors px-6 py-3 rounded font-label-md text-label-md uppercase tracking-wider" data-path="services" href="<?php echo esc_url( home_url( "/services/" ) ); ?>">
-<span class="material-symbols-outlined text-[18px]">person_search</span>
+<span class="material-symbols-outlined notranslate text-[18px]" translate="no">person_search</span>
 <span>View Consultant Availability</span>
 </a>
 </div>
@@ -491,7 +491,7 @@ get_header();
 <!-- Animated Concentric Rings for Vedic Aura -->
 <div class="absolute inset-0 rounded-full border-2 border-primary/20 animate-ping"></div>
 <div class="w-full h-full rounded-full bg-primary-container text-on-primary-container flex items-center justify-center">
-<span class="material-symbols-outlined text-[36px] animate-spin">hourglass_top</span>
+<span class="material-symbols-outlined notranslate text-[36px] animate-spin" translate="no">hourglass_top</span>
 </div>
 </div>
 <div class="space-y-2">

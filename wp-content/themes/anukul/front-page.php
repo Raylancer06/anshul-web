@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 /**
  * Front Page - Editorial Master
  *
@@ -52,7 +52,7 @@ get_header();
 <span class="font-label-sm text-[10px] uppercase tracking-[0.24em] text-[#E8D8BC]">Sanctuary Philosophy</span>
 <p class="font-headline-sm text-xl sm:text-2xl leading-tight italic text-[#F7F1E3] mt-1">Prana flows where space and body align.</p>
 </div>
-<span class="material-symbols-outlined text-[#E8D8BC] text-3xl self-end sm:self-auto">spa</span>
+<span class="material-symbols-outlined notranslate text-[#E8D8BC] text-3xl self-end sm:self-auto" translate="no">spa</span>
 </div>
 </div>
 <!-- Corner registration accents -->
@@ -61,11 +61,11 @@ get_header();
 </div>
 <!-- Diagnostic Sub-ribbon -->
 <div class="pt-4 flex flex-wrap items-center justify-center gap-6 sm:gap-10 text-[#2E2924]/70 font-label-sm text-[12px] tracking-widest uppercase">
-<span class="flex items-center gap-2"><span class="material-symbols-outlined text-[#B38A3E] text-[18px]">verified</span> Vedic Diagnostics</span>
+<span class="flex items-center gap-2"><span class="material-symbols-outlined notranslate text-[#B38A3E] text-[18px]" translate="no">verified</span> Vedic Diagnostics</span>
 <span class="w-1.5 h-1.5 rounded-full bg-[#B38A3E]"></span>
-<span class="flex items-center gap-2"><span class="material-symbols-outlined text-[#B38A3E] text-[18px]">explore</span> Spatial Equilibrium</span>
+<span class="flex items-center gap-2"><span class="material-symbols-outlined notranslate text-[#B38A3E] text-[18px]" translate="no">explore</span> Spatial Equilibrium</span>
 <span class="w-1.5 h-1.5 rounded-full bg-[#B38A3E]"></span>
-<span class="flex items-center gap-2"><span class="material-symbols-outlined text-[#B38A3E] text-[18px]">eco</span> Constitutional Balance</span>
+<span class="flex items-center gap-2"><span class="material-symbols-outlined notranslate text-[#B38A3E] text-[18px]" translate="no">eco</span> Constitutional Balance</span>
 </div>
 </div>
 <!-- Center Statement Sub-band -->
@@ -129,23 +129,23 @@ get_header();
 </div>
 <div class="grid grid-cols-2 sm:grid-cols-5 gap-4 items-center">
 <div class="flex flex-col items-center justify-center p-4 bg-[#F7F1E3] border border-[#B38A3E]/30 rounded-[2px] text-center">
-<span class="material-symbols-outlined text-[#1F4D3A] text-2xl mb-1">person</span>
+<span class="material-symbols-outlined notranslate text-[#1F4D3A] text-2xl mb-1" translate="no">person</span>
 <span class="font-label-md text-[13px] uppercase text-[#1F4D3A] font-semibold tracking-widest">PERSON</span>
 </div>
 <div class="flex flex-col items-center justify-center p-4 bg-[#F7F1E3] border border-[#B38A3E]/30 rounded-[2px] text-center">
-<span class="material-symbols-outlined text-[#7A2638] text-2xl mb-1">vital_signs</span>
+<span class="material-symbols-outlined notranslate text-[#7A2638] text-2xl mb-1" translate="no">vital_signs</span>
 <span class="font-label-md text-[13px] uppercase text-[#1F4D3A] font-semibold tracking-widest">HEALTH</span>
 </div>
 <div class="flex flex-col items-center justify-center p-4 bg-[#F7F1E3] border border-[#B38A3E]/30 rounded-[2px] text-center">
-<span class="material-symbols-outlined text-[#B38A3E] text-2xl mb-1">home</span>
+<span class="material-symbols-outlined notranslate text-[#B38A3E] text-2xl mb-1" translate="no">home</span>
 <span class="font-label-md text-[13px] uppercase text-[#1F4D3A] font-semibold tracking-widest">SPACE</span>
 </div>
 <div class="flex flex-col items-center justify-center p-4 bg-[#F7F1E3] border border-[#B38A3E]/30 rounded-[2px] text-center">
-<span class="material-symbols-outlined text-[#C66A22] text-2xl mb-1">routine</span>
+<span class="material-symbols-outlined notranslate text-[#C66A22] text-2xl mb-1" translate="no">routine</span>
 <span class="font-label-md text-[13px] uppercase text-[#1F4D3A] font-semibold tracking-widest">LIFESTYLE</span>
 </div>
 <div class="flex flex-col items-center justify-center p-4 bg-[#F7F1E3] border border-[#B38A3E]/30 rounded-[2px] text-center col-span-2 sm:col-span-1">
-<span class="material-symbols-outlined text-[#1F4D3A] text-2xl mb-1">stars</span>
+<span class="material-symbols-outlined notranslate text-[#1F4D3A] text-2xl mb-1" translate="no">stars</span>
 <span class="font-label-md text-[13px] uppercase text-[#1F4D3A] font-semibold tracking-widest">PURPOSE</span>
 </div>
 </div>
@@ -488,7 +488,7 @@ get_header();
 <div class="lg:col-span-7 bg-[#F7F1E3] p-8 rounded-[4px] border border-[#B38A3E]/35 flex flex-col justify-between space-y-6 shadow-sm">
 <div class="flex items-center justify-between border-b border-[#B38A3E]/20 pb-4">
 <div class="flex items-center gap-2">
-<span class="material-symbols-outlined text-[#1F4D3A]">explore</span>
+<span class="material-symbols-outlined notranslate text-[#1F4D3A]" translate="no">explore</span>
 <span class="font-label-md text-[13px] uppercase tracking-widest text-[#1F4D3A] font-semibold">Directional Compass Matrix</span>
 </div>
 <span class="font-body-sm text-xs text-[#2E2924]/60">Brahmasthan &amp; Cardinal Axes</span>
@@ -608,7 +608,7 @@ get_header();
 <!-- Standard 1 -->
 <div class="p-8 bg-[#FFFFFF] border-l-4 border-l-[#C66A22] border border-[#B38A3E]/30 rounded-[4px] space-y-3 shadow-sm">
 <div class="flex items-center gap-2 text-[#7A2638]">
-<span class="material-symbols-outlined text-[22px]">person_outline</span>
+<span class="material-symbols-outlined notranslate text-[22px]" translate="no">person_outline</span>
 <span class="font-label-sm text-[11px] uppercase tracking-widest font-bold">01 / DISTINCT</span>
 </div>
 <h3 class="font-headline-sm text-xl text-[#1F4D3A] font-semibold">PERSONALIZED</h3>
@@ -619,7 +619,7 @@ get_header();
 <!-- Standard 2 -->
 <div class="p-8 bg-[#FFFFFF] border-l-4 border-l-[#B38A3E] border border-[#B38A3E]/30 rounded-[4px] space-y-3 shadow-sm">
 <div class="flex items-center gap-2 text-[#7A2638]">
-<span class="material-symbols-outlined text-[22px]">build_circle</span>
+<span class="material-symbols-outlined notranslate text-[22px]" translate="no">build_circle</span>
 <span class="font-label-sm text-[11px] uppercase tracking-widest font-bold">02 / FEASIBLE</span>
 </div>
 <h3 class="font-headline-sm text-xl text-[#1F4D3A] font-semibold">PRACTICAL</h3>
@@ -630,7 +630,7 @@ get_header();
 <!-- Standard 3 -->
 <div class="p-8 bg-[#FFFFFF] border-l-4 border-l-[#1F4D3A] border border-[#B38A3E]/30 rounded-[4px] space-y-3 shadow-sm">
 <div class="flex items-center gap-2 text-[#7A2638]">
-<span class="material-symbols-outlined text-[22px]">all_inclusive</span>
+<span class="material-symbols-outlined notranslate text-[22px]" translate="no">all_inclusive</span>
 <span class="font-label-sm text-[11px] uppercase tracking-widest font-bold">03 / UNIFIED</span>
 </div>
 <h3 class="font-headline-sm text-xl text-[#1F4D3A] font-semibold">HOLISTIC</h3>
@@ -641,7 +641,7 @@ get_header();
 <!-- Standard 4 -->
 <div class="p-8 bg-[#FFFFFF] border-l-4 border-l-[#7A2638] border border-[#B38A3E]/30 rounded-[4px] space-y-3 shadow-sm">
 <div class="flex items-center gap-2 text-[#7A2638]">
-<span class="material-symbols-outlined text-[22px]">handyman</span>
+<span class="material-symbols-outlined notranslate text-[22px]" translate="no">handyman</span>
 <span class="font-label-sm text-[11px] uppercase tracking-widest font-bold">04 / RESPECTFUL</span>
 </div>
 <h3 class="font-headline-sm text-xl text-[#1F4D3A] font-semibold">NON-DESTRUCTIVE</h3>
@@ -652,7 +652,7 @@ get_header();
 <!-- Standard 5 -->
 <div class="p-8 bg-[#FFFFFF] border-l-4 border-l-[#1F4D3A] border border-[#B38A3E]/30 rounded-[4px] space-y-3 shadow-sm">
 <div class="flex items-center gap-2 text-[#7A2638]">
-<span class="material-symbols-outlined text-[22px]">sync</span>
+<span class="material-symbols-outlined notranslate text-[22px]" translate="no">sync</span>
 <span class="font-label-sm text-[11px] uppercase tracking-widest font-bold">05 / INTEGRATED</span>
 </div>
 <h3 class="font-headline-sm text-xl text-[#1F4D3A] font-semibold">TRADITION + MODERN AWARENESS</h3>
@@ -663,7 +663,7 @@ get_header();
 <!-- Standard 6 -->
 <div class="p-8 bg-[#FFFFFF] border-l-4 border-l-[#C66A22] border border-[#B38A3E]/30 rounded-[4px] space-y-3 shadow-sm">
 <div class="flex items-center gap-2 text-[#7A2638]">
-<span class="material-symbols-outlined text-[22px]">health_and_safety</span>
+<span class="material-symbols-outlined notranslate text-[22px]" translate="no">health_and_safety</span>
 <span class="font-label-sm text-[11px] uppercase tracking-widest font-bold">06 / ETHICAL</span>
 </div>
 <h3 class="font-headline-sm text-xl text-[#1F4D3A] font-semibold">SAFETY CONSCIOUS</h3>
@@ -714,11 +714,11 @@ get_header();
       </p>
 <div class="pt-2 flex flex-wrap items-center gap-8 text-[#1F4D3A] font-label-md text-xs uppercase tracking-wider">
 <div class="flex items-center gap-2">
-<span class="material-symbols-outlined text-[#B38A3E]">workspace_premium</span>
+<span class="material-symbols-outlined notranslate text-[#B38A3E]" translate="no">workspace_premium</span>
 <span class="">Ayurvedic Clinical Fellowship</span>
 </div>
 <div class="flex items-center gap-2">
-<span class="material-symbols-outlined text-[#B38A3E]">architecture</span>
+<span class="material-symbols-outlined notranslate text-[#B38A3E]" translate="no">architecture</span>
 <span class="">Certified Traditional Vastu Vidya</span>
 </div>
 </div>
@@ -759,7 +759,7 @@ get_header();
 <section class="w-full bg-[#F7F1E3] text-[#2E2924] py-8 px-6 lg:px-margin border-t border-[#B38A3E]/30">
 <div class="max-w-[1440px] mx-auto flex flex-col md:flex-row items-center justify-between gap-4 text-center md:text-left">
 <div class="flex items-center gap-3">
-<span class="material-symbols-outlined text-[#B38A3E] text-[20px]">info</span>
+<span class="material-symbols-outlined notranslate text-[#B38A3E] text-[20px]" translate="no">info</span>
 <span class="font-label-sm text-[11px] uppercase tracking-widest text-[#1F4D3A] font-bold">Responsible Vedic Practice Standard</span>
 </div>
 <p class="font-body-sm text-[12px] text-[#2E2924]/75 max-w-4xl leading-normal italic">

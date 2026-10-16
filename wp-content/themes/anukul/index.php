@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 /**
  * Main Template File (Fallback)
  *
@@ -51,7 +51,7 @@ get_header();
                         <div class="pt-4 border-t border-surface-container-high flex items-center justify-between">
                             <a href="<?php the_permalink(); ?>" class="inline-flex items-center gap-1 font-label-md text-xs uppercase text-primary font-semibold hover:text-secondary transition-colors">
                                 <span><?php esc_html_e( 'Read Exploration', 'anukul' ); ?></span>
-                                <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+                                <span class="material-symbols-outlined notranslate text-[16px]" translate="no">arrow_forward</span>
                             </a>
                         </div>
                     </div>
@@ -63,8 +63,8 @@ get_header();
             <?php
             the_posts_pagination( array(
                 'mid_size'  => 2,
-                'prev_text' => '<span class="material-symbols-outlined text-sm">chevron_left</span>',
-                'next_text' => '<span class="material-symbols-outlined text-sm">chevron_right</span>',
+                'prev_text' => '<span class="material-symbols-outlined notranslate text-sm" translate="no">chevron_left</span>',
+                'next_text' => '<span class="material-symbols-outlined notranslate text-sm" translate="no">chevron_right</span>',
             ) );
             ?>
         </div>

@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 /**
  * Lost Password Form
  *
@@ -17,15 +17,15 @@ if ( ! defined( 'ABSPATH' ) ) {
 <!-- Breadcrumb Navigation -->
 <nav aria-label="Breadcrumb" class="flex items-center gap-2">
 <a class="font-label-md text-label-md uppercase tracking-wider text-on-surface-variant hover:text-primary transition-colors" data-path="home" href="<?php echo esc_url( home_url( "/" ) ); ?>">Home</a>
-<span class="material-symbols-outlined text-outline text-[14px]">chevron_right</span>
+<span class="material-symbols-outlined notranslate text-outline text-[14px]" translate="no">chevron_right</span>
 <a class="font-label-md text-label-md uppercase tracking-wider text-on-surface-variant hover:text-primary transition-colors" data-path="account" href="<?php echo esc_url( function_exists( "wc_get_page_permalink" ) ? wc_get_page_permalink( "myaccount" ) : home_url( "/my-account/" ) ); ?>">My Account</a>
-<span class="material-symbols-outlined text-outline text-[14px]">chevron_right</span>
+<span class="material-symbols-outlined notranslate text-outline text-[14px]" translate="no">chevron_right</span>
 <span class="font-label-md text-label-md uppercase tracking-wider text-primary font-bold">Lost Password</span>
 </nav>
 <!-- Cardinal Alignment Annotation -->
 <div class="flex items-center gap-3">
 <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded bg-surface-container text-secondary font-label-sm text-label-sm uppercase tracking-widest">
-<span class="material-symbols-outlined text-[13px]">explore</span> Ishanya Axis · Security Protocol
+<span class="material-symbols-outlined notranslate text-[13px]" translate="no">explore</span> Ishanya Axis · Security Protocol
         </span>
 <span class="hidden sm:inline font-body-sm text-body-sm text-on-surface-variant">ANUKUL 256-Bit Encrypted</span>
 </div>
@@ -40,7 +40,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 <div class="p-space-lg bg-surface-container-low rounded-xl shadow-sm flex flex-col gap-space-md">
 <div class="flex items-center gap-3">
 <div class="w-10 h-10 rounded-full bg-primary-container text-on-primary flex items-center justify-center">
-<span class="material-symbols-outlined text-[20px]">lock_reset</span>
+<span class="material-symbols-outlined notranslate text-[20px]" translate="no">lock_reset</span>
 </div>
 <div>
 <span class="font-label-sm text-label-sm uppercase tracking-[0.2em] text-secondary">Vedic Discretion</span>
@@ -76,7 +76,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 </div>
 <!-- Ayurvedic Assistance Note -->
 <div class="bg-surface-container p-4 rounded-lg flex items-start gap-3">
-<span class="material-symbols-outlined text-secondary text-[20px] mt-0.5">spa</span>
+<span class="material-symbols-outlined notranslate text-secondary text-[20px] mt-0.5" translate="no">spa</span>
 <div class="flex flex-col gap-0.5">
 <span class="font-label-md text-label-md uppercase tracking-wider text-primary">Need Immediate Vaidya Aid?</span>
 <p class="font-body-sm text-body-sm text-on-surface-variant">
@@ -100,7 +100,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 <div class="w-full bg-surface-container-high p-1.5 rounded-lg flex items-center justify-between overflow-x-auto shadow-sm">
 <div class="flex items-center gap-1 text-nowrap">
 <span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant px-2 py-1 flex items-center gap-1">
-<span class="material-symbols-outlined text-[14px]">tune</span> View State:
+<span class="material-symbols-outlined notranslate text-[14px]" translate="no">tune</span> View State:
             </span>
 <button class="state-pill px-4 py-2 rounded-lg font-label-md text-label-md uppercase tracking-wider transition-all bg-primary-container text-on-primary shadow-sm" id="tab-request-btn" onclick="switchState('request')">
               1. Request Reset
@@ -128,7 +128,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 </div>
 <!-- Vedic Notice Box -->
 <div class="p-4 rounded-lg bg-surface-container-low flex items-start gap-3 my-space-md">
-<span class="material-symbols-outlined text-secondary text-[22px] mt-0.5">info</span>
+<span class="material-symbols-outlined notranslate text-secondary text-[22px] mt-0.5" translate="no">info</span>
 <p class="font-body-sm text-body-sm text-on-surface leading-relaxed">
 <strong class="font-bold text-primary">Lost your password?</strong> Please enter your registered username or email address. You will receive a secure single-use recovery link via email to re-establish your credentials.
               </p>
@@ -142,11 +142,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 <span class="font-body-sm text-body-sm text-on-surface-variant font-normal normal-case" id="field-hint">Required for verification</span>
 </label>
 <div class="relative">
-<span class="material-symbols-outlined absolute left-3.5 top-1/2 -translate-y-1/2 text-outline text-[20px]">alternate_email</span>
+<span class="material-symbols-outlined notranslate absolute left-3.5 top-1/2 -translate-y-1/2 text-outline text-[20px]" translate="no">alternate_email</span>
 <input autocomplete="username" class="w-full bg-surface-container-lowest text-on-surface font-body-md text-body-md pl-11 pr-4 py-3.5 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-primary-container transition-all" id="user_login" name="user_login" placeholder="vaidya.seeker@anukulharmony.in" required="" type="text"/>
 </div>
 <p class="hidden text-error font-body-sm text-body-sm flex items-center gap-1.5 mt-1" id="validation-msg">
-<span class="material-symbols-outlined text-[16px]">error</span>
+<span class="material-symbols-outlined notranslate text-[16px]" translate="no">error</span>
                   Please provide a valid email address or registered username.
                 </p>
 </div>
@@ -155,13 +155,13 @@ if ( ! defined( 'ABSPATH' ) ) {
 <input name="_wpnonce" type="hidden" value="anukul_ayur_sec_884210"/>
 <!-- Security Information Note -->
 <div class="flex items-center gap-2 text-on-surface-variant">
-<span class="material-symbols-outlined text-[16px] text-secondary">verified_user</span>
+<span class="material-symbols-outlined notranslate text-[16px] text-secondary" translate="no">verified_user</span>
 <span class="font-body-sm text-body-sm">Instructions expire strictly within 120 minutes of dispatch.</span>
 </div>
 <!-- Primary Action Button -->
 <button class="w-full bg-primary-container hover:bg-tertiary-container text-on-primary font-label-md text-label-md uppercase tracking-widest py-3.5 px-6 rounded-lg transition-colors flex items-center justify-center gap-2 shadow-sm" type="submit">
 <span>Send Reset Instructions</span>
-<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+<span class="material-symbols-outlined notranslate text-[18px]" translate="no">arrow_forward</span>
 </button>
 </form>
 <!-- Bottom Footnote & Secondary Navigation -->
@@ -179,14 +179,14 @@ if ( ! defined( 'ABSPATH' ) ) {
 <div class="flex flex-col items-center text-center py-6">
 <!-- Dispatch Mandala Icon -->
 <div class="w-16 h-16 rounded-full bg-surface-container flex items-center justify-center text-secondary mb- space-md">
-<span class="material-symbols-outlined text-[34px]">mark_email_read</span>
+<span class="material-symbols-outlined notranslate text-[34px]" translate="no">mark_email_read</span>
 </div>
 <span class="font-label-sm text-label-sm uppercase tracking-[0.25em] text-secondary mb-1">Dispatch Processed</span>
 <h2 class="font-headline-lg text-headline-lg text-primary mb-3">Check Your Sacred Inbox</h2>
 <!-- Privacy Neutral Notice -->
 <div class="max-w-xl mx-auto bg-surface-container-low p-6 rounded-xl my-4 text-left flex flex-col gap-3">
 <div class="flex items-start gap-3">
-<span class="material-symbols-outlined text-primary text-[22px] mt-0.5">shield</span>
+<span class="material-symbols-outlined notranslate text-primary text-[22px] mt-0.5" translate="no">shield</span>
 <div class="flex flex-col gap-1">
 <span class="font-label-md text-label-md uppercase tracking-wider text-primary">Confidential Protocol</span>
 <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
@@ -202,11 +202,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 <div class="max-w-md w-full text-left my-4 flex flex-col gap-3">
 <span class="font-label-sm text-label-sm uppercase tracking-widest text-secondary font-bold">Recommended Guidance:</span>
 <div class="flex items-center gap-3 text-on-surface font-body-sm text-body-sm bg-surface-container-lowest p-3 rounded-lg shadow-sm">
-<span class="material-symbols-outlined text-primary text-[18px]">mail</span>
+<span class="material-symbols-outlined notranslate text-primary text-[18px]" translate="no">mail</span>
 <span>Inspect both your standard inbox and filtered folders (Spam/Promotions).</span>
 </div>
 <div class="flex items-center gap-3 text-on-surface font-body-sm text-body-sm bg-surface-container-lowest p-3 rounded-lg shadow-sm">
-<span class="material-symbols-outlined text-secondary text-[18px]">timer</span>
+<span class="material-symbols-outlined notranslate text-secondary text-[18px]" translate="no">timer</span>
 <span>Allow up to 5-10 minutes for complete mailserver synchronicity.</span>
 </div>
 </div>
@@ -214,7 +214,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 <div class="mt-6 flex flex-wrap items-center justify-center gap-4">
 <button class="bg-primary hover:bg-tertiary text-on-primary font-label-md text-label-md uppercase tracking-wider py-3 px-6 rounded-lg transition-colors flex items-center gap-2" onclick="switchState('set')">
 <span>Simulate: Click Email Token Link</span>
-<span class="material-symbols-outlined text-[16px]">link</span>
+<span class="material-symbols-outlined notranslate text-[16px]" translate="no">link</span>
 </button>
 <button class="bg-surface-container text-on-surface font-label-md text-label-md uppercase tracking-wider py-3 px-6 rounded-lg hover:bg-surface-dim transition-colors" onclick="switchState('request')">
                   Send to Another Address
@@ -248,10 +248,10 @@ if ( ! defined( 'ABSPATH' ) ) {
                   New Password <span class="text-error">*</span>
 </label>
 <div class="relative">
-<span class="material-symbols-outlined absolute left-3.5 top-1/2 -translate-y-1/2 text-outline text-[20px]">lock</span>
+<span class="material-symbols-outlined notranslate absolute left-3.5 top-1/2 -translate-y-1/2 text-outline text-[20px]" translate="no">lock</span>
 <input autocomplete="new-password" class="w-full bg-surface-container-lowest text-on-surface font-body-md text-body-md pl-11 pr-12 py-3.5 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-primary-container transition-all" id="password_1" name="password_1" oninput="calculateStrength(this.value)" placeholder="Enter min. 8 characters..." required="" type="password"/>
 <button class="absolute right-3.5 top-1/2 -translate-y-1/2 text-outline hover:text-primary p-1" onclick="togglePasswordVisibility('password_1', 'toggle-icon-1')" title="Toggle Password Visibility" type="button">
-<span class="material-symbols-outlined text-[20px]" id="toggle-icon-1">visibility</span>
+<span class="material-symbols-outlined notranslate text-[20px]" translate="no" id="toggle-icon-1">visibility</span>
 </button>
 </div>
 <!-- Password Strength Meter (Vedic Elements: Prithvi / Jala / Agni / Vayu / Akasha) -->
@@ -278,20 +278,20 @@ if ( ! defined( 'ABSPATH' ) ) {
                   Re-enter New Password <span class="text-error">*</span>
 </label>
 <div class="relative">
-<span class="material-symbols-outlined absolute left-3.5 top-1/2 -translate-y-1/2 text-outline text-[20px]">lock_clock</span>
+<span class="material-symbols-outlined notranslate absolute left-3.5 top-1/2 -translate-y-1/2 text-outline text-[20px]" translate="no">lock_clock</span>
 <input autocomplete="new-password" class="w-full bg-surface-container-lowest text-on-surface font-body-md text-body-md pl-11 pr-12 py-3.5 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-primary-container transition-all" id="password_2" name="password_2" placeholder="Repeat chosen password..." required="" type="password"/>
 <button class="absolute right-3.5 top-1/2 -translate-y-1/2 text-outline hover:text-primary p-1" onclick="togglePasswordVisibility('password_2', 'toggle-icon-2')" title="Toggle Password Visibility" type="button">
-<span class="material-symbols-outlined text-[20px]" id="toggle-icon-2">visibility</span>
+<span class="material-symbols-outlined notranslate text-[20px]" translate="no" id="toggle-icon-2">visibility</span>
 </button>
 </div>
 <p class="hidden text-error font-body-sm text-body-sm flex items-center gap-1.5 mt-1" id="match-error">
-<span class="material-symbols-outlined text-[16px]">error</span>
+<span class="material-symbols-outlined notranslate text-[16px]" translate="no">error</span>
                   Passwords do not harmonize. Please ensure exact alignment.
                 </p>
 </div>
 <!-- Success Alert Area on Completion -->
 <div class="hidden p-4 rounded-lg bg-primary-fixed text-on-primary-fixed flex items-center gap-3" id="success-message">
-<span class="material-symbols-outlined text-primary text-[22px]">check_circle</span>
+<span class="material-symbols-outlined notranslate text-primary text-[22px]" translate="no">check_circle</span>
 <span class="font-body-sm text-body-sm">Your new password has been established successfully. Redirecting to sanctuary...</span>
 </div>
 <!-- ANUKUL Compatibility Hidden Flags -->
@@ -299,7 +299,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 <input name="reset_login" type="hidden" value="vaidya.seeker"/>
 <!-- Submit Button -->
 <button class="w-full mt-2 bg-primary-container hover:bg-tertiary-container text-on-primary font-label-md text-label-md uppercase tracking-widest py-3.5 px-6 rounded-lg transition-colors flex items-center justify-center gap-2 shadow-sm" type="submit">
-<span class="material-symbols-outlined text-[18px]">verified</span>
+<span class="material-symbols-outlined notranslate text-[18px]" translate="no">verified</span>
 <span>Save New Password</span>
 </button>
 </form>
@@ -315,17 +315,17 @@ if ( ! defined( 'ABSPATH' ) ) {
 <!-- Secondary Informational Architectural Row -->
 <div class="w-full grid grid-cols-1 md:grid-cols-3 gap-4 mt-2">
 <div class="p-5 rounded-lg bg-surface-container flex flex-col gap-2">
-<span class="material-symbols-outlined text-secondary text-[24px]">key_vertical</span>
+<span class="material-symbols-outlined notranslate text-secondary text-[24px]" translate="no">key_vertical</span>
 <span class="font-headline-sm text-headline-sm text-primary">Cryptographic Trust</span>
 <p class="font-body-sm text-body-sm text-on-surface-variant">Hashed using salted PBKDF2 with standard WordPress authentication filters.</p>
 </div>
 <div class="p-5 rounded-lg bg-surface-container flex flex-col gap-2">
-<span class="material-symbols-outlined text-secondary text-[24px]">history_toggle_off</span>
+<span class="material-symbols-outlined notranslate text-secondary text-[24px]" translate="no">history_toggle_off</span>
 <span class="font-headline-sm text-headline-sm text-primary">Ephemeral Token</span>
 <p class="font-body-sm text-body-sm text-on-surface-variant">Links deactivate upon initial reset execution or following two lunar solar hours.</p>
 </div>
 <div class="p-5 rounded-lg bg-surface-container flex flex-col gap-2">
-<span class="material-symbols-outlined text-secondary text-[24px]">support_agent</span>
+<span class="material-symbols-outlined notranslate text-secondary text-[24px]" translate="no">support_agent</span>
 <span class="font-headline-sm text-headline-sm text-primary">Apothecary Concierge</span>
 <p class="font-body-sm text-body-sm text-on-surface-variant">Consulting physicians and patients receive rapid priority administrative recovery.</p>
 </div>

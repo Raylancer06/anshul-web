@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 /**
  * The template for displaying all single posts
  *
@@ -96,7 +96,7 @@ get_header();
           </div>
           <div>
             <a href="<?php echo esc_url( home_url( '/blog/' ) ); ?>" class="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg bg-surface-container-high text-primary hover:bg-primary hover:text-on-primary transition-colors font-semibold">
-              <span class="material-symbols-outlined text-[16px]">menu_book</span> Back to Journal
+              <span class="material-symbols-outlined notranslate text-[16px]" translate="no">menu_book</span> Back to Journal
             </a>
           </div>
           <div class="text-right">

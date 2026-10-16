@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 /**
  * Login / Register Form
  *
@@ -56,7 +56,7 @@ if ( ! defined( 'ABSPATH' ) ) {
           </div>
           <div class="relative z-10 space-y-space-md">
             <div class="inline-flex items-center gap-space-xs px-2.5 py-1 bg-surface-container-lowest/10 rounded text-secondary-fixed font-label-sm text-label-sm uppercase tracking-[0.2em]">
-              <span class="material-symbols-outlined text-[14px]">auto_stories</span>
+              <span class="material-symbols-outlined notranslate text-[14px]" translate="no">auto_stories</span>
               Panchamahabhuta Portal
             </div>
             <div class="space-y-space-xs">
@@ -70,7 +70,7 @@ if ( ! defined( 'ABSPATH' ) ) {
           <div class="relative z-10 my-space-md bg-surface-container-lowest/5 p-space-md rounded-lg backdrop-blur-sm space-y-space-sm border border-white/10">
             <div class="flex items-center gap-space-sm">
               <div class="w-10 h-10 rounded-full bg-secondary/30 flex items-center justify-center text-secondary-fixed">
-                <span class="material-symbols-outlined text-[20px]">spa</span>
+                <span class="material-symbols-outlined notranslate text-[20px]" translate="no">spa</span>
               </div>
               <div>
                 <h4 class="font-headline-sm text-headline-sm text-surface-bright leading-tight">Ayur Vastu Ledger</h4>
@@ -79,19 +79,19 @@ if ( ! defined( 'ABSPATH' ) ) {
             </div>
             <div class="pt-space-xs grid grid-cols-2 gap-2 text-surface-container-high font-label-sm text-label-sm">
               <div class="flex items-center gap-1.5">
-                <span class="material-symbols-outlined text-secondary-fixed text-[14px]">verified</span>
+                <span class="material-symbols-outlined notranslate text-secondary-fixed text-[14px]" translate="no">verified</span>
                 <span>Dosha Records</span>
               </div>
               <div class="flex items-center gap-1.5">
-                <span class="material-symbols-outlined text-secondary-fixed text-[14px]">verified</span>
+                <span class="material-symbols-outlined notranslate text-secondary-fixed text-[14px]" translate="no">verified</span>
                 <span>Apothecary Orders</span>
               </div>
               <div class="flex items-center gap-1.5">
-                <span class="material-symbols-outlined text-secondary-fixed text-[14px]">verified</span>
+                <span class="material-symbols-outlined notranslate text-secondary-fixed text-[14px]" translate="no">verified</span>
                 <span>Spatial Audits</span>
               </div>
               <div class="flex items-center gap-1.5">
-                <span class="material-symbols-outlined text-secondary-fixed text-[14px]">verified</span>
+                <span class="material-symbols-outlined notranslate text-secondary-fixed text-[14px]" translate="no">verified</span>
                 <span>Vaidya Messages</span>
               </div>
             </div>
@@ -99,7 +99,7 @@ if ( ! defined( 'ABSPATH' ) ) {
           <div class="relative z-10 pt-space-sm flex items-center justify-between font-label-sm text-label-sm text-surface-dim uppercase tracking-wider">
             <span>Sanctuary Verified</span>
             <span class="flex items-center gap-1 text-secondary-fixed">
-              <span class="material-symbols-outlined text-[16px]">lock</span>
+              <span class="material-symbols-outlined notranslate text-[16px]" translate="no">lock</span>
               Protected Session
             </span>
           </div>
@@ -145,7 +145,7 @@ if ( ! defined( 'ABSPATH' ) ) {
                   </div>
                   <div class="relative">
                     <span class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-on-surface-variant opacity-60">
-                      <span class="material-symbols-outlined text-[18px]">alternate_email</span>
+                      <span class="material-symbols-outlined notranslate text-[18px]" translate="no">alternate_email</span>
                     </span>
                     <input autocomplete="username" class="w-full pl-10 pr-4 py-3 bg-surface-container-low text-on-surface rounded-lg font-body-md text-body-md placeholder:text-outline-variant focus:bg-surface-container-lowest focus:outline-none focus:ring-2 focus:ring-primary-container transition-all" id="username" name="username" placeholder="Enter your email or username" required type="text" value="<?php echo ( ! empty( $_POST['username'] ) ) ? esc_attr( wp_unslash( $_POST['username'] ) ) : ''; ?>"/>
                   </div>
@@ -163,11 +163,11 @@ if ( ! defined( 'ABSPATH' ) ) {
                   </div>
                   <div class="relative">
                     <span class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-on-surface-variant opacity-60">
-                      <span class="material-symbols-outlined text-[18px]">lock</span>
+                      <span class="material-symbols-outlined notranslate text-[18px]" translate="no">lock</span>
                     </span>
                     <input autocomplete="current-password" class="w-full pl-10 pr-12 py-3 bg-surface-container-low text-on-surface rounded-lg font-body-md text-body-md placeholder:text-outline-variant focus:bg-surface-container-lowest focus:outline-none focus:ring-2 focus:ring-primary-container transition-all" id="password" name="password" placeholder="Enter your confidential passphrase" required type="password" value=""/>
                     <button aria-label="Toggle password visibility" class="absolute inset-y-0 right-0 pr-3.5 flex items-center text-on-surface-variant hover:text-primary transition-colors" id="toggle-password-btn" type="button">
-                      <span class="material-symbols-outlined text-[20px]" id="password-toggle-icon">visibility</span>
+                      <span class="material-symbols-outlined notranslate text-[20px]" translate="no" id="password-toggle-icon">visibility</span>
                     </button>
                   </div>
                 </div>
@@ -177,7 +177,7 @@ if ( ! defined( 'ABSPATH' ) ) {
                   <label class="flex items-center gap-space-xs cursor-pointer select-none group">
                     <input class="sr-only peer" id="rememberme" name="rememberme" type="checkbox" value="forever" checked/>
                     <div class="w-4 h-4 rounded bg-surface-container-high peer-checked:bg-primary-container flex items-center justify-center transition-all group-hover:scale-105">
-                      <span class="material-symbols-outlined text-[13px] text-on-primary font-bold opacity-0 peer-checked:opacity-100 transition-opacity">check</span>
+                      <span class="material-symbols-outlined notranslate text-[13px] text-on-primary font-bold opacity-0 peer-checked:opacity-100 transition-opacity" translate="no">check</span>
                     </div>
                     <span class="font-body-sm text-body-sm text-on-surface-variant group-hover:text-on-surface transition-colors">
                       Keep me signed in on this sanctum device
@@ -192,7 +192,7 @@ if ( ! defined( 'ABSPATH' ) ) {
                   <?php wp_nonce_field( 'woocommerce-login', 'woocommerce-login-nonce' ); ?>
                   <button class="w-full py-3.5 px-6 rounded-lg bg-primary text-on-primary font-label-md text-label-md uppercase tracking-[0.15em] font-semibold hover:bg-tertiary shadow-md transition-all flex items-center justify-center gap-2 group cursor-pointer" id="submit-login-btn" name="login" type="submit" value="<?php esc_attr_e( 'Log in', 'woocommerce' ); ?>">
                     <span>SIGN IN TO SANCTUM</span>
-                    <span class="material-symbols-outlined text-[18px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
+                    <span class="material-symbols-outlined notranslate text-[18px] group-hover:translate-x-1 transition-transform" translate="no">arrow_forward</span>
                   </button>
                 </div>
 
@@ -221,7 +221,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
                 <div class="flex items-center justify-between pt-space-xs font-body-sm text-body-sm">
                   <a class="inline-flex items-center gap-1.5 text-on-surface-variant hover:text-primary transition-colors" data-path="shop" href="<?php echo esc_url( function_exists( 'wc_get_page_permalink' ) ? wc_get_page_permalink( 'shop' ) : home_url( '/shop/' ) ); ?>">
-                    <span class="material-symbols-outlined text-[16px]">arrow_back</span>
+                    <span class="material-symbols-outlined notranslate text-[16px]" translate="no">arrow_back</span>
                     <span>Return to Herbal Apothecary</span>
                   </a>
                   <a class="text-on-surface-variant hover:text-secondary transition-colors" data-path="contact" href="<?php echo esc_url( home_url( '/contact/' ) ); ?>">
@@ -280,7 +280,7 @@ if ( ! defined( 'ABSPATH' ) ) {
                     <?php wp_nonce_field( 'woocommerce-register', 'woocommerce-register-nonce' ); ?>
                     <button type="submit" class="woocommerce-Button woocommerce-button button woocommerce-form-register__submit w-full py-3.5 px-6 rounded-lg bg-primary text-on-primary font-label-md text-label-md uppercase tracking-[0.15em] font-semibold hover:bg-tertiary shadow-md transition-all flex items-center justify-center gap-2 group cursor-pointer" name="register" value="<?php esc_attr_e( 'Register', 'woocommerce' ); ?>">
                       <span>CREATE SANCTUARY ACCOUNT</span>
-                      <span class="material-symbols-outlined text-[18px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
+                      <span class="material-symbols-outlined notranslate text-[18px] group-hover:translate-x-1 transition-transform" translate="no">arrow_forward</span>
                     </button>
                   </div>
 
@@ -300,11 +300,11 @@ if ( ! defined( 'ABSPATH' ) ) {
           <!-- Footer Trust Credential Note -->
           <div class="mt-space-lg pt-space-md bg-surface-container-low/60 -mx-space-lg -mb-space-lg p-space-md lg:-mx-space-xl lg:-mb-space-xl lg:px-space-xl flex flex-wrap items-center justify-between gap-space-sm text-on-surface-variant font-label-sm text-label-sm border-t border-[#E8D8BC]/50">
             <div class="flex items-center gap-space-xs">
-              <span class="material-symbols-outlined text-secondary text-[16px]">verified_user</span>
+              <span class="material-symbols-outlined notranslate text-secondary text-[16px]" translate="no">verified_user</span>
               <span>Standard ANUKUL Secure Authentication</span>
             </div>
             <div class="flex items-center gap-space-xs text-outline">
-              <span class="material-symbols-outlined text-[14px]">shield</span>
+              <span class="material-symbols-outlined notranslate text-[14px]" translate="no">shield</span>
               <span>ISO 27001 Clinical Privacy Standard</span>
             </div>
           </div>
@@ -315,7 +315,7 @@ if ( ! defined( 'ABSPATH' ) ) {
       <div class="mt-space-lg grid grid-cols-1 md:grid-cols-3 gap-space-md">
         <div class="bg-surface-container-low p-space-md rounded-lg flex items-start gap-space-sm shadow-sm border border-[#E8D8BC]/60">
           <div class="w-8 h-8 rounded bg-primary-container text-on-primary flex items-center justify-center shrink-0">
-            <span class="material-symbols-outlined text-[18px]">calendar_month</span>
+            <span class="material-symbols-outlined notranslate text-[18px]" translate="no">calendar_month</span>
           </div>
           <div>
             <h4 class="font-headline-sm text-headline-sm text-primary leading-tight">Clinical Appointments</h4>
@@ -324,7 +324,7 @@ if ( ! defined( 'ABSPATH' ) ) {
         </div>
         <div class="bg-surface-container-low p-space-md rounded-lg flex items-start gap-space-sm shadow-sm border border-[#E8D8BC]/60">
           <div class="w-8 h-8 rounded bg-primary-container text-on-primary flex items-center justify-center shrink-0">
-            <span class="material-symbols-outlined text-[18px]">inventory_2</span>
+            <span class="material-symbols-outlined notranslate text-[18px]" translate="no">inventory_2</span>
           </div>
           <div>
             <h4 class="font-headline-sm text-headline-sm text-primary leading-tight">Apothecary Logistics</h4>
@@ -333,7 +333,7 @@ if ( ! defined( 'ABSPATH' ) ) {
         </div>
         <div class="bg-surface-container-low p-space-md rounded-lg flex items-start gap-space-sm shadow-sm border border-[#E8D8BC]/60">
           <div class="w-8 h-8 rounded bg-primary-container text-on-primary flex items-center justify-center shrink-0">
-            <span class="material-symbols-outlined text-[18px]">encrypted</span>
+            <span class="material-symbols-outlined notranslate text-[18px]" translate="no">encrypted</span>
           </div>
           <div>
             <h4 class="font-headline-sm text-headline-sm text-primary leading-tight">Sacred Confidentiality</h4>

@@ -35,16 +35,16 @@ get_header();
 <div class="flex flex-wrap items-center gap-space-md w-full sm:w-auto">
 <a class="inline-flex items-center justify-center gap-3 px-8 py-3.5 rounded-lg bg-primary-container text-on-primary font-label-md text-label-md uppercase tracking-wider shadow-sm hover:bg-tertiary-container hover:text-on-tertiary transition-all duration-200" href="#consultation-pathways">
 <span>Book a Consultation</span>
-<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+<span class="material-symbols-outlined notranslate text-[18px]" translate="no">arrow_forward</span>
 </a>
 <a class="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-lg bg-surface-container-high text-primary font-label-md text-label-md uppercase tracking-wider hover:bg-surface-container-highest transition-all duration-200" href="#guiding-principles">
 <span>Explore Our Approach</span>
-<span class="material-symbols-outlined text-[18px]">south</span>
+<span class="material-symbols-outlined notranslate text-[18px]" translate="no">south</span>
 </a>
 </div>
 <!-- Discrete Clinical Credibility Note -->
 <div class="mt-space-xl pt-space-md flex items-center gap-3 text-on-surface-variant">
-<span class="material-symbols-outlined text-secondary text-[20px]">verified_user</span>
+<span class="material-symbols-outlined notranslate text-secondary text-[20px]" translate="no">verified_user</span>
 <span class="font-body-sm text-body-sm">Individual, highly confidential sessions • No automated algorithms • One-time session bookings</span>
 </div>
 </div>
@@ -57,7 +57,7 @@ get_header();
 <div class="absolute inset-0 bg-gradient-to-t from-primary/60 via-transparent to-transparent"></div>
 <!-- Subtle Cardinal Badge Inset -->
 <div class="absolute bottom-4 left-4 right-4 flex items-center justify-between text-on-primary font-label-sm text-label-sm uppercase tracking-widest backdrop-blur-md bg-primary/40 px-3.5 py-2 rounded-lg">
-<span class="flex items-center gap-1.5"><span class="material-symbols-outlined text-[16px] text-secondary-fixed">compass_calibration</span> ISHANYA (N-E) EQUILIBRIUM</span>
+<span class="flex items-center gap-1.5"><span class="material-symbols-outlined notranslate text-[16px] text-secondary-fixed" translate="no">compass_calibration</span> ISHANYA (N-E) EQUILIBRIUM</span>
 <span>DESK PROTOCOL</span>
 </div>
 </div>
@@ -65,7 +65,7 @@ get_header();
 <div class="absolute -bottom-6 -left-6 bg-surface-container-lowest p- space-md rounded-xl shadow-md max-w-[260px] hidden sm:block p-4">
 <div class="flex items-start gap-3">
 <div class="w-9 h-9 rounded-lg bg-surface-container flex items-center justify-center shrink-0">
-<span class="material-symbols-outlined text-primary text-[20px]">filter_vintage</span>
+<span class="material-symbols-outlined notranslate text-primary text-[20px]" translate="no">filter_vintage</span>
 </div>
 <div>
 <div class="font-headline-sm text-headline-sm text-primary leading-tight">Shuddhi &amp; Sthiti</div>
@@ -75,7 +75,7 @@ get_header();
 </div>
 <!-- Corner Geometric Stamp -->
 <div class="absolute -top-3 -right-3 w-12 h-12 rounded-full bg-secondary-fixed flex items-center justify-center shadow-sm">
-<span class="material-symbols-outlined text-secondary text-[22px]">all_inclusive</span>
+<span class="material-symbols-outlined notranslate text-secondary text-[22px]" translate="no">all_inclusive</span>
 </div>
 </div>
 </div>
@@ -103,7 +103,7 @@ get_header();
               Constitutional &amp; Lifestyle
             </span>
 <div class="w-8 h-8 rounded-full bg-primary-fixed/30 flex items-center justify-center">
-<span class="material-symbols-outlined text-primary text-[18px]">psychiatry</span>
+<span class="material-symbols-outlined notranslate text-primary text-[18px]" translate="no">psychiatry</span>
 </div>
 </div>
 <h3 class="font-headline-md text-headline-md text-primary font-normal mb-2">Ayurveda Consultation</h3>
@@ -117,25 +117,25 @@ get_header();
 <h4 class="font-label-md text-label-md text-on-surface uppercase tracking-wider mb-2">Diagnostic Scope:</h4>
 <ul class="space-y-2 mb-space-lg font-body-sm text-body-sm text-on-surface-variant">
 <li class="flex items-start gap-2">
-<span class="material-symbols-outlined text-secondary text-[16px] mt-0.5">check_circle</span>
+<span class="material-symbols-outlined notranslate text-secondary text-[16px] mt-0.5" translate="no">check_circle</span>
 <span>Prakriti &amp; Vikriti constitutional mapping and pulse analysis review.</span>
 </li>
 <li class="flex items-start gap-2">
-<span class="material-symbols-outlined text-secondary text-[16px] mt-0.5">check_circle</span>
+<span class="material-symbols-outlined notranslate text-secondary text-[16px] mt-0.5" translate="no">check_circle</span>
 <span>Ritucharya (seasonal adaptation) &amp; Dinacharya daily regimens.</span>
 </li>
 <li class="flex items-start gap-2">
-<span class="material-symbols-outlined text-secondary text-[16px] mt-0.5">check_circle</span>
+<span class="material-symbols-outlined notranslate text-secondary text-[16px] mt-0.5" translate="no">check_circle</span>
 <span>Agni (digestive fire) evaluation &amp; tailored dietary recommendations.</span>
 </li>
 <li class="flex items-start gap-2">
-<span class="material-symbols-outlined text-secondary text-[16px] mt-0.5">check_circle</span>
+<span class="material-symbols-outlined notranslate text-secondary text-[16px] mt-0.5" translate="no">check_circle</span>
 <span>Targeted classical herbal dispensaries &amp; non-invasive self-care therapies.</span>
 </li>
 </ul>
 <a class="w-full inline-flex items-center justify-center gap-2 py-3 px-4 rounded-lg bg-primary-container text-on-primary font-label-md text-label-md uppercase tracking-wider hover:bg-tertiary-container hover:text-on-tertiary transition-colors" href="<?php echo esc_url( add_query_arg( "type", "health", home_url( "/book-your-consultation/" ) ) ); ?>">
 <span>Explore Online Health Consultation</span>
-<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+<span class="material-symbols-outlined notranslate text-[16px]" translate="no">chevron_right</span>
 </a>
 </div>
 </div>
@@ -146,7 +146,7 @@ get_header();
               Spatial &amp; Architectural
             </span>
 <div class="w-8 h-8 rounded-full bg-secondary-fixed/40 flex items-center justify-center">
-<span class="material-symbols-outlined text-secondary text-[18px]">architecture</span>
+<span class="material-symbols-outlined notranslate text-secondary text-[18px]" translate="no">architecture</span>
 </div>
 </div>
 <h3 class="font-headline-md text-headline-md text-primary font-normal mb-2">Vastu Consultation</h3>
@@ -160,25 +160,25 @@ get_header();
 <h4 class="font-label-md text-label-md text-on-surface uppercase tracking-wider mb-2">Diagnostic Scope:</h4>
 <ul class="space-y-2 mb-space-lg font-body-sm text-body-sm text-on-surface-variant">
 <li class="flex items-start gap-2">
-<span class="material-symbols-outlined text-secondary text-[16px] mt-0.5">check_circle</span>
+<span class="material-symbols-outlined notranslate text-secondary text-[16px] mt-0.5" translate="no">check_circle</span>
 <span>Cardinal orientation mapping &amp; true magnetic north calibration.</span>
 </li>
 <li class="flex items-start gap-2">
-<span class="material-symbols-outlined text-secondary text-[16px] mt-0.5">check_circle</span>
+<span class="material-symbols-outlined notranslate text-secondary text-[16px] mt-0.5" translate="no">check_circle</span>
 <span>Brahmasthan (central energetic core) purity and spatial load review.</span>
 </li>
 <li class="flex items-start gap-2">
-<span class="material-symbols-outlined text-secondary text-[16px] mt-0.5">check_circle</span>
+<span class="material-symbols-outlined notranslate text-secondary text-[16px] mt-0.5" translate="no">check_circle</span>
 <span>Room usage alignment (Ishanya, Agneya, Nairuthi, Vayavya zones).</span>
 </li>
 <li class="flex items-start gap-2">
-<span class="material-symbols-outlined text-secondary text-[16px] mt-0.5">check_circle</span>
+<span class="material-symbols-outlined notranslate text-secondary text-[16px] mt-0.5" translate="no">check_circle</span>
 <span>Non-demolition remedial harmonisation via elements, light, and geometry.</span>
 </li>
 </ul>
 <a class="w-full inline-flex items-center justify-center gap-2 py-3 px-4 rounded-lg bg-primary-container text-on-primary font-label-md text-label-md uppercase tracking-wider hover:bg-tertiary-container hover:text-on-tertiary transition-colors" href="<?php echo esc_url( add_query_arg( "type", "medico-vastu", home_url( "/book-your-consultation/" ) ) ); ?>">
 <span>Explore Medico-Vastu Consultation</span>
-<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+<span class="material-symbols-outlined notranslate text-[16px]" translate="no">chevron_right</span>
 </a>
 </div>
 </div>
@@ -192,7 +192,7 @@ get_header();
               Person-Environment Synthesis
             </span>
 <div class="w-8 h-8 rounded-full bg-secondary-container/30 flex items-center justify-center">
-<span class="material-symbols-outlined text-secondary text-[18px]">balance</span>
+<span class="material-symbols-outlined notranslate text-secondary text-[18px]" translate="no">balance</span>
 </div>
 </div>
 <h3 class="font-headline-md text-headline-md text-primary font-normal mb-2">Integrated Health &amp; Space</h3>
@@ -206,25 +206,25 @@ get_header();
 <h4 class="font-label-md text-label-md text-on-surface uppercase tracking-wider mb-2">Diagnostic Scope:</h4>
 <ul class="space-y-2 mb-space-lg font-body-sm text-body-sm text-on-surface-variant">
 <li class="flex items-start gap-2">
-<span class="material-symbols-outlined text-secondary text-[16px] mt-0.5">check_circle</span>
+<span class="material-symbols-outlined notranslate text-secondary text-[16px] mt-0.5" translate="no">check_circle</span>
 <span>Co-relation of physiological dosha imbalances with home spatial stress.</span>
 </li>
 <li class="flex items-start gap-2">
-<span class="material-symbols-outlined text-secondary text-[16px] mt-0.5">check_circle</span>
+<span class="material-symbols-outlined notranslate text-secondary text-[16px] mt-0.5" translate="no">check_circle</span>
 <span>Sleep sanctuary alignment matched to individual neuro-somatic constitution.</span>
 </li>
 <li class="flex items-start gap-2">
-<span class="material-symbols-outlined text-secondary text-[16px] mt-0.5">check_circle</span>
+<span class="material-symbols-outlined notranslate text-secondary text-[16px] mt-0.5" translate="no">check_circle</span>
 <span>Comprehensive unified remedial strategy for mind, body, and structure.</span>
 </li>
 <li class="flex items-start gap-2">
-<span class="material-symbols-outlined text-secondary text-[16px] mt-0.5">check_circle</span>
+<span class="material-symbols-outlined notranslate text-secondary text-[16px] mt-0.5" translate="no">check_circle</span>
 <span>Coordinated 60-day progressive check-in roadmap.</span>
 </li>
 </ul>
 <a class="w-full inline-flex items-center justify-center gap-2 py-3 px-4 rounded-lg bg-primary-container text-on-primary font-label-md text-label-md uppercase tracking-wider hover:bg-tertiary-container hover:text-on-tertiary transition-colors" href="<?php echo esc_url( add_query_arg( "type", "complete", home_url( "/book-your-consultation/" ) ) ); ?>">
 <span>Explore Master Consultation</span>
-<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+<span class="material-symbols-outlined notranslate text-[16px]" translate="no">chevron_right</span>
 </a>
 </div>
 </div>
@@ -253,7 +253,7 @@ get_header();
 <div class="lg:col-span-7 p-space-lg lg:p-space-xl flex flex-col justify-between">
 <div>
 <div class="flex items-center gap-2 font-label-md text-label-md text-secondary uppercase tracking-widest mb-space-sm">
-<span class="material-symbols-outlined text-[18px]">verified</span>
+<span class="material-symbols-outlined notranslate text-[18px]" translate="no">verified</span>
 <span>Classical Lineage • Patient-Centered Equanimity</span>
 </div>
 <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed mb-space-md">
@@ -266,7 +266,7 @@ get_header();
 <!-- Ethos Quote Inset -->
 <div class="bg-surface-container-lowest p-space-md rounded-lg">
 <div class="flex items-start gap-3">
-<span class="material-symbols-outlined text-secondary text-[28px] shrink-0 opacity-60">format_quote</span>
+<span class="material-symbols-outlined notranslate text-secondary text-[28px] shrink-0 opacity-60" translate="no">format_quote</span>
 <div>
 <p class="font-editorial-quote text-editorial-quote text-primary italic leading-snug mb-2">
                   “True harmony is not an external imposition, but the natural equilibrium restored between the individual inner prana and the architecture of daily life.”
@@ -300,7 +300,7 @@ get_header();
 <div class="flex items-center justify-between mb-space-md">
 <span class="font-display text-[26px] text-secondary font-normal italic">I.</span>
 <div class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center">
-<span class="material-symbols-outlined text-primary text-[18px]">splitscreen</span>
+<span class="material-symbols-outlined notranslate text-primary text-[18px]" translate="no">splitscreen</span>
 </div>
 </div>
 <h3 class="font-headline-sm text-headline-sm text-primary font-semibold mb-2">Choose your discipline</h3>
@@ -313,7 +313,7 @@ get_header();
 <div class="flex items-center justify-between mb-space-md">
 <span class="font-display text-[26px] text-secondary font-normal italic">II.</span>
 <div class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center">
-<span class="material-symbols-outlined text-primary text-[18px]">calendar_month</span>
+<span class="material-symbols-outlined notranslate text-primary text-[18px]" translate="no">calendar_month</span>
 </div>
 </div>
 <h3 class="font-headline-sm text-headline-sm text-primary font-semibold mb-2">Select an available slot</h3>
@@ -326,7 +326,7 @@ get_header();
 <div class="flex items-center justify-between mb-space-md">
 <span class="font-display text-[26px] text-secondary font-normal italic">III.</span>
 <div class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center">
-<span class="material-symbols-outlined text-primary text-[18px]">lock</span>
+<span class="material-symbols-outlined notranslate text-primary text-[18px]" translate="no">lock</span>
 </div>
 </div>
 <h3 class="font-headline-sm text-headline-sm text-primary font-semibold mb-2">Details &amp; Settlement</h3>
@@ -339,7 +339,7 @@ get_header();
 <div class="flex items-center justify-between mb-space-md">
 <span class="font-display text-[26px] text-secondary font-normal italic">IV.</span>
 <div class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center">
-<span class="material-symbols-outlined text-primary text-[18px]">mark_email_read</span>
+<span class="material-symbols-outlined notranslate text-primary text-[18px]" translate="no">mark_email_read</span>
 </div>
 </div>
 <h3 class="font-headline-sm text-headline-sm text-primary font-semibold mb-2">Confirmation &amp; Prep</h3>
@@ -350,7 +350,7 @@ get_header();
 </div>
 <!-- Verification Notice Callout -->
 <div class="max-w-3xl mx-auto bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex items-start gap-4">
-<span class="material-symbols-outlined text-secondary text-[24px] mt-0.5 shrink-0">info</span>
+<span class="material-symbols-outlined notranslate text-secondary text-[24px] mt-0.5 shrink-0" translate="no">info</span>
 <div>
 <span class="font-label-md text-label-md text-primary uppercase tracking-wider block mb-1">Appointment Confirmation Notice</span>
 <p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
@@ -374,7 +374,7 @@ get_header();
 <!-- Pillar 1 -->
 <div class="bg-surface-container-low p-space-lg rounded-xl flex items-start gap-5">
 <div class="w-12 h-12 rounded-lg bg-primary-container text-on-primary flex items-center justify-center shrink-0">
-<span class="material-symbols-outlined text-[24px]">person_search</span>
+<span class="material-symbols-outlined notranslate text-[24px]" translate="no">person_search</span>
 </div>
 <div>
 <span class="font-label-sm text-label-sm text-secondary uppercase tracking-widest block mb-1">PILLAR 01</span>
@@ -387,7 +387,7 @@ get_header();
 <!-- Pillar 2 -->
 <div class="bg-surface-container-low p-space-lg rounded-xl flex items-start gap-5">
 <div class="w-12 h-12 rounded-lg bg-primary-container text-on-primary flex items-center justify-center shrink-0">
-<span class="material-symbols-outlined text-[24px]">explore</span>
+<span class="material-symbols-outlined notranslate text-[24px]" translate="no">explore</span>
 </div>
 <div>
 <span class="font-label-sm text-label-sm text-secondary uppercase tracking-widest block mb-1">PILLAR 02</span>
@@ -400,7 +400,7 @@ get_header();
 <!-- Pillar 3 -->
 <div class="bg-surface-container-low p-space-lg rounded-xl flex items-start gap-5">
 <div class="w-12 h-12 rounded-lg bg-primary-container text-on-primary flex items-center justify-center shrink-0">
-<span class="material-symbols-outlined text-[24px]">sync_alt</span>
+<span class="material-symbols-outlined notranslate text-[24px]" translate="no">sync_alt</span>
 </div>
 <div>
 <span class="font-label-sm text-label-sm text-secondary uppercase tracking-widest block mb-1">PILLAR 03</span>
@@ -413,7 +413,7 @@ get_header();
 <!-- Pillar 4 -->
 <div class="bg-surface-container-low p-space-lg rounded-xl flex items-start gap-5">
 <div class="w-12 h-12 rounded-lg bg-primary-container text-on-primary flex items-center justify-center shrink-0">
-<span class="material-symbols-outlined text-[24px]">tune</span>
+<span class="material-symbols-outlined notranslate text-[24px]" translate="no">tune</span>
 </div>
 <div>
 <span class="font-label-sm text-label-sm text-secondary uppercase tracking-widest block mb-1">PILLAR 04</span>
@@ -443,7 +443,7 @@ get_header();
 <div class="bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden">
 <button aria-expanded="false" class="faq-toggle w-full px-6 py-5 text-left flex items-center justify-between gap-4 focus:outline-none" type="button">
 <span class="font-headline-sm text-[18px] text-primary font-medium">Which consultation should I choose?</span>
-<span class="material-symbols-outlined text-secondary transition-transform duration-200 icon-arrow">add</span>
+<span class="material-symbols-outlined notranslate text-secondary transition-transform duration-200 icon-arrow" translate="no">add</span>
 </button>
 <div class="faq-content hidden px-6 pb-6 text-on-surface-variant font-body-md text-body-md leading-relaxed">
             If your primary objective concerns personal energy, digestion, sleep, stress patterns, or seasonal wellness, choose the <strong>Ayurveda Consultation</strong>. If you are experiencing restlessness, renovating, moving, or questioning the energetic flow of your home or workplace, choose the <strong>Vastu Consultation</strong>. If you feel both your health and space require integrated examination, select the <strong>Integrated Health &amp; Space Consultation</strong> for a comprehensive dual assessment.
@@ -453,7 +453,7 @@ get_header();
 <div class="bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden">
 <button aria-expanded="false" class="faq-toggle w-full px-6 py-5 text-left flex items-center justify-between gap-4 focus:outline-none" type="button">
 <span class="font-headline-sm text-[18px] text-primary font-medium">How do I book an appointment?</span>
-<span class="material-symbols-outlined text-secondary transition-transform duration-200 icon-arrow">add</span>
+<span class="material-symbols-outlined notranslate text-secondary transition-transform duration-200 icon-arrow" translate="no">add</span>
 </button>
 <div class="faq-content hidden px-6 pb-6 text-on-surface-variant font-body-md text-body-md leading-relaxed">
             Select your desired discipline from the pathways above. You will be directed to our secure appointment calendar where you can choose a convenient date and time (available for in-person sanctuary visits in New Delhi or encrypted virtual video calls). Once chosen, you will submit essential preliminary information and complete the one-time consultation payment.
@@ -463,7 +463,7 @@ get_header();
 <div class="bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden">
 <button aria-expanded="false" class="faq-toggle w-full px-6 py-5 text-left flex items-center justify-between gap-4 focus:outline-none" type="button">
 <span class="font-headline-sm text-[18px] text-primary font-medium">When is my appointment confirmed?</span>
-<span class="material-symbols-outlined text-secondary transition-transform duration-200 icon-arrow">add</span>
+<span class="material-symbols-outlined notranslate text-secondary transition-transform duration-200 icon-arrow" translate="no">add</span>
 </button>
 <div class="faq-content hidden px-6 pb-6 text-on-surface-variant font-body-md text-body-md leading-relaxed">
             Your appointment is reserved immediately and formally confirmed the moment the payment transaction clears our banking gateway. You will receive an instant on-screen booking ID followed by an exhaustive confirmation email containing calendar invites and pre-session guidance.
@@ -473,7 +473,7 @@ get_header();
 <div class="bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden">
 <button aria-expanded="false" class="faq-toggle w-full px-6 py-5 text-left flex items-center justify-between gap-4 focus:outline-none" type="button">
 <span class="font-headline-sm text-[18px] text-primary font-medium">How will I receive my appointment details?</span>
-<span class="material-symbols-outlined text-secondary transition-transform duration-200 icon-arrow">add</span>
+<span class="material-symbols-outlined notranslate text-secondary transition-transform duration-200 icon-arrow" translate="no">add</span>
 </button>
 <div class="faq-content hidden px-6 pb-6 text-on-surface-variant font-body-md text-body-md leading-relaxed">
             All logistical details—including session link, time-zone conversion, directions to the Vasant Vihar sanctuary (if in-person), and pre-consultation reflection prompts—are transmitted directly to your verified email address. For Vastu sessions, instructions for sending floor plans and cardinal compass photographs will be included.
@@ -483,17 +483,17 @@ get_header();
 <div class="bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden">
 <button aria-expanded="false" class="faq-toggle w-full px-6 py-5 text-left flex items-center justify-between gap-4 focus:outline-none" type="button">
 <span class="font-headline-sm text-[18px] text-primary font-medium">Can I reschedule or cancel?</span>
-<span class="material-symbols-outlined text-secondary transition-transform duration-200 icon-arrow">add</span>
+<span class="material-symbols-outlined notranslate text-secondary transition-transform duration-200 icon-arrow" translate="no">add</span>
 </button>
 <div class="faq-content hidden px-6 pb-6 text-on-surface-variant font-body-md text-body-md leading-relaxed">
-            Appointments may be rescheduled up to 48 hours prior to the designated slot using the self-service link in your confirmation email. For cancellations within the allowable window or extraordinary circumstances, please contact our concierge desk directly at <span class="text-primary font-semibold">sanctuary@anukul-harmony.com</span> or via +91 (011) 2614-1008.
+            Appointments may be rescheduled up to 48 hours prior to the designated slot using the self-service link in your confirmation email. For cancellations within the allowable window or extraordinary circumstances, please contact our concierge desk directly at <span class="text-primary font-semibold">sanctuary@anukul-harmony.com</span> or via WhatsApp <span class="notranslate font-semibold" translate="no">+91 7624012501</span> / Helpline <span class="notranslate font-semibold" translate="no">+91 63560 19951</span>.
           </div>
 </div>
 <!-- Item 6 -->
 <div class="bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden">
 <button aria-expanded="false" class="faq-toggle w-full px-6 py-5 text-left flex items-center justify-between gap-4 focus:outline-none" type="button">
 <span class="font-headline-sm text-[18px] text-primary font-medium">What if my payment fails?</span>
-<span class="material-symbols-outlined text-secondary transition-transform duration-200 icon-arrow">add</span>
+<span class="material-symbols-outlined notranslate text-secondary transition-transform duration-200 icon-arrow" translate="no">add</span>
 </button>
 <div class="faq-content hidden px-6 pb-6 text-on-surface-variant font-body-md text-body-md leading-relaxed">
             If a payment fails during checkout, the selected time slot is temporarily held for 15 minutes before being released back to the general calendar. You may simply re-attempt the transaction using an alternate payment method. Should funds be debited without an issued booking reference, our automated billing desk verifies reversals within 2 business days.
@@ -520,24 +520,24 @@ get_header();
 <div class="flex flex-wrap items-center gap-space-md mb-space-lg">
 <a class="inline-flex items-center justify-center gap-3 px-8 py-4 rounded-lg bg-surface-bright text-primary font-label-md text-label-md uppercase tracking-wider hover:bg-secondary-fixed hover:text-on-secondary-fixed transition-colors shadow-sm" data-path="consultation-booking" href="<?php echo esc_url( home_url( "/book-your-consultation/" ) ); ?>">
 <span>Book a Consultation</span>
-<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+<span class="material-symbols-outlined notranslate text-[18px]" translate="no">arrow_forward</span>
 </a>
 <a class="inline-flex items-center justify-center gap-2 px-6 py-4 rounded-lg bg-primary-container/80 text-primary-fixed font-label-md text-label-md uppercase tracking-wider hover:bg-primary transition-colors" data-path="contact" href="<?php echo esc_url( home_url( "/contact/" ) ); ?>">
 <span>Inquire with Desk</span>
 </a>
 </div>
 <div class="pt-space-md flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-8 font-body-sm text-body-sm text-primary-fixed-dim/90">
-<div class="flex items-center gap-2">
-<span class="material-symbols-outlined text-secondary-fixed text-[18px]">call</span>
-<span>Concierge Desk: +91 (011) 2614-1008</span>
+<div class="flex items-center gap-2 notranslate" translate="no">
+<span class="material-symbols-outlined notranslate text-secondary-fixed text-[18px]" translate="no">call</span>
+<span>WhatsApp: <a href="https://wa.me/917624012501" target="_blank" class="hover:underline text-white font-medium">+91 7624012501</a> · Desk: +91 63560 19951</span>
 </div>
-<div class="flex items-center gap-2">
-<span class="material-symbols-outlined text-secondary-fixed text-[18px]">mail</span>
+<div class="flex items-center gap-2 notranslate" translate="no">
+<span class="material-symbols-outlined notranslate text-secondary-fixed text-[18px]" translate="no">mail</span>
 <span>sanctuary@anukul-harmony.com</span>
 </div>
-<div class="flex items-center gap-2">
-<span class="material-symbols-outlined text-secondary-fixed text-[18px]">schedule</span>
-<span>07:30 – 19:30 IST</span>
+<div class="flex items-center gap-2 notranslate" translate="no">
+<span class="material-symbols-outlined notranslate text-secondary-fixed text-[18px]" translate="no">schedule</span>
+<span>Mon – Sat: 9:30 AM TO 6:30 PM</span>
 </div>
 </div>
 </div>

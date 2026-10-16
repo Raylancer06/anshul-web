@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 /**
  * Orders history tab
  *
@@ -55,43 +55,43 @@ if ( ! defined( 'ABSPATH' ) ) {
 <nav class="bg-surface-container-lowest p-space-sm rounded-xl shadow-sm flex flex-col gap-1">
 <a class="flex items-center justify-between px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-primary transition-all" href="#">
 <div class="flex items-center gap-space-sm">
-<span class="material-symbols-outlined text-[19px]">dashboard</span>
+<span class="material-symbols-outlined notranslate text-[19px]" translate="no">dashboard</span>
 <span class="font-body-md text-body-md">Dashboard</span>
 </div>
-<span class="material-symbols-outlined text-outline-variant text-[16px]">chevron_right</span>
+<span class="material-symbols-outlined notranslate text-outline-variant text-[16px]" translate="no">chevron_right</span>
 </a>
 <!-- Active Link -->
 <a class="flex items-center justify-between px-space-md py-space-sm rounded-lg bg-primary text-on-primary font-medium transition-all shadow-sm" href="#">
 <div class="flex items-center gap-space-sm">
-<span class="material-symbols-outlined text-[19px]" style="font-variation-settings: 'FILL' 1;">package_2</span>
+<span class="material-symbols-outlined notranslate text-[19px]" translate="no" style="font-variation-settings: 'FILL' 1;">package_2</span>
 <span class="font-body-md text-body-md">Orders</span>
 </div>
 <span class="font-label-sm text-label-sm bg-on-primary/20 text-on-primary px-2 py-0.5 rounded">Active</span>
 </a>
 <a class="flex items-center justify-between px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-primary transition-all" href="#">
 <div class="flex items-center gap-space-sm">
-<span class="material-symbols-outlined text-[19px]">domain</span>
+<span class="material-symbols-outlined notranslate text-[19px]" translate="no">domain</span>
 <span class="font-body-md text-body-md">Addresses</span>
 </div>
-<span class="material-symbols-outlined text-outline-variant text-[16px]">chevron_right</span>
+<span class="material-symbols-outlined notranslate text-outline-variant text-[16px]" translate="no">chevron_right</span>
 </a>
 <a class="flex items-center justify-between px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-primary transition-all" href="#">
 <div class="flex items-center gap-space-sm">
-<span class="material-symbols-outlined text-[19px]">badge</span>
+<span class="material-symbols-outlined notranslate text-[19px]" translate="no">badge</span>
 <span class="font-body-md text-body-md">Account Details</span>
 </div>
-<span class="material-symbols-outlined text-outline-variant text-[16px]">chevron_right</span>
+<span class="material-symbols-outlined notranslate text-outline-variant text-[16px]" translate="no">chevron_right</span>
 </a>
 <a class="flex items-center justify-between px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-primary transition-all" href="#">
 <div class="flex items-center gap-space-sm">
-<span class="material-symbols-outlined text-[19px]">file_download</span>
+<span class="material-symbols-outlined notranslate text-[19px]" translate="no">file_download</span>
 <span class="font-body-md text-body-md">Downloads</span>
 </div>
 <span class="font-label-sm text-label-sm text-on-surface-variant font-semibold">2</span>
 </a>
 <div class="my-space-xs h-px bg-surface-container-high mx-space-sm"></div>
 <a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg text-error hover:bg-error-container/40 transition-all" href="#">
-<span class="material-symbols-outlined text-[19px]">logout</span>
+<span class="material-symbols-outlined notranslate text-[19px]" translate="no">logout</span>
 <span class="font-body-md text-body-md font-medium">Logout</span>
 </a>
 </nav>
@@ -106,7 +106,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 <span class="font-body-sm text-body-sm text-primary font-semibold">Ishanya (Northeast) Gate</span>
 </div>
 </div>
-<span class="material-symbols-outlined text-secondary text-[20px]">explore</span>
+<span class="material-symbols-outlined notranslate text-secondary text-[20px]" translate="no">explore</span>
 </div>
 </aside>
 <!-- RIGHT MAIN CONTENT: Architectural Order Record (9 cols) -->
@@ -114,7 +114,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 <!-- Top Action Navigation -->
 <div class="flex items-center justify-between">
 <a class="inline-flex items-center gap-space-xs font-label-md text-label-md text-primary hover:text-secondary uppercase tracking-wider font-semibold group transition-colors" href="#">
-<span class="material-symbols-outlined text-[18px] group-hover:-translate-x-1 transition-transform">arrow_left_alt</span>
+<span class="material-symbols-outlined notranslate text-[18px] group-hover:-translate-x-1 transition-transform" translate="no">arrow_left_alt</span>
           Back to My Orders
         </a>
 <span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest hidden sm:inline">
@@ -154,7 +154,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 <div class="flex flex-col">
 <span class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant mb-1">Settlement</span>
 <span class="font-body-md text-body-md text-primary-container font-semibold flex items-center gap-1">
-<span class="material-symbols-outlined text-[16px] text-primary">verified</span> Paid in Full
+<span class="material-symbols-outlined notranslate text-[16px] text-primary" translate="no">verified</span> Paid in Full
             </span>
 <span class="font-label-sm text-label-sm text-on-surface-variant">₹ 3,450.00</span>
 </div>
@@ -181,7 +181,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 <section class="bg-surface-container-lowest p-space-lg lg:p-space-xl rounded-xl shadow-sm flex flex-col gap-space-md">
 <div class="flex items-center justify-between pb-space-sm">
 <div class="flex items-center gap-space-sm">
-<span class="material-symbols-outlined text-primary text-[22px]">local_pharmacy</span>
+<span class="material-symbols-outlined notranslate text-primary text-[22px]" translate="no">local_pharmacy</span>
 <h2 class="font-headline-md text-headline-md text-primary">Items In Your Order</h2>
 </div>
 <span class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant">3 Curated Artifacts</span>
@@ -257,7 +257,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 <article class="p-space-md bg-surface-container-high/40 hover:bg-surface-container-high/70 transition-colors rounded-xl flex flex-col md:flex-row items-start md:items-center justify-between gap-space-md">
 <div class="flex items-center gap-space-md min-w-0">
 <div class="w-20 h-20 rounded-lg overflow-hidden flex-shrink-0 bg-surface-container-highest flex items-center justify-center">
-<span class="material-symbols-outlined text-secondary text-[36px]">spa</span>
+<span class="material-symbols-outlined notranslate text-secondary text-[36px]" translate="no">spa</span>
 </div>
 <div class="flex flex-col min-w-0">
 <div class="flex items-center gap-2">
@@ -330,7 +330,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 <div class="flex items-center justify-between">
 <span class="font-label-sm text-label-sm uppercase tracking-widest text-secondary font-semibold">Payment Audit</span>
 <span class="inline-flex items-center gap-1 font-label-sm text-label-sm text-primary font-semibold">
-<span class="material-symbols-outlined text-[15px] text-primary">lock</span> 256-Bit SSL Secured
+<span class="material-symbols-outlined notranslate text-[15px] text-primary" translate="no">lock</span> 256-Bit SSL Secured
               </span>
 </div>
 <div class="grid grid-cols-1 sm:grid-cols-2 gap-space-sm pt-space-xs">
@@ -349,7 +349,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 <span class="text-on-surface select-all">#TXN_UPI_98241088421</span>
 </div>
 <button class="p-1.5 text-on-surface-variant hover:text-primary transition-colors" onclick="navigator.clipboard.writeText('TXN_UPI_98241088421')" title="Copy Transaction ID">
-<span class="material-symbols-outlined text-[18px]">content_copy</span>
+<span class="material-symbols-outlined notranslate text-[18px]" translate="no">content_copy</span>
 </button>
 </div>
 </div>
@@ -361,7 +361,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 <div>
 <div class="flex items-center justify-between mb-space-sm">
 <div class="flex items-center gap-2">
-<span class="material-symbols-outlined text-secondary text-[20px]">local_shipping</span>
+<span class="material-symbols-outlined notranslate text-secondary text-[20px]" translate="no">local_shipping</span>
 <span class="font-label-sm text-label-sm uppercase tracking-widest text-secondary font-bold">Shipping Sanctuary</span>
 </div>
 <span class="font-label-sm text-label-sm bg-surface-container text-primary px-2 py-0.5 rounded">Default</span>
@@ -385,7 +385,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 <div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm flex flex-col justify-between">
 <div>
 <div class="flex items-center gap-2 mb-space-sm">
-<span class="material-symbols-outlined text-primary text-[20px]">receipt_long</span>
+<span class="material-symbols-outlined notranslate text-primary text-[20px]" translate="no">receipt_long</span>
 <span class="font-label-sm text-label-sm uppercase tracking-widest text-primary font-bold">Billing Record</span>
 </div>
 <h4 class="font-headline-sm text-headline-sm text-primary mb-1">Aarav Nambiar</h4>
@@ -395,11 +395,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 </div>
 <div class="space-y-1.5 pt-space-xs font-body-sm text-body-sm text-on-surface-variant">
 <div class="flex items-center gap-2">
-<span class="material-symbols-outlined text-[16px] text-secondary">phone</span>
+<span class="material-symbols-outlined notranslate text-[16px] text-secondary" translate="no">phone</span>
 <span>+91 98765 43210</span>
 </div>
 <div class="flex items-center gap-2 truncate">
-<span class="material-symbols-outlined text-[16px] text-secondary">alternate_email</span>
+<span class="material-symbols-outlined notranslate text-[16px] text-secondary" translate="no">alternate_email</span>
 <span class="truncate">aarav.nambiar@sanctuary.in</span>
 </div>
 </div>
@@ -410,7 +410,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 <section class="bg-surface-container-lowest p-space-lg lg:p-space-xl rounded-xl shadow-sm flex flex-col gap-space-md">
 <div class="flex items-center justify-between pb-space-sm">
 <div class="flex items-center gap-space-sm">
-<span class="material-symbols-outlined text-primary text-[22px]">history_edu</span>
+<span class="material-symbols-outlined notranslate text-primary text-[22px]" translate="no">history_edu</span>
 <h2 class="font-headline-md text-headline-md text-primary">Order Chronology</h2>
 </div>
 <span class="font-label-sm text-label-sm uppercase tracking-widest text-secondary font-semibold">Sequential Sadhana Log</span>
@@ -455,15 +455,15 @@ if ( ! defined( 'ABSPATH' ) ) {
 </div>
 <div class="flex flex-wrap items-center gap-space-sm">
 <button class="inline-flex items-center gap-2 px-space-md py-3 rounded-lg bg-primary text-on-primary font-label-md text-label-md uppercase tracking-wider hover:bg-tertiary transition-colors shadow-sm">
-<span class="material-symbols-outlined text-[18px]">download</span>
+<span class="material-symbols-outlined notranslate text-[18px]" translate="no">download</span>
               Download Tax Invoice (PDF)
             </button>
 <button class="inline-flex items-center gap-2 px-space-md py-3 rounded-lg bg-surface-container-lowest text-primary hover:bg-surface-container font-label-md text-label-md uppercase tracking-wider transition-colors shadow-sm">
-<span class="material-symbols-outlined text-[18px]">cached</span>
+<span class="material-symbols-outlined notranslate text-[18px]" translate="no">cached</span>
               Reorder Items
             </button>
 <button class="inline-flex items-center gap-2 px-space-md py-3 rounded-lg bg-surface-container-lowest text-on-surface-variant hover:text-primary hover:bg-surface-container font-label-md text-label-md uppercase tracking-wider transition-colors shadow-sm" onclick="window.print()">
-<span class="material-symbols-outlined text-[18px]">print</span>
+<span class="material-symbols-outlined notranslate text-[18px]" translate="no">print</span>
               Print Details
             </button>
 </div>
@@ -482,7 +482,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 </div>
 <div class="relative z-10 pt-space-xs">
 <a class="inline-flex items-center justify-center gap-2 w-full py-3 px-space-md rounded-lg bg-surface-container-lowest text-primary hover:bg-surface-container-high transition-colors font-label-md text-label-md uppercase tracking-widest font-bold shadow-sm" href="#">
-<span class="material-symbols-outlined text-[18px]">forum</span>
+<span class="material-symbols-outlined notranslate text-[18px]" translate="no">forum</span>
               Contact ANUKUL Concierge
             </a>
 </div>

@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 /**
  * Blog Listing Template - The ANUKUL Journal
  *
@@ -31,15 +31,15 @@ get_header();
         </p>
 <div class="flex items-center gap-space-lg pt-space-xs text-on-surface-variant">
 <div class="flex items-center gap-space-xs">
-<span class="material-symbols-outlined text-[18px] text-secondary">auto_stories</span>
+<span class="material-symbols-outlined notranslate text-[18px] text-secondary" translate="no">auto_stories</span>
 <span class="font-label-md text-label-md uppercase tracking-wider">Clinical Dispatches</span>
 </div>
 <div class="flex items-center gap-space-xs">
-<span class="material-symbols-outlined text-[18px] text-secondary">explore</span>
+<span class="material-symbols-outlined notranslate text-[18px] text-secondary" translate="no">explore</span>
 <span class="font-label-md text-label-md uppercase tracking-wider">Spatial Diagnostics</span>
 </div>
 <div class="hidden sm:flex items-center gap-space-xs">
-<span class="material-symbols-outlined text-[18px] text-secondary">spa</span>
+<span class="material-symbols-outlined notranslate text-[18px] text-secondary" translate="no">spa</span>
 <span class="font-label-md text-label-md uppercase tracking-wider">Pure Botanical Art</span>
 </div>
 </div>
@@ -98,7 +98,7 @@ get_header();
 </div>
 <a class="inline-flex items-center gap-space-xs bg-primary text-surface px-space-lg py-space-sm rounded-lg font-label-md text-label-md uppercase tracking-wider hover:bg-tertiary transition-colors duration-200 self-start sm:self-auto" href="#articlesGrid">
 <span>READ ARTICLES</span>
-<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+<span class="material-symbols-outlined notranslate text-[18px]" translate="no">arrow_forward</span>
 </a>
 </div>
 </div>
@@ -116,9 +116,9 @@ get_header();
 </div>
 <div class="relative w-full md:w-80">
 <input class="w-full bg-surface-container-low text-on-surface placeholder:text-on-surface-variant/60 font-body-sm text-body-sm px-space-md py-3 pl-10 rounded-lg outline-none focus:ring-1 focus:ring-primary transition-all duration-150" id="journalSearchInput" placeholder="Search articles, concepts, topics..." type="text"/>
-<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-[18px]">search</span>
+<span class="material-symbols-outlined notranslate absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-[18px]" translate="no">search</span>
 <button class="hidden absolute right-3 top-1/2 -translate-y-1/2 text-on-surface-variant hover:text-primary" id="clearSearchBtn">
-<span class="material-symbols-outlined text-[16px]">close</span>
+<span class="material-symbols-outlined notranslate text-[16px]" translate="no">close</span>
 </button>
 </div>
 </div>
@@ -196,7 +196,7 @@ get_header();
 <div class="pt-space-sm border-t border-outline-variant/30 flex items-center justify-between">
 <span class="font-label-sm text-label-sm text-on-surface-variant"><?php printf( esc_html__( 'By %s', 'anukul' ), esc_html( get_the_author() ) ); ?></span>
 <a href="<?php the_permalink(); ?>" class="font-label-md text-label-md uppercase tracking-wider text-secondary font-semibold group-hover:underline inline-flex items-center gap-1">
-    Read Article <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+    Read Article <span class="material-symbols-outlined notranslate text-[14px]" translate="no">arrow_forward</span>
 </a>
 </div>
 </div>
@@ -225,7 +225,7 @@ get_header();
 <div class="pt-space-sm border-t border-outline-variant/30 flex items-center justify-between">
 <span class="font-label-sm text-label-sm text-on-surface-variant">May 12, 2025 • 5 Min Read</span>
 <span class="font-label-md text-label-md uppercase tracking-wider text-secondary font-semibold group-hover:underline inline-flex items-center gap-1">
-                Read Article <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+                Read Article <span class="material-symbols-outlined notranslate text-[14px]" translate="no">arrow_forward</span>
 </span>
 </div>
 </div>
@@ -252,7 +252,7 @@ get_header();
 <div class="pt-space-sm border-t border-outline-variant/30 flex items-center justify-between">
 <span class="font-label-sm text-label-sm text-on-surface-variant">May 04, 2025 • 7 Min Read</span>
 <span class="font-label-md text-label-md uppercase tracking-wider text-secondary font-semibold group-hover:underline inline-flex items-center gap-1">
-                Read Article <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+                Read Article <span class="material-symbols-outlined notranslate text-[14px]" translate="no">arrow_forward</span>
 </span>
 </div>
 </div>
@@ -279,7 +279,7 @@ get_header();
 <div class="pt-space-sm border-t border-outline-variant/30 flex items-center justify-between">
 <span class="font-label-sm text-label-sm text-on-surface-variant">Apr 28, 2025 • 8 Min Read</span>
 <span class="font-label-md text-label-md uppercase tracking-wider text-secondary font-semibold group-hover:underline inline-flex items-center gap-1">
-                Read Article <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+                Read Article <span class="material-symbols-outlined notranslate text-[14px]" translate="no">arrow_forward</span>
 </span>
 </div>
 </div>
@@ -306,7 +306,7 @@ get_header();
 <div class="pt-space-sm border-t border-outline-variant/30 flex items-center justify-between">
 <span class="font-label-sm text-label-sm text-on-surface-variant">Apr 19, 2025 • 6 Min Read</span>
 <span class="font-label-md text-label-md uppercase tracking-wider text-secondary font-semibold group-hover:underline inline-flex items-center gap-1">
-                Read Article <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+                Read Article <span class="material-symbols-outlined notranslate text-[14px]" translate="no">arrow_forward</span>
 </span>
 </div>
 </div>
@@ -333,7 +333,7 @@ get_header();
 <div class="pt-space-sm border-t border-outline-variant/30 flex items-center justify-between">
 <span class="font-label-sm text-label-sm text-on-surface-variant">Apr 10, 2025 • 4 Min Read</span>
 <span class="font-label-md text-label-md uppercase tracking-wider text-secondary font-semibold group-hover:underline inline-flex items-center gap-1">
-                Read Article <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+                Read Article <span class="material-symbols-outlined notranslate text-[14px]" translate="no">arrow_forward</span>
 </span>
 </div>
 </div>
@@ -360,7 +360,7 @@ get_header();
 <div class="pt-space-sm border-t border-outline-variant/30 flex items-center justify-between">
 <span class="font-label-sm text-label-sm text-on-surface-variant">Mar 27, 2025 • 6 Min Read</span>
 <span class="font-label-md text-label-md uppercase tracking-wider text-secondary font-semibold group-hover:underline inline-flex items-center gap-1">
-                Read Article <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+                Read Article <span class="material-symbols-outlined notranslate text-[14px]" translate="no">arrow_forward</span>
 </span>
 </div>
 </article>
@@ -370,7 +370,7 @@ get_header();
 
 <!-- Empty State Indicator -->
 <div class="hidden py-space-2xl text-center flex-col items-center justify-center gap-space-sm" id="noResultsState">
-<span class="material-symbols-outlined text-[48px] text-on-surface-variant/40">auto_stories</span>
+<span class="material-symbols-outlined notranslate text-[48px] text-on-surface-variant/40" translate="no">auto_stories</span>
 <h4 class="font-headline-sm text-headline-sm text-primary">No Articles Match Your Inquiry</h4>
 <p class="font-body-md text-body-md text-on-surface-variant max-w-md">
           Try adjusting your search terms or select "All Articles" to browse our complete collection of educational essays.
@@ -395,28 +395,28 @@ get_header();
         </p>
 <div class="grid grid-cols-1 sm:grid-cols-2 gap-space-md pt-space-xs">
 <div class="flex items-start gap-space-xs">
-<span class="material-symbols-outlined text-secondary text-[20px] shrink-0 mt-0.5">check_circle</span>
+<span class="material-symbols-outlined notranslate text-secondary text-[20px] shrink-0 mt-0.5" translate="no">check_circle</span>
 <div>
 <span class="font-label-md text-label-md text-primary font-semibold block">Prakriti &amp; Constitution</span>
 <span class="font-body-sm text-body-sm text-on-surface-variant">Mapping intrinsic doshic balances and constitutional predispositions.</span>
 </div>
 </div>
 <div class="flex items-start gap-space-xs">
-<span class="material-symbols-outlined text-secondary text-[20px] shrink-0 mt-0.5">check_circle</span>
+<span class="material-symbols-outlined notranslate text-secondary text-[20px] shrink-0 mt-0.5" translate="no">check_circle</span>
 <div>
 <span class="font-label-md text-label-md text-primary font-semibold block">Doshas &amp; Elemental Balance</span>
 <span class="font-body-sm text-body-sm text-on-surface-variant">Vata, Pitta, and Kapha dynamics within circadian cycles.</span>
 </div>
 </div>
 <div class="flex items-start gap-space-xs">
-<span class="material-symbols-outlined text-secondary text-[20px] shrink-0 mt-0.5">check_circle</span>
+<span class="material-symbols-outlined notranslate text-secondary text-[20px] shrink-0 mt-0.5" translate="no">check_circle</span>
 <div>
 <span class="font-label-md text-label-md text-primary font-semibold block">Agni &amp; Metabolic Clarity</span>
 <span class="font-body-sm text-body-sm text-on-surface-variant">Preserving digestive fire as the foundational seat of immunity.</span>
 </div>
 </div>
 <div class="flex items-start gap-space-xs">
-<span class="material-symbols-outlined text-secondary text-[20px] shrink-0 mt-0.5">check_circle</span>
+<span class="material-symbols-outlined notranslate text-secondary text-[20px] shrink-0 mt-0.5" translate="no">check_circle</span>
 <div>
 <span class="font-label-md text-label-md text-primary font-semibold block">Ahara &amp; Dinacharya</span>
 <span class="font-body-sm text-body-sm text-on-surface-variant">Daily hygiene, tailored sustenance, and seasonal rhythm transitions.</span>
@@ -426,11 +426,11 @@ get_header();
 <div class="flex flex-wrap items-center gap-space-md pt-space-sm">
 <a class="inline-flex items-center gap-space-xs bg-primary text-surface px-space-lg py-space-sm rounded-lg font-label-md text-label-md uppercase tracking-wider hover:bg-tertiary transition-colors duration-200" href="<?php echo esc_url( home_url( '/ayurveda/' ) ); ?>">
 <span>EXPLORE AYURVEDA ARTICLES</span>
-<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+<span class="material-symbols-outlined notranslate text-[16px]" translate="no">arrow_forward</span>
 </a>
 <a class="inline-flex items-center gap-space-xs text-primary font-label-md text-label-md uppercase tracking-wider hover:text-secondary transition-colors duration-200" href="<?php echo esc_url( home_url( '/ayurveda/' ) ); ?>">
 <span>VISIT AYURVEDA OVERVIEW</span>
-<span class="material-symbols-outlined text-[16px]">north_east</span>
+<span class="material-symbols-outlined notranslate text-[16px]" translate="no">north_east</span>
 </a>
 </div>
 </div>
@@ -460,28 +460,28 @@ get_header();
         </p>
 <div class="grid grid-cols-1 sm:grid-cols-2 gap-space-md pt-space-xs">
 <div class="flex items-start gap-space-xs">
-<span class="material-symbols-outlined text-secondary text-[20px] shrink-0 mt-0.5">compass_calibration</span>
+<span class="material-symbols-outlined notranslate text-secondary text-[20px] shrink-0 mt-0.5" translate="no">compass_calibration</span>
 <div>
 <span class="font-label-md text-label-md text-primary font-semibold block">Foundations of Vastu Shastra</span>
 <span class="font-body-sm text-body-sm text-on-surface-variant">Directional axes, solar geometry, and elemental quadrant mapping.</span>
 </div>
 </div>
 <div class="flex items-start gap-space-xs">
-<span class="material-symbols-outlined text-secondary text-[20px] shrink-0 mt-0.5">home</span>
+<span class="material-symbols-outlined notranslate text-secondary text-[20px] shrink-0 mt-0.5" translate="no">home</span>
 <div>
 <span class="font-label-md text-label-md text-primary font-semibold block">Residential Spatial Dynamics</span>
 <span class="font-body-sm text-body-sm text-on-surface-variant">Restful zones, domestic flow, and living room alignments.</span>
 </div>
 </div>
 <div class="flex items-start gap-space-xs">
-<span class="material-symbols-outlined text-secondary text-[20px] shrink-0 mt-0.5">apartment</span>
+<span class="material-symbols-outlined notranslate text-secondary text-[20px] shrink-0 mt-0.5" translate="no">apartment</span>
 <div>
 <span class="font-label-md text-label-md text-primary font-semibold block">Commercial Purpose &amp; Flow</span>
 <span class="font-body-sm text-body-sm text-on-surface-variant">Executive positioning, client pathways, and focus chambers.</span>
 </div>
 </div>
 <div class="flex items-start gap-space-xs">
-<span class="material-symbols-outlined text-secondary text-[20px] shrink-0 mt-0.5">health_and_safety</span>
+<span class="material-symbols-outlined notranslate text-secondary text-[20px] shrink-0 mt-0.5" translate="no">health_and_safety</span>
 <div>
 <span class="font-label-md text-label-md text-primary font-semibold block">Medico-Vastu Complementarity</span>
 <span class="font-body-sm text-body-sm text-on-surface-variant">Concurrence between physiological vitality and built micro-climates.</span>
@@ -491,11 +491,11 @@ get_header();
 <div class="flex flex-wrap items-center gap-space-md pt-space-sm">
 <a class="inline-flex items-center gap-space-xs bg-primary text-surface px-space-lg py-space-sm rounded-lg font-label-md text-label-md uppercase tracking-wider hover:bg-tertiary transition-colors duration-200" href="<?php echo esc_url( home_url( '/vastu/' ) ); ?>">
 <span>EXPLORE VASTU ARTICLES</span>
-<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+<span class="material-symbols-outlined notranslate text-[16px]" translate="no">arrow_forward</span>
 </a>
 <a class="inline-flex items-center gap-space-xs text-primary font-label-md text-label-md uppercase tracking-wider hover:text-secondary transition-colors duration-200" href="<?php echo esc_url( home_url( '/vastu/' ) ); ?>">
 <span>VISIT VASTU OVERVIEW</span>
-<span class="material-symbols-outlined text-[16px]">north_east</span>
+<span class="material-symbols-outlined notranslate text-[16px]" translate="no">north_east</span>
 </a>
 </div>
 </div>
@@ -553,7 +553,7 @@ get_header();
 <!-- SECTION 9: RESPONSIBLE EDUCATIONAL NOTE -->
 <section class="w-full bg-surface-container-highest py-space-md px-margin md:px-margin-md lg:px-margin-lg">
 <div class="max-w-[1440px] mx-auto flex items-start gap-space-sm text-on-surface-variant font-body-sm text-body-sm leading-relaxed">
-<span class="material-symbols-outlined text-[18px] text-secondary mt-0.5 shrink-0">info</span>
+<span class="material-symbols-outlined notranslate text-[18px] text-secondary mt-0.5 shrink-0" translate="no">info</span>
 <p class="max-w-4xl">
 <strong class="font-semibold text-primary">Responsible Educational Note:</strong> Articles are provided strictly for educational and informational purposes. Ayurveda content does not replace appropriate medical diagnosis, emergency medical care, or licensed pharmacological treatment. Vastu content presents traditional classical perspectives and environmental observation principles; it does not claim superstitious causation or guarantee supernatural outcomes.
       </p>

@@ -223,13 +223,24 @@ function anukul_customize_register( $wp_customize ) {
         'priority' => 30,
     ) );
 
-    // Phone
+    // Phone (WhatsApp & Primary Contact)
     $wp_customize->add_setting( 'anukul_phone', array(
-        'default'           => '+91 (011) 2614-1008',
+        'default'           => '+91 7624012501',
         'sanitize_callback' => 'sanitize_text_field',
     ) );
     $wp_customize->add_control( 'anukul_phone', array(
-        'label'    => __( 'Concierge Phone', 'anukul' ),
+        'label'    => __( 'Primary & WhatsApp Phone', 'anukul' ),
+        'section'  => 'anukul_clinic_info',
+        'type'     => 'text',
+    ) );
+
+    // Secondary Helpline Phone
+    $wp_customize->add_setting( 'anukul_phone_secondary', array(
+        'default'           => '+91 63560 19951',
+        'sanitize_callback' => 'sanitize_text_field',
+    ) );
+    $wp_customize->add_control( 'anukul_phone_secondary', array(
+        'label'    => __( 'Secondary Helpline Phone', 'anukul' ),
         'section'  => 'anukul_clinic_info',
         'type'     => 'text',
     ) );
@@ -247,7 +258,7 @@ function anukul_customize_register( $wp_customize ) {
 
     // Hours
     $wp_customize->add_setting( 'anukul_hours', array(
-        'default'           => 'Monday — Saturday: 08:00 AM – 07:00 PM IST',
+        'default'           => 'Monday — Saturday: 9:30 AM TO 6:30 PM',
         'sanitize_callback' => 'sanitize_text_field',
     ) );
     $wp_customize->add_control( 'anukul_hours', array(

@@ -34,7 +34,7 @@ get_header();
               SEND AN ENQUIRY
             </a>
 <div class="flex items-center gap-2 text-on-surface-variant font-label-sm text-label-sm uppercase tracking-[0.1em]">
-<span class="material-symbols-outlined text-[16px] text-secondary">explore</span>
+<span class="material-symbols-outlined notranslate text-[16px] text-secondary" translate="no">explore</span>
 <span>Individual &amp; Spatial Attunement</span>
 </div>
 </div>
@@ -51,7 +51,7 @@ get_header();
 <div class="absolute bottom-6 left-6 right-6 p-4 rounded-lg bg-surface/90 backdrop-blur-md flex items-center justify-between">
 <div class="flex items-center gap-3">
 <div class="w-8 h-8 rounded bg-primary-container text-on-primary flex items-center justify-center">
-<span class="material-symbols-outlined text-[18px] text-primary-fixed">temple_buddhist</span>
+<span class="material-symbols-outlined notranslate text-[18px] text-primary-fixed" translate="no">temple_buddhist</span>
 </div>
 <div>
 <div class="font-label-sm text-label-sm uppercase tracking-[0.1em] text-primary font-bold">Sanctuary Enclave</div>
@@ -178,7 +178,7 @@ get_header();
 </form>
 <!-- Feedback Overlay Dialog (Hidden by Default) -->
 <div class="hidden mt-space-lg p-space-md rounded bg-surface-container text-primary flex items-start gap-3" id="confirmation-modal">
-<span class="material-symbols-outlined text-primary text-[24px]">check_circle</span>
+<span class="material-symbols-outlined notranslate text-primary text-[24px]" translate="no">check_circle</span>
 <div>
 <div class="font-headline-sm text-headline-sm">Enquiry Registered</div>
 <p class="font-body-md text-body-md text-on-surface-variant mt-1">Thank you for sharing your context. The ANUKUL sanctuary team will review your message and reply via your preferred contact method.</p>
@@ -201,7 +201,7 @@ get_header();
 <div class="flex flex-col justify-between bg-surface-container-lowest p-space-lg rounded-xl shadow-sm hover:shadow-md transition-shadow duration-200">
 <div>
 <div class="w-10 h-10 rounded bg-surface-container text-primary flex items-center justify-center mb-space-md">
-<span class="material-symbols-outlined text-[22px]">eco</span>
+<span class="material-symbols-outlined notranslate text-[22px]" translate="no">eco</span>
 </div>
 <span class="font-label-sm text-label-sm uppercase tracking-[0.12em] text-secondary font-bold block mb-1">01 / PRAKRITI &amp; DINACHARYA</span>
 <h3 class="font-headline-sm text-headline-sm text-primary mb-space-sm">Ayurveda</h3>
@@ -211,14 +211,14 @@ get_header();
 </div>
 <a class="inline-flex items-center gap-2 font-label-md text-label-md uppercase tracking-[0.12em] text-primary hover:text-secondary transition-colors" data-path="ayurveda" href="<?php echo esc_url( home_url( "/ayurveda/" ) ); ?>">
 <span>EXPLORE AYURVEDA</span>
-<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+<span class="material-symbols-outlined notranslate text-[16px]" translate="no">arrow_forward</span>
 </a>
 </div>
 <!-- Discipline 2: Vastu Shastra -->
 <div class="flex flex-col justify-between bg-surface-container-lowest p-space-lg rounded-xl shadow-sm hover:shadow-md transition-shadow duration-200">
 <div>
 <div class="w-10 h-10 rounded bg-surface-container text-primary flex items-center justify-center mb-space-md">
-<span class="material-symbols-outlined text-[22px]">compass_calibration</span>
+<span class="material-symbols-outlined notranslate text-[22px]" translate="no">compass_calibration</span>
 </div>
 <span class="font-label-sm text-label-sm uppercase tracking-[0.12em] text-secondary font-bold block mb-1">02 / SPATIAL GEOMETRY</span>
 <h3 class="font-headline-sm text-headline-sm text-primary mb-space-sm">Vastu Shastra</h3>
@@ -228,14 +228,14 @@ get_header();
 </div>
 <a class="inline-flex items-center gap-2 font-label-md text-label-md uppercase tracking-[0.12em] text-primary hover:text-secondary transition-colors" data-path="vastu" href="<?php echo esc_url( home_url( "/vastu/" ) ); ?>">
 <span>EXPLORE VASTU</span>
-<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+<span class="material-symbols-outlined notranslate text-[16px]" translate="no">arrow_forward</span>
 </a>
 </div>
 <!-- Discipline 3: ANUKUL Services -->
 <div class="flex flex-col justify-between bg-surface-container-lowest p-space-lg rounded-xl shadow-sm hover:shadow-md transition-shadow duration-200">
 <div>
 <div class="w-10 h-10 rounded bg-surface-container text-primary flex items-center justify-center mb-space-md">
-<span class="material-symbols-outlined text-[22px]">tune</span>
+<span class="material-symbols-outlined notranslate text-[22px]" translate="no">tune</span>
 </div>
 <span class="font-label-sm text-label-sm uppercase tracking-[0.12em] text-secondary font-bold block mb-1">03 / CLINICAL TAXONOMY</span>
 <h3 class="font-headline-sm text-headline-sm text-primary mb-space-sm">ANUKUL Services</h3>
@@ -245,7 +245,7 @@ get_header();
 </div>
 <a class="inline-flex items-center gap-2 font-label-md text-label-md uppercase tracking-[0.12em] text-primary hover:text-secondary transition-colors" data-path="services" href="<?php echo esc_url( home_url( "/services/" ) ); ?>">
 <span>VIEW SERVICES</span>
-<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+<span class="material-symbols-outlined notranslate text-[16px]" translate="no">arrow_forward</span>
 </a>
 </div>
 </div>
@@ -267,46 +267,49 @@ get_header();
             </p>
 </div>
 <div class="p-space-md rounded bg-surface-container-low text-on-surface-variant font-body-sm text-body-sm flex items-center gap-3">
-<span class="material-symbols-outlined text-secondary text-[20px]">verified</span>
+<span class="material-symbols-outlined notranslate text-secondary text-[20px]" translate="no">verified</span>
 <span>Clinic coordinates maintained and verified for patient confidentiality and sanctuary records.</span>
 </div>
 </div>
 <!-- Right 4-Point Coordinates Grid -->
 <div class="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-space-md">
 <!-- Phone Card -->
-<div class="p-space-lg bg-surface-container-lowest rounded-lg shadow-sm flex flex-col">
+<div class="p-space-lg bg-surface-container-lowest rounded-lg shadow-sm flex flex-col notranslate" translate="no">
 <div class="flex items-center gap-3 mb-space-sm text-primary">
-<span class="material-symbols-outlined text-[20px]">call</span>
-<span class="font-label-md text-label-md uppercase tracking-[0.1em]">Telephone Access</span>
+<span class="material-symbols-outlined notranslate text-[20px]" translate="no">call</span>
+<span class="font-label-md text-label-md uppercase tracking-[0.1em]">Telephone Access &amp; WhatsApp</span>
 </div>
-<div class="font-headline-sm text-headline-sm text-primary mb-1">[INSERT VERIFIED PHONE NUMBER]</div>
-<div class="font-body-sm text-body-sm text-on-surface-variant">Direct clinic concierge line for scheduling queries.</div>
+<div class="font-headline-sm text-headline-sm text-primary mb-1">
+  <a href="https://wa.me/917624012501" target="_blank" class="hover:text-secondary transition-colors block text-[17px] sm:text-[19px] font-bold">+91 7624012501</a>
+  <a href="tel:+916356019951" class="hover:text-secondary transition-colors block text-[15px] sm:text-[16px] text-on-surface-variant font-medium mt-0.5">+91 63560 19951</a>
+</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">Direct clinic concierge line &amp; official WhatsApp for scheduling queries.</div>
 </div>
 <!-- Email Card -->
-<div class="p-space-lg bg-surface-container-lowest rounded-lg shadow-sm flex flex-col">
+<div class="p-space-lg bg-surface-container-lowest rounded-lg shadow-sm flex flex-col notranslate" translate="no">
 <div class="flex items-center gap-3 mb-space-sm text-primary">
-<span class="material-symbols-outlined text-[20px]">mail</span>
+<span class="material-symbols-outlined notranslate text-[20px]" translate="no">mail</span>
 <span class="font-label-md text-label-md uppercase tracking-[0.1em]">Written Inquiries</span>
 </div>
-<div class="font-headline-sm text-headline-sm text-primary mb-1">[INSERT VERIFIED EMAIL ADDRESS]</div>
+<div class="font-headline-sm text-headline-sm text-primary mb-1 text-[17px] sm:text-[19px] font-bold">sanctuary@anukul-harmony.com</div>
 <div class="font-body-sm text-body-sm text-on-surface-variant">Reviewed regularly during active intake periods.</div>
 </div>
 <!-- Address Card -->
 <div class="p-space-lg bg-surface-container-lowest rounded-lg shadow-sm flex flex-col">
 <div class="flex items-center gap-3 mb-space-sm text-primary">
-<span class="material-symbols-outlined text-[20px]">location_on</span>
+<span class="material-symbols-outlined notranslate text-[20px]" translate="no">location_on</span>
 <span class="font-label-md text-label-md uppercase tracking-[0.1em]">Sanctuary Address</span>
 </div>
-<div class="font-headline-sm text-headline-sm text-primary mb-1">[INSERT VERIFIED CLINIC ADDRESS]</div>
+<div class="font-headline-sm text-headline-sm text-primary mb-1 text-[17px] sm:text-[19px] font-bold">Prime Vedic Enclave, Cultural Quarter</div>
 <div class="font-body-sm text-body-sm text-on-surface-variant">North-East facing orientation; tranquil courtyard entry.</div>
 </div>
 <!-- Hours Card -->
 <div class="p-space-lg bg-surface-container-lowest rounded-lg shadow-sm flex flex-col">
 <div class="flex items-center gap-3 mb-space-sm text-primary">
-<span class="material-symbols-outlined text-[20px]">schedule</span>
+<span class="material-symbols-outlined notranslate text-[20px]" translate="no">schedule</span>
 <span class="font-label-md text-label-md uppercase tracking-[0.1em]">Consultation Hours</span>
 </div>
-<div class="font-headline-sm text-headline-sm text-primary mb-1">[INSERT CONFIRMED HOURS]</div>
+<div class="font-headline-sm text-headline-sm text-primary mb-1 text-[16px] sm:text-[18px] font-bold notranslate" translate="no">Monday &mdash; Saturday: 9:30 AM TO 6:30 PM</div>
 <div class="font-body-sm text-body-sm text-on-surface-variant">Conducted strictly by confirmed prior reservation.</div>
 </div>
 </div>
@@ -366,7 +369,7 @@ get_header();
 <div class="bg-surface-container-lowest rounded-lg p-space-md shadow-sm">
 <button class="w-full flex items-center justify-between text-left font-headline-sm text-headline-sm text-primary" onclick="this.nextElementSibling.classList.toggle('hidden'); this.querySelector('.faq-icon').textContent = this.nextElementSibling.classList.contains('hidden') ? 'add' : 'remove';" type="button">
 <span>Which service should I enquire about?</span>
-<span class="material-symbols-outlined faq-icon text-secondary">add</span>
+<span class="material-symbols-outlined notranslate faq-icon text-secondary" translate="no">add</span>
 </button>
 <div class="hidden pt-space-sm font-body-md text-body-md text-on-surface-variant">
               If you have a clear focus such as dietary balance, choosing Ayurveda is ideal. For home or office layouts, select Residential or Commercial Vastu. If you are uncertain how your needs connect, simply choose 'Not Sure Yet' or 'General Enquiry' and we will help direct you.
@@ -376,7 +379,7 @@ get_header();
 <div class="bg-surface-container-lowest rounded-lg p-space-md shadow-sm">
 <button class="w-full flex items-center justify-between text-left font-headline-sm text-headline-sm text-primary" onclick="this.nextElementSibling.classList.toggle('hidden'); this.querySelector('.faq-icon').textContent = this.nextElementSibling.classList.contains('hidden') ? 'add' : 'remove';" type="button">
 <span>Can I enquire about Ayurveda and Vastu together?</span>
-<span class="material-symbols-outlined faq-icon text-secondary">add</span>
+<span class="material-symbols-outlined notranslate faq-icon text-secondary" translate="no">add</span>
 </button>
 <div class="hidden pt-space-sm font-body-md text-body-md text-on-surface-variant">
               Yes. Many seekers engage with our Medico-Vastu synthesis or request dual consultations. You may specify both within your message so we can outline how both modalities harmonize.
@@ -386,7 +389,7 @@ get_header();
 <div class="bg-surface-container-lowest rounded-lg p-space-md shadow-sm">
 <button class="w-full flex items-center justify-between text-left font-headline-sm text-headline-sm text-primary" onclick="this.nextElementSibling.classList.toggle('hidden'); this.querySelector('.faq-icon').textContent = this.nextElementSibling.classList.contains('hidden') ? 'add' : 'remove';" type="button">
 <span>Do I need to provide detailed personal information?</span>
-<span class="material-symbols-outlined faq-icon text-secondary">add</span>
+<span class="material-symbols-outlined notranslate faq-icon text-secondary" translate="no">add</span>
 </button>
 <div class="hidden pt-space-sm font-body-md text-body-md text-on-surface-variant">
               No. At this introductory stage, only basic contact details and a brief outline of your goals are needed. Detailed constitutional records or architectural blueprints are requested only after a consultation is formally scheduled.
@@ -396,7 +399,7 @@ get_header();
 <div class="bg-surface-container-lowest rounded-lg p-space-md shadow-sm">
 <button class="w-full flex items-center justify-between text-left font-headline-sm text-headline-sm text-primary" onclick="this.nextElementSibling.classList.toggle('hidden'); this.querySelector('.faq-icon').textContent = this.nextElementSibling.classList.contains('hidden') ? 'add' : 'remove';" type="button">
 <span>How will my enquiry be handled?</span>
-<span class="material-symbols-outlined faq-icon text-secondary">add</span>
+<span class="material-symbols-outlined notranslate faq-icon text-secondary" translate="no">add</span>
 </button>
 <div class="hidden pt-space-sm font-body-md text-body-md text-on-surface-variant">
               Your submission is reviewed directly by our clinic directors. We do not use automated conversational bots; you will receive a thoughtful human reply addressing the specific nature of your inquiry.
@@ -406,7 +409,7 @@ get_header();
 <div class="bg-surface-container-lowest rounded-lg p-space-md shadow-sm">
 <button class="w-full flex items-center justify-between text-left font-headline-sm text-headline-sm text-primary" onclick="this.nextElementSibling.classList.toggle('hidden'); this.querySelector('.faq-icon').textContent = this.nextElementSibling.classList.contains('hidden') ? 'add' : 'remove';" type="button">
 <span>Can I ask a general question before booking?</span>
-<span class="material-symbols-outlined faq-icon text-secondary">add</span>
+<span class="material-symbols-outlined notranslate faq-icon text-secondary" translate="no">add</span>
 </button>
 <div class="hidden pt-space-sm font-body-md text-body-md text-on-surface-variant">
               Certainly. We encourage general questions regarding our clinical methodology, appointment formats (in-person vs. remote assessment), and preparation guidelines before committing to a session.

@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 /**
  * Template Name: Book Your Consultation
  *
@@ -23,7 +23,7 @@ get_header();
 <span class="hidden md:inline">256-Bit SSL Encrypted Healthcare Gateway</span>
 </div>
 <div class="flex items-center gap-space-sm font-label-sm text-label-sm text-secondary tracking-widest uppercase">
-<span class="material-symbols-outlined text-[15px]">verified_user</span>
+<span class="material-symbols-outlined notranslate text-[15px]" translate="no">verified_user</span>
 <span>NABH &amp; Ayush Aligned Protocols</span>
 </div>
 </div>
@@ -50,7 +50,7 @@ get_header();
 <div class="lg:col-span-4 flex lg:justify-end">
 <div class="p-space-md bg-surface-container rounded-lg flex items-center gap-space-md w-full sm:w-auto shadow-sm">
 <div class="w-10 h-10 rounded-full bg-primary-container text-on-primary flex items-center justify-center shrink-0">
-<span class="material-symbols-outlined text-[20px]">timer</span>
+<span class="material-symbols-outlined notranslate text-[20px]" translate="no">timer</span>
 </div>
 <div class="flex flex-col">
 <span class="font-label-sm text-label-sm uppercase tracking-wider text-secondary">Slot Hold Timer</span>
@@ -115,11 +115,11 @@ get_header();
 <div class="hidden w-full bg-error-container text-on-error-container py-3 px-margin md:px-margin-md lg:px-margin-lg shadow-sm" id="alert-banner">
 <div class="max-w-7xl mx-auto flex items-center justify-between gap-space-md">
 <div class="flex items-center gap-space-sm font-body-sm text-body-sm">
-<span class="material-symbols-outlined text-error">notification_important</span>
+<span class="material-symbols-outlined notranslate text-error" translate="no">notification_important</span>
 <span><strong>Attention:</strong> The previously selected slot on 11:00 AM IST was claimed by another patient during verification. Please choose another muhurta from Step 2.</span>
 </div>
 <button class="text-on-error-container hover:text-error" onclick="dismissAlert()">
-<span class="material-symbols-outlined text-[18px]">close</span>
+<span class="material-symbols-outlined notranslate text-[18px]" translate="no">close</span>
 </button>
 </div>
 </div>
@@ -135,7 +135,7 @@ get_header();
 <p class="font-body-md text-body-md text-on-surface-variant mt-1">Our certified vaidyas and vastu shastra acharyas offer individualized evaluations rooted in foundational Vedic manuscripts.</p>
 </div>
 <div class="flex items-center gap-space-sm font-label-md text-label-md text-on-surface-variant shrink-0">
-<span class="material-symbols-outlined text-primary text-[18px]">verified</span>
+<span class="material-symbols-outlined notranslate text-primary text-[18px]" translate="no">verified</span>
 <span>All fees inclusive of statutory GST (18%)</span>
 </div>
 </div>
@@ -155,11 +155,11 @@ get_header();
 </p>
 <div class="bg-surface-container-low p-space-sm rounded-lg flex flex-col gap-1.5 font-body-sm text-[12px] text-on-surface-variant mb-space-md">
 <div class="flex items-center gap-2">
-<span class="material-symbols-outlined text-[16px] text-primary">video_camera_front</span>
+<span class="material-symbols-outlined notranslate text-[16px] text-primary" translate="no">video_camera_front</span>
 <span>Video Call (Secure Tele-Health)</span>
 </div>
 <div class="flex items-center gap-2">
-<span class="material-symbols-outlined text-[16px] text-primary">clinical_notes</span>
+<span class="material-symbols-outlined notranslate text-[16px] text-primary" translate="no">clinical_notes</span>
 <span>Personalized Ahara-Vihara Dossier</span>
 </div>
 </div>
@@ -189,11 +189,11 @@ get_header();
 </p>
 <div class="bg-surface-container-low p-space-sm rounded-lg flex flex-col gap-1.5 font-body-sm text-[12px] text-on-surface-variant mb-space-md">
 <div class="flex items-center gap-2">
-<span class="material-symbols-outlined text-[16px] text-primary">architecture</span>
+<span class="material-symbols-outlined notranslate text-[16px] text-primary" translate="no">architecture</span>
 <span>Blueprint Review &amp; Video Analysis</span>
 </div>
 <div class="flex items-center gap-2">
-<span class="material-symbols-outlined text-[16px] text-primary">compass_calibration</span>
+<span class="material-symbols-outlined notranslate text-[16px] text-primary" translate="no">compass_calibration</span>
 <span>Mandala Grid &amp; Remedial Overlay</span>
 </div>
 </div>
@@ -223,11 +223,11 @@ get_header();
 </p>
 <div class="bg-surface-container-low p-space-sm rounded-lg flex flex-col gap-1.5 font-body-sm text-[12px] text-on-surface-variant mb-space-md">
 <div class="flex items-center gap-2">
-<span class="material-symbols-outlined text-[16px] text-primary">domain_add</span>
+<span class="material-symbols-outlined notranslate text-[16px] text-primary" translate="no">domain_add</span>
 <span>Structural &amp; Site Blueprint Audit</span>
 </div>
 <div class="flex items-center gap-2">
-<span class="material-symbols-outlined text-[16px] text-primary">auto_graph</span>
+<span class="material-symbols-outlined notranslate text-[16px] text-primary" translate="no">auto_graph</span>
 <span>Planetary &amp; Energetic Grid Calibration</span>
 </div>
 </div>
@@ -247,7 +247,7 @@ get_header();
 <div class="consultation-card active-card cursor-pointer bg-surface-container-lowest p-space-md lg:p-space-lg rounded-xl flex flex-col justify-between transition-all duration-300 shadow-md relative group ring-2 ring-primary" id="card-complete" onclick="selectConsultation('complete', 5100, 'Complete Medico-Astro Vastu Numerology Consultation', '90 mins', 'Complete 4-Pillar Master Consultation')">
 <!-- Active Recommended Badge -->
 <div class="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-secondary text-on-secondary px-3 py-0.5 rounded-full font-label-sm text-[10px] uppercase tracking-widest font-bold shadow-sm flex items-center gap-1 whitespace-nowrap">
-<span class="material-symbols-outlined text-[13px]">auto_awesome</span>
+<span class="material-symbols-outlined notranslate text-[13px]" translate="no">auto_awesome</span>
 Recommended Protocol
 </div>
 <div class="flex flex-col">
@@ -262,11 +262,11 @@ Recommended Protocol
 </p>
 <div class="bg-surface-container-low p-space-sm rounded-lg flex flex-col gap-1.5 font-body-sm text-[12px] text-on-surface-variant mb-space-md">
 <div class="flex items-center gap-2">
-<span class="material-symbols-outlined text-[16px] text-primary">workspace_premium</span>
+<span class="material-symbols-outlined notranslate text-[16px] text-primary" translate="no">workspace_premium</span>
 <span>Complete 4-Pillar Master Consultation</span>
 </div>
 <div class="flex items-center gap-2">
-<span class="material-symbols-outlined text-[16px] text-primary">folder_special</span>
+<span class="material-symbols-outlined notranslate text-[16px] text-primary" translate="no">folder_special</span>
 <span>Unified Multi-Dossier &amp; Blueprint Plan</span>
 </div>
 </div>
@@ -286,7 +286,7 @@ Recommended Protocol
 <div class="flex justify-end pt-space-lg">
 <button class="inline-flex items-center gap-space-sm px-8 py-3.5 rounded-lg bg-primary text-on-primary font-label-md text-label-md uppercase tracking-wider hover:bg-tertiary transition-colors duration-200 shadow-md" onclick="goToStep(2)" type="button">
 <span>Proceed to Choose Slot</span>
-<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+<span class="material-symbols-outlined notranslate text-[18px]" translate="no">arrow_forward</span>
 </button>
 </div>
 </section>
@@ -299,7 +299,7 @@ Recommended Protocol
 <p class="font-body-md text-body-md text-on-surface-variant mt-1">Calendar slots are calibrated against diurnal bio-rhythms (Brahma Muhurta, Pitta metabolic peak, and Vata twilight calmness).</p>
 </div>
 <div class="bg-surface-container px-4 py-2 rounded-lg flex items-center gap-space-xs text-primary font-body-sm text-body-sm">
-<span class="material-symbols-outlined text-[18px]">schedule</span>
+<span class="material-symbols-outlined notranslate text-[18px]" translate="no">schedule</span>
 <span class="font-semibold" id="active-consultation-banner">Complete Medico-Astro Vastu Numerology Consultation (90 Mins)</span>
 </div>
 </div>
@@ -315,10 +315,10 @@ Recommended Protocol
 </div>
 <div class="flex items-center gap-1">
 <button class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center text-on-surface-variant hover:text-primary hover:bg-surface-container-high transition-colors" type="button">
-<span class="material-symbols-outlined text-[18px]">chevron_left</span>
+<span class="material-symbols-outlined notranslate text-[18px]" translate="no">chevron_left</span>
 </button>
 <button class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center text-on-surface-variant hover:text-primary hover:bg-surface-container-high transition-colors" type="button">
-<span class="material-symbols-outlined text-[18px]">chevron_right</span>
+<span class="material-symbols-outlined notranslate text-[18px]" translate="no">chevron_right</span>
 </button>
 </div>
 </div>
@@ -401,7 +401,7 @@ Recommended Protocol
 <span class="font-label-sm text-label-sm uppercase tracking-wider text-secondary font-bold">Selected Consultation Day</span>
 <h3 class="font-headline-sm text-headline-sm text-primary" id="current-chosen-date">Tuesday, November 18, 2025</h3>
 </div>
-<span class="material-symbols-outlined text-primary text-[24px]">event_available</span>
+<span class="material-symbols-outlined notranslate text-primary text-[24px]" translate="no">event_available</span>
 </div>
 <!-- Time Slot Section 1: Morning -->
 <div class="flex flex-col gap-space-xs">
@@ -412,12 +412,12 @@ Recommended Protocol
 <div class="grid grid-cols-2 gap-space-sm pt-1">
 <button class="time-slot-btn px-4 py-3 rounded-lg bg-surface-container text-on-surface font-body-sm text-body-sm font-medium hover:bg-surface-container-high transition-all text-left flex items-center justify-between" onclick="selectTimeSlot('09:30 AM – 11:00 AM IST', this)" type="button">
 <span>09:30 AM IST</span>
-<span class="material-symbols-outlined text-[16px] text-primary">circle</span>
+<span class="material-symbols-outlined notranslate text-[16px] text-primary" translate="no">circle</span>
 </button>
 <!-- Active Selected Slot (11:00 AM) -->
 <button class="time-slot-btn selected-slot px-4 py-3 rounded-lg bg-primary text-on-primary font-body-sm text-body-sm font-semibold shadow-sm transition-all text-left flex items-center justify-between" onclick="selectTimeSlot('11:00 AM – 12:30 PM IST', this)" type="button">
 <span>11:00 AM IST</span>
-<span class="material-symbols-outlined text-[16px] text-on-primary">check_circle</span>
+<span class="material-symbols-outlined notranslate text-[16px] text-on-primary" translate="no">check_circle</span>
 </button>
 </div>
 </div>
@@ -435,11 +435,11 @@ Recommended Protocol
 </div>
 <button class="time-slot-btn px-4 py-3 rounded-lg bg-surface-container text-on-surface font-body-sm text-body-sm font-medium hover:bg-surface-container-high transition-all text-left flex items-center justify-between" onclick="selectTimeSlot('04:00 PM – 05:30 PM IST', this)" type="button">
 <span>04:00 PM IST</span>
-<span class="material-symbols-outlined text-[16px] text-primary">circle</span>
+<span class="material-symbols-outlined notranslate text-[16px] text-primary" translate="no">circle</span>
 </button>
 <button class="time-slot-btn px-4 py-3 rounded-lg bg-surface-container text-on-surface font-body-sm text-body-sm font-medium hover:bg-surface-container-high transition-all text-left flex items-center justify-between" onclick="selectTimeSlot('05:30 PM – 07:00 PM IST', this)" type="button">
 <span>05:30 PM IST</span>
-<span class="material-symbols-outlined text-[16px] text-primary">circle</span>
+<span class="material-symbols-outlined notranslate text-[16px] text-primary" translate="no">circle</span>
 </button>
 <div class="px-4 py-3 rounded-lg bg-surface-container-highest text-on-surface-variant/50 font-body-sm text-body-sm flex items-center justify-between cursor-not-allowed">
 <span class="line-through">07:00 PM IST</span>
@@ -449,7 +449,7 @@ Recommended Protocol
 </div>
 <!-- Timezone & Notification Notice -->
 <div class="bg-surface-container p-space-sm rounded-lg flex items-start gap-space-xs text-on-surface-variant font-body-sm text-body-sm text-[12px] leading-relaxed">
-<span class="material-symbols-outlined text-primary text-[18px] shrink-0">public</span>
+<span class="material-symbols-outlined notranslate text-primary text-[18px] shrink-0" translate="no">public</span>
 <p>All consultation times are shown in Indian Standard Time (IST · UTC+5:30). An automatic calendar invite with local timezone conversion will be dispatched upon confirmation.</p>
 </div>
 </div>
@@ -460,7 +460,7 @@ Recommended Protocol
               </button>
 <button class="inline-flex items-center gap-space-xs px-6 py-2.5 rounded-lg bg-primary text-on-primary font-label-md text-label-md uppercase tracking-wider hover:bg-tertiary transition-colors shadow-sm" onclick="goToStep(3)" type="button">
 <span>Continue to Details</span>
-<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+<span class="material-symbols-outlined notranslate text-[16px]" translate="no">arrow_forward</span>
 </button>
 </div>
 </div>
@@ -475,7 +475,7 @@ Recommended Protocol
 <p class="font-body-md text-body-md text-on-surface-variant mt-1">This intake equips Dr. Chaudhari and the spatial audit team with initial context prior to your session.</p>
 </div>
 <div class="flex items-center gap-2 text-on-surface-variant font-label-md text-label-md">
-<span class="material-symbols-outlined text-primary text-[18px]">lock</span>
+<span class="material-symbols-outlined notranslate text-primary text-[18px]" translate="no">lock</span>
 <span>HIPAA &amp; Digital Health Data Compliant</span>
 </div>
 </div>
@@ -533,7 +533,7 @@ Recommended Protocol
               </button>
 <button class="inline-flex items-center gap-space-xs px-6 py-2.5 rounded-lg bg-primary text-on-primary font-label-md text-label-md uppercase tracking-wider hover:bg-tertiary transition-colors shadow-sm" type="submit">
 <span>Proceed to Payment</span>
-<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+<span class="material-symbols-outlined notranslate text-[16px]" translate="no">arrow_forward</span>
 </button>
 </div>
 </form>
@@ -541,7 +541,7 @@ Recommended Protocol
 <div class="lg:col-span-4 flex flex-col gap-space-md">
 <div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm flex flex-col gap-space-md">
 <div class="flex items-center gap-space-sm pb-space-sm">
-<span class="material-symbols-outlined text-secondary text-[22px]">medical_services</span>
+<span class="material-symbols-outlined notranslate text-secondary text-[22px]" translate="no">medical_services</span>
 <h3 class="font-headline-sm text-headline-sm text-primary">Session Overview</h3>
 </div>
 <div class="flex flex-col gap-space-sm font-body-sm text-body-sm">
@@ -569,7 +569,7 @@ Recommended Protocol
 </div>
 <!-- Sanctuary Guarantee Card -->
 <div class="bg-surface-container p-space-md rounded-xl flex items-start gap-space-sm">
-<span class="material-symbols-outlined text-secondary text-[24px] shrink-0">spa</span>
+<span class="material-symbols-outlined notranslate text-secondary text-[24px] shrink-0" translate="no">spa</span>
 <div class="flex flex-col gap-1">
 <span class="font-label-sm text-label-sm uppercase tracking-wider text-primary font-bold">Preparation Dossier Included</span>
 <p class="font-body-sm text-body-sm text-on-surface-variant text-[12px] leading-relaxed">
@@ -589,7 +589,7 @@ Recommended Protocol
 <p class="font-body-md text-body-md text-on-surface-variant mt-1">Review your consultation details and complete authorization via our encrypted banking rails.</p>
 </div>
 <div class="flex items-center gap-space-xs font-label-sm text-label-sm uppercase tracking-wider text-secondary font-bold">
-<span class="material-symbols-outlined text-[18px]">lock</span>
+<span class="material-symbols-outlined notranslate text-[18px]" translate="no">lock</span>
 <span>256-Bit SSL Encrypted Gateway</span>
 </div>
 </div>
@@ -608,7 +608,7 @@ $wc_gateways = function_exists( 'WC' ) && WC()->payment_gateways ? WC()->payment
       <p class="font-body-sm text-xs text-on-surface-variant">Processed securely through WooCommerce Payment Rails</p>
     </div>
     <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded bg-[#1F4D3A]/10 text-primary font-label-sm text-xs font-semibold">
-      <span class="material-symbols-outlined text-[14px]">lock</span> Verified Gateway
+      <span class="material-symbols-outlined notranslate text-[14px]" translate="no">lock</span> Verified Gateway
     </span>
   </div>
 
@@ -646,7 +646,7 @@ $wc_gateways = function_exists( 'WC' ) && WC()->payment_gateways ? WC()->payment
                 <?php endif; ?>
               </div>
             </div>
-            <span class="material-symbols-outlined text-secondary text-[22px] shrink-0"><?php echo esc_html( $icon_name ); ?></span>
+            <span class="material-symbols-outlined notranslate text-secondary text-[22px] shrink-0" translate="no"><?php echo esc_html( $icon_name ); ?></span>
           </label>
         </div>
       <?php endforeach; ?>
@@ -661,20 +661,20 @@ $wc_gateways = function_exists( 'WC' ) && WC()->payment_gateways ? WC()->payment
 <!-- Trust & Policy Badges -->
 <div class="bg-surface-container-low p-space-lg rounded-xl flex flex-col gap-space-sm shadow-sm">
 <div class="flex items-center gap-space-sm">
-<span class="material-symbols-outlined text-primary text-[22px]">shield</span>
+<span class="material-symbols-outlined notranslate text-primary text-[22px]" translate="no">shield</span>
 <span class="font-headline-sm text-headline-sm text-primary text-[18px]">Clinical Appointment Guarantees</span>
 </div>
 <ul class="flex flex-col gap-2 font-body-sm text-body-sm text-on-surface-variant">
 <li class="flex items-start gap-2">
-<span class="material-symbols-outlined text-[16px] text-secondary mt-0.5">check_circle</span>
+<span class="material-symbols-outlined notranslate text-[16px] text-secondary mt-0.5" translate="no">check_circle</span>
 <span><strong>Instant Dispatch:</strong> Telehealth meeting link &amp; clinical intake form delivered via WhatsApp and Email upon confirmation.</span>
 </li>
 <li class="flex items-start gap-2">
-<span class="material-symbols-outlined text-[16px] text-secondary mt-0.5">check_circle</span>
+<span class="material-symbols-outlined notranslate text-[16px] text-secondary mt-0.5" translate="no">check_circle</span>
 <span><strong>Slot Lock Protocol:</strong> This appointment is temporarily held for 15 minutes during checkout to avoid double booking.</span>
 </li>
 <li class="flex items-start gap-2">
-<span class="material-symbols-outlined text-[16px] text-secondary mt-0.5">check_circle</span>
+<span class="material-symbols-outlined notranslate text-[16px] text-secondary mt-0.5" translate="no">check_circle</span>
 <span><strong>Flexible Rescheduling:</strong> Free reschedule or 100% refund up to 24 hours prior to appointment time.</span>
 </li>
 </ul>
@@ -737,10 +737,10 @@ $wc_gateways = function_exists( 'WC' ) && WC()->payment_gateways ? WC()->payment
 <div class="flex flex-col gap-space-xs">
 <button class="w-full py-4 rounded-lg bg-primary text-on-primary font-label-md text-label-md uppercase tracking-widest font-bold hover:bg-tertiary transition-all duration-200 shadow-md flex items-center justify-center gap-space-sm group" id="pay-button" onclick="executePayment()" type="button">
 <span id="pay-btn-label">PAY &amp; CONFIRM BOOKING — ₹ 5,100</span>
-<span class="material-symbols-outlined text-[18px] group-hover:translate-x-1 transition-transform">lock</span>
+<span class="material-symbols-outlined notranslate text-[18px] group-hover:translate-x-1 transition-transform" translate="no">lock</span>
 </button>
 <div class="flex items-center justify-center gap-2 pt-1 font-label-sm text-label-sm text-outline uppercase tracking-wider">
-<span class="material-symbols-outlined text-[14px] text-primary">verified</span>
+<span class="material-symbols-outlined notranslate text-[14px] text-primary" translate="no">verified</span>
 <span>Authorized by ANUKUL Clinical Board</span>
 </div>
 </div>
@@ -757,7 +757,7 @@ $wc_gateways = function_exists( 'WC' ) && WC()->payment_gateways ? WC()->payment
 <!-- ================= CONFIRMATION SUCCESS VIEW (Triggered on Complete) ================= -->
 <section class="step-view hidden flex-col items-center justify-center py-space-xl text-center max-w-3xl mx-auto" id="step-content-success">
 <div class="w-20 h-20 rounded-full bg-primary-fixed text-on-primary-fixed flex items-center justify-center mb-space-md shadow-md animate-bounce">
-<span class="material-symbols-outlined text-[42px]">check</span>
+<span class="material-symbols-outlined notranslate text-[42px]" translate="no">check</span>
 </div>
 <span class="font-label-sm text-label-sm uppercase tracking-[0.2em] text-secondary font-bold">RESERVATION AUTHORIZED &amp; SECURED</span>
 <h2 class="font-headline-lg text-headline-lg text-primary mt-1 mb-space-xs">Consultation Confirmed</h2>
@@ -795,7 +795,7 @@ $wc_gateways = function_exists( 'WC' ) && WC()->payment_gateways ? WC()->payment
 </div>
 <div class="bg-surface-container-low p-space-md rounded-lg flex items-center justify-between mt-space-sm">
 <div class="flex items-center gap-space-sm">
-<span class="material-symbols-outlined text-secondary text-[24px]">calendar_add_on</span>
+<span class="material-symbols-outlined notranslate text-secondary text-[24px]" translate="no">calendar_add_on</span>
 <div class="flex flex-col">
 <span class="font-body-md text-body-md font-semibold text-primary">Add to Personal Calendar</span>
 <span class="font-body-sm text-body-sm text-outline text-[12px]">Google Calendar · Apple Calendar · Outlook</span>
@@ -864,7 +864,7 @@ $wc_gateways = function_exists( 'WC' ) && WC()->payment_gateways ? WC()->payment
 
       if (i < currentStep) {
         badge.className = "w-8 h-8 rounded-full bg-primary text-on-primary font-headline-sm text-[16px] flex items-center justify-center font-bold";
-        badge.innerHTML = `<span class="material-symbols-outlined text-[16px]">check</span>`;
+        badge.innerHTML = `<span class="material-symbols-outlined notranslate text-[16px]" translate="no">check</span>`;
         title.className = "font-body-md text-body-md font-semibold text-primary";
         bar.className = "h-1 w-full bg-primary rounded-full transition-all duration-300";
       } else if (i === currentStep) {
@@ -1096,7 +1096,7 @@ $wc_gateways = function_exists( 'WC' ) && WC()->payment_gateways ? WC()->payment
           const bar = document.getElementById(`bar-step-${i}`);
           if (badge) {
             badge.className = "w-8 h-8 rounded-full bg-primary text-on-primary font-headline-sm text-[16px] flex items-center justify-center font-bold";
-            badge.innerHTML = `<span class="material-symbols-outlined text-[16px]">check</span>`;
+            badge.innerHTML = `<span class="material-symbols-outlined notranslate text-[16px]" translate="no">check</span>`;
           }
           if (bar) bar.className = "h-1 w-full bg-primary rounded-full";
         }

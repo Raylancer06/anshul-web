@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 /**
  * View Order details tab
  *
@@ -25,7 +25,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 <div class="bg-surface-container-low px-6 py-4 rounded-xl flex flex-col md:flex-row md:items-center justify-between gap-4 shadow-sm">
 <div class="flex items-center gap-3">
 <div class="w-9 h-9 rounded-full bg-surface-container flex items-center justify-center text-secondary shadow-sm">
-<span class="material-symbols-outlined text-[19px]">spa</span>
+<span class="material-symbols-outlined notranslate text-[19px]" translate="no">spa</span>
 </div>
 <div>
 <p class="font-label-sm text-label-sm text-secondary uppercase tracking-widest">Ritual &amp; Material Alignment</p>
@@ -50,43 +50,43 @@ if ( ! defined( 'ABSPATH' ) ) {
 <nav aria-label="Customer Account Navigation" class="flex flex-col gap-1.5">
 <a class="flex items-center justify-between px-3.5 py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-primary transition-all group" href="account.html#dashboard">
 <span class="flex items-center gap-3 font-body-md text-body-md">
-<span class="material-symbols-outlined text-[19px] text-on-surface-variant group-hover:text-primary transition-colors">grid_view</span>
+<span class="material-symbols-outlined notranslate text-[19px] text-on-surface-variant group-hover:text-primary transition-colors" translate="no">grid_view</span>
               Dashboard
             </span>
-<span class="material-symbols-outlined text-[16px] text-on-surface-variant/40 group-hover:translate-x-0.5 transition-transform">chevron_right</span>
+<span class="material-symbols-outlined notranslate text-[16px] text-on-surface-variant/40 group-hover:translate-x-0.5 transition-transform" translate="no">chevron_right</span>
 </a>
 <!-- Active State: Orders -->
 <a class="flex items-center justify-between px-3.5 py-2.5 rounded-lg bg-surface-container-low text-primary font-semibold shadow-sm transition-all group" href="account.html#orders">
 <span class="flex items-center gap-3 font-body-md text-body-md">
-<span class="material-symbols-outlined text-[19px] text-primary" style="font-variation-settings: 'FILL' 1;">local_mall</span>
+<span class="material-symbols-outlined notranslate text-[19px] text-primary" translate="no" style="font-variation-settings: 'FILL' 1;">local_mall</span>
               Orders
             </span>
 <span class="font-label-sm text-label-sm px-2 py-0.5 rounded-full bg-primary-container text-on-primary">3</span>
 </a>
 <a class="flex items-center justify-between px-3.5 py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-primary transition-all group" href="account.html#addresses">
 <span class="flex items-center gap-3 font-body-md text-body-md">
-<span class="material-symbols-outlined text-[19px] text-on-surface-variant group-hover:text-primary transition-colors">location_on</span>
+<span class="material-symbols-outlined notranslate text-[19px] text-on-surface-variant group-hover:text-primary transition-colors" translate="no">location_on</span>
               Addresses
             </span>
-<span class="material-symbols-outlined text-[16px] text-on-surface-variant/40 group-hover:translate-x-0.5 transition-transform">chevron_right</span>
+<span class="material-symbols-outlined notranslate text-[16px] text-on-surface-variant/40 group-hover:translate-x-0.5 transition-transform" translate="no">chevron_right</span>
 </a>
 <a class="flex items-center justify-between px-3.5 py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-primary transition-all group" href="account.html#account-details">
 <span class="flex items-center gap-3 font-body-md text-body-md">
-<span class="material-symbols-outlined text-[19px] text-on-surface-variant group-hover:text-primary transition-colors">badge</span>
+<span class="material-symbols-outlined notranslate text-[19px] text-on-surface-variant group-hover:text-primary transition-colors" translate="no">badge</span>
               Account Details
             </span>
-<span class="material-symbols-outlined text-[16px] text-on-surface-variant/40 group-hover:translate-x-0.5 transition-transform">chevron_right</span>
+<span class="material-symbols-outlined notranslate text-[16px] text-on-surface-variant/40 group-hover:translate-x-0.5 transition-transform" translate="no">chevron_right</span>
 </a>
 <a class="flex items-center justify-between px-3.5 py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-primary transition-all group" href="account.html#downloads">
 <span class="flex items-center gap-3 font-body-md text-body-md">
-<span class="material-symbols-outlined text-[19px] text-on-surface-variant group-hover:text-primary transition-colors">download</span>
+<span class="material-symbols-outlined notranslate text-[19px] text-on-surface-variant group-hover:text-primary transition-colors" translate="no">download</span>
               Downloads
             </span>
 <span class="font-label-sm text-label-sm px-2 py-0.5 rounded-full bg-surface-container text-on-surface-variant">2</span>
 </a>
 <div class="my-2 h-[1px] bg-surface-container"></div>
 <a class="flex items-center gap-3 px-3.5 py-2.5 rounded-lg text-tertiary hover:bg-tertiary-fixed/30 transition-colors" href="#">
-<span class="material-symbols-outlined text-[19px]">logout</span>
+<span class="material-symbols-outlined notranslate text-[19px]" translate="no">logout</span>
 <span class="font-body-md text-body-md font-medium">Log out</span>
 </a>
 </nav>
@@ -120,7 +120,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 <div class="bg-surface-container-low rounded-xl p-5 shadow-sm">
 <div class="flex items-center justify-between mb-3">
 <span class="font-label-sm text-label-sm uppercase tracking-widest text-primary font-bold">Vedic Dispatch Clock</span>
-<span class="material-symbols-outlined text-secondary text-[18px]">explore</span>
+<span class="material-symbols-outlined notranslate text-secondary text-[18px]" translate="no">explore</span>
 </div>
 <div class="flex items-center gap-3">
 <div class="w-12 h-12 rounded-lg bg-surface-container-lowest flex items-center justify-center text-primary shadow-sm font-display text-headline-sm">
@@ -146,7 +146,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 </div>
 <div class="flex items-center gap-2 self-start md:self-auto">
 <a class="px-4 py-2.5 rounded-lg bg-surface-container text-primary font-label-md text-label-md uppercase tracking-wider hover:bg-surface-container-high transition-colors flex items-center gap-2 shadow-sm" href="client_portal_order_history.html">
-<span class="material-symbols-outlined text-[16px]">receipt_long</span>
+<span class="material-symbols-outlined notranslate text-[16px]" translate="no">receipt_long</span>
             Tax Summaries
           </a>
 </div>
@@ -173,7 +173,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 </div>
 <div class="relative px-1">
 <input class="w-full sm:w-64 bg-surface-container-lowest text-on-surface font-body-sm text-body-sm pl-9 pr-3 py-2 rounded-lg shadow-sm placeholder:text-on-surface-variant/50 focus:outline-none focus:ring-1 focus:ring-primary" placeholder="Search orders by remedy or ID..." type="text"/>
-<span class="material-symbols-outlined absolute left-3.5 top-1/2 -translate-y-1/2 text-on-surface-variant/60 text-[18px]">search</span>
+<span class="material-symbols-outlined notranslate absolute left-3.5 top-1/2 -translate-y-1/2 text-on-surface-variant/60 text-[18px]" translate="no">search</span>
 </div>
 </div>
 <!-- Order History Desktop Table / Responsive Card Deck -->
@@ -196,7 +196,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 <td class="py-5 px-6 align-top">
 <div class="flex items-center gap-3">
 <div class="w-8 h-8 rounded-lg bg-secondary-fixed/50 flex items-center justify-center text-secondary">
-<span class="material-symbols-outlined text-[18px]">hourglass_top</span>
+<span class="material-symbols-outlined notranslate text-[18px]" translate="no">hourglass_top</span>
 </div>
 <div>
 <span class="font-body-md text-body-md font-bold text-primary block">#AN-84920</span>
@@ -210,7 +210,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 </td>
 <td class="py-5 px-6 align-top">
 <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-secondary-fixed text-on-secondary-fixed shadow-sm">
-<span class="material-symbols-outlined text-[14px]">autorenew</span>
+<span class="material-symbols-outlined notranslate text-[14px]" translate="no">autorenew</span>
 <span class="font-label-sm text-label-sm uppercase tracking-wider font-semibold">Processing</span>
 </div>
 <p class="font-body-sm text-body-sm text-on-surface-variant text-[11px] mt-1">Herbal extraction maceration</p>
@@ -226,10 +226,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 <div class="flex flex-col items-end gap-2">
 <a class="px-4 py-2 rounded-lg bg-primary-container text-on-primary font-label-md text-label-md uppercase tracking-wider hover:bg-tertiary-container transition-colors shadow-sm inline-flex items-center gap-1.5" href="client_portal_order_history.html">
 <span>VIEW ORDER</span>
-<span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+<span class="material-symbols-outlined notranslate text-[14px]" translate="no">arrow_forward</span>
 </a>
 <a class="inline-flex items-center gap-1 font-label-md text-label-md text-secondary hover:text-primary transition-colors tracking-wide" href="#">
-<span class="material-symbols-outlined text-[14px]">download</span>
+<span class="material-symbols-outlined notranslate text-[14px]" translate="no">download</span>
                       Invoice PDF
                     </a>
 </div>
@@ -240,7 +240,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 <td class="py-5 px-6 align-top">
 <div class="flex items-center gap-3">
 <div class="w-8 h-8 rounded-lg bg-primary-fixed/60 flex items-center justify-center text-primary">
-<span class="material-symbols-outlined text-[18px]">verified</span>
+<span class="material-symbols-outlined notranslate text-[18px]" translate="no">verified</span>
 </div>
 <div>
 <span class="font-body-md text-body-md font-bold text-primary block">#AN-78214</span>
@@ -254,7 +254,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 </td>
 <td class="py-5 px-6 align-top">
 <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-primary-fixed text-on-primary-fixed font-semibold shadow-sm">
-<span class="material-symbols-outlined text-[14px]">check_circle</span>
+<span class="material-symbols-outlined notranslate text-[14px]" translate="no">check_circle</span>
 <span class="font-label-sm text-label-sm uppercase tracking-wider">Completed</span>
 </div>
 <p class="font-body-sm text-body-sm text-on-surface-variant text-[11px] mt-1">Delivered via Speed Vaidya</p>
@@ -270,10 +270,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 <div class="flex flex-col items-end gap-2">
 <a class="px-4 py-2 rounded-lg bg-surface-container text-primary font-label-md text-label-md uppercase tracking-wider hover:bg-surface-container-high transition-colors shadow-sm inline-flex items-center gap-1.5" href="#">
 <span>VIEW ORDER</span>
-<span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+<span class="material-symbols-outlined notranslate text-[14px]" translate="no">arrow_forward</span>
 </a>
 <a class="inline-flex items-center gap-1 font-label-md text-label-md text-primary font-semibold hover:text-secondary transition-colors tracking-wide" href="#">
-<span class="material-symbols-outlined text-[14px]">restart_alt</span>
+<span class="material-symbols-outlined notranslate text-[14px]" translate="no">restart_alt</span>
                       Reorder Items
                     </a>
 </div>
@@ -284,7 +284,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 <td class="py-5 px-6 align-top">
 <div class="flex items-center gap-3">
 <div class="w-8 h-8 rounded-lg bg-primary-fixed/60 flex items-center justify-center text-primary">
-<span class="material-symbols-outlined text-[18px]">verified</span>
+<span class="material-symbols-outlined notranslate text-[18px]" translate="no">verified</span>
 </div>
 <div>
 <span class="font-body-md text-body-md font-bold text-primary block">#AN-65108</span>
@@ -298,7 +298,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 </td>
 <td class="py-5 px-6 align-top">
 <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-primary-fixed text-on-primary-fixed font-semibold shadow-sm">
-<span class="material-symbols-outlined text-[14px]">check_circle</span>
+<span class="material-symbols-outlined notranslate text-[14px]" translate="no">check_circle</span>
 <span class="font-label-sm text-label-sm uppercase tracking-wider">Completed</span>
 </div>
 <p class="font-body-sm text-body-sm text-on-surface-variant text-[11px] mt-1">Ishanya Zone Energized</p>
@@ -314,10 +314,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 <div class="flex flex-col items-end gap-2">
 <a class="px-4 py-2 rounded-lg bg-surface-container text-primary font-label-md text-label-md uppercase tracking-wider hover:bg-surface-container-high transition-colors shadow-sm inline-flex items-center gap-1.5" href="#">
 <span>VIEW ORDER</span>
-<span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+<span class="material-symbols-outlined notranslate text-[14px]" translate="no">arrow_forward</span>
 </a>
 <a class="inline-flex items-center gap-1 font-label-md text-label-md text-primary font-semibold hover:text-secondary transition-colors tracking-wide" href="#">
-<span class="material-symbols-outlined text-[14px]">restart_alt</span>
+<span class="material-symbols-outlined notranslate text-[14px]" translate="no">restart_alt</span>
                       Reorder Items
                     </a>
 </div>
@@ -336,7 +336,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 <span class="block font-body-sm text-body-sm text-on-surface-variant">October 24, 2025</span>
 </div>
 <div class="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm font-bold uppercase tracking-wider">
-<span class="material-symbols-outlined text-[14px]">autorenew</span>
+<span class="material-symbols-outlined notranslate text-[14px]" translate="no">autorenew</span>
                 Processing
               </div>
 </div>
@@ -353,7 +353,7 @@ if ( ! defined( 'ABSPATH' ) ) {
                 VIEW ORDER
               </a>
 <a class="px-4 py-2.5 rounded-lg bg-surface-container text-on-surface font-label-md text-label-md uppercase tracking-wider inline-flex items-center justify-center gap-1" href="#">
-<span class="material-symbols-outlined text-[16px]">download</span>
+<span class="material-symbols-outlined notranslate text-[16px]" translate="no">download</span>
                 PDF
               </a>
 </div>
@@ -366,7 +366,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 <span class="block font-body-sm text-body-sm text-on-surface-variant">September 12, 2025</span>
 </div>
 <div class="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-primary-fixed text-on-primary-fixed font-label-sm text-label-sm font-bold uppercase tracking-wider">
-<span class="material-symbols-outlined text-[14px]">check_circle</span>
+<span class="material-symbols-outlined notranslate text-[14px]" translate="no">check_circle</span>
                 Completed
               </div>
 </div>
@@ -395,7 +395,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 <span class="block font-body-sm text-body-sm text-on-surface-variant">July 05, 2025</span>
 </div>
 <div class="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-primary-fixed text-on-primary-fixed font-label-sm text-label-sm font-bold uppercase tracking-wider">
-<span class="material-symbols-outlined text-[14px]">check_circle</span>
+<span class="material-symbols-outlined notranslate text-[14px]" translate="no">check_circle</span>
                 Completed
               </div>
 </div>
@@ -424,13 +424,13 @@ if ( ! defined( 'ABSPATH' ) ) {
           </p>
 <div class="flex items-center gap-2">
 <button class="px-3.5 py-1.5 rounded-lg bg-surface-container text-on-surface-variant/40 font-label-md text-label-md uppercase tracking-wider cursor-not-allowed flex items-center gap-1 shadow-none" disabled="">
-<span class="material-symbols-outlined text-[16px]">chevron_left</span>
+<span class="material-symbols-outlined notranslate text-[16px]" translate="no">chevron_left</span>
               Previous
             </button>
 <span class="px-3 py-1 rounded-lg bg-primary text-on-primary font-label-md text-label-md font-semibold">1</span>
 <button class="px-3.5 py-1.5 rounded-lg bg-surface-container text-on-surface-variant/40 font-label-md text-label-md uppercase tracking-wider cursor-not-allowed flex items-center gap-1 shadow-none" disabled="">
               Next
-              <span class="material-symbols-outlined text-[16px]">chevron_right</span>
+              <span class="material-symbols-outlined notranslate text-[16px]" translate="no">chevron_right</span>
 </button>
 </div>
 </div>
@@ -446,7 +446,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 <div class="w-full md:w-2/3 flex items-center justify-between bg-surface-container-lowest p-4 rounded-xl shadow-sm overflow-x-auto gap-4">
 <div class="flex flex-col items-center text-center min-w-[70px]">
 <div class="w-10 h-10 rounded-full bg-primary-fixed text-on-primary-fixed flex items-center justify-center font-bold text-sm mb-1.5 shadow-sm">
-<span class="material-symbols-outlined text-[18px]">verified</span>
+<span class="material-symbols-outlined notranslate text-[18px]" translate="no">verified</span>
 </div>
 <span class="font-label-sm text-label-sm uppercase tracking-wider text-primary font-semibold">Ordered</span>
 <span class="font-body-sm text-body-sm text-on-surface-variant text-[11px]">Oct 24</span>
@@ -456,7 +456,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 </div>
 <div class="flex-col items-center text-center min-w-[70px] flex">
 <div class="w-10 h-10 rounded-full bg-secondary-fixed text-on-secondary-fixed flex items-center justify-center font-bold text-sm mb-1.5 shadow-sm">
-<span class="material-symbols-outlined text-[18px]">nature</span>
+<span class="material-symbols-outlined notranslate text-[18px]" translate="no">nature</span>
 </div>
 <span class="font-label-sm text-label-sm uppercase tracking-wider text-secondary font-semibold">Infusion</span>
 <span class="font-body-sm text-body-sm text-on-surface-variant text-[11px]">In Chamber</span>
@@ -466,7 +466,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 </div>
 <div class="flex flex-col items-center text-center min-w-[70px] opacity-50">
 <div class="w-10 h-10 rounded-full bg-surface-container text-on-surface-variant flex items-center justify-center font-bold text-sm mb-1.5">
-<span class="material-symbols-outlined text-[18px]">mark_email_read</span>
+<span class="material-symbols-outlined notranslate text-[18px]" translate="no">mark_email_read</span>
 </div>
 <span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant font-semibold">Sealed</span>
 <span class="font-body-sm text-body-sm text-on-surface-variant text-[11px]">Muhurta 3</span>
@@ -474,7 +474,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 <div class="flex-1 h-0.5 bg-surface-container relative min-w-[30px]"></div>
 <div class="flex flex-col items-center text-center min-w-[70px] opacity-50">
 <div class="w-10 h-10 rounded-full bg-surface-container text-on-surface-variant flex items-center justify-center font-bold text-sm mb-1.5">
-<span class="material-symbols-outlined text-[18px]">home_pin</span>
+<span class="material-symbols-outlined notranslate text-[18px]" translate="no">home_pin</span>
 </div>
 <span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant font-semibold">Sanctuary</span>
 <span class="font-body-sm text-body-sm text-on-surface-variant text-[11px]">Delivery</span>
@@ -511,7 +511,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 <div class="bg-surface-container rounded-xl p-6 sm:p-7 flex flex-col md:flex-row items-center justify-between gap-6 shadow-sm">
 <div class="flex items-center gap-4 text-center md:text-left">
 <div class="w-12 h-12 rounded-full bg-surface-container-lowest flex items-center justify-center text-primary shadow-sm flex-shrink-0">
-<span class="material-symbols-outlined text-[24px]">support_agent</span>
+<span class="material-symbols-outlined notranslate text-[24px]" translate="no">support_agent</span>
 </div>
 <div>
 <span class="font-label-sm text-label-sm uppercase tracking-widest text-secondary font-bold block mb-0.5">Concierge Oversight</span>
@@ -523,6 +523,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 </div>
 <a class="w-full md:w-auto px-6 py-3 rounded-lg bg-surface-container-lowest text-primary font-label-md text-label-md uppercase tracking-wider hover:bg-primary hover:text-on-primary transition-all whitespace-nowrap shadow-sm text-center flex items-center justify-center gap-2" href="client_portal_order_history.html">
 <span>CONTACT SANCTUARY</span>
-<span class="material-symbols-outlined text-[16px]">support</span>
+<span class="material-symbols-outlined notranslate text-[16px]" translate="no">support</span>
 </a>
 </div>

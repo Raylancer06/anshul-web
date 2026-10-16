@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 /**
  * The template for displaying 404 pages (Not Found)
  *
@@ -14,7 +14,7 @@ get_header();
 
 <div class="min-h-[60vh] flex flex-col items-center justify-center text-center px-6 py-20">
     <div class="w-20 h-20 rounded-full bg-surface-container flex items-center justify-center text-secondary mb-6 shadow-sm">
-        <span class="material-symbols-outlined text-[42px]">explore_off</span>
+        <span class="material-symbols-outlined notranslate text-[42px]" translate="no">explore_off</span>
     </div>
 
     <span class="font-label-sm text-label-sm text-secondary tracking-[0.25em] uppercase font-semibold block mb-2">

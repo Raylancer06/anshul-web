@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 /**
  * Thankyou page (Order Confirmed)
  *
@@ -87,7 +87,7 @@ $billing_email = $has_order ? $order->get_billing_email() : 'seeker@anukulharmon
 <!-- Step 1 -->
 <div class="flex items-center gap-4">
 <div class="w-9 h-9 rounded-full bg-primary-container text-on-primary flex items-center justify-center shrink-0">
-<span class="material-symbols-outlined text-[18px]">check</span>
+<span class="material-symbols-outlined notranslate text-[18px]" translate="no">check</span>
 </div>
 <div class="flex flex-col">
 <span class="font-label-sm text-label-sm uppercase tracking-widest text-secondary font-bold">Step 01</span>
@@ -97,7 +97,7 @@ $billing_email = $has_order ? $order->get_billing_email() : 'seeker@anukulharmon
 <!-- Step 2 -->
 <div class="flex items-center gap-4">
 <div class="w-9 h-9 rounded-full bg-primary-container text-on-primary flex items-center justify-center shrink-0">
-<span class="material-symbols-outlined text-[18px]">check</span>
+<span class="material-symbols-outlined notranslate text-[18px]" translate="no">check</span>
 </div>
 <div class="flex flex-col">
 <span class="font-label-sm text-label-sm uppercase tracking-widest text-secondary font-bold">Step 02</span>
@@ -130,7 +130,7 @@ $billing_email = $has_order ? $order->get_billing_email() : 'seeker@anukulharmon
 <div class="relative shrink-0">
 <div class="w-24 h-24 rounded-full bg-primary-container/10 flex items-center justify-center relative" id="status-icon-ring">
 <div class="w-16 h-16 rounded-full bg-primary text-on-primary flex items-center justify-center shadow-md" id="status-icon-inner">
-<span class="material-symbols-outlined text-[36px]" id="status-icon" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="material-symbols-outlined notranslate text-[36px]" translate="no" id="status-icon" style="font-variation-settings: 'FILL' 1;">check_circle</span>
 </div>
 </div>
 <!-- Cardinal crosshairs accent -->
@@ -197,7 +197,7 @@ $billing_email = $has_order ? $order->get_billing_email() : 'seeker@anukulharmon
 <div class="hidden mt-8 p-6 bg-error-container text-on-error-container rounded-lg" id="failure-alert-banner">
 <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
 <div class="flex items-center gap-3">
-<span class="material-symbols-outlined text-[28px] text-error">error</span>
+<span class="material-symbols-outlined notranslate text-[28px] text-error" translate="no">error</span>
 <div>
 <p class="font-headline-sm text-headline-sm font-semibold text-error">Transaction Declined by Gateway</p>
 <p class="font-body-sm text-body-sm mt-0.5">Bank response: 104 - Institutional gateway timeout. Your reservation has been held for 12 hours.</p>
@@ -212,7 +212,7 @@ $billing_email = $has_order ? $order->get_billing_email() : 'seeker@anukulharmon
 <div class="hidden mt-8 p-6 bg-secondary-fixed text-on-secondary-fixed rounded-lg" id="guest-alert-banner">
 <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
 <div class="flex items-center gap-3">
-<span class="material-symbols-outlined text-[28px] text-secondary">person_pin</span>
+<span class="material-symbols-outlined notranslate text-[28px] text-secondary" translate="no">person_pin</span>
 <div>
 <p class="font-headline-sm text-headline-sm font-semibold">Guest Sanctuary Checkout</p>
 <p class="font-body-sm text-body-sm mt-0.5">No login session was detected. You can bind this order reference to an ANUKUL profile with a single click.</p>
@@ -236,7 +236,7 @@ $billing_email = $has_order ? $order->get_billing_email() : 'seeker@anukulharmon
 <div class="bg-surface-container-lowest p-6 lg:p-10 rounded-xl shadow-sm">
 <div class="flex items-center justify-between pb-6 border-b border-surface-variant/40">
 <div class="flex items-center gap-3">
-<span class="material-symbols-outlined text-secondary text-[24px]">shopping_bag</span>
+<span class="material-symbols-outlined notranslate text-secondary text-[24px]" translate="no">shopping_bag</span>
 <h2 class="font-headline-md text-headline-md text-primary uppercase"><?php echo $is_booking ? 'Consultation Booking Details' : 'Your Order Summary'; ?></h2>
 </div>
 <span class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant font-medium">
@@ -342,7 +342,7 @@ $billing_email = $has_order ? $order->get_billing_email() : 'seeker@anukulharmon
 <?php if ( $has_order && $discount_total > 0 ) : ?>
 <div class="flex justify-between items-center text-body-md font-body-md text-secondary">
 <span class="flex items-center gap-2">
-<span class="material-symbols-outlined text-[16px]">local_offer</span>
+<span class="material-symbols-outlined notranslate text-[16px]" translate="no">local_offer</span>
 Promotional Concession
 </span>
 <span class="font-semibold">- <?php echo wc_price( $discount_total ); ?></span>
@@ -378,14 +378,14 @@ Surface Sanctuary Shipping (Verified Delivery)
 <!-- 3-Step Assurance Sequence ("What Happens Next?") -->
 <div class="bg-surface-container-low p-6 lg:p-10 rounded-xl">
 <div class="flex items-center gap-3 pb-6 border-b border-surface-variant/40">
-<span class="material-symbols-outlined text-primary text-[24px]">history_edu</span>
+<span class="material-symbols-outlined notranslate text-primary text-[24px]" translate="no">history_edu</span>
 <h2 class="font-headline-md text-headline-md text-primary uppercase">What Happens Next?</h2>
 </div>
 <div class="grid grid-cols-1 md:grid-cols-3 gap-6 pt-6">
 <div class="bg-surface-container-lowest p-6 rounded-lg relative">
 <div class="font-display text-headline-lg text-secondary/30 italic absolute top-4 right-4 leading-none">01</div>
 <span class="w-8 h-8 rounded-full bg-primary/10 text-primary flex items-center justify-center font-label-md font-bold mb-4">
-<span class="material-symbols-outlined text-[18px]">inventory_2</span>
+<span class="material-symbols-outlined notranslate text-[18px]" translate="no">inventory_2</span>
 </span>
 <h4 class="font-headline-sm text-headline-sm text-on-surface font-semibold mb-2"><?php echo $is_booking ? 'Appointment Logged' : 'Order Received'; ?></h4>
 <p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
@@ -395,7 +395,7 @@ Surface Sanctuary Shipping (Verified Delivery)
 <div class="bg-surface-container-lowest p-6 rounded-lg relative">
 <div class="font-display text-headline-lg text-secondary/30 italic absolute top-4 right-4 leading-none">02</div>
 <span class="w-8 h-8 rounded-full bg-primary/10 text-primary flex items-center justify-center font-label-md font-bold mb-4">
-<span class="material-symbols-outlined text-[18px]">verified</span>
+<span class="material-symbols-outlined notranslate text-[18px]" translate="no">verified</span>
 </span>
 <h4 class="font-headline-sm text-headline-sm text-on-surface font-semibold mb-2"><?php echo $is_booking ? 'Preparation Dossier' : 'Mindful Preparation'; ?></h4>
 <p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
@@ -405,7 +405,7 @@ Surface Sanctuary Shipping (Verified Delivery)
 <div class="bg-surface-container-lowest p-6 rounded-lg relative">
 <div class="font-display text-headline-lg text-secondary/30 italic absolute top-4 right-4 leading-none">03</div>
 <span class="w-8 h-8 rounded-full bg-primary/10 text-primary flex items-center justify-center font-label-md font-bold mb-4">
-<span class="material-symbols-outlined text-[18px]">local_shipping</span>
+<span class="material-symbols-outlined notranslate text-[18px]" translate="no">local_shipping</span>
 </span>
 <h4 class="font-headline-sm text-headline-sm text-on-surface font-semibold mb-2"><?php echo $is_booking ? 'Encrypted Session Room' : 'Dispatch &amp; Coordinates'; ?></h4>
 <p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
@@ -415,7 +415,7 @@ Surface Sanctuary Shipping (Verified Delivery)
 </div>
 <!-- Dispensary Note Banner -->
 <div class="mt-6 p-4 bg-surface-container rounded-lg flex items-center gap-3">
-<span class="material-symbols-outlined text-secondary text-[20px] shrink-0">hourglass_top</span>
+<span class="material-symbols-outlined notranslate text-secondary text-[20px] shrink-0" translate="no">hourglass_top</span>
 <p class="font-body-sm text-body-sm text-on-surface-variant">
   <?php if ( $is_booking ) : ?>
     Clinic Desk Protocol: For reschedules or urgent queries, please quote reference <strong class="text-on-surface font-semibold"><?php echo esc_html( $booking_ref ? $booking_ref : '#' . $order_number ); ?></strong>.
@@ -457,7 +457,7 @@ Surface Sanctuary Shipping (Verified Delivery)
 <!-- Retry button container (Active only in failed state) -->
 <div class="hidden pt-4" id="retry-button-zone">
 <button class="w-full py-3 px-4 rounded-lg bg-tertiary-container text-on-primary font-label-md text-label-md uppercase tracking-wider font-semibold shadow hover:bg-tertiary transition-colors flex items-center justify-center gap-2" type="button">
-<span class="material-symbols-outlined text-[18px]">sync</span>
+<span class="material-symbols-outlined notranslate text-[18px]" translate="no">sync</span>
   Retry Payment via Gateway
 </button>
 <p class="font-body-sm text-[12px] text-on-surface-variant text-center mt-2">
@@ -483,7 +483,7 @@ Surface Sanctuary Shipping (Verified Delivery)
 <!-- Shipping / Intake Content -->
 <div class="pt-5 space-y-2" id="tab-content-shipping">
 <div class="flex items-center gap-2 mb-3">
-<span class="material-symbols-outlined text-secondary text-[20px]">pin_drop</span>
+<span class="material-symbols-outlined notranslate text-secondary text-[20px]" translate="no">pin_drop</span>
 <span class="font-label-sm text-label-sm uppercase tracking-widest text-secondary font-bold"><?php echo $is_booking ? 'Consultation Client' : 'Consignee Destination'; ?></span>
 </div>
 <p class="font-headline-sm text-headline-sm text-on-surface font-semibold"><?php echo esc_html( $billing_full_name ); ?></p>
@@ -508,7 +508,7 @@ Surface Sanctuary Shipping (Verified Delivery)
 <!-- Billing Content (Hidden by Default) -->
 <div class="hidden pt-5 space-y-2" id="tab-content-billing">
 <div class="flex items-center gap-2 mb-3">
-<span class="material-symbols-outlined text-secondary text-[20px]">receipt_long</span>
+<span class="material-symbols-outlined notranslate text-secondary text-[20px]" translate="no">receipt_long</span>
 <span class="font-label-sm text-label-sm uppercase tracking-widest text-secondary font-bold">Statutory Billing Address</span>
 </div>
 <p class="font-headline-sm text-headline-sm text-on-surface font-semibold"><?php echo esc_html( $billing_full_name ); ?></p>
@@ -531,23 +531,23 @@ Surface Sanctuary Shipping (Verified Delivery)
 <div class="bg-surface-container-lowest p-6 lg:p-8 rounded-xl shadow-sm space-y-3">
 <?php if ( $is_booking ) : ?>
 <a class="w-full py-3.5 px-6 rounded-lg bg-primary text-on-primary font-label-md text-label-md uppercase tracking-wider flex items-center justify-center gap-2 shadow-sm hover:bg-tertiary-container transition-colors" href="<?php echo esc_url( home_url( '/my-account/#bookings' ) ); ?>">
-<span class="material-symbols-outlined text-[18px]">calendar_month</span>
+<span class="material-symbols-outlined notranslate text-[18px]" translate="no">calendar_month</span>
   View Booking in Sanctuary Portal
 </a>
 <?php else : ?>
 <a class="w-full py-3.5 px-6 rounded-lg bg-primary text-on-primary font-label-md text-label-md uppercase tracking-wider flex items-center justify-center gap-2 shadow-sm hover:bg-tertiary-container transition-colors" href="<?php echo esc_url( function_exists( "wc_get_page_permalink" ) ? wc_get_page_permalink( "myaccount" ) : home_url( "/my-account/" ) ); ?>">
-<span class="material-symbols-outlined text-[18px]">account_circle</span>
+<span class="material-symbols-outlined notranslate text-[18px]" translate="no">account_circle</span>
   Go To My Account Dashboard
 </a>
 <?php endif; ?>
 <a class="w-full py-3.5 px-6 rounded-lg bg-surface-container text-primary hover:bg-surface-variant/60 font-label-md text-label-md uppercase tracking-wider flex items-center justify-center gap-2 transition-colors" data-path="shop" href="<?php echo esc_url( function_exists( "wc_get_page_permalink" ) ? wc_get_page_permalink( "shop" ) : home_url( "/shop/" ) ); ?>">
-<span class="material-symbols-outlined text-[18px]">storefront</span>
+<span class="material-symbols-outlined notranslate text-[18px]" translate="no">storefront</span>
   Continue Browsing Shop
 </a>
 <div class="pt-2 text-center">
 <a class="font-label-md text-label-md uppercase text-secondary hover:text-primary tracking-widest inline-flex items-center gap-1 transition-colors" href="<?php echo esc_url( home_url( '/' ) ); ?>">
   Return To Sanctuary Home
-  <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+  <span class="material-symbols-outlined notranslate text-[14px]" translate="no">arrow_forward</span>
 </a>
 </div>
 </div>
@@ -556,7 +556,7 @@ Surface Sanctuary Shipping (Verified Delivery)
 <div class="bg-surface-container-high p-6 lg:p-8 rounded-xl flex flex-col justify-between space-y-4">
 <div class="space-y-2">
 <div class="flex items-center gap-2">
-<span class="material-symbols-outlined text-primary text-[20px]">support_agent</span>
+<span class="material-symbols-outlined notranslate text-primary text-[20px]" translate="no">support_agent</span>
 <span class="font-label-sm text-label-sm uppercase tracking-widest text-primary font-bold">Dispensary Inquiry</span>
 </div>
 <h4 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Have questions on usage or delivery?</h4>
@@ -566,7 +566,7 @@ Surface Sanctuary Shipping (Verified Delivery)
 </div>
 <div class="pt-2">
 <a class="inline-flex items-center justify-center w-full py-3 px-4 rounded-lg bg-primary-container text-on-primary font-label-md text-label-md uppercase tracking-wider hover:bg-primary transition-colors gap-2" data-path="contact" href="<?php echo esc_url( home_url( "/contact/" ) ); ?>">
-<span class="material-symbols-outlined text-[16px]">mail</span>
+<span class="material-symbols-outlined notranslate text-[16px]" translate="no">mail</span>
   Contact Clinic Desk
 </a>
 </div>
@@ -580,7 +580,7 @@ Surface Sanctuary Shipping (Verified Delivery)
 <div class="max-w-[1440px] mx-auto flex flex-col md:flex-row items-center gap-6 justify-between text-center md:text-left">
 <div class="flex items-center gap-4">
 <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center shrink-0 text-primary">
-<span class="material-symbols-outlined text-[24px]">balance</span>
+<span class="material-symbols-outlined notranslate text-[24px]" translate="no">balance</span>
 </div>
 <div>
 <h5 class="font-headline-sm text-headline-sm text-primary uppercase">Responsible Vedic Clinical Practice</h5>

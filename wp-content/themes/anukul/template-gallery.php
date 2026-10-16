@@ -35,7 +35,7 @@ get_header();
 <div class="lg:col-span-4 flex flex-col sm:flex-row lg:flex-col justify-end gap-4 lg:items-end">
 <a class="inline-flex items-center justify-center gap-3 bg-primary text-on-primary font-label-md text-label-md px-8 py-4 rounded-lg tracking-wider uppercase transition-colors duration-200 hover:bg-tertiary-container shadow-sm" href="#gallery-collection">
 <span>Explore the Gallery</span>
-<span class="material-symbols-outlined text-[18px]">south</span>
+<span class="material-symbols-outlined notranslate text-[18px]" translate="no">south</span>
 </a>
 <span class="font-label-sm text-label-sm text-outline uppercase tracking-widest text-right">
             Curated Visual Archive — Vol. IV
@@ -86,18 +86,18 @@ get_header();
         </p>
 <div class="pt-2 flex items-center gap-6">
 <div class="flex items-center gap-2 text-primary">
-<span class="material-symbols-outlined text-[20px]">verified</span>
+<span class="material-symbols-outlined notranslate text-[20px]" translate="no">verified</span>
 <span class="font-label-md text-label-md uppercase tracking-wider">Documented Clinical Integrity</span>
 </div>
 <div class="flex items-center gap-2 text-primary">
-<span class="material-symbols-outlined text-[20px]">architecture</span>
+<span class="material-symbols-outlined notranslate text-[20px]" translate="no">architecture</span>
 <span class="font-label-md text-label-md uppercase tracking-wider">Classical Vastu Canon</span>
 </div>
 </div>
 </div>
 <div class="lg:col-span-5 bg-surface-container p-8 lg:p-10 rounded-xl relative shadow-sm">
 <div class="w-10 h-10 rounded-full bg-surface-variant flex items-center justify-center text-secondary mb-6">
-<span class="material-symbols-outlined text-[24px]">format_quote</span>
+<span class="material-symbols-outlined notranslate text-[24px]" translate="no">format_quote</span>
 </div>
 <blockquote class="font-editorial-quote text-editorial-quote text-primary italic mb-6 leading-snug">
           “Form, light, and natural materials align to cultivate internal and environmental peace.”
@@ -133,180 +133,111 @@ get_header();
             Visual documentation reflecting clinic facilities, verified studies, directional spatial layouts, and pure botanical preparations.
           </p>
 </div>
-<div class="flex items-center gap-2 self-start md:self-auto bg-surface-container p-1 rounded-lg">
-<span class="material-symbols-outlined text-outline text-[18px] ml-2">tune</span>
+<div class="flex items-center gap-2 self-start md:self-auto bg-surface-container p-1 rounded-lg notranslate" translate="no">
+<span class="material-symbols-outlined notranslate text-outline text-[18px] ml-2" translate="no">tune</span>
 <span class="font-label-sm text-label-sm uppercase tracking-wider text-outline px-2">Filter Archive</span>
 </div>
 </div>
 <!-- Filter Tabs Container -->
-<div class="flex items-center gap-2 overflow-x-auto pb-2 scrollbar-none" id="filter-tabs">
+<div class="flex items-center gap-2 overflow-x-auto pb-2 scrollbar-none notranslate" id="filter-tabs" translate="no">
 <button class="gallery-tab active-tab px-5 py-2.5 rounded-lg font-label-md text-label-md uppercase tracking-wider transition-colors duration-200 bg-primary text-on-primary" data-filter="all" type="button">
-          All Images (9)
-        </button>
-<button class="gallery-tab px-5 py-2.5 rounded-lg font-label-md text-label-md uppercase tracking-wider transition-colors duration-200 bg-surface-container text-on-surface hover:bg-surface-variant" data-filter="ayurveda" type="button">
-          Ayurveda &amp; Nature
-        </button>
-<button class="gallery-tab px-5 py-2.5 rounded-lg font-label-md text-label-md uppercase tracking-wider transition-colors duration-200 bg-surface-container text-on-surface hover:bg-surface-variant" data-filter="vastu" type="button">
-          Vastu &amp; Architecture
+          All Images
         </button>
 <button class="gallery-tab px-5 py-2.5 rounded-lg font-label-md text-label-md uppercase tracking-wider transition-colors duration-200 bg-surface-container text-on-surface hover:bg-surface-variant" data-filter="spaces" type="button">
-          ANUKUL Spaces
+          Spaces &amp; Architecture
         </button>
-<button class="gallery-tab px-5 py-2.5 rounded-lg font-label-md text-label-md uppercase tracking-wider transition-colors duration-200 bg-surface-container text-on-surface hover:bg-surface-variant" data-filter="founder" type="button">
-          Founder &amp; Activities
+<button class="gallery-tab px-5 py-2.5 rounded-lg font-label-md text-label-md uppercase tracking-wider transition-colors duration-200 bg-surface-container text-on-surface hover:bg-surface-variant" data-filter="botanicals" type="button">
+          Botanicals &amp; Dravyas
         </button>
-<button class="gallery-tab px-5 py-2.5 rounded-lg font-label-md text-label-md uppercase tracking-wider transition-colors duration-200 bg-surface-container text-on-surface hover:bg-surface-variant" data-filter="events" type="button">
-          Events &amp; Learning
+<button class="gallery-tab px-5 py-2.5 rounded-lg font-label-md text-label-md uppercase tracking-wider transition-colors duration-200 bg-surface-container text-on-surface hover:bg-surface-variant" data-filter="sanctuary" type="button">
+          Clinical Sanctuary
+        </button>
+<button class="gallery-tab px-5 py-2.5 rounded-lg font-label-md text-label-md uppercase tracking-wider transition-colors duration-200 bg-surface-container text-on-surface hover:bg-surface-variant" data-filter="metallurgy" type="button">
+          Sacred Metallurgy
+        </button>
+<button class="gallery-tab px-5 py-2.5 rounded-lg font-label-md text-label-md uppercase tracking-wider transition-colors duration-200 bg-surface-container text-on-surface hover:bg-surface-variant" data-filter="rituals" type="button">
+          Rituals &amp; Protocols
         </button>
 </div>
+
 <!-- Grid Gallery with Varied Editorial Spans -->
 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="gallery-grid">
-<!-- CARD 1: Landscape 2-col span -->
-<article class="gallery-card group md:col-span-2 rounded-xl overflow-hidden bg-surface-container-low shadow-sm cursor-pointer transition-all duration-300 hover:shadow-lg" data-cat-label="Vastu &amp; Architecture" data-category="vastu" data-id="1" data-note="Traditional stone corridor oriented towards the North-Eastern quadrant, capturing diffused solar wavelengths that ground bio-energetic diurnal stability." data-title="Sanctuary Courtyard &amp; Morning Prana">
-<div class="relative w-full h-[320px] sm:h-[400px] overflow-hidden bg-surface-container-high">
-<div class="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-105" data-alt="Photographic composition of a stone corridor in a traditional Indian architectural pavilion, early morning sunlight raking across smooth flagstones, natural teak rafters, framed arches leading to a quiet garden, serene quietude, architectural precision." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBmW3NNDfnWCGbxGeQdgW7oPhhpf43ZCGsjL7slKsmmSaFazCq1FV5HIqfhnNmJB9q30XTvCM8c3U7grByhxOGZJVG6BxWEs2vfgxJTEmei2sJCNiB0gAlxRx4VhO75jkqNBpSImnGGFz9nYZPKvSKdcpy5TDVlonTsHve8k3jiKSeGJbZxiS5WDXRDvMJAFVLpeo00lXl_khgfmQgcSIV65fz9wq2BUNivSGE02VIoTLNCDbiiB72RAw')">
-</div>
-<div class="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-<span class="w-12 h-12 rounded-full bg-surface/90 text-primary flex items-center justify-center shadow-lg transform scale-90 group-hover:scale-100 transition-transform">
-<span class="material-symbols-outlined text-[24px]">zoom_in</span>
-</span>
-</div>
-<span class="absolute top-4 left-4 bg-surface/95 backdrop-blur-sm text-primary font-label-sm text-label-sm uppercase tracking-wider px-3 py-1.5 rounded-lg shadow-sm">
-Vastu &amp; Architecture
-</span>
-</div>
-</article>
+<?php
+$gallery_query = new WP_Query( array(
+    'post_type'      => 'anukul_gallery',
+    'post_status'    => 'publish',
+    'posts_per_page' => 24,
+    'orderby'        => 'date',
+    'order'          => 'DESC',
+) );
 
-<!-- CARD 2: Portrait -->
-<article class="gallery-card group md:col-span-1 rounded-xl overflow-hidden bg-surface-container-low shadow-sm cursor-pointer transition-all duration-300 hover:shadow-lg" data-cat-label="Ayurveda &amp; Nature" data-category="ayurveda" data-id="2" data-note="Fresh sacred tulsi leaves, dried haritaki, wild amla, and freshly crushed herbal extracts resting within an antique heavy bronze mortar for dravya-guna testing." data-title="Classical Botanical Dravyas">
-<div class="relative w-full h-[320px] sm:h-[400px] overflow-hidden bg-surface-container-high">
-<div class="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-105" data-alt="Editorial still life of Ayurvedic botanical ingredients, dark stone surface with fresh green holy basil leaves, dried golden emblic myrobalan fruits, hand-carved brass mortar, raw turmeric rhizomes, natural soft studio lighting, organic earthy colors." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAb2PxX_lZYUJClYVyLXOMIplFKx8B6_rSatmP_Rf_7AmZMdGHS7gIxryMNyHAQ9w3ERuoM7yzLn7llqNjFF01WreYU8ps4qjmuLHMcFgoqcxVaX_7UzCC2Fpq8CSDjIAyNKQwwWnb1zBxJunA1IMyrMzzSxj9dBeaylDPEURqFkWPGdb5Vosbdqt03g_adDsXkNNy-m-slTPhVB8FGHdZIpUCUsP-TIFgHNEa0mnJ4logW4L5jZL7BVA')">
-</div>
-<div class="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-<span class="w-12 h-12 rounded-full bg-surface/90 text-primary flex items-center justify-center shadow-lg transform scale-90 group-hover:scale-100 transition-transform">
-<span class="material-symbols-outlined text-[24px]">zoom_in</span>
-</span>
-</div>
-<span class="absolute top-4 left-4 bg-surface/95 backdrop-blur-sm text-secondary font-label-sm text-label-sm uppercase tracking-wider px-3 py-1.5 rounded-lg shadow-sm">
-Ayurveda &amp; Nature
-</span>
-</div>
-</article>
+if ( $gallery_query->have_posts() ) :
+    $card_idx = 0;
+    while ( $gallery_query->have_posts() ) :
+        $gallery_query->the_post();
+        $card_idx++;
+        $thumb_url = get_the_post_thumbnail_url( get_the_ID(), 'full' );
+        if ( ! $thumb_url ) {
+            $thumb_url = get_post_meta( get_the_ID(), '_anukul_gallery_external_url', true );
+        }
+        $collection  = get_post_meta( get_the_ID(), '_anukul_gallery_collection', true );
+        $status_note = get_post_meta( get_the_ID(), '_anukul_gallery_status_note', true );
+        $excerpt     = get_the_excerpt();
 
-<!-- CARD 3: Founder & Activities Focus -->
-<article class="gallery-card group md:col-span-1 rounded-xl overflow-hidden bg-surface-container-low shadow-sm cursor-pointer transition-all duration-300 hover:shadow-lg" data-cat-label="Founder &amp; Activities" data-category="founder" data-id="3" data-note="Founder and Clinical Director reviewing individualized Nadi Pariksha diagnostic journals and constitutional charts in her quiet Pune-based clinical consultation room." data-title="Dr. Nishigandha Chaudhari">
-<div class="relative w-full h-[320px] sm:h-[400px] overflow-hidden bg-surface-container-high">
-<div class="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-105" data-alt="Dignified portrait of Dr. Nishigandha Chaudhari, Founder and Clinical Director" style="background-image: url('<?php echo esc_url( ANUKUL_URI . '/assets/images/monal_doc.jpeg' ); ?>')">
-</div>
-<div class="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-<span class="w-12 h-12 rounded-full bg-surface/90 text-primary flex items-center justify-center shadow-lg transform scale-90 group-hover:scale-100 transition-transform">
-<span class="material-symbols-outlined text-[24px]">zoom_in</span>
-</span>
-</div>
-<span class="absolute top-4 left-4 bg-surface/95 backdrop-blur-sm text-primary font-label-sm text-label-sm uppercase tracking-wider px-3 py-1.5 rounded-lg shadow-sm">
-Founder &amp; Activities
-</span>
-</div>
-</article>
+        // Get category term
+        $terms = get_the_terms( get_the_ID(), 'gallery_category' );
+        $cat_slug = 'spaces';
+        $cat_name = 'Spaces & Architecture';
+        if ( ! empty( $terms ) && ! is_wp_error( $terms ) ) {
+            $cat_slug = $terms[0]->slug;
+            $cat_name = $terms[0]->name;
+        }
 
-<!-- CARD 4: Portrait -->
-<article class="gallery-card group md:col-span-1 rounded-xl overflow-hidden bg-surface-container-low shadow-sm cursor-pointer transition-all duration-300 hover:shadow-lg" data-cat-label="Vastu &amp; Architecture" data-category="vastu" data-id="4" data-note="Heavy brass directional magnetic mariner compass resting upon an architectural Vastu Purusha Mandala layout parchment with precision hand-inked crosshairs." data-title="Sacred Directional Spatial Alignment">
-<div class="relative w-full h-[320px] sm:h-[400px] overflow-hidden bg-surface-container-high">
-<div class="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-105" data-alt="Macro overhead photograph of a finely crafted antique brass compass resting upon hand-drawn geometric architectural plans of a residential floor plan annotated with Vastu Purusha mandala grids, soft golden hour lighting, parchment texture, precision engineering tools." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCcVsE3L9EN_PwYg9eOecKmYX9oDdwZYnU2YUKU9yr73QQZJzYn4EQzfluXORCL1Jpa7hcmQdC1BqvphjAprhhVT6bBMFchqxDNhgKQfkURrWeKkDdu8f9Ly03MVOxaN2lnuqwNyKr44WnlQSqw5IptiXduuj-ortWu7pXFdi8xvgcdJIZYgEsjvyVl6uff2KTtmnMKT3aJJ7Dj4PTf5yl0sl1cZ3HgbxfRN-OHZU5YIKMbEkCgLtYpoQ')">
-</div>
-<div class="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-<span class="w-12 h-12 rounded-full bg-surface/90 text-primary flex items-center justify-center shadow-lg transform scale-90 group-hover:scale-100 transition-transform">
-<span class="material-symbols-outlined text-[24px]">zoom_in</span>
-</span>
-</div>
-<span class="absolute top-4 left-4 bg-surface/95 backdrop-blur-sm text-primary font-label-sm text-label-sm uppercase tracking-wider px-3 py-1.5 rounded-lg shadow-sm">
-Vastu &amp; Architecture
-</span>
-</div>
-</article>
-
-<!-- CARD 5: Square -->
-<article class="gallery-card group md:col-span-1 rounded-xl overflow-hidden bg-surface-container-low shadow-sm cursor-pointer transition-all duration-300 hover:shadow-lg" data-cat-label="Ayurveda &amp; Nature" data-category="ayurveda" data-id="5" data-note="Traditional bell-metal (kansa) dinacharya foot bowls and beaten copper storage ewers shown with heated organic black sesame oils and rose floral water." data-title="Handcrafted Kansa &amp; Copper Vessels">
-<div class="relative w-full h-[320px] sm:h-[400px] overflow-hidden bg-surface-container-high">
-<div class="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-105" data-alt="Artisanal still-life of hand-hammered kansa bronze bowls and pure copper water jars placed on an unvarnished teakwood shelf, delicate dried chamomile flowers, glass decanter of golden sesame massage oil, warm ambient atmosphere, refined traditional crafts." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDjXRoOC0zpUPlrHuCcXZjCELzKZU9N75RuecTB-M-jULLoW8AOkJoAqCu5jwnyXdPv6BiUnYACm2dJEyzSvCZfA1AsFvFQ5WBcNZs15UmuRvBHxMYvE9z3aHbuSVAwORKAmSyM5Q-EMH3UTFJWguH5OFfZfxKVny0b1qTFm4aD7t6DPInIurw6-sGoUw2X9UXpo823NO98rGjpOSU_e2R5CEMdArOGIJv9lRK4YMH_3WuCm-f73NQAew')">
-</div>
-<div class="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-<span class="w-12 h-12 rounded-full bg-surface/90 text-primary flex items-center justify-center shadow-lg transform scale-90 group-hover:scale-100 transition-transform">
-<span class="material-symbols-outlined text-[24px]">zoom_in</span>
-</span>
-</div>
-<span class="absolute top-4 left-4 bg-surface/95 backdrop-blur-sm text-secondary font-label-sm text-label-sm uppercase tracking-wider px-3 py-1.5 rounded-lg shadow-sm">
-Ayurveda &amp; Nature
-</span>
-</div>
-</article>
-
-<!-- CARD 6: Landscape 2-col span -->
-<article class="gallery-card group md:col-span-2 rounded-xl overflow-hidden bg-surface-container-low shadow-sm cursor-pointer transition-all duration-300 hover:shadow-lg" data-cat-label="ANUKUL Spaces" data-category="spaces" data-id="6" data-note="Calm private clinic consultation sanctuary featuring solid reclaimed teak furniture, natural unbleached linen screens, acoustic baffle wall panels, and indirect northern daylight." data-title="Consultation &amp; Pulse Assessment Room">
-<div class="relative w-full h-[320px] sm:h-[400px] overflow-hidden bg-surface-container-high">
-<div class="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-105" data-alt="Interior architectural photograph of a high-end serene clinical consultation room in an Ayurvedic center, minimalist wooden desk, handcrafted cotton cushions, brass lamp glowing warmly, ceramic tea set on side table, clean walls in soft ivory tone, inviting and calm sanctuary ambiance." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuALGzX7DcncBgWId4KmUimmaEWegWo0SW6-MzeO1SDpqwqBXkvSbpUpV58MjhDlemrL1IbzLOJtnC9na7GxLysKJ0H8CFtKrv3tqpHYZzrYLIaUo3Jf0LVkEaCYuMu1Uvrf9VPviJXkWzOr6-UCeVOYcLer44iYMIlRsTyNCaNdpWEs5Icr9L6MMxi_S-WeoHx9OQUSYJwDK6k2rfdyKKBZFiRrIics3UBiSRQ65A5dcXAwz5v7kEnOGw')">
-</div>
-<div class="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-<span class="w-12 h-12 rounded-full bg-surface/90 text-primary flex items-center justify-center shadow-lg transform scale-90 group-hover:scale-100 transition-transform">
-<span class="material-symbols-outlined text-[24px]">zoom_in</span>
-</span>
-</div>
-<span class="absolute top-4 left-4 bg-surface/95 backdrop-blur-sm text-primary font-label-sm text-label-sm uppercase tracking-wider px-3 py-1.5 rounded-lg shadow-sm">
-ANUKUL Spaces
-</span>
-</div>
-</article>
-
-<!-- CARD 7: Square -->
-<article class="gallery-card group md:col-span-1 rounded-xl overflow-hidden bg-surface-container-low shadow-sm cursor-pointer transition-all duration-300 hover:shadow-lg" data-cat-label="Events &amp; Learning" data-category="events" data-id="7" data-note="Sharangadhara Samhita and Caraka Samhita study editions open beside botanical herbarium sheets, magnifying lens, and analytical formulation logs." data-title="Vedic Herbology &amp; Classical Texts">
-<div class="relative w-full h-[320px] sm:h-[400px] overflow-hidden bg-surface-container-high">
-<div class="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-105" data-alt="Editorial desk arrangement of ancient Sanskrit Ayurvedic manuscripts and modern research journals side-by-side, pressed botanical herbarium specimen of Ashwagandha root, brass magnifying glass, notebook with handwritten notes, warm scholarly study environment." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBatnwGUDgsGnK77iGMroJWw3d6C_kcjtcAra3c8zmWjCCwl_ZVEqu3WjNga6M6lKj-m5vBNjnkYk9JT3d5DAg2Cujrzyfc2WvUcSQC0kehYqAAvMUAHgh7rWGQ8hAZctf0IxLkc0StFF2fvN2nYug_EYhh1iEGHhYd8Tg1QsKS9P1k94BkXmHzAiamMnOrbuT178LCvSEi4f5FxLtNm5NCs-VuEASIIQVpKxC8vhV_pdHUdFwZrPhxXg')">
-</div>
-<div class="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-<span class="w-12 h-12 rounded-full bg-surface/90 text-primary flex items-center justify-center shadow-lg transform scale-90 group-hover:scale-100 transition-transform">
-<span class="material-symbols-outlined text-[24px]">zoom_in</span>
-</span>
-</div>
-<span class="absolute top-4 left-4 bg-surface/95 backdrop-blur-sm text-primary font-label-sm text-label-sm uppercase tracking-wider px-3 py-1.5 rounded-lg shadow-sm">
-Events &amp; Learning
-</span>
-</div>
-</article>
-
-<!-- CARD 8: Portrait -->
-<article class="gallery-card group md:col-span-1 rounded-xl overflow-hidden bg-surface-container-low shadow-sm cursor-pointer transition-all duration-300 hover:shadow-lg" data-cat-label="Vastu &amp; Architecture" data-category="vastu" data-id="8" data-note="Serene residential bedroom designed under Vastu guidelines with south-western master resting stability, natural lime wash finishes, and clean uninterrupted lines." data-title="Meditative Living Quarters">
-<div class="relative w-full h-[320px] sm:h-[400px] overflow-hidden bg-surface-container-high">
-<div class="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-105" data-alt="Interior architectural photograph of a tranquil modern bedroom designed in accordance with Vastu Shastra principles, natural oak wood low-profile bed, neutral warm beige lime-washed plaster walls, subtle bronze lighting fixtures, large window framing green foliage, clutter-free peaceful zen aesthetic." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDPcV4PEXHLPwBIWYONUS03bo5a9T7konkY8II424PUMIoo-D-KXi0Be7A10mUuVloAwOcVkv1FXp1hPmmESurqv19o8--kdIkpyEzETkhbw8xS9LpwkiaVlj51XEO8CEQR8Iif4_svUsnpFu00mcTSgVdhutj_ZnT3hXzqR7dpexIRLOXcigV_HuekP99xpyJdpo0iKQregqvCtr0hwuMG7u92eOI3L0v5ZPidtMolaPe0NKdXDGm1zQ')">
-</div>
-<div class="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-<span class="w-12 h-12 rounded-full bg-surface/90 text-primary flex items-center justify-center shadow-lg transform scale-90 group-hover:scale-100 transition-transform">
-<span class="material-symbols-outlined text-[24px]">zoom_in</span>
-</span>
-</div>
-<span class="absolute top-4 left-4 bg-surface/95 backdrop-blur-sm text-primary font-label-sm text-label-sm uppercase tracking-wider px-3 py-1.5 rounded-lg shadow-sm">
-Vastu &amp; Architecture
-</span>
-</div>
-</article>
-
-<!-- CARD 9: Landscape -->
-<article class="gallery-card group md:col-span-1 rounded-xl overflow-hidden bg-surface-container-low shadow-sm cursor-pointer transition-all duration-300 hover:shadow-lg" data-cat-label="Events &amp; Learning" data-category="events" data-id="9" data-note="Traditional woven bamboo sieves holding hand-harvested medicinal blossoms drying in clean shaded solar dryers under monitored humidity conditions." data-title="Conscious Herb Sourcing &amp; Drying">
-<div class="relative w-full h-[320px] sm:h-[400px] overflow-hidden bg-surface-container-high">
-<div class="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-105" data-alt="Close-up photograph of artisan herbal harvesting, hand-woven bamboo trays laden with drying bright orange calendula flowers and pink damask rose petals under a shade-canopy, skilled hands gently sifting the botanicals, sunny warm countryside backdrop." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBCj_T94srCpLH11lsKALcMIUslz5C4qrAjbg-mSJtACoD-htXN42hXv0Mrkz8LNTz8XgnSHCIxU9Low0jH2tntmfFe_3GAfDrKrfCJRdn1uG7Y3ScTEao7mc3aKfPdK5ec2mywC2ufmqPPcmleVwpP7ulpeQiI5EtSMhUdOkR6P8yvMIAva_W4ja8kfoLcI9o-1hgqHj2l5kjWOWJdawpff7HAb0WHmNG8UzpyKjEQSI3jEhiDFdOjBA')">
-</div>
-<div class="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-<span class="w-12 h-12 rounded-full bg-surface/90 text-primary flex items-center justify-center shadow-lg transform scale-90 group-hover:scale-100 transition-transform">
-<span class="material-symbols-outlined text-[24px]">zoom_in</span>
-</span>
-</div>
-<span class="absolute top-4 left-4 bg-surface/95 backdrop-blur-sm text-primary font-label-sm text-label-sm uppercase tracking-wider px-3 py-1.5 rounded-lg shadow-sm">
-Events &amp; Learning
-</span>
-</div>
-</article>
+        // Layout span: alternate 2-col span on every 4th card
+        $col_span = ( 1 === $card_idx % 5 || 4 === $card_idx % 5 ) ? 'md:col-span-2' : 'md:col-span-1';
+        ?>
+        <article class="gallery-card group <?php echo esc_attr( $col_span ); ?> rounded-xl overflow-hidden bg-surface-container-low shadow-sm cursor-pointer transition-all duration-300 hover:shadow-xl hover:-translate-y-1 border border-[#E8D8BC]/60"
+                 data-cat-label="<?php echo esc_attr( $cat_name ); ?>"
+                 data-category="<?php echo esc_attr( $cat_slug ); ?>"
+                 data-id="<?php echo esc_attr( get_the_ID() ); ?>"
+                 data-note="<?php echo esc_attr( $excerpt ); ?>"
+                 data-collection="<?php echo esc_attr( $collection ? $collection : 'ANUKUL Photographic Trust' ); ?>"
+                 data-status="<?php echo esc_attr( $status_note ? $status_note : 'Verified Classical Tenet' ); ?>"
+                 data-img="<?php echo esc_url( $thumb_url ); ?>"
+                 data-title="<?php the_title_attribute(); ?>">
+            <div class="relative w-full h-[320px] sm:h-[400px] overflow-hidden bg-surface-container-high">
+                <img src="<?php echo esc_url( $thumb_url ); ?>" alt="<?php the_title_attribute(); ?>" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" />
+                <div class="absolute inset-0 bg-primary/25 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                    <span class="w-12 h-12 rounded-full bg-surface/95 text-primary flex items-center justify-center shadow-lg transform scale-90 group-hover:scale-100 transition-transform notranslate" translate="no">
+                        <span class="material-symbols-outlined notranslate text-[24px]" translate="no">zoom_in</span>
+                    </span>
+                </div>
+                <span class="absolute top-4 left-4 bg-surface/95 backdrop-blur-sm text-primary font-label-sm text-label-sm uppercase tracking-wider px-3 py-1.5 rounded-lg shadow-sm font-semibold border border-[#E8D8BC]">
+                    <?php echo esc_html( $cat_name ); ?>
+                </span>
+            </div>
+            <div class="p-4 bg-surface flex items-center justify-between border-t border-[#E8D8BC]/40">
+                <h3 class="font-display text-base font-semibold text-primary truncate pr-2"><?php the_title(); ?></h3>
+                <span class="text-xs uppercase text-secondary font-bold tracking-wider shrink-0">View Record →</span>
+            </div>
+        </article>
+        <?php
+    endwhile;
+    wp_reset_postdata();
+else :
+    // Fallback static cards if no database items
+    ?>
+    <article class="gallery-card group md:col-span-2 rounded-xl overflow-hidden bg-surface-container-low shadow-sm cursor-pointer transition-all duration-300 hover:shadow-lg" data-cat-label="Spaces & Architecture" data-category="spaces" data-id="1" data-note="Traditional stone corridor oriented towards the North-Eastern quadrant, capturing diffused solar wavelengths that ground bio-energetic diurnal stability." data-title="Sanctuary Courtyard & Morning Prana" data-img="https://lh3.googleusercontent.com/aida-public/AB6AXuBmW3NNDfnWCGbxGeQdgW7oPhhpf43ZCGsjL7slKsmmSaFazCq1FV5HIqfhnNmJB9q30XTvCM8c3U7grByhxOGZJVG6BxWEs2vfgxJTEmei2sJCNiB0gAlxRx4VhO75jkqNBpSImnGGFz9nYZPKvSKdcpy5TDVlonTsHve8k3jiKSeGJbZxiS5WDXRDvMJAFVLpeo00lXl_khgfmQgcSIV65fz9wq2BUNivSGE02VIoTLNCDbiiB72RAw">
+        <div class="relative w-full h-[320px] sm:h-[400px] overflow-hidden bg-surface-container-high">
+            <div class="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-105" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBmW3NNDfnWCGbxGeQdgW7oPhhpf43ZCGsjL7slKsmmSaFazCq1FV5HIqfhnNmJB9q30XTvCM8c3U7grByhxOGZJVG6BxWEs2vfgxJTEmei2sJCNiB0gAlxRx4VhO75jkqNBpSImnGGFz9nYZPKvSKdcpy5TDVlonTsHve8k3jiKSeGJbZxiS5WDXRDvMJAFVLpeo00lXl_khgfmQgcSIV65fz9wq2BUNivSGE02VIoTLNCDbiiB72RAw')"></div>
+            <span class="absolute top-4 left-4 bg-surface/95 backdrop-blur-sm text-primary font-label-sm text-label-sm uppercase tracking-wider px-3 py-1.5 rounded-lg shadow-sm">Spaces & Architecture</span>
+        </div>
+    </article>
+<?php endif; ?>
 </div>
 </div>
 </section>
+
 <!-- SECTION 5: AYURVEDA & NATURE FEATURE -->
 <section class="w-full bg-surface-container py-20 px-6 lg:px-margin">
 <div class="max-w-[1440px] mx-auto">
@@ -314,7 +245,7 @@ Events &amp; Learning
 <!-- Visual Column -->
 <div class="lg:col-span-6 relative">
 <div class="rounded-xl overflow-hidden shadow-sm bg-surface-container-high h-[420px] sm:h-[500px]">
-<div class="w-full h-full bg-cover bg-center" data-alt="Artistic botanical composition illustrating classical Ayurvedic herbal pharmacology, fresh green triphala components, golden cold pressed sesame oils pouring into a clay cup, hand carved wooden pestle, diffused natural lighting, elegant muted green and earth tones." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuA3-_zpwDa6tfRy5JyA9TDhpbTfgTBh9QGEAo66ctWusMHx8-ery0TZplAoNYyvSWUw2YMnXS0fE6X2InFsYr4iGo8i5xh7ed5TuG4p2WjPqQ4lh6byJpemj90HXCVUSyRaSXIUDyyCv85jX38SPFkj7ykMh2oct5C_Ycrs35GSPwiHYYh1wyyzuVXcXDKDNpTCHc74hBJhTKG-AQJmZy6cfHDGH18KIX7xv9Y6xKmtDIeEq3iTwGqZ6A')">
+<div class="w-full h-full bg-cover bg-center" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuA3-_zpwDa6tfRy5JyA9TDhpbTfgTBh9QGEAo66ctWusMHx8-ery0TZplAoNYyvSWUw2YMnXS0fE6X2InFsYr4iGo8i5xh7ed5TuG4p2WjPqQ4lh6byJpemj90HXCVUSyRaSXIUDyyCv85jX38SPFkj7ykMh2oct5C_Ycrs35GSPwiHYYh1wyyzuVXcXDKDNpTCHc74hBJhTKG-AQJmZy6cfHDGH18KIX7xv9Y6xKmtDIeEq3iTwGqZ6A')">
 </div>
 </div>
 <!-- Decorative Floating Card -->
@@ -357,13 +288,14 @@ Events &amp; Learning
 <div class="pt-4">
 <a class="inline-flex items-center gap-3 text-primary font-label-md text-label-md uppercase tracking-wider hover:text-tertiary transition-colors" data-path="ayurveda" href="<?php echo esc_url( home_url( "/ayurveda/" ) ); ?>">
 <span class="border-b-2 border-secondary pb-1">Explore Ayurveda Discipline</span>
-<span class="material-symbols-outlined text-[18px]">east</span>
+<span class="material-symbols-outlined notranslate text-[18px]" translate="no">east</span>
 </a>
 </div>
 </div>
 </div>
 </div>
 </section>
+
 <!-- SECTION 6: VASTU & ARCHITECTURE FEATURE -->
 <section class="w-full bg-surface py-20 px-6 lg:px-margin">
 <div class="max-w-[1440px] mx-auto">
@@ -401,20 +333,20 @@ Events &amp; Learning
 <div class="pt-4">
 <a class="inline-flex items-center gap-3 text-primary font-label-md text-label-md uppercase tracking-wider hover:text-tertiary transition-colors" data-path="vastu" href="<?php echo esc_url( home_url( "/vastu/" ) ); ?>">
 <span class="border-b-2 border-secondary pb-1">Explore Vastu Methodologies</span>
-<span class="material-symbols-outlined text-[18px]">east</span>
+<span class="material-symbols-outlined notranslate text-[18px]" translate="no">east</span>
 </a>
 </div>
 </div>
 <!-- Visual Column -->
 <div class="lg:col-span-6 order-1 lg:order-2 relative">
 <div class="rounded-xl overflow-hidden shadow-sm bg-surface-container-high h-[420px] sm:h-[500px]">
-<div class="w-full h-full bg-cover bg-center" data-alt="Interior architectural space designed with natural ventilation, warm light oak timbers, hand-cut stone tile flooring, soft shadows, directional light pouring through high wooden louvers, peaceful residential sanctuary displaying serene geometry." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCjT6312vzh3JvN6ioVJV6ajzj_XZURm0F3PZqgQfGQAWiIgi4pRU6h4huFzfHRamO72xXaJBVZxtObolLLnI9BEEYHK7nWg-ySA2S49MjWbRsG8FB2R7yTljXc6lMiU745UXDg5FkPBpkzpJdKB0kuUG9F6dVXNOlSGHoxnq-MZ3JBpwFQ4Q7vZbXgyuCpOp2sZys8hUJRM6llUEwhm86gxn_PDEiQtx_P2DTIfv_J-ylO3tAHFMIVNg')">
+<div class="w-full h-full bg-cover bg-center" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCjT6312vzh3JvN6ioVJV6ajzj_XZURm0F3PZqgQfGQAWiIgi4pRU6h4huFzfHRamO72xXaJBVZxtObolLLnI9BEEYHK7nWg-ySA2S49MjWbRsG8FB2R7yTljXc6lMiU745UXDg5FkPBpkzpJdKB0kuUG9F6dVXNOlSGHoxnq-MZ3JBpwFQ4Q7vZbXgyuCpOp2sZys8hUJRM6llUEwhm86gxn_PDEiQtx_P2DTIfv_J-ylO3tAHFMIVNg')">
 </div>
 </div>
 <!-- Cardinal Badge Overlay -->
 <div class="absolute -bottom-6 -left-4 sm:left-8 bg-surface p-6 rounded-xl shadow-md max-w-xs hidden sm:block">
-<div class="flex items-center gap-3 mb-2">
-<span class="material-symbols-outlined text-secondary text-[24px]">explore</span>
+<div class="flex items-center gap-3 mb-2 notranslate" translate="no">
+<span class="material-symbols-outlined notranslate text-secondary text-[24px]" translate="no">explore</span>
 <span class="font-label-sm text-label-sm text-secondary uppercase tracking-widest">Sthapatya Geometry</span>
 </div>
 <p class="font-headline-sm text-headline-sm text-primary">Microclimate Alignment</p>
@@ -424,6 +356,7 @@ Events &amp; Learning
 </div>
 </div>
 </section>
+
 <!-- SECTION 7: ANUKUL IN FOCUS (People & Ideas) -->
 <section class="w-full bg-surface-container-low py-20 px-6 lg:px-margin">
 <div class="max-w-[1440px] mx-auto space-y-12">
@@ -434,9 +367,9 @@ Events &amp; Learning
           An ongoing dedication to authentic classical documentation, clinical scholarship, and personal consultation.
         </p>
 </div>
-<div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center bg-surface p-8 sm:p-12 rounded-xl shadow-sm">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center bg-surface p-8 sm:p-12 rounded-xl shadow-sm border border-[#E8D8BC]/60">
 <div class="md:col-span-4 rounded-xl overflow-hidden h-[340px] bg-surface-container-high">
-<div class="w-full h-full bg-cover bg-center" data-alt="Professional editorial portrait of Dr. Nishigandha Chaudhari, Founder and Clinical Director" style="background-image: url('<?php echo esc_url( ANUKUL_URI . '/assets/images/monal_doc.jpeg' ); ?>')">
+<div class="w-full h-full bg-cover bg-center" style="background-image: url('<?php echo esc_url( ANUKUL_URI . '/assets/images/monal_doc.jpeg' ); ?>')">
 </div>
 </div>
 <div class="md:col-span-8 space-y-6">
@@ -463,117 +396,91 @@ Events &amp; Learning
 </div>
 </div>
 <div class="pt-2">
-<a class="inline-flex items-center gap-3 bg-primary text-on-primary font-label-md text-label-md px-6 py-3 rounded-lg tracking-wider uppercase transition-colors hover:bg-tertiary-container" data-path="services" href="<?php echo esc_url( home_url( "/services/" ) ); ?>">
+<a class="inline-flex items-center gap-3 bg-primary text-on-primary font-label-md text-label-md px-6 py-3 rounded-lg tracking-wider uppercase transition-colors hover:bg-tertiary-container shadow-sm" data-path="services" href="<?php echo esc_url( home_url( "/services/" ) ); ?>">
 <span>Discover ANUKUL Methodology</span>
-<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+<span class="material-symbols-outlined notranslate text-[18px]" translate="no">arrow_forward</span>
 </a>
 </div>
 </div>
 </div>
 </div>
 </section>
-<!-- SECTION 8: INTERACTIVE LIGHTBOX MODAL -->
-<div aria-label="Image Preview Lightbox" aria-modal="true" class="fixed inset-0 z-50 bg-inverse-surface/90 backdrop-blur-md hidden items-center justify-center p-4 sm:p-8 transition-opacity duration-300" id="lightbox-modal" role="dialog">
-<div class="relative w-full max-w-5xl bg-surface rounded-xl overflow-hidden shadow-2xl flex flex-col max-h-[921px]">
-<!-- Modal Header -->
-<div class="flex items-center justify-between px-6 py-4 bg-surface-container border-b border-surface-dim">
-<div class="flex items-center gap-3">
-<span class="bg-primary text-on-primary font-label-sm text-label-sm uppercase tracking-wider px-3 py-1 rounded-lg" id="modal-category-badge">Category</span>
-<span class="font-label-sm text-label-sm text-outline tracking-widest uppercase" id="modal-counter">1 / 9</span>
+
+<!-- SECTION 8: INSTANT ZERO-DELAY LIGHTBOX MODAL -->
+<div id="lightbox-modal" aria-label="Image Preview Lightbox" aria-modal="true" role="dialog"
+     class="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 lg:p-8 bg-[#000000]/85 backdrop-blur-md opacity-0 pointer-events-none transition-opacity duration-150 ease-out">
+    <div id="lightbox-box" class="relative w-full max-w-5xl bg-surface rounded-2xl overflow-hidden shadow-2xl flex flex-col max-h-[92vh] border border-[#B38A3E]/40 transform scale-95 transition-transform duration-150 ease-out">
+        
+        <!-- Modal Top Header -->
+        <div class="flex items-center justify-between px-6 py-3.5 bg-[#1F4D3A] text-white border-b border-[#B38A3E]/30 shrink-0">
+            <div class="flex items-center gap-3">
+                <span class="bg-[#B38A3E] text-white font-label-sm text-[11px] uppercase tracking-wider px-3 py-1 rounded-md font-bold" id="modal-category-badge">Category</span>
+                <span class="font-label-sm text-xs text-[#E8D8BC] tracking-widest uppercase font-semibold" id="modal-counter">1 / 6</span>
+            </div>
+            <button id="lightbox-close-btn" type="button" aria-label="Close dialog" class="w-9 h-9 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center transition-colors">
+                <span class="material-symbols-outlined notranslate text-[22px]" translate="no">close</span>
+            </button>
+        </div>
+
+        <!-- Modal Split Content -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 flex-grow overflow-y-auto">
+            <!-- Left Image Container -->
+            <div class="lg:col-span-8 bg-[#15120F] relative min-h-[320px] sm:min-h-[460px] flex items-center justify-center p-4">
+                <img id="modal-image-element" src="" alt="Gallery Preview" class="max-h-[70vh] w-auto max-w-full object-contain rounded-lg shadow-lg" />
+                
+                <!-- Navigation Arrows inside image area -->
+                <button id="lightbox-prev-btn" type="button" aria-label="Previous image" class="absolute left-3 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full bg-surface/90 hover:bg-surface text-primary flex items-center justify-center shadow-lg transition-transform hover:scale-110 active:scale-95 notranslate" translate="no">
+                    <span class="material-symbols-outlined notranslate text-[26px]" translate="no">chevron_left</span>
+                </button>
+                <button id="lightbox-next-btn" type="button" aria-label="Next image" class="absolute right-3 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full bg-surface/90 hover:bg-surface text-primary flex items-center justify-center shadow-lg transition-transform hover:scale-110 active:scale-95 notranslate" translate="no">
+                    <span class="material-symbols-outlined notranslate text-[26px]" translate="no">chevron_right</span>
+                </button>
+            </div>
+
+            <!-- Right Details Container -->
+            <div class="lg:col-span-4 p-6 sm:p-8 flex flex-col justify-between bg-surface">
+                <div class="space-y-4">
+                    <div>
+                        <span class="font-label-sm text-label-sm uppercase tracking-widest text-secondary block mb-1">Archival Record</span>
+                        <h3 class="font-headline-md text-headline-md text-primary leading-tight font-semibold" id="modal-title">Image Title</h3>
+                    </div>
+                    <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed" id="modal-description">
+                        Image detailed archival notes and contextual descriptions appear here.
+                    </p>
+                    <div class="p-4 bg-surface-container-low rounded-xl space-y-2 border border-[#E8D8BC]/60">
+                        <div class="flex items-center justify-between text-body-sm font-body-sm">
+                            <span class="text-outline">Collection:</span>
+                            <span class="font-semibold text-primary" id="modal-collection-text">ANUKUL Photographic Trust</span>
+                        </div>
+                        <div class="flex items-center justify-between text-body-sm font-body-sm">
+                            <span class="text-outline">Status:</span>
+                            <span class="text-secondary font-medium" id="modal-status-text">Verified Classical Tenet</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="pt-6 border-t border-surface-dim flex items-center justify-between gap-4">
+                    <span class="font-label-sm text-[11px] text-outline uppercase tracking-wider">Use ← → keys to flip</span>
+                    <a href="<?php echo esc_url( home_url( '/book-your-consultation/' ) ); ?>" class="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg bg-primary text-white text-xs font-semibold uppercase tracking-wider hover:bg-secondary transition-colors shadow-sm">
+                        <span>Book Slot</span>
+                        <span class="material-symbols-outlined notranslate text-[14px]" translate="no">east</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
-<button aria-label="Close dialog" class="w-10 h-10 rounded-full hover:bg-surface-variant flex items-center justify-center text-on-surface transition-colors" id="lightbox-close-btn">
-<span class="material-symbols-outlined text-[24px]">close</span>
-</button>
-</div>
-<!-- Modal Body (Split Image + Description) -->
-<div class="grid grid-cols-1 lg:grid-cols-12 flex-grow overflow-y-auto">
-<div class="lg:col-span-8 bg-surface-container-high relative min-h-[340px] sm:min-h-[460px] flex items-center justify-center">
-<div class="w-full h-full bg-cover bg-center" id="modal-image-preview"></div>
-<!-- Navigation arrows inside image area -->
-<button aria-label="Previous image" class="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-surface/80 hover:bg-surface text-primary flex items-center justify-center shadow-md transition-all" id="lightbox-prev-btn">
-<span class="material-symbols-outlined text-[28px]">chevron_left</span>
-</button>
-<button aria-label="Next image" class="absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-surface/80 hover:bg-surface text-primary flex items-center justify-center shadow-md transition-all" id="lightbox-next-btn">
-<span class="material-symbols-outlined text-[28px]">chevron_right</span>
-</button>
-</div>
-<div class="lg:col-span-4 p-6 sm:p-8 flex flex-col justify-between bg-surface">
-<div class="space-y-4">
-<div>
-<span class="font-label-sm text-label-sm uppercase tracking-widest text-secondary block mb-1">Archival Record</span>
-<h3 class="font-headline-md text-headline-md text-primary leading-tight" id="modal-title">Image Title</h3>
-</div>
-<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed" id="modal-description">
-              Image detailed archival notes and contextual descriptions appear here.
-            </p>
-<div class="p-4 bg-surface-container-low rounded-lg space-y-2">
-<div class="flex items-center justify-between text-body-sm font-body-sm">
-<span class="text-outline">Collection:</span>
-<span class="font-semibold text-primary">ANUKUL Photographic Trust</span>
-</div>
-<div class="flex items-center justify-between text-body-sm font-body-sm">
-<span class="text-outline">Status:</span>
-<span class="text-secondary font-medium">Verified Classical Tenet</span>
-</div>
-</div>
-</div>
-<div class="pt-6 border-t border-surface-dim flex items-center justify-between">
-<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider">Use Arrow Keys to Navigate</span>
-<button class="text-secondary hover:text-primary font-label-md text-label-md uppercase tracking-wider inline-flex items-center gap-1" id="modal-inquire-btn">
-<span>Clinic Inquiries</span>
-<span class="material-symbols-outlined text-[16px]">open_in_new</span>
-</button>
-</div>
-</div>
-</div>
-</div>
-</div>
-<!-- SECTION 9: CLOSING CTA (Warm Heritage Maroon Palette) -->
-<section class="w-full bg-[#7A2638] text-on-tertiary py-20 px-6 lg:px-margin">
-<div class="max-w-[1440px] mx-auto text-center space-y-8">
-<div class="max-w-3xl mx-auto space-y-4">
-<span class="font-label-md text-label-md text-secondary-fixed uppercase tracking-widest block">
-          A Symphony of Health, Space &amp; Vitality
-        </span>
-<h2 class="font-display text-display text-[#F7F1E3] tracking-tight">
-          Experience the ANUKUL Approach.
-        </h2>
-<p class="font-body-lg text-body-lg text-surface-container-high/90 max-w-2xl mx-auto">
-          Explore how Ayurveda, Vastu, and thoughtful attention to people and spaces come together within the ANUKUL philosophy to cultivate lasting resilience.
-        </p>
-</div>
-<div class="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
-<a class="w-full sm:w-auto inline-flex items-center justify-center bg-[#F7F1E3] text-[#7A2638] font-label-md text-label-md px-8 py-4 rounded-lg tracking-wider uppercase font-semibold transition-all hover:bg-surface-container shadow-md" data-path="services" href="<?php echo esc_url( home_url( "/services/" ) ); ?>">
-          Explore Our Services
-        </a>
-<a class="w-full sm:w-auto inline-flex items-center justify-center bg-transparent border border-[#F7F1E3]/50 text-[#F7F1E3] font-label-md text-label-md px-8 py-4 rounded-lg tracking-wider uppercase transition-colors hover:bg-[#F7F1E3]/10" data-path="contact" href="<?php echo esc_url( home_url( "/contact/" ) ); ?>">
-          Contact ANUKUL
-        </a>
-</div>
-</div>
-</section>
-<!-- SECTION 10: RESPONSIBLE PRACTICE NOTE -->
-<section class="w-full bg-surface-container py-6 px-6 lg:px-margin">
-<div class="max-w-[1440px] mx-auto flex items-center justify-center gap-3 text-center">
-<span class="material-symbols-outlined text-outline text-[18px]">info</span>
-<p class="font-body-sm text-body-sm text-on-surface-variant max-w-4xl">
-<strong class="font-semibold text-primary">Responsible Practice Note:</strong> ANUKUL’s imagery illustrates traditional Indian knowledge, botanical heritage, and spatial architecture. Visual representations are educational and do not imply guaranteed medical treatments or superstitious outcomes.
-      </p>
-</div>
-</section>
-</div>
-<!-- INLINE CLIENT-SIDE BEHAVIOR FOR FILTERING & ACCESSIBLE LIGHTBOX -->
+
+<!-- INLINE CLIENT-SIDE BEHAVIOR FOR ZERO-DELAY LIGHTBOX -->
 <script>
   (function initGallery() {
-    // 1. FILTER FUNCTIONALITY
     const tabs = document.querySelectorAll('.gallery-tab');
     const cards = document.querySelectorAll('.gallery-card');
 
+    // 1. Filter functionality
     tabs.forEach(tab => {
       tab.addEventListener('click', () => {
         const targetFilter = tab.getAttribute('data-filter');
-
-        // Update Tab visual state
         tabs.forEach(t => {
           t.classList.remove('bg-primary', 'text-on-primary');
           t.classList.add('bg-surface-container', 'text-on-surface');
@@ -581,11 +488,10 @@ Events &amp; Learning
         tab.classList.remove('bg-surface-container', 'text-on-surface');
         tab.classList.add('bg-primary', 'text-on-primary');
 
-        // Filter cards smoothly
         cards.forEach(card => {
           const category = card.getAttribute('data-category');
           if (targetFilter === 'all' || category === targetFilter) {
-            card.style.display = 'flex';
+            card.style.display = 'block';
           } else {
             card.style.display = 'none';
           }
@@ -593,57 +499,74 @@ Events &amp; Learning
       });
     });
 
-    // 2. LIGHTBOX MODAL FUNCTIONALITY
+    // 2. Instant Zero-Delay Lightbox Modal
     const modal = document.getElementById('lightbox-modal');
+    const box   = document.getElementById('lightbox-box');
     const closeBtn = document.getElementById('lightbox-close-btn');
-    const prevBtn = document.getElementById('lightbox-prev-btn');
-    const nextBtn = document.getElementById('lightbox-next-btn');
+    const prevBtn  = document.getElementById('lightbox-prev-btn');
+    const nextBtn  = document.getElementById('lightbox-next-btn');
 
-    const modalTitle = document.getElementById('modal-title');
-    const modalCatBadge = document.getElementById('modal-category-badge');
+    const modalTitle       = document.getElementById('modal-title');
+    const modalCatBadge    = document.getElementById('modal-category-badge');
     const modalDescription = document.getElementById('modal-description');
-    const modalImage = document.getElementById('modal-image-preview');
-    const modalCounter = document.getElementById('modal-counter');
+    const modalImg         = document.getElementById('modal-image-element');
+    const modalCounter     = document.getElementById('modal-counter');
+    const modalCollection  = document.getElementById('modal-collection-text');
+    const modalStatus      = document.getElementById('modal-status-text');
 
     let currentIndex = 0;
     const cardsArray = Array.from(cards);
 
     function updateModalContent(index) {
+      if (!cardsArray.length) return;
       if (index < 0) index = cardsArray.length - 1;
       if (index >= cardsArray.length) index = 0;
       currentIndex = index;
 
       const currentCard = cardsArray[currentIndex];
-      const title = currentCard.getAttribute('data-title');
-      const catLabel = currentCard.getAttribute('data-cat-label');
-      const note = currentCard.getAttribute('data-note');
-      const imgDiv = currentCard.querySelector('[style*="background-image"]');
-      const bgStyle = imgDiv ? imgDiv.style.backgroundImage : "url('placeholder')";
+      const title = currentCard.getAttribute('data-title') || '';
+      const catLabel = currentCard.getAttribute('data-cat-label') || 'Archive';
+      const note = currentCard.getAttribute('data-note') || '';
+      const collection = currentCard.getAttribute('data-collection') || 'ANUKUL Photographic Trust';
+      const statusNote = currentCard.getAttribute('data-status') || 'Verified Classical Tenet';
+      let imgSrc = currentCard.getAttribute('data-img');
+
+      if (!imgSrc) {
+        const imgEl = currentCard.querySelector('img');
+        if (imgEl) imgSrc = imgEl.src;
+      }
 
       modalTitle.textContent = title;
       modalCatBadge.textContent = catLabel;
       modalDescription.textContent = note;
-      modalImage.style.backgroundImage = bgStyle;
+      if (modalCollection) modalCollection.textContent = collection;
+      if (modalStatus) modalStatus.textContent = statusNote;
       modalCounter.textContent = (currentIndex + 1) + ' / ' + cardsArray.length;
+
+      if (imgSrc) {
+        modalImg.src = imgSrc;
+      }
     }
 
     function openModal(index) {
       updateModalContent(index);
-      modal.classList.remove('hidden');
-      modal.classList.add('flex');
+      modal.classList.remove('opacity-0', 'pointer-events-none');
+      modal.classList.add('opacity-100', 'pointer-events-auto');
+      box.classList.remove('scale-95');
+      box.classList.add('scale-100');
       document.body.style.overflow = 'hidden';
     }
 
     function closeModal() {
-      modal.classList.add('hidden');
-      modal.classList.remove('flex');
+      modal.classList.add('opacity-0', 'pointer-events-none');
+      modal.classList.remove('opacity-100', 'pointer-events-auto');
+      box.classList.add('scale-95');
+      box.classList.remove('scale-100');
       document.body.style.overflow = '';
     }
 
     cardsArray.forEach((card, idx) => {
-      card.addEventListener('click', () => {
-        openModal(idx);
-      });
+      card.addEventListener('click', () => openModal(idx));
     });
 
     closeBtn.addEventListener('click', closeModal);
@@ -656,16 +579,12 @@ Events &amp; Learning
       updateModalContent(currentIndex + 1);
     });
 
-    // Close on backdrop click
     modal.addEventListener('click', (e) => {
-      if (e.target === modal) {
-        closeModal();
-      }
+      if (e.target === modal) closeModal();
     });
 
-    // Keyboard handlers
     document.addEventListener('keydown', (e) => {
-      if (modal.classList.contains('hidden')) return;
+      if (modal.classList.contains('pointer-events-none')) return;
       if (e.key === 'Escape') closeModal();
       if (e.key === 'ArrowLeft') updateModalContent(currentIndex - 1);
       if (e.key === 'ArrowRight') updateModalContent(currentIndex + 1);

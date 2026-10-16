@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 /**
  * Checkout Form
  *
@@ -41,7 +41,7 @@ do_action( 'woocommerce_before_checkout_form', $checkout );
 <!-- Step 1: Cart Completed -->
 <div class="flex items-center gap-2">
 <span class="w-6 h-6 rounded-full bg-primary-container text-surface flex items-center justify-center font-label-sm text-label-sm">
-<span class="material-symbols-outlined text-[14px]">done</span>
+<span class="material-symbols-outlined notranslate text-[14px]" translate="no">done</span>
 </span>
 <span class="font-label-md text-label-md uppercase tracking-wider text-on-surface-variant">Cart</span>
 </div>
@@ -71,7 +71,7 @@ do_action( 'woocommerce_before_checkout_form', $checkout );
 <!-- Returning Customer Notice -->
 <div class="bg-surface-container-low border border-surface-variant rounded-xl p-4 sm:p-5 flex items-center justify-between gap-4 shadow-sm">
 <div class="flex items-center gap-3">
-<span class="material-symbols-outlined text-secondary text-[22px]">account_circle</span>
+<span class="material-symbols-outlined notranslate text-secondary text-[22px]" translate="no">account_circle</span>
 <p class="font-body-md text-body-md text-on-surface">
               Returning patron to the sanctuary? 
               <a class="font-semibold text-primary underline underline-offset-4 hover:text-tertiary transition-colors ml-1" href="<?php echo esc_url( function_exists( "wc_get_page_permalink" ) ? wc_get_page_permalink( "myaccount" ) : home_url( "/my-account/" ) ); ?>">Log in here</a>
@@ -90,7 +90,7 @@ do_action( 'woocommerce_before_checkout_form', $checkout );
 <p class="font-body-sm text-body-sm text-on-surface-variant">Primary contact for consignment notifications and consultation records.</p>
 </div>
 </div>
-<span class="material-symbols-outlined text-outline-variant">badge</span>
+<span class="material-symbols-outlined notranslate text-outline-variant" translate="no">badge</span>
 </div>
 <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
 <div>
@@ -111,7 +111,7 @@ do_action( 'woocommerce_before_checkout_form', $checkout );
 </label>
 <input class="w-full bg-surface/70 border border-surface-variant rounded-lg px-4 py-3 font-body-md text-on-surface focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all placeholder:text-outline-variant/60" id="email" placeholder="aarav.nambiar@sanctuary.in" required="" type="email"/>
 <p class="font-body-sm text-body-sm text-outline mt-1.5 flex items-center gap-1.5">
-<span class="material-symbols-outlined text-[14px]">lock</span>
+<span class="material-symbols-outlined notranslate text-[14px]" translate="no">lock</span>
                 Your invoice and clinical batch test certs will be dispatched to this address.
               </p>
 </div>
@@ -147,7 +147,7 @@ do_action( 'woocommerce_before_checkout_form', $checkout );
 <p class="font-body-sm text-body-sm text-on-surface-variant">Official address associated with your payment instrument.</p>
 </div>
 </div>
-<span class="material-symbols-outlined text-outline-variant">home_pin</span>
+<span class="material-symbols-outlined notranslate text-outline-variant" translate="no">home_pin</span>
 </div>
 <div class="grid grid-cols-1 sm:grid-cols-6 gap-5">
 <div class="sm:col-span-6">
@@ -162,7 +162,7 @@ do_action( 'woocommerce_before_checkout_form', $checkout );
 <option value="UK">United Kingdom</option>
 <option value="US">United States</option>
 </select>
-<span class="material-symbols-outlined absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-outline">expand_more</span>
+<span class="material-symbols-outlined notranslate absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-outline" translate="no">expand_more</span>
 </div>
 </div>
 <div class="sm:col-span-6">
@@ -198,7 +198,7 @@ do_action( 'woocommerce_before_checkout_form', $checkout );
 <option value="GJ">Gujarat</option>
 <option value="WB">West Bengal</option>
 </select>
-<span class="material-symbols-outlined absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-outline">expand_more</span>
+<span class="material-symbols-outlined notranslate absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-outline" translate="no">expand_more</span>
 </div>
 </div>
 <div class="sm:col-span-2">
@@ -220,7 +220,7 @@ do_action( 'woocommerce_before_checkout_form', $checkout );
 <p class="font-body-sm text-body-sm text-on-surface-variant">Mindfully packaged in ecological, vibration-dampening craft paper.</p>
 </div>
 </div>
-<span class="material-symbols-outlined text-outline-variant">local_shipping</span>
+<span class="material-symbols-outlined notranslate text-outline-variant" translate="no">local_shipping</span>
 </div>
 <!-- Ship to different address toggle -->
 <div class="mb-6 p-4 bg-surface-container-low rounded-lg border border-surface-variant/70">
@@ -278,7 +278,7 @@ do_action( 'woocommerce_before_checkout_form', $checkout );
 <p class="font-body-sm text-body-sm text-on-surface-variant">RBI authorized payment rails with 256-bit AES encryption.</p>
 </div>
 </div>
-<span class="material-symbols-outlined text-outline-variant">encrypted</span>
+<span class="material-symbols-outlined notranslate text-outline-variant" translate="no">encrypted</span>
 </div>
 <div class="space-y-4">
 <!-- Payment Option 1: Online Gateway -->
@@ -301,7 +301,7 @@ do_action( 'woocommerce_before_checkout_form', $checkout );
 <!-- Nested online options notice -->
 <div class="p-4 border-t border-surface-variant bg-surface-container-low/50" id="onlineDetails">
 <div class="flex items-start gap-3">
-<span class="material-symbols-outlined text-secondary text-[20px] mt-0.5">verified_user</span>
+<span class="material-symbols-outlined notranslate text-secondary text-[20px] mt-0.5" translate="no">verified_user</span>
 <div class="space-y-1">
 <p class="font-body-sm text-body-sm text-on-surface">
                       Upon clicking <strong class="text-primary font-semibold">Place Order</strong>, you will be redirected to the secure portal to complete your transaction via Google Pay, PhonePe, Paytm, RuPay, Visa, Mastercard, or Major Indian Banks.
@@ -325,7 +325,7 @@ do_action( 'woocommerce_before_checkout_form', $checkout );
 </label>
 <div class="hidden p-4 border-t border-surface-variant bg-surface-container-low/50" id="codDetails">
 <div class="flex items-start gap-3">
-<span class="material-symbols-outlined text-tertiary text-[20px] mt-0.5">info</span>
+<span class="material-symbols-outlined notranslate text-tertiary text-[20px] mt-0.5" translate="no">info</span>
 <p class="font-body-sm text-body-sm text-on-surface-variant">
                     Please keep the exact sum ready. Our courier partners require an OTP confirmation delivered to your mobile upon handoff. Available for orders up to ₹10,000 across serviceable Indian pincodes.
                   </p>
@@ -346,7 +346,7 @@ do_action( 'woocommerce_before_checkout_form', $checkout );
             </span>
 </label>
 <div class="p-3 bg-surface rounded-lg border border-surface-variant flex items-center gap-3">
-<span class="material-symbols-outlined text-outline-variant text-[20px]">fact_check</span>
+<span class="material-symbols-outlined notranslate text-outline-variant text-[20px]" translate="no">fact_check</span>
 <p class="font-body-sm text-body-sm text-on-surface-variant">
               Kindly inspect all shipping details prior to executing order. Once consecrated, custom engraved Vastu Yantras cannot be recalled.
             </p>
@@ -359,11 +359,11 @@ do_action( 'woocommerce_before_checkout_form', $checkout );
 <!-- Summary Header -->
 <div class="flex items-center justify-between pb-4 border-b border-surface-variant">
 <div class="flex items-center gap-2">
-<span class="material-symbols-outlined text-secondary text-[22px]">shopping_bag</span>
+<span class="material-symbols-outlined notranslate text-secondary text-[22px]" translate="no">shopping_bag</span>
 <h2 class="font-headline-sm text-headline-sm text-primary uppercase tracking-wide">Your Order</h2>
 </div>
 <a class="font-label-md text-label-md uppercase tracking-wider text-secondary hover:text-primary transition-colors flex items-center gap-1 font-semibold" data-path="cart" href="<?php echo esc_url( function_exists( "wc_get_cart_url" ) ? wc_get_cart_url() : home_url( "/cart/" ) ); ?>">
-<span class="material-symbols-outlined text-[14px]">arrow_back</span>
+<span class="material-symbols-outlined notranslate text-[14px]" translate="no">arrow_back</span>
               Edit Cart
             </a>
 </div>
@@ -418,7 +418,7 @@ do_action( 'woocommerce_before_checkout_form', $checkout );
               </button>
 </div>
 <div class="hidden mt-2 p-2 bg-primary/10 rounded text-primary font-body-sm text-body-sm flex items-center gap-1.5" id="couponNotice">
-<span class="material-symbols-outlined text-[16px]">check_circle</span>
+<span class="material-symbols-outlined notranslate text-[16px]" translate="no">check_circle</span>
 <span>Code applied: <strong>VASTU10</strong> (-₹330)</span>
 </div>
 </div>
@@ -431,7 +431,7 @@ do_action( 'woocommerce_before_checkout_form', $checkout );
 <div class="flex justify-between text-on-surface-variant items-center">
 <div class="flex items-center gap-1.5">
 <span>Sanctuary Dispatch</span>
-<span class="material-symbols-outlined text-[14px] text-outline cursor-help" title="Standard insured pan-India carriage">info</span>
+<span class="material-symbols-outlined notranslate text-[14px] text-outline cursor-help" translate="no" title="Standard insured pan-India carriage">info</span>
 </div>
 <span class="font-medium text-on-surface" id="calcShipping">₹150</span>
 </div>
@@ -457,7 +457,7 @@ do_action( 'woocommerce_before_checkout_form', $checkout );
 <!-- Main CTA: Place Order Button -->
 <div class="mt-6">
 <button class="w-full bg-[#1F4D3A] hover:bg-[#7A2638] text-[#F7F1E3] py-4 px-6 rounded-lg font-label-md text-label-md uppercase tracking-widest transition-all duration-300 flex items-center justify-center gap-3 shadow-md hover:shadow-lg active:scale-[0.99] group cursor-pointer" id="submitOrderBtn" onclick="window.handlePlaceOrder()" type="button">
-<span class="material-symbols-outlined text-[20px] transition-transform group-hover:translate-x-0.5">lock</span>
+<span class="material-symbols-outlined notranslate text-[20px] transition-transform group-hover:translate-x-0.5" translate="no">lock</span>
 <span id="placeOrderText">Place Order — ₹3,450</span>
 </button>
 <p class="font-label-sm text-label-sm text-center text-outline uppercase tracking-wider mt-2.5">
@@ -467,21 +467,21 @@ do_action( 'woocommerce_before_checkout_form', $checkout );
 <!-- Trust Badges -->
 <div class="mt-6 pt-6 border-t border-surface-variant/70 space-y-3.5">
 <div class="flex items-start gap-3">
-<span class="material-symbols-outlined text-secondary text-[20px] shrink-0 mt-0.5">workspace_premium</span>
+<span class="material-symbols-outlined notranslate text-secondary text-[20px] shrink-0 mt-0.5" translate="no">workspace_premium</span>
 <div>
 <h4 class="font-label-md text-label-md uppercase font-bold text-primary tracking-wide">Handcrafted &amp; Authenticated</h4>
 <p class="font-body-sm text-body-sm text-on-surface-variant">Forged from pure Vedic metals and organically sourced snehana herbs.</p>
 </div>
 </div>
 <div class="flex items-start gap-3">
-<span class="material-symbols-outlined text-secondary text-[20px] shrink-0 mt-0.5">verified</span>
+<span class="material-symbols-outlined notranslate text-secondary text-[20px] shrink-0 mt-0.5" translate="no">verified</span>
 <div>
 <h4 class="font-label-md text-label-md uppercase font-bold text-primary tracking-wide">Secure 256-bit Encrypted Checkout</h4>
 <p class="font-body-sm text-body-sm text-on-surface-variant">Compliant with the highest Indian banking cybersecurity guidelines.</p>
 </div>
 </div>
 <div class="flex items-start gap-3">
-<span class="material-symbols-outlined text-secondary text-[20px] shrink-0 mt-0.5">spatial_tracking</span>
+<span class="material-symbols-outlined notranslate text-secondary text-[20px] shrink-0 mt-0.5" translate="no">spatial_tracking</span>
 <div>
 <h4 class="font-label-md text-label-md uppercase font-bold text-primary tracking-wide">Verified Real-Time Consignment Tracking</h4>
 <p class="font-body-sm text-body-sm text-on-surface-variant">Live SMS updates upon warehouse release and local courier dispatch.</p>
@@ -494,7 +494,7 @@ do_action( 'woocommerce_before_checkout_form', $checkout );
               Need assistance with your formulation selection?
             </p>
 <a class="inline-flex items-center gap-1.5 font-label-md text-label-md uppercase tracking-wider text-secondary font-bold hover:text-primary transition-colors mt-1" data-path="contact" href="<?php echo esc_url( home_url( "/contact/" ) ); ?>">
-<span class="material-symbols-outlined text-[16px]">support_agent</span>
+<span class="material-symbols-outlined notranslate text-[16px]" translate="no">support_agent</span>
               Contact Sanctuary Concierge
             </a>
 </div>
@@ -503,7 +503,7 @@ do_action( 'woocommerce_before_checkout_form', $checkout );
 <div class="p-4 bg-surface-container-low rounded-xl border border-surface-variant flex items-center justify-between">
 <div class="flex items-center gap-3">
 <div class="w-8 h-8 rounded-full border border-secondary/40 flex items-center justify-center text-secondary">
-<span class="material-symbols-outlined text-[18px]">explore</span>
+<span class="material-symbols-outlined notranslate text-[18px]" translate="no">explore</span>
 </div>
 <div>
 <span class="font-label-sm text-label-sm uppercase tracking-widest text-secondary block font-bold">Vastu Aligned Packaging</span>
@@ -541,7 +541,7 @@ do_action( 'woocommerce_before_checkout_form', $checkout );
         } else if (input && input.value.trim().length > 0) {
           // generic fallback coupon demo
           currentDiscount = 150;
-          notice.innerHTML = '<span class="material-symbols-outlined text-[16px]">check_circle</span><span>Concession Applied: -₹150</span>';
+          notice.innerHTML = '<span class="material-symbols-outlined notranslate text-[16px]" translate="no">check_circle</span><span>Concession Applied: -₹150</span>';
           notice.classList.remove('hidden');
           discountRow.classList.remove('hidden');
           discountRow.classList.add('flex');

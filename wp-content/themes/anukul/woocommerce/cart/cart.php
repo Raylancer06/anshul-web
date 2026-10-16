@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 /**
  * Cart Page
  *
@@ -15,7 +15,7 @@ do_action( 'woocommerce_before_cart' );
 <div class="flex flex-col w-full">
 <!-- Subtle Notification Banner for Micro-Interactions -->
 <div class="hidden transition-all duration-300 fixed bottom-6 right-6 z-50 bg-primary text-on-primary px-6 py-4 rounded-xl shadow-xl flex items-center gap-3 border border-outline-variant/30" id="cart-toast">
-<span class="material-symbols-outlined text-primary-fixed-dim" id="toast-icon">verified</span>
+<span class="material-symbols-outlined notranslate text-primary-fixed-dim" translate="no" id="toast-icon">verified</span>
 <span class="font-body-sm text-body-sm text-on-primary" id="toast-message">Cart updated successfully.</span>
 </div>
 <!-- Stepper & Editorial Cart Header -->
@@ -82,11 +82,11 @@ do_action( 'woocommerce_before_cart' );
 <div class="w-full bg-surface-container-high/40 border-b border-surface-variant/40">
 <div class="max-w-[1440px] mx-auto px-6 lg:px-margin py-2.5 flex items-center justify-between">
 <div class="flex items-center gap-2 font-body-sm text-body-sm text-on-surface-variant">
-<span class="material-symbols-outlined text-[16px] text-secondary">local_shipping</span>
+<span class="material-symbols-outlined notranslate text-[16px] text-secondary" translate="no">local_shipping</span>
 <span>Complimentary Sanctuary Surface Dispatch on all sacred orders across India.</span>
 </div>
 <button class="font-label-md text-label-md uppercase tracking-wider text-primary hover:text-tertiary transition-colors flex items-center gap-1.5" id="toggle-empty-view-btn">
-<span class="material-symbols-outlined text-[18px]">visibility</span>
+<span class="material-symbols-outlined notranslate text-[18px]" translate="no">visibility</span>
 <span id="toggle-state-text">Preview Empty State</span>
 </button>
 </div>
@@ -121,10 +121,10 @@ do_action( 'woocommerce_before_cart' );
 <h3 class="font-headline-sm text-headline-sm text-primary font-medium mt-0.5">Handcrafted Kansa Vatki Bowl</h3>
 <p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Standard Personal (7.5 cm · 160g)</p>
 <span class="font-label-sm text-label-sm text-surface-tint mt-1 flex items-center gap-1">
-<span class="material-symbols-outlined text-[14px]">check_circle</span> In Stock · Blessed &amp; Tuned
+<span class="material-symbols-outlined notranslate text-[14px]" translate="no">check_circle</span> In Stock · Blessed &amp; Tuned
                     </span>
 <button class="remove-item-btn sm:hidden mt-3 inline-flex items-center gap-1 font-label-sm text-label-sm text-tertiary hover:underline uppercase tracking-wider" data-target="item-1">
-<span class="material-symbols-outlined text-[15px]">delete</span> Remove
+<span class="material-symbols-outlined notranslate text-[15px]" translate="no">delete</span> Remove
                     </button>
 </div>
 </div>
@@ -136,11 +136,11 @@ do_action( 'woocommerce_before_cart' );
 <div class="sm:col-span-2 flex items-center sm:justify-center">
 <div class="inline-flex items-center rounded-lg border border-surface-variant bg-surface-container-lowest shadow-sm">
 <button aria-label="Decrease quantity" class="qty-btn decrement-btn px-2.5 py-1.5 text-primary hover:bg-surface-container transition-colors rounded-l-lg" data-target="item-1">
-<span class="material-symbols-outlined text-[16px]">remove</span>
+<span class="material-symbols-outlined notranslate text-[16px]" translate="no">remove</span>
 </button>
 <input class="w-10 text-center font-body-md text-body-md text-on-surface bg-transparent border-none p-0 focus:ring-0 select-none quantity-input" data-target="item-1" max="10" min="1" readonly="" type="number" value="1"/>
 <button aria-label="Increase quantity" class="qty-btn increment-btn px-2.5 py-1.5 text-primary hover:bg-surface-container transition-colors rounded-r-lg" data-target="item-1">
-<span class="material-symbols-outlined text-[16px]">add</span>
+<span class="material-symbols-outlined notranslate text-[16px]" translate="no">add</span>
 </button>
 </div>
 </div>
@@ -148,7 +148,7 @@ do_action( 'woocommerce_before_cart' );
 <div class="sm:col-span-2 flex items-center justify-between sm:justify-end gap-3">
 <span class="font-headline-sm text-headline-sm text-primary line-subtotal" data-target="item-1">₹ 2,450</span>
 <button aria-label="Remove item" class="remove-item-btn hidden sm:inline-flex p-1.5 text-outline hover:text-tertiary hover:bg-error-container/20 rounded-lg transition-colors" data-target="item-1" title="Remove item">
-<span class="material-symbols-outlined text-[20px]">delete_outline</span>
+<span class="material-symbols-outlined notranslate text-[20px]" translate="no">delete_outline</span>
 </button>
 </div>
 </div>
@@ -166,10 +166,10 @@ do_action( 'woocommerce_before_cart' );
 <h3 class="font-headline-sm text-headline-sm text-primary font-medium mt-0.5">Cold-Pressed Herbal Taila (External Snehana)</h3>
 <p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">200ml Glass Flask</p>
 <span class="font-label-sm text-label-sm text-surface-tint mt-1 flex items-center gap-1">
-<span class="material-symbols-outlined text-[14px]">check_circle</span> In Stock · Hand-Infused
+<span class="material-symbols-outlined notranslate text-[14px]" translate="no">check_circle</span> In Stock · Hand-Infused
                     </span>
 <button class="remove-item-btn sm:hidden mt-3 inline-flex items-center gap-1 font-label-sm text-label-sm text-tertiary hover:underline uppercase tracking-wider" data-target="item-2">
-<span class="material-symbols-outlined text-[15px]">delete</span> Remove
+<span class="material-symbols-outlined notranslate text-[15px]" translate="no">delete</span> Remove
                     </button>
 </div>
 </div>
@@ -181,11 +181,11 @@ do_action( 'woocommerce_before_cart' );
 <div class="sm:col-span-2 flex items-center sm:justify-center">
 <div class="inline-flex items-center rounded-lg border border-surface-variant bg-surface-container-lowest shadow-sm">
 <button aria-label="Decrease quantity" class="qty-btn decrement-btn px-2.5 py-1.5 text-primary hover:bg-surface-container transition-colors rounded-l-lg" data-target="item-2">
-<span class="material-symbols-outlined text-[16px]">remove</span>
+<span class="material-symbols-outlined notranslate text-[16px]" translate="no">remove</span>
 </button>
 <input class="w-10 text-center font-body-md text-body-md text-on-surface bg-transparent border-none p-0 focus:ring-0 select-none quantity-input" data-target="item-2" max="10" min="1" readonly="" type="number" value="1"/>
 <button aria-label="Increase quantity" class="qty-btn increment-btn px-2.5 py-1.5 text-primary hover:bg-surface-container transition-colors rounded-r-lg" data-target="item-2">
-<span class="material-symbols-outlined text-[16px]">add</span>
+<span class="material-symbols-outlined notranslate text-[16px]" translate="no">add</span>
 </button>
 </div>
 </div>
@@ -193,7 +193,7 @@ do_action( 'woocommerce_before_cart' );
 <div class="sm:col-span-2 flex items-center justify-between sm:justify-end gap-3">
 <span class="font-headline-sm text-headline-sm text-primary line-subtotal" data-target="item-2">₹ 850</span>
 <button aria-label="Remove item" class="remove-item-btn hidden sm:inline-flex p-1.5 text-outline hover:text-tertiary hover:bg-error-container/20 rounded-lg transition-colors" data-target="item-2" title="Remove item">
-<span class="material-symbols-outlined text-[20px]">delete_outline</span>
+<span class="material-symbols-outlined notranslate text-[20px]" translate="no">delete_outline</span>
 </button>
 </div>
 </div>
@@ -211,10 +211,10 @@ do_action( 'woocommerce_before_cart' );
 <h3 class="font-headline-sm text-headline-sm text-primary font-medium mt-0.5">Triphala Churna Reserve</h3>
 <p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">150g Amber Jar</p>
 <span class="font-label-sm text-label-sm text-surface-tint mt-1 flex items-center gap-1">
-<span class="material-symbols-outlined text-[14px]">check_circle</span> In Stock · Certified Organic
+<span class="material-symbols-outlined notranslate text-[14px]" translate="no">check_circle</span> In Stock · Certified Organic
                     </span>
 <button class="remove-item-btn sm:hidden mt-3 inline-flex items-center gap-1 font-label-sm text-label-sm text-tertiary hover:underline uppercase tracking-wider" data-target="item-3">
-<span class="material-symbols-outlined text-[15px]">delete</span> Remove
+<span class="material-symbols-outlined notranslate text-[15px]" translate="no">delete</span> Remove
                     </button>
 </div>
 </div>
@@ -226,11 +226,11 @@ do_action( 'woocommerce_before_cart' );
 <div class="sm:col-span-2 flex items-center sm:justify-center">
 <div class="inline-flex items-center rounded-lg border border-surface-variant bg-surface-container-lowest shadow-sm">
 <button aria-label="Decrease quantity" class="qty-btn decrement-btn px-2.5 py-1.5 text-primary hover:bg-surface-container transition-colors rounded-l-lg" data-target="item-3">
-<span class="material-symbols-outlined text-[16px]">remove</span>
+<span class="material-symbols-outlined notranslate text-[16px]" translate="no">remove</span>
 </button>
 <input class="w-10 text-center font-body-md text-body-md text-on-surface bg-transparent border-none p-0 focus:ring-0 select-none quantity-input" data-target="item-3" max="10" min="1" readonly="" type="number" value="1"/>
 <button aria-label="Increase quantity" class="qty-btn increment-btn px-2.5 py-1.5 text-primary hover:bg-surface-container transition-colors rounded-r-lg" data-target="item-3">
-<span class="material-symbols-outlined text-[16px]">add</span>
+<span class="material-symbols-outlined notranslate text-[16px]" translate="no">add</span>
 </button>
 </div>
 </div>
@@ -238,7 +238,7 @@ do_action( 'woocommerce_before_cart' );
 <div class="sm:col-span-2 flex items-center justify-between sm:justify-end gap-3">
 <span class="font-headline-sm text-headline-sm text-primary line-subtotal" data-target="item-3">₹ 650</span>
 <button aria-label="Remove item" class="remove-item-btn hidden sm:inline-flex p-1.5 text-outline hover:text-tertiary hover:bg-error-container/20 rounded-lg transition-colors" data-target="item-3" title="Remove item">
-<span class="material-symbols-outlined text-[20px]">delete_outline</span>
+<span class="material-symbols-outlined notranslate text-[20px]" translate="no">delete_outline</span>
 </button>
 </div>
 </div>
@@ -247,7 +247,7 @@ do_action( 'woocommerce_before_cart' );
 <!-- Cart Bottom Actions Row -->
 <div class="px-6 py-4 bg-surface-container-low border-t border-surface-variant flex flex-col sm:flex-row items-center justify-between gap-4">
 <a class="inline-flex items-center gap-2 font-label-md text-label-md uppercase tracking-wider text-primary hover:text-tertiary transition-colors" data-path="shop" href="<?php echo esc_url( function_exists( "wc_get_page_permalink" ) ? wc_get_page_permalink( "shop" ) : home_url( "/shop/" ) ); ?>">
-<span class="material-symbols-outlined text-[18px]">arrow_back</span>
+<span class="material-symbols-outlined notranslate text-[18px]" translate="no">arrow_back</span>
               Continue Shopping
             </a>
 <div class="flex items-center gap-3 w-full sm:w-auto justify-end">
@@ -255,7 +255,7 @@ do_action( 'woocommerce_before_cart' );
                 Clear Cart
               </button>
 <button class="px-5 py-2.5 rounded-lg border border-secondary text-primary hover:bg-secondary-fixed/40 font-label-md text-label-md uppercase tracking-wider transition-colors flex items-center gap-1.5" id="update-cart-btn">
-<span class="material-symbols-outlined text-[16px]">sync</span>
+<span class="material-symbols-outlined notranslate text-[16px]" translate="no">sync</span>
                 Update Cart
               </button>
 </div>
@@ -265,13 +265,13 @@ do_action( 'woocommerce_before_cart' );
 <div class="bg-surface-container-lowest rounded-xl shadow-sm border border-surface-variant p-6">
 <div class="flex items-center justify-between cursor-pointer select-none" id="coupon-accordion-header">
 <div class="flex items-center gap-3">
-<span class="material-symbols-outlined text-secondary text-[22px]">sell</span>
+<span class="material-symbols-outlined notranslate text-secondary text-[22px]" translate="no">sell</span>
 <div>
 <h4 class="font-headline-sm text-headline-sm text-primary">Have a Sanctuary Coupon?</h4>
 <p class="font-body-sm text-body-sm text-on-surface-variant">Apply your clinic privilege or seasonal discount code.</p>
 </div>
 </div>
-<span class="material-symbols-outlined text-outline transition-transform duration-200" id="coupon-chevron">expand_more</span>
+<span class="material-symbols-outlined notranslate text-outline transition-transform duration-200" translate="no" id="coupon-chevron">expand_more</span>
 </div>
 <div class="mt-4 pt-4 border-t border-surface-variant" id="coupon-accordion-body">
 <form class="flex flex-col sm:flex-row gap-3" id="coupon-form">
@@ -288,7 +288,7 @@ do_action( 'woocommerce_before_cart' );
 <!-- Will be injected via JS -->
 </div>
 <div class="mt-3 flex items-center gap-2 text-outline text-[12px]">
-<span class="material-symbols-outlined text-[14px] text-secondary">info</span>
+<span class="material-symbols-outlined notranslate text-[14px] text-secondary" translate="no">info</span>
 <span>Available code for demonstration: <strong class="text-primary font-mono font-medium">HARMONY10</strong> (10% off cart total).</span>
 </div>
 </div>
@@ -296,7 +296,7 @@ do_action( 'woocommerce_before_cart' );
 <!-- Trust & Consultation Notice Section (Under Items) -->
 <div class="bg-surface-container-high/40 rounded-xl p-6 border border-surface-variant/80 flex flex-col md:flex-row gap-6 items-start">
 <div class="w-12 h-12 rounded-xl bg-primary text-on-primary flex items-center justify-center flex-shrink-0 shadow-sm">
-<span class="material-symbols-outlined text-[24px]">contact_support</span>
+<span class="material-symbols-outlined notranslate text-[24px]" translate="no">contact_support</span>
 </div>
 <div class="flex-grow">
 <div class="inline-flex items-center gap-1.5 font-label-sm text-label-sm text-secondary uppercase tracking-widest font-bold">
@@ -309,7 +309,7 @@ do_action( 'woocommerce_before_cart' );
 <div class="mt-4 flex flex-wrap items-center gap-4">
 <a class="inline-flex items-center gap-1.5 font-label-md text-label-md uppercase tracking-wider text-primary hover:text-tertiary transition-colors underline underline-offset-4" data-path="contact" href="<?php echo esc_url( home_url( "/contact/" ) ); ?>">
                 Consult with our Clinic Vaidya
-                <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+                <span class="material-symbols-outlined notranslate text-[16px]" translate="no">arrow_forward</span>
 </a>
 <span class="text-outline-variant">•</span>
 <a class="font-label-md text-label-md uppercase tracking-wider text-on-surface-variant hover:text-primary transition-colors" data-path="services" href="<?php echo esc_url( home_url( "/services/" ) ); ?>">
@@ -324,7 +324,7 @@ do_action( 'woocommerce_before_cart' );
 <div class="bg-surface-container-low rounded-xl p-6 sm:p-7 shadow-sm border border-surface-variant relative overflow-hidden">
 <!-- Subtle Decorative Cardinal Watermark -->
 <div class="absolute -right-10 -bottom-10 w-36 h-36 rounded-full border border-secondary/10 flex items-center justify-center pointer-events-none opacity-40">
-<span class="material-symbols-outlined text-secondary/30 text-[90px]">explore</span>
+<span class="material-symbols-outlined notranslate text-secondary/30 text-[90px]" translate="no">explore</span>
 </div>
 <div class="flex items-center justify-between pb-4 border-b border-surface-variant">
 <h2 class="font-headline-md text-headline-md text-primary tracking-tight">Order Summary</h2>
@@ -356,7 +356,7 @@ do_action( 'woocommerce_before_cart' );
 <div class="flex items-center justify-between font-body-sm text-body-sm text-outline">
 <span class="flex items-center gap-1">
                 Applicable Taxes (GST 5% &amp; 18%)
-                <span class="material-symbols-outlined text-[14px]" title="Taxes calculated according to classical botanical and metallurgical schedules.">help_outline</span>
+                <span class="material-symbols-outlined notranslate text-[14px]" translate="no" title="Taxes calculated according to classical botanical and metallurgical schedules.">help_outline</span>
 </span>
 <span>Included</span>
 </div>
@@ -374,12 +374,12 @@ do_action( 'woocommerce_before_cart' );
 <!-- Proceed to Checkout Primary CTA -->
 <div class="pt-2 flex flex-col space-y-3">
 <a class="w-full py-4 px-6 rounded-lg bg-primary text-on-primary font-label-md text-label-md uppercase tracking-[0.12em] hover:bg-tertiary-container hover:text-on-primary transition-all duration-200 shadow-md flex items-center justify-center gap-2.5 text-center group" data-path="checkout" href="<?php echo esc_url( function_exists( "wc_get_checkout_url" ) ? wc_get_checkout_url() : home_url( "/checkout/" ) ); ?>">
-<span class="material-symbols-outlined text-[20px] transition-transform group-hover:scale-110">lock</span>
+<span class="material-symbols-outlined notranslate text-[20px] transition-transform group-hover:scale-110" translate="no">lock</span>
 <span>Proceed to Checkout</span>
 </a>
 <div class="text-center pt-2">
 <a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors inline-flex items-center gap-1" data-path="shop" href="<?php echo esc_url( function_exists( "wc_get_page_permalink" ) ? wc_get_page_permalink( "shop" ) : home_url( "/shop/" ) ); ?>">
-<span class="material-symbols-outlined text-[16px]">arrow_back</span>
+<span class="material-symbols-outlined notranslate text-[16px]" translate="no">arrow_back</span>
                 Continue browsing Sanctuary Shop
               </a>
 </div>
@@ -387,15 +387,15 @@ do_action( 'woocommerce_before_cart' );
 <!-- Security and Guarantee Badges -->
 <div class="mt-6 pt-6 border-t border-surface-variant/80 space-y-3">
 <div class="flex items-center gap-3">
-<span class="material-symbols-outlined text-secondary text-[20px]">encrypted</span>
+<span class="material-symbols-outlined notranslate text-secondary text-[20px]" translate="no">encrypted</span>
 <span class="font-body-sm text-body-sm text-on-surface-variant">256-Bit Encrypted Secure Checkout</span>
 </div>
 <div class="flex items-center gap-3">
-<span class="material-symbols-outlined text-secondary text-[20px]">verified</span>
+<span class="material-symbols-outlined notranslate text-secondary text-[20px]" translate="no">verified</span>
 <span class="font-body-sm text-body-sm text-on-surface-variant">Pure Bell-Metal &amp; Botanical Lineage</span>
 </div>
 <div class="flex items-center gap-3">
-<span class="material-symbols-outlined text-secondary text-[20px]">local_shipping</span>
+<span class="material-symbols-outlined notranslate text-secondary text-[20px]" translate="no">local_shipping</span>
 <span class="font-body-sm text-body-sm text-on-surface-variant">Sacred Packaging with Natural Husk Fill</span>
 </div>
 </div>
@@ -424,7 +424,7 @@ do_action( 'woocommerce_before_cart' );
 <div class="relative w-32 h-32 rounded-full bg-surface-container-high/60 border border-secondary/30 flex items-center justify-center mb-8 shadow-inner">
 <div class="absolute inset-2 rounded-full border border-dashed border-secondary/20"></div>
 <div class="w-16 h-16 rounded-full bg-surface-container-lowest flex items-center justify-center text-primary shadow-sm">
-<span class="material-symbols-outlined text-[36px] text-secondary">shopping_bag</span>
+<span class="material-symbols-outlined notranslate text-[36px] text-secondary" translate="no">shopping_bag</span>
 </div>
 </div>
 <div class="inline-flex items-center gap-1 px-3 py-1 bg-surface-container rounded-md text-secondary font-label-sm text-label-sm uppercase tracking-widest mb-3">
@@ -436,7 +436,7 @@ do_action( 'woocommerce_before_cart' );
       </p>
 <div class="mt-8 flex flex-col sm:flex-row items-center gap-4">
 <a class="w-full sm:w-auto px-8 py-4 rounded-lg bg-primary text-on-primary font-label-md text-label-md uppercase tracking-[0.14em] hover:bg-tertiary transition-all shadow-md flex items-center justify-center gap-2" data-path="shop" href="<?php echo esc_url( function_exists( "wc_get_page_permalink" ) ? wc_get_page_permalink( "shop" ) : home_url( "/shop/" ) ); ?>">
-<span class="material-symbols-outlined text-[18px]">storefront</span>
+<span class="material-symbols-outlined notranslate text-[18px]" translate="no">storefront</span>
           Explore the Shop
         </a>
 <button class="w-full sm:w-auto px-6 py-4 rounded-lg border border-secondary text-primary font-label-md text-label-md uppercase tracking-wider hover:bg-secondary-fixed/30 transition-colors" id="restore-cart-btn">
@@ -465,7 +465,7 @@ do_action( 'woocommerce_before_cart' );
 <!-- Clinical Disclaimer Footer Notice -->
 <div class="mt-16 pt-8 border-t border-surface-variant/60">
 <div class="flex items-start gap-3 max-w-4xl">
-<span class="material-symbols-outlined text-outline-variant text-[20px] flex-shrink-0 mt-0.5">info</span>
+<span class="material-symbols-outlined notranslate text-outline-variant text-[20px] flex-shrink-0 mt-0.5" translate="no">info</span>
 <p class="font-body-sm text-body-sm text-outline leading-relaxed">
 <strong class="text-on-surface-variant font-medium">Ayurvedic Protocol &amp; Regulatory Notice:</strong> ANUKUL formulations and dinacharya implements are handcrafted and blended in accordance with traditional classical texts (Charaka Samhita and Sushruta Samhita). Descriptions are provided for traditional educational understanding and do not replace personalized allopathic medical advice or acute clinical diagnosis. Store oils and churna in a cool, dry place away from direct sunlight.
         </p>
@@ -670,7 +670,7 @@ do_action( 'woocommerce_before_cart' );
 
             couponFeedback.innerHTML = `
               <div class="p-3 bg-surface-tint/10 text-primary border border-surface-tint/30 rounded-lg font-body-sm text-body-sm flex items-center gap-2">
-                <span class="material-symbols-outlined text-surface-tint text-[18px]">verified</span>
+                <span class="material-symbols-outlined notranslate text-surface-tint text-[18px]" translate="no">verified</span>
                 <span>Privilege applied: 10% sacred concession granted on order subtotal.</span>
               </div>
             `;
@@ -680,7 +680,7 @@ do_action( 'woocommerce_before_cart' );
           } else if (code === '') {
             couponFeedback.innerHTML = `
               <div class="p-3 bg-error-container/30 text-error border border-error/20 rounded-lg font-body-sm text-body-sm flex items-center gap-2">
-                <span class="material-symbols-outlined text-error text-[18px]">warning</span>
+                <span class="material-symbols-outlined notranslate text-error text-[18px]" translate="no">warning</span>
                 <span>Please enter a sanctuary coupon code.</span>
               </div>
             `;
@@ -689,7 +689,7 @@ do_action( 'woocommerce_before_cart' );
             cartState.discountPercent = 0;
             couponFeedback.innerHTML = `
               <div class="p-3 bg-error-container/30 text-error border border-error/20 rounded-lg font-body-sm text-body-sm flex items-center gap-2">
-                <span class="material-symbols-outlined text-error text-[18px]">error</span>
+                <span class="material-symbols-outlined notranslate text-error text-[18px]" translate="no">error</span>
                 <span>Coupon "${code}" is invalid or has expired for this seasonal intake. Try <strong>HARMONY10</strong>.</span>
               </div>
             `;
@@ -744,7 +744,7 @@ do_action( 'woocommerce_before_cart' );
                   <h3 class="font-headline-sm text-headline-sm text-primary font-medium mt-0.5">Pure Copper Jihwa Scraper</h3>
                   <p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Hand-Formed Pure Copper</p>
                   <span class="font-label-sm text-label-sm text-surface-tint mt-1 flex items-center gap-1">
-                    <span class="material-symbols-outlined text-[14px]">check_circle</span> In Stock
+                    <span class="material-symbols-outlined notranslate text-[14px]" translate="no">check_circle</span> In Stock
                   </span>
                 </div>
               </div>
@@ -754,18 +754,18 @@ do_action( 'woocommerce_before_cart' );
               <div class="sm:col-span-2 flex items-center sm:justify-center">
                 <div class="inline-flex items-center rounded-lg border border-surface-variant bg-surface-container-lowest shadow-sm">
                   <button class="qty-btn decrement-btn px-2.5 py-1.5 text-primary hover:bg-surface-container rounded-l-lg" data-target="item-upsell">
-                    <span class="material-symbols-outlined text-[16px]">remove</span>
+                    <span class="material-symbols-outlined notranslate text-[16px]" translate="no">remove</span>
                   </button>
                   <input type="number" min="1" max="10" value="1" readonly class="w-10 text-center font-body-md text-body-md text-on-surface bg-transparent border-none p-0 focus:ring-0 select-none quantity-input" data-target="item-upsell"/>
                   <button class="qty-btn increment-btn px-2.5 py-1.5 text-primary hover:bg-surface-container rounded-r-lg" data-target="item-upsell">
-                    <span class="material-symbols-outlined text-[16px]">add</span>
+                    <span class="material-symbols-outlined notranslate text-[16px]" translate="no">add</span>
                   </button>
                 </div>
               </div>
               <div class="sm:col-span-2 flex items-center justify-between sm:justify-end gap-3">
                 <span class="font-headline-sm text-headline-sm text-primary line-subtotal" data-target="item-upsell">₹ 350</span>
                 <button class="remove-item-btn hidden sm:inline-flex p-1.5 text-outline hover:text-tertiary hover:bg-error-container/20 rounded-lg transition-colors" data-target="item-upsell" title="Remove item">
-                  <span class="material-symbols-outlined text-[20px]">delete_outline</span>
+                  <span class="material-symbols-outlined notranslate text-[20px]" translate="no">delete_outline</span>
                 </button>
               </div>
             </div>

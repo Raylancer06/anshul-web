@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 /**
  * Template Name: Clinical Pathways & Services
  *
@@ -49,7 +49,7 @@ get_header();
 <span class="font-label-sm text-label-sm text-secondary uppercase tracking-widest block">Consultation Room</span>
 <span class="font-headline-sm text-headline-sm text-primary">Sanctum of Equilibrium</span>
 </div>
-<span class="material-symbols-outlined text-primary text-[28px]">spa</span>
+<span class="material-symbols-outlined notranslate text-primary text-[28px]" translate="no">spa</span>
 </div>
 </div>
 </div>
@@ -120,7 +120,7 @@ get_header();
 <!-- Card 1: Ayurveda Consultation -->
 <div class="flex flex-col bg-surface-container-lowest p-8 lg:p-10 rounded-xl shadow-md hover:shadow-xl transition-all duration-300">
 <div class="w-12 h-12 rounded-full bg-primary-container text-on-primary flex items-center justify-center mb-6">
-<span class="material-symbols-outlined text-[24px]">psychiatry</span>
+<span class="material-symbols-outlined notranslate text-[24px]" translate="no">psychiatry</span>
 </div>
 <span class="font-label-sm text-label-sm text-secondary uppercase tracking-widest mb-2">Pathway 01</span>
 <h3 class="font-headline-md text-headline-md text-primary mb-4">Ayurveda Consultation</h3>
@@ -129,15 +129,15 @@ get_header();
           </p>
 <ul class="space-y-3 mb-8 bg-surface-container-low p-4 rounded-lg">
 <li class="flex items-start gap-2.5 font-body-sm text-body-sm text-on-surface">
-<span class="material-symbols-outlined text-secondary text-[18px] shrink-0">check_circle</span>
+<span class="material-symbols-outlined notranslate text-secondary text-[18px] shrink-0" translate="no">check_circle</span>
 <span>Individualized discussion</span>
 </li>
 <li class="flex items-start gap-2.5 font-body-sm text-body-sm text-on-surface">
-<span class="material-symbols-outlined text-secondary text-[18px] shrink-0">check_circle</span>
+<span class="material-symbols-outlined notranslate text-secondary text-[18px] shrink-0" translate="no">check_circle</span>
 <span>Lifestyle and routine considerations</span>
 </li>
 <li class="flex items-start gap-2.5 font-body-sm text-body-sm text-on-surface">
-<span class="material-symbols-outlined text-secondary text-[18px] shrink-0">check_circle</span>
+<span class="material-symbols-outlined notranslate text-secondary text-[18px] shrink-0" translate="no">check_circle</span>
 <span>Traditional Ayurvedic perspectives</span>
 </li>
 </ul>
@@ -148,7 +148,7 @@ get_header();
 <!-- Card 2: Vastu Consultation -->
 <div class="flex flex-col bg-surface-container-lowest p-8 lg:p-10 rounded-xl shadow-md hover:shadow-xl transition-all duration-300">
 <div class="w-12 h-12 rounded-full bg-primary-container text-on-primary flex items-center justify-center mb-6">
-<span class="material-symbols-outlined text-[24px]">explore</span>
+<span class="material-symbols-outlined notranslate text-[24px]" translate="no">explore</span>
 </div>
 <span class="font-label-sm text-label-sm text-secondary uppercase tracking-widest mb-2">Pathway 02</span>
 <h3 class="font-headline-md text-headline-md text-primary mb-4">Vastu Consultation</h3>
@@ -157,15 +157,15 @@ get_header();
           </p>
 <ul class="space-y-3 mb-8 bg-surface-container-low p-4 rounded-lg">
 <li class="flex items-start gap-2.5 font-body-sm text-body-sm text-on-surface">
-<span class="material-symbols-outlined text-secondary text-[18px] shrink-0">check_circle</span>
+<span class="material-symbols-outlined notranslate text-secondary text-[18px] shrink-0" translate="no">check_circle</span>
 <span>Residential Vastu</span>
 </li>
 <li class="flex items-start gap-2.5 font-body-sm text-body-sm text-on-surface">
-<span class="material-symbols-outlined text-secondary text-[18px] shrink-0">check_circle</span>
+<span class="material-symbols-outlined notranslate text-secondary text-[18px] shrink-0" translate="no">check_circle</span>
 <span>Commercial Vastu</span>
 </li>
 <li class="flex items-start gap-2.5 font-body-sm text-body-sm text-on-surface">
-<span class="material-symbols-outlined text-secondary text-[18px] shrink-0">check_circle</span>
+<span class="material-symbols-outlined notranslate text-secondary text-[18px] shrink-0" translate="no">check_circle</span>
 <span>Contextual spatial assessment</span>
 </li>
 </ul>
@@ -176,7 +176,7 @@ get_header();
 <!-- Card 3: Integrated Harmony Approach -->
 <div class="flex flex-col bg-surface-container-lowest p-8 lg:p-10 rounded-xl shadow-md hover:shadow-xl transition-all duration-300">
 <div class="w-12 h-12 rounded-full bg-tertiary-container text-on-primary flex items-center justify-center mb-6">
-<span class="material-symbols-outlined text-[24px]">all_inclusive</span>
+<span class="material-symbols-outlined notranslate text-[24px]" translate="no">all_inclusive</span>
 </div>
 <span class="font-label-sm text-label-sm text-secondary uppercase tracking-widest mb-2">Pathway 03</span>
 <h3 class="font-headline-md text-headline-md text-primary mb-4">Integrated Harmony Approach</h3>
@@ -185,15 +185,15 @@ get_header();
           </p>
 <ul class="space-y-3 mb-8 bg-surface-container-low p-4 rounded-lg">
 <li class="flex items-start gap-2.5 font-body-sm text-body-sm text-on-surface">
-<span class="material-symbols-outlined text-secondary text-[18px] shrink-0">check_circle</span>
+<span class="material-symbols-outlined notranslate text-secondary text-[18px] shrink-0" translate="no">check_circle</span>
 <span>Person and lifestyle</span>
 </li>
 <li class="flex items-start gap-2.5 font-body-sm text-body-sm text-on-surface">
-<span class="material-symbols-outlined text-secondary text-[18px] shrink-0">check_circle</span>
+<span class="material-symbols-outlined notranslate text-secondary text-[18px] shrink-0" translate="no">check_circle</span>
 <span>Living and working environment</span>
 </li>
 <li class="flex items-start gap-2.5 font-body-sm text-body-sm text-on-surface">
-<span class="material-symbols-outlined text-secondary text-[18px] shrink-0">check_circle</span>
+<span class="material-symbols-outlined notranslate text-secondary text-[18px] shrink-0" translate="no">check_circle</span>
 <span>Practical considerations</span>
 </li>
 </ul>
@@ -217,7 +217,7 @@ get_header();
 <div>
 <div class="flex items-center justify-between mb-4">
 <span class="font-label-sm text-label-sm text-secondary tracking-widest uppercase">Specialty Analysis</span>
-<span class="material-symbols-outlined text-primary text-[20px]">home</span>
+<span class="material-symbols-outlined notranslate text-primary text-[20px]" translate="no">home</span>
 </div>
 <h3 class="font-headline-sm text-headline-sm text-primary mb-3">Residential Vastu</h3>
 <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed mb-6">
@@ -225,7 +225,7 @@ get_header();
             </p>
 </div>
 <a class="inline-flex items-center gap-2 font-label-md text-label-md uppercase text-primary font-semibold hover:text-secondary transition-colors" data-path="vastu" href="<?php echo esc_url( home_url( "/vastu/" ) ); ?>">
-            EXPLORE VASTU <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+            EXPLORE VASTU <span class="material-symbols-outlined notranslate text-[16px]" translate="no">arrow_forward</span>
 </a>
 </div>
 <!-- Area 2 -->
@@ -233,7 +233,7 @@ get_header();
 <div>
 <div class="flex items-center justify-between mb-4">
 <span class="font-label-sm text-label-sm text-secondary tracking-widest uppercase">Professional Environments</span>
-<span class="material-symbols-outlined text-primary text-[20px]">domain</span>
+<span class="material-symbols-outlined notranslate text-primary text-[20px]" translate="no">domain</span>
 </div>
 <h3 class="font-headline-sm text-headline-sm text-primary mb-3">Commercial Vastu</h3>
 <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed mb-6">
@@ -241,7 +241,7 @@ get_header();
             </p>
 </div>
 <a class="inline-flex items-center gap-2 font-label-md text-label-md uppercase text-primary font-semibold hover:text-secondary transition-colors" data-path="vastu" href="<?php echo esc_url( home_url( "/vastu/" ) ); ?>">
-            EXPLORE VASTU <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+            EXPLORE VASTU <span class="material-symbols-outlined notranslate text-[16px]" translate="no">arrow_forward</span>
 </a>
 </div>
 <!-- Area 3 -->
@@ -249,7 +249,7 @@ get_header();
 <div>
 <div class="flex items-center justify-between mb-4">
 <span class="font-label-sm text-label-sm text-secondary tracking-widest uppercase">Environmental Health</span>
-<span class="material-symbols-outlined text-primary text-[20px]">healing</span>
+<span class="material-symbols-outlined notranslate text-primary text-[20px]" translate="no">healing</span>
 </div>
 <h3 class="font-headline-sm text-headline-sm text-primary mb-3">Medico-Vastu Perspective</h3>
 <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed mb-6">
@@ -257,7 +257,7 @@ get_header();
             </p>
 </div>
 <a class="inline-flex items-center gap-2 font-label-md text-label-md uppercase text-primary font-semibold hover:text-secondary transition-colors" href="#enquiry-form">
-            MAKE AN ENQUIRY <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+            MAKE AN ENQUIRY <span class="material-symbols-outlined notranslate text-[16px]" translate="no">arrow_forward</span>
 </a>
 </div>
 </div>
@@ -337,7 +337,7 @@ get_header();
 <!-- Pillar 1 -->
 <div class="bg-surface-container-lowest p-8 rounded-xl shadow-sm flex flex-col">
 <div class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center text-secondary mb-4">
-<span class="material-symbols-outlined text-[20px]">person_pin</span>
+<span class="material-symbols-outlined notranslate text-[20px]" translate="no">person_pin</span>
 </div>
 <h3 class="font-headline-sm text-headline-sm text-primary mb-3">Individual Understanding</h3>
 <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
@@ -347,7 +347,7 @@ get_header();
 <!-- Pillar 2 -->
 <div class="bg-surface-container-lowest p-8 rounded-xl shadow-sm flex flex-col">
 <div class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center text-secondary mb-4">
-<span class="material-symbols-outlined text-[20px]">menu_book</span>
+<span class="material-symbols-outlined notranslate text-[20px]" translate="no">menu_book</span>
 </div>
 <h3 class="font-headline-sm text-headline-sm text-primary mb-3">Traditional Indian Knowledge</h3>
 <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
@@ -357,7 +357,7 @@ get_header();
 <!-- Pillar 3 -->
 <div class="bg-surface-container-lowest p-8 rounded-xl shadow-sm flex flex-col">
 <div class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center text-secondary mb-4">
-<span class="material-symbols-outlined text-[20px]">tune</span>
+<span class="material-symbols-outlined notranslate text-[20px]" translate="no">tune</span>
 </div>
 <h3 class="font-headline-sm text-headline-sm text-primary mb-3">Practical Considerations</h3>
 <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
@@ -367,7 +367,7 @@ get_header();
 <!-- Pillar 4 -->
 <div class="bg-surface-container-lowest p-8 rounded-xl shadow-sm flex flex-col">
 <div class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center text-secondary mb-4">
-<span class="material-symbols-outlined text-[20px]">verified_user</span>
+<span class="material-symbols-outlined notranslate text-[20px]" translate="no">verified_user</span>
 </div>
 <h3 class="font-headline-sm text-headline-sm text-primary mb-3">Responsible Guidance</h3>
 <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
@@ -428,7 +428,7 @@ get_header();
 <div class="bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden transition-colors">
 <button class="faq-toggle w-full p-6 text-left flex items-center justify-between gap-4 focus:outline-none" type="button">
 <span class="font-headline-sm text-headline-sm text-primary">Which service should I choose?</span>
-<span class="material-symbols-outlined text-secondary text-[24px] transition-transform duration-300">add</span>
+<span class="material-symbols-outlined notranslate text-secondary text-[24px] transition-transform duration-300" translate="no">add</span>
 </button>
 <div class="faq-content hidden px-6 pb-6 pt-0">
 <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
@@ -440,7 +440,7 @@ get_header();
 <div class="bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden transition-colors">
 <button class="faq-toggle w-full p-6 text-left flex items-center justify-between gap-4 focus:outline-none" type="button">
 <span class="font-headline-sm text-headline-sm text-primary">Can I enquire about both Ayurveda and Vastu?</span>
-<span class="material-symbols-outlined text-secondary text-[24px] transition-transform duration-300">add</span>
+<span class="material-symbols-outlined notranslate text-secondary text-[24px] transition-transform duration-300" translate="no">add</span>
 </button>
 <div class="faq-content hidden px-6 pb-6 pt-0">
 <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
@@ -452,7 +452,7 @@ get_header();
 <div class="bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden transition-colors">
 <button class="faq-toggle w-full p-6 text-left flex items-center justify-between gap-4 focus:outline-none" type="button">
 <span class="font-headline-sm text-headline-sm text-primary">Do you offer residential and commercial Vastu?</span>
-<span class="material-symbols-outlined text-secondary text-[24px] transition-transform duration-300">add</span>
+<span class="material-symbols-outlined notranslate text-secondary text-[24px] transition-transform duration-300" translate="no">add</span>
 </button>
 <div class="faq-content hidden px-6 pb-6 pt-0">
 <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
@@ -464,7 +464,7 @@ get_header();
 <div class="bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden transition-colors">
 <button class="faq-toggle w-full p-6 text-left flex items-center justify-between gap-4 focus:outline-none" type="button">
 <span class="font-headline-sm text-headline-sm text-primary">Can Ayurveda replace medical treatment?</span>
-<span class="material-symbols-outlined text-secondary text-[24px] transition-transform duration-300">add</span>
+<span class="material-symbols-outlined notranslate text-secondary text-[24px] transition-transform duration-300" translate="no">add</span>
 </button>
 <div class="faq-content hidden px-6 pb-6 pt-0">
 <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
@@ -476,7 +476,7 @@ get_header();
 <div class="bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden transition-colors">
 <button class="faq-toggle w-full p-6 text-left flex items-center justify-between gap-4 focus:outline-none" type="button">
 <span class="font-headline-sm text-headline-sm text-primary">Do you guarantee particular results?</span>
-<span class="material-symbols-outlined text-secondary text-[24px] transition-transform duration-300">add</span>
+<span class="material-symbols-outlined notranslate text-secondary text-[24px] transition-transform duration-300" translate="no">add</span>
 </button>
 <div class="faq-content hidden px-6 pb-6 pt-0">
 <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
@@ -488,7 +488,7 @@ get_header();
 <div class="bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden transition-colors">
 <button class="faq-toggle w-full p-6 text-left flex items-center justify-between gap-4 focus:outline-none" type="button">
 <span class="font-headline-sm text-headline-sm text-primary">How can I book a consultation?</span>
-<span class="material-symbols-outlined text-secondary text-[24px] transition-transform duration-300">add</span>
+<span class="material-symbols-outlined notranslate text-secondary text-[24px] transition-transform duration-300" translate="no">add</span>
 </button>
 <div class="faq-content hidden px-6 pb-6 pt-0">
 <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
@@ -514,15 +514,15 @@ get_header();
           </p>
 <div class="pt-4 space-y-4">
 <div class="flex items-center gap-3">
-<span class="material-symbols-outlined text-secondary-fixed text-[20px]">check</span>
+<span class="material-symbols-outlined notranslate text-secondary-fixed text-[20px]" translate="no">check</span>
 <span class="font-body-sm text-body-sm text-surface-container-high">Direct review by clinical practitioners</span>
 </div>
 <div class="flex items-center gap-3">
-<span class="material-symbols-outlined text-secondary-fixed text-[20px]">check</span>
+<span class="material-symbols-outlined notranslate text-secondary-fixed text-[20px]" translate="no">check</span>
 <span class="font-body-sm text-body-sm text-surface-container-high">Confidential and discrete handling</span>
 </div>
 <div class="flex items-center gap-3">
-<span class="material-symbols-outlined text-secondary-fixed text-[20px]">check</span>
+<span class="material-symbols-outlined notranslate text-secondary-fixed text-[20px]" translate="no">check</span>
 <span class="font-body-sm text-body-sm text-surface-container-high">No unsolicited automated marketing</span>
 </div>
 </div>

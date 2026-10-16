@@ -64,6 +64,24 @@ h1, h2, h3, h4, h5, h6, .font-display, .font-serif {
   }
 }
 
+/* Product Card Image Coverage - Eliminates all blank space under cards */
+.aspect-square {
+  aspect-ratio: 1 / 1 !important;
+  position: relative !important;
+  overflow: hidden !important;
+}
+
+.aspect-square > img,
+.product-item .aspect-square img {
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  object-position: center !important;
+  display: block !important;
+}
+
 /* Base Form & Button Scoping */
 button, input, select, textarea {
   font-family: inherit;

@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 /**
  * The Template for displaying all single products
  *
@@ -17,9 +17,9 @@ get_header( 'shop' );
 <nav aria-label="Breadcrumb" class="w-full bg-surface-container-low/70 py-3.5">
 <div class="max-w-[1440px] mx-auto px-6 lg:px-margin flex items-center gap-2 font-label-md text-label-md tracking-wider text-on-surface-variant uppercase">
 <a class="hover:text-primary transition-colors" data-path="home" href="<?php echo esc_url( home_url( "/" ) ); ?>">Home</a>
-<span class="material-symbols-outlined text-[14px] text-outline">chevron_right</span>
+<span class="material-symbols-outlined notranslate text-[14px] text-outline" translate="no">chevron_right</span>
 <a class="hover:text-primary transition-colors" data-path="shop" href="<?php echo esc_url( function_exists( "wc_get_page_permalink" ) ? wc_get_page_permalink( "shop" ) : home_url( "/shop/" ) ); ?>">Shop</a>
-<span class="material-symbols-outlined text-[14px] text-outline">chevron_right</span>
+<span class="material-symbols-outlined notranslate text-[14px] text-outline" translate="no">chevron_right</span>
 <span class="text-primary font-semibold truncate">Handcrafted Kansa Vatki Bowl</span>
 </div>
 </nav>
@@ -34,7 +34,7 @@ get_header( 'shop' );
 <img class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105" data-alt="Close up editorial photograph of an authentic handcrafted Kansa Vatki bronze massage bowl resting on warm oiled teak wood. Soft natural temple courtyard lighting highlights its polished golden-bronze interior and finely textured hammered exterior. Beside it sits a small brass pouring vial of amber sesame herbal oil and fresh dried holy basil leaves, expressing quiet Vedic clinical luxury in tones of sacred deep green, antique brass, and warm sand." id="main-product-image" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDraDpqQ9cYTI2TALEKNJwdd47SbmjcRasxQIL2TfKMVZncJeuWlUHF4S2ce-z58l1r68WgUxwpIaGF6Iw2tcDbpxMqx9HyChTF-cab6-8cNk8x-MwNx1pbv9fAVi5w5ND-_VjoN13TLRFBro0NxuiXwnGZ4QZtTS56XJTQhN_2StpHvhGVKX632z3Wpg6sjGcih2JwtsnEyj7MnRk2SkyDcbvU4_rLXuNO5sKf38mGig1X-8r_pdEJ4w"/>
 <!-- Visual Inspect Action Chip -->
 <button class="absolute top-4 right-4 bg-surface/90 text-primary hover:bg-primary hover:text-on-primary transition-colors p-2.5 rounded-lg backdrop-blur-sm shadow-sm flex items-center justify-center cursor-pointer" onclick="showImageModal()" title="Inspect Instrument Detail" type="button">
-<span class="material-symbols-outlined text-[18px]">zoom_in</span>
+<span class="material-symbols-outlined notranslate text-[18px]" translate="no">zoom_in</span>
 </button>
 <div class="absolute bottom-4 left-4 bg-primary/85 text-on-primary backdrop-blur-sm px-3.5 py-1.5 rounded-lg flex items-center gap-2">
 <span class="w-1.5 h-1.5 rounded-full bg-secondary-fixed"></span>
@@ -72,7 +72,7 @@ get_header( 'shop' );
             </h1>
 <!-- Authenticity Badge -->
 <div class="inline-flex items-center gap-2 bg-surface-container-high px-3 py-1.5 rounded-lg">
-<span class="material-symbols-outlined text-[16px] text-secondary" style="font-variation-settings: 'FILL' 1;">verified</span>
+<span class="material-symbols-outlined notranslate text-[16px] text-secondary" translate="no" style="font-variation-settings: 'FILL' 1;">verified</span>
 <span class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">
                 Hand-Forged Bronze Alloy · Classical Ayurvedic Instrument
               </span>
@@ -121,11 +121,11 @@ get_header( 'shop' );
 <!-- Action Buttons -->
 <div class="flex flex-col sm:flex-row gap-3 pt-2">
 <button class="flex-1 bg-primary text-[#F7F1E3] font-label-md text-label-md uppercase tracking-wider py-3.5 px-6 rounded-lg hover:bg-tertiary transition-colors duration-200 shadow-sm flex items-center justify-center gap-2 cursor-pointer" onclick="triggerCartNotification()" type="button">
-<span class="material-symbols-outlined text-[18px]">shopping_bag</span>
+<span class="material-symbols-outlined notranslate text-[18px]" translate="no">shopping_bag</span>
                   ADD TO CART
                 </button>
 <button class="flex-1 bg-tertiary text-on-tertiary font-label-md text-label-md uppercase tracking-wider py-3.5 px-6 rounded-lg hover:bg-[#400012] transition-colors duration-200 shadow-sm flex items-center justify-center gap-2 cursor-pointer" data-path="checkout" type="button">
-<span class="material-symbols-outlined text-[18px]">bolt</span>
+<span class="material-symbols-outlined notranslate text-[18px]" translate="no">bolt</span>
                   BUY NOW
                 </button>
 </div>
@@ -136,21 +136,21 @@ get_header( 'shop' );
 <!-- Micro Trust & Care Blocks -->
 <div class="grid grid-cols-1 gap-2.5 pt-4">
 <div class="flex items-start gap-3 p-3 bg-surface-container-low rounded-lg">
-<span class="material-symbols-outlined text-secondary text-[20px] shrink-0 mt-0.5">local_shipping</span>
+<span class="material-symbols-outlined notranslate text-secondary text-[20px] shrink-0 mt-0.5" translate="no">local_shipping</span>
 <div>
 <span class="font-label-md text-label-md uppercase font-semibold text-primary block">Surface Shipping</span>
 <p class="font-body-sm text-body-sm text-on-surface-variant">Dispatched in 2–3 business days via verified surface delivery across India.</p>
 </div>
 </div>
 <div class="flex items-start gap-3 p-3 bg-surface-container-low rounded-lg">
-<span class="material-symbols-outlined text-secondary text-[20px] shrink-0 mt-0.5">published_with_changes</span>
+<span class="material-symbols-outlined notranslate text-secondary text-[20px] shrink-0 mt-0.5" translate="no">published_with_changes</span>
 <div>
 <span class="font-label-md text-label-md uppercase font-semibold text-primary block">Sanctuary Guarantee</span>
 <p class="font-body-sm text-body-sm text-on-surface-variant">7-day exchange window for unused, intact ritual instruments in original box.</p>
 </div>
 </div>
 <div class="flex items-start gap-3 p-3 bg-surface-container-low rounded-lg">
-<span class="material-symbols-outlined text-secondary text-[20px] shrink-0 mt-0.5">spa</span>
+<span class="material-symbols-outlined notranslate text-secondary text-[20px] shrink-0 mt-0.5" translate="no">spa</span>
 <div>
 <span class="font-label-md text-label-md uppercase font-semibold text-primary block">Care Recommendation</span>
 <p class="font-body-sm text-body-sm text-on-surface-variant">Clean gently with organic tamarind paste or lemon-salt; dry thoroughly after use.</p>
@@ -289,7 +289,7 @@ get_header( 'shop' );
 <div class="bg-surface-container p-6 rounded-lg flex flex-col justify-between shadow-sm hover:shadow-md transition-shadow">
 <div>
 <div class="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-on-primary mb-4">
-<span class="material-symbols-outlined text-[20px]">science</span>
+<span class="material-symbols-outlined notranslate text-[20px]" translate="no">science</span>
 </div>
 <h3 class="font-headline-sm text-headline-sm text-primary mb-2">Traditional Metal Purity</h3>
 <p class="font-body-sm text-body-sm text-on-surface-variant">Forged from verified 78:22 bell metal alloy ratio adhering to classical metallurgical principles.</p>
@@ -299,7 +299,7 @@ get_header( 'shop' );
 <div class="bg-surface-container p-6 rounded-lg flex flex-col justify-between shadow-sm hover:shadow-md transition-shadow">
 <div>
 <div class="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-on-primary mb-4">
-<span class="material-symbols-outlined text-[20px]">nature_people</span>
+<span class="material-symbols-outlined notranslate text-[20px]" translate="no">nature_people</span>
 </div>
 <h3 class="font-headline-sm text-headline-sm text-primary mb-2">Grounding Nervous System</h3>
 <p class="font-body-sm text-body-sm text-on-surface-variant">Draws thermal tension outward, soothing agitated Vata dosha for restful, sustained sleep.</p>
@@ -309,7 +309,7 @@ get_header( 'shop' );
 <div class="bg-surface-container p-6 rounded-lg flex flex-col justify-between shadow-sm hover:shadow-md transition-shadow">
 <div>
 <div class="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-on-primary mb-4">
-<span class="material-symbols-outlined text-[20px]">hardware</span>
+<span class="material-symbols-outlined notranslate text-[20px]" translate="no">hardware</span>
 </div>
 <h3 class="font-headline-sm text-headline-sm text-primary mb-2">Handmade Individuality</h3>
 <p class="font-body-sm text-body-sm text-on-surface-variant">Each instrument is uniquely shaped by hereditary metal artisans without chemical clear coats.</p>
@@ -319,7 +319,7 @@ get_header( 'shop' );
 <div class="bg-surface-container p-6 rounded-lg flex flex-col justify-between shadow-sm hover:shadow-md transition-shadow">
 <div>
 <div class="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-on-primary mb-4">
-<span class="material-symbols-outlined text-[20px]">all_inclusive</span>
+<span class="material-symbols-outlined notranslate text-[20px]" translate="no">all_inclusive</span>
 </div>
 <h3 class="font-headline-sm text-headline-sm text-primary mb-2">Sustainable Heirloom</h3>
 <p class="font-body-sm text-body-sm text-on-surface-variant">Designed to endure lifelong daily dinacharya practice, maturing gracefully with use.</p>
@@ -339,7 +339,7 @@ get_header( 'shop' );
 </div>
 <a class="font-label-md text-label-md uppercase tracking-wider text-primary font-semibold hover:text-secondary flex items-center gap-1 transition-colors" data-path="shop" href="<?php echo esc_url( function_exists( "wc_get_page_permalink" ) ? wc_get_page_permalink( "shop" ) : home_url( "/shop/" ) ); ?>">
           View Complete Collection
-          <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+          <span class="material-symbols-outlined notranslate text-[16px]" translate="no">arrow_forward</span>
 </a>
 </div>
 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -426,11 +426,11 @@ get_header( 'shop' );
           </p>
 <div class="flex flex-wrap gap-4 pt-2">
 <a class="bg-tertiary-container text-[#F7F1E3] hover:bg-tertiary font-label-md text-label-md uppercase tracking-wider px-6 py-3.5 rounded-lg transition-colors shadow-sm inline-flex items-center gap-2" data-path="contact" href="<?php echo esc_url( home_url( "/contact/" ) ); ?>">
-<span class="material-symbols-outlined text-[18px]">support_agent</span>
+<span class="material-symbols-outlined notranslate text-[18px]" translate="no">support_agent</span>
               CONTACT ANUKUL
             </a>
 <a class="bg-transparent text-[#F7F1E3] border border-[#E8D8BC]/40 hover:bg-primary-container font-label-md text-label-md uppercase tracking-wider px-6 py-3.5 rounded-lg transition-colors shadow-sm inline-flex items-center gap-2" data-path="services" href="<?php echo esc_url( home_url( "/services/" ) ); ?>">
-<span class="material-symbols-outlined text-[18px]">calendar_month</span>
+<span class="material-symbols-outlined notranslate text-[18px]" translate="no">calendar_month</span>
               EXPLORE AYURVEDA CONSULTATION
             </a>
 </div>
@@ -442,7 +442,7 @@ get_header( 'shop' );
 <section class="w-full pb-space-lg">
 <div class="max-w-[1440px] mx-auto px-6 lg:px-margin">
 <div class="border-t border-[#E8D8BC] pt-6 flex items-start gap-3 text-outline">
-<span class="material-symbols-outlined text-[18px] shrink-0 mt-0.5">info</span>
+<span class="material-symbols-outlined notranslate text-[18px] shrink-0 mt-0.5" translate="no">info</span>
 <p class="font-body-sm text-body-sm leading-relaxed">
 <strong>Responsible Practice Notice:</strong> Instrument provided for traditional wellness and dinacharya practices. It does not replace medical diagnosis or clinical treatment for physiological ailments. Consult with a qualified Ayurvedic physician for chronic pathology or during acute fever states.
         </p>
@@ -453,7 +453,7 @@ get_header( 'shop' );
 <div class="fixed inset-0 z-50 bg-black/80 backdrop-blur-md hidden flex items-center justify-center p-4" id="image-modal">
 <div class="relative max-w-3xl w-full bg-surface rounded-lg overflow-hidden shadow-2xl p-4">
 <button class="absolute top-4 right-4 bg-primary text-on-primary rounded-full p-2 hover:bg-tertiary transition-colors" onclick="hideImageModal()" type="button">
-<span class="material-symbols-outlined text-[20px]">close</span>
+<span class="material-symbols-outlined notranslate text-[20px]" translate="no">close</span>
 </button>
 <div class="aspect-[4/3] w-full bg-surface-container rounded-lg overflow-hidden">
 <img class="w-full h-full object-contain" data-alt="High magnification inspect view of authentic handcrafted Kansa Vatki bronze bowl showing pure surface crystalline alloy texture and hand-carved edge details." id="modal-image" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB68zR7KhBm3kUIq7ZoyXfPKbvjFE8cv4RsoahmDkHPZIQTWJvoL2uXjN3UC7iw9GMLUru0rf9gspFIJ6i5L-NEAt86wHr72Epr9WS3ZlbWyg2E2-aZE6bBoshhG01VSsQ399fbXNvxqlrLFCcCmaKoQtBcKSZ1Upy1MXDT5v8Tv7jKVbtrBrNW06ulTa0AzpcCuVf7ztZpNdytnW8s9V7qowD0jJHq-zJt4Hs7tTkyq_3iU4SjE_Wzmg"/>

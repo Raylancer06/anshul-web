@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 /**
  * My Addresses tab
  *
@@ -16,7 +16,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 <!-- View State Switcher Bar -->
 <div class="bg-surface-container-low p-2 rounded-xl flex flex-wrap items-center justify-between gap-3 shadow-sm mb-6">
 <div class="flex items-center gap-2 px-3 py-1 text-on-surface-variant font-label-md text-label-md uppercase tracking-wider">
-<span class="material-symbols-outlined text-[16px] text-secondary">tune</span>
+<span class="material-symbols-outlined notranslate text-[16px] text-secondary" translate="no">tune</span>
 <span>Review State:</span>
 </div>
 <div class="flex flex-wrap items-center gap-1.5" id="state-switcher">
@@ -41,7 +41,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 <!-- Identity Card -->
 <div class="bg-surface-container-low p-6 rounded-xl shadow-sm relative overflow-hidden">
 <div class="absolute -right-4 -bottom-4 opacity-5 pointer-events-none text-primary">
-<span class="material-symbols-outlined text-[140px]">spa</span>
+<span class="material-symbols-outlined notranslate text-[140px]" translate="no">spa</span>
 </div>
 <div class="flex items-start gap-4 mb-4">
 <div class="w-14 h-14 rounded-full bg-primary-container text-on-primary flex items-center justify-center font-headline-sm text-headline-sm flex-shrink-0 shadow-sm">
@@ -51,7 +51,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 <h2 class="font-headline-sm text-headline-sm text-primary tracking-tight truncate">Ananya Sharma</h2>
 <p class="font-body-sm text-body-sm text-on-surface-variant truncate">ananya.sharma@example.com</p>
 <div class="mt-2 inline-flex items-center gap-1.5 px-2.5 py-1 rounded bg-surface-container text-secondary font-label-sm text-label-sm uppercase tracking-wider font-semibold">
-<span class="material-symbols-outlined text-[14px]">verified</span>
+<span class="material-symbols-outlined notranslate text-[14px]" translate="no">verified</span>
 <span>Sanctuary Pass</span>
 </div>
 </div>
@@ -65,49 +65,49 @@ if ( ! defined( 'ABSPATH' ) ) {
 <div class="bg-surface-container-low p-3 rounded-xl shadow-sm flex flex-col space-y-1">
 <a class="flex items-center justify-between px-3.5 py-2.5 rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-sm text-body-sm" href="account.html#dashboard">
 <span class="flex items-center gap-3">
-<span class="material-symbols-outlined text-[18px]">dashboard</span>
+<span class="material-symbols-outlined notranslate text-[18px]" translate="no">dashboard</span>
 <span>Dashboard</span>
 </span>
-<span class="material-symbols-outlined text-[16px] text-outline-variant">chevron_right</span>
+<span class="material-symbols-outlined notranslate text-[16px] text-outline-variant" translate="no">chevron_right</span>
 </a>
 <a class="flex items-center justify-between px-3.5 py-2.5 rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-sm text-body-sm" href="account.html#orders">
 <span class="flex items-center gap-3">
-<span class="material-symbols-outlined text-[18px]">inventory_2</span>
+<span class="material-symbols-outlined notranslate text-[18px]" translate="no">inventory_2</span>
 <span>Dispensary Orders</span>
 </span>
 <span class="px-2 py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm">3 active</span>
 </a>
 <a class="flex items-center justify-between px-3.5 py-2.5 rounded bg-primary-container text-on-primary font-body-sm text-body-sm font-semibold shadow-sm" href="client_portfal_address.html">
 <span class="flex items-center gap-3">
-<span class="material-symbols-outlined text-[18px]">explore</span>
+<span class="material-symbols-outlined notranslate text-[18px]" translate="no">explore</span>
 <span>Premises &amp; Addresses</span>
 </span>
 <span class="w-1.5 h-1.5 rounded-full bg-primary-fixed"></span>
 </a>
 <a class="flex items-center justify-between px-3.5 py-2.5 rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-sm text-body-sm" href="account.html#account-details">
 <span class="flex items-center gap-3">
-<span class="material-symbols-outlined text-[18px]">manage_accounts</span>
+<span class="material-symbols-outlined notranslate text-[18px]" translate="no">manage_accounts</span>
 <span>Account Details</span>
 </span>
-<span class="material-symbols-outlined text-[16px] text-outline-variant">chevron_right</span>
+<span class="material-symbols-outlined notranslate text-[16px] text-outline-variant" translate="no">chevron_right</span>
 </a>
 <a class="flex items-center justify-between px-3.5 py-2.5 rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-sm text-body-sm" href="#">
 <span class="flex items-center gap-3">
-<span class="material-symbols-outlined text-[18px]">file_download</span>
+<span class="material-symbols-outlined notranslate text-[18px]" translate="no">file_download</span>
 <span>Vastu Blueprints</span>
 </span>
-<span class="material-symbols-outlined text-[16px] text-outline-variant">chevron_right</span>
+<span class="material-symbols-outlined notranslate text-[16px] text-outline-variant" translate="no">chevron_right</span>
 </a>
 <div class="my-1 h-[1px] bg-surface-container-highest/60"></div>
 <a class="flex items-center gap-3 px-3.5 py-2 rounded text-secondary hover:bg-surface-container transition-colors font-body-sm text-body-sm" href="#">
-<span class="material-symbols-outlined text-[18px]">logout</span>
+<span class="material-symbols-outlined notranslate text-[18px]" translate="no">logout</span>
 <span>Sign Out</span>
 </a>
 </div>
 <!-- Subtle Vastu Directional Guidance Widget -->
 <div class="bg-surface-container p-5 rounded-xl shadow-sm relative overflow-hidden">
 <div class="flex items-center gap-2 mb-2 text-secondary">
-<span class="material-symbols-outlined text-[20px]">compass_calibration</span>
+<span class="material-symbols-outlined notranslate text-[20px]" translate="no">compass_calibration</span>
 <span class="font-label-sm text-label-sm uppercase tracking-widest font-bold">Vastu Spatial Alignment</span>
 </div>
 <p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
@@ -136,7 +136,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 <div class="bg-surface-container-low p-8 rounded-xl shadow-sm relative overflow-hidden">
 <div class="max-w-2xl">
 <div class="flex items-center gap-2 mb-2 text-secondary">
-<span class="material-symbols-outlined text-[18px]">share_location</span>
+<span class="material-symbols-outlined notranslate text-[18px]" translate="no">share_location</span>
 <span class="font-label-sm text-label-sm uppercase tracking-widest font-bold">Delivery &amp; Fiscal Destinations</span>
 </div>
 <h1 class="font-display text-display text-primary tracking-tight leading-tight mb-3">Addresses</h1>
@@ -170,7 +170,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 <h2 class="font-headline-sm text-headline-sm text-primary">Billing Address</h2>
 </div>
 <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded bg-surface-container-highest text-secondary font-label-sm text-label-sm uppercase tracking-wider font-semibold">
-<span class="material-symbols-outlined text-[13px]">receipt_long</span>
+<span class="material-symbols-outlined notranslate text-[13px]" translate="no">receipt_long</span>
 <span>GST Invoicing</span>
 </span>
 </div>
@@ -188,15 +188,15 @@ if ( ! defined( 'ABSPATH' ) ) {
 </div>
 <div class="space-y-2 pt-2 text-on-surface-variant font-body-sm text-body-sm">
 <div class="flex items-center gap-2">
-<span class="material-symbols-outlined text-[16px] text-outline">call</span>
+<span class="material-symbols-outlined notranslate text-[16px] text-outline" translate="no">call</span>
 <span>+91 98112 00482</span>
 </div>
 <div class="flex items-center gap-2">
-<span class="material-symbols-outlined text-[16px] text-outline">mail</span>
+<span class="material-symbols-outlined notranslate text-[16px] text-outline" translate="no">mail</span>
 <span>ananya.sharma@example.com</span>
 </div>
 <div class="flex items-center gap-2 pt-1 text-primary">
-<span class="material-symbols-outlined text-[16px] text-secondary">verified_user</span>
+<span class="material-symbols-outlined notranslate text-[16px] text-secondary" translate="no">verified_user</span>
 <span class="font-mono text-label-sm text-label-sm tracking-wider uppercase font-bold">GSTIN: 07AAAAA0000A1Z5</span>
 </div>
 </div>
@@ -206,7 +206,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 <div class="pt-6 mt-6 bg-surface-container-highest/20 -mx-7 -mb-7 p-7 rounded-b-xl flex items-center justify-between">
 <span class="font-label-sm text-label-sm text-outline uppercase tracking-wider">Default Billing Target</span>
 <button class="inline-flex items-center gap-2 px-4 py-2 rounded bg-surface hover:bg-surface-container text-primary font-label-md text-label-md uppercase tracking-wider transition-colors shadow-sm" onclick="switchState('edit-billing')" type="button">
-<span class="material-symbols-outlined text-[16px]">edit</span>
+<span class="material-symbols-outlined notranslate text-[16px]" translate="no">edit</span>
 <span>Edit Billing Address</span>
 </button>
 </div>
@@ -221,7 +221,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 <h2 class="font-headline-sm text-headline-sm text-primary">Shipping Address</h2>
 </div>
 <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded bg-primary-container text-on-primary font-label-sm text-label-sm uppercase tracking-wider font-semibold">
-<span class="material-symbols-outlined text-[13px]">home_pin</span>
+<span class="material-symbols-outlined notranslate text-[13px]" translate="no">home_pin</span>
 <span>Primary Sanctuary</span>
 </span>
 </div>
@@ -239,7 +239,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 </div>
 <!-- Vastu Orientation Badge -->
 <div class="p-3 rounded-lg bg-surface-container-high/60 flex items-start gap-3">
-<span class="material-symbols-outlined text-secondary text-[20px] flex-shrink-0 mt-0.5">explore</span>
+<span class="material-symbols-outlined notranslate text-secondary text-[20px] flex-shrink-0 mt-0.5" translate="no">explore</span>
 <div>
 <p class="font-label-sm text-label-sm uppercase tracking-wider text-secondary font-bold">Vastu Cardinal Orientation</p>
 <p class="font-body-sm text-body-sm text-primary font-medium">Ishanya (North-East Plot) — Verified</p>
@@ -252,7 +252,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 <div class="pt-6 mt-6 bg-surface-container-highest/20 -mx-7 -mb-7 p-7 rounded-b-xl flex items-center justify-between">
 <span class="font-label-sm text-label-sm text-outline uppercase tracking-wider">Default Courier Target</span>
 <button class="inline-flex items-center gap-2 px-4 py-2 rounded bg-surface hover:bg-surface-container text-primary font-label-md text-label-md uppercase tracking-wider transition-colors shadow-sm" onclick="switchState('edit-shipping')" type="button">
-<span class="material-symbols-outlined text-[16px]">edit</span>
+<span class="material-symbols-outlined notranslate text-[16px]" translate="no">edit</span>
 <span>Edit Shipping Address</span>
 </button>
 </div>
@@ -265,13 +265,13 @@ if ( ! defined( 'ABSPATH' ) ) {
 <h2 class="font-headline-sm text-headline-sm text-primary">Shipping Address</h2>
 </div>
 <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded bg-surface-container-highest text-outline font-label-sm text-label-sm uppercase tracking-wider font-semibold">
-<span class="material-symbols-outlined text-[13px]">info</span>
+<span class="material-symbols-outlined notranslate text-[13px]" translate="no">info</span>
 <span>Not Configured</span>
 </span>
 </div>
 <div class="py-10 flex flex-col items-center justify-center text-center px-4 space-y-3">
 <div class="w-16 h-16 rounded-full bg-surface-container flex items-center justify-center text-outline">
-<span class="material-symbols-outlined text-[32px]">local_shipping</span>
+<span class="material-symbols-outlined notranslate text-[32px]" translate="no">local_shipping</span>
 </div>
 <h3 class="font-headline-sm text-headline-sm text-primary">No shipping address recorded yet.</h3>
 <p class="font-body-sm text-body-sm text-on-surface-variant max-w-sm">
@@ -280,7 +280,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 </div>
 <div class="pt-6 mt-6 bg-surface-container-highest/20 -mx-7 -mb-7 p-7 rounded-b-xl flex items-center justify-center">
 <button class="inline-flex items-center gap-2 px-5 py-2.5 rounded bg-primary text-on-primary font-label-md text-label-md uppercase tracking-wider hover:bg-tertiary-container transition-colors shadow-sm" onclick="switchState('edit-shipping')" type="button">
-<span class="material-symbols-outlined text-[18px]">add_location_alt</span>
+<span class="material-symbols-outlined notranslate text-[18px]" translate="no">add_location_alt</span>
 <span>Add Shipping Address</span>
 </button>
 </div>
@@ -292,18 +292,18 @@ if ( ! defined( 'ABSPATH' ) ) {
 <div class="flex flex-wrap items-center justify-between gap-4 pb-6 mb-8 bg-surface-container/50 -mx-8 -mt-8 p-8 rounded-t-xl">
 <div>
 <div class="flex items-center gap-2 mb-1">
-<span class="material-symbols-outlined text-secondary text-[18px]" id="edit-form-icon">receipt_long</span>
+<span class="material-symbols-outlined notranslate text-secondary text-[18px]" translate="no" id="edit-form-icon">receipt_long</span>
 <span class="font-label-sm text-label-sm uppercase tracking-wider text-secondary font-bold" id="edit-form-eyebrow">Fiscal Profile</span>
 </div>
 <h2 class="font-headline-lg text-headline-lg text-primary" id="edit-form-title">Editing Billing Address</h2>
 </div>
 <div class="flex items-center gap-2">
 <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded bg-surface-container-highest text-on-surface font-label-sm text-label-sm uppercase tracking-wider">
-<span class="material-symbols-outlined text-[14px] text-primary">check_circle</span>
+<span class="material-symbols-outlined notranslate text-[14px] text-primary" translate="no">check_circle</span>
 <span>Sanctuary Address Form</span>
 </span>
 <button class="p-2 rounded hover:bg-surface-container text-on-surface-variant" onclick="switchState('overview')" title="Close editor" type="button">
-<span class="material-symbols-outlined">close</span>
+<span class="material-symbols-outlined notranslate " translate="no">close</span>
 </button>
 </div>
 </div>
@@ -344,7 +344,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 <option value="SG">Singapore</option>
 <option value="AE">United Arab Emirates</option>
 </select>
-<span class="material-symbols-outlined absolute right-3 top-3.5 pointer-events-none text-outline">expand_more</span>
+<span class="material-symbols-outlined notranslate absolute right-3 top-3.5 pointer-events-none text-outline" translate="no">expand_more</span>
 </div>
 </div>
 <!-- Row 4: Street Address -->
@@ -381,7 +381,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 <option value="TN">Tamil Nadu</option>
 <option value="UP">Uttar Pradesh</option>
 </select>
-<span class="material-symbols-outlined absolute right-3 top-3.5 pointer-events-none text-outline">expand_more</span>
+<span class="material-symbols-outlined notranslate absolute right-3 top-3.5 pointer-events-none text-outline" translate="no">expand_more</span>
 </div>
 </div>
 <div class="flex flex-col gap-1.5">
@@ -399,7 +399,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 </label>
 <div class="relative">
 <input class="w-full px-4 py-3 rounded bg-surface text-on-surface font-body-md text-body-md shadow-inner focus:outline-none focus:ring-2 focus:ring-primary/20" id="billing_phone" name="phone" required="" type="tel" value="+91 98112 00482"/>
-<span class="material-symbols-outlined absolute right-3 top-3.5 text-outline text-[18px]">call</span>
+<span class="material-symbols-outlined notranslate absolute right-3 top-3.5 text-outline text-[18px]" translate="no">call</span>
 </div>
 </div>
 <div class="flex flex-col gap-1.5">
@@ -408,7 +408,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 </label>
 <div class="relative">
 <input class="w-full px-4 py-3 rounded bg-surface text-on-surface font-body-md text-body-md shadow-inner focus:outline-none focus:ring-2 focus:ring-primary/20" id="billing_email" name="email" required="" type="email" value="ananya.sharma@example.com"/>
-<span class="material-symbols-outlined absolute right-3 top-3.5 text-outline text-[18px]">mail</span>
+<span class="material-symbols-outlined notranslate absolute right-3 top-3.5 text-outline text-[18px]" translate="no">mail</span>
 </div>
 </div>
 </div>
@@ -416,7 +416,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 <div class="hidden p-5 rounded-lg bg-surface-container space-y-3" id="row-vastu-custom">
 <div class="flex items-center justify-between">
 <span class="font-label-sm text-label-sm uppercase tracking-wider text-secondary font-bold flex items-center gap-1.5">
-<span class="material-symbols-outlined text-[16px]">explore</span>
+<span class="material-symbols-outlined notranslate text-[16px]" translate="no">explore</span>
 <span>Spatial Alignment Parameter (Vastu Shastra)</span>
 </span>
 <span class="font-label-sm text-label-sm uppercase text-primary font-bold">Ishanya Verified</span>
@@ -446,7 +446,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 <!-- Form Action Buttons -->
 <div class="pt-6 flex flex-wrap items-center gap-4">
 <button class="px-8 py-3.5 rounded bg-primary-container text-on-primary font-label-md text-label-md uppercase tracking-wider font-semibold hover:bg-tertiary-container hover:text-on-tertiary transition-colors shadow-sm inline-flex items-center gap-2" type="submit">
-<span class="material-symbols-outlined text-[18px]">done</span>
+<span class="material-symbols-outlined notranslate text-[18px]" translate="no">done</span>
 <span>Save Address</span>
 </button>
 <button class="px-6 py-3.5 rounded bg-surface hover:bg-surface-container text-on-surface font-label-md text-label-md uppercase tracking-wider transition-colors shadow-sm" onclick="switchState('overview')" type="button">
@@ -463,7 +463,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
 <div class="md:col-span-7 space-y-4">
 <div class="inline-flex items-center gap-2 px-3 py-1 rounded bg-surface-container text-secondary font-label-sm text-label-sm uppercase tracking-wider font-semibold">
-<span class="material-symbols-outlined text-[16px]">domain_verification</span>
+<span class="material-symbols-outlined notranslate text-[16px]" translate="no">domain_verification</span>
 <span>Spatial Diagnostic Integrity</span>
 </div>
 <h3 class="font-headline-md text-headline-md text-primary">Precise coordinates for bespoke botanical delivery.</h3>
@@ -527,7 +527,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 <div class="bg-surface-container rounded-xl p-6 shadow-sm flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
 <div class="flex items-start gap-4">
 <div class="w-12 h-12 rounded-full bg-secondary-fixed text-on-secondary-fixed flex items-center justify-center flex-shrink-0 mt-0.5">
-<span class="material-symbols-outlined text-[24px]">support_agent</span>
+<span class="material-symbols-outlined notranslate text-[24px]" translate="no">support_agent</span>
 </div>
 <div>
 <h4 class="font-headline-sm text-headline-sm text-primary">Need to dispatch to a retreat or international address?</h4>
@@ -537,7 +537,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 </div>
 </div>
 <a class="px-5 py-2.5 rounded bg-surface hover:bg-surface-container-highest text-primary font-label-md text-label-md uppercase tracking-wider transition-colors shadow-sm flex items-center gap-2 whitespace-nowrap self-end sm:self-center" href="mailto:support@anukulharmony.in">
-<span class="material-symbols-outlined text-[16px]">mail</span>
+<span class="material-symbols-outlined notranslate text-[16px]" translate="no">mail</span>
 <span>support@anukulharmony.in</span>
 </a>
 </div>

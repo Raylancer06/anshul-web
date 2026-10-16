@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 /**
  * The template for displaying search results pages
  *
@@ -24,7 +24,7 @@ $search_query = get_search_query();
             <?php esc_html_e( 'Search Wisdom & Remedies', 'anukul' ); ?>
         </h1>
         <form role="search" method="get" action="<?php echo esc_url( home_url( '/' ) ); ?>" class="w-full max-w-2xl relative flex items-center shadow-sm rounded-xl overflow-hidden bg-surface">
-            <span class="material-symbols-outlined text-outline pl-space-md text-[22px]">search</span>
+            <span class="material-symbols-outlined notranslate text-outline pl-space-md text-[22px]" translate="no">search</span>
             <input type="search" name="s" value="<?php echo esc_attr( $search_query ); ?>" placeholder="<?php esc_attr_e( 'Search remedies, herbs, Vastu tools, or articles...', 'anukul' ); ?>" class="w-full py-4 pl-space-sm pr-space-xl bg-transparent font-body-md text-on-surface focus:outline-none border-none">
             <button type="submit" class="absolute right-2 top-1/2 -translate-y-1/2 px-5 py-2.5 bg-primary text-on-primary rounded-lg font-label-md text-label-md uppercase tracking-wider hover:bg-secondary transition-colors">
                 <?php esc_html_e( 'Search', 'anukul' ); ?>
@@ -76,7 +76,7 @@ $search_query = get_search_query();
                         <div class="pt-4 border-t border-surface-container-high flex items-center justify-between">
                             <a href="<?php the_permalink(); ?>" class="inline-flex items-center gap-1 font-label-md text-xs uppercase text-primary font-semibold hover:text-secondary transition-colors">
                                 <span><?php esc_html_e( 'View Details', 'anukul' ); ?></span>
-                                <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+                                <span class="material-symbols-outlined notranslate text-[16px]" translate="no">arrow_forward</span>
                             </a>
                         </div>
                     </div>
@@ -88,14 +88,14 @@ $search_query = get_search_query();
             <?php
             the_posts_pagination( array(
                 'mid_size'  => 2,
-                'prev_text' => '<span class="material-symbols-outlined text-sm">chevron_left</span>',
-                'next_text' => '<span class="material-symbols-outlined text-sm">chevron_right</span>',
+                'prev_text' => '<span class="material-symbols-outlined notranslate text-sm" translate="no">chevron_left</span>',
+                'next_text' => '<span class="material-symbols-outlined notranslate text-sm" translate="no">chevron_right</span>',
             ) );
             ?>
         </div>
     <?php else : ?>
         <div class="text-center py-20 bg-surface-container rounded-xl p-8 max-w-xl mx-auto">
-            <span class="material-symbols-outlined text-secondary text-[48px] mb-3">search_off</span>
+            <span class="material-symbols-outlined notranslate text-secondary text-[48px] mb-3" translate="no">search_off</span>
             <h2 class="font-headline-md text-2xl text-primary mb-2"><?php esc_html_e( 'No Direct Results Found', 'anukul' ); ?></h2>
             <p class="font-body-md text-on-surface-variant mb-6"><?php esc_html_e( 'Please check your spelling or explore our classical consultations and pharmacy catalogue.', 'anukul' ); ?></p>
             <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="inline-flex items-center justify-center bg-primary text-on-primary font-label-md text-label-md px-6 py-3 rounded-lg tracking-wider uppercase">

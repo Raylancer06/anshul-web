@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 /**
  * Template Name: Ayurveda Consultation & Principles
  *
@@ -106,7 +106,7 @@ get_header();
 </div>
 <!-- Editorial Inset Card -->
 <div class="bg-primary text-on-primary p-space-lg rounded-xl shadow-sm relative overflow-hidden">
-<span class="material-symbols-outlined text-outline-variant/20 absolute -right-4 -bottom-4 text-[120px] select-none pointer-events-none">format_quote</span>
+<span class="material-symbols-outlined notranslate text-outline-variant/20 absolute -right-4 -bottom-4 text-[120px] select-none pointer-events-none" translate="no">format_quote</span>
 <p class="font-editorial-quote text-editorial-quote italic relative z-10 leading-snug">
               “When diet and lifestyle are right, medicine is of no need. When diet and lifestyle are wrong, medicine is of no use.”
             </p>
@@ -408,7 +408,7 @@ get_header();
 <!-- Consultation Action Strip -->
 <div class="mt-space-lg pt-6 border-t border-outline-variant/40 flex flex-col sm:flex-row items-center justify-between gap-4">
 <div class="flex items-center gap-3">
-<span class="material-symbols-outlined text-secondary text-2xl">verified</span>
+<span class="material-symbols-outlined notranslate text-secondary text-2xl" translate="no">verified</span>
 <span class="font-body-sm text-body-sm text-on-surface-variant">In-person sanctuary visits &amp; secure remote video consultations available worldwide.</span>
 </div>
 <a class="inline-flex items-center justify-center bg-primary text-on-primary font-label-md text-label-md px-6 py-3 rounded-lg tracking-wider uppercase transition-colors duration-200 hover:bg-secondary" href="#consultation-cta">
@@ -484,7 +484,7 @@ get_header();
 <div class="faq-item bg-surface-container-low p-6 rounded-xl border border-outline-variant/40 transition-all duration-200">
 <button class="w-full text-left flex items-start justify-between gap-4 cursor-pointer focus:outline-none" onclick="toggleFaq(this)">
 <span class="font-headline-sm text-headline-sm text-primary">What is Ayurveda?</span>
-<span class="material-symbols-outlined text-secondary transition-transform duration-300">expand_more</span>
+<span class="material-symbols-outlined notranslate text-secondary transition-transform duration-300" translate="no">expand_more</span>
 </button>
 <div class="faq-answer hidden mt-4 pt-4 border-t border-outline-variant/30 text-on-surface-variant font-body-md text-body-md leading-relaxed">
             Ayurveda is a traditional Indian science of medicine and conscious lifestyle that has evolved over more than 3,000 years. Rooted in classical Vedic literature, it approaches human wellness through the lens of individualized balance, digestion (Agni), tissue nutrition, and living in rhythm with natural seasonal cycles.
@@ -494,7 +494,7 @@ get_header();
 <div class="faq-item bg-surface-container-low p-6 rounded-xl border border-outline-variant/40 transition-all duration-200">
 <button class="w-full text-left flex items-start justify-between gap-4 cursor-pointer focus:outline-none" onclick="toggleFaq(this)">
 <span class="font-headline-sm text-headline-sm text-primary">What is Prakriti?</span>
-<span class="material-symbols-outlined text-secondary transition-transform duration-300">expand_more</span>
+<span class="material-symbols-outlined notranslate text-secondary transition-transform duration-300" translate="no">expand_more</span>
 </button>
 <div class="faq-answer hidden mt-4 pt-4 border-t border-outline-variant/30 text-on-surface-variant font-body-md text-body-md leading-relaxed">
             Prakriti refers to your unalterable original biological constitution set at conception. It defines your natural physical architecture, skin qualities, digestive pace, metabolic traits, and behavioral inclinations. Understanding your Prakriti allows you to navigate life without fighting your nature.
@@ -504,7 +504,7 @@ get_header();
 <div class="faq-item bg-surface-container-low p-6 rounded-xl border border-outline-variant/40 transition-all duration-200">
 <button class="w-full text-left flex items-start justify-between gap-4 cursor-pointer focus:outline-none" onclick="toggleFaq(this)">
 <span class="font-headline-sm text-headline-sm text-primary">What are Doshas in Ayurveda?</span>
-<span class="material-symbols-outlined text-secondary transition-transform duration-300">expand_more</span>
+<span class="material-symbols-outlined notranslate text-secondary transition-transform duration-300" translate="no">expand_more</span>
 </button>
 <div class="faq-answer hidden mt-4 pt-4 border-t border-outline-variant/30 text-on-surface-variant font-body-md text-body-md leading-relaxed">
             The Tridoshas—Vata, Pitta, and Kapha—are energetic regulatory principles formed by combinations of the five universal elements. Vata governs movement; Pitta governs transformation and digestion; Kapha governs structure, lubrication, and endurance. Everyone contains all three in distinct proportions.
@@ -514,7 +514,7 @@ get_header();
 <div class="faq-item bg-surface-container-low p-6 rounded-xl border border-outline-variant/40 transition-all duration-200">
 <button class="w-full text-left flex items-start justify-between gap-4 cursor-pointer focus:outline-none" onclick="toggleFaq(this)">
 <span class="font-headline-sm text-headline-sm text-primary">Does Ayurvedic guidance differ between individuals?</span>
-<span class="material-symbols-outlined text-secondary transition-transform duration-300">expand_more</span>
+<span class="material-symbols-outlined notranslate text-secondary transition-transform duration-300" translate="no">expand_more</span>
 </button>
 <div class="faq-answer hidden mt-4 pt-4 border-t border-outline-variant/30 text-on-surface-variant font-body-md text-body-md leading-relaxed">
             Yes, fundamentally. Ayurveda does not believe in universal superfoods or standardized remedies. What acts as medicine for a dry, hypermobile Vata individual might exacerbate inflammation in a fiery Pitta individual. Every recommendation is meticulously personalized.
@@ -524,7 +524,7 @@ get_header();
 <div class="faq-item bg-surface-container-low p-6 rounded-xl border border-outline-variant/40 transition-all duration-200">
 <button class="w-full text-left flex items-start justify-between gap-4 cursor-pointer focus:outline-none" onclick="toggleFaq(this)">
 <span class="font-headline-sm text-headline-sm text-primary">Can Ayurveda replace modern medical treatment?</span>
-<span class="material-symbols-outlined text-secondary transition-transform duration-300">expand_more</span>
+<span class="material-symbols-outlined notranslate text-secondary transition-transform duration-300" translate="no">expand_more</span>
 </button>
 <div class="faq-answer hidden mt-4 pt-4 border-t border-outline-variant/30 text-on-surface-variant font-body-md text-body-md leading-relaxed">
             No. At ANUKUL, Ayurveda is practiced and shared as a complementary, preventive, and lifestyle-enriching discipline. It should never substitute emergency trauma care, acute clinical management, or prescribed medical therapies from certified modern physicians.
@@ -534,7 +534,7 @@ get_header();
 <div class="faq-item bg-surface-container-low p-6 rounded-xl border border-outline-variant/40 transition-all duration-200">
 <button class="w-full text-left flex items-start justify-between gap-4 cursor-pointer focus:outline-none" onclick="toggleFaq(this)">
 <span class="font-headline-sm text-headline-sm text-primary">How can I book an ANUKUL consultation?</span>
-<span class="material-symbols-outlined text-secondary transition-transform duration-300">expand_more</span>
+<span class="material-symbols-outlined notranslate text-secondary transition-transform duration-300" translate="no">expand_more</span>
 </button>
 <div class="faq-answer hidden mt-4 pt-4 border-t border-outline-variant/30 text-on-surface-variant font-body-md text-body-md leading-relaxed">
             You can book directly through our online reservation form below or by contacting the clinic reception. Once scheduled, you will receive our initial constitutional intake questionnaire to complete prior to your detailed private session.

@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 /**
  * My Account page (ANUKUL Sanctuary Dashboard)
  *
@@ -109,7 +109,7 @@ $shipping_address = function_exists( 'wc_get_account_formatted_address' ) ? wc_g
           <div class="relative">
             <div class="w-16 h-16 rounded-full bg-cover bg-center overflow-hidden shadow-inner ring-2 ring-primary-container/20" style="background-image: url('<?php echo esc_url( $avatar_url ); ?>')"></div>
             <span class="absolute bottom-0 right-0 w-5 h-5 rounded-full bg-primary-container flex items-center justify-center text-on-primary text-[10px] shadow" title="Clinical Sanctuary Verified">
-              <span class="material-symbols-outlined text-[12px]" style="font-variation-settings: 'FILL' 1;">verified</span>
+              <span class="material-symbols-outlined notranslate text-[12px]" translate="no" style="font-variation-settings: 'FILL' 1;">verified</span>
             </span>
           </div>
           <div class="min-w-0 flex-1">
@@ -122,7 +122,7 @@ $shipping_address = function_exists( 'wc_get_account_formatted_address' ) ? wc_g
         </div>
         <div class="mt-5 pt-4 border-t border-[#E8D8BC]/50 flex items-center justify-between text-xs">
           <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-surface-container-high text-secondary font-label-md tracking-wider uppercase font-semibold">
-            <span class="material-symbols-outlined text-[14px]">spa</span>
+            <span class="material-symbols-outlined notranslate text-[14px]" translate="no">spa</span>
             Prakriti Sanctuary Pass
           </span>
           <span class="font-label-sm text-outline font-semibold">ID: ANK-<?php echo esc_html( 1000 + $user_id ); ?></span>
@@ -135,65 +135,65 @@ $shipping_address = function_exists( 'wc_get_account_formatted_address' ) ? wc_g
         <!-- Tab 1: Dashboard -->
         <button type="button" onclick="switchAccountTab('dashboard')" id="nav-tab-dashboard" class="account-nav-btn flex items-center justify-between px-4 py-3 rounded-lg font-body-sm text-sm transition-all w-full text-left bg-primary text-on-primary font-semibold shadow-md">
           <div class="flex items-center gap-3">
-            <span class="material-symbols-outlined text-[20px]">dashboard</span>
+            <span class="material-symbols-outlined notranslate text-[20px]" translate="no">dashboard</span>
             <span>Dashboard</span>
           </div>
-          <span class="material-symbols-outlined text-[16px] text-primary-fixed tab-chevron">arrow_forward</span>
+          <span class="material-symbols-outlined notranslate text-[16px] text-primary-fixed tab-chevron" translate="no">arrow_forward</span>
         </button>
 
         <!-- Tab 2: Consultations & Sessions -->
         <button type="button" onclick="switchAccountTab('bookings')" id="nav-tab-bookings" class="account-nav-btn flex items-center justify-between px-4 py-3 rounded-lg font-body-sm text-sm text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all w-full text-left">
           <div class="flex items-center gap-3">
-            <span class="material-symbols-outlined text-[20px]">calendar_month</span>
+            <span class="material-symbols-outlined notranslate text-[20px]" translate="no">calendar_month</span>
             <span>Consultations</span>
           </div>
           <div class="flex items-center gap-2">
             <span class="px-2 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm text-[11px] font-bold">
               <?php echo esc_html( $booking_count ); ?> booked
             </span>
-            <span class="material-symbols-outlined text-[16px] text-outline-variant tab-chevron">chevron_right</span>
+            <span class="material-symbols-outlined notranslate text-[16px] text-outline-variant tab-chevron" translate="no">chevron_right</span>
           </div>
         </button>
 
         <!-- Tab 3: Orders -->
         <button type="button" onclick="switchAccountTab('orders')" id="nav-tab-orders" class="account-nav-btn flex items-center justify-between px-4 py-3 rounded-lg font-body-sm text-sm text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all w-full text-left">
           <div class="flex items-center gap-3">
-            <span class="material-symbols-outlined text-[20px]">inventory_2</span>
+            <span class="material-symbols-outlined notranslate text-[20px]" translate="no">inventory_2</span>
             <span>Orders</span>
           </div>
           <div class="flex items-center gap-2">
             <span class="px-2 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm text-[11px] font-bold">
               <?php echo esc_html( $order_count ); ?> total
             </span>
-            <span class="material-symbols-outlined text-[16px] text-outline-variant tab-chevron">chevron_right</span>
+            <span class="material-symbols-outlined notranslate text-[16px] text-outline-variant tab-chevron" translate="no">chevron_right</span>
           </div>
         </button>
 
         <!-- Tab 3: Addresses -->
         <button type="button" onclick="switchAccountTab('addresses')" id="nav-tab-addresses" class="account-nav-btn flex items-center justify-between px-4 py-3 rounded-lg font-body-sm text-sm text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all w-full text-left">
           <div class="flex items-center gap-3">
-            <span class="material-symbols-outlined text-[20px]">pin_drop</span>
+            <span class="material-symbols-outlined notranslate text-[20px]" translate="no">pin_drop</span>
             <span>Addresses</span>
           </div>
-          <span class="material-symbols-outlined text-[16px] text-outline-variant tab-chevron">chevron_right</span>
+          <span class="material-symbols-outlined notranslate text-[16px] text-outline-variant tab-chevron" translate="no">chevron_right</span>
         </button>
 
         <!-- Tab 4: Account Details -->
         <button type="button" onclick="switchAccountTab('account-details')" id="nav-tab-account-details" class="account-nav-btn flex items-center justify-between px-4 py-3 rounded-lg font-body-sm text-sm text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all w-full text-left">
           <div class="flex items-center gap-3">
-            <span class="material-symbols-outlined text-[20px]">manage_accounts</span>
+            <span class="material-symbols-outlined notranslate text-[20px]" translate="no">manage_accounts</span>
             <span>Account Details</span>
           </div>
-          <span class="material-symbols-outlined text-[16px] text-outline-variant tab-chevron">chevron_right</span>
+          <span class="material-symbols-outlined notranslate text-[16px] text-outline-variant tab-chevron" translate="no">chevron_right</span>
         </button>
 
         <!-- Tab 5: Downloads -->
         <button type="button" onclick="switchAccountTab('downloads')" id="nav-tab-downloads" class="account-nav-btn flex items-center justify-between px-4 py-3 rounded-lg font-body-sm text-sm text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all w-full text-left">
           <div class="flex items-center gap-3">
-            <span class="material-symbols-outlined text-[20px]">file_download</span>
+            <span class="material-symbols-outlined notranslate text-[20px]" translate="no">file_download</span>
             <span>Downloads</span>
           </div>
-          <span class="material-symbols-outlined text-[16px] text-outline-variant tab-chevron">chevron_right</span>
+          <span class="material-symbols-outlined notranslate text-[16px] text-outline-variant tab-chevron" translate="no">chevron_right</span>
         </button>
 
         <div class="my-1.5 mx-2 h-px bg-surface-container-highest opacity-70"></div>
@@ -201,10 +201,10 @@ $shipping_address = function_exists( 'wc_get_account_formatted_address' ) ? wc_g
         <!-- Real WooCommerce Sign Out Link -->
         <a class="flex items-center justify-between px-4 py-2.5 rounded-lg text-error hover:bg-error-container/20 transition-all font-body-sm text-sm" href="<?php echo esc_url( wc_logout_url() ); ?>">
           <div class="flex items-center gap-3">
-            <span class="material-symbols-outlined text-[20px]">logout</span>
+            <span class="material-symbols-outlined notranslate text-[20px]" translate="no">logout</span>
             <span>Sign Out</span>
           </div>
-          <span class="material-symbols-outlined text-[16px] text-outline-variant">chevron_right</span>
+          <span class="material-symbols-outlined notranslate text-[16px] text-outline-variant" translate="no">chevron_right</span>
         </a>
       </nav>
 
@@ -212,7 +212,7 @@ $shipping_address = function_exists( 'wc_get_account_formatted_address' ) ? wc_g
       <div class="bg-surface-container rounded-xl p-5 shadow-sm border border-[#E8D8BC]/60 relative overflow-hidden">
         <div class="flex items-start gap-3.5">
           <div class="w-10 h-10 rounded-full bg-secondary/10 flex items-center justify-center shrink-0 text-secondary">
-            <span class="material-symbols-outlined text-[22px]">support_agent</span>
+            <span class="material-symbols-outlined notranslate text-[22px]" translate="no">support_agent</span>
           </div>
           <div class="flex-1">
             <h3 class="font-headline-sm text-xl text-primary mb-1">Dispensary Desk</h3>
@@ -221,7 +221,7 @@ $shipping_address = function_exists( 'wc_get_account_formatted_address' ) ? wc_g
             </p>
             <a class="inline-flex items-center gap-1.5 text-secondary hover:text-primary transition-colors font-label-md text-xs tracking-wider uppercase font-bold" href="<?php echo esc_url( home_url( '/contact/' ) ); ?>">
               <span>Contact Sanctuary Concierge</span>
-              <span class="material-symbols-outlined text-[14px]">north_east</span>
+              <span class="material-symbols-outlined notranslate text-[14px]" translate="no">north_east</span>
             </a>
           </div>
         </div>
@@ -280,7 +280,7 @@ $shipping_address = function_exists( 'wc_get_account_formatted_address' ) ? wc_g
           <div class="bg-surface-container-low p-5 rounded-xl border border-[#E8D8BC]/60 shadow-sm relative overflow-hidden group hover:border-primary/40 transition-colors">
             <div class="flex items-center justify-between mb-2">
               <span class="font-label-sm text-[11px] uppercase tracking-wider text-secondary font-bold">Prakriti Status</span>
-              <span class="material-symbols-outlined text-primary text-[20px]">spa</span>
+              <span class="material-symbols-outlined notranslate text-primary text-[20px]" translate="no">spa</span>
             </div>
             <p class="font-headline-sm text-2xl text-primary font-serif whitespace-nowrap">Pitta-Vata</p>
             <p class="font-body-sm text-xs text-on-surface-variant mt-1">Holistic Harmony Regimen</p>
@@ -289,28 +289,28 @@ $shipping_address = function_exists( 'wc_get_account_formatted_address' ) ? wc_g
           <div onclick="switchAccountTab('orders')" class="bg-surface-container-low p-5 rounded-xl border border-[#E8D8BC]/60 shadow-sm relative overflow-hidden group hover:border-primary/40 transition-colors cursor-pointer">
             <div class="flex items-center justify-between mb-2">
               <span class="font-label-sm text-[11px] uppercase tracking-wider text-secondary font-bold">Dispensary Orders</span>
-              <span class="material-symbols-outlined text-primary text-[20px]">inventory_2</span>
+              <span class="material-symbols-outlined notranslate text-primary text-[20px]" translate="no">inventory_2</span>
             </div>
             <p class="font-headline-sm text-2xl text-primary font-serif whitespace-nowrap"><?php echo esc_html( $order_count ); ?> Total <span class="text-xs font-sans text-secondary font-semibold">(<?php echo esc_html( $active_orders ); ?> Active)</span></p>
-            <p class="font-body-sm text-xs text-secondary mt-1 flex items-center gap-1 font-medium">View dispatches <span class="material-symbols-outlined text-[14px]">arrow_forward</span></p>
+            <p class="font-body-sm text-xs text-secondary mt-1 flex items-center gap-1 font-medium">View dispatches <span class="material-symbols-outlined notranslate text-[14px]" translate="no">arrow_forward</span></p>
           </div>
 
           <div onclick="switchAccountTab('bookings')" class="bg-surface-container-low p-5 rounded-xl border border-[#E8D8BC]/60 shadow-sm relative overflow-hidden group hover:border-primary/40 transition-colors cursor-pointer">
             <div class="flex items-center justify-between mb-2">
               <span class="font-label-sm text-[11px] uppercase tracking-wider text-secondary font-bold">Consultations</span>
-              <span class="material-symbols-outlined text-primary text-[20px]">calendar_month</span>
+              <span class="material-symbols-outlined notranslate text-primary text-[20px]" translate="no">calendar_month</span>
             </div>
             <p class="font-headline-sm text-2xl text-primary font-serif whitespace-nowrap"><?php echo esc_html( $booking_count ); ?> Booked <span class="text-xs font-sans text-secondary font-semibold"><?php echo $has_booking ? '(Active)' : ''; ?></span></p>
-            <p class="font-body-sm text-xs text-secondary mt-1 flex items-center gap-1 font-medium">View history <span class="material-symbols-outlined text-[14px]">arrow_forward</span></p>
+            <p class="font-body-sm text-xs text-secondary mt-1 flex items-center gap-1 font-medium">View history <span class="material-symbols-outlined notranslate text-[14px]" translate="no">arrow_forward</span></p>
           </div>
 
           <div onclick="switchAccountTab('downloads')" class="bg-surface-container-low p-5 rounded-xl border border-[#E8D8BC]/60 shadow-sm relative overflow-hidden group hover:border-primary/40 transition-colors cursor-pointer">
             <div class="flex items-center justify-between mb-2">
               <span class="font-label-sm text-[11px] uppercase tracking-wider text-secondary font-bold">Vedic Blueprints</span>
-              <span class="material-symbols-outlined text-primary text-[20px]">file_download</span>
+              <span class="material-symbols-outlined notranslate text-primary text-[20px]" translate="no">file_download</span>
             </div>
             <p class="font-headline-sm text-2xl text-primary font-serif whitespace-nowrap">4 Documents</p>
-            <p class="font-body-sm text-xs text-secondary mt-1 flex items-center gap-1 font-medium">Download PDFs <span class="material-symbols-outlined text-[14px]">arrow_forward</span></p>
+            <p class="font-body-sm text-xs text-secondary mt-1 flex items-center gap-1 font-medium">Download PDFs <span class="material-symbols-outlined notranslate text-[14px]" translate="no">arrow_forward</span></p>
           </div>
         </div>
 
@@ -372,7 +372,7 @@ $shipping_address = function_exists( 'wc_get_account_formatted_address' ) ? wc_g
             <div>
               <div class="flex items-center justify-between mb-3 pb-2 border-b border-[#E8D8BC]/40">
                 <h4 class="font-label-md text-sm uppercase tracking-wider text-primary font-bold flex items-center gap-2">
-                  <span class="material-symbols-outlined text-secondary text-[18px]">location_on</span>
+                  <span class="material-symbols-outlined notranslate text-secondary text-[18px]" translate="no">location_on</span>
                   Default Sanctuary Address
                 </h4>
                 <button onclick="switchAccountTab('addresses')" class="text-xs uppercase font-label-sm text-secondary hover:text-primary transition-colors font-bold">Edit</button>
@@ -389,7 +389,7 @@ $shipping_address = function_exists( 'wc_get_account_formatted_address' ) ? wc_g
             </div>
             <div class="pt-4 mt-4 border-t border-[#E8D8BC]/30 flex items-center justify-between text-xs">
               <span class="text-on-surface-variant">Validated for Consecrated Deliveries</span>
-              <span class="text-primary font-semibold flex items-center gap-1">Verified <span class="material-symbols-outlined text-[14px]">check_circle</span></span>
+              <span class="text-primary font-semibold flex items-center gap-1">Verified <span class="material-symbols-outlined notranslate text-[14px]" translate="no">check_circle</span></span>
             </div>
           </div>
 
@@ -398,7 +398,7 @@ $shipping_address = function_exists( 'wc_get_account_formatted_address' ) ? wc_g
             <div>
               <div class="flex items-center justify-between mb-3 pb-2 border-b border-[#E8D8BC]/40">
                 <h4 class="font-label-md text-sm uppercase tracking-wider text-primary font-bold flex items-center gap-2">
-                  <span class="material-symbols-outlined text-secondary text-[18px]">calendar_month</span>
+                  <span class="material-symbols-outlined notranslate text-secondary text-[18px]" translate="no">calendar_month</span>
                   Upcoming Consultation
                 </h4>
                 <span class="text-xs uppercase font-label-sm text-primary font-bold px-2 py-0.5 rounded bg-primary-fixed/40">
@@ -416,7 +416,7 @@ $shipping_address = function_exists( 'wc_get_account_formatted_address' ) ? wc_g
                   Attending: Dr. Nishigandha Chaudhari &bull; Ref: <?php echo esc_html( $booking_ref ); ?>
                 </p>
                 <div class="mt-3 p-3 rounded-lg bg-surface-container flex items-center gap-3">
-                  <span class="material-symbols-outlined text-secondary text-[22px]">schedule</span>
+                  <span class="material-symbols-outlined notranslate text-secondary text-[22px]" translate="no">schedule</span>
                   <div>
                     <p class="font-label-md text-xs font-bold text-primary uppercase tracking-wider"><?php echo esc_html( $slot_date . ' &bull; ' . $slot_time ); ?></p>
                     <p class="font-body-sm text-[11px] text-on-surface-variant">Private Video Sanctuary link sent via email</p>
@@ -428,7 +428,7 @@ $shipping_address = function_exists( 'wc_get_account_formatted_address' ) ? wc_g
                   Personalized pulse diagnosis, Astro-Vastu spatial analysis, and constitutional balance with Dr. Nishigandha Chaudhari.
                 </p>
                 <div class="mt-3 p-3 rounded-lg bg-surface-container flex items-center gap-3">
-                  <span class="material-symbols-outlined text-secondary text-[22px]">schedule</span>
+                  <span class="material-symbols-outlined notranslate text-secondary text-[22px]" translate="no">schedule</span>
                   <div>
                     <p class="font-label-md text-xs font-bold text-primary uppercase tracking-wider">Morning &amp; Afternoon Slots Open</p>
                     <p class="font-body-sm text-[11px] text-on-surface-variant">Aligned with biological diurnal rhythms</p>
@@ -439,11 +439,11 @@ $shipping_address = function_exists( 'wc_get_account_formatted_address' ) ? wc_g
             <div class="pt-4 mt-4 border-t border-[#E8D8BC]/30 flex items-center justify-between">
               <?php if ( $has_booking ) : ?>
                 <button type="button" onclick="switchAccountTab('bookings')" class="text-xs uppercase font-label-sm text-secondary hover:text-primary transition-colors font-bold flex items-center gap-1">
-                  View Consultation History (<?php echo esc_html( $booking_count ); ?>) <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+                  View Consultation History (<?php echo esc_html( $booking_count ); ?>) <span class="material-symbols-outlined notranslate text-[14px]" translate="no">arrow_forward</span>
                 </button>
               <?php endif; ?>
               <a href="<?php echo esc_url( home_url( '/book-your-consultation/' ) ); ?>" class="text-xs uppercase font-label-sm text-primary hover:text-secondary transition-colors font-bold flex items-center gap-1">
-                Book Consultation Now <span class="material-symbols-outlined text-[14px]">add_circle</span>
+                Book Consultation Now <span class="material-symbols-outlined notranslate text-[14px]" translate="no">add_circle</span>
               </a>
             </div>
           </div>
@@ -469,7 +469,7 @@ $shipping_address = function_exists( 'wc_get_account_formatted_address' ) ? wc_g
           </div>
           <div class="flex items-center gap-2">
             <a href="<?php echo esc_url( home_url( '/book-your-consultation/' ) ); ?>" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-primary text-on-primary font-label-md text-xs uppercase tracking-wider font-semibold hover:bg-secondary transition-colors shadow-sm">
-              <span class="material-symbols-outlined text-[16px]">add_circle</span>
+              <span class="material-symbols-outlined notranslate text-[16px]" translate="no">add_circle</span>
               Book New Consultation
             </a>
           </div>
@@ -528,21 +528,21 @@ $shipping_address = function_exists( 'wc_get_account_formatted_address' ) ? wc_g
                 <!-- Appointment details -->
                 <div class="py-4 grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs bg-surface-container/40 p-3.5 rounded-lg my-3">
                   <div class="flex items-center gap-2">
-                    <span class="material-symbols-outlined text-secondary text-[18px]">calendar_today</span>
+                    <span class="material-symbols-outlined notranslate text-secondary text-[18px]" translate="no">calendar_today</span>
                     <div>
                       <span class="text-outline uppercase font-label-sm block text-[10px]">Date</span>
                       <span class="font-semibold text-primary"><?php echo esc_html( $slot_date ); ?></span>
                     </div>
                   </div>
                   <div class="flex items-center gap-2">
-                    <span class="material-symbols-outlined text-secondary text-[18px]">schedule</span>
+                    <span class="material-symbols-outlined notranslate text-secondary text-[18px]" translate="no">schedule</span>
                     <div>
                       <span class="text-outline uppercase font-label-sm block text-[10px]">Muhurta Slot</span>
                       <span class="font-semibold text-primary"><?php echo esc_html( $slot_time ); ?> IST</span>
                     </div>
                   </div>
                   <div class="flex items-center gap-2">
-                    <span class="material-symbols-outlined text-secondary text-[18px]">videocam</span>
+                    <span class="material-symbols-outlined notranslate text-secondary text-[18px]" translate="no">videocam</span>
                     <div>
                       <span class="text-outline uppercase font-label-sm block text-[10px]">Session Delivery</span>
                       <span class="font-semibold text-primary">Private Video &amp; Tele-Health</span>
@@ -559,7 +559,7 @@ $shipping_address = function_exists( 'wc_get_account_formatted_address' ) ? wc_g
 
                 <div class="pt-3 border-t border-[#E8D8BC]/50 flex flex-wrap items-center justify-between gap-3 text-xs">
                   <div class="flex items-center gap-2 text-on-surface-variant">
-                    <span class="material-symbols-outlined text-secondary text-[16px]">verified</span>
+                    <span class="material-symbols-outlined notranslate text-secondary text-[16px]" translate="no">verified</span>
                     <span>Status: <strong class="text-primary font-semibold"><?php echo $is_confirmed ? 'Slot Consecrated &amp; Confirmed' : 'Awaiting Settlement'; ?></strong></span>
                     <?php if ( $linked_order ) : ?>
                       <span class="text-outline-variant">&bull;</span>
@@ -582,13 +582,13 @@ $shipping_address = function_exists( 'wc_get_account_formatted_address' ) ? wc_g
           </div>
         <?php else : ?>
           <div class="bg-surface-container-low rounded-xl border border-[#E8D8BC]/60 p-12 text-center space-y-4">
-            <span class="material-symbols-outlined text-secondary text-[48px]">calendar_month</span>
+            <span class="material-symbols-outlined notranslate text-secondary text-[48px]" translate="no">calendar_month</span>
             <h3 class="font-headline-sm text-2xl text-primary">No Consultations Reserved Yet</h3>
             <p class="font-body-md text-sm text-on-surface-variant max-w-md mx-auto">
               Reserve your personalized Vedic health diagnosis, floor plan audit, or Muhurta alignment session directly through our consultation portal.
             </p>
             <a href="<?php echo esc_url( home_url( '/book-your-consultation/' ) ); ?>" class="inline-flex items-center gap-2 px-6 py-2.5 rounded-lg bg-[#1F4D3A] text-on-primary font-label-md text-xs uppercase tracking-wider font-semibold hover:bg-secondary transition-colors shadow-sm">
-              <span class="material-symbols-outlined text-[16px]">event_available</span>
+              <span class="material-symbols-outlined notranslate text-[16px]" translate="no">event_available</span>
               Book Your Consultation Now
             </a>
           </div>
@@ -614,7 +614,7 @@ $shipping_address = function_exists( 'wc_get_account_formatted_address' ) ? wc_g
           </div>
           <div class="flex items-center gap-2">
             <a href="<?php echo esc_url( function_exists( 'wc_get_page_permalink' ) ? wc_get_page_permalink( 'shop' ) : home_url( '/shop/' ) ); ?>" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-primary text-on-primary font-label-md text-xs uppercase tracking-wider font-semibold hover:bg-secondary transition-colors shadow-sm">
-              <span class="material-symbols-outlined text-[16px]">local_mall</span>
+              <span class="material-symbols-outlined notranslate text-[16px]" translate="no">local_mall</span>
               Explore Dispensary
             </a>
           </div>
@@ -659,7 +659,7 @@ $shipping_address = function_exists( 'wc_get_account_formatted_address' ) ? wc_g
 
                 <div class="pt-4 border-t border-[#E8D8BC]/50 flex flex-wrap items-center justify-between gap-3 text-xs">
                   <div class="flex items-center gap-2 text-on-surface-variant">
-                    <span class="material-symbols-outlined text-secondary text-[16px]">local_shipping</span>
+                    <span class="material-symbols-outlined notranslate text-secondary text-[16px]" translate="no">local_shipping</span>
                     <span>Status: <strong class="text-primary font-semibold"><?php echo esc_html( wc_get_order_status_name( $order->get_status() ) ); ?></strong></span>
                   </div>
                   <div class="flex items-center gap-3">
@@ -673,7 +673,7 @@ $shipping_address = function_exists( 'wc_get_account_formatted_address' ) ? wc_g
           </div>
         <?php else : ?>
           <div class="bg-surface-container-low rounded-xl border border-[#E8D8BC]/60 p-12 text-center space-y-4">
-            <span class="material-symbols-outlined text-secondary text-[48px]">inventory_2</span>
+            <span class="material-symbols-outlined notranslate text-secondary text-[48px]" translate="no">inventory_2</span>
             <h3 class="font-headline-sm text-2xl text-primary">No Dispensary Orders Yet</h3>
             <p class="font-body-md text-sm text-on-surface-variant max-w-md mx-auto">
               Your therapeutic rasayanas, consecrated copper yantras, and customized oils will be chronicled here once ordered.
@@ -711,7 +711,7 @@ $shipping_address = function_exists( 'wc_get_account_formatted_address' ) ? wc_g
             <div>
               <div class="flex items-center justify-between mb-3 pb-2 border-b border-[#E8D8BC]/40">
                 <h3 class="font-label-md text-sm uppercase tracking-wider text-primary font-bold flex items-center gap-2">
-                  <span class="material-symbols-outlined text-secondary text-[18px]">receipt_long</span>
+                  <span class="material-symbols-outlined notranslate text-secondary text-[18px]" translate="no">receipt_long</span>
                   Billing Coordinates
                 </h3>
               </div>
@@ -727,7 +727,7 @@ $shipping_address = function_exists( 'wc_get_account_formatted_address' ) ? wc_g
             </div>
             <div class="pt-5 mt-4 border-t border-[#E8D8BC]/30 flex items-center justify-between">
               <a href="<?php echo esc_url( function_exists( 'wc_get_endpoint_url' ) ? wc_get_endpoint_url( 'edit-address', 'billing' ) : '#' ); ?>" class="px-4 py-2 rounded-lg bg-primary text-on-primary font-label-md text-xs uppercase tracking-wider font-semibold hover:bg-secondary transition-colors shadow-sm flex items-center gap-1.5">
-                <span class="material-symbols-outlined text-[16px]">edit</span> Edit Billing Address
+                <span class="material-symbols-outlined notranslate text-[16px]" translate="no">edit</span> Edit Billing Address
               </a>
             </div>
           </div>
@@ -737,7 +737,7 @@ $shipping_address = function_exists( 'wc_get_account_formatted_address' ) ? wc_g
             <div>
               <div class="flex items-center justify-between mb-3 pb-2 border-b border-[#E8D8BC]/40">
                 <h3 class="font-label-md text-sm uppercase tracking-wider text-primary font-bold flex items-center gap-2">
-                  <span class="material-symbols-outlined text-secondary text-[18px]">local_shipping</span>
+                  <span class="material-symbols-outlined notranslate text-secondary text-[18px]" translate="no">local_shipping</span>
                   Sanctuary Delivery Address
                 </h3>
               </div>
@@ -753,7 +753,7 @@ $shipping_address = function_exists( 'wc_get_account_formatted_address' ) ? wc_g
             </div>
             <div class="pt-5 mt-4 border-t border-[#E8D8BC]/30 flex items-center justify-between">
               <a href="<?php echo esc_url( function_exists( 'wc_get_endpoint_url' ) ? wc_get_endpoint_url( 'edit-address', 'shipping' ) : '#' ); ?>" class="px-4 py-2 rounded-lg bg-primary text-on-primary font-label-md text-xs uppercase tracking-wider font-semibold hover:bg-secondary transition-colors shadow-sm flex items-center gap-1.5">
-                <span class="material-symbols-outlined text-[16px]">edit</span> Edit Delivery Address
+                <span class="material-symbols-outlined notranslate text-[16px]" translate="no">edit</span> Edit Delivery Address
               </a>
             </div>
           </div>
@@ -887,7 +887,7 @@ $shipping_address = function_exists( 'wc_get_account_formatted_address' ) ? wc_g
           <div class="bg-surface-container-low rounded-xl p-5 border border-[#E8D8BC]/60 shadow-sm flex flex-col sm:flex-row sm:items-center justify-between gap-4 hover:border-primary/40 transition-colors">
             <div class="flex items-start gap-4">
               <div class="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary shrink-0">
-                <span class="material-symbols-outlined text-[26px]">architecture</span>
+                <span class="material-symbols-outlined notranslate text-[26px]" translate="no">architecture</span>
               </div>
               <div>
                 <h3 class="font-headline-sm text-lg text-primary font-bold">Ishanya &amp; Brahmasthan Spatial Alignment Blueprint</h3>
@@ -896,7 +896,7 @@ $shipping_address = function_exists( 'wc_get_account_formatted_address' ) ? wc_g
             </div>
             <div class="flex items-center gap-2 self-start sm:self-auto shrink-0">
               <a href="<?php echo esc_url( home_url( '/contact/' ) ); ?>" class="px-4 py-2.5 rounded-lg bg-primary text-on-primary font-label-md text-xs uppercase tracking-wider font-semibold hover:bg-secondary transition-colors shadow-sm flex items-center gap-1.5">
-                <span class="material-symbols-outlined text-[16px]">support_agent</span> Request Dossier
+                <span class="material-symbols-outlined notranslate text-[16px]" translate="no">support_agent</span> Request Dossier
               </a>
             </div>
           </div>
