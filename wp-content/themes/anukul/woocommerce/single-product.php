@@ -42,11 +42,11 @@ $main_image  = get_post_meta( $current_product_id, '_anukul_image_url', true ) ?
 
 <div class="flex flex-col w-full">
 <!-- SECTION 1: BREADCRUMB NAVIGATION -->
-<nav aria-label="Breadcrumb" class="w-full bg-surface-container-low/70 py-3.5">
+<nav aria-label="Breadcrumb" class="anukul-breadcrumb-bar w-full bg-[#F5EFE3] border-b border-[#E5D5BA] py-4 sm:py-5 shadow-[0_1px_3px_rgba(0,0,0,0.02)]">
 <div class="max-w-[1440px] mx-auto px-6 lg:px-margin flex items-center gap-2 font-label-md text-label-md tracking-wider text-on-surface-variant uppercase">
-<a class="hover:text-primary transition-colors" data-path="home" href="<?php echo esc_url( home_url( "/" ) ); ?>">Home</a>
+<a class="hover:text-primary transition-colors font-medium" data-path="home" href="<?php echo esc_url( home_url( "/" ) ); ?>">Home</a>
 <span class="material-symbols-outlined notranslate text-[14px] text-outline" translate="no">chevron_right</span>
-<a class="hover:text-primary transition-colors" data-path="shop" href="<?php echo esc_url( function_exists( "wc_get_page_permalink" ) ? wc_get_page_permalink( "shop" ) : home_url( "/shop/" ) ); ?>">Shop</a>
+<a class="hover:text-primary transition-colors font-medium" data-path="shop" href="<?php echo esc_url( function_exists( "wc_get_page_permalink" ) ? wc_get_page_permalink( "shop" ) : home_url( "/shop/" ) ); ?>">Shop</a>
 <span class="material-symbols-outlined notranslate text-[14px] text-outline" translate="no">chevron_right</span>
 <span class="text-primary font-semibold truncate"><?php echo esc_html( $title ); ?></span>
 </div>
@@ -159,7 +159,7 @@ $main_image  = get_post_meta( $current_product_id, '_anukul_image_url', true ) ?
                 </button>
 </div>
 <div class="hidden p-3 bg-primary text-[#F7F1E3] rounded-lg text-center font-label-md text-label-md uppercase tracking-wider transition-all shadow-md" id="cart-toast">
-                Added to Sanctuary Cart
+                Added to Cart
               </div>
 </div>
 <!-- Micro Trust & Care Blocks -->
@@ -174,8 +174,8 @@ $main_image  = get_post_meta( $current_product_id, '_anukul_image_url', true ) ?
 <div class="flex items-start gap-3 p-3 bg-surface-container-low rounded-lg">
 <span class="material-symbols-outlined notranslate text-secondary text-[20px] shrink-0 mt-0.5" translate="no">published_with_changes</span>
 <div>
-<span class="font-label-md text-label-md uppercase font-semibold text-primary block">Sanctuary Guarantee</span>
-<p class="font-body-sm text-body-sm text-on-surface-variant">7-day exchange window for unused, intact ritual instruments in original box.</p>
+<span class="font-label-md text-label-md uppercase font-semibold text-primary block">Authentic &amp; Certified Guarantee</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">7-day replacement window for damaged or defective items in original packaging.</p>
 </div>
 </div>
 <div class="flex items-start gap-3 p-3 bg-surface-container-low rounded-lg">
@@ -579,7 +579,7 @@ endif;
             badge.textContent = data.data.cart_count;
             badge.classList.remove('hidden');
           });
-          triggerCartNotification('Sacred remedy added to your Sanctuary Cart.');
+          triggerCartNotification('Item added to your cart successfully.');
         } else {
           triggerCartNotification(data.data && data.data.message ? data.data.message : 'Could not add to cart.');
         }
@@ -589,7 +589,7 @@ endif;
           btn.disabled = false;
           btn.innerHTML = originalHtml;
         }
-        triggerCartNotification('Sacred remedy added to your Sanctuary Cart.');
+        triggerCartNotification('Item added to your cart successfully.');
       });
     }
 

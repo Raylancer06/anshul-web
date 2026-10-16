@@ -220,6 +220,10 @@ body.admin-bar header[class*="fixed"] {
   top: 32px !important;
 }
 
+body.admin-bar main {
+  padding-top: calc(114px + 32px) !important;
+}
+
 body.admin-bar #mobile-menu > div {
   max-height: calc(100vh - 114px - 32px) !important;
 }
@@ -231,6 +235,10 @@ body.admin-bar #mobile-menu > div {
     top: 46px !important;
   }
 
+  body.admin-bar main {
+    padding-top: calc(114px + 46px) !important;
+  }
+
   body.admin-bar #mobile-menu > div {
     max-height: calc(100vh - 114px - 46px) !important;
   }
@@ -239,6 +247,23 @@ body.admin-bar #mobile-menu > div {
 @media screen and (max-width: 600px) {
   #wpadminbar {
     position: fixed !important;
+  }
+}
+
+/* Breadcrumb Bar Standard Spacing & Breathing Room */
+.anukul-breadcrumb-bar {
+  position: relative;
+  width: 100%;
+  background-color: #F5EFE3;
+  border-bottom: 1px solid #E5D5BA;
+  padding-top: 1.125rem;
+  padding-bottom: 1.125rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);
+}
+@media screen and (min-width: 640px) {
+  .anukul-breadcrumb-bar {
+    padding-top: 1.25rem;
+    padding-bottom: 1.25rem;
   }
 }
 

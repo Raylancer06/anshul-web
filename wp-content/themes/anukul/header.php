@@ -233,11 +233,19 @@ if ( ! defined( 'ABSPATH' ) ) {
     };
     </script>
     
+    <!-- Site Favicon & Touch Icons -->
+    <link rel="icon" type="image/png" sizes="32x32" href="<?php echo esc_url( get_template_directory_uri() . '/assets/images/favicon-32x32.png' ); ?>">
+    <link rel="icon" type="image/png" sizes="16x16" href="<?php echo esc_url( get_template_directory_uri() . '/assets/images/favicon-16x16.png' ); ?>">
+    <link rel="apple-touch-icon" sizes="180x180" href="<?php echo esc_url( get_template_directory_uri() . '/assets/images/apple-touch-icon.png' ); ?>">
+    <link rel="shortcut icon" href="<?php echo esc_url( get_template_directory_uri() . '/assets/images/favicon-32x32.png' ); ?>">
+
     <?php wp_head(); ?>
     <style>
       body.admin-bar #site-header { top: 32px !important; }
+      body.admin-bar main { padding-top: calc(114px + 32px) !important; }
       @media screen and (max-width: 782px) {
         body.admin-bar #site-header { top: 46px !important; }
+        body.admin-bar main { padding-top: calc(114px + 46px) !important; }
       }
     </style>
 </head>
@@ -336,7 +344,7 @@ $sec_digits       = preg_replace( '/[^0-9\+]/', '', $phone_secondary );
             </div>
 
             <!-- Search -->
-            <a href="<?php echo esc_url( home_url( '/?s=' ) ); ?>" title="<?php esc_attr_e( 'Search Wisdom & Remedies', 'anukul' ); ?>" class="flex items-center justify-center w-10 h-10 rounded-full text-primary hover:bg-[#E8D8BC]/60 hover:text-secondary transition-colors notranslate" translate="no">
+            <a href="<?php echo esc_url( home_url( '/?s=' ) ); ?>" title="<?php esc_attr_e( 'Search Medicines & Services', 'anukul' ); ?>" class="flex items-center justify-center w-10 h-10 rounded-full text-primary hover:bg-[#E8D8BC]/60 hover:text-secondary transition-colors notranslate" translate="no">
                 <span class="material-symbols-outlined notranslate text-[22px]" translate="no">search</span>
             </a>
 
@@ -355,7 +363,7 @@ $sec_digits       = preg_replace( '/[^0-9\+]/', '', $phone_secondary );
                 <?php echo esc_html( $header_cta_text ); ?>
             </a>
 
-            <!-- Client Account & Sanctuary Portal Dropdown -->
+            <!-- Client Account Dropdown -->
             <?php
             $account_url  = function_exists( 'wc_get_page_permalink' ) ? wc_get_page_permalink( 'myaccount' ) : home_url( '/my-account/' );
             $is_logged_in = is_user_logged_in();
@@ -368,7 +376,7 @@ $sec_digits       = preg_replace( '/[^0-9\+]/', '', $phone_secondary );
                     $h_email        = $h_current_user->user_email;
                     $h_avatar_url   = get_avatar_url( $h_user_id, array( 'size' => 96 ) );
                 ?>
-                    <a href="<?php echo esc_url( $account_url ); ?>" title="<?php echo esc_attr( $h_display_name ); ?> &mdash; <?php esc_attr_e( 'Client Sanctuary Portal', 'anukul' ); ?>" class="flex items-center gap-2 p-0.5 rounded-full ring-2 ring-transparent group-hover/account:ring-[#B38A3E]/60 transition-all focus:outline-none notranslate" translate="no" aria-haspopup="true">
+                    <a href="<?php echo esc_url( $account_url ); ?>" title="<?php echo esc_attr( $h_display_name ); ?> &mdash; <?php esc_attr_e( 'My Account', 'anukul' ); ?>" class="flex items-center gap-2 p-0.5 rounded-full ring-2 ring-transparent group-hover/account:ring-[#B38A3E]/60 transition-all focus:outline-none notranslate" translate="no" aria-haspopup="true">
                         <div id="header-avatar-badge" class="w-9 h-9 rounded-full bg-cover bg-center shadow-sm border border-[#E8D8BC]/90 overflow-hidden ring-1 ring-primary/20" style="background-image: url('<?php echo esc_url( $h_avatar_url ); ?>')"></div>
                     </a>
 
@@ -382,7 +390,7 @@ $sec_digits       = preg_replace( '/[^0-9\+]/', '', $phone_secondary );
                                     <p class="font-headline-sm text-sm font-bold text-primary truncate leading-tight"><?php echo esc_html( $h_display_name ); ?></p>
                                     <p class="font-body-sm text-[11px] text-on-surface-variant truncate"><?php echo esc_html( $h_email ); ?></p>
                                     <span class="inline-block mt-1 font-label-sm text-[9px] uppercase tracking-wider text-secondary font-bold px-2 py-0.5 rounded-full bg-secondary-fixed/50">
-                                        Sanctuary Seeker &bull; ID: ANK-<?php echo esc_html( 1000 + $h_user_id ); ?>
+                                        Client ID: ANK-<?php echo esc_html( 1000 + $h_user_id ); ?>
                                     </span>
                                 </div>
                             </div>
@@ -391,7 +399,7 @@ $sec_digits       = preg_replace( '/[^0-9\+]/', '', $phone_secondary );
                             <nav class="py-2 px-1.5 text-xs font-body-sm text-on-surface-variant space-y-0.5">
                                 <a href="<?php echo esc_url( $account_url ); ?>#dashboard" class="flex items-center gap-2.5 px-3 py-2 rounded-lg hover:bg-surface-container hover:text-primary transition-colors">
                                     <span class="material-symbols-outlined notranslate text-[18px] text-secondary" translate="no">dashboard</span>
-                                    <span>Sanctuary Dashboard</span>
+                                    <span>Dashboard</span>
                                 </a>
                                 <a href="<?php echo esc_url( $account_url ); ?>#bookings" class="flex items-center gap-2.5 px-3 py-2 rounded-lg hover:bg-surface-container hover:text-primary transition-colors">
                                     <span class="material-symbols-outlined notranslate text-[18px] text-secondary" translate="no">calendar_month</span>
@@ -399,19 +407,19 @@ $sec_digits       = preg_replace( '/[^0-9\+]/', '', $phone_secondary );
                                 </a>
                                 <a href="<?php echo esc_url( $account_url ); ?>#orders" class="flex items-center gap-2.5 px-3 py-2 rounded-lg hover:bg-surface-container hover:text-primary transition-colors">
                                     <span class="material-symbols-outlined notranslate text-[18px] text-secondary" translate="no">inventory_2</span>
-                                    <span>Dispensary Orders</span>
+                                    <span>My Orders</span>
                                 </a>
                                 <a href="<?php echo esc_url( $account_url ); ?>#downloads" class="flex items-center gap-2.5 px-3 py-2 rounded-lg hover:bg-surface-container hover:text-primary transition-colors">
                                     <span class="material-symbols-outlined notranslate text-[18px] text-secondary" translate="no">file_download</span>
-                                    <span>Vedic Blueprints &amp; PDFs</span>
+                                    <span>Downloads &amp; Reports</span>
                                 </a>
                                 <a href="<?php echo esc_url( $account_url ); ?>#addresses" class="flex items-center gap-2.5 px-3 py-2 rounded-lg hover:bg-surface-container hover:text-primary transition-colors">
                                     <span class="material-symbols-outlined notranslate text-[18px] text-secondary" translate="no">pin_drop</span>
-                                    <span>Delivery Addresses</span>
+                                    <span>Saved Addresses</span>
                                 </a>
                                 <a href="<?php echo esc_url( $account_url ); ?>#account-details" class="flex items-center gap-2.5 px-3 py-2 rounded-lg hover:bg-surface-container hover:text-primary transition-colors">
                                     <span class="material-symbols-outlined notranslate text-[18px] text-secondary" translate="no">photo_camera</span>
-                                    <span>Profile &amp; Avatar Setup</span>
+                                    <span>Profile &amp; Account Details</span>
                                 </a>
                                 <?php if ( current_user_can( 'manage_options' ) ) : ?>
                                     <a href="<?php echo esc_url( admin_url() ); ?>" class="flex items-center gap-2.5 px-3 py-2 rounded-lg hover:bg-surface-container hover:text-primary transition-colors text-primary font-semibold">
@@ -434,7 +442,7 @@ $sec_digits       = preg_replace( '/[^0-9\+]/', '', $phone_secondary );
                         </div>
                     </div>
                 <?php else : ?>
-                    <a href="<?php echo esc_url( $account_url ); ?>" title="<?php esc_attr_e( 'Client Sanctuary Portal', 'anukul' ); ?>" class="w-9 h-9 rounded-full bg-primary flex items-center justify-center text-on-primary hover:bg-secondary transition-colors shadow-sm notranslate" translate="no">
+                    <a href="<?php echo esc_url( $account_url ); ?>" title="<?php esc_attr_e( 'My Account', 'anukul' ); ?>" class="w-9 h-9 rounded-full bg-primary flex items-center justify-center text-on-primary hover:bg-secondary transition-colors shadow-sm notranslate" translate="no">
                         <span class="material-symbols-outlined notranslate text-[18px]" translate="no">person</span>
                     </a>
 
@@ -494,13 +502,13 @@ $sec_digits       = preg_replace( '/[^0-9\+]/', '', $phone_secondary );
 
             <!-- Mobile Contact Coordinates -->
             <div class="p-3 rounded-lg bg-[#1F4D3A] text-white text-xs space-y-1.5 notranslate" translate="no">
-                <div class="text-[#E8D8BC] font-semibold uppercase tracking-wider text-[11px]">Sanctuary Concierge</div>
+                <div class="text-[#E8D8BC] font-semibold uppercase tracking-wider text-[11px]">Clinic Support &amp; Contact</div>
                 <div class="flex items-center justify-between">
                     <span>WhatsApp / Booking:</span>
                     <a href="https://wa.me/<?php echo esc_attr( $wa_digits ); ?>" target="_blank" class="text-[#25D366] font-bold"><?php echo esc_html( $phone ); ?></a>
                 </div>
                 <div class="flex items-center justify-between">
-                    <span>Helpline Desk:</span>
+                    <span>Clinic Desk:</span>
                     <a href="tel:<?php echo esc_attr( $sec_digits ); ?>" class="text-white font-medium"><?php echo esc_html( $phone_secondary ); ?></a>
                 </div>
                 <div class="flex items-center justify-between text-[#E8D8BC]/80 pt-1 border-t border-white/10 text-[11px]">

@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 /**
  * The template for displaying all single posts
  *
@@ -13,18 +13,18 @@ get_header();
 ?>
 
 <!-- Breadcrumbs Bar -->
-<section class="w-full bg-[#F7F1E3]/80 border-b border-[#E8D8BC] py-3.5">
+<section class="anukul-breadcrumb-bar w-full bg-[#F5EFE3] border-b border-[#E5D5BA] py-4 sm:py-5 shadow-[0_1px_3px_rgba(0,0,0,0.02)]">
   <div class="max-w-[1440px] mx-auto px-6 lg:px-12 flex items-center justify-between text-on-surface-variant font-body-sm text-sm">
     <nav aria-label="Breadcrumb" class="flex items-center gap-2 tracking-wider">
-      <a class="hover:text-primary transition-colors" data-path="home" href="<?php echo esc_url( home_url( '/' ) ); ?>">Home</a>
+      <a class="hover:text-primary transition-colors font-medium" data-path="home" href="<?php echo esc_url( home_url( '/' ) ); ?>">Home</a>
       <span class="opacity-40">/</span>
-      <a class="hover:text-primary transition-colors" href="<?php echo esc_url( home_url( '/blog/' ) ); ?>">The Journal</a>
+      <a class="hover:text-primary transition-colors font-medium" href="<?php echo esc_url( home_url( '/blog/' ) ); ?>">Blog</a>
       <span class="opacity-40">/</span>
       <span class="text-primary font-semibold truncate max-w-xs sm:max-w-md"><?php the_title(); ?></span>
     </nav>
-    <div class="hidden sm:flex items-center gap-2 font-label-sm text-xs uppercase tracking-[0.2em] text-secondary font-bold">
+    <div class="hidden sm:flex items-center gap-2 font-label-sm text-xs uppercase tracking-[0.18em] text-secondary font-bold">
       <span class="inline-block w-2 h-2 rounded-full bg-secondary"></span>
-      The ANUKUL Journal &bull; Classical Folio
+      ANUKUL Blog &bull; Health &amp; Vastu
     </div>
   </div>
 </section>

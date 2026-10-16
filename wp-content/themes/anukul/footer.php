@@ -23,7 +23,9 @@ $hours            = get_theme_mod( 'anukul_hours', 'Mon–Sat: 9:30 AM TO 6:30 P
 $address          = get_theme_mod( 'anukul_address', 'Prime Vedic Enclave, Cultural Quarter' );
 $footer_tagline   = get_theme_mod( 'anukul_footer_tagline', 'Health • Space • Lifestyle • Harmony' );
 $footer_ethos     = get_theme_mod( 'anukul_footer_ethos', 'Anchored in classical Vedic sciences, spatial alignment, and holistic constitutional balance for serene modern living.' );
-$copyright_text   = get_theme_mod( 'anukul_footer_copyright', '© ' . date( 'Y' ) . ' ' . get_bloginfo( 'name' ) . '. All rights reserved. Responsible Vedic Clinical Practice.' );
+$copyright_text   = get_theme_mod( 'anukul_footer_copyright', '© ' . date( 'Y' ) . ' ' . get_bloginfo( 'name' ) . '. All rights reserved.' );
+$copyright_text   = str_replace( array( 'Responsible Vedic Clinical Practice.', 'Responsible Vedic Clinical Practice' ), '', $copyright_text );
+$copyright_text   = trim( preg_replace( '/\s+/', ' ', $copyright_text ) );
 $footer_logo_url  = get_theme_mod( 'anukul_footer_logo' ) ?: anukul_get_logo_url();
 
 $wa_digits        = preg_replace( '/[^0-9]/', '', $phone );
@@ -32,7 +34,7 @@ $sec_digits       = preg_replace( '/[^0-9\+]/', '', $phone_secondary );
 // WhatsApp Floating Widget Configuration
 $wa_enable        = get_theme_mod( 'anukul_whatsapp_enable', 1 );
 $wa_number        = get_theme_mod( 'anukul_whatsapp_number', '+91 7624012501' );
-$wa_greeting      = get_theme_mod( 'anukul_whatsapp_greeting', 'Namaste ANUKUL Sanctuary, I would like to inquire about appointments and consultations.' );
+$wa_greeting      = get_theme_mod( 'anukul_whatsapp_greeting', 'Hello ANUKUL Clinic, I would like to inquire about appointments and consultations.' );
 $wa_widget_digits = preg_replace( '/[^0-9]/', '', $wa_number );
 
 $has_col_4        = is_active_sidebar( 'footer-4' );
@@ -66,13 +68,13 @@ $col3_class       = $has_col_4 ? 'md:col-span-3' : 'md:col-span-3';
                 <?php endif; ?>
             </div>
 
-            <!-- Col 2: Explorations Navigation (Widget Area: footer-2) -->
+            <!-- Col 2: Quick Links (Widget Area: footer-2) -->
             <div class="<?php echo esc_attr( $col2_class ); ?> flex flex-col justify-start space-y-3">
                 <?php if ( is_active_sidebar( 'footer-2' ) ) : ?>
                     <?php dynamic_sidebar( 'footer-2' ); ?>
                 <?php else : ?>
                     <h3 class="font-label-md text-label-md uppercase text-[#B38A3E] tracking-widest font-semibold">
-                        <?php esc_html_e( 'Explorations', 'anukul' ); ?>
+                        <?php esc_html_e( 'Quick Links', 'anukul' ); ?>
                     </h3>
                     <nav class="grid grid-cols-2 gap-y-2.5 gap-x-4">
                         <?php anukul_render_nav_footer(); ?>
@@ -80,16 +82,16 @@ $col3_class       = $has_col_4 ? 'md:col-span-3' : 'md:col-span-3';
                 <?php endif; ?>
             </div>
 
-            <!-- Col 3: Sanctuary Hours & Details (Widget Area: footer-3) -->
+            <!-- Col 3: Clinic Timings & Contact (Widget Area: footer-3) -->
             <div class="<?php echo esc_attr( $col3_class ); ?> flex flex-col justify-start space-y-2.5">
                 <?php if ( is_active_sidebar( 'footer-3' ) ) : ?>
                     <?php dynamic_sidebar( 'footer-3' ); ?>
                 <?php else : ?>
                     <h3 class="font-label-md text-label-md uppercase text-[#B38A3E] tracking-widest font-semibold">
-                        <?php esc_html_e( 'Sanctuary Hours & Concierge', 'anukul' ); ?>
+                        <?php esc_html_e( 'Clinic Timings & Contact', 'anukul' ); ?>
                     </h3>
                     <p class="font-body-sm text-body-sm text-[#F7F1E3]/90 leading-relaxed">
-                        <span class="text-[#B38A3E] font-medium block"><?php esc_html_e( 'Operating Hours:', 'anukul' ); ?></span>
+                        <span class="text-[#B38A3E] font-medium block"><?php esc_html_e( 'Working Hours:', 'anukul' ); ?></span>
                         <?php echo esc_html( $hours ); ?>
                     </p>
                     <div class="font-body-sm text-body-sm text-[#F7F1E3]/90 space-y-1 pt-1 notranslate" translate="no">
@@ -98,7 +100,7 @@ $col3_class       = $has_col_4 ? 'md:col-span-3' : 'md:col-span-3';
                             <a href="https://wa.me/<?php echo esc_attr( $wa_digits ); ?>" target="_blank" class="hover:text-[#B38A3E] transition-colors font-medium text-white"><?php echo esc_html( $phone ); ?></a>
                         </div>
                         <div>
-                            <span class="text-[#B38A3E] font-medium"><?php esc_html_e( 'Helpline Desk:', 'anukul' ); ?></span><br>
+                            <span class="text-[#B38A3E] font-medium"><?php esc_html_e( 'Clinic Desk:', 'anukul' ); ?></span><br>
                             <a href="tel:<?php echo esc_attr( $sec_digits ); ?>" class="hover:text-[#B38A3E] transition-colors"><?php echo esc_html( $phone_secondary ); ?></a>
                         </div>
                     </div>
@@ -118,17 +120,17 @@ $col3_class       = $has_col_4 ? 'md:col-span-3' : 'md:col-span-3';
         </div>
 
         <!-- Bottom Copyright, Developer Credits & Dynamic Legal / Policy Navigation -->
-        <div class="pt-6 flex flex-col lg:flex-row items-center justify-between gap-4">
+        <div class="pt-6 border-t border-[#B38A3E]/20 flex flex-col lg:flex-row items-center justify-between gap-4">
             <div class="flex flex-col sm:flex-row items-center gap-2 sm:gap-3 text-center sm:text-left">
-                <p class="font-body-sm text-body-sm text-[#E8D8BC]/70">
+                <p class="font-body-sm text-body-sm text-[#E8D8BC]/80">
                     <?php echo esc_html( $copyright_text ); ?>
                 </p>
                 <span class="hidden sm:inline text-[#B38A3E]/40">&bull;</span>
-                <p class="font-body-sm text-body-sm text-[#E8D8BC]/85">
+                <p class="font-body-sm text-body-sm text-[#E8D8BC]/90">
                     <?php esc_html_e( 'Design and developed by', 'anukul' ); ?> <a href="https://raylancer.com" target="_blank" rel="noopener noreferrer" class="text-[#B38A3E] hover:text-white transition-colors font-medium underline underline-offset-2">Raylancer Services</a>
                 </p>
             </div>
-            <div class="flex flex-wrap items-center justify-center lg:justify-end gap-x-4 gap-y-2 font-body-sm text-body-sm text-[#E8D8BC]/75">
+            <div class="flex flex-wrap items-center justify-center lg:justify-end gap-x-4 gap-y-2 font-body-sm text-body-sm text-[#E8D8BC]/80 pr-0 lg:pr-36">
                 <?php anukul_render_nav_policy(); ?>
             </div>
         </div>

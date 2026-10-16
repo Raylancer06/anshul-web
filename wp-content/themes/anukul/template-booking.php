@@ -37,19 +37,19 @@ $default_booking_phone = $b_curr_user->ID ? get_user_meta( $b_curr_user->ID, 'bi
 <section class="w-full bg-surface pt-space-lg pb-space-xl px-margin md:px-margin-md lg:px-margin-lg">
 <div class="max-w-7xl mx-auto">
 <!-- Breadcrumb -->
-<nav aria-label="Breadcrumb" class="flex items-center gap-space-xs font-label-md text-label-md text-on-surface-variant mb-space-md">
-<a class="hover:text-primary transition-colors" href="<?php echo esc_url( home_url( "/" ) ); ?>">Home</a>
+<nav aria-label="Breadcrumb" class="flex items-center gap-space-xs font-label-md text-label-md text-on-surface-variant mb-space-md pt-2">
+<a class="hover:text-primary transition-colors font-medium" href="<?php echo esc_url( home_url( "/" ) ); ?>">Home</a>
 <span class="text-outline text-[12px]">/</span>
-<a class="hover:text-primary transition-colors" href="<?php echo esc_url( home_url( "/services/" ) ); ?>">Consultations</a>
+<a class="hover:text-primary transition-colors font-medium" href="<?php echo esc_url( home_url( "/services/" ) ); ?>">Consultations</a>
 <span class="text-outline text-[12px]">/</span>
 <span class="text-primary font-semibold">Book Your Consultation</span>
 </nav>
 <div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-end pb-space-lg">
 <div class="lg:col-span-8 flex flex-col gap-space-xs">
-<span class="font-label-sm text-label-sm text-secondary uppercase tracking-[0.2em] font-bold">ANUKUL CONSULTATIONS · CLINICAL SCHEDULING &amp; HARMONY</span>
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-[0.18em] font-bold">ONLINE &amp; IN-CLINIC APPOINTMENTS</span>
 <h1 class="font-headline-lg text-headline-lg text-primary tracking-tight">Book Your Consultation</h1>
 <p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mt-space-xs">
-            Choose your therapeutic consultation modality, select an auspicious appointment slot in accordance with diurnal rhythm, and secure your session through our clinical gateway.
+            Select your consultation service, choose your preferred appointment date and time slot, and confirm your booking securely.
           </p>
 </div>
 <div class="lg:col-span-4 flex lg:justify-end">

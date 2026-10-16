@@ -50,18 +50,18 @@ $current_slug = $post ? $post->post_name : '';
 ?>
 
 <!-- Minimalist Breadcrumb Bar -->
-<section class="w-full bg-[#F7F1E3]/80 border-b border-[#E8D8BC] py-3.5">
+<section class="anukul-breadcrumb-bar w-full bg-[#F5EFE3] border-b border-[#E5D5BA] py-4 sm:py-5 shadow-[0_1px_3px_rgba(0,0,0,0.02)]">
   <div class="max-w-[1360px] mx-auto px-6 lg:px-12 flex items-center justify-between text-on-surface-variant font-body-sm text-sm">
     <nav aria-label="Breadcrumb" class="flex items-center gap-2 tracking-wider">
-      <a class="hover:text-primary transition-colors" href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php esc_html_e( 'Home', 'anukul' ); ?></a>
+      <a class="hover:text-primary transition-colors font-medium" href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php esc_html_e( 'Home', 'anukul' ); ?></a>
       <span class="opacity-40">/</span>
-      <span class="text-outline uppercase font-label-sm text-xs"><?php esc_html_e( 'Legal & Compliance', 'anukul' ); ?></span>
+      <span class="text-outline uppercase font-label-sm text-xs"><?php esc_html_e( 'Policies', 'anukul' ); ?></span>
       <span class="opacity-40">/</span>
       <span class="text-primary font-semibold"><?php the_title(); ?></span>
     </nav>
-    <div class="hidden sm:flex items-center gap-2 font-label-sm text-xs uppercase tracking-[0.2em] text-secondary font-bold">
+    <div class="hidden sm:flex items-center gap-2 font-label-sm text-xs uppercase tracking-[0.18em] text-secondary font-bold">
       <span class="inline-block w-2 h-2 rounded-full bg-secondary"></span>
-      <?php esc_html_e( 'Statutory Regulatory Framework', 'anukul' ); ?>
+      <?php esc_html_e( 'Clinic Policies & Legal Terms', 'anukul' ); ?>
     </div>
   </div>
 </section>

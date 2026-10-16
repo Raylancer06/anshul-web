@@ -11,19 +11,19 @@ if ( ! defined( 'ABSPATH' ) ) {
 ?>
 
 <div class="flex flex-col w-full">
-  <!-- Sub-navigation & Sacred Axis Breadcrumbs -->
-  <section class="w-full bg-[#FFF8F4] py-space-sm border-b border-[#E8D8BC]">
+  <!-- Navigation & Breadcrumbs -->
+  <section class="anukul-breadcrumb-bar w-full bg-[#F5EFE3] border-b border-[#E5D5BA] py-4 sm:py-5 shadow-[0_1px_3px_rgba(0,0,0,0.02)]">
     <div class="max-w-7xl mx-auto px-6 lg:px-12 flex items-center justify-between text-[#414944] font-body-sm text-[13px]">
       <nav aria-label="Breadcrumb" class="flex items-center gap-space-xs tracking-wider">
-        <a class="hover:text-[#023625] transition-colors" data-path="home" href="<?php echo esc_url( home_url( '/' ) ); ?>">Home</a>
+        <a class="hover:text-[#023625] transition-colors font-medium" data-path="home" href="<?php echo esc_url( home_url( '/' ) ); ?>">Home</a>
         <span class="opacity-40">/</span>
-        <a class="hover:text-[#023625] transition-colors" data-path="account" href="<?php echo esc_url( function_exists( 'wc_get_page_permalink' ) ? wc_get_page_permalink( 'myaccount' ) : home_url( '/my-account/' ) ); ?>">My Account</a>
+        <a class="hover:text-[#023625] transition-colors font-medium" data-path="account" href="<?php echo esc_url( function_exists( 'wc_get_page_permalink' ) ? wc_get_page_permalink( 'myaccount' ) : home_url( '/my-account/' ) ); ?>">My Account</a>
         <span class="opacity-40">/</span>
-        <span id="auth-breadcrumb-current" aria-current="page" class="text-[#023625] font-medium">Portal Access</span>
+        <span id="auth-breadcrumb-current" aria-current="page" class="text-[#023625] font-semibold">Account Login</span>
       </nav>
-      <div class="hidden sm:flex items-center gap-space-xs font-label-sm text-[10px] uppercase tracking-[0.2em] text-[#974800] font-bold">
+      <div class="hidden sm:flex items-center gap-space-xs font-label-sm text-[10px] uppercase tracking-[0.18em] text-[#974800] font-bold">
         <span class="inline-block w-1.5 h-1.5 rounded-full bg-[#974800]"></span>
-        Ishanya Portal &bull; SSL 256-Bit Encrypted
+        Client Portal &bull; SSL 256-Bit Encrypted
       </div>
     </div>
   </section>

@@ -103,18 +103,18 @@ $load_address    = $is_edit_address ? sanitize_key( get_query_var( 'edit-address
 ?>
 
 <!-- Breadcrumb Bar -->
-<section class="w-full bg-[#F7F1E3]/80 border-b border-[#E8D8BC] py-3.5">
+<section class="anukul-breadcrumb-bar w-full bg-[#F5EFE3] border-b border-[#E5D5BA] py-4 sm:py-5 shadow-[0_1px_3px_rgba(0,0,0,0.02)]">
   <div class="max-w-[1440px] mx-auto px-6 lg:px-12 flex items-center justify-between text-on-surface-variant font-body-sm text-sm">
     <nav aria-label="Breadcrumb" class="flex items-center gap-2 tracking-wider">
-      <a class="hover:text-primary transition-colors" data-path="home" href="<?php echo esc_url( home_url( '/' ) ); ?>">Home</a>
+      <a class="hover:text-primary transition-colors font-medium" data-path="home" href="<?php echo esc_url( home_url( '/' ) ); ?>">Home</a>
       <span class="opacity-40">/</span>
-      <a class="hover:text-primary transition-colors" href="<?php echo esc_url( function_exists( 'wc_get_page_permalink' ) ? wc_get_page_permalink( 'myaccount' ) : home_url( '/my-account/' ) ); ?>">My Account</a>
+      <a class="hover:text-primary transition-colors font-medium" href="<?php echo esc_url( function_exists( 'wc_get_page_permalink' ) ? wc_get_page_permalink( 'myaccount' ) : home_url( '/my-account/' ) ); ?>">My Account</a>
       <span class="opacity-40">/</span>
-      <span id="account-breadcrumb-current" class="text-primary font-semibold">Sanctuary Overview</span>
+      <span id="account-breadcrumb-current" class="text-primary font-semibold">Dashboard</span>
     </nav>
-    <div class="hidden sm:flex items-center gap-2 font-label-sm text-xs uppercase tracking-[0.2em] text-secondary font-bold">
+    <div class="hidden sm:flex items-center gap-2 font-label-sm text-xs uppercase tracking-[0.18em] text-secondary font-bold">
       <span class="inline-block w-2 h-2 rounded-full bg-secondary"></span>
-      Ishanya Portal &bull; Client Sanctuary
+      Client Portal &bull; My Account
     </div>
   </div>
 </section>
@@ -136,7 +136,7 @@ $load_address    = $is_edit_address ? sanitize_key( get_query_var( 'edit-address
     <!-- UNIFIED LEFT SIDEBAR (Span 4)             -->
     <!-- ========================================== -->
     <aside class="lg:col-span-4 flex flex-col gap-6">
-      <!-- Identity Sanctuary Profile Plaque -->
+      <!-- Identity Profile Plaque -->
       <div class="bg-surface-container-low rounded-xl p-6 shadow-sm border border-[#E8D8BC]/60 relative overflow-hidden">
         <div class="absolute -right-6 -bottom-6 w-24 h-24 bg-surface-container-high rounded-full opacity-60 pointer-events-none"></div>
         <div class="flex items-center gap-4">
@@ -147,14 +147,14 @@ $load_address    = $is_edit_address ? sanitize_key( get_query_var( 'edit-address
                 <span class="text-[9px] font-bold uppercase tracking-wider">Edit</span>
               </div>
             </div>
-            <span class="absolute bottom-0 right-0 w-5 h-5 rounded-full bg-primary-container flex items-center justify-center text-on-primary text-[10px] shadow" title="Clinical Sanctuary Verified">
+            <span class="absolute bottom-0 right-0 w-5 h-5 rounded-full bg-primary-container flex items-center justify-center text-on-primary text-[10px] shadow" title="Verified Account">
               <span class="material-symbols-outlined notranslate text-[12px]" translate="no" style="font-variation-settings: 'FILL' 1;">verified</span>
             </span>
           </div>
           <input type="file" id="anukul-avatar-sidebar-input" accept="image/jpeg,image/png,image/webp" class="hidden" onchange="handleSanctuaryAvatarUpload(this)">
           <div class="min-w-0 flex-1">
             <div class="flex items-center gap-1.5 mb-1">
-              <span class="font-label-sm text-xs uppercase tracking-wider text-secondary font-bold">Seeker Profile</span>
+              <span class="font-label-sm text-xs uppercase tracking-wider text-secondary font-bold">My Profile</span>
             </div>
             <h2 class="font-headline-sm text-2xl text-primary tracking-tight truncate"><?php echo esc_html( $full_name ); ?></h2>
             <p class="font-body-sm text-xs text-on-surface-variant truncate"><?php echo esc_html( $user_email ); ?></p>
@@ -163,7 +163,7 @@ $load_address    = $is_edit_address ? sanitize_key( get_query_var( 'edit-address
         <div class="mt-5 pt-4 border-t border-[#E8D8BC]/50 flex items-center justify-between text-xs">
           <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-surface-container-high text-secondary font-label-md tracking-wider uppercase font-semibold">
             <span class="material-symbols-outlined notranslate text-[14px]" translate="no">spa</span>
-            <?php echo ! empty( $user_prakriti ) ? esc_html( $user_prakriti ) . ' Regimen' : 'Sanctuary Seeker'; ?>
+            <?php echo ! empty( $user_prakriti ) ? esc_html( $user_prakriti ) . ' Regimen' : 'Registered Client'; ?>
           </span>
           <span class="font-label-sm text-outline font-semibold">ID: ANK-<?php echo esc_html( 1000 + $user_id ); ?></span>
         </div>
@@ -253,26 +253,26 @@ $load_address    = $is_edit_address ? sanitize_key( get_query_var( 'edit-address
         </a>
       </nav>
 
-      <!-- Sanctuary Concierge Help Desk Card -->
+      <!-- Clinic Support & Help Desk Card -->
       <div class="bg-surface-container rounded-xl p-5 shadow-sm border border-[#E8D8BC]/60 relative overflow-hidden">
         <div class="flex items-start gap-3.5">
           <div class="w-10 h-10 rounded-full bg-secondary/10 flex items-center justify-center shrink-0 text-secondary">
             <span class="material-symbols-outlined notranslate text-[22px]" translate="no">support_agent</span>
           </div>
           <div class="flex-1">
-            <h3 class="font-headline-sm text-xl text-primary mb-1">Dispensary Desk</h3>
+            <h3 class="font-headline-sm text-xl text-primary mb-1">Clinic Helpdesk</h3>
             <p class="font-body-sm text-xs text-on-surface-variant leading-relaxed mb-3">
-              Need assistance with your clinical orders, dosha constitution, or spatial blueprint audits?
+              Need assistance with your orders, consultations, or health records?
             </p>
             <a class="inline-flex items-center gap-1.5 text-secondary hover:text-primary transition-colors font-label-md text-xs tracking-wider uppercase font-bold" href="<?php echo esc_url( home_url( '/contact/' ) ); ?>">
-              <span>Contact Sanctuary Concierge</span>
+              <span>Contact Clinic Support</span>
               <span class="material-symbols-outlined notranslate text-[14px]" translate="no">north_east</span>
             </a>
           </div>
         </div>
       </div>
 
-      <!-- Sacred Geometry Watermark Vignette -->
+      <!-- Vastu Harmony Card -->
       <div class="p-4 rounded-xl bg-surface-container-lowest border border-[#E8D8BC]/50 shadow-sm flex items-center gap-4">
         <div class="w-12 h-12 rounded-lg bg-surface-container flex items-center justify-center shrink-0">
           <svg class="w-8 h-8 text-secondary" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 100 100">
@@ -284,11 +284,11 @@ $load_address    = $is_edit_address ? sanitize_key( get_query_var( 'edit-address
           </svg>
         </div>
         <div>
-          <p class="font-label-sm text-[11px] tracking-wider uppercase text-outline font-bold">Vastu Spatial Harmony</p>
+          <p class="font-label-sm text-[11px] tracking-wider uppercase text-outline font-bold">Vastu Harmony Status</p>
           <?php if ( ! empty( $user_vastu ) ) : ?>
             <p class="font-body-sm text-xs text-on-surface font-semibold"><?php echo esc_html( $user_vastu ); ?></p>
           <?php else : ?>
-            <p class="font-body-sm text-xs text-on-surface-variant">Spatial Audit: <span class="text-secondary font-medium">Pending</span></p>
+            <p class="font-body-sm text-xs text-on-surface-variant">Property Audit: <span class="text-secondary font-medium">Pending</span></p>
             <a href="<?php echo esc_url( home_url( '/book-your-consultation/' ) ); ?>" class="font-label-sm text-[10px] text-primary hover:text-secondary uppercase tracking-wider font-semibold block mt-0.5">Schedule Review &rarr;</a>
           <?php endif; ?>
         </div>
@@ -314,7 +314,7 @@ $load_address    = $is_edit_address ? sanitize_key( get_query_var( 'edit-address
                   Back to Orders
                 </a>
                 <span class="text-outline-variant">&bull;</span>
-                <span class="font-label-sm text-xs text-outline uppercase tracking-wider">Sanctuary Dispatch</span>
+                <span class="font-label-sm text-xs text-outline uppercase tracking-wider">Order Details</span>
               </div>
               <h1 class="font-headline-lg text-3xl text-primary tracking-tight">ORDER #<?php echo esc_html( $view_order->get_order_number() ); ?></h1>
               <p class="font-body-sm text-xs text-on-surface-variant mt-1">
@@ -420,19 +420,19 @@ $load_address    = $is_edit_address ? sanitize_key( get_query_var( 'edit-address
         <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 pb-3 border-b border-[#E8D8BC]">
           <div>
             <div class="flex items-center gap-2 mb-1.5">
-              <span class="font-label-sm text-xs uppercase tracking-widest text-secondary font-bold">SANCTUARY OVERVIEW &bull; PRAKRITI HARMONY</span>
+              <span class="font-label-sm text-xs uppercase tracking-widest text-secondary font-bold">ACCOUNT DASHBOARD</span>
               <span class="text-outline-variant">&bull;</span>
-              <span class="font-label-sm text-xs text-outline uppercase tracking-wider">Sanctuary Core</span>
+              <span class="font-label-sm text-xs text-outline uppercase tracking-wider">Account Overview</span>
             </div>
             <h1 class="font-headline-lg text-3xl sm:text-4xl text-primary tracking-tight">NAMASTE, <?php echo esc_html( strtoupper( $first_name ) ); ?></h1>
             <p class="font-body-md text-sm text-on-surface-variant max-w-2xl mt-1 leading-relaxed">
-              Welcome to your personal clinical sanctuary. Your health ledger, spatial coordinates, and consecrated botanical orders are preserved in your profile.
+              Welcome to your ANUKUL client account. You can view your consultations, prescriptions, orders, and saved addresses here.
             </p>
           </div>
           <div class="flex items-center gap-2 self-start md:self-auto shrink-0">
             <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-primary/10 text-primary font-label-sm text-xs font-semibold">
               <span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
-              Active Sanctuary Session
+              Account Active
             </span>
           </div>
         </div>
@@ -521,16 +521,16 @@ $load_address    = $is_edit_address ? sanitize_key( get_query_var( 'edit-address
               <div class="space-y-2 max-w-xl">
                 <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-on-primary/10 text-primary-fixed font-label-sm text-xs uppercase tracking-wider font-semibold">
                   <span class="w-2 h-2 rounded-full bg-secondary"></span>
-                  Welcome to ANUKUL Sanctuary
+                  Welcome to ANUKUL Clinic
                 </div>
                 <h3 class="font-headline-sm text-2xl sm:text-3xl text-on-primary font-normal">Authentic Herbal Formulations &amp; Consultations</h3>
                 <p class="font-body-sm text-sm text-inverse-on-surface leading-relaxed">
-                  Explore our classical dispensary formulations or schedule your one-on-one Vedic health assessment.
+                  Explore our classical Ayurveda formulations or schedule your one-on-one health assessment.
                 </p>
               </div>
               <div class="flex flex-col sm:flex-row gap-3 shrink-0">
                 <a href="<?php echo esc_url( function_exists( 'wc_get_page_permalink' ) ? wc_get_page_permalink( 'shop' ) : home_url( '/shop/' ) ); ?>" class="inline-flex items-center justify-center px-5 py-2.5 rounded-lg bg-surface text-primary hover:bg-[#F7F1E3] font-label-md text-xs uppercase tracking-wider font-bold transition-all shadow-sm">
-                  Visit Dispensary
+                  Browse Shop
                 </a>
                 <a href="<?php echo esc_url( home_url( '/book-your-consultation/' ) ); ?>" class="inline-flex items-center justify-center px-5 py-2.5 rounded-lg border border-on-primary/30 text-on-primary hover:bg-on-primary/10 font-label-md text-xs uppercase tracking-wider transition-all">
                   Book Consultation
@@ -548,7 +548,7 @@ $load_address    = $is_edit_address ? sanitize_key( get_query_var( 'edit-address
               <div class="flex items-center justify-between mb-3 pb-2 border-b border-[#E8D8BC]/40">
                 <h4 class="font-label-md text-sm uppercase tracking-wider text-primary font-bold flex items-center gap-2">
                   <span class="material-symbols-outlined notranslate text-secondary text-[18px]" translate="no">location_on</span>
-                  Default Sanctuary Address
+                  Default Address
                 </h4>
                 <button onclick="switchAccountTab('addresses')" class="text-xs uppercase font-label-sm text-secondary hover:text-primary transition-colors font-bold">Edit</button>
               </div>
@@ -558,12 +558,12 @@ $load_address    = $is_edit_address ? sanitize_key( get_query_var( 'edit-address
                 </div>
               <?php else : ?>
                 <p class="font-body-sm text-sm text-on-surface-variant mt-1 italic">
-                  No default address recorded yet. Configure your billing and shipping address for consecrated dispatches.
+                  No default address recorded yet. Configure your billing and shipping address for smooth order dispatches.
                 </p>
               <?php endif; ?>
             </div>
             <div class="pt-4 mt-4 border-t border-[#E8D8BC]/30 flex items-center justify-between text-xs">
-              <span class="text-on-surface-variant">Validated for Consecrated Deliveries</span>
+              <span class="text-on-surface-variant">Saved Delivery Address</span>
               <span class="text-primary font-semibold flex items-center gap-1">Verified <span class="material-symbols-outlined notranslate text-[14px]" translate="no">check_circle</span></span>
             </div>
           </div>
@@ -891,13 +891,13 @@ $load_address    = $is_edit_address ? sanitize_key( get_query_var( 'edit-address
         <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 pb-3 border-b border-[#E8D8BC]">
           <div>
             <div class="flex items-center gap-2 mb-1.5">
-              <span class="font-label-sm text-xs uppercase tracking-widest text-secondary font-bold">PREMISES &amp; COORDINATES</span>
+              <span class="font-label-sm text-xs uppercase tracking-widest text-secondary font-bold">BILLING &amp; SHIPPING</span>
               <span class="text-outline-variant">&bull;</span>
-              <span class="font-label-sm text-xs text-outline uppercase tracking-wider">Sanctuary Delivery Points</span>
+              <span class="font-label-sm text-xs text-outline uppercase tracking-wider">Delivery Addresses</span>
             </div>
             <h1 class="font-headline-lg text-3xl sm:text-4xl text-primary tracking-tight">SAVED ADDRESSES</h1>
             <p class="font-body-md text-sm text-on-surface-variant max-w-2xl mt-1 leading-relaxed">
-              The following addresses will be calibrated for consecrated dispensary deliveries, herbal formulations, and architectural audit reports.
+              The following addresses are used on the checkout page for order deliveries and consultation invoices.
             </p>
           </div>
         </div>
@@ -910,7 +910,7 @@ $load_address    = $is_edit_address ? sanitize_key( get_query_var( 'edit-address
               <div class="flex items-center justify-between mb-3 pb-2 border-b border-[#E8D8BC]/40">
                 <h3 class="font-label-md text-sm uppercase tracking-wider text-primary font-bold flex items-center gap-2">
                   <span class="material-symbols-outlined notranslate text-secondary text-[18px]" translate="no">receipt_long</span>
-                  Billing Coordinates
+                  Billing Address
                 </h3>
               </div>
               <?php if ( ! empty( $billing_address ) ) : ?>
@@ -936,7 +936,7 @@ $load_address    = $is_edit_address ? sanitize_key( get_query_var( 'edit-address
               <div class="flex items-center justify-between mb-3 pb-2 border-b border-[#E8D8BC]/40">
                 <h3 class="font-label-md text-sm uppercase tracking-wider text-primary font-bold flex items-center gap-2">
                   <span class="material-symbols-outlined notranslate text-secondary text-[18px]" translate="no">local_shipping</span>
-                  Sanctuary Delivery Address
+                  Shipping Address
                 </h3>
               </div>
               <?php if ( ! empty( $shipping_address ) ) : ?>
@@ -966,13 +966,13 @@ $load_address    = $is_edit_address ? sanitize_key( get_query_var( 'edit-address
         <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 pb-3 border-b border-[#E8D8BC]">
           <div>
             <div class="flex items-center gap-2 mb-1.5">
-              <span class="font-label-sm text-xs uppercase tracking-widest text-secondary font-bold">SANCTUARY CREDENTIALS &amp; IDENTITY</span>
+              <span class="font-label-sm text-xs uppercase tracking-widest text-secondary font-bold">PROFILE &amp; SECURITY</span>
               <span class="text-outline-variant">&bull;</span>
-              <span class="font-label-sm text-xs text-outline uppercase tracking-wider">Sanctuary Core</span>
+              <span class="font-label-sm text-xs text-outline uppercase tracking-wider">Account Details</span>
             </div>
             <h1 class="font-headline-lg text-3xl sm:text-4xl text-primary tracking-tight">ACCOUNT DETAILS</h1>
             <p class="font-body-md text-sm text-on-surface-variant max-w-2xl mt-1 leading-relaxed">
-              Keep your personal information up to date so you can manage your ANUKUL account, Ayurvedic dispensary prescriptions, and spatial consultations with seamless clarity.
+              Keep your personal information up to date so you can manage your ANUKUL account, Ayurveda prescriptions, and consultations with ease.
             </p>
           </div>
           <div class="flex items-center gap-2 self-start md:self-auto shrink-0">
@@ -998,8 +998,8 @@ $load_address    = $is_edit_address ? sanitize_key( get_query_var( 'edit-address
                     <span class="material-symbols-outlined notranslate text-[18px]" translate="no">account_circle</span>
                   </span>
                   <div>
-                    <h2 class="font-headline-md text-lg text-primary tracking-tight">SANCTUARY PROFILE AVATAR</h2>
-                    <p class="font-body-sm text-xs text-on-surface-variant">Personalize your seeker identity across your consultations and account</p>
+                    <h2 class="font-headline-md text-lg text-primary tracking-tight">PROFILE PICTURE</h2>
+                    <p class="font-body-sm text-xs text-on-surface-variant">Personalize your profile picture across your account and consultations</p>
                   </div>
                 </div>
                 <div id="sanctuary-avatar-status" class="hidden text-xs font-semibold px-3 py-1 rounded-full"></div>
@@ -1023,7 +1023,7 @@ $load_address    = $is_edit_address ? sanitize_key( get_query_var( 'edit-address
                   <div class="flex flex-wrap items-center justify-center sm:justify-start gap-3">
                     <button type="button" onclick="document.getElementById('anukul-avatar-main-input').click();" id="btn-upload-avatar" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-primary text-white font-label-md text-xs font-bold uppercase tracking-wider hover:bg-primary-container transition-colors shadow-sm">
                       <span class="material-symbols-outlined notranslate text-[16px]" translate="no">upload</span>
-                      <span>Upload Avatar Image</span>
+                      <span>Upload Profile Photo</span>
                     </button>
                     <button type="button" onclick="handleSanctuaryAvatarRemove();" id="btn-remove-avatar" class="inline-flex items-center gap-1.5 px-3 py-2 rounded-lg border border-[#E8D8BC] bg-surface-container text-outline hover:text-red-700 hover:border-red-300 font-label-md text-xs font-semibold transition-colors">
                       <span class="material-symbols-outlined notranslate text-[16px]" translate="no">delete</span>
@@ -1116,13 +1116,13 @@ $load_address    = $is_edit_address ? sanitize_key( get_query_var( 'edit-address
         <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 pb-3 border-b border-[#E8D8BC]">
           <div>
             <div class="flex items-center gap-2 mb-1.5">
-              <span class="font-label-sm text-xs uppercase tracking-widest text-secondary font-bold">SACRED BLUEPRINTS &amp; CLINICAL FILES</span>
+              <span class="font-label-sm text-xs uppercase tracking-widest text-secondary font-bold">REPORTS &amp; DOWNLOADS</span>
               <span class="text-outline-variant">&bull;</span>
-              <span class="font-label-sm text-xs text-outline uppercase tracking-wider">Sanctuary Vault</span>
+              <span class="font-label-sm text-xs text-outline uppercase tracking-wider">Downloads</span>
             </div>
-            <h1 class="font-headline-lg text-3xl sm:text-4xl text-primary tracking-tight">SANCTUARY DOWNLOADS</h1>
+            <h1 class="font-headline-lg text-3xl sm:text-4xl text-primary tracking-tight">MY DOWNLOADS</h1>
             <p class="font-body-md text-sm text-on-surface-variant max-w-2xl mt-1 leading-relaxed">
-              Certified Vastu spatial audit blueprints, personalized Ayurvedic dinacharya regimens, and consultation files available for permanent reference.
+              Download your consultation reports, Vastu audit recommendations, and digital purchases directly here.
             </p>
           </div>
           <?php if ( ! empty( $customer_downloads ) ) : ?>
@@ -1138,7 +1138,7 @@ $load_address    = $is_edit_address ? sanitize_key( get_query_var( 'edit-address
           <!-- Downloads List (Dynamic WooCommerce Downloads) -->
           <div class="space-y-4">
             <?php foreach ( $customer_downloads as $download ) : 
-              $file_name   = ! empty( $download['download_name'] ) ? $download['download_name'] : ( ! empty( $download['product_name'] ) ? $download['product_name'] : 'Sanctuary Document' );
+              $file_name   = ! empty( $download['download_name'] ) ? $download['download_name'] : ( ! empty( $download['product_name'] ) ? $download['product_name'] : 'Document' );
               $file_url    = ! empty( $download['download_url'] ) ? $download['download_url'] : '#';
               $order_num   = ! empty( $download['order_id'] ) ? $download['order_id'] : '';
               $remaining   = isset( $download['downloads_remaining'] ) ? $download['downloads_remaining'] : '';
@@ -1245,14 +1245,14 @@ $load_address    = $is_edit_address ? sanitize_key( get_query_var( 'edit-address
     const crumbElem = document.getElementById('account-breadcrumb-current');
     if (crumbElem) {
       const names = {
-        'dashboard': 'Sanctuary Overview',
-        'bookings': 'Consultations & Sessions',
-        'orders': 'Orders & Dispatches',
-        'addresses': 'Premises Coordinates',
-        'account-details': 'Account Credentials',
-        'downloads': 'Sacred Vault Files'
+        'dashboard': 'Dashboard',
+        'bookings': 'My Consultations',
+        'orders': 'My Orders',
+        'addresses': 'Saved Addresses',
+        'account-details': 'Profile & Account Details',
+        'downloads': 'Downloads & Reports'
       };
-      crumbElem.textContent = names[tabKey] || 'Account';
+      crumbElem.textContent = names[tabKey] || 'Dashboard';
     }
 
     if (scroll) {
@@ -1351,7 +1351,7 @@ $load_address    = $is_edit_address ? sanitize_key( get_query_var( 'edit-address
       }
       if (data && data.success && data.data && data.data.avatar_url) {
         updateAllAvatarElements(data.data.avatar_url);
-        setAvatarStatus(data.data.message || 'Sanctuary avatar updated successfully.', false);
+        setAvatarStatus(data.data.message || 'Profile picture updated successfully.', false);
       } else {
         const msg = (data && data.data && data.data.message) ? data.data.message : 'Upload failed. Please try again.';
         setAvatarStatus(msg, true);
