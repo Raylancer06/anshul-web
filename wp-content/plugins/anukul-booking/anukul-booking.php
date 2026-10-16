@@ -43,6 +43,7 @@ class ANUKUL_Booking_Engine {
         add_filter( 'manage_anukul_booking_posts_columns', array( $this, 'booking_columns' ) );
         add_action( 'manage_anukul_booking_posts_custom_column', array( $this, 'booking_column_content' ), 10, 2 );
         add_action( 'admin_action_anukul_quick_status', array( $this, 'handle_quick_status' ) );
+        add_action( 'admin_action_anukul_approve_consent', array( $this, 'handle_consent_approval' ) );
 
         // AJAX handlers
         add_action( 'wp_ajax_anukul_book_slot', array( $this, 'ajax_book_slot' ) );
@@ -212,6 +213,7 @@ class ANUKUL_Booking_Engine {
             'slot'        => __( 'Date & Muhurta', 'anukul-booking' ),
             'fee'         => __( 'Fee (INR)', 'anukul-booking' ),
             'status'      => __( 'Payment Status', 'anukul-booking' ),
+            'consent'     => __( 'Consent & Approval', 'anukul-booking' ),
             'gcal'        => __( 'Google Calendar', 'anukul-booking' ),
             'quick_act'   => __( 'WhatsApp & Actions', 'anukul-booking' ),
         );
@@ -262,6 +264,47 @@ class ANUKUL_Booking_Engine {
                     $bg = '#F8D7DA'; $color = '#721C24'; $label = ucfirst( str_replace( '_', ' ', $status ) );
                 }
                 echo '<span style="background:' . $bg . '; color:' . $color . '; padding:4px 8px; border-radius:4px; font-weight:600; font-size:11px; text-transform:uppercase;">' . esc_html( $label ) . '</span>';
+                break;
+
+            case 'consent':
+                $agreed     = get_post_meta( $post_id, '_anukul_consent_agreed', true );
+                $app_status = get_post_meta( $post_id, '_anukul_consent_approval_status', true );
+                $app_by     = get_post_meta( $post_id, '_anukul_consent_approved_by', true );
+                $app_at     = get_post_meta( $post_id, '_anukul_consent_approved_at', true );
+                $c_time     = get_post_meta( $post_id, '_anukul_consent_timestamp', true );
+                $nonce      = wp_create_nonce( 'anukul_consent_approval_nonce' );
+
+                if ( empty( $app_status ) ) {
+                    $app_status = ( 'yes' === $agreed ) ? 'pending_review' : 'not_submitted';
+                }
+
+                echo '<div style="display:flex; flex-direction:column; gap:4px;">';
+                if ( 'yes' === $agreed ) {
+                    echo '<span style="color:#023625; font-size:11px; font-weight:600;"><span class="dashicons dashicons-yes-alt" style="font-size:14px; width:14px; height:14px; vertical-align:text-top; color:#25D366;"></span> Client Consented</span>';
+                    if ( ! empty( $c_time ) ) {
+                        echo '<small style="color:#777; font-size:10px;">' . esc_html( $c_time ) . '</small>';
+                    }
+                } else {
+                    echo '<span style="color:#721C24; font-size:11px; font-weight:600;">⚠ Consent Pending</span>';
+                }
+
+                if ( 'approved' === $app_status ) {
+                    echo '<span style="background:#D4EDDA; color:#155724; padding:3px 7px; border-radius:4px; font-weight:700; font-size:11px; display:inline-block;">✓ CLINICALLY APPROVED</span>';
+                    if ( ! empty( $app_by ) ) {
+                        echo '<small style="color:#555; font-size:10px;">by ' . esc_html( $app_by ) . '</small>';
+                    }
+                } elseif ( 'needs_clarification' === $app_status ) {
+                    echo '<span style="background:#CCE5FF; color:#004085; padding:3px 7px; border-radius:4px; font-weight:700; font-size:11px; display:inline-block;">💬 NEEDS INFO</span>';
+                    $approve_url = admin_url( 'admin.php?action=anukul_approve_consent&id=' . $post_id . '&status=approved&_wpnonce=' . $nonce );
+                    echo '<a href="' . esc_url( $approve_url ) . '" style="color:#155724; font-weight:600; font-size:11px; text-decoration:none;">[✓ Approve]</a>';
+                } elseif ( 'declined' === $app_status ) {
+                    echo '<span style="background:#F8D7DA; color:#721C24; padding:3px 7px; border-radius:4px; font-weight:700; font-size:11px; display:inline-block;">✕ DECLINED</span>';
+                } else {
+                    echo '<span style="background:#FFF3CD; color:#856404; padding:3px 7px; border-radius:4px; font-weight:700; font-size:11px; display:inline-block;">⏳ PENDING APPROVAL</span>';
+                    $approve_url = admin_url( 'admin.php?action=anukul_approve_consent&id=' . $post_id . '&status=approved&_wpnonce=' . $nonce );
+                    echo '<a href="' . esc_url( $approve_url ) . '" class="button button-small" style="background:#023625; color:#fff; border-color:#023625; font-size:11px; height:24px; line-height:22px; text-align:center; margin-top:2px;">✓ Approve Consent</a>';
+                }
+                echo '</div>';
                 break;
 
             case 'gcal':
@@ -348,7 +391,44 @@ class ANUKUL_Booking_Engine {
             update_post_meta( $post_id, '_anukul_payment_status', $status );
         }
 
-        wp_safe_redirect( admin_url( 'edit.php?post_type=anukul_booking' ) );
+        wp_safe_redirect( wp_get_referer() ? wp_get_referer() : admin_url( 'edit.php?post_type=anukul_booking' ) );
+        exit;
+    }
+
+    /**
+     * Handle Admin Consent Approval Action
+     */
+    public function handle_consent_approval() {
+        if ( ! current_user_can( 'manage_options' ) ) {
+            wp_die( 'Unauthorized' );
+        }
+        check_admin_referer( 'anukul_consent_approval_nonce' );
+
+        $post_id = isset( $_GET['id'] ) ? absint( $_GET['id'] ) : 0;
+        $status  = isset( $_GET['status'] ) ? sanitize_text_field( $_GET['status'] ) : 'approved';
+
+        if ( $post_id && in_array( $status, array( 'approved', 'pending_review', 'needs_clarification', 'declined' ), true ) ) {
+            $current_admin = wp_get_current_user();
+            $admin_name    = ! empty( $current_admin->display_name ) ? $current_admin->display_name : 'Dr. Nishigandha Chaudhari';
+
+            update_post_meta( $post_id, '_anukul_consent_approval_status', $status );
+            update_post_meta( $post_id, '_anukul_consent_approved_by', $admin_name );
+            update_post_meta( $post_id, '_anukul_consent_approved_at', current_time( 'mysql' ) . ' IST' );
+
+            $order_id = get_post_meta( $post_id, '_anukul_order_id', true );
+            if ( $order_id && function_exists( 'wc_get_order' ) ) {
+                $order = wc_get_order( $order_id );
+                if ( $order ) {
+                    $order->add_order_note( sprintf(
+                        __( 'Clinical Consultation Consent status updated to: %s by %s.', 'anukul-booking' ),
+                        strtoupper( str_replace( '_', ' ', $status ) ),
+                        $admin_name
+                    ) );
+                }
+            }
+        }
+
+        wp_safe_redirect( wp_get_referer() ? wp_get_referer() : admin_url( 'edit.php?post_type=anukul_booking' ) );
         exit;
     }
 
@@ -369,44 +449,93 @@ class ANUKUL_Booking_Engine {
     public function render_booking_meta_box( $post ) {
         wp_nonce_field( 'anukul_booking_meta_save', 'anukul_booking_nonce' );
 
-        $ref    = get_post_meta( $post->ID, '_anukul_reference', true );
-        $tier   = get_post_meta( $post->ID, '_anukul_tier', true );
-        $title  = get_post_meta( $post->ID, '_anukul_tier_title', true );
-        $price  = get_post_meta( $post->ID, '_anukul_price', true );
-        $date   = get_post_meta( $post->ID, '_anukul_slot_date', true );
-        $slot   = get_post_meta( $post->ID, '_anukul_slot_time', true );
-        $name   = get_post_meta( $post->ID, '_anukul_client_name', true );
-        $phone  = get_post_meta( $post->ID, '_anukul_client_phone', true );
-        $email  = get_post_meta( $post->ID, '_anukul_client_email', true );
-        $notes  = get_post_meta( $post->ID, '_anukul_intake_notes', true );
-        $status = get_post_meta( $post->ID, '_anukul_payment_status', true );
-        $order_id = get_post_meta( $post->ID, '_anukul_order_id', true );
+        $ref           = get_post_meta( $post->ID, '_anukul_reference', true );
+        $tier          = get_post_meta( $post->ID, '_anukul_tier', true );
+        $title         = get_post_meta( $post->ID, '_anukul_tier_title', true );
+        $price         = get_post_meta( $post->ID, '_anukul_price', true );
+        $date          = get_post_meta( $post->ID, '_anukul_slot_date', true );
+        $slot          = get_post_meta( $post->ID, '_anukul_slot_time', true );
+        $name          = get_post_meta( $post->ID, '_anukul_client_name', true );
+        $phone         = get_post_meta( $post->ID, '_anukul_client_phone', true );
+        $email         = get_post_meta( $post->ID, '_anukul_client_email', true );
+        $age_dob       = get_post_meta( $post->ID, '_anukul_client_age_dob', true );
+        $city_state    = get_post_meta( $post->ID, '_anukul_client_city_state', true );
+        $prop_address  = get_post_meta( $post->ID, '_anukul_property_address', true );
+        $guardian_name = get_post_meta( $post->ID, '_anukul_guardian_name', true );
+        $notes         = get_post_meta( $post->ID, '_anukul_intake_notes', true );
+        $status        = get_post_meta( $post->ID, '_anukul_payment_status', true );
+        $order_id      = get_post_meta( $post->ID, '_anukul_order_id', true );
 
-        $admin_wa = self::get_admin_whatsapp_number();
+        // Consent & Approval Data
+        $consent_agreed = get_post_meta( $post->ID, '_anukul_consent_agreed', true );
+        $consent_time   = get_post_meta( $post->ID, '_anukul_consent_timestamp', true );
+        $consent_ip     = get_post_meta( $post->ID, '_anukul_consent_ip', true );
+        $consent_ver    = get_post_meta( $post->ID, '_anukul_consent_version', true );
+        $app_status     = get_post_meta( $post->ID, '_anukul_consent_approval_status', true );
+        $app_by         = get_post_meta( $post->ID, '_anukul_consent_approved_by', true );
+        $app_at         = get_post_meta( $post->ID, '_anukul_consent_approved_at', true );
+        $app_notes      = get_post_meta( $post->ID, '_anukul_consent_approval_notes', true );
+
+        if ( empty( $app_status ) ) {
+            $app_status = ( 'yes' === $consent_agreed ) ? 'pending_review' : 'not_submitted';
+        }
+        $nonce = wp_create_nonce( 'anukul_consent_approval_nonce' );
         ?>
-        <table class="form-table">
+        <div style="background:#fcfaf5; padding:15px; border-radius:8px; border:1px solid #e2d8d0; margin-bottom:20px;">
+            <div style="display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid #e2d8d0; padding-bottom:10px; margin-bottom:12px;">
+                <h3 style="margin:0; color:#023625; font-size:16px;">🌿 ANUKUL Consultation Overview: <strong style="color:#B38A3E;"><?php echo esc_html( $ref ? $ref : '#' . $post->ID ); ?></strong></h3>
+                <?php if ( 'approved' === $app_status ) : ?>
+                    <span style="background:#D4EDDA; color:#155724; padding:5px 10px; border-radius:4px; font-weight:700; font-size:12px;">✓ CLINICALLY APPROVED BY DR. NISHIGANDHA CHAUDHARI</span>
+                <?php elseif ( 'needs_clarification' === $app_status ) : ?>
+                    <span style="background:#CCE5FF; color:#004085; padding:5px 10px; border-radius:4px; font-weight:700; font-size:12px;">💬 PATIENT FOLLOWUP NEEDED</span>
+                <?php elseif ( 'declined' === $app_status ) : ?>
+                    <span style="background:#F8D7DA; color:#721C24; padding:5px 10px; border-radius:4px; font-weight:700; font-size:12px;">✕ CONSULTATION DECLINED</span>
+                <?php else : ?>
+                    <span style="background:#FFF3CD; color:#856404; padding:5px 10px; border-radius:4px; font-weight:700; font-size:12px;">⏳ AWAITING DOCTOR APPROVAL</span>
+                <?php endif; ?>
+            </div>
+            <p style="margin:0 0 5px; color:#555; font-size:12px;">
+                <strong>Director / Consultant:</strong> Dr. Nishigandha Chaudhari &bull; <strong>Website:</strong> <a href="https://anukulayurvastu.in" target="_blank">https://anukulayurvastu.in</a> &bull; <strong>Services:</strong> Ayurveda Health &bull; Residential & Commercial Vastu &bull; Astro Nadi
+            </p>
+        </div>
+
+        <!-- 1. Patient Demographics & Contact -->
+        <h4 style="margin:15px 0 8px; color:#023625; border-bottom:2px solid #023625; padding-bottom:4px; font-size:14px; text-transform:uppercase; letter-spacing:0.05em;">1. Patient Demographics &amp; Booking Parameters</h4>
+        <table class="form-table" style="margin-top:0;">
             <tr>
-                <th><label><?php esc_html_e( 'Booking Reference', 'anukul-booking' ); ?></label></th>
-                <td><strong style="font-size:16px; color:#1F4D3A;"><?php echo esc_html( $ref ); ?></strong></td>
+                <th style="width:200px;"><label for="anukul_client_name"><?php esc_html_e( 'Full Legal Name', 'anukul-booking' ); ?> *</label></th>
+                <td><input type="text" id="anukul_client_name" name="_anukul_client_name" value="<?php echo esc_attr( $name ); ?>" class="regular-text" required /></td>
             </tr>
             <tr>
-                <th><label for="anukul_client_name"><?php esc_html_e( 'Client Name', 'anukul-booking' ); ?></label></th>
-                <td><input type="text" id="anukul_client_name" name="_anukul_client_name" value="<?php echo esc_attr( $name ); ?>" class="regular-text" /></td>
+                <th><label for="anukul_client_age_dob"><?php esc_html_e( 'Age / Date of Birth', 'anukul-booking' ); ?></label></th>
+                <td><input type="text" id="anukul_client_age_dob" name="_anukul_client_age_dob" value="<?php echo esc_attr( $age_dob ); ?>" class="regular-text" placeholder="e.g. 34 yrs / 14-Aug-1991" /></td>
             </tr>
             <tr>
-                <th><label for="anukul_client_phone"><?php esc_html_e( 'Phone Number', 'anukul-booking' ); ?></label></th>
-                <td><input type="text" id="anukul_client_phone" name="_anukul_client_phone" value="<?php echo esc_attr( $phone ); ?>" class="regular-text" /></td>
+                <th><label for="anukul_client_city_state"><?php esc_html_e( 'City & State', 'anukul-booking' ); ?></label></th>
+                <td><input type="text" id="anukul_client_city_state" name="_anukul_client_city_state" value="<?php echo esc_attr( $city_state ); ?>" class="regular-text" placeholder="e.g. Pune, Maharashtra" /></td>
             </tr>
             <tr>
-                <th><label for="anukul_client_email"><?php esc_html_e( 'Email Address', 'anukul-booking' ); ?></label></th>
-                <td><input type="email" id="anukul_client_email" name="_anukul_client_email" value="<?php echo esc_attr( $email ); ?>" class="regular-text" /></td>
+                <th><label for="anukul_client_phone"><?php esc_html_e( 'Mobile Number (WhatsApp)', 'anukul-booking' ); ?> *</label></th>
+                <td><input type="text" id="anukul_client_phone" name="_anukul_client_phone" value="<?php echo esc_attr( $phone ); ?>" class="regular-text" required /></td>
             </tr>
             <tr>
-                <th><label for="anukul_slot_date"><?php esc_html_e( 'Consultation Date', 'anukul-booking' ); ?></label></th>
-                <td><input type="date" id="anukul_slot_date" name="_anukul_slot_date" value="<?php echo esc_attr( $date ); ?>" class="regular-text" /></td>
+                <th><label for="anukul_client_email"><?php esc_html_e( 'Email Address', 'anukul-booking' ); ?> *</label></th>
+                <td><input type="email" id="anukul_client_email" name="_anukul_client_email" value="<?php echo esc_attr( $email ); ?>" class="regular-text" required /></td>
             </tr>
             <tr>
-                <th><label for="anukul_slot_time"><?php esc_html_e( 'Consultation Time Slot', 'anukul-booking' ); ?></label></th>
+                <th><label for="anukul_property_address"><?php esc_html_e( 'Property Address (If Vastu)', 'anukul-booking' ); ?></label></th>
+                <td><textarea id="anukul_property_address" name="_anukul_property_address" rows="2" class="large-text" placeholder="Applicable for Residential or Commercial Vastu Examination..."><?php echo esc_textarea( $prop_address ); ?></textarea></td>
+            </tr>
+            <tr>
+                <th><label for="anukul_guardian_name"><?php esc_html_e( 'Parent / Guardian Name', 'anukul-booking' ); ?></label></th>
+                <td><input type="text" id="anukul_guardian_name" name="_anukul_guardian_name" value="<?php echo esc_attr( $guardian_name ); ?>" class="regular-text" placeholder="If booking for a minor or assisted seeker" /></td>
+            </tr>
+            <tr>
+                <th><label for="anukul_slot_date"><?php esc_html_e( 'Consultation Date', 'anukul-booking' ); ?> *</label></th>
+                <td><input type="text" id="anukul_slot_date" name="_anukul_slot_date" value="<?php echo esc_attr( $date ); ?>" class="regular-text" /></td>
+            </tr>
+            <tr>
+                <th><label for="anukul_slot_time"><?php esc_html_e( 'Consultation Muhurta Slot', 'anukul-booking' ); ?> *</label></th>
                 <td><input type="text" id="anukul_slot_time" name="_anukul_slot_time" value="<?php echo esc_attr( $slot ); ?>" class="regular-text" /></td>
             </tr>
             <tr>
@@ -414,11 +543,11 @@ class ANUKUL_Booking_Engine {
                 <td>₹ <input type="number" step="0.01" id="anukul_price" name="_anukul_price" value="<?php echo esc_attr( $price ); ?>" class="small-text" /></td>
             </tr>
             <tr>
-                <th><label for="anukul_payment_status"><?php esc_html_e( 'Payment & Booking Status', 'anukul-booking' ); ?></label></th>
+                <th><label for="anukul_payment_status"><?php esc_html_e( 'Payment Status', 'anukul-booking' ); ?></label></th>
                 <td>
                     <select id="anukul_payment_status" name="_anukul_payment_status">
                         <option value="pending_verification" <?php selected( $status, 'pending_verification' ); ?>>Pending Verification</option>
-                        <option value="confirmed" <?php selected( $status, 'confirmed' ); ?>>Confirmed (Approved)</option>
+                        <option value="confirmed" <?php selected( $status, 'confirmed' ); ?>>Confirmed (Payment Received)</option>
                         <option value="cancelled" <?php selected( $status, 'cancelled' ); ?>>Cancelled / Slot Released</option>
                         <option value="payment_failed" <?php selected( $status, 'payment_failed' ); ?>>Payment Failed</option>
                     </select>
@@ -426,7 +555,7 @@ class ANUKUL_Booking_Engine {
             </tr>
             <tr>
                 <th><label for="anukul_intake_notes"><?php esc_html_e( 'Intake & Health Notes', 'anukul-booking' ); ?></label></th>
-                <td><textarea id="anukul_intake_notes" name="_anukul_intake_notes" rows="4" class="large-text"><?php echo esc_textarea( $notes ); ?></textarea></td>
+                <td><textarea id="anukul_intake_notes" name="_anukul_intake_notes" rows="3" class="large-text"><?php echo esc_textarea( $notes ); ?></textarea></td>
             </tr>
             <?php if ( $order_id ) : ?>
             <tr>
@@ -435,6 +564,89 @@ class ANUKUL_Booking_Engine {
             </tr>
             <?php endif; ?>
         </table>
+
+        <!-- 2. Digital Consent Record & Declarations -->
+        <h4 style="margin:25px 0 8px; color:#023625; border-bottom:2px solid #023625; padding-bottom:4px; font-size:14px; text-transform:uppercase; letter-spacing:0.05em;">2. Online Consultation Consent Form &amp; Patient Declarations</h4>
+        <div style="background:#fff; border:1px solid #c3c4c7; padding:15px; border-radius:6px; margin-bottom:15px;">
+            <table class="form-table" style="margin-top:0;">
+                <tr>
+                    <th style="width:200px;"><label><?php esc_html_e( 'Consent Form Status', 'anukul-booking' ); ?></label></th>
+                    <td>
+                        <?php if ( 'yes' === $consent_agreed ) : ?>
+                            <span style="color:#155724; background:#d4edda; border:1px solid #c3e6cb; padding:4px 8px; border-radius:4px; font-weight:700;">✓ Digitally Signed &amp; Confirmed by Client</span>
+                        <?php else : ?>
+                            <span style="color:#721c24; background:#f8d7da; border:1px solid #f5c6cb; padding:4px 8px; border-radius:4px; font-weight:700;">⚠ Consent Not Completed</span>
+                        <?php endif; ?>
+                    </td>
+                </tr>
+                <tr>
+                    <th><label><?php esc_html_e( 'Digital Signature', 'anukul-booking' ); ?></label></th>
+                    <td><strong><?php echo esc_html( $name ); ?></strong></td>
+                </tr>
+                <tr>
+                    <th><label><?php esc_html_e( 'Consent Timestamp & IP', 'anukul-booking' ); ?></label></th>
+                    <td>
+                        <code><?php echo esc_html( $consent_time ?: 'Pending' ); ?></code> &bull; IP: <code><?php echo esc_html( $consent_ip ?: 'Recorded on submit' ); ?></code>
+                    </td>
+                </tr>
+                <tr>
+                    <th><label><?php esc_html_e( 'Consent Policy Version', 'anukul-booking' ); ?></label></th>
+                    <td><code><?php echo esc_html( $consent_ver ?: '1.0' ); ?></code> (<a href="<?php echo esc_url( home_url( '/consultation-consent/' ) ); ?>" target="_blank">View Official 10-Point Consent Charter</a>)</td>
+                </tr>
+                <tr>
+                    <th><label><?php esc_html_e( 'Client Declarations Included', 'anukul-booking' ); ?></label></th>
+                    <td>
+                        <ul style="margin:0; padding-left:18px; font-size:12px; color:#444; list-style-type:disc;">
+                            <li><strong>Online Consultation:</strong> Acknowledged limitations of non-physical digital examination.</li>
+                            <li><strong>Ayurveda Health Declaration:</strong> Truthful symptoms; no discontinuation of prescribed medicines; no cure guarantee; emergency care disclaimer accepted.</li>
+                            <li><strong>Vastu Examination:</strong> Authorized property measurements/blueprints; advisory non-destructive recommendations.</li>
+                            <li><strong>Astro Nadi / Numerology:</strong> Traditional spiritual guidance; not a scientific disease diagnostic or prediction guarantee.</li>
+                            <li><strong>Personal Data &amp; Media:</strong> Data processing for consultation only; no promotional publication without separate consent.</li>
+                        </ul>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- 3. Doctor Review & Clinical Approval Controller -->
+        <h4 style="margin:25px 0 8px; color:#023625; border-bottom:2px solid #023625; padding-bottom:4px; font-size:14px; text-transform:uppercase; letter-spacing:0.05em;">3. Doctor Review &amp; Clinic Approval Controller</h4>
+        <div style="background:#f4efe6; border:1px solid #dcd1c0; padding:15px; border-radius:6px;">
+            <table class="form-table" style="margin-top:0;">
+                <tr>
+                    <th style="width:200px;"><label for="anukul_consent_approval_status"><?php esc_html_e( 'Clinical Approval Status', 'anukul-booking' ); ?> *</label></th>
+                    <td>
+                        <select id="anukul_consent_approval_status" name="_anukul_consent_approval_status" style="font-weight:600; padding:4px 8px;">
+                            <option value="pending_review" <?php selected( $app_status, 'pending_review' ); ?>>⏳ Pending Doctor Review</option>
+                            <option value="approved" <?php selected( $app_status, 'approved' ); ?>>✓ Clinically Approved &amp; Cleared (Dr. Nishigandha Chaudhari)</option>
+                            <option value="needs_clarification" <?php selected( $app_status, 'needs_clarification' ); ?>>💬 Needs Patient Clarification / Followup</option>
+                            <option value="declined" <?php selected( $app_status, 'declined' ); ?>>✕ Declined / Referral Required</option>
+                        </select>
+                        <?php if ( 'approved' !== $app_status ) : ?>
+                            <?php $app_url = admin_url( 'admin.php?action=anukul_approve_consent&id=' . $post->ID . '&status=approved&_wpnonce=' . $nonce ); ?>
+                            <a href="<?php echo esc_url( $app_url ); ?>" class="button button-primary" style="background:#023625; border-color:#023625; margin-left:10px;">✓ 1-Click Approve Now</a>
+                        <?php endif; ?>
+                    </td>
+                </tr>
+                <tr>
+                    <th><label for="anukul_consent_approved_by"><?php esc_html_e( 'Approving Consultant / Doctor', 'anukul-booking' ); ?></label></th>
+                    <td>
+                        <input type="text" id="anukul_consent_approved_by" name="_anukul_consent_approved_by" value="<?php echo esc_attr( $app_by ?: 'Dr. Nishigandha Chaudhari' ); ?>" class="regular-text" />
+                    </td>
+                </tr>
+                <tr>
+                    <th><label for="anukul_consent_approved_at"><?php esc_html_e( 'Approval Date & Time', 'anukul-booking' ); ?></label></th>
+                    <td>
+                        <input type="text" id="anukul_consent_approved_at" name="_anukul_consent_approved_at" value="<?php echo esc_attr( $app_at ); ?>" class="regular-text" placeholder="Auto-populated upon approval" />
+                    </td>
+                </tr>
+                <tr>
+                    <th><label for="anukul_consent_approval_notes"><?php esc_html_e( 'Doctor Clinical Notes / Instructions', 'anukul-booking' ); ?></label></th>
+                    <td>
+                        <textarea id="anukul_consent_approval_notes" name="_anukul_consent_approval_notes" rows="3" class="large-text" placeholder="Internal clinical review notes, specific requirements for patient before consultation, or clarification notes..."><?php echo esc_textarea( $app_notes ); ?></textarea>
+                    </td>
+                </tr>
+            </table>
+        </div>
         <?php
     }
 
@@ -447,19 +659,40 @@ class ANUKUL_Booking_Engine {
         }
 
         $fields = array(
-            '_anukul_client_name'   => 'sanitize_text_field',
-            '_anukul_client_phone'  => 'sanitize_text_field',
-            '_anukul_client_email'  => 'sanitize_email',
-            '_anukul_slot_date'     => 'sanitize_text_field',
-            '_anukul_slot_time'     => 'sanitize_text_field',
-            '_anukul_price'         => 'floatval',
-            '_anukul_payment_status'=> 'sanitize_text_field',
-            '_anukul_intake_notes'  => 'sanitize_textarea_field',
+            '_anukul_client_name'             => 'sanitize_text_field',
+            '_anukul_client_phone'            => 'sanitize_text_field',
+            '_anukul_client_email'            => 'sanitize_email',
+            '_anukul_client_age_dob'          => 'sanitize_text_field',
+            '_anukul_client_city_state'       => 'sanitize_text_field',
+            '_anukul_property_address'        => 'sanitize_textarea_field',
+            '_anukul_guardian_name'           => 'sanitize_text_field',
+            '_anukul_slot_date'               => 'sanitize_text_field',
+            '_anukul_slot_time'               => 'sanitize_text_field',
+            '_anukul_price'                   => 'floatval',
+            '_anukul_payment_status'          => 'sanitize_text_field',
+            '_anukul_intake_notes'            => 'sanitize_textarea_field',
+            '_anukul_consent_approval_status' => 'sanitize_text_field',
+            '_anukul_consent_approved_by'     => 'sanitize_text_field',
+            '_anukul_consent_approved_at'     => 'sanitize_text_field',
+            '_anukul_consent_approval_notes'  => 'sanitize_textarea_field',
         );
 
         foreach ( $fields as $key => $sanitizer ) {
             if ( isset( $_POST[ $key ] ) ) {
                 update_post_meta( $post_id, $key, call_user_func( $sanitizer, $_POST[ $key ] ) );
+            }
+        }
+
+        // If status changed to approved and approval timestamp is empty, auto-populate
+        if ( isset( $_POST['_anukul_consent_approval_status'] ) && 'approved' === $_POST['_anukul_consent_approval_status'] ) {
+            $existing_at = get_post_meta( $post_id, '_anukul_consent_approved_at', true );
+            if ( empty( $existing_at ) ) {
+                update_post_meta( $post_id, '_anukul_consent_approved_at', current_time( 'mysql' ) . ' IST' );
+            }
+            $existing_by = get_post_meta( $post_id, '_anukul_consent_approved_by', true );
+            if ( empty( $existing_by ) ) {
+                $current_u = wp_get_current_user();
+                update_post_meta( $post_id, '_anukul_consent_approved_by', $current_u->display_name ?: 'Dr. Nishigandha Chaudhari' );
             }
         }
     }
@@ -633,14 +866,24 @@ class ANUKUL_Booking_Engine {
     public function ajax_book_slot() {
         check_ajax_referer( 'anukul_booking_nonce', 'nonce' );
 
-        $tier_key       = isset( $_POST['tier'] ) ? sanitize_text_field( $_POST['tier'] ) : '';
-        $date           = isset( $_POST['date'] ) ? sanitize_text_field( $_POST['date'] ) : '';
-        $slot           = isset( $_POST['slot'] ) ? sanitize_text_field( $_POST['slot'] ) : '';
-        $name           = isset( $_POST['name'] ) ? sanitize_text_field( $_POST['name'] ) : '';
-        $email          = isset( $_POST['email'] ) ? sanitize_email( $_POST['email'] ) : '';
-        $phone          = isset( $_POST['phone'] ) ? sanitize_text_field( $_POST['phone'] ) : '';
-        $notes          = isset( $_POST['notes'] ) ? sanitize_textarea_field( $_POST['notes'] ) : '';
-        $payment_method = isset( $_POST['payment_method'] ) ? sanitize_text_field( $_POST['payment_method'] ) : 'bacs';
+        $tier_key         = isset( $_POST['tier'] ) ? sanitize_text_field( $_POST['tier'] ) : '';
+        $date             = isset( $_POST['date'] ) ? sanitize_text_field( $_POST['date'] ) : '';
+        $slot             = isset( $_POST['slot'] ) ? sanitize_text_field( $_POST['slot'] ) : '';
+        $name             = isset( $_POST['name'] ) ? sanitize_text_field( $_POST['name'] ) : '';
+        $email            = isset( $_POST['email'] ) ? sanitize_email( $_POST['email'] ) : '';
+        $phone            = isset( $_POST['phone'] ) ? sanitize_text_field( $_POST['phone'] ) : '';
+        $age_dob          = isset( $_POST['age_dob'] ) ? sanitize_text_field( $_POST['age_dob'] ) : '';
+        $city_state       = isset( $_POST['city_state'] ) ? sanitize_text_field( $_POST['city_state'] ) : '';
+        $property_address = isset( $_POST['property_address'] ) ? sanitize_textarea_field( $_POST['property_address'] ) : '';
+        $guardian_name    = isset( $_POST['guardian_name'] ) ? sanitize_text_field( $_POST['guardian_name'] ) : '';
+        $consent_agreed   = isset( $_POST['consent_agreed'] ) ? sanitize_text_field( $_POST['consent_agreed'] ) : '';
+        $notes            = isset( $_POST['notes'] ) ? sanitize_textarea_field( $_POST['notes'] ) : '';
+        $payment_method   = isset( $_POST['payment_method'] ) ? sanitize_text_field( $_POST['payment_method'] ) : 'bacs';
+
+        // Enforce Mandatory Informed Consent Confirmation
+        if ( 'yes' !== $consent_agreed ) {
+            wp_send_json_error( array( 'message' => __( 'Consent Confirmation Required: You must read and voluntarily agree to the ANUKUL Online Consultation Consent Form declarations before proceeding to payment.', 'anukul-booking' ) ) );
+        }
 
         $tiers = self::get_tiers();
         if ( ! isset( $tiers[ $tier_key ] ) ) {
@@ -676,6 +919,8 @@ class ANUKUL_Booking_Engine {
 
         // Reference Token
         $reference = 'ANKL-' . date( 'Y' ) . '-' . rand( 1000, 9999 );
+        $consent_timestamp = current_time( 'mysql' ) . ' IST';
+        $consent_ip        = isset( $_SERVER['REMOTE_ADDR'] ) ? sanitize_text_field( wp_unslash( $_SERVER['REMOTE_ADDR'] ) ) : '';
 
         update_post_meta( $booking_id, '_anukul_reference', $reference );
         update_post_meta( $booking_id, '_anukul_tier', $tier_key );
@@ -687,9 +932,24 @@ class ANUKUL_Booking_Engine {
         update_post_meta( $booking_id, '_anukul_client_name', $name );
         update_post_meta( $booking_id, '_anukul_client_email', $email );
         update_post_meta( $booking_id, '_anukul_client_phone', $phone );
+        update_post_meta( $booking_id, '_anukul_client_age_dob', $age_dob );
+        update_post_meta( $booking_id, '_anukul_client_city_state', $city_state );
+        update_post_meta( $booking_id, '_anukul_property_address', $property_address );
+        update_post_meta( $booking_id, '_anukul_guardian_name', $guardian_name );
         update_post_meta( $booking_id, '_anukul_intake_notes', $notes );
         update_post_meta( $booking_id, '_anukul_payment_method', $payment_method );
         update_post_meta( $booking_id, '_anukul_payment_status', 'pending_verification' );
+
+        // Digital Consent & Doctor Approval Metadata
+        update_post_meta( $booking_id, '_anukul_consent_agreed', 'yes' );
+        update_post_meta( $booking_id, '_anukul_consent_timestamp', $consent_timestamp );
+        update_post_meta( $booking_id, '_anukul_consent_ip', $consent_ip );
+        update_post_meta( $booking_id, '_anukul_consent_version', '1.0 - ANUKUL Health and Vastu Harmony Clinic' );
+        update_post_meta( $booking_id, '_anukul_consent_approval_status', 'pending_review' );
+        update_post_meta( $booking_id, '_anukul_consent_approved_by', '' );
+        update_post_meta( $booking_id, '_anukul_consent_approved_at', '' );
+        update_post_meta( $booking_id, '_anukul_consent_approval_notes', '' );
+
         if ( $user_id ) {
             update_post_meta( $booking_id, '_anukul_customer_id', $user_id );
         }
@@ -726,6 +986,17 @@ class ANUKUL_Booking_Engine {
                 wc_add_order_item_meta( $item_id, 'Appointment Date', $date );
                 wc_add_order_item_meta( $item_id, 'Appointment Slot', $slot );
                 wc_add_order_item_meta( $item_id, 'Specialist', 'Dr. Nishigandha Chaudhari & Master Panel' );
+                wc_add_order_item_meta( $item_id, 'Consent Version', 'v1.0 (Digitally Signed)' );
+                wc_add_order_item_meta( $item_id, 'Consent Timestamp', $consent_timestamp );
+                if ( ! empty( $age_dob ) ) {
+                    wc_add_order_item_meta( $item_id, 'Age / DOB', $age_dob );
+                }
+                if ( ! empty( $city_state ) ) {
+                    wc_add_order_item_meta( $item_id, 'City & State', $city_state );
+                }
+                if ( ! empty( $property_address ) ) {
+                    wc_add_order_item_meta( $item_id, 'Property Address (Vastu)', $property_address );
+                }
             }
 
             $order->set_address( array(

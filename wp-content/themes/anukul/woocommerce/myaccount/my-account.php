@@ -732,6 +732,29 @@ $load_address    = $is_edit_address ? sanitize_key( get_query_var( 'edit-address
                   </div>
                 <?php endif; ?>
 
+                <?php
+                $b_consent_agreed = get_post_meta( $b_id, '_anukul_consent_agreed', true );
+                $b_approval_stat  = get_post_meta( $b_id, '_anukul_consent_approval_status', true );
+                $b_approver       = get_post_meta( $b_id, '_anukul_consent_approved_by', true );
+                ?>
+                <div class="mb-3 px-3 py-2 rounded-lg bg-surface-container/60 border border-[#E8D8BC]/50 flex flex-wrap items-center justify-between gap-2 text-[11px]">
+                  <div class="flex items-center gap-1.5 text-primary">
+                    <span class="material-symbols-outlined notranslate text-[15px] text-secondary" translate="no">verified_user</span>
+                    <span>Online Consultation Consent (v1.0): <strong>Digitally Signed</strong></span>
+                  </div>
+                  <div>
+                    <?php if ( 'approved' === $b_approval_stat ) : ?>
+                      <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-[#D4EDDA] text-[#155724] font-bold">
+                        ✓ Clinically Cleared <?php echo $b_approver ? 'by ' . esc_html( $b_approver ) : ''; ?>
+                      </span>
+                    <?php else : ?>
+                      <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-secondary-fixed text-on-secondary-fixed font-bold">
+                        ⏳ Pending Doctor Review (Dr. Chaudhari)
+                      </span>
+                    <?php endif; ?>
+                  </div>
+                </div>
+
                 <div class="pt-3 border-t border-[#E8D8BC]/50 flex flex-wrap items-center justify-between gap-3 text-xs">
                   <div class="flex items-center gap-2 text-on-surface-variant">
                     <span class="material-symbols-outlined notranslate text-secondary text-[16px]" translate="no">verified</span>

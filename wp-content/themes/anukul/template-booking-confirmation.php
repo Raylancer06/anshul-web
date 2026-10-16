@@ -183,6 +183,39 @@ if ( 'pending_verification' === $b_status ) {
                 </p>
 </div>
 </div>
+<!-- Informed Consent & Doctor Clearance Badge -->
+<?php
+$consent_agreed = $live_booking ? get_post_meta( $live_booking->ID, '_anukul_consent_agreed', true ) : 'yes';
+$consent_time   = $live_booking ? get_post_meta( $live_booking->ID, '_anukul_consent_timestamp', true ) : ( date_i18n( 'F j, Y, g:i a' ) . ' IST' );
+$approval_stat  = $live_booking ? get_post_meta( $live_booking->ID, '_anukul_consent_approval_status', true ) : 'pending_review';
+$approver       = $live_booking ? get_post_meta( $live_booking->ID, '_anukul_consent_approved_by', true ) : '';
+?>
+<div class="p-4 rounded-lg bg-surface-container border border-[#E8D8BC]/80 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+  <div class="flex items-start gap-3">
+    <span class="material-symbols-outlined notranslate text-[22px] text-primary mt-0.5" translate="no">verified_user</span>
+    <div>
+      <span class="font-label-sm text-xs uppercase tracking-wider text-outline block">Informed Consent &amp; Regulatory Clearance</span>
+      <p class="font-body-md text-sm font-semibold text-primary">
+        Online Consultation Consent Form (v1.0) Certified
+      </p>
+      <p class="font-body-sm text-xs text-on-surface-variant">
+        Acknowledged by <?php echo esc_html( $b_name ); ?> on <?php echo esc_html( $consent_time ); ?>
+      </p>
+    </div>
+  </div>
+  <div class="sm:text-right shrink-0">
+    <span class="font-label-sm text-[10px] uppercase tracking-wider text-outline block">Clinical Review Status</span>
+    <?php if ( 'approved' === $approval_stat ) : ?>
+      <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded bg-[#D4EDDA] text-[#155724] font-label-sm text-xs font-bold">
+        ✓ Clinically Cleared <?php echo $approver ? 'by ' . esc_html( $approver ) : ''; ?>
+      </span>
+    <?php else : ?>
+      <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded bg-secondary-fixed text-on-secondary-fixed font-label-sm text-xs font-bold">
+        ⏳ Pending Doctor Review (Dr. Chaudhari)
+      </span>
+    <?php endif; ?>
+  </div>
+</div>
 <!-- Date, Time, Duration & Modality -->
 <div class="space-y-4">
 <div class="flex flex-col sm:flex-row sm:items-start justify-between gap-3 p-4 bg-surface-container rounded-lg">

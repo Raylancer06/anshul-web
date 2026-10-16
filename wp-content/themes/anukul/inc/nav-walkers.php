@@ -281,6 +281,8 @@ function anukul_default_policy_nav() {
     echo '<a class="hover:text-[#B38A3E] transition-colors" href="' . esc_url( home_url( '/privacy-policy/' ) ) . '">' . esc_html__( 'Privacy Policy', 'anukul' ) . '</a>';
     echo '<span class="text-[#B38A3E]/40">&bull;</span>';
     echo '<a class="hover:text-[#B38A3E] transition-colors" href="' . esc_url( home_url( '/disclaimer/' ) ) . '">' . esc_html__( 'Disclaimer', 'anukul' ) . '</a>';
+    echo '<span class="text-[#B38A3E]/40">&bull;</span>';
+    echo '<a class="hover:text-[#B38A3E] transition-colors" href="' . esc_url( home_url( '/consultation-consent/' ) ) . '">' . esc_html__( 'Consultation Consent', 'anukul' ) . '</a>';
 }
 
 /**

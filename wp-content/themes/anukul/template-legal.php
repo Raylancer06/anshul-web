@@ -38,6 +38,11 @@ $policy_pages = array(
         'icon'  => 'verified_user',
         'desc'  => __( 'Ayush guidelines & Astro-Vastu scope', 'anukul' ),
     ),
+    'consultation-consent' => array(
+        'title' => __( 'Online Consultation Consent Form', 'anukul' ),
+        'icon'  => 'assignment_turned_in',
+        'desc'  => __( 'Ayurveda, Vastu & Astro Nadi clinical consent', 'anukul' ),
+    ),
 );
 
 global $post;
@@ -107,7 +112,7 @@ $current_slug = $post ? $post->post_name : '';
         <span class="material-symbols-outlined notranslate text-[16px]" translate="no">policy</span>
         <?php esc_html_e( 'Sanctuary Legal Registry:', 'anukul' ); ?>
       </p>
-      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3">
+      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-2.5">
         <?php foreach ( $policy_pages as $slug => $meta ) : 
           $is_current = ( $current_slug === $slug );
           $target_url = home_url( '/' . $slug . '/' );

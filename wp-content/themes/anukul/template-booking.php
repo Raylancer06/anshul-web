@@ -436,59 +436,242 @@ Recommended Protocol
 <div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg">
 <!-- Left: Structured Form (8 cols) -->
 <form class="lg:col-span-8 bg-surface-container-lowest p-space-lg md:p-space-xl rounded-xl shadow-sm flex flex-col gap-space-md" id="intake-form" onsubmit="event.preventDefault(); goToStep(4);">
-<!-- Full Name & Email -->
+
+<!-- 1. CLIENT / PATIENT DETAILS -->
+<div class="pb-2 border-b border-[#E8D8BC]/60 flex items-center justify-between">
+  <div>
+    <span class="font-label-sm text-[11px] uppercase tracking-wider text-secondary font-bold">Section 1</span>
+    <h3 class="font-headline-sm text-lg text-primary">Client &amp; Patient Coordinates</h3>
+  </div>
+  <span class="text-xs font-semibold px-2.5 py-1 rounded bg-[#1F4D3A]/10 text-primary">
+    NABH &amp; Ayush Compliant
+  </span>
+</div>
+
+<!-- Full Name & Age/DOB -->
 <div class="grid grid-cols-1 md:grid-cols-2 gap-space-md">
-<div class="flex flex-col gap-1.5">
-<label class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface font-bold" for="full-name">Full Legal Name <span class="text-error">*</span></label>
-<input class="w-full bg-surface-container-low px-4 py-3 rounded-lg text-on-surface font-body-md text-body-md placeholder:text-outline focus:outline-none focus:ring-1 focus:ring-primary shadow-inner" id="full-name" placeholder="e.g. Ramesh Patel" required="" type="text" value="<?php echo esc_attr( $default_booking_name ); ?>"/>
+  <div class="flex flex-col gap-1.5">
+    <label class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface font-bold" for="full-name">Full Legal Name <span class="text-error">*</span></label>
+    <input class="w-full bg-surface-container-low px-4 py-3 rounded-lg text-on-surface font-body-md text-body-md placeholder:text-outline focus:outline-none focus:ring-1 focus:ring-primary shadow-inner" id="full-name" placeholder="e.g. Ramesh Patel" required="" type="text" value="<?php echo esc_attr( $default_booking_name ); ?>" oninput="updateConsentSignature(this.value)"/>
+  </div>
+  <div class="flex flex-col gap-1.5">
+    <label class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface font-bold" for="age-dob">Age / Date of Birth <span class="text-error">*</span></label>
+    <input class="w-full bg-surface-container-low px-4 py-3 rounded-lg text-on-surface font-body-md text-body-md placeholder:text-outline focus:outline-none focus:ring-1 focus:ring-primary shadow-inner" id="age-dob" placeholder="e.g. 34 Years or 15-Aug-1990" required="" type="text"/>
+  </div>
 </div>
-<div class="flex flex-col gap-1.5">
-<label class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface font-bold" for="email">Email Address <span class="text-error">*</span></label>
-<input class="w-full bg-surface-container-low px-4 py-3 rounded-lg text-on-surface font-body-md text-body-md placeholder:text-outline focus:outline-none focus:ring-1 focus:ring-primary shadow-inner" id="email" placeholder="name@domain.com" required="" type="email" value="<?php echo esc_attr( $default_booking_email ); ?>"/>
-<span class="font-body-sm text-body-sm text-outline text-[11px]">Appointment calendar invites and prep dossier will be sent here.</span>
-</div>
-</div>
-<!-- Phone Number & Mode Selector -->
+
+<!-- Mobile Number & Email -->
 <div class="grid grid-cols-1 md:grid-cols-2 gap-space-md">
-<div class="flex flex-col gap-1.5">
-<label class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface font-bold" for="phone">Phone Number (WhatsApp Ready) <span class="text-error">*</span></label>
-<div class="flex">
-<span class="inline-flex items-center px-3 rounded-l-lg bg-surface-container text-on-surface font-body-md text-body-md select-none">+91</span>
-<input class="w-full bg-surface-container-low px-4 py-3 rounded-r-lg text-on-surface font-body-md text-body-md placeholder:text-outline focus:outline-none focus:ring-1 focus:ring-primary shadow-inner" id="phone" placeholder="98201 00000" required="" type="tel" value="<?php echo esc_attr( $default_booking_phone ); ?>"/>
+  <div class="flex flex-col gap-1.5">
+    <label class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface font-bold" for="phone">Mobile Number (WhatsApp Ready) <span class="text-error">*</span></label>
+    <div class="flex">
+      <span class="inline-flex items-center px-3 rounded-l-lg bg-surface-container text-on-surface font-body-md text-body-md select-none">+91</span>
+      <input class="w-full bg-surface-container-low px-4 py-3 rounded-r-lg text-on-surface font-body-md text-body-md placeholder:text-outline focus:outline-none focus:ring-1 focus:ring-primary shadow-inner" id="phone" placeholder="98201 00000" required="" type="tel" value="<?php echo esc_attr( $default_booking_phone ); ?>"/>
+    </div>
+  </div>
+  <div class="flex flex-col gap-1.5">
+    <label class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface font-bold" for="email">Email Address <span class="text-error">*</span></label>
+    <input class="w-full bg-surface-container-low px-4 py-3 rounded-lg text-on-surface font-body-md text-body-md placeholder:text-outline focus:outline-none focus:ring-1 focus:ring-primary shadow-inner" id="email" placeholder="name@domain.com" required="" type="email" value="<?php echo esc_attr( $default_booking_email ); ?>"/>
+  </div>
 </div>
+
+<!-- City & State & Consultation Format -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-md">
+  <div class="flex flex-col gap-1.5">
+    <label class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface font-bold" for="city-state">City &amp; State <span class="text-error">*</span></label>
+    <input class="w-full bg-surface-container-low px-4 py-3 rounded-lg text-on-surface font-body-md text-body-md placeholder:text-outline focus:outline-none focus:ring-1 focus:ring-primary shadow-inner" id="city-state" placeholder="e.g. Pune, Maharashtra" required="" type="text"/>
+  </div>
+  <div class="flex flex-col gap-1.5">
+    <label class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface font-bold" for="consultation-format">Consultation Medium <span class="text-error">*</span></label>
+    <select class="w-full bg-surface-container-low px-4 py-3 rounded-lg text-on-surface font-body-md text-body-md focus:outline-none focus:ring-1 focus:ring-primary shadow-inner" id="consultation-format">
+      <option selected="" value="video">Secure Video Call (Google Meet / Zoom Healthcare)</option>
+      <option value="clinic">In-Clinic Sanctuary Visit (Bengaluru Center)</option>
+    </select>
+  </div>
 </div>
-<div class="flex flex-col gap-1.5">
-<label class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface font-bold">Consultation Medium <span class="text-error">*</span></label>
-<select class="w-full bg-surface-container-low px-4 py-3 rounded-lg text-on-surface font-body-md text-body-md focus:outline-none focus:ring-1 focus:ring-primary shadow-inner" id="consultation-format">
-<option selected="" value="video">Secure Video Call (Google Meet / Zoom Healthcare)</option>
-<option value="clinic">In-Clinic Sanctuary Visit (Bengaluru Center)</option>
-</select>
+
+<!-- Property Address (For Vastu) & Guardian Name (For Minors) -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-md">
+  <div class="flex flex-col gap-1.5">
+    <div class="flex items-center justify-between">
+      <label class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface font-bold" for="property-address">Property Address (If Vastu)</label>
+      <span class="text-[11px] text-secondary font-medium">Required for Vastu</span>
+    </div>
+    <input class="w-full bg-surface-container-low px-4 py-3 rounded-lg text-on-surface font-body-md text-body-md placeholder:text-outline focus:outline-none focus:ring-1 focus:ring-primary shadow-inner" id="property-address" placeholder="Residence / Commercial premises location" type="text"/>
+  </div>
+  <div class="flex flex-col gap-1.5">
+    <div class="flex items-center justify-between">
+      <label class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface font-bold" for="guardian-name">Parent / Guardian Name</label>
+      <span class="text-[11px] text-outline font-medium">If applicable</span>
+    </div>
+    <input class="w-full bg-surface-container-low px-4 py-3 rounded-lg text-on-surface font-body-md text-body-md placeholder:text-outline focus:outline-none focus:ring-1 focus:ring-primary shadow-inner" id="guardian-name" placeholder="If booking for a minor or assisted seeker" type="text"/>
+  </div>
 </div>
-</div>
+
 <!-- Health & Space Focus / Intake Notes -->
 <div class="flex flex-col gap-1.5">
-<div class="flex items-center justify-between">
-<label class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface font-bold" for="intake-notes">Health &amp; Space Focus / Preliminary Notes</label>
-<span class="font-label-sm text-label-sm text-outline">Optional</span>
+  <div class="flex items-center justify-between">
+    <label class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface font-bold" for="intake-notes">Health Symptoms &amp; Spatial Focus Notes</label>
+    <span class="font-label-sm text-label-sm text-outline">Optional Preliminary Context</span>
+  </div>
+  <textarea class="w-full bg-surface-container-low p-4 rounded-lg text-on-surface font-body-md text-body-md placeholder:text-outline focus:outline-none focus:ring-1 focus:ring-primary shadow-inner" id="intake-notes" placeholder="Describe symptoms, existing diagnosis, or specific floor plan questions for Dr. Chaudhari..." rows="3"></textarea>
 </div>
-<textarea class="w-full bg-surface-container-low p-4 rounded-lg text-on-surface font-body-md text-body-md placeholder:text-outline focus:outline-none focus:ring-1 focus:ring-primary shadow-inner" id="intake-notes" placeholder="Briefly describe recurring symptoms, current lifestyle imbalances, or specific spatial questions regarding your residence or workspace layout..." rows="4"></textarea>
+
+<!-- ============================================================== -->
+<!-- ONLINE CONSULTATION CONSENT FORM — ANUKUL CLINIC              -->
+<!-- ============================================================== -->
+<div class="mt-4 p-5 sm:p-6 rounded-xl bg-surface border-2 border-[#E8D8BC] space-y-4 shadow-sm">
+  <!-- Clinic Header Plaque -->
+  <div class="pb-3 border-b border-[#E8D8BC]/80">
+    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+      <div>
+        <span class="inline-block px-2.5 py-0.5 rounded-full bg-primary/10 text-primary font-label-sm text-[10px] uppercase font-bold tracking-wider">Official Medical &amp; Spatial Charter</span>
+        <h3 class="font-headline-sm text-xl text-primary font-bold mt-1 tracking-tight">ONLINE CONSULTATION CONSENT FORM</h3>
+        <p class="font-body-sm text-xs text-secondary font-semibold">ANUKUL HEALTH AND VASTU HARMONY CLINIC</p>
+      </div>
+      <div class="text-left sm:text-right text-xs font-body-sm text-on-surface-variant">
+        <p class="font-bold text-primary">Director / Consultant: Dr. Nishigandha Chaudhari</p>
+        <p class="text-[11px] text-outline">12+ Years Experience in Ayurveda and Vastu Consulting</p>
+        <a href="https://anukulayurvastu.in" target="_blank" class="text-secondary hover:underline font-medium text-[11px]">https://anukulayurvastu.in</a>
+      </div>
+    </div>
+    <p class="font-body-sm text-xs text-on-surface-variant italic mt-2.5 bg-surface-container-high/60 p-2.5 rounded-lg border border-[#E8D8BC]/60">
+      Please read this form carefully before submitting your details and proceeding to payment.
+    </p>
+  </div>
+
+  <!-- Scrollable 10-Point Consent Text Box -->
+  <div class="max-h-64 overflow-y-auto pr-2 space-y-4 text-xs font-body-sm text-on-surface-variant leading-relaxed bg-surface-container-lowest p-4 rounded-lg border border-[#E8D8BC]/60">
+    <!-- Section 2 -->
+    <div>
+      <h4 class="font-headline-sm text-sm font-bold text-primary mb-1">2. Consent for Online Consultation</h4>
+      <p>I voluntarily request an online consultation from ANUKUL Health and Vastu Harmony Clinic and consent to communicate through the available consultation platform, telephone, video call, email or other agreed digital method.</p>
+      <p class="mt-1">I understand that I must provide accurate information relevant to my selected service. I may ask questions about the consultation process, fees, limitations and recommendations before proceeding.</p>
+      <p class="mt-1 font-semibold text-primary">I understand that online consultation may have limitations because the consultant may not be able to conduct a physical examination, directly inspect a property, or independently verify every detail I submit.</p>
+    </div>
+
+    <!-- Section 3 -->
+    <div class="pt-2 border-t border-[#E8D8BC]/40">
+      <h4 class="font-headline-sm text-sm font-bold text-primary mb-1">3. Ayurveda Health Consultation — Patient Declaration</h4>
+      <p>If I select Ayurveda Health Consultation, I understand and agree that:</p>
+      <ol class="list-decimal pl-4 space-y-1 mt-1">
+        <li>I will provide accurate information about my symptoms, medical history, existing diagnoses, allergies, medicines, supplements, pregnancy status where relevant, and previous investigations.</li>
+        <li>The consultation may include discussion of my health history, diet, lifestyle, sleep, digestion, Prakriti Parikshan and other relevant traditional Ayurveda assessment methods, as appropriate to the service.</li>
+        <li>Any assessment or recommendations will depend on the information available and the practitioner’s professional scope.</li>
+        <li>An online consultation may not be sufficient to assess every health condition. I may be advised to obtain an in-person examination, laboratory investigation, specialist opinion or emergency care.</li>
+        <li>I will not discontinue prescribed medicines or delay necessary medical treatment on the basis of an online consultation.</li>
+        <li>I understand that no guarantee of cure, recovery time or specific health outcome is being offered.</li>
+      </ol>
+      <div class="mt-2 p-2 rounded bg-red-50 border border-red-200 text-red-900 text-[11px] font-medium">
+        <strong>Emergency Disclaimer:</strong> This service is not an emergency medical service. For severe chest pain, difficulty breathing, stroke symptoms, collapse or another medical emergency, I will seek immediate emergency medical assistance.
+      </div>
+    </div>
+
+    <!-- Section 4 -->
+    <div class="pt-2 border-t border-[#E8D8BC]/40">
+      <h4 class="font-headline-sm text-sm font-bold text-primary mb-1">4. Residential and Commercial Vastu Consultation</h4>
+      <p>If I select Vastu Examination, I understand and agree that:</p>
+      <ol class="list-decimal pl-4 space-y-1 mt-1">
+        <li>I will provide the floor plan, property measurements, direction/orientation details, photographs and other information reasonably required for the assessment.</li>
+        <li>I confirm that I am authorized to share the submitted property information and images.</li>
+        <li>The analysis may include directional assessment, Vastu gridding, Vastu Purusha Mandala, room usage, layout observations and traditional Vastu interpretations.</li>
+        <li>Recommendations are advisory. They do not guarantee health, relationship, career, business or financial outcomes.</li>
+        <li>Any structural alteration, electrical work, plumbing work or renovation must be assessed by an appropriately qualified professional.</li>
+        <li>I am free to accept, modify or decline recommendations. I am not required to purchase products, perform rituals or undertake expensive remedies.</li>
+      </ol>
+    </div>
+
+    <!-- Section 5 -->
+    <div class="pt-2 border-t border-[#E8D8BC]/40">
+      <h4 class="font-headline-sm text-sm font-bold text-primary mb-1">5. Astro Nadi, Kundali and Numerology Consultation</h4>
+      <p>If I select an astrology, Astro Nadi or numerology service, I understand and agree that:</p>
+      <ol class="list-decimal pl-4 space-y-1 mt-1">
+        <li>I may be asked to provide my date of birth, birth time, birthplace, name or other information relevant to the selected service.</li>
+        <li>I understand that interpretations depend on the information supplied and the traditional method used.</li>
+        <li>These interpretations are offered as traditional, cultural or spiritual guidance and are not scientifically established methods for diagnosing disease or guaranteeing future events.</li>
+        <li>Astrology and numerology do not replace medical, psychological, legal, financial or other professional advice.</li>
+        <li>No guaranteed prediction regarding illness, fertility, marriage, death, business success or financial gain is promised.</li>
+      </ol>
+    </div>
+
+    <!-- Section 6 -->
+    <div class="pt-2 border-t border-[#E8D8BC]/40">
+      <h4 class="font-headline-sm text-sm font-bold text-primary mb-1">6. Consent to Submit Information and Process Personal Data</h4>
+      <p>I understand that the clinic will use the information I submit for purposes relevant to my requested service, including identification, scheduling, reviewing data, delivering recommendations, payment processing, and meeting recordkeeping requirements.</p>
+      <p class="mt-1">My information will not be used for unrelated marketing without separate permission. I understand digital communications involve security risks despite reasonable safeguards.</p>
+      <p class="mt-1 font-semibold text-primary">Privacy Contact: contact@anukulayurvastu.in &bull; WhatsApp: +91 7624012501</p>
+    </div>
+
+    <!-- Section 7 -->
+    <div class="pt-2 border-t border-[#E8D8BC]/40">
+      <h4 class="font-headline-sm text-sm font-bold text-primary mb-1">7. Photographs, Reports and Recordings</h4>
+      <p>I understand that property photographs, floor plans, and health documents uploaded may be reviewed for my consultation. Recording, promotional use, or case studies require separate consent. I can decline promotional use without affecting consultation eligibility.</p>
+    </div>
+
+    <!-- Section 8 -->
+    <div class="pt-2 border-t border-[#E8D8BC]/40">
+      <h4 class="font-headline-sm text-sm font-bold text-primary mb-1">8. Fees, Payment and Booking</h4>
+      <p>The consultation fee and specific service included are displayed before payment. Payment confirms the booking under stated terms. Payment does not guarantee a particular medical, Vastu, astrological or financial outcome.</p>
+      <p class="mt-1"><strong>Cancellation &amp; Refund Policy:</strong> Handled in accordance with the clinic’s disclosed policy (free rescheduling or cancellation up to 24 hours prior to appointment time). <a href="<?php echo esc_url( home_url( '/return-policy/' ) ); ?>" target="_blank" class="text-secondary underline">View Refund Terms</a>.</p>
+    </div>
+
+    <!-- Section 9 & 10 -->
+    <div class="pt-2 border-t border-[#E8D8BC]/40">
+      <h4 class="font-headline-sm text-sm font-bold text-primary mb-1">9. Client Declaration &amp; 10. Consent Confirmation</h4>
+      <p>I declare that the information provided is accurate; I have read and understood the scope and limitations; I had the opportunity to ask questions; and if submitting for another person, I have the authority to do so.</p>
+      <p class="mt-1 font-semibold text-primary">By selecting the confirmation boxes below, I voluntarily consent to the selected service.</p>
+    </div>
+  </div>
+
+  <!-- Mandatory Confirmation Checkboxes -->
+  <div class="space-y-3 pt-2">
+    <!-- Checkbox 1 -->
+    <label class="flex items-start gap-3 cursor-pointer group">
+      <input type="checkbox" id="consent-online" required class="mt-1 w-4 h-4 rounded text-primary focus:ring-primary border-[#E8D8BC] cursor-pointer"/>
+      <span class="font-body-sm text-xs text-on-surface-variant group-hover:text-primary transition-colors">
+        <strong>1. Online Consultation &amp; Data Consent:</strong> I voluntarily request an online consultation from ANUKUL Health and Vastu Harmony Clinic and consent to digital communications and data processing for my selected service. <span class="text-error font-bold">*</span>
+      </span>
+    </label>
+
+    <!-- Checkbox 2 -->
+    <label class="flex items-start gap-3 cursor-pointer group">
+      <input type="checkbox" id="consent-declarations" required class="mt-1 w-4 h-4 rounded text-primary focus:ring-primary border-[#E8D8BC] cursor-pointer"/>
+      <span class="font-body-sm text-xs text-on-surface-variant group-hover:text-primary transition-colors">
+        <strong>2. Clinical &amp; Spatial Declarations:</strong> I confirm that I have read and agree to the specific Patient Declarations for Ayurveda Health, Vastu Examination, and Astro Nadi, and acknowledge that this service is not an emergency medical service and offers no guarantee of cure or predictions. <span class="text-error font-bold">*</span>
+      </span>
+    </label>
+
+    <!-- Checkbox 3 -->
+    <label class="flex items-start gap-3 cursor-pointer group">
+      <input type="checkbox" id="consent-declaration-truth" required class="mt-1 w-4 h-4 rounded text-primary focus:ring-primary border-[#E8D8BC] cursor-pointer"/>
+      <span class="font-body-sm text-xs text-on-surface-variant group-hover:text-primary transition-colors">
+        <strong>3. Accuracy &amp; Voluntary Confirmation:</strong> I declare that all information provided is accurate to the best of my knowledge and I voluntarily confirm my informed consent. <span class="text-error font-bold">*</span>
+      </span>
+    </label>
+  </div>
+
+  <!-- Digital Signature Footer Plaque -->
+  <div class="p-3 rounded-lg bg-surface-container-high/80 border border-[#E8D8BC]/80 flex flex-col sm:flex-row sm:items-center justify-between gap-2 text-xs">
+    <div>
+      <span class="text-outline uppercase text-[10px] tracking-wider block font-semibold">Digital Consent Signature</span>
+      <span id="consent-signature-preview" class="font-bold text-primary text-sm"><?php echo esc_html( $default_booking_name ?: 'Your Legal Name' ); ?></span>
+    </div>
+    <div class="sm:text-right">
+      <span class="text-outline uppercase text-[10px] tracking-wider block font-semibold">Date of Declaration</span>
+      <span class="font-semibold text-secondary"><?php echo esc_html( date_i18n( 'l, F j, Y' ) ); ?> &bull; IST</span>
+    </div>
+  </div>
 </div>
-<!-- Consent Checkbox -->
-<div class="flex items-start gap-space-sm pt-space-xs">
-<input checked="" class="w-4 h-4 mt-1 rounded text-primary focus:ring-primary cursor-pointer" id="terms-consent" required="" type="checkbox"/>
-<label class="font-body-sm text-body-sm text-on-surface-variant cursor-pointer select-none" for="terms-consent">
-                I acknowledge the consultation terms, cancellation guidelines (full refund or complimentary reschedule up to 24 hours prior), and the clinic's confidential health records charter.
-              </label>
-</div>
+
 <!-- Step 3 Navigation -->
 <div class="pt-space-md flex items-center justify-between">
-<button class="px-5 py-2.5 rounded-lg bg-surface-container text-on-surface font-label-md text-label-md uppercase tracking-wider hover:bg-surface-container-high transition-colors" onclick="goToStep(2)" type="button">
-                Back to Time Slot
-              </button>
-<button class="inline-flex items-center gap-space-xs px-6 py-2.5 rounded-lg bg-primary text-on-primary font-label-md text-label-md uppercase tracking-wider hover:bg-tertiary transition-colors shadow-sm" type="submit">
-<span>Proceed to Payment</span>
-<span class="material-symbols-outlined notranslate text-[16px]" translate="no">arrow_forward</span>
-</button>
+  <button class="px-5 py-2.5 rounded-lg bg-surface-container text-on-surface font-label-md text-label-md uppercase tracking-wider hover:bg-surface-container-high transition-colors" onclick="goToStep(2)" type="button">
+    Back to Time Slot
+  </button>
+  <button class="inline-flex items-center gap-space-xs px-6 py-3 rounded-lg bg-primary text-on-primary font-label-md text-label-md uppercase tracking-wider hover:bg-tertiary transition-colors shadow-sm font-bold" type="submit">
+    <span>Sign Consent &amp; Proceed to Payment</span>
+    <span class="material-symbols-outlined notranslate text-[16px]" translate="no">arrow_forward</span>
+  </button>
 </div>
 </form>
 <!-- Right: Summary Sidebar (4 cols) -->
@@ -687,6 +870,18 @@ $wc_gateways = function_exists( 'WC' ) && WC()->payment_gateways ? WC()->payment
 <span class="font-body-sm text-body-sm text-outline text-[11px] text-right">All Taxes &amp; GST Included in INR</span>
 </div>
 </div>
+
+<!-- Informed Consent Certified Audit Plaque -->
+<div class="p-3.5 rounded-lg bg-surface-container-high/90 border border-[#E8D8BC] flex items-start gap-3 text-xs text-on-surface-variant">
+  <span class="material-symbols-outlined notranslate text-[22px] text-primary shrink-0 mt-0.5" translate="no">verified_user</span>
+  <div>
+    <p class="font-bold text-primary text-sm">Online Consultation Consent Form (v1.0) Certified</p>
+    <p class="text-[11px] leading-relaxed mt-0.5">
+      Digitally executed by <strong class="text-primary font-semibold" id="checkout-signed-name"><?php echo esc_html( $default_booking_name ?: 'Sanctuary Seeker' ); ?></strong> for ANUKUL Health and Vastu Harmony Clinic. Subject to clinical review &amp; clearance by <strong>Dr. Nishigandha Chaudhari</strong>.
+    </p>
+  </div>
+</div>
+
 <!-- Main Action CTA Button -->
 <div class="flex flex-col gap-space-xs">
 <button class="w-full py-4 rounded-lg bg-primary text-on-primary font-label-md text-label-md uppercase tracking-widest font-bold hover:bg-tertiary transition-all duration-200 shadow-md flex items-center justify-center gap-space-sm group" id="pay-button" onclick="executePayment()" type="button">
@@ -746,6 +941,14 @@ $wc_gateways = function_exists( 'WC' ) && WC()->payment_gateways ? WC()->payment
 <span class="font-label-sm text-label-sm uppercase text-outline">Channel</span>
 <p class="font-semibold text-on-surface">Secure Video Call (Google Meet)</p>
 </div>
+</div>
+<!-- Consent & Clinical Review Audit Ribbon -->
+<div class="mt-4 p-3 rounded-lg bg-[#1F4D3A]/5 border border-[#1F4D3A]/20 flex flex-col sm:flex-row sm:items-center justify-between gap-2 text-xs">
+  <div class="flex items-center gap-2 text-primary font-medium">
+    <span class="material-symbols-outlined notranslate text-[18px] text-primary" translate="no">verified</span>
+    <span>Online Consultation Consent Form (v1.0) Certified &amp; Recorded</span>
+  </div>
+  <span class="font-mono text-secondary text-[11px] font-bold">Pending Clinical Review &bull; Dr. Nishigandha Chaudhari</span>
 </div>
 <div class="bg-surface-container-low p-space-md rounded-lg flex flex-col sm:flex-row items-start sm:items-center justify-between gap-space-sm mt-space-sm">
 <div class="flex items-center gap-space-sm">
@@ -821,9 +1024,24 @@ $wc_gateways = function_exists( 'WC' ) && WC()->payment_gateways ? WC()->payment
       targetSection.classList.add('flex');
     }
 
+    if (stepNumber === 4) {
+      const nameInput = document.getElementById('full-name');
+      const sigPreview = document.getElementById('checkout-signed-name');
+      if (nameInput && sigPreview && nameInput.value.trim()) {
+        sigPreview.textContent = nameInput.value.trim();
+      }
+    }
+
     // Update Progress Stepper UI
     updateStepperUI(stepNumber);
     window.scrollTo({ top: 120, behavior: 'smooth' });
+  }
+
+  function updateConsentSignature(name) {
+    const sigElem = document.getElementById('consent-signature-preview');
+    if (sigElem) sigElem.textContent = name.trim() || 'Your Legal Name';
+    const checkSig = document.getElementById('checkout-signed-name');
+    if (checkSig) checkSig.textContent = name.trim() || 'Sanctuary Seeker';
   }
 
   function updateStepperUI(currentStep) {
@@ -1217,11 +1435,33 @@ $wc_gateways = function_exists( 'WC' ) && WC()->payment_gateways ? WC()->payment
     const inputName = document.getElementById('full-name');
     const inputEmail = document.getElementById('email');
     const inputPhone = document.getElementById('phone');
+    const inputAgeDob = document.getElementById('age-dob');
+    const inputCityState = document.getElementById('city-state');
+    const inputPropAddress = document.getElementById('property-address');
+    const inputGuardianName = document.getElementById('guardian-name');
     const inputNotes = document.getElementById('intake-notes');
+
+    const checkConsent1 = document.getElementById('consent-online');
+    const checkConsent2 = document.getElementById('consent-declarations');
+    const checkConsent3 = document.getElementById('consent-declaration-truth');
+
+    if (!checkConsent1 || !checkConsent1.checked || !checkConsent2 || !checkConsent2.checked || !checkConsent3 || !checkConsent3.checked) {
+      alert('Informed Consent Confirmation Required: Please review and select all 3 confirmation checkboxes in the Online Consultation Consent Form before proceeding.');
+      if (payBtn) {
+        payBtn.disabled = false;
+        if (label) label.textContent = `PAY & CONFIRM BOOKING — ₹ ${state.price.toLocaleString('en-IN')}`;
+      }
+      goToStep(3);
+      return;
+    }
 
     const clientName = (inputName && inputName.value) ? inputName.value : state.name;
     const clientEmail = (inputEmail && inputEmail.value) ? inputEmail.value : state.email;
     const clientPhone = (inputPhone && inputPhone.value) ? inputPhone.value : state.phone;
+    const clientAgeDob = (inputAgeDob && inputAgeDob.value) ? inputAgeDob.value : '';
+    const clientCityState = (inputCityState && inputCityState.value) ? inputCityState.value : '';
+    const clientPropAddress = (inputPropAddress && inputPropAddress.value) ? inputPropAddress.value : '';
+    const clientGuardianName = (inputGuardianName && inputGuardianName.value) ? inputGuardianName.value : '';
     const clientNotes = inputNotes ? inputNotes.value : '';
 
     const selectedPayRadio = document.querySelector('input[name="pay-method"]:checked');
@@ -1236,6 +1476,11 @@ $wc_gateways = function_exists( 'WC' ) && WC()->payment_gateways ? WC()->payment
     formData.append('name', clientName);
     formData.append('email', clientEmail);
     formData.append('phone', clientPhone);
+    formData.append('age_dob', clientAgeDob);
+    formData.append('city_state', clientCityState);
+    formData.append('property_address', clientPropAddress);
+    formData.append('guardian_name', clientGuardianName);
+    formData.append('consent_agreed', 'yes');
     formData.append('notes', clientNotes);
     formData.append('payment_method', paymentMethod);
 
