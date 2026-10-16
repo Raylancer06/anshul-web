@@ -312,6 +312,23 @@ get_header();
 <div class="font-headline-sm text-headline-sm text-primary mb-1 text-[16px] sm:text-[18px] font-bold notranslate" translate="no">Monday &mdash; Saturday: 9:30 AM TO 6:30 PM</div>
 <div class="font-body-sm text-body-sm text-on-surface-variant">Conducted strictly by confirmed prior reservation.</div>
 </div>
+<!-- Corporate Entity Card -->
+<div class="sm:col-span-2 p-space-md sm:p-space-lg bg-surface-container rounded-lg border border-[#B38A3E]/30 shadow-sm flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+  <div>
+    <div class="flex items-center gap-2 mb-1 text-primary">
+      <span class="material-symbols-outlined notranslate text-[20px] text-secondary" translate="no">verified_user</span>
+      <span class="font-label-md text-label-md uppercase tracking-[0.1em] font-bold">Registered Corporate Entity</span>
+    </div>
+    <div class="font-headline-sm text-lg text-primary font-bold">ANUKUL LIFE HARMONY SOLUTIONS PRIVATE LIMITED</div>
+    <div class="font-body-sm text-xs text-on-surface-variant mt-0.5">
+      Official operating entity for ANUKUL Ayur Vastu Harmony Clinic &bull; Merchant billing name: <strong class="text-primary font-semibold">ANUKUL LIFE HARMONY SOLUTIONS PRIVATE LIMITED</strong>.
+    </div>
+  </div>
+  <span class="shrink-0 inline-flex items-center gap-1.5 px-3 py-1.5 rounded bg-primary text-white font-label-sm text-xs font-bold uppercase tracking-wider">
+    <span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+    Verified Entity
+  </span>
+</div>
 </div>
 </div>
 </div>

@@ -731,6 +731,16 @@ $hero_img  = get_post_meta( $page_id, '_anukul_hero_image_url', true ) ?: ( has_
 <span class="">Certified Traditional Vastu Vidya</span>
 </div>
 </div>
+<div class="mt-4 p-4 rounded-lg bg-[#FFFFFF] border border-[#B38A3E]/35 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 text-xs shadow-2xs">
+  <div>
+    <span class="font-label-sm text-[10px] uppercase tracking-wider text-[#C66A22] font-bold block">REGISTERED CORPORATE ENTITY</span>
+    <strong class="font-headline-sm text-sm text-[#1F4D3A] tracking-wide block mt-0.5">ANUKUL LIFE HARMONY SOLUTIONS PRIVATE LIMITED</strong>
+    <p class="text-[#2E2924]/75 text-[11px] mt-0.5">ANUKUL Ayur Vastu Harmony Clinic is a specialized wellness, Ayurveda, and spatial consulting initiative owned and operated by ANUKUL LIFE HARMONY SOLUTIONS PRIVATE LIMITED.</p>
+  </div>
+  <div class="shrink-0 px-3 py-1.5 rounded bg-[#1F4D3A] text-white font-label-sm text-[10px] uppercase tracking-wider font-bold">
+    Incorporated in India
+  </div>
+</div>
 </div>
 </div>
 </section>

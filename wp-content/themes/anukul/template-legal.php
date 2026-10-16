@@ -87,7 +87,7 @@ $current_slug = $post ? $post->post_name : '';
           <?php the_title(); ?>
         </h1>
         <p class="font-body-md text-sm sm:text-base text-on-surface-variant leading-relaxed">
-          <?php esc_html_e( 'Governing the purchase of consecrated classical herbal formulations, brass Vastu remedial artifacts, and private Ayurvedic & Astro-Vastu Muhurta clinical consultations.', 'anukul' ); ?>
+          <?php esc_html_e( 'Governing consultations, services, and products offered by ANUKUL LIFE HARMONY SOLUTIONS PRIVATE LIMITED (operating ANUKUL Ayur Vastu Harmony Clinic).', 'anukul' ); ?>
         </p>
       </div>
 
@@ -162,6 +162,10 @@ $current_slug = $post ? $post->post_name : '';
 
         <div class="space-y-3 font-body-sm text-xs text-on-surface bg-surface-container-lowest p-4 rounded-lg border border-[#E8D8BC]/40">
           <div>
+            <span class="font-label-sm text-[10px] text-outline uppercase tracking-wider block font-bold"><?php esc_html_e( 'Corporate Entity', 'anukul' ); ?></span>
+            <span class="font-bold text-primary"><?php esc_html_e( 'ANUKUL LIFE HARMONY SOLUTIONS PRIVATE LIMITED', 'anukul' ); ?></span>
+          </div>
+          <div>
             <span class="font-label-sm text-[10px] text-outline uppercase tracking-wider block font-bold"><?php esc_html_e( 'Nodal / Grievance Officer', 'anukul' ); ?></span>
             <span class="font-semibold text-primary"><?php esc_html_e( 'Compliance Secretariat, ANUKUL', 'anukul' ); ?></span>
           </div>
@@ -175,7 +179,7 @@ $current_slug = $post ? $post->post_name : '';
           </div>
           <div>
             <span class="font-label-sm text-[10px] text-outline uppercase tracking-wider block font-bold"><?php esc_html_e( 'Registered Premises', 'anukul' ); ?></span>
-            <span class="text-on-surface-variant"><?php esc_html_e( 'ANUKUL Healthcare Sanctuary, Maharashtra, India', 'anukul' ); ?></span>
+            <span class="text-on-surface-variant"><?php esc_html_e( 'ANUKUL Ayur Vastu Harmony Clinic, Maharashtra, India', 'anukul' ); ?></span>
           </div>
           <div class="pt-2 border-t border-[#E8D8BC]/40">
             <span class="font-label-sm text-[10px] text-secondary uppercase tracking-wider block font-bold"><?php esc_html_e( 'Resolution Standard', 'anukul' ); ?></span>

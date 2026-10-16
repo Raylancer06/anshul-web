@@ -277,6 +277,12 @@ get_header();
 </div>
 </div>
 </div>
+<div class="mt-4 p-4 rounded-lg bg-surface-container border border-[#E8D8BC] text-xs">
+  <span class="font-label-sm text-[10px] uppercase tracking-wider text-secondary font-bold block mb-1">Corporate &amp; Operational Governance</span>
+  <p class="text-on-surface text-xs leading-relaxed">
+    ANUKUL Ayur Vastu Harmony Clinic operates under the corporate governance of <strong class="text-primary font-bold">ANUKUL LIFE HARMONY SOLUTIONS PRIVATE LIMITED</strong>, an incorporated healthcare and spatial wellness organization in India.
+  </p>
+</div>
 </div>
 </div>
 </div>

@@ -23,7 +23,7 @@ $hours            = get_theme_mod( 'anukul_hours', 'Mon–Sat: 9:30 AM TO 6:30 P
 $address          = get_theme_mod( 'anukul_address', 'Prime Vedic Enclave, Cultural Quarter' );
 $footer_tagline   = get_theme_mod( 'anukul_footer_tagline', 'Health • Space • Lifestyle • Harmony' );
 $footer_ethos     = get_theme_mod( 'anukul_footer_ethos', 'Anchored in classical Vedic sciences, spatial alignment, and holistic constitutional balance for serene modern living.' );
-$copyright_text   = get_theme_mod( 'anukul_footer_copyright', '© ' . date( 'Y' ) . ' ' . get_bloginfo( 'name' ) . '. All rights reserved.' );
+$copyright_text   = get_theme_mod( 'anukul_footer_copyright', '&copy; ' . date( 'Y' ) . ' ANUKUL LIFE HARMONY SOLUTIONS PRIVATE LIMITED. All rights reserved.' );
 $copyright_text   = str_replace( array( 'Responsible Vedic Clinical Practice.', 'Responsible Vedic Clinical Practice' ), '', $copyright_text );
 $copyright_text   = trim( preg_replace( '/\s+/', ' ', $copyright_text ) );
 $footer_logo_url  = get_theme_mod( 'anukul_footer_logo' ) ?: anukul_get_logo_url();
@@ -65,6 +65,11 @@ $col3_class       = $has_col_4 ? 'md:col-span-3' : 'md:col-span-3';
                     <p class="font-body-sm text-body-sm text-[#E8D8BC]/85 max-w-sm pt-1 leading-relaxed">
                         <?php echo esc_html( $footer_ethos ); ?>
                     </p>
+                    <div class="pt-3 mt-1 border-t border-[#B38A3E]/20 text-xs text-[#E8D8BC]/85">
+                        <span class="block text-[10px] uppercase tracking-widest text-[#B38A3E] font-bold">OPERATING LEGAL ENTITY</span>
+                        <p class="font-semibold text-white text-[12px] mt-0.5 tracking-wide">ANUKUL LIFE HARMONY SOLUTIONS PRIVATE LIMITED</p>
+                        <p class="text-[11px] text-[#E8D8BC]/75 mt-0.5">Healthcare, Ayurveda Consultation &amp; Vastu Advisory Services</p>
+                    </div>
                 <?php endif; ?>
             </div>
 
@@ -123,7 +128,7 @@ $col3_class       = $has_col_4 ? 'md:col-span-3' : 'md:col-span-3';
         <div class="pt-6 border-t border-[#B38A3E]/20 flex flex-col lg:flex-row items-center justify-between gap-4">
             <div class="flex flex-col sm:flex-row items-center gap-2 sm:gap-3 text-center sm:text-left">
                 <p class="font-body-sm text-body-sm text-[#E8D8BC]/80">
-                    <?php echo esc_html( $copyright_text ); ?>
+                    <?php echo wp_kses_post( $copyright_text ); ?>
                 </p>
                 <span class="hidden sm:inline text-[#B38A3E]/40">&bull;</span>
                 <p class="font-body-sm text-body-sm text-[#E8D8BC]/90">
