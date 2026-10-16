@@ -12,17 +12,17 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 <div class="flex flex-col w-full">
   <!-- Sub-navigation & Sacred Axis Breadcrumbs -->
-  <section class="w-full bg-surface-bright py-space-sm border-b border-[#E8D8BC]">
-    <div class="max-w-7xl mx-auto px-6 lg:px-12 flex items-center justify-between text-on-surface-variant font-body-sm text-body-sm">
+  <section class="w-full bg-[#FFF8F4] py-space-sm border-b border-[#E8D8BC]">
+    <div class="max-w-7xl mx-auto px-6 lg:px-12 flex items-center justify-between text-[#414944] font-body-sm text-[13px]">
       <nav aria-label="Breadcrumb" class="flex items-center gap-space-xs tracking-wider">
-        <a class="hover:text-primary transition-colors" data-path="home" href="<?php echo esc_url( home_url( '/' ) ); ?>">Home</a>
+        <a class="hover:text-[#023625] transition-colors" data-path="home" href="<?php echo esc_url( home_url( '/' ) ); ?>">Home</a>
         <span class="opacity-40">/</span>
-        <a class="hover:text-primary transition-colors" data-path="account" href="<?php echo esc_url( function_exists( 'wc_get_page_permalink' ) ? wc_get_page_permalink( 'myaccount' ) : home_url( '/my-account/' ) ); ?>">My Account</a>
+        <a class="hover:text-[#023625] transition-colors" data-path="account" href="<?php echo esc_url( function_exists( 'wc_get_page_permalink' ) ? wc_get_page_permalink( 'myaccount' ) : home_url( '/my-account/' ) ); ?>">My Account</a>
         <span class="opacity-40">/</span>
-        <span id="auth-breadcrumb-current" aria-current="page" class="text-primary font-medium">Portal Access</span>
+        <span id="auth-breadcrumb-current" aria-current="page" class="text-[#023625] font-medium">Portal Access</span>
       </nav>
-      <div class="hidden sm:flex items-center gap-space-xs font-label-sm text-label-sm uppercase tracking-[0.2em] text-secondary">
-        <span class="inline-block w-1.5 h-1.5 rounded-full bg-secondary"></span>
+      <div class="hidden sm:flex items-center gap-space-xs font-label-sm text-[10px] uppercase tracking-[0.2em] text-[#974800] font-bold">
+        <span class="inline-block w-1.5 h-1.5 rounded-full bg-[#974800]"></span>
         Ishanya Portal &bull; SSL 256-Bit Encrypted
       </div>
     </div>
@@ -40,9 +40,9 @@ if ( ! defined( 'ABSPATH' ) ) {
       <?php endif; ?>
 
       <!-- Architectural Split Card -->
-      <div class="grid grid-cols-1 lg:grid-cols-12 bg-surface-container-lowest rounded-xl shadow-xl overflow-hidden relative border border-[#E8D8BC]/60">
+      <div class="grid grid-cols-1 lg:grid-cols-12 bg-white rounded-xl shadow-xl overflow-hidden relative border border-[#E8D8BC]/60">
         <!-- Left Cardinal Sanctuary Panel (5 Columns) -->
-        <div class="lg:col-span-5 bg-primary-container text-surface flex flex-col justify-between p-space-lg lg:p-space-xl relative overflow-hidden">
+        <div class="lg:col-span-5 bg-[#1F4D3A] text-[#FFF8F4] flex flex-col justify-between p-space-lg lg:p-space-xl relative overflow-hidden">
           <!-- Geometric Sacred Compass Watermark Overlay -->
           <div class="absolute -right-16 -top-16 w-64 h-64 opacity-5 pointer-events-none">
             <svg class="w-full h-full stroke-current" fill="none" stroke-width="0.75" viewBox="0 0 100 100">
@@ -55,50 +55,50 @@ if ( ! defined( 'ABSPATH' ) ) {
             </svg>
           </div>
           <div class="relative z-10 space-y-space-md">
-            <div class="inline-flex items-center gap-space-xs px-2.5 py-1 bg-surface-container-lowest/10 rounded text-secondary-fixed font-label-sm text-label-sm uppercase tracking-[0.2em]">
-              <span class="material-symbols-outlined notranslate text-[14px]" translate="no">auto_stories</span>
-              Panchamahabhuta Portal
+            <div class="inline-flex items-center gap-space-xs px-2.5 py-1 bg-white/10 rounded text-[#ffdbc7] font-label-sm text-[10px] uppercase tracking-[0.2em] w-fit">
+              <span class="material-symbols-outlined notranslate text-[14px] leading-none shrink-0" translate="no">auto_stories</span>
+              <span class="whitespace-nowrap leading-none font-semibold">Panchamahabhuta Portal</span>
             </div>
             <div class="space-y-space-xs">
-              <span class="font-label-sm text-label-sm uppercase tracking-[0.25em] text-secondary-fixed-dim block">Vedic Tenet &bull; Chapter IV</span>
-              <p class="font-editorial-quote text-editorial-quote italic text-surface-bright leading-relaxed">
+              <span class="font-label-sm text-[10px] uppercase tracking-[0.25em] text-[#ffb688] block font-semibold">Vedic Tenet &bull; Chapter IV</span>
+              <p class="font-editorial-quote text-[24px] sm:text-[26px] italic text-[#FFF8F4] leading-relaxed">
                 &ldquo;Balance is not a static state, but an agile harmony between the inner spirit and surrounding space.&rdquo;
               </p>
             </div>
           </div>
           <!-- Editorial Botanical Inset Feature -->
-          <div class="relative z-10 my-space-md bg-surface-container-lowest/5 p-space-md rounded-lg backdrop-blur-sm space-y-space-sm border border-white/10">
+          <div class="relative z-10 my-space-md bg-white/5 p-space-md rounded-lg backdrop-blur-sm space-y-space-sm border border-white/10">
             <div class="flex items-center gap-space-sm">
-              <div class="w-10 h-10 rounded-full bg-secondary/30 flex items-center justify-center text-secondary-fixed">
+              <div class="w-10 h-10 rounded-full bg-[#974800]/30 flex items-center justify-center text-[#ffdbc7] shrink-0">
                 <span class="material-symbols-outlined notranslate text-[20px]" translate="no">spa</span>
               </div>
               <div>
-                <h4 class="font-headline-sm text-headline-sm text-surface-bright leading-tight">Ayur Vastu Ledger</h4>
-                <p class="font-body-sm text-body-sm text-surface-dim">Bespoke formulations, Vastu surveys &amp; Panchakarma protocols.</p>
+                <h4 class="font-headline-sm text-[20px] text-[#FFF8F4] leading-tight font-serif">Ayur Vastu Ledger</h4>
+                <p class="font-body-sm text-[13px] text-[#e2d8d0]">Bespoke formulations, Vastu surveys &amp; Panchakarma protocols.</p>
               </div>
             </div>
-            <div class="pt-space-xs grid grid-cols-2 gap-2 text-surface-container-high font-label-sm text-label-sm">
+            <div class="pt-space-xs grid grid-cols-2 gap-2 text-[#f1e6de] font-label-sm text-[10px] uppercase tracking-wider font-semibold">
               <div class="flex items-center gap-1.5">
-                <span class="material-symbols-outlined notranslate text-secondary-fixed text-[14px]" translate="no">verified</span>
+                <span class="material-symbols-outlined notranslate text-[#ffdbc7] text-[14px]" translate="no">verified</span>
                 <span>Dosha Records</span>
               </div>
               <div class="flex items-center gap-1.5">
-                <span class="material-symbols-outlined notranslate text-secondary-fixed text-[14px]" translate="no">verified</span>
+                <span class="material-symbols-outlined notranslate text-[#ffdbc7] text-[14px]" translate="no">verified</span>
                 <span>Apothecary Orders</span>
               </div>
               <div class="flex items-center gap-1.5">
-                <span class="material-symbols-outlined notranslate text-secondary-fixed text-[14px]" translate="no">verified</span>
+                <span class="material-symbols-outlined notranslate text-[#ffdbc7] text-[14px]" translate="no">verified</span>
                 <span>Spatial Audits</span>
               </div>
               <div class="flex items-center gap-1.5">
-                <span class="material-symbols-outlined notranslate text-secondary-fixed text-[14px]" translate="no">verified</span>
+                <span class="material-symbols-outlined notranslate text-[#ffdbc7] text-[14px]" translate="no">verified</span>
                 <span>Vaidya Messages</span>
               </div>
             </div>
           </div>
-          <div class="relative z-10 pt-space-sm flex items-center justify-between font-label-sm text-label-sm text-surface-dim uppercase tracking-wider">
+          <div class="relative z-10 pt-space-sm flex items-center justify-between font-label-sm text-[11px] text-[#e2d8d0] uppercase tracking-wider">
             <span>Sanctuary Verified</span>
-            <span class="flex items-center gap-1 text-secondary-fixed">
+            <span class="flex items-center gap-1 text-[#ffdbc7] font-semibold">
               <span class="material-symbols-outlined notranslate text-[16px]" translate="no">lock</span>
               Protected Session
             </span>
@@ -106,15 +106,15 @@ if ( ! defined( 'ABSPATH' ) ) {
         </div>
 
         <!-- Right Authentication Form Panel (7 Columns) -->
-        <div class="lg:col-span-7 bg-surface-container-lowest p-space-lg lg:p-space-xl flex flex-col justify-between">
+        <div class="lg:col-span-7 bg-white p-space-lg lg:p-space-xl flex flex-col justify-between">
           <div>
             <!-- Form Tabs (Login vs Register) -->
-            <div class="flex items-center gap-4 border-b border-[#E8D8BC] pb-3 mb-space-md">
-              <button type="button" id="tab-btn-login" onclick="toggleAuthForm('login')" class="font-label-sm text-xs uppercase tracking-[0.2em] font-bold text-primary border-b-2 border-primary pb-2 -mb-[14px] transition-colors cursor-pointer">
+            <div class="flex items-center gap-6 border-b border-[#E8D8BC] pb-3 mb-space-md">
+              <button type="button" id="tab-btn-login" onclick="toggleAuthForm('login')" class="font-label-sm text-[11px] sm:text-xs uppercase tracking-[0.2em] font-bold text-[#023625] border-b-2 border-[#023625] pb-2 -mb-[14px] transition-colors cursor-pointer">
                 Sign In
               </button>
               <?php if ( 'yes' === get_option( 'woocommerce_enable_myaccount_registration' ) ) : ?>
-                <button type="button" id="tab-btn-register" onclick="toggleAuthForm('register')" class="font-label-sm text-xs uppercase tracking-[0.2em] font-bold text-outline hover:text-primary pb-2 -mb-[14px] transition-colors cursor-pointer">
+                <button type="button" id="tab-btn-register" onclick="toggleAuthForm('register')" class="font-label-sm text-[11px] sm:text-xs uppercase tracking-[0.2em] font-bold text-[#717973] hover:text-[#023625] pb-2 -mb-[14px] transition-colors cursor-pointer">
                   Create Account
                 </button>
               <?php endif; ?>
@@ -126,9 +126,9 @@ if ( ! defined( 'ABSPATH' ) ) {
             <div id="auth-view-login">
               <!-- Form Header -->
               <div class="mb-space-md space-y-1">
-                <span class="font-label-sm text-label-sm uppercase tracking-[0.25em] text-secondary font-bold">Secure Account Access</span>
-                <h1 class="font-headline-lg text-headline-lg text-primary tracking-wide uppercase">WELCOME BACK</h1>
-                <p class="font-body-md text-body-md text-on-surface-variant">
+                <span class="font-label-sm text-[11px] uppercase tracking-[0.25em] text-[#974800] font-bold block">Secure Account Access</span>
+                <h1 class="font-headline-lg font-serif text-[28px] sm:text-[34px] lg:text-[38px] text-[#023625] tracking-wide leading-tight uppercase font-medium">WELCOME BACK</h1>
+                <p class="font-body-md text-[14px] sm:text-[15px] text-[#414944] leading-relaxed">
                   Sign in to your ANUKUL sanctuary account to view your therapeutic orders and spatial alignment consultations.
                 </p>
               </div>
@@ -140,35 +140,35 @@ if ( ! defined( 'ABSPATH' ) ) {
                 <!-- Email / Username Field -->
                 <div class="space-y-1.5">
                   <div class="flex items-center justify-between">
-                    <label class="font-label-md text-label-md uppercase tracking-wider text-on-surface font-semibold" for="username">
-                      Email Address or Username <span aria-hidden="true" class="text-error">*</span>
+                    <label class="font-label-md text-[11px] sm:text-[12px] uppercase tracking-wider text-[#1f1b16] font-bold" for="username">
+                      Email Address or Username <span aria-hidden="true" class="text-[#ba1a1a]">*</span>
                     </label>
-                    <span class="font-body-sm text-body-sm text-on-surface-variant opacity-75">Required</span>
+                    <span class="font-label-sm text-[10px] uppercase tracking-widest text-[#974800] font-bold">Required</span>
                   </div>
-                  <div class="relative">
-                    <span class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-on-surface-variant opacity-60">
+                  <div class="relative flex items-center">
+                    <span class="absolute left-3.5 flex items-center pointer-events-none text-[#717973]">
                       <span class="material-symbols-outlined notranslate text-[18px]" translate="no">alternate_email</span>
                     </span>
-                    <input autocomplete="username" class="w-full pl-10 pr-4 py-3 bg-surface-container-low text-on-surface rounded-lg font-body-md text-body-md placeholder:text-outline-variant focus:bg-surface-container-lowest focus:outline-none focus:ring-2 focus:ring-primary-container transition-all" id="username" name="username" placeholder="e.g. yourname@domain.com" required type="text" value="<?php echo ( ! empty( $_POST['username'] ) ) ? esc_attr( wp_unslash( $_POST['username'] ) ) : ''; ?>"/>
+                    <input autocomplete="username" class="w-full pl-10 pr-4 py-3 bg-[#fcf2ea] text-[#1f1b16] rounded-lg font-body-md text-[14px] sm:text-[15px] placeholder:text-[#717973] border border-transparent focus:border-[#B38A3E] focus:bg-white focus:outline-none focus:ring-1 focus:ring-[#1F4D3A] transition-all" id="username" name="username" placeholder="e.g. yourname@domain.com" required type="text" value="<?php echo ( ! empty( $_POST['username'] ) ) ? esc_attr( wp_unslash( $_POST['username'] ) ) : ''; ?>"/>
                   </div>
                 </div>
 
                 <!-- Password Field with Visibility Toggle -->
                 <div class="space-y-1.5">
                   <div class="flex items-center justify-between">
-                    <label class="font-label-md text-label-md uppercase tracking-wider text-on-surface font-semibold" for="password">
-                      Password <span aria-hidden="true" class="text-error">*</span>
+                    <label class="font-label-md text-[11px] sm:text-[12px] uppercase tracking-wider text-[#1f1b16] font-bold" for="password">
+                      Password <span aria-hidden="true" class="text-[#ba1a1a]">*</span>
                     </label>
-                    <a class="font-label-md text-label-md text-secondary hover:text-primary transition-colors tracking-wide underline decoration-secondary/30 underline-offset-4" href="<?php echo esc_url( wp_lostpassword_url() ); ?>">
+                    <a class="font-label-md text-[11px] sm:text-[12px] text-[#974800] hover:text-[#023625] transition-colors tracking-wide underline decoration-[#974800]/40 underline-offset-4 font-semibold" href="<?php echo esc_url( wp_lostpassword_url() ); ?>">
                       Forgot password?
                     </a>
                   </div>
-                  <div class="relative">
-                    <span class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-on-surface-variant opacity-60">
+                  <div class="relative flex items-center">
+                    <span class="absolute left-3.5 flex items-center pointer-events-none text-[#717973]">
                       <span class="material-symbols-outlined notranslate text-[18px]" translate="no">lock</span>
                     </span>
-                    <input autocomplete="current-password" class="w-full pl-10 pr-12 py-3 bg-surface-container-low text-on-surface rounded-lg font-body-md text-body-md placeholder:text-outline-variant focus:bg-surface-container-lowest focus:outline-none focus:ring-2 focus:ring-primary-container transition-all" id="password" name="password" placeholder="Enter your confidential passphrase" required type="password" value=""/>
-                    <button aria-label="Toggle password visibility" class="absolute inset-y-0 right-0 pr-3.5 flex items-center text-on-surface-variant hover:text-primary transition-colors cursor-pointer" id="toggle-login-password-btn" type="button">
+                    <input autocomplete="current-password" class="w-full pl-10 pr-12 py-3 bg-[#fcf2ea] text-[#1f1b16] rounded-lg font-body-md text-[14px] sm:text-[15px] placeholder:text-[#717973] border border-transparent focus:border-[#B38A3E] focus:bg-white focus:outline-none focus:ring-1 focus:ring-[#1F4D3A] transition-all" id="password" name="password" placeholder="Enter your confidential passphrase" required type="password" value=""/>
+                    <button aria-label="Toggle password visibility" class="absolute right-3 pr-1 flex items-center text-[#717973] hover:text-[#023625] transition-colors cursor-pointer p-1" id="toggle-login-password-btn" type="button">
                       <span class="material-symbols-outlined notranslate text-[20px]" translate="no" id="login-password-toggle-icon">visibility</span>
                     </button>
                   </div>
@@ -178,10 +178,10 @@ if ( ! defined( 'ABSPATH' ) ) {
                 <div class="flex items-center justify-between pt-1">
                   <label class="flex items-center gap-space-xs cursor-pointer select-none group">
                     <input class="sr-only peer" id="rememberme" name="rememberme" type="checkbox" value="forever" checked/>
-                    <div class="w-4 h-4 rounded bg-surface-container-high peer-checked:bg-primary-container flex items-center justify-center transition-all group-hover:scale-105">
-                      <span class="material-symbols-outlined notranslate text-[13px] text-on-primary font-bold opacity-0 peer-checked:opacity-100 transition-opacity" translate="no">check</span>
+                    <div class="w-4 h-4 rounded bg-[#f1e6de] peer-checked:bg-[#1F4D3A] flex items-center justify-center transition-all group-hover:scale-105 border border-[#c0c9c2]">
+                      <span class="material-symbols-outlined notranslate text-[13px] text-white font-bold opacity-0 peer-checked:opacity-100 transition-opacity" translate="no">check</span>
                     </div>
-                    <span class="font-body-sm text-body-sm text-on-surface-variant group-hover:text-on-surface transition-colors">
+                    <span class="font-body-sm text-[13px] text-[#414944] group-hover:text-[#1f1b16] transition-colors">
                       Keep me signed in on this sanctum device
                     </span>
                   </label>
@@ -192,7 +192,7 @@ if ( ! defined( 'ABSPATH' ) ) {
                 <!-- Submit Button -->
                 <div class="pt-space-xs">
                   <?php wp_nonce_field( 'woocommerce-login', 'woocommerce-login-nonce' ); ?>
-                  <button class="w-full py-3.5 px-6 rounded-lg bg-primary-container text-on-primary font-label-md text-label-md uppercase tracking-[0.15em] font-semibold hover:bg-tertiary-container hover:text-on-tertiary shadow-md transition-all flex items-center justify-center gap-2 group cursor-pointer" id="submit-login-btn" name="login" type="submit" value="<?php esc_attr_e( 'Log in', 'woocommerce' ); ?>">
+                  <button class="w-full py-3.5 px-6 rounded-lg bg-[#1F4D3A] text-white font-label-md text-xs sm:text-[13px] uppercase tracking-[0.15em] font-semibold hover:bg-[#7b2739] shadow-md transition-all flex items-center justify-center gap-2 group cursor-pointer" id="submit-login-btn" name="login" type="submit" value="<?php esc_attr_e( 'Log in', 'woocommerce' ); ?>">
                     <span>SIGN IN TO SANCTUM</span>
                     <span class="material-symbols-outlined notranslate text-[18px] group-hover:translate-x-1 transition-transform" translate="no">arrow_forward</span>
                   </button>
@@ -203,8 +203,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 
               <!-- Divider -->
               <div class="my-space-lg relative flex items-center justify-center">
-                <div class="w-full h-px bg-surface-variant"></div>
-                <span class="absolute px-4 bg-surface-container-lowest font-label-sm text-label-sm uppercase tracking-[0.2em] text-outline">
+                <div class="w-full h-px bg-[#ebe1d9]"></div>
+                <span class="absolute px-4 bg-white font-label-sm text-[10px] uppercase tracking-[0.2em] text-[#717973] font-semibold">
                   New to ANUKUL?
                 </span>
               </div>
@@ -212,21 +212,21 @@ if ( ! defined( 'ABSPATH' ) ) {
               <!-- Create Account Action -->
               <div class="space-y-space-sm">
                 <?php if ( 'yes' === get_option( 'woocommerce_enable_myaccount_registration' ) ) : ?>
-                  <button type="button" onclick="toggleAuthForm('register')" class="w-full py-3 px-6 rounded-lg bg-surface-container-low text-primary hover:bg-secondary-fixed hover:text-on-secondary-fixed transition-colors font-label-md text-label-md uppercase tracking-[0.15em] font-semibold text-center block shadow-sm cursor-pointer">
+                  <button type="button" onclick="toggleAuthForm('register')" class="w-full py-3 px-6 rounded-lg bg-[#fcf2ea] text-[#023625] hover:bg-[#ffdbc7] hover:text-[#311300] transition-colors font-label-md text-xs sm:text-[13px] uppercase tracking-[0.15em] font-semibold text-center block shadow-sm cursor-pointer">
                     Create An Account
                   </button>
                 <?php else : ?>
-                  <a class="w-full py-3 px-6 rounded-lg bg-surface-container-low text-primary hover:bg-secondary-fixed hover:text-on-secondary-fixed transition-colors font-label-md text-label-md uppercase tracking-[0.15em] font-semibold text-center block shadow-sm" href="<?php echo esc_url( home_url( '/book-your-consultation/' ) ); ?>">
+                  <a class="w-full py-3 px-6 rounded-lg bg-[#fcf2ea] text-[#023625] hover:bg-[#ffdbc7] hover:text-[#311300] transition-colors font-label-md text-xs sm:text-[13px] uppercase tracking-[0.15em] font-semibold text-center block shadow-sm" href="<?php echo esc_url( home_url( '/book-your-consultation/' ) ); ?>">
                     Book A Clinical Consultation
                   </a>
                 <?php endif; ?>
 
-                <div class="flex items-center justify-between pt-space-xs font-body-sm text-body-sm">
-                  <a class="inline-flex items-center gap-1.5 text-on-surface-variant hover:text-primary transition-colors" data-path="shop" href="<?php echo esc_url( function_exists( 'wc_get_page_permalink' ) ? wc_get_page_permalink( 'shop' ) : home_url( '/shop/' ) ); ?>">
+                <div class="flex items-center justify-between pt-space-xs font-body-sm text-[13px]">
+                  <a class="inline-flex items-center gap-1.5 text-[#414944] hover:text-[#023625] transition-colors" data-path="shop" href="<?php echo esc_url( function_exists( 'wc_get_page_permalink' ) ? wc_get_page_permalink( 'shop' ) : home_url( '/shop/' ) ); ?>">
                     <span class="material-symbols-outlined notranslate text-[16px]" translate="no">arrow_back</span>
                     <span>Return to Herbal Apothecary</span>
                   </a>
-                  <a class="text-on-surface-variant hover:text-secondary transition-colors" data-path="contact" href="<?php echo esc_url( home_url( '/contact/' ) ); ?>">
+                  <a class="text-[#414944] hover:text-[#974800] transition-colors font-medium" data-path="contact" href="<?php echo esc_url( home_url( '/contact/' ) ); ?>">
                     Need Vaidya Assistance?
                   </a>
                 </div>
@@ -239,9 +239,9 @@ if ( ! defined( 'ABSPATH' ) ) {
             <?php if ( 'yes' === get_option( 'woocommerce_enable_myaccount_registration' ) ) : ?>
               <div id="auth-view-register" class="hidden">
                 <div class="mb-space-md space-y-1">
-                  <span class="font-label-sm text-label-sm uppercase tracking-[0.25em] text-secondary font-bold">New Seeker Enrollment</span>
-                  <h2 class="font-headline-lg text-headline-lg text-primary tracking-wide uppercase">CREATE SANCTUARY ACCOUNT</h2>
-                  <p class="font-body-md text-body-md text-on-surface-variant">
+                  <span class="font-label-sm text-[11px] uppercase tracking-[0.25em] text-[#974800] font-bold block">New Seeker Enrollment</span>
+                  <h2 class="font-headline-lg font-serif text-[28px] sm:text-[34px] lg:text-[38px] text-[#023625] tracking-wide leading-tight uppercase font-medium">CREATE SANCTUARY ACCOUNT</h2>
+                  <p class="font-body-md text-[14px] sm:text-[15px] text-[#414944] leading-relaxed">
                     Register to maintain your clinical records, order consecrated formulations, and access private consultation dossiers.
                   </p>
                 </div>
@@ -254,21 +254,21 @@ if ( ! defined( 'ABSPATH' ) ) {
                   <div class="grid grid-cols-1 sm:grid-cols-2 gap-space-md">
                     <div class="flex flex-col gap-1.5">
                       <div class="flex items-center justify-between">
-                        <label class="font-label-md text-label-md text-on-surface uppercase tracking-wider font-semibold" for="reg_billing_first_name">
+                        <label class="font-label-md text-[11px] sm:text-[12px] text-[#1f1b16] uppercase tracking-wider font-bold" for="reg_billing_first_name">
                           First Name
                         </label>
-                        <span class="font-label-sm text-label-sm text-outline uppercase tracking-wider">(Optional)</span>
+                        <span class="font-label-sm text-[10px] text-[#717973] uppercase tracking-wider font-medium">(Optional)</span>
                       </div>
-                      <input autocomplete="given-name" class="w-full bg-surface-container-low px-4 py-3 rounded-lg font-body-md text-body-md text-on-surface focus:outline-none focus:bg-surface-container-lowest focus:ring-2 focus:ring-primary-container transition-all placeholder:text-outline" id="reg_billing_first_name" name="billing_first_name" placeholder="e.g. Aranya" type="text" value="<?php echo ( ! empty( $_POST['billing_first_name'] ) ) ? esc_attr( wp_unslash( $_POST['billing_first_name'] ) ) : ''; ?>"/>
+                      <input autocomplete="given-name" class="w-full bg-[#fcf2ea] px-4 py-3 rounded-lg font-body-md text-[14px] sm:text-[15px] text-[#1f1b16] border border-transparent focus:border-[#B38A3E] focus:bg-white focus:outline-none focus:ring-1 focus:ring-[#1F4D3A] transition-all placeholder:text-[#717973]" id="reg_billing_first_name" name="billing_first_name" placeholder="e.g. Aranya" type="text" value="<?php echo ( ! empty( $_POST['billing_first_name'] ) ) ? esc_attr( wp_unslash( $_POST['billing_first_name'] ) ) : ''; ?>"/>
                     </div>
                     <div class="flex flex-col gap-1.5">
                       <div class="flex items-center justify-between">
-                        <label class="font-label-md text-label-md text-on-surface uppercase tracking-wider font-semibold" for="reg_billing_last_name">
+                        <label class="font-label-md text-[11px] sm:text-[12px] text-[#1f1b16] uppercase tracking-wider font-bold" for="reg_billing_last_name">
                           Last Name
                         </label>
-                        <span class="font-label-sm text-label-sm text-outline uppercase tracking-wider">(Optional)</span>
+                        <span class="font-label-sm text-[10px] text-[#717973] uppercase tracking-wider font-medium">(Optional)</span>
                       </div>
-                      <input autocomplete="family-name" class="w-full bg-surface-container-low px-4 py-3 rounded-lg font-body-md text-body-md text-on-surface focus:outline-none focus:bg-surface-container-lowest focus:ring-2 focus:ring-primary-container transition-all placeholder:text-outline" id="reg_billing_last_name" name="billing_last_name" placeholder="e.g. Varma" type="text" value="<?php echo ( ! empty( $_POST['billing_last_name'] ) ) ? esc_attr( wp_unslash( $_POST['billing_last_name'] ) ) : ''; ?>"/>
+                      <input autocomplete="family-name" class="w-full bg-[#fcf2ea] px-4 py-3 rounded-lg font-body-md text-[14px] sm:text-[15px] text-[#1f1b16] border border-transparent focus:border-[#B38A3E] focus:bg-white focus:outline-none focus:ring-1 focus:ring-[#1F4D3A] transition-all placeholder:text-[#717973]" id="reg_billing_last_name" name="billing_last_name" placeholder="e.g. Varma" type="text" value="<?php echo ( ! empty( $_POST['billing_last_name'] ) ) ? esc_attr( wp_unslash( $_POST['billing_last_name'] ) ) : ''; ?>"/>
                     </div>
                   </div>
 
@@ -276,14 +276,14 @@ if ( ! defined( 'ABSPATH' ) ) {
                   <?php if ( 'no' === get_option( 'woocommerce_registration_generate_username' ) ) : ?>
                     <div class="space-y-1.5">
                       <div class="flex items-center justify-between">
-                        <label class="font-label-md text-label-md uppercase tracking-wider text-on-surface font-semibold" for="reg_username">
-                          Username <span class="text-error">*</span>
+                        <label class="font-label-md text-[11px] sm:text-[12px] uppercase tracking-wider text-[#1f1b16] font-bold" for="reg_username">
+                          Username <span class="text-[#ba1a1a]">*</span>
                         </label>
-                        <span class="font-label-sm text-label-sm text-secondary uppercase tracking-widest">Required</span>
+                        <span class="font-label-sm text-[10px] text-[#974800] uppercase tracking-widest font-bold">Required</span>
                       </div>
                       <div class="relative flex items-center">
-                        <span class="material-symbols-outlined notranslate absolute left-3.5 text-outline text-[18px] pointer-events-none" translate="no">account_circle</span>
-                        <input type="text" class="w-full pl-10 pr-4 py-3 bg-surface-container-low text-on-surface rounded-lg font-body-md text-body-md focus:outline-none focus:bg-surface-container-lowest focus:ring-2 focus:ring-primary-container transition-all" name="username" id="reg_username" autocomplete="username" value="<?php echo ( ! empty( $_POST['username'] ) ) ? esc_attr( wp_unslash( $_POST['username'] ) ) : ''; ?>" placeholder="Choose a unique username" required />
+                        <span class="material-symbols-outlined notranslate absolute left-3.5 text-[#717973] text-[18px] pointer-events-none" translate="no">account_circle</span>
+                        <input type="text" class="w-full pl-10 pr-4 py-3 bg-[#fcf2ea] text-[#1f1b16] rounded-lg font-body-md text-[14px] sm:text-[15px] border border-transparent focus:border-[#B38A3E] focus:bg-white focus:outline-none focus:ring-1 focus:ring-[#1F4D3A] transition-all placeholder:text-[#717973]" name="username" id="reg_username" autocomplete="username" value="<?php echo ( ! empty( $_POST['username'] ) ) ? esc_attr( wp_unslash( $_POST['username'] ) ) : ''; ?>" placeholder="Choose a unique username" required />
                       </div>
                     </div>
                   <?php endif; ?>
@@ -291,14 +291,14 @@ if ( ! defined( 'ABSPATH' ) ) {
                   <!-- Email Address -->
                   <div class="space-y-1.5">
                     <div class="flex items-center justify-between">
-                      <label class="font-label-md text-label-md uppercase tracking-wider text-on-surface font-semibold" for="reg_email">
-                        Email Address <span class="text-error">*</span>
+                      <label class="font-label-md text-[11px] sm:text-[12px] uppercase tracking-wider text-[#1f1b16] font-bold" for="reg_email">
+                        Email Address <span class="text-[#ba1a1a]">*</span>
                       </label>
-                      <span class="font-label-sm text-label-sm text-secondary uppercase tracking-widest">Required</span>
+                      <span class="font-label-sm text-[10px] text-[#974800] uppercase tracking-widest font-bold">Required</span>
                     </div>
                     <div class="relative flex items-center">
-                      <span class="material-symbols-outlined notranslate absolute left-3.5 text-outline text-[18px] pointer-events-none" translate="no">mail</span>
-                      <input type="email" class="w-full pl-10 pr-4 py-3 bg-surface-container-low text-on-surface rounded-lg font-body-md text-body-md focus:outline-none focus:bg-surface-container-lowest focus:ring-2 focus:ring-primary-container transition-all" name="email" id="reg_email" autocomplete="email" value="<?php echo ( ! empty( $_POST['email'] ) ) ? esc_attr( wp_unslash( $_POST['email'] ) ) : ''; ?>" placeholder="name@example.com" required />
+                      <span class="material-symbols-outlined notranslate absolute left-3.5 text-[#717973] text-[18px] pointer-events-none" translate="no">mail</span>
+                      <input type="email" class="w-full pl-10 pr-4 py-3 bg-[#fcf2ea] text-[#1f1b16] rounded-lg font-body-md text-[14px] sm:text-[15px] border border-transparent focus:border-[#B38A3E] focus:bg-white focus:outline-none focus:ring-1 focus:ring-[#1F4D3A] transition-all placeholder:text-[#717973]" name="email" id="reg_email" autocomplete="email" value="<?php echo ( ! empty( $_POST['email'] ) ) ? esc_attr( wp_unslash( $_POST['email'] ) ) : ''; ?>" placeholder="name@example.com" required />
                     </div>
                   </div>
 
@@ -306,33 +306,33 @@ if ( ! defined( 'ABSPATH' ) ) {
                   <?php if ( 'no' === get_option( 'woocommerce_registration_generate_password' ) ) : ?>
                     <div class="space-y-1.5">
                       <div class="flex items-center justify-between">
-                        <label class="font-label-md text-label-md uppercase tracking-wider text-on-surface font-semibold" for="reg_password">
-                          Password <span class="text-error">*</span>
+                        <label class="font-label-md text-[11px] sm:text-[12px] uppercase tracking-wider text-[#1f1b16] font-bold" for="reg_password">
+                          Password <span class="text-[#ba1a1a]">*</span>
                         </label>
-                        <span class="font-label-sm text-label-sm text-secondary uppercase tracking-widest">Required</span>
+                        <span class="font-label-sm text-[10px] text-[#974800] uppercase tracking-widest font-bold">Required</span>
                       </div>
                       <div class="relative flex items-center">
-                        <span class="material-symbols-outlined notranslate absolute left-3.5 text-outline text-[18px] pointer-events-none" translate="no">lock</span>
-                        <input type="password" class="w-full pl-10 pr-12 py-3 bg-surface-container-low text-on-surface rounded-lg font-body-md text-body-md focus:outline-none focus:bg-surface-container-lowest focus:ring-2 focus:ring-primary-container transition-all" name="password" id="reg_password" autocomplete="new-password" oninput="updatePasswordStrength(this.value)" placeholder="••••••••••••" required />
-                        <button aria-label="Toggle password visibility" class="absolute right-3 text-outline hover:text-on-surface transition-colors p-1 cursor-pointer" onclick="toggleRegPassword('reg_password', this)" type="button">
+                        <span class="material-symbols-outlined notranslate absolute left-3.5 text-[#717973] text-[18px] pointer-events-none" translate="no">lock</span>
+                        <input type="password" class="w-full pl-10 pr-12 py-3 bg-[#fcf2ea] text-[#1f1b16] rounded-lg font-body-md text-[14px] sm:text-[15px] border border-transparent focus:border-[#B38A3E] focus:bg-white focus:outline-none focus:ring-1 focus:ring-[#1F4D3A] transition-all placeholder:text-[#717973]" name="password" id="reg_password" autocomplete="new-password" oninput="updatePasswordStrength(this.value)" placeholder="••••••••••••" required />
+                        <button aria-label="Toggle password visibility" class="absolute right-3 text-[#717973] hover:text-[#023625] transition-colors p-1 cursor-pointer" onclick="toggleRegPassword('reg_password', this)" type="button">
                           <span class="material-symbols-outlined notranslate text-[20px]" translate="no">visibility</span>
                         </button>
                       </div>
 
                       <!-- Password Strength Meter Component -->
-                      <div class="mt-2 bg-surface-container-low p-3 rounded-lg border border-[#E8D8BC]/50">
+                      <div class="mt-2 bg-[#fcf2ea] p-3 rounded-lg border border-[#E8D8BC]">
                         <div class="flex items-center justify-between mb-1.5">
-                          <span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Security Alignment:</span>
-                          <span class="font-label-sm text-label-sm uppercase tracking-widest font-semibold text-outline" id="strength-label">Pondering</span>
+                          <span class="font-label-sm text-[10px] text-[#414944] uppercase tracking-wider font-semibold">Security Alignment:</span>
+                          <span class="font-label-sm text-[10px] uppercase tracking-widest font-semibold text-[#717973]" id="strength-label">Pondering</span>
                         </div>
-                        <div class="w-full h-1.5 bg-surface-container-highest rounded-full overflow-hidden flex gap-1">
-                          <div class="h-full w-1/4 bg-surface-dim rounded-full transition-colors duration-300" id="meter-segment-1"></div>
-                          <div class="h-full w-1/4 bg-surface-dim rounded-full transition-colors duration-300" id="meter-segment-2"></div>
-                          <div class="h-full w-1/4 bg-surface-dim rounded-full transition-colors duration-300" id="meter-segment-3"></div>
-                          <div class="h-full w-1/4 bg-surface-dim rounded-full transition-colors duration-300" id="meter-segment-4"></div>
+                        <div class="w-full h-1.5 bg-[#ebe1d9] rounded-full overflow-hidden flex gap-1">
+                          <div class="h-full w-1/4 bg-[#e2d8d0] rounded-full transition-colors duration-300" id="meter-segment-1"></div>
+                          <div class="h-full w-1/4 bg-[#e2d8d0] rounded-full transition-colors duration-300" id="meter-segment-2"></div>
+                          <div class="h-full w-1/4 bg-[#e2d8d0] rounded-full transition-colors duration-300" id="meter-segment-3"></div>
+                          <div class="h-full w-1/4 bg-[#e2d8d0] rounded-full transition-colors duration-300" id="meter-segment-4"></div>
                         </div>
-                        <div class="flex items-center gap-2 mt-2 font-body-sm text-body-sm text-on-surface-variant text-[12px]">
-                          <span class="material-symbols-outlined notranslate text-[14px] text-secondary" translate="no">info</span>
+                        <div class="flex items-center gap-2 mt-2 font-body-sm text-[11px] text-[#414944]">
+                          <span class="material-symbols-outlined notranslate text-[14px] text-[#974800]" translate="no">info</span>
                           <span>Minimum 8 characters combining letters, numbers, and sacred marks</span>
                         </div>
                       </div>
@@ -341,23 +341,23 @@ if ( ! defined( 'ABSPATH' ) ) {
                     <!-- Confirm Password -->
                     <div class="space-y-1.5">
                       <div class="flex items-center justify-between">
-                        <label class="font-label-md text-label-md uppercase tracking-wider text-on-surface font-semibold" for="reg_confirm_password">
-                          Confirm Password <span class="text-error">*</span>
+                        <label class="font-label-md text-[11px] sm:text-[12px] uppercase tracking-wider text-[#1f1b16] font-bold" for="reg_confirm_password">
+                          Confirm Password <span class="text-[#ba1a1a]">*</span>
                         </label>
-                        <span class="font-label-sm text-label-sm uppercase tracking-wider text-outline flex items-center gap-1" id="match-indicator">
+                        <span class="font-label-sm text-[10px] uppercase tracking-wider text-[#717973] flex items-center gap-1 font-semibold" id="match-indicator">
                           <span class="material-symbols-outlined notranslate text-[14px]" translate="no">remove</span> Awaiting input
                         </span>
                       </div>
                       <div class="relative flex items-center">
-                        <span class="material-symbols-outlined notranslate absolute left-3.5 text-outline text-[18px] pointer-events-none" translate="no">lock_reset</span>
-                        <input type="password" class="w-full pl-10 pr-12 py-3 bg-surface-container-low text-on-surface rounded-lg font-body-md text-body-md focus:outline-none focus:bg-surface-container-lowest focus:ring-2 focus:ring-primary-container transition-all" name="confirm_password" id="reg_confirm_password" autocomplete="new-password" oninput="checkPasswordMatch()" placeholder="••••••••••••" required />
-                        <button aria-label="Toggle confirm password visibility" class="absolute right-3 text-outline hover:text-on-surface transition-colors p-1 cursor-pointer" onclick="toggleRegPassword('reg_confirm_password', this)" type="button">
+                        <span class="material-symbols-outlined notranslate absolute left-3.5 text-[#717973] text-[18px] pointer-events-none" translate="no">lock_reset</span>
+                        <input type="password" class="w-full pl-10 pr-12 py-3 bg-[#fcf2ea] text-[#1f1b16] rounded-lg font-body-md text-[14px] sm:text-[15px] border border-transparent focus:border-[#B38A3E] focus:bg-white focus:outline-none focus:ring-1 focus:ring-[#1F4D3A] transition-all placeholder:text-[#717973]" name="confirm_password" id="reg_confirm_password" autocomplete="new-password" oninput="checkPasswordMatch()" placeholder="••••••••••••" required />
+                        <button aria-label="Toggle confirm password visibility" class="absolute right-3 text-[#717973] hover:text-[#023625] transition-colors p-1 cursor-pointer" onclick="toggleRegPassword('reg_confirm_password', this)" type="button">
                           <span class="material-symbols-outlined notranslate text-[20px]" translate="no">visibility</span>
                         </button>
                       </div>
                     </div>
                   <?php else : ?>
-                    <p class="font-body-sm text-body-sm text-on-surface-variant italic">
+                    <p class="font-body-sm text-[13px] text-[#414944] italic">
                       A secure passkey will be transmitted to your email address.
                     </p>
                   <?php endif; ?>
@@ -365,10 +365,10 @@ if ( ! defined( 'ABSPATH' ) ) {
                   <!-- Privacy Policy Agreement -->
                   <div class="pt-1">
                     <label class="flex items-start gap-3 cursor-pointer select-none group">
-                      <input class="mt-1 w-4 h-4 rounded text-primary accent-primary focus:ring-0 cursor-pointer" id="agree-privacy-policy" name="privacy_policy" required type="checkbox" checked />
-                      <span class="font-body-sm text-body-sm text-on-surface-variant leading-snug">
+                      <input class="mt-1 w-4 h-4 rounded text-[#1F4D3A] accent-[#1F4D3A] focus:ring-0 cursor-pointer" id="agree-privacy-policy" name="privacy_policy" required type="checkbox" checked />
+                      <span class="font-body-sm text-[13px] text-[#414944] leading-snug">
                         I consent to the sanctuary storing my health records and orders in accordance with the 
-                        <a href="<?php echo esc_url( home_url( '/contact/#privacy' ) ); ?>" class="text-secondary hover:text-primary underline">Privacy Policy</a>.
+                        <a href="<?php echo esc_url( home_url( '/contact/#privacy' ) ); ?>" class="text-[#974800] hover:text-[#023625] underline font-medium">Privacy Policy</a>.
                       </span>
                     </label>
                   </div>
@@ -378,14 +378,14 @@ if ( ! defined( 'ABSPATH' ) ) {
                   <!-- Submit Register Button -->
                   <div class="pt-space-xs">
                     <?php wp_nonce_field( 'woocommerce-register', 'woocommerce-register-nonce' ); ?>
-                    <button type="submit" class="woocommerce-Button woocommerce-button button woocommerce-form-register__submit w-full py-3.5 px-6 rounded-lg bg-primary-container text-on-primary font-label-md text-label-md uppercase tracking-[0.15em] font-semibold hover:bg-tertiary-container hover:text-on-tertiary shadow-md transition-all flex items-center justify-center gap-2 group cursor-pointer" name="register" value="<?php esc_attr_e( 'Register', 'woocommerce' ); ?>">
+                    <button type="submit" class="woocommerce-Button woocommerce-button button woocommerce-form-register__submit w-full py-3.5 px-6 rounded-lg bg-[#1F4D3A] text-white font-label-md text-xs sm:text-[13px] uppercase tracking-[0.15em] font-semibold hover:bg-[#7b2739] shadow-md transition-all flex items-center justify-center gap-2 group cursor-pointer" name="register" value="<?php esc_attr_e( 'Register', 'woocommerce' ); ?>">
                       <span>CREATE SANCTUARY ACCOUNT</span>
                       <span class="material-symbols-outlined notranslate text-[18px] group-hover:translate-x-1 transition-transform" translate="no">arrow_forward</span>
                     </button>
                   </div>
 
                   <div class="pt-2 text-center">
-                    <button type="button" onclick="toggleAuthForm('login')" class="text-xs uppercase font-label-sm text-secondary hover:text-primary transition-colors underline tracking-wider font-semibold cursor-pointer">
+                    <button type="button" onclick="toggleAuthForm('login')" class="text-xs uppercase font-label-sm text-[#974800] hover:text-[#023625] transition-colors underline tracking-wider font-semibold cursor-pointer">
                       Already have an account? Sign In
                     </button>
                   </div>
@@ -398,12 +398,12 @@ if ( ! defined( 'ABSPATH' ) ) {
           </div>
 
           <!-- Footer Trust Credential Note -->
-          <div class="mt-space-lg pt-space-md bg-surface-container-low/60 -mx-space-lg -mb-space-lg p-space-md lg:-mx-space-xl lg:-mb-space-xl lg:px-space-xl flex flex-wrap items-center justify-between gap-space-sm text-on-surface-variant font-label-sm text-label-sm border-t border-[#E8D8BC]/50">
+          <div class="mt-space-lg pt-space-md bg-[#fcf2ea]/60 -mx-space-lg -mb-space-lg p-space-md lg:-mx-space-xl lg:-mb-space-xl lg:px-space-xl flex flex-wrap items-center justify-between gap-space-sm text-[#414944] font-label-sm text-[11px] border-t border-[#E8D8BC]/50">
             <div class="flex items-center gap-space-xs">
-              <span class="material-symbols-outlined notranslate text-secondary text-[16px]" translate="no">verified_user</span>
+              <span class="material-symbols-outlined notranslate text-[#974800] text-[16px]" translate="no">verified_user</span>
               <span>Standard ANUKUL Secure Authentication</span>
             </div>
-            <div class="flex items-center gap-space-xs text-outline">
+            <div class="flex items-center gap-space-xs text-[#717973]">
               <span class="material-symbols-outlined notranslate text-[14px]" translate="no">shield</span>
               <span>ISO 27001 Clinical Privacy Standard</span>
             </div>
@@ -413,31 +413,31 @@ if ( ! defined( 'ABSPATH' ) ) {
 
       <!-- Ancillary Clarification Cards -->
       <div class="mt-space-lg grid grid-cols-1 md:grid-cols-3 gap-space-md">
-        <div class="bg-surface-container-low p-space-md rounded-lg flex items-start gap-space-sm shadow-sm border border-[#E8D8BC]/60">
-          <div class="w-8 h-8 rounded bg-primary-container text-on-primary flex items-center justify-center shrink-0">
+        <div class="bg-[#fcf2ea] p-space-md rounded-lg flex items-start gap-space-sm shadow-sm border border-[#E8D8BC]/60">
+          <div class="w-8 h-8 rounded bg-[#1F4D3A] text-white flex items-center justify-center shrink-0">
             <span class="material-symbols-outlined notranslate text-[18px]" translate="no">calendar_month</span>
           </div>
           <div>
-            <h4 class="font-headline-sm text-headline-sm text-primary leading-tight">Clinical Appointments</h4>
-            <p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Review booked pulse diagnosis &amp; remote Vastu energy assessments.</p>
+            <h4 class="font-headline-sm font-serif text-[18px] text-[#023625] leading-tight font-semibold">Clinical Appointments</h4>
+            <p class="font-body-sm text-[13px] text-[#414944] mt-1 leading-relaxed">Review booked pulse diagnosis &amp; remote Vastu energy assessments.</p>
           </div>
         </div>
-        <div class="bg-surface-container-low p-space-md rounded-lg flex items-start gap-space-sm shadow-sm border border-[#E8D8BC]/60">
-          <div class="w-8 h-8 rounded bg-primary-container text-on-primary flex items-center justify-center shrink-0">
+        <div class="bg-[#fcf2ea] p-space-md rounded-lg flex items-start gap-space-sm shadow-sm border border-[#E8D8BC]/60">
+          <div class="w-8 h-8 rounded bg-[#1F4D3A] text-white flex items-center justify-center shrink-0">
             <span class="material-symbols-outlined notranslate text-[18px]" translate="no">inventory_2</span>
           </div>
           <div>
-            <h4 class="font-headline-sm text-headline-sm text-primary leading-tight">Apothecary Logistics</h4>
-            <p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Live tracking for handcrafted rasayanas and sanctified brass yantras.</p>
+            <h4 class="font-headline-sm font-serif text-[18px] text-[#023625] leading-tight font-semibold">Apothecary Logistics</h4>
+            <p class="font-body-sm text-[13px] text-[#414944] mt-1 leading-relaxed">Live tracking for handcrafted rasayanas and sanctified brass yantras.</p>
           </div>
         </div>
-        <div class="bg-surface-container-low p-space-md rounded-lg flex items-start gap-space-sm shadow-sm border border-[#E8D8BC]/60">
-          <div class="w-8 h-8 rounded bg-primary-container text-on-primary flex items-center justify-center shrink-0">
+        <div class="bg-[#fcf2ea] p-space-md rounded-lg flex items-start gap-space-sm shadow-sm border border-[#E8D8BC]/60">
+          <div class="w-8 h-8 rounded bg-[#1F4D3A] text-white flex items-center justify-center shrink-0">
             <span class="material-symbols-outlined notranslate text-[18px]" translate="no">encrypted</span>
           </div>
           <div>
-            <h4 class="font-headline-sm text-headline-sm text-primary leading-tight">Sacred Confidentiality</h4>
-            <p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Health charts and residential blueprints stored on encrypted servers.</p>
+            <h4 class="font-headline-sm font-serif text-[18px] text-[#023625] leading-tight font-semibold">Sacred Confidentiality</h4>
+            <p class="font-body-sm text-[13px] text-[#414944] mt-1 leading-relaxed">Health charts and residential blueprints stored on encrypted servers.</p>
           </div>
         </div>
       </div>
@@ -458,12 +458,12 @@ if ( ! defined( 'ABSPATH' ) ) {
         if (loginView) loginView.classList.add('hidden');
         registerView.classList.remove('hidden');
         if (tabRegister) {
-          tabRegister.classList.add('text-primary', 'border-b-2', 'border-primary');
-          tabRegister.classList.remove('text-outline');
+          tabRegister.classList.add('text-[#023625]', 'border-b-2', 'border-[#023625]');
+          tabRegister.classList.remove('text-[#717973]');
         }
         if (tabLogin) {
-          tabLogin.classList.remove('text-primary', 'border-b-2', 'border-primary');
-          tabLogin.classList.add('text-outline');
+          tabLogin.classList.remove('text-[#023625]', 'border-b-2', 'border-[#023625]');
+          tabLogin.classList.add('text-[#717973]');
         }
         if (breadcrumb) {
           breadcrumb.textContent = 'Register';
@@ -473,12 +473,12 @@ if ( ! defined( 'ABSPATH' ) ) {
         if (loginView) loginView.classList.remove('hidden');
         if (registerView) registerView.classList.add('hidden');
         if (tabLogin) {
-          tabLogin.classList.add('text-primary', 'border-b-2', 'border-primary');
-          tabLogin.classList.remove('text-outline');
+          tabLogin.classList.add('text-[#023625]', 'border-b-2', 'border-[#023625]');
+          tabLogin.classList.remove('text-[#717973]');
         }
         if (tabRegister) {
-          tabRegister.classList.remove('text-primary', 'border-b-2', 'border-primary');
-          tabRegister.classList.add('text-outline');
+          tabRegister.classList.remove('text-[#023625]', 'border-b-2', 'border-[#023625]');
+          tabRegister.classList.add('text-[#717973]');
         }
         if (breadcrumb) {
           breadcrumb.textContent = 'Login';
@@ -536,13 +536,13 @@ if ( ! defined( 'ABSPATH' ) ) {
 
       const reset = () => {
         [seg1, seg2, seg3, seg4].forEach(s => {
-          s.className = 'h-full w-1/4 bg-surface-dim rounded-full transition-colors duration-300';
+          s.className = 'h-full w-1/4 bg-[#e2d8d0] rounded-full transition-colors duration-300';
         });
       };
 
       if (!val || val.length === 0) {
         label.textContent = 'Pondering';
-        label.className = 'font-label-sm text-label-sm uppercase tracking-widest font-semibold text-outline';
+        label.className = 'font-label-sm text-[10px] uppercase tracking-widest font-semibold text-[#717973]';
         reset();
         return;
       }
@@ -557,26 +557,26 @@ if ( ! defined( 'ABSPATH' ) ) {
 
       if (score <= 1) {
         label.textContent = 'Fragile';
-        label.className = 'font-label-sm text-label-sm uppercase tracking-widest font-semibold text-error';
-        seg1.classList.replace('bg-surface-dim', 'bg-error');
+        label.className = 'font-label-sm text-[10px] uppercase tracking-widest font-semibold text-[#ba1a1a]';
+        seg1.classList.replace('bg-[#e2d8d0]', 'bg-[#ba1a1a]');
       } else if (score === 2) {
         label.textContent = 'Nascent';
-        label.className = 'font-label-sm text-label-sm uppercase tracking-widest font-semibold text-secondary';
-        seg1.classList.replace('bg-surface-dim', 'bg-secondary');
-        seg2.classList.replace('bg-surface-dim', 'bg-secondary');
+        label.className = 'font-label-sm text-[10px] uppercase tracking-widest font-semibold text-[#974800]';
+        seg1.classList.replace('bg-[#e2d8d0]', 'bg-[#974800]');
+        seg2.classList.replace('bg-[#e2d8d0]', 'bg-[#974800]');
       } else if (score === 3) {
         label.textContent = 'Harmonious';
-        label.className = 'font-label-sm text-label-sm uppercase tracking-widest font-semibold text-primary';
-        seg1.classList.replace('bg-surface-dim', 'bg-primary-container');
-        seg2.classList.replace('bg-surface-dim', 'bg-primary-container');
-        seg3.classList.replace('bg-surface-dim', 'bg-primary-container');
+        label.className = 'font-label-sm text-[10px] uppercase tracking-widest font-semibold text-[#023625]';
+        seg1.classList.replace('bg-[#e2d8d0]', 'bg-[#1F4D3A]');
+        seg2.classList.replace('bg-[#e2d8d0]', 'bg-[#1F4D3A]');
+        seg3.classList.replace('bg-[#e2d8d0]', 'bg-[#1F4D3A]');
       } else {
         label.textContent = 'Equilibrium Achieved';
-        label.className = 'font-label-sm text-label-sm uppercase tracking-widest font-semibold text-primary';
-        seg1.classList.replace('bg-surface-dim', 'bg-primary');
-        seg2.classList.replace('bg-surface-dim', 'bg-primary');
-        seg3.classList.replace('bg-surface-dim', 'bg-primary');
-        seg4.classList.replace('bg-surface-dim', 'bg-primary');
+        label.className = 'font-label-sm text-[10px] uppercase tracking-widest font-semibold text-[#023625]';
+        seg1.classList.replace('bg-[#e2d8d0]', 'bg-[#023625]');
+        seg2.classList.replace('bg-[#e2d8d0]', 'bg-[#023625]');
+        seg3.classList.replace('bg-[#e2d8d0]', 'bg-[#023625]');
+        seg4.classList.replace('bg-[#e2d8d0]', 'bg-[#023625]');
       }
 
       checkPasswordMatch();
@@ -591,16 +591,16 @@ if ( ! defined( 'ABSPATH' ) ) {
 
       if (!confirmPass.value) {
         indicator.innerHTML = '<span class="material-symbols-outlined notranslate text-[14px]" translate="no">remove</span> Awaiting input';
-        indicator.className = 'font-label-sm text-label-sm uppercase tracking-wider text-outline flex items-center gap-1';
+        indicator.className = 'font-label-sm text-[10px] uppercase tracking-wider text-[#717973] flex items-center gap-1 font-semibold';
         return;
       }
 
       if (pass.value === confirmPass.value) {
         indicator.innerHTML = '<span class="material-symbols-outlined notranslate text-[14px]" translate="no">check_circle</span> Passwords Match';
-        indicator.className = 'font-label-sm text-label-sm uppercase tracking-wider text-primary font-semibold flex items-center gap-1';
+        indicator.className = 'font-label-sm text-[10px] uppercase tracking-wider text-[#023625] font-semibold flex items-center gap-1';
       } else {
         indicator.innerHTML = '<span class="material-symbols-outlined notranslate text-[14px]" translate="no">cancel</span> Mismatch';
-        indicator.className = 'font-label-sm text-label-sm uppercase tracking-wider text-error font-semibold flex items-center gap-1';
+        indicator.className = 'font-label-sm text-[10px] uppercase tracking-wider text-[#ba1a1a] font-semibold flex items-center gap-1';
       }
     }
   </script>
