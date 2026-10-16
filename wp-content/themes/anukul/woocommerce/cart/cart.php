@@ -206,11 +206,13 @@ if ( WC()->cart->is_empty() ) : ?>
                                     <div class="grid grid-cols-1 sm:grid-cols-12 gap-4 items-center">
                                         <!-- Product Media & Details (6 cols) -->
                                         <div class="sm:col-span-6 flex items-start gap-4">
-                                            <div class="w-20 h-20 sm:w-24 sm:h-24 rounded-lg bg-surface-container-low overflow-hidden flex-shrink-0 relative border border-surface-variant/80">
+                                            <div class="cart-item-thumb w-20 h-20 sm:w-24 sm:h-24 rounded-lg bg-surface-container-low overflow-hidden flex-shrink-0 relative border border-surface-variant/80">
                                                 <?php if ( ! $product_permalink ) : ?>
-                                                    <?php echo $thumbnail; // PHPCS: XSS ok. ?>
+                                                    <div class="w-full h-full">
+                                                        <?php echo $thumbnail; // PHPCS: XSS ok. ?>
+                                                    </div>
                                                 <?php else : ?>
-                                                    <a href="<?php echo esc_url( $product_permalink ); ?>">
+                                                    <a href="<?php echo esc_url( $product_permalink ); ?>" class="block w-full h-full">
                                                         <?php echo $thumbnail; // PHPCS: XSS ok. ?>
                                                     </a>
                                                 <?php endif; ?>
@@ -242,10 +244,10 @@ if ( WC()->cart->is_empty() ) : ?>
                                                     <?php echo $_product->is_in_stock() ? esc_html__( 'In Stock · Blessed & Tuned', 'anukul' ) : esc_html__( 'Reserved Allocation', 'anukul' ); ?>
                                                 </span>
                                                 
-                                                <!-- Mobile remove link -->
-                                                <a href="<?php echo esc_url( wc_get_cart_remove_url( $cart_item_key ) ); ?>" class="remove sm:hidden mt-3 inline-flex items-center gap-1 font-label-sm text-label-sm text-tertiary hover:underline uppercase tracking-wider" aria-label="<?php echo esc_attr( sprintf( __( 'Remove %s from cart', 'anukul' ), wp_strip_all_tags( $_product->get_name() ) ) ); ?>">
-                                                    <span class="material-symbols-outlined notranslate text-[15px]" translate="no">delete</span>
-                                                    <?php esc_html_e( 'Remove', 'anukul' ); ?>
+                                                <!-- Mobile remove link (hidden on desktop sm: and above) -->
+                                                <a href="<?php echo esc_url( wc_get_cart_remove_url( $cart_item_key ) ); ?>" class="anukul-mobile-remove sm:hidden mt-2 inline-flex items-center gap-1 font-label-sm text-label-sm text-outline hover:text-tertiary transition-colors uppercase tracking-wider" aria-label="<?php echo esc_attr( sprintf( __( 'Remove %s from cart', 'anukul' ), wp_strip_all_tags( $_product->get_name() ) ) ); ?>">
+                                                    <span class="material-symbols-outlined notranslate text-[14px]" translate="no">delete</span>
+                                                    <span><?php esc_html_e( 'Remove', 'anukul' ); ?></span>
                                                 </a>
                                             </div>
                                         </div>

@@ -82,6 +82,62 @@ h1, h2, h3, h4, h5, h6, .font-display, .font-serif {
   display: block !important;
 }
 
+/* Cart Item Thumbnail Image Coverage - Eliminates all blank space */
+.cart-item-thumb {
+  position: relative !important;
+  overflow: hidden !important;
+}
+
+.cart-item-thumb a,
+.cart-item-thumb div {
+  width: 100% !important;
+  height: 100% !important;
+  display: block !important;
+}
+
+.cart-item-thumb img,
+.cart-item img {
+  width: 100% !important;
+  height: 100% !important;
+  min-width: 100% !important;
+  min-height: 100% !important;
+  max-width: none !important;
+  max-height: none !important;
+  object-fit: cover !important;
+  object-position: center !important;
+  display: block !important;
+}
+
+/* Neutralize WooCommerce default a.remove styling and eliminate duplicated red text */
+.woocommerce a.remove,
+a.remove {
+  background: transparent !important;
+  color: #717973 !important;
+  height: auto !important;
+  width: auto !important;
+  line-height: inherit !important;
+  border-radius: 0.5rem !important;
+  font-size: 1rem !important;
+  font-weight: 500 !important;
+  border: none !important;
+  text-decoration: none !important;
+}
+
+.woocommerce a.remove:hover,
+a.remove:hover {
+  color: #BA1A1A !important;
+  background-color: rgba(186, 26, 26, 0.08) !important;
+}
+
+/* Strictly hide mobile remove on desktop (sm: and above) */
+@media (min-width: 640px) {
+  .anukul-mobile-remove,
+  a.anukul-mobile-remove,
+  .cart-item a.sm\:hidden {
+    display: none !important;
+  }
+}
+
 /* Base Form & Button Scoping */
 button, input, select, textarea {
   font-family: inherit;

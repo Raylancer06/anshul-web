@@ -442,13 +442,15 @@ if ( ! $checkout->is_registration_enabled() && $checkout->is_registration_requir
                                     $category_tag = ! empty( $categories ) ? $categories[0] : __( 'Apothecary', 'anukul' );
                             ?>
                                 <div class="py-4 flex gap-4 items-center">
-                                    <div class="relative w-16 h-16 rounded-lg overflow-hidden border border-surface-variant bg-surface-container shrink-0">
+                                    <div class="cart-item-thumb relative w-16 h-16 rounded-lg overflow-hidden border border-surface-variant bg-surface-container shrink-0">
                                         <?php if ( empty( $thumbnail ) ) : ?>
                                             <div class="w-full h-full flex items-center justify-center text-outline">
                                                 <span class="material-symbols-outlined notranslate text-[24px]" translate="no">spa</span>
                                             </div>
                                         <?php else : ?>
-                                            <?php echo $thumbnail; ?>
+                                            <div class="w-full h-full">
+                                                <?php echo $thumbnail; ?>
+                                            </div>
                                         <?php endif; ?>
                                         <span class="absolute -top-1 -right-1 w-5 h-5 rounded-full bg-primary text-surface flex items-center justify-center font-label-sm text-label-sm font-bold shadow-sm">
                                             <?php echo esc_html( $cart_item['quantity'] ); ?>
