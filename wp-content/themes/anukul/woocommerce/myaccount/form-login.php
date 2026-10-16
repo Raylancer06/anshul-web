@@ -1,6 +1,6 @@
-﻿<?php
+<?php
 /**
- * Login / Register Form
+ * Login / Register Form (ANUKUL Panchamahabhuta Sanctuary Portal)
  *
  * @package Anukul
  */
@@ -19,7 +19,7 @@ if ( ! defined( 'ABSPATH' ) ) {
         <span class="opacity-40">/</span>
         <a class="hover:text-primary transition-colors" data-path="account" href="<?php echo esc_url( function_exists( 'wc_get_page_permalink' ) ? wc_get_page_permalink( 'myaccount' ) : home_url( '/my-account/' ) ); ?>">My Account</a>
         <span class="opacity-40">/</span>
-        <span aria-current="page" class="text-primary font-medium">Portal Access</span>
+        <span id="auth-breadcrumb-current" aria-current="page" class="text-primary font-medium">Portal Access</span>
       </nav>
       <div class="hidden sm:flex items-center gap-space-xs font-label-sm text-label-sm uppercase tracking-[0.2em] text-secondary">
         <span class="inline-block w-1.5 h-1.5 rounded-full bg-secondary"></span>
@@ -32,7 +32,7 @@ if ( ! defined( 'ABSPATH' ) ) {
   <section class="w-full py-space-lg lg:py-space-xl">
     <div class="max-w-5xl mx-auto px-6 lg:px-12">
 
-      <!-- Dynamic WooCommerce Notices Output -->
+      <!-- Dynamic WooCommerce Notices Output (Standard Secure WP/WC Notice System) -->
       <?php if ( function_exists( 'woocommerce_output_all_notices' ) ) : ?>
         <div class="mb-space-md anukul-wc-notices">
           <?php woocommerce_output_all_notices(); ?>
@@ -45,7 +45,7 @@ if ( ! defined( 'ABSPATH' ) ) {
         <div class="lg:col-span-5 bg-primary-container text-surface flex flex-col justify-between p-space-lg lg:p-space-xl relative overflow-hidden">
           <!-- Geometric Sacred Compass Watermark Overlay -->
           <div class="absolute -right-16 -top-16 w-64 h-64 opacity-5 pointer-events-none">
-            <svg class="w-full h-full stroke-current" fill="none" stroke-width="0.75" viewbox="0 0 100 100">
+            <svg class="w-full h-full stroke-current" fill="none" stroke-width="0.75" viewBox="0 0 100 100">
               <circle cx="50" cy="50" r="46"></circle>
               <circle cx="50" cy="50" r="32"></circle>
               <rect height="50" transform="rotate(45 50 50)" width="50" x="25" y="25"></rect>
@@ -110,28 +110,30 @@ if ( ! defined( 'ABSPATH' ) ) {
           <div>
             <!-- Form Tabs (Login vs Register) -->
             <div class="flex items-center gap-4 border-b border-[#E8D8BC] pb-3 mb-space-md">
-              <button type="button" id="tab-btn-login" onclick="toggleAuthForm('login')" class="font-label-sm text-xs uppercase tracking-[0.2em] font-bold text-primary border-b-2 border-primary pb-2 -mb-[14px] transition-colors">
+              <button type="button" id="tab-btn-login" onclick="toggleAuthForm('login')" class="font-label-sm text-xs uppercase tracking-[0.2em] font-bold text-primary border-b-2 border-primary pb-2 -mb-[14px] transition-colors cursor-pointer">
                 Sign In
               </button>
               <?php if ( 'yes' === get_option( 'woocommerce_enable_myaccount_registration' ) ) : ?>
-                <button type="button" id="tab-btn-register" onclick="toggleAuthForm('register')" class="font-label-sm text-xs uppercase tracking-[0.2em] font-bold text-outline hover:text-primary pb-2 -mb-[14px] transition-colors">
+                <button type="button" id="tab-btn-register" onclick="toggleAuthForm('register')" class="font-label-sm text-xs uppercase tracking-[0.2em] font-bold text-outline hover:text-primary pb-2 -mb-[14px] transition-colors cursor-pointer">
                   Create Account
                 </button>
               <?php endif; ?>
             </div>
 
-            <!-- LOGIN FORM VIEW -->
+            <!-- ========================================== -->
+            <!-- 1. LOGIN FORM VIEW                        -->
+            <!-- ========================================== -->
             <div id="auth-view-login">
               <!-- Form Header -->
               <div class="mb-space-md space-y-1">
                 <span class="font-label-sm text-label-sm uppercase tracking-[0.25em] text-secondary font-bold">Secure Account Access</span>
-                <h1 class="font-headline-lg text-headline-lg text-primary tracking-wide">WELCOME BACK</h1>
+                <h1 class="font-headline-lg text-headline-lg text-primary tracking-wide uppercase">WELCOME BACK</h1>
                 <p class="font-body-md text-body-md text-on-surface-variant">
                   Sign in to your ANUKUL sanctuary account to view your therapeutic orders and spatial alignment consultations.
                 </p>
               </div>
 
-              <!-- WooCommerce Login Form -->
+              <!-- Native WordPress / WooCommerce Login Form -->
               <form class="woocommerce-form woocommerce-form-login login space-y-space-md" method="post">
                 <?php do_action( 'woocommerce_login_form_start' ); ?>
 
@@ -147,7 +149,7 @@ if ( ! defined( 'ABSPATH' ) ) {
                     <span class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-on-surface-variant opacity-60">
                       <span class="material-symbols-outlined notranslate text-[18px]" translate="no">alternate_email</span>
                     </span>
-                    <input autocomplete="username" class="w-full pl-10 pr-4 py-3 bg-surface-container-low text-on-surface rounded-lg font-body-md text-body-md placeholder:text-outline-variant focus:bg-surface-container-lowest focus:outline-none focus:ring-2 focus:ring-primary-container transition-all" id="username" name="username" placeholder="Enter your email or username" required type="text" value="<?php echo ( ! empty( $_POST['username'] ) ) ? esc_attr( wp_unslash( $_POST['username'] ) ) : ''; ?>"/>
+                    <input autocomplete="username" class="w-full pl-10 pr-4 py-3 bg-surface-container-low text-on-surface rounded-lg font-body-md text-body-md placeholder:text-outline-variant focus:bg-surface-container-lowest focus:outline-none focus:ring-2 focus:ring-primary-container transition-all" id="username" name="username" placeholder="e.g. yourname@domain.com" required type="text" value="<?php echo ( ! empty( $_POST['username'] ) ) ? esc_attr( wp_unslash( $_POST['username'] ) ) : ''; ?>"/>
                   </div>
                 </div>
 
@@ -166,8 +168,8 @@ if ( ! defined( 'ABSPATH' ) ) {
                       <span class="material-symbols-outlined notranslate text-[18px]" translate="no">lock</span>
                     </span>
                     <input autocomplete="current-password" class="w-full pl-10 pr-12 py-3 bg-surface-container-low text-on-surface rounded-lg font-body-md text-body-md placeholder:text-outline-variant focus:bg-surface-container-lowest focus:outline-none focus:ring-2 focus:ring-primary-container transition-all" id="password" name="password" placeholder="Enter your confidential passphrase" required type="password" value=""/>
-                    <button aria-label="Toggle password visibility" class="absolute inset-y-0 right-0 pr-3.5 flex items-center text-on-surface-variant hover:text-primary transition-colors" id="toggle-password-btn" type="button">
-                      <span class="material-symbols-outlined notranslate text-[20px]" translate="no" id="password-toggle-icon">visibility</span>
+                    <button aria-label="Toggle password visibility" class="absolute inset-y-0 right-0 pr-3.5 flex items-center text-on-surface-variant hover:text-primary transition-colors cursor-pointer" id="toggle-login-password-btn" type="button">
+                      <span class="material-symbols-outlined notranslate text-[20px]" translate="no" id="login-password-toggle-icon">visibility</span>
                     </button>
                   </div>
                 </div>
@@ -190,7 +192,7 @@ if ( ! defined( 'ABSPATH' ) ) {
                 <!-- Submit Button -->
                 <div class="pt-space-xs">
                   <?php wp_nonce_field( 'woocommerce-login', 'woocommerce-login-nonce' ); ?>
-                  <button class="w-full py-3.5 px-6 rounded-lg bg-primary text-on-primary font-label-md text-label-md uppercase tracking-[0.15em] font-semibold hover:bg-tertiary shadow-md transition-all flex items-center justify-center gap-2 group cursor-pointer" id="submit-login-btn" name="login" type="submit" value="<?php esc_attr_e( 'Log in', 'woocommerce' ); ?>">
+                  <button class="w-full py-3.5 px-6 rounded-lg bg-primary-container text-on-primary font-label-md text-label-md uppercase tracking-[0.15em] font-semibold hover:bg-tertiary-container hover:text-on-tertiary shadow-md transition-all flex items-center justify-center gap-2 group cursor-pointer" id="submit-login-btn" name="login" type="submit" value="<?php esc_attr_e( 'Log in', 'woocommerce' ); ?>">
                     <span>SIGN IN TO SANCTUM</span>
                     <span class="material-symbols-outlined notranslate text-[18px] group-hover:translate-x-1 transition-transform" translate="no">arrow_forward</span>
                   </button>
@@ -210,7 +212,7 @@ if ( ! defined( 'ABSPATH' ) ) {
               <!-- Create Account Action -->
               <div class="space-y-space-sm">
                 <?php if ( 'yes' === get_option( 'woocommerce_enable_myaccount_registration' ) ) : ?>
-                  <button type="button" onclick="toggleAuthForm('register')" class="w-full py-3 px-6 rounded-lg bg-surface-container-low text-primary hover:bg-secondary-fixed hover:text-on-secondary-fixed transition-colors font-label-md text-label-md uppercase tracking-[0.15em] font-semibold text-center block shadow-sm">
+                  <button type="button" onclick="toggleAuthForm('register')" class="w-full py-3 px-6 rounded-lg bg-surface-container-low text-primary hover:bg-secondary-fixed hover:text-on-secondary-fixed transition-colors font-label-md text-label-md uppercase tracking-[0.15em] font-semibold text-center block shadow-sm cursor-pointer">
                     Create An Account
                   </button>
                 <?php else : ?>
@@ -231,42 +233,128 @@ if ( ! defined( 'ABSPATH' ) ) {
               </div>
             </div>
 
-            <!-- REGISTRATION FORM VIEW (If Enabled) -->
+            <!-- ========================================== -->
+            <!-- 2. REGISTRATION FORM VIEW                 -->
+            <!-- ========================================== -->
             <?php if ( 'yes' === get_option( 'woocommerce_enable_myaccount_registration' ) ) : ?>
               <div id="auth-view-register" class="hidden">
                 <div class="mb-space-md space-y-1">
                   <span class="font-label-sm text-label-sm uppercase tracking-[0.25em] text-secondary font-bold">New Seeker Enrollment</span>
-                  <h2 class="font-headline-lg text-headline-lg text-primary tracking-wide">CREATE SANCTUARY ACCOUNT</h2>
+                  <h2 class="font-headline-lg text-headline-lg text-primary tracking-wide uppercase">CREATE SANCTUARY ACCOUNT</h2>
                   <p class="font-body-md text-body-md text-on-surface-variant">
                     Register to maintain your clinical records, order consecrated formulations, and access private consultation dossiers.
                   </p>
                 </div>
 
+                <!-- Native WordPress / WooCommerce Registration Form -->
                 <form method="post" class="woocommerce-form woocommerce-form-register register space-y-space-md" <?php do_action( 'woocommerce_register_form_tag' ); ?> >
                   <?php do_action( 'woocommerce_register_form_start' ); ?>
 
+                  <!-- First Name & Last Name (Saved to customer user meta) -->
+                  <div class="grid grid-cols-1 sm:grid-cols-2 gap-space-md">
+                    <div class="flex flex-col gap-1.5">
+                      <div class="flex items-center justify-between">
+                        <label class="font-label-md text-label-md text-on-surface uppercase tracking-wider font-semibold" for="reg_billing_first_name">
+                          First Name
+                        </label>
+                        <span class="font-label-sm text-label-sm text-outline uppercase tracking-wider">(Optional)</span>
+                      </div>
+                      <input autocomplete="given-name" class="w-full bg-surface-container-low px-4 py-3 rounded-lg font-body-md text-body-md text-on-surface focus:outline-none focus:bg-surface-container-lowest focus:ring-2 focus:ring-primary-container transition-all placeholder:text-outline" id="reg_billing_first_name" name="billing_first_name" placeholder="e.g. Aranya" type="text" value="<?php echo ( ! empty( $_POST['billing_first_name'] ) ) ? esc_attr( wp_unslash( $_POST['billing_first_name'] ) ) : ''; ?>"/>
+                    </div>
+                    <div class="flex flex-col gap-1.5">
+                      <div class="flex items-center justify-between">
+                        <label class="font-label-md text-label-md text-on-surface uppercase tracking-wider font-semibold" for="reg_billing_last_name">
+                          Last Name
+                        </label>
+                        <span class="font-label-sm text-label-sm text-outline uppercase tracking-wider">(Optional)</span>
+                      </div>
+                      <input autocomplete="family-name" class="w-full bg-surface-container-low px-4 py-3 rounded-lg font-body-md text-body-md text-on-surface focus:outline-none focus:bg-surface-container-lowest focus:ring-2 focus:ring-primary-container transition-all placeholder:text-outline" id="reg_billing_last_name" name="billing_last_name" placeholder="e.g. Varma" type="text" value="<?php echo ( ! empty( $_POST['billing_last_name'] ) ) ? esc_attr( wp_unslash( $_POST['billing_last_name'] ) ) : ''; ?>"/>
+                    </div>
+                  </div>
+
+                  <!-- Username (If Required) -->
                   <?php if ( 'no' === get_option( 'woocommerce_registration_generate_username' ) ) : ?>
                     <div class="space-y-1.5">
-                      <label class="font-label-md text-label-md uppercase tracking-wider text-on-surface font-semibold" for="reg_username">
-                        Username <span class="text-error">*</span>
-                      </label>
-                      <input type="text" class="w-full px-4 py-3 bg-surface-container-low text-on-surface rounded-lg font-body-md text-body-md focus:outline-none focus:ring-2 focus:ring-primary-container" name="username" id="reg_username" autocomplete="username" value="<?php echo ( ! empty( $_POST['username'] ) ) ? esc_attr( wp_unslash( $_POST['username'] ) ) : ''; ?>" required />
+                      <div class="flex items-center justify-between">
+                        <label class="font-label-md text-label-md uppercase tracking-wider text-on-surface font-semibold" for="reg_username">
+                          Username <span class="text-error">*</span>
+                        </label>
+                        <span class="font-label-sm text-label-sm text-secondary uppercase tracking-widest">Required</span>
+                      </div>
+                      <div class="relative flex items-center">
+                        <span class="material-symbols-outlined notranslate absolute left-3.5 text-outline text-[18px] pointer-events-none" translate="no">account_circle</span>
+                        <input type="text" class="w-full pl-10 pr-4 py-3 bg-surface-container-low text-on-surface rounded-lg font-body-md text-body-md focus:outline-none focus:bg-surface-container-lowest focus:ring-2 focus:ring-primary-container transition-all" name="username" id="reg_username" autocomplete="username" value="<?php echo ( ! empty( $_POST['username'] ) ) ? esc_attr( wp_unslash( $_POST['username'] ) ) : ''; ?>" placeholder="Choose a unique username" required />
+                      </div>
                     </div>
                   <?php endif; ?>
 
+                  <!-- Email Address -->
                   <div class="space-y-1.5">
-                    <label class="font-label-md text-label-md uppercase tracking-wider text-on-surface font-semibold" for="reg_email">
-                      Email Address <span class="text-error">*</span>
-                    </label>
-                    <input type="email" class="w-full px-4 py-3 bg-surface-container-low text-on-surface rounded-lg font-body-md text-body-md focus:outline-none focus:ring-2 focus:ring-primary-container" name="email" id="reg_email" autocomplete="email" value="<?php echo ( ! empty( $_POST['email'] ) ) ? esc_attr( wp_unslash( $_POST['email'] ) ) : ''; ?>" required />
+                    <div class="flex items-center justify-between">
+                      <label class="font-label-md text-label-md uppercase tracking-wider text-on-surface font-semibold" for="reg_email">
+                        Email Address <span class="text-error">*</span>
+                      </label>
+                      <span class="font-label-sm text-label-sm text-secondary uppercase tracking-widest">Required</span>
+                    </div>
+                    <div class="relative flex items-center">
+                      <span class="material-symbols-outlined notranslate absolute left-3.5 text-outline text-[18px] pointer-events-none" translate="no">mail</span>
+                      <input type="email" class="w-full pl-10 pr-4 py-3 bg-surface-container-low text-on-surface rounded-lg font-body-md text-body-md focus:outline-none focus:bg-surface-container-lowest focus:ring-2 focus:ring-primary-container transition-all" name="email" id="reg_email" autocomplete="email" value="<?php echo ( ! empty( $_POST['email'] ) ) ? esc_attr( wp_unslash( $_POST['email'] ) ) : ''; ?>" placeholder="name@example.com" required />
+                    </div>
                   </div>
 
+                  <!-- Password & Confirm Password (If not auto-generated) -->
                   <?php if ( 'no' === get_option( 'woocommerce_registration_generate_password' ) ) : ?>
                     <div class="space-y-1.5">
-                      <label class="font-label-md text-label-md uppercase tracking-wider text-on-surface font-semibold" for="reg_password">
-                        Passphrase <span class="text-error">*</span>
-                      </label>
-                      <input type="password" class="w-full px-4 py-3 bg-surface-container-low text-on-surface rounded-lg font-body-md text-body-md focus:outline-none focus:ring-2 focus:ring-primary-container" name="password" id="reg_password" autocomplete="new-password" required />
+                      <div class="flex items-center justify-between">
+                        <label class="font-label-md text-label-md uppercase tracking-wider text-on-surface font-semibold" for="reg_password">
+                          Password <span class="text-error">*</span>
+                        </label>
+                        <span class="font-label-sm text-label-sm text-secondary uppercase tracking-widest">Required</span>
+                      </div>
+                      <div class="relative flex items-center">
+                        <span class="material-symbols-outlined notranslate absolute left-3.5 text-outline text-[18px] pointer-events-none" translate="no">lock</span>
+                        <input type="password" class="w-full pl-10 pr-12 py-3 bg-surface-container-low text-on-surface rounded-lg font-body-md text-body-md focus:outline-none focus:bg-surface-container-lowest focus:ring-2 focus:ring-primary-container transition-all" name="password" id="reg_password" autocomplete="new-password" oninput="updatePasswordStrength(this.value)" placeholder="••••••••••••" required />
+                        <button aria-label="Toggle password visibility" class="absolute right-3 text-outline hover:text-on-surface transition-colors p-1 cursor-pointer" onclick="toggleRegPassword('reg_password', this)" type="button">
+                          <span class="material-symbols-outlined notranslate text-[20px]" translate="no">visibility</span>
+                        </button>
+                      </div>
+
+                      <!-- Password Strength Meter Component -->
+                      <div class="mt-2 bg-surface-container-low p-3 rounded-lg border border-[#E8D8BC]/50">
+                        <div class="flex items-center justify-between mb-1.5">
+                          <span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Security Alignment:</span>
+                          <span class="font-label-sm text-label-sm uppercase tracking-widest font-semibold text-outline" id="strength-label">Pondering</span>
+                        </div>
+                        <div class="w-full h-1.5 bg-surface-container-highest rounded-full overflow-hidden flex gap-1">
+                          <div class="h-full w-1/4 bg-surface-dim rounded-full transition-colors duration-300" id="meter-segment-1"></div>
+                          <div class="h-full w-1/4 bg-surface-dim rounded-full transition-colors duration-300" id="meter-segment-2"></div>
+                          <div class="h-full w-1/4 bg-surface-dim rounded-full transition-colors duration-300" id="meter-segment-3"></div>
+                          <div class="h-full w-1/4 bg-surface-dim rounded-full transition-colors duration-300" id="meter-segment-4"></div>
+                        </div>
+                        <div class="flex items-center gap-2 mt-2 font-body-sm text-body-sm text-on-surface-variant text-[12px]">
+                          <span class="material-symbols-outlined notranslate text-[14px] text-secondary" translate="no">info</span>
+                          <span>Minimum 8 characters combining letters, numbers, and sacred marks</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Confirm Password -->
+                    <div class="space-y-1.5">
+                      <div class="flex items-center justify-between">
+                        <label class="font-label-md text-label-md uppercase tracking-wider text-on-surface font-semibold" for="reg_confirm_password">
+                          Confirm Password <span class="text-error">*</span>
+                        </label>
+                        <span class="font-label-sm text-label-sm uppercase tracking-wider text-outline flex items-center gap-1" id="match-indicator">
+                          <span class="material-symbols-outlined notranslate text-[14px]" translate="no">remove</span> Awaiting input
+                        </span>
+                      </div>
+                      <div class="relative flex items-center">
+                        <span class="material-symbols-outlined notranslate absolute left-3.5 text-outline text-[18px] pointer-events-none" translate="no">lock_reset</span>
+                        <input type="password" class="w-full pl-10 pr-12 py-3 bg-surface-container-low text-on-surface rounded-lg font-body-md text-body-md focus:outline-none focus:bg-surface-container-lowest focus:ring-2 focus:ring-primary-container transition-all" name="confirm_password" id="reg_confirm_password" autocomplete="new-password" oninput="checkPasswordMatch()" placeholder="••••••••••••" required />
+                        <button aria-label="Toggle confirm password visibility" class="absolute right-3 text-outline hover:text-on-surface transition-colors p-1 cursor-pointer" onclick="toggleRegPassword('reg_confirm_password', this)" type="button">
+                          <span class="material-symbols-outlined notranslate text-[20px]" translate="no">visibility</span>
+                        </button>
+                      </div>
                     </div>
                   <?php else : ?>
                     <p class="font-body-sm text-body-sm text-on-surface-variant italic">
@@ -274,18 +362,30 @@ if ( ! defined( 'ABSPATH' ) ) {
                     </p>
                   <?php endif; ?>
 
+                  <!-- Privacy Policy Agreement -->
+                  <div class="pt-1">
+                    <label class="flex items-start gap-3 cursor-pointer select-none group">
+                      <input class="mt-1 w-4 h-4 rounded text-primary accent-primary focus:ring-0 cursor-pointer" id="agree-privacy-policy" name="privacy_policy" required type="checkbox" checked />
+                      <span class="font-body-sm text-body-sm text-on-surface-variant leading-snug">
+                        I consent to the sanctuary storing my health records and orders in accordance with the 
+                        <a href="<?php echo esc_url( home_url( '/contact/#privacy' ) ); ?>" class="text-secondary hover:text-primary underline">Privacy Policy</a>.
+                      </span>
+                    </label>
+                  </div>
+
                   <?php do_action( 'woocommerce_register_form' ); ?>
 
+                  <!-- Submit Register Button -->
                   <div class="pt-space-xs">
                     <?php wp_nonce_field( 'woocommerce-register', 'woocommerce-register-nonce' ); ?>
-                    <button type="submit" class="woocommerce-Button woocommerce-button button woocommerce-form-register__submit w-full py-3.5 px-6 rounded-lg bg-primary text-on-primary font-label-md text-label-md uppercase tracking-[0.15em] font-semibold hover:bg-tertiary shadow-md transition-all flex items-center justify-center gap-2 group cursor-pointer" name="register" value="<?php esc_attr_e( 'Register', 'woocommerce' ); ?>">
+                    <button type="submit" class="woocommerce-Button woocommerce-button button woocommerce-form-register__submit w-full py-3.5 px-6 rounded-lg bg-primary-container text-on-primary font-label-md text-label-md uppercase tracking-[0.15em] font-semibold hover:bg-tertiary-container hover:text-on-tertiary shadow-md transition-all flex items-center justify-center gap-2 group cursor-pointer" name="register" value="<?php esc_attr_e( 'Register', 'woocommerce' ); ?>">
                       <span>CREATE SANCTUARY ACCOUNT</span>
                       <span class="material-symbols-outlined notranslate text-[18px] group-hover:translate-x-1 transition-transform" translate="no">arrow_forward</span>
                     </button>
                   </div>
 
                   <div class="pt-2 text-center">
-                    <button type="button" onclick="toggleAuthForm('login')" class="text-xs uppercase font-label-sm text-secondary hover:text-primary transition-colors underline tracking-wider font-semibold">
+                    <button type="button" onclick="toggleAuthForm('login')" class="text-xs uppercase font-label-sm text-secondary hover:text-primary transition-colors underline tracking-wider font-semibold cursor-pointer">
                       Already have an account? Sign In
                     </button>
                   </div>
@@ -345,13 +445,14 @@ if ( ! defined( 'ABSPATH' ) ) {
     </div>
   </section>
 
-  <!-- Interactive JavaScript for Form Interaction -->
+  <!-- Interactive JavaScript for Form Interaction, Password Toggles & Strength Meter -->
   <script>
     function toggleAuthForm(mode) {
       const loginView = document.getElementById('auth-view-login');
       const registerView = document.getElementById('auth-view-register');
       const tabLogin = document.getElementById('tab-btn-login');
       const tabRegister = document.getElementById('tab-btn-register');
+      const breadcrumb = document.getElementById('auth-breadcrumb-current');
 
       if (mode === 'register' && registerView) {
         if (loginView) loginView.classList.add('hidden');
@@ -364,6 +465,10 @@ if ( ! defined( 'ABSPATH' ) ) {
           tabLogin.classList.remove('text-primary', 'border-b-2', 'border-primary');
           tabLogin.classList.add('text-outline');
         }
+        if (breadcrumb) {
+          breadcrumb.textContent = 'Register';
+        }
+        window.location.hash = '#register';
       } else {
         if (loginView) loginView.classList.remove('hidden');
         if (registerView) registerView.classList.add('hidden');
@@ -375,14 +480,25 @@ if ( ! defined( 'ABSPATH' ) ) {
           tabRegister.classList.remove('text-primary', 'border-b-2', 'border-primary');
           tabRegister.classList.add('text-outline');
         }
+        if (breadcrumb) {
+          breadcrumb.textContent = 'Login';
+        }
+        if (window.location.hash === '#register') {
+          history.replaceState(null, null, ' ');
+        }
       }
     }
 
-    // Password visibility toggle
-    (function initPasswordToggle() {
+    // Auto-open register tab if URL hash is #register
+    if (window.location.hash === '#register') {
+      toggleAuthForm('register');
+    }
+
+    // Password visibility toggle for Login
+    (function initLoginPasswordToggle() {
       const passwordInput = document.getElementById('password');
-      const togglePasswordBtn = document.getElementById('toggle-password-btn');
-      const passwordToggleIcon = document.getElementById('password-toggle-icon');
+      const togglePasswordBtn = document.getElementById('toggle-login-password-btn');
+      const passwordToggleIcon = document.getElementById('login-password-toggle-icon');
 
       if (togglePasswordBtn && passwordInput) {
         togglePasswordBtn.addEventListener('click', function() {
@@ -394,5 +510,98 @@ if ( ! defined( 'ABSPATH' ) ) {
         });
       }
     })();
+
+    // Password visibility toggle for Register
+    function toggleRegPassword(fieldId, triggerBtn) {
+      const field = document.getElementById(fieldId);
+      const icon = triggerBtn.querySelector('.material-symbols-outlined');
+      if (field) {
+        const isPassword = field.type === 'password';
+        field.type = isPassword ? 'text' : 'password';
+        if (icon) {
+          icon.textContent = isPassword ? 'visibility_off' : 'visibility';
+        }
+      }
+    }
+
+    // Password Strength Dynamic Evaluation
+    function updatePasswordStrength(val) {
+      const label = document.getElementById('strength-label');
+      const seg1 = document.getElementById('meter-segment-1');
+      const seg2 = document.getElementById('meter-segment-2');
+      const seg3 = document.getElementById('meter-segment-3');
+      const seg4 = document.getElementById('meter-segment-4');
+      
+      if (!label || !seg1) return;
+
+      const reset = () => {
+        [seg1, seg2, seg3, seg4].forEach(s => {
+          s.className = 'h-full w-1/4 bg-surface-dim rounded-full transition-colors duration-300';
+        });
+      };
+
+      if (!val || val.length === 0) {
+        label.textContent = 'Pondering';
+        label.className = 'font-label-sm text-label-sm uppercase tracking-widest font-semibold text-outline';
+        reset();
+        return;
+      }
+
+      let score = 0;
+      if (val.length >= 8) score++;
+      if (/[A-Z]/.test(val) && /[a-z]/.test(val)) score++;
+      if (/[0-9]/.test(val)) score++;
+      if (/[^A-Za-z0-9]/.test(val)) score++;
+
+      reset();
+
+      if (score <= 1) {
+        label.textContent = 'Fragile';
+        label.className = 'font-label-sm text-label-sm uppercase tracking-widest font-semibold text-error';
+        seg1.classList.replace('bg-surface-dim', 'bg-error');
+      } else if (score === 2) {
+        label.textContent = 'Nascent';
+        label.className = 'font-label-sm text-label-sm uppercase tracking-widest font-semibold text-secondary';
+        seg1.classList.replace('bg-surface-dim', 'bg-secondary');
+        seg2.classList.replace('bg-surface-dim', 'bg-secondary');
+      } else if (score === 3) {
+        label.textContent = 'Harmonious';
+        label.className = 'font-label-sm text-label-sm uppercase tracking-widest font-semibold text-primary';
+        seg1.classList.replace('bg-surface-dim', 'bg-primary-container');
+        seg2.classList.replace('bg-surface-dim', 'bg-primary-container');
+        seg3.classList.replace('bg-surface-dim', 'bg-primary-container');
+      } else {
+        label.textContent = 'Equilibrium Achieved';
+        label.className = 'font-label-sm text-label-sm uppercase tracking-widest font-semibold text-primary';
+        seg1.classList.replace('bg-surface-dim', 'bg-primary');
+        seg2.classList.replace('bg-surface-dim', 'bg-primary');
+        seg3.classList.replace('bg-surface-dim', 'bg-primary');
+        seg4.classList.replace('bg-surface-dim', 'bg-primary');
+      }
+
+      checkPasswordMatch();
+    }
+
+    // Check Password Match between Password & Confirm Password
+    function checkPasswordMatch() {
+      const pass = document.getElementById('reg_password');
+      const confirmPass = document.getElementById('reg_confirm_password');
+      const indicator = document.getElementById('match-indicator');
+      if (!pass || !confirmPass || !indicator) return;
+
+      if (!confirmPass.value) {
+        indicator.innerHTML = '<span class="material-symbols-outlined notranslate text-[14px]" translate="no">remove</span> Awaiting input';
+        indicator.className = 'font-label-sm text-label-sm uppercase tracking-wider text-outline flex items-center gap-1';
+        return;
+      }
+
+      if (pass.value === confirmPass.value) {
+        indicator.innerHTML = '<span class="material-symbols-outlined notranslate text-[14px]" translate="no">check_circle</span> Passwords Match';
+        indicator.className = 'font-label-sm text-label-sm uppercase tracking-wider text-primary font-semibold flex items-center gap-1';
+      } else {
+        indicator.innerHTML = '<span class="material-symbols-outlined notranslate text-[14px]" translate="no">cancel</span> Mismatch';
+        indicator.className = 'font-label-sm text-label-sm uppercase tracking-wider text-error font-semibold flex items-center gap-1';
+      }
+    }
   </script>
 </div>

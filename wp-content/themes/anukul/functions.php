@@ -359,4 +359,62 @@ require_once ANUKUL_DIR . '/inc/customizer.php';
 require_once ANUKUL_DIR . '/inc/widgets.php';
 require_once ANUKUL_DIR . '/inc/meta-boxes.php';
 
+/**
+ * Authentication & Registration Security Enhancements
+ * Ensure every new registered user is assigned the 'customer' role.
+ */
+function anukul_force_customer_role_on_registration( $customer_id, $new_customer_data = array(), $password_generated = false ) {
+    $user = new WP_User( $customer_id );
+    if ( $user && $user->exists() ) {
+        // Explicitly set customer role
+        $user->set_role( 'customer' );
+
+        // Save First Name & Last Name if submitted during registration
+        if ( ! empty( $_POST['billing_first_name'] ) ) {
+            $first_name = sanitize_text_field( wp_unslash( $_POST['billing_first_name'] ) );
+            update_user_meta( $customer_id, 'first_name', $first_name );
+            update_user_meta( $customer_id, 'billing_first_name', $first_name );
+        }
+        if ( ! empty( $_POST['billing_last_name'] ) ) {
+            $last_name = sanitize_text_field( wp_unslash( $_POST['billing_last_name'] ) );
+            update_user_meta( $customer_id, 'last_name', $last_name );
+            update_user_meta( $customer_id, 'billing_last_name', $last_name );
+        }
+        if ( ! empty( $_POST['billing_phone'] ) ) {
+            $phone = sanitize_text_field( wp_unslash( $_POST['billing_phone'] ) );
+            update_user_meta( $customer_id, 'billing_phone', $phone );
+        }
+
+        // Update display name if first name is provided
+        if ( ! empty( $first_name ) ) {
+            $display_name = ! empty( $last_name ) ? trim( $first_name . ' ' . $last_name ) : $first_name;
+            wp_update_user( array(
+                'ID'           => $customer_id,
+                'display_name' => $display_name,
+            ) );
+        }
+    }
+}
+add_action( 'woocommerce_created_customer', 'anukul_force_customer_role_on_registration', 10, 3 );
+add_action( 'user_register', function( $user_id ) {
+    // If registered via standard WordPress register hook without WooCommerce
+    $user = new WP_User( $user_id );
+    if ( $user && $user->exists() && ! in_array( 'administrator', (array) $user->roles, true ) ) {
+        $user->set_role( 'customer' );
+    }
+}, 20 );
+
+/**
+ * Validate extra registration fields
+ */
+function anukul_validate_extra_register_fields( $username, $email, $validation_errors ) {
+    if ( isset( $_POST['password'] ) && isset( $_POST['confirm_password'] ) ) {
+        if ( $_POST['password'] !== $_POST['confirm_password'] ) {
+            $validation_errors->add( 'password_mismatch', __( '<strong>Error:</strong> Passwords do not match. Please verify your confidential passphrase.', 'anukul' ) );
+        }
+    }
+    return $validation_errors;
+}
+add_filter( 'woocommerce_process_registration_errors', 'anukul_validate_extra_register_fields', 10, 3 );
+
 
