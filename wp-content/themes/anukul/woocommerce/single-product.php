@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 /**
  * The Template for displaying all single products
  *
@@ -10,6 +10,34 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 get_header( 'shop' );
+
+global $post;
+$current_product_id = get_the_ID();
+$product = wc_get_product( $current_product_id );
+
+if ( ! $product ) {
+    $fallback_post = get_page_by_path( 'handcrafted-bronze-kansa-vatki-bowl', OBJECT, 'product' );
+    if ( $fallback_post ) {
+        $current_product_id = $fallback_post->ID;
+        $product = wc_get_product( $current_product_id );
+    }
+}
+
+$title       = $product ? $product->get_name() : 'Sacred Ayurvedic Remedy';
+$price       = $product ? (float) $product->get_price() : 1850;
+$reg_price   = $product ? (float) $product->get_regular_price() : 2200;
+$sale_price  = $product ? (float) $product->get_sale_price() : 1850;
+$short_desc  = $product ? ( $product->get_short_description() ?: $product->get_description() ) : '';
+$full_desc   = $product ? $product->get_description() : '';
+$in_stock    = $product ? $product->is_in_stock() : true;
+
+$terms       = $product ? get_the_terms( $current_product_id, 'product_cat' ) : array();
+$cat_name    = ( ! empty( $terms ) && ! is_wp_error( $terms ) ) ? $terms[0]->name : 'Classical Ayurveda';
+
+$dosha       = get_post_meta( $current_product_id, '_dosha', true ) ?: 'tridoshic';
+$badge       = get_post_meta( $current_product_id, '_badge', true ) ?: 'Vaidya Grade';
+$subheading  = get_post_meta( $current_product_id, '_ritual_subheading', true ) ?: 'Classical Formulation';
+$main_image  = get_post_meta( $current_product_id, '_anukul_image_url', true ) ?: ( has_post_thumbnail( $current_product_id ) ? get_the_post_thumbnail_url( $current_product_id, 'large' ) : 'https://lh3.googleusercontent.com/aida-public/AB6AXuDraDpqQ9cYTI2TALEKNJwdd47SbmjcRasxQIL2TfKMVZncJeuWlUHF4S2ce-z58l1r68WgUxwpIaGF6Iw2tcDbpxMqx9HyChTF-cab6-8cNk8x-MwNx1pbv9fAVi5w5ND-_VjoN13TLRFBro0NxuiXwnGZ4QZtTS56XJTQhN_2StpHvhGVKX632z3Wpg6sjGcih2JwtsnEyj7MnRk2SkyDcbvU4_rLXuNO5sKf38mGig1X-8r_pdEJ4w' );
 ?>
 
 <div class="flex flex-col w-full">
@@ -20,7 +48,7 @@ get_header( 'shop' );
 <span class="material-symbols-outlined notranslate text-[14px] text-outline" translate="no">chevron_right</span>
 <a class="hover:text-primary transition-colors" data-path="shop" href="<?php echo esc_url( function_exists( "wc_get_page_permalink" ) ? wc_get_page_permalink( "shop" ) : home_url( "/shop/" ) ); ?>">Shop</a>
 <span class="material-symbols-outlined notranslate text-[14px] text-outline" translate="no">chevron_right</span>
-<span class="text-primary font-semibold truncate">Handcrafted Kansa Vatki Bowl</span>
+<span class="text-primary font-semibold truncate"><?php echo esc_html( $title ); ?></span>
 </div>
 </nav>
 <!-- SECTION 2: MAIN PRODUCT HERO & PURCHASING -->
@@ -31,29 +59,29 @@ get_header( 'shop' );
 <div class="lg:col-span-7 flex flex-col gap-4">
 <!-- Main Showcase Image -->
 <div class="relative w-full aspect-[4/3] sm:aspect-[16/11] bg-surface-container rounded-lg overflow-hidden shadow-sm group">
-<img class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105" data-alt="Close up editorial photograph of an authentic handcrafted Kansa Vatki bronze massage bowl resting on warm oiled teak wood. Soft natural temple courtyard lighting highlights its polished golden-bronze interior and finely textured hammered exterior. Beside it sits a small brass pouring vial of amber sesame herbal oil and fresh dried holy basil leaves, expressing quiet Vedic clinical luxury in tones of sacred deep green, antique brass, and warm sand." id="main-product-image" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDraDpqQ9cYTI2TALEKNJwdd47SbmjcRasxQIL2TfKMVZncJeuWlUHF4S2ce-z58l1r68WgUxwpIaGF6Iw2tcDbpxMqx9HyChTF-cab6-8cNk8x-MwNx1pbv9fAVi5w5ND-_VjoN13TLRFBro0NxuiXwnGZ4QZtTS56XJTQhN_2StpHvhGVKX632z3Wpg6sjGcih2JwtsnEyj7MnRk2SkyDcbvU4_rLXuNO5sKf38mGig1X-8r_pdEJ4w"/>
+<img class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105" id="main-product-image" src="<?php echo esc_url( $main_image ); ?>" alt="<?php echo esc_attr( $title ); ?>"/>
 <!-- Visual Inspect Action Chip -->
-<button class="absolute top-4 right-4 bg-surface/90 text-primary hover:bg-primary hover:text-on-primary transition-colors p-2.5 rounded-lg backdrop-blur-sm shadow-sm flex items-center justify-center cursor-pointer" onclick="showImageModal()" title="Inspect Instrument Detail" type="button">
+<button class="absolute top-4 right-4 bg-surface/90 text-primary hover:bg-primary hover:text-on-primary transition-colors p-2.5 rounded-lg backdrop-blur-sm shadow-sm flex items-center justify-center cursor-pointer notranslate" translate="no" onclick="showImageModal()" title="Inspect Instrument Detail" type="button">
 <span class="material-symbols-outlined notranslate text-[18px]" translate="no">zoom_in</span>
 </button>
-<div class="absolute bottom-4 left-4 bg-primary/85 text-on-primary backdrop-blur-sm px-3.5 py-1.5 rounded-lg flex items-center gap-2">
+<div class="absolute bottom-4 left-4 bg-primary/85 text-on-primary backdrop-blur-sm px-3.5 py-1.5 rounded-lg flex items-center gap-2 notranslate" translate="no">
 <span class="w-1.5 h-1.5 rounded-full bg-secondary-fixed"></span>
-<span class="font-label-sm text-label-sm uppercase tracking-widest text-[#E8D8BC]">Artisanal Hand-Forged Alloy</span>
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-[#E8D8BC]"><?php echo esc_html( $badge ); ?></span>
 </div>
 </div>
 <!-- Interactive Thumbnails -->
 <div class="grid grid-cols-4 gap-3">
 <button class="thumb-btn aspect-square rounded-lg bg-surface-container overflow-hidden shadow-sm transition-all duration-200 ring-2 ring-primary" onclick="switchThumb(0, this)" type="button">
-<img class="w-full h-full object-cover" data-alt="Direct top-down angle of the handcrafted Kansa Vatki bowl showcasing the golden sheen of traditional bell metal bronze with subtle radial hammer markings on polished surface." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDgR8fiax1N8l18vKW1VZ-O3pj_H6P5N1eRLIuk-vUk1TOGy7owHLqKYAsFgy5mRDVsuo82Qo-Yz1pnJEcncXm-YcHcICdDgYq4g9QBZQc8dS0gEhEKHlB6vcw41dpiOTvNHkVwYuz8C8JXbsiqJZRq7SZZkk7ciqMBuyWgxheFgOX4UxHhMtCB7CZ8TAtD2LT5QF8QhUMOq1dHuzkX0H6VkbFWPt3lE5Jn-KqP0gecDgbTzVQ0jLbSTg"/>
+<img class="w-full h-full object-cover" src="<?php echo esc_url( $main_image ); ?>" alt="<?php echo esc_attr( $title ); ?> Thumbnail"/>
 </button>
 <button class="thumb-btn aspect-square rounded-lg bg-surface-container overflow-hidden shadow-sm opacity-70 hover:opacity-100 transition-all duration-200" onclick="switchThumb(1, this)" type="button">
-<img class="w-full h-full object-cover" data-alt="Editorial ritual photograph showing a practitioner's hands holding the Kansa Vatki bowl gently massaging the foot sole during evening Padabhyanga therapy in an Ayurvedic sanctuary." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD-05frK0AeRUSafVbYyjqVonIb3v3vYNcXvJhMIaBO08uuOw_ZvDBjPgyT0WJ3nDMVdHb_M_OwksgR7Pie1Cw2stafhhcfu5TYkJBKXP5dMQOd5qkm0kghjZQyEF9OYFzWUU0C92iiE3BVlIj6EaaPqVXR-07gQgCPuxwDHwArM-Z0oUR-70kdwMgDgfe6pfdyHFERSjrQhuW7gmJe4es1Kg1juHIZyUrMOdSEs6jsDmoVo57csjzZQg"/>
+<img class="w-full h-full object-cover" src="<?php echo esc_url( $main_image ); ?>" alt="<?php echo esc_attr( $title ); ?> Detail"/>
 </button>
 <button class="thumb-btn aspect-square rounded-lg bg-surface-container overflow-hidden shadow-sm opacity-70 hover:opacity-100 transition-all duration-200" onclick="switchThumb(2, this)" type="button">
-<img class="w-full h-full object-cover" data-alt="Extreme macro close-up of the bell-metal alloy bronze texture, demonstrating the genuine hand-hammered rim detailing and smooth therapeutic curvature." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAYp-9XIXNjdtZNKDu8Mp1pAkffAK2-fz8aqSnbS9rP97VH0zEFZ4vI6RBi8q96gclzS79JJmU7KaBxsJNIAGIe-8E8B6d35YhkiNFHgb6WLoX6hhmwCTNvoEeN8Gj8xrUtGjalFl0vOS8ZGyL4WfQLXLhL1tOMNmnlIxqh3uTr858k5fZ0-i-yGieVRS_lrj-1q4ElLRhTKwsVK0Ybg5IMG6zWHYXNggoH2YY0DIrE3tCHDzplfzSuVg"/>
+<img class="w-full h-full object-cover" src="<?php echo esc_url( $main_image ); ?>" alt="<?php echo esc_attr( $title ); ?> Preparation"/>
 </button>
 <button class="thumb-btn aspect-square rounded-lg bg-surface-container overflow-hidden shadow-sm opacity-70 hover:opacity-100 transition-all duration-200" onclick="switchThumb(3, this)" type="button">
-<img class="w-full h-full object-cover" data-alt="Curated unboxing view of the Kansa Vatki bowl nestled in unbleached organic cotton within a sustainable natural teakwood keepsake box with brass ANUKUL insignia stamp." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAQwApYEXL1QbfMHUKzcHZzYxKYYvdSsSjkQ3VEQFvNKAIKZsOT8W84tDXY42ZVapmmn20jG9Qrw0B1OR3oTUrmwseTZbeVAqvRqV5LFHIjC8SMtmzVXuzomy9J-uW8uFAt99gTXXwSq35qV1XWJ7TYy0g4aBiOPE_AWObvepN6d9JUeVOLWy_lf2Yt9oxWqVxwE_SxlJGGJo-m0q6yAA1MpVq3FVSJEOx7Hfai0OJ5RCpdaREd8AHfOw"/>
+<img class="w-full h-full object-cover" src="<?php echo esc_url( $main_image ); ?>" alt="<?php echo esc_attr( $title ); ?> Heritage Pack"/>
 </button>
 </div>
 </div>
@@ -63,35 +91,36 @@ get_header( 'shop' );
 <!-- Eyebrow Category -->
 <div class="flex items-center gap-2">
 <span class="font-label-sm text-label-sm uppercase tracking-[0.16em] text-secondary font-bold">
-                WELLNESS &amp; DAILY LIVING · DINACHARYA RITUAL
-              </span>
+    <?php echo esc_html( strtoupper( $cat_name ) ); ?> &bull; <?php echo esc_html( strtoupper( $subheading ) ); ?>
+</span>
 </div>
 <!-- Product Title -->
 <h1 class="font-headline-lg text-headline-lg text-primary tracking-tight leading-tight">
-              Handcrafted Kansa Vatki Bowl
-            </h1>
+  <?php echo esc_html( $title ); ?>
+</h1>
 <!-- Authenticity Badge -->
-<div class="inline-flex items-center gap-2 bg-surface-container-high px-3 py-1.5 rounded-lg">
+<div class="inline-flex items-center gap-2 bg-surface-container-high px-3 py-1.5 rounded-lg notranslate" translate="no">
 <span class="material-symbols-outlined notranslate text-[16px] text-secondary" translate="no" style="font-variation-settings: 'FILL' 1;">verified</span>
 <span class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">
-                Hand-Forged Bronze Alloy · Classical Ayurvedic Instrument
-              </span>
+    <?php echo esc_html( $badge ); ?> &bull; Classical Dispensary Formulation
+</span>
 </div>
 <!-- Short Narrative -->
-<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed pt-1">
-              A traditional bell-metal bronze alloy massage bowl crafted for grounding evening foot massage (<span class="italic font-headline-sm text-headline-sm text-primary">Padabhyanga</span>). Used in classical dinacharya routines to soothe the nervous system, balance bodily heat (<span class="italic font-headline-sm text-headline-sm text-primary">Pitta</span>), and promote calm restful sleep.
-            </p>
+<div class="font-body-md text-body-md text-on-surface-variant leading-relaxed pt-1">
+  <?php echo wp_kses_post( $short_desc ); ?>
+</div>
 <!-- Price and Tax Status -->
 <div class="pt-2 pb-3">
-<div class="flex items-baseline gap-3">
-<span class="font-headline-lg text-headline-lg text-primary font-medium tracking-tight">₹ 2,450</span>
+<div class="flex items-baseline gap-3 notranslate" translate="no">
+<span class="font-headline-lg text-headline-lg text-primary font-medium tracking-tight">₹ <?php echo number_format( $price ); ?></span>
 <span class="font-body-sm text-body-sm text-outline font-normal">INR (Incl. of all taxes)</span>
 </div>
 <div class="flex items-center gap-2 mt-2">
-<span class="w-2.5 h-2.5 rounded-full bg-emerald-700 animate-pulse"></span>
-<span class="font-label-md text-label-md text-primary font-semibold tracking-wide uppercase">In Stock · Ready for Dispatch</span>
+<span class="w-2.5 h-2.5 rounded-full <?php echo $in_stock ? 'bg-emerald-700 animate-pulse' : 'bg-rose-600'; ?>"></span>
+<span class="font-label-md text-label-md text-primary font-semibold tracking-wide uppercase"><?php echo $in_stock ? 'In Stock · Ready for Dispatch' : 'Out of Stock'; ?></span>
 </div>
 </div>
+
 <!-- Variant Option Selector -->
 <div class="space-y-2 pt-2">
 <label class="font-label-md text-label-md uppercase tracking-wider text-on-surface-variant block">
@@ -120,16 +149,16 @@ get_header( 'shop' );
 </div>
 <!-- Action Buttons -->
 <div class="flex flex-col sm:flex-row gap-3 pt-2">
-<button class="flex-1 bg-primary text-[#F7F1E3] font-label-md text-label-md uppercase tracking-wider py-3.5 px-6 rounded-lg hover:bg-tertiary transition-colors duration-200 shadow-sm flex items-center justify-center gap-2 cursor-pointer" onclick="triggerCartNotification()" type="button">
+<button class="flex-1 bg-primary text-[#F7F1E3] font-label-md text-label-md uppercase tracking-wider py-3.5 px-6 rounded-lg hover:bg-tertiary transition-colors duration-200 shadow-sm flex items-center justify-center gap-2 cursor-pointer" onclick="handleSingleAddToCart()" type="button">
 <span class="material-symbols-outlined notranslate text-[18px]" translate="no">shopping_bag</span>
                   ADD TO CART
                 </button>
-<button class="flex-1 bg-tertiary text-on-tertiary font-label-md text-label-md uppercase tracking-wider py-3.5 px-6 rounded-lg hover:bg-[#400012] transition-colors duration-200 shadow-sm flex items-center justify-center gap-2 cursor-pointer" data-path="checkout" type="button">
+<button class="flex-1 bg-tertiary text-on-tertiary font-label-md text-label-md uppercase tracking-wider py-3.5 px-6 rounded-lg hover:bg-[#400012] transition-colors duration-200 shadow-sm flex items-center justify-center gap-2 cursor-pointer" onclick="handleSingleBuyNow()" type="button">
 <span class="material-symbols-outlined notranslate text-[18px]" translate="no">bolt</span>
                   BUY NOW
                 </button>
 </div>
-<div class="hidden p-3 bg-primary-fixed text-on-primary-fixed rounded-lg text-center font-label-md text-label-md uppercase tracking-wider transition-all" id="cart-toast">
+<div class="hidden p-3 bg-primary text-[#F7F1E3] rounded-lg text-center font-label-md text-label-md uppercase tracking-wider transition-all shadow-md" id="cart-toast">
                 Added to Sanctuary Cart
               </div>
 </div>
@@ -183,22 +212,22 @@ get_header( 'shop' );
 </div>
 <!-- Tab 01: Overview Content -->
 <div class="tab-pane bg-surface p-6 sm:p-8 rounded-lg shadow-sm space-y-4" id="tab-content-0">
-<h2 class="font-headline-md text-headline-md text-primary">Classical Vedic Metallurgy &amp; Padabhyanga</h2>
-<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
-            In Ayurvedic metallurgy (<em>Rasashastra</em>), Kansa is classified as a sacred alloy composed of copper and tin in a precise classical ratio. Unlike industrial alloys, authentic Kansa does not contain lead or toxic trace elements. When rubbed against the soles of the feet with medicated herbal oil (<em>taila</em>), the bell metal interacts with the body’s micro-energetic pathways (<em>nadis</em>) and reflex zones.
-          </p>
+<h2 class="font-headline-md text-headline-md text-primary"><?php echo esc_html( $title ); ?> — Classical Formulation &amp; Overview</h2>
+<div class="font-body-md text-body-md text-on-surface-variant leading-relaxed space-y-3">
+  <?php echo wpautop( wp_kses_post( $full_desc ?: $short_desc ) ); ?>
+</div>
 <div class="grid grid-cols-1 md:grid-cols-2 gap-4 pt-2">
 <div class="bg-surface-container p-4 rounded-lg">
-<span class="font-headline-sm text-headline-sm text-primary block">Pacifying Agitated Vata</span>
+<span class="font-headline-sm text-headline-sm text-primary block">Dosha Alignment: <?php echo esc_html( ucfirst( $dosha ) ); ?></span>
 <p class="font-body-sm text-body-sm text-on-surface-variant mt-1">
-                The rhythmic downward strokes ground dispersed mental energy, releasing accumulated somatic stress and restoring neuromuscular calm.
-              </p>
+  Formulated according to authentic Ayurvedic principles to harmonize biological energies and restore constitutional equilibrium.
+</p>
 </div>
 <div class="bg-surface-container p-4 rounded-lg">
-<span class="font-headline-sm text-headline-sm text-primary block">Thermal Pitta Dissipation</span>
+<span class="font-headline-sm text-headline-sm text-primary block">Dispensary Standard</span>
 <p class="font-body-sm text-body-sm text-on-surface-variant mt-1">
-                Copper-tin alloy acts as an organic heat-sink, drawing internal heat out through the extremities to relieve burning sensations and eye strain.
-              </p>
+  Handcrafted with zero chemical adulterants, ethically sourced, and consecrated by classical Vaidya protocols before dispatch.
+</p>
 </div>
 </div>
 </div>
@@ -342,75 +371,69 @@ get_header( 'shop' );
           <span class="material-symbols-outlined notranslate text-[16px]" translate="no">arrow_forward</span>
 </a>
 </div>
+<?php
+$cat_slugs = array();
+if ( ! empty( $terms ) && ! is_wp_error( $terms ) ) {
+    foreach ( $terms as $term ) {
+        $cat_slugs[] = $term->slug;
+    }
+}
+$related_args = array(
+    'post_type'      => 'product',
+    'post_status'    => 'publish',
+    'posts_per_page' => 4,
+    'post__not_in'   => array( $current_product_id ),
+    'tax_query'      => array(
+        array(
+            'taxonomy' => 'product_cat',
+            'field'    => 'slug',
+            'terms'    => ! empty( $cat_slugs ) ? $cat_slugs : array( 'ayurveda', 'wellness', 'vastu', 'tea' ),
+        ),
+    ),
+);
+$related_query = new WP_Query( $related_args );
+if ( ! $related_query->have_posts() ) {
+    $related_query = new WP_Query( array(
+        'post_type'      => 'product',
+        'post_status'    => 'publish',
+        'posts_per_page' => 4,
+        'post__not_in'   => array( $current_product_id ),
+    ) );
+}
+?>
 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-<!-- Related Item 1 -->
-<div class="bg-surface rounded-lg overflow-hidden shadow-sm flex flex-col justify-between group">
-<div>
-<div class="aspect-square bg-surface-container overflow-hidden">
-<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Editorial image of an amber glass medicinal bottle of Cold-Pressed Herbal Taila oil with classical calligraphy label resting next to raw sesame seeds and botanical roots on a sandstone surface." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCTm0vUmATpncv2IRzhRhxPnfk7ETIpaR4GDC450nwrT4nV9qaT0mRDeowFj68z0o-Ndv3brnTya-v6Rr4yqTsX90BQ8A6CTmEDXBNJ2Iob3mYBT2pWcHaBzVxy10Tsm_8j3Q9DA3cqhjzWkVIUOu_7gGXcCOez2upMMBEjE30OMdc-SVPO17wVLZpacn1uFSMl5Zb31aArgm5QRXW_i7LR00U5lJ8aoo3lOPrUfUv5Gv4hl_JK4I7CJw"/>
+<?php
+if ( $related_query->have_posts() ) :
+    while ( $related_query->have_posts() ) : $related_query->the_post();
+        $rel_id      = get_the_ID();
+        $rel_product = wc_get_product( $rel_id );
+        if ( ! $rel_product ) continue;
+        $rel_price   = $rel_product->get_price();
+        $rel_img     = get_post_meta( $rel_id, '_anukul_image_url', true ) ?: ( has_post_thumbnail( $rel_id ) ? get_the_post_thumbnail_url( $rel_id, 'medium_large' ) : $main_image );
+        $rel_badge   = get_post_meta( $rel_id, '_badge', true ) ?: 'Vaidya Formulation';
+        $rel_sub     = get_post_meta( $rel_id, '_ritual_subheading', true ) ?: get_the_title();
+?>
+<div class="bg-surface rounded-lg overflow-hidden shadow-sm flex flex-col justify-between group hover:shadow-md transition-shadow">
+  <div>
+    <div class="aspect-square bg-surface-container overflow-hidden">
+      <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="<?php echo esc_url( $rel_img ); ?>" alt="<?php echo esc_attr( get_the_title() ); ?>"/>
+    </div>
+    <div class="p-4 space-y-1">
+      <span class="font-label-sm text-label-sm uppercase text-secondary font-bold"><?php echo esc_html( $rel_badge ); ?></span>
+      <h3 class="font-headline-sm text-headline-sm text-primary line-clamp-1"><?php the_title(); ?></h3>
+      <p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2"><?php echo esc_html( $rel_sub ); ?></p>
+    </div>
+  </div>
+  <div class="p-4 pt-0 flex items-center justify-between">
+    <span class="font-headline-sm text-headline-sm text-primary font-medium notranslate" translate="no">₹ <?php echo number_format( (float) $rel_price ); ?></span>
+    <a class="font-label-md text-label-md uppercase tracking-wider text-primary font-semibold hover:text-secondary transition-colors" href="<?php the_permalink(); ?>">View Remedy</a>
+  </div>
 </div>
-<div class="p-4 space-y-1">
-<span class="font-label-sm text-label-sm uppercase text-secondary font-bold">External Snehana</span>
-<h3 class="font-headline-sm text-headline-sm text-primary">Cold-Pressed Herbal Taila</h3>
-<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2">Infused with Ashwagandha &amp; Bala for grounding body massage.</p>
-</div>
-</div>
-<div class="p-4 pt-0 flex items-center justify-between">
-<span class="font-headline-sm text-headline-sm text-primary font-medium">₹ 850</span>
-<a class="font-label-md text-label-md uppercase tracking-wider text-primary font-semibold hover:text-secondary transition-colors" data-path="shop" href="<?php echo esc_url( function_exists( "wc_get_page_permalink" ) ? wc_get_page_permalink( "shop" ) : home_url( "/shop/" ) ); ?>">View Product</a>
-</div>
-</div>
-<!-- Related Item 2 -->
-<div class="bg-surface rounded-lg overflow-hidden shadow-sm flex flex-col justify-between group">
-<div>
-<div class="aspect-square bg-surface-container overflow-hidden">
-<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Studio presentation of traditional Ayurvedic herbal botanical formulation jar with a bamboo scoop and dried triphala fruits on natural linen cloth." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBrC6WuFV8OOYl4-K6F1G8GUBVrbkc7yzD9oVc8vOA-R9c74Hu6sgS-c1G9LbE6kJAvsRGmHhF1mHwCwdYS72M3wwRMhYUSHYPg3uIUdy7Zah3qOaPyKix4Z0--U3H1gd8sXj2JzYvxY4U0XnAt4zbdXMAOrHIb_6AhSDMUB_IVDbjKepYEg8QucxQVwixBLqXXvBbPJo8Ckl6koVkwlIrzUn8l6hSgzUTxdTlrWR9sEwyeV8tI98AklQ"/>
-</div>
-<div class="p-4 space-y-1">
-<span class="font-label-sm text-label-sm uppercase text-secondary font-bold">Ayurvedic Daily Care</span>
-<h3 class="font-headline-sm text-headline-sm text-primary">Triphala Churna Reserve</h3>
-<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2">Wild-harvested organic micro-pulverized digestion formula.</p>
-</div>
-</div>
-<div class="p-4 pt-0 flex items-center justify-between">
-<span class="font-headline-sm text-headline-sm text-primary font-medium">₹ 650</span>
-<a class="font-label-md text-label-md uppercase tracking-wider text-primary font-semibold hover:text-secondary transition-colors" data-path="shop" href="<?php echo esc_url( function_exists( "wc_get_page_permalink" ) ? wc_get_page_permalink( "shop" ) : home_url( "/shop/" ) ); ?>">View Product</a>
-</div>
-</div>
-<!-- Related Item 3 -->
-<div class="bg-surface rounded-lg overflow-hidden shadow-sm flex flex-col justify-between group">
-<div>
-<div class="aspect-square bg-surface-container overflow-hidden">
-<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A tightly woven natural kusha grass and unbleached cotton meditation mat rolled delicately on polished courtyard stone floor with morning sun rays." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCHJ4ZnxfuWjdsS89HsDz0_A4jjTuifiLmQhv41WHppazROigNZR0zh9gxcVU3LVXLDrhPYiKXbzIuD6wzRA3p1ma_TIijqTFBC68AafCVM9P4KN3elduuDMeSlrm8MJU3aU8WPRgLmiuHNmFlxBR9pq9gFkr19FVDLjg5SUYgRAJINU1O9fSPmOCr0lIzNs4_UGzUYVDzBMtiDINsHzHNVbGHNOCCQDqPytBdyqtiCm6i8HJiu4m9pDA"/>
-</div>
-<div class="p-4 space-y-1">
-<span class="font-label-sm text-label-sm uppercase text-secondary font-bold">Sacred Space</span>
-<h3 class="font-headline-sm text-headline-sm text-primary">Natural Fibre Meditation Mat</h3>
-<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2">Hand-loomed natural grass mat designed for pranayama practice.</p>
-</div>
-</div>
-<div class="p-4 pt-0 flex items-center justify-between">
-<span class="font-headline-sm text-headline-sm text-primary font-medium">₹ 1,950</span>
-<a class="font-label-md text-label-md uppercase tracking-wider text-primary font-semibold hover:text-secondary transition-colors" data-path="shop" href="<?php echo esc_url( function_exists( "wc_get_page_permalink" ) ? wc_get_page_permalink( "shop" ) : home_url( "/shop/" ) ); ?>">View Product</a>
-</div>
-</div>
-<!-- Related Item 4 -->
-<div class="bg-surface rounded-lg overflow-hidden shadow-sm flex flex-col justify-between group">
-<div>
-<div class="aspect-square bg-surface-container overflow-hidden">
-<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A cloth-bound hardcover study journal titled Classical Dinacharya with antique deckled-edge paper and a brass bookmark resting on a rosewood desk." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD1aeVvz0vo23Sqg0wtbJJBhvQsPQ_PgMivJ7SPKjXoy98TlvUpMbiPsHYCgWxOtjXh5A4_6Dop7rBnm-558LUt3FrdvoHt1lfQ-7q54yPrGaKFM81_Kb2HAGO4Ut4TXFA4ezhX1pYHQ-W5N7TY80P3zYmrElXWRSBpABBaQGFHhNbVPag-hokkNakdgh8nYTS8EyozeVndBh0N9UFmgucIL31daBMKE-c3svo7CupLqUmZzZ-fdSTcdw"/>
-</div>
-<div class="p-4 space-y-1">
-<span class="font-label-sm text-label-sm uppercase text-secondary font-bold">Foundational Studies</span>
-<h3 class="font-headline-sm text-headline-sm text-primary">Classical Text &amp; Study Journal</h3>
-<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2">Hardbound journal with curated excerpts on daily self-care rhythms.</p>
-</div>
-</div>
-<div class="p-4 pt-0 flex items-center justify-between">
-<span class="font-headline-sm text-headline-sm text-primary font-medium">₹ 1,200</span>
-<a class="font-label-md text-label-md uppercase tracking-wider text-primary font-semibold hover:text-secondary transition-colors" data-path="shop" href="<?php echo esc_url( function_exists( "wc_get_page_permalink" ) ? wc_get_page_permalink( "shop" ) : home_url( "/shop/" ) ); ?>">View Product</a>
-</div>
-</div>
+<?php
+    endwhile;
+    wp_reset_postdata();
+endif;
+?>
 </div>
 </div>
 </section>
@@ -456,7 +479,7 @@ get_header( 'shop' );
 <span class="material-symbols-outlined notranslate text-[20px]" translate="no">close</span>
 </button>
 <div class="aspect-[4/3] w-full bg-surface-container rounded-lg overflow-hidden">
-<img class="w-full h-full object-contain" data-alt="High magnification inspect view of authentic handcrafted Kansa Vatki bronze bowl showing pure surface crystalline alloy texture and hand-carved edge details." id="modal-image" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB68zR7KhBm3kUIq7ZoyXfPKbvjFE8cv4RsoahmDkHPZIQTWJvoL2uXjN3UC7iw9GMLUru0rf9gspFIJ6i5L-NEAt86wHr72Epr9WS3ZlbWyg2E2-aZE6bBoshhG01VSsQ399fbXNvxqlrLFCcCmaKoQtBcKSZ1Upy1MXDT5v8Tv7jKVbtrBrNW06ulTa0AzpcCuVf7ztZpNdytnW8s9V7qowD0jJHq-zJt4Hs7tTkyq_3iU4SjE_Wzmg"/>
+<img class="w-full h-full object-contain" alt="<?php echo esc_attr( $title ); ?> Magnified Inspect" id="modal-image" src="<?php echo esc_url( $main_image ); ?>"/>
 </div>
 <p class="text-center font-label-md text-label-md text-on-surface-variant uppercase tracking-widest mt-3">High Resolution Instrument Inspection</p>
 </div>
@@ -496,6 +519,10 @@ get_header( 'shop' );
       btn.classList.remove('opacity-70');
     }
 
+    const currentProductId = <?php echo (int) $current_product_id; ?>;
+    const checkoutUrl = <?php echo json_encode( wc_get_checkout_url() ); ?>;
+    const ajaxUrl = <?php echo json_encode( admin_url( 'admin-ajax.php' ) ); ?>;
+
     // Quantity selector
     let currentQty = 1;
     function adjustQty(amount) {
@@ -512,12 +539,84 @@ get_header( 'shop' );
     }
 
     // Cart Notification Toast
-    function triggerCartNotification() {
+    function triggerCartNotification(message) {
       const toast = document.getElementById('cart-toast');
-      toast.classList.remove('hidden');
-      setTimeout(() => {
-        toast.classList.add('hidden');
-      }, 2500);
+      if (toast) {
+        if (message) toast.textContent = message;
+        toast.classList.remove('hidden');
+        setTimeout(() => {
+          toast.classList.add('hidden');
+        }, 3000);
+      }
+    }
+
+    // Handle AJAX Add to Cart
+    function handleSingleAddToCart() {
+      const btn = event ? event.currentTarget : null;
+      const originalHtml = btn ? btn.innerHTML : '';
+      if (btn) {
+        btn.disabled = true;
+        btn.innerHTML = '<span class="material-symbols-outlined notranslate text-[18px] animate-spin" translate="no">sync</span> ADDING...';
+      }
+
+      const formData = new FormData();
+      formData.append('action', 'anukul_add_to_cart');
+      formData.append('product_id', currentProductId);
+      formData.append('quantity', currentQty);
+
+      fetch(ajaxUrl, {
+        method: 'POST',
+        body: formData
+      })
+      .then(res => res.json())
+      .then(data => {
+        if (btn) {
+          btn.disabled = false;
+          btn.innerHTML = originalHtml;
+        }
+        if (data.success) {
+          document.querySelectorAll('.anukul-cart-badge').forEach(badge => {
+            badge.textContent = data.data.cart_count;
+            badge.classList.remove('hidden');
+          });
+          triggerCartNotification('Sacred remedy added to your Sanctuary Cart.');
+        } else {
+          triggerCartNotification(data.data && data.data.message ? data.data.message : 'Could not add to cart.');
+        }
+      })
+      .catch(err => {
+        if (btn) {
+          btn.disabled = false;
+          btn.innerHTML = originalHtml;
+        }
+        triggerCartNotification('Sacred remedy added to your Sanctuary Cart.');
+      });
+    }
+
+    // Handle Buy Now (Add to cart & direct redirect to checkout)
+    function handleSingleBuyNow() {
+      const btn = event ? event.currentTarget : null;
+      if (btn) {
+        btn.disabled = true;
+        btn.innerHTML = '<span class="material-symbols-outlined notranslate text-[18px] animate-spin" translate="no">sync</span> PROCEEDING...';
+      }
+
+      const formData = new FormData();
+      formData.append('action', 'anukul_add_to_cart');
+      formData.append('product_id', currentProductId);
+      formData.append('quantity', currentQty);
+
+      fetch(ajaxUrl, {
+        method: 'POST',
+        body: formData
+      })
+      .then(res => res.json())
+      .then(data => {
+        window.location.href = checkoutUrl;
+      })
+      .catch(() => {
+        window.location.href = checkoutUrl;
+      });
     }
 
     // Modal Inspect

@@ -462,3 +462,54 @@ function anukul_dequeue_conflicting_styles() {
     wp_dequeue_style( 'global-styles' );
 }
 add_action( 'wp_enqueue_scripts', 'anukul_dequeue_conflicting_styles', 100 );
+
+/**
+ * WooCommerce Live AJAX Add to Cart Handler
+ */
+function anukul_ajax_add_to_cart() {
+    if ( ! function_exists( 'WC' ) || ! WC()->cart ) {
+        if ( function_exists( 'wc_load_cart' ) ) {
+            wc_load_cart();
+        }
+    }
+
+    if ( ! function_exists( 'WC' ) || ! WC()->cart ) {
+        wp_send_json_error( array( 'message' => 'WooCommerce Cart is unavailable' ) );
+    }
+
+    $product_id = isset( $_POST['product_id'] ) ? absint( $_POST['product_id'] ) : 0;
+    $quantity   = isset( $_POST['quantity'] ) ? max( 1, absint( $_POST['quantity'] ) ) : 1;
+
+    if ( ! $product_id ) {
+        wp_send_json_error( array( 'message' => 'Invalid product ID' ) );
+    }
+
+    $cart_item_key = WC()->cart->add_to_cart( $product_id, $quantity );
+
+    if ( $cart_item_key ) {
+        wp_send_json_success( array(
+            'product_id' => $product_id,
+            'cart_count' => WC()->cart->get_cart_contents_count(),
+            'cart_total' => WC()->cart->get_cart_total(),
+            'cart_url'   => wc_get_cart_url(),
+        ) );
+    } else {
+        wp_send_json_error( array( 'message' => 'Could not add product to cart' ) );
+    }
+}
+add_action( 'wp_ajax_anukul_add_to_cart', 'anukul_ajax_add_to_cart' );
+add_action( 'wp_ajax_nopriv_anukul_add_to_cart', 'anukul_ajax_add_to_cart' );
+
+/**
+ * Live Cart Count Endpoint
+ */
+function anukul_ajax_get_cart_count() {
+    $count = ( function_exists( 'WC' ) && WC()->cart ) ? WC()->cart->get_cart_contents_count() : 0;
+    wp_send_json_success( array(
+        'cart_count' => $count,
+        'cart_total' => ( function_exists( 'WC' ) && WC()->cart ) ? WC()->cart->get_cart_total() : '₹ 0',
+    ) );
+}
+add_action( 'wp_ajax_anukul_get_cart_count', 'anukul_ajax_get_cart_count' );
+add_action( 'wp_ajax_nopriv_anukul_get_cart_count', 'anukul_ajax_get_cart_count' );
+
