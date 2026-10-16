@@ -117,12 +117,18 @@ $col3_class       = $has_col_4 ? 'md:col-span-3' : 'md:col-span-3';
 
         </div>
 
-        <!-- Bottom Copyright & Dynamic Legal / Policy Navigation -->
-        <div class="pt-6 flex flex-col sm:flex-row items-center justify-between gap-4">
-            <p class="font-body-sm text-body-sm text-[#E8D8BC]/70 text-center sm:text-left">
-                <?php echo esc_html( $copyright_text ); ?>
-            </p>
-            <div class="flex items-center gap-6 font-body-sm text-body-sm text-[#E8D8BC]/75">
+        <!-- Bottom Copyright, Developer Credits & Dynamic Legal / Policy Navigation -->
+        <div class="pt-6 flex flex-col lg:flex-row items-center justify-between gap-4">
+            <div class="flex flex-col sm:flex-row items-center gap-2 sm:gap-3 text-center sm:text-left">
+                <p class="font-body-sm text-body-sm text-[#E8D8BC]/70">
+                    <?php echo esc_html( $copyright_text ); ?>
+                </p>
+                <span class="hidden sm:inline text-[#B38A3E]/40">&bull;</span>
+                <p class="font-body-sm text-body-sm text-[#E8D8BC]/85">
+                    <?php esc_html_e( 'Design and developed by', 'anukul' ); ?> <a href="https://raylancer.com" target="_blank" rel="noopener noreferrer" class="text-[#B38A3E] hover:text-white transition-colors font-medium underline underline-offset-2">Raylancer Services</a>
+                </p>
+            </div>
+            <div class="flex flex-wrap items-center justify-center lg:justify-end gap-x-4 gap-y-2 font-body-sm text-body-sm text-[#E8D8BC]/75">
                 <?php anukul_render_nav_policy(); ?>
             </div>
         </div>
