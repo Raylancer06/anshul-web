@@ -310,14 +310,14 @@ Recommended Protocol
 <div>
 <div class="flex items-center justify-between pb-space-md mb-space-md">
 <div class="flex items-center gap-space-sm">
-<h3 class="font-headline-sm text-headline-sm text-primary">November 2025</h3>
-<span class="px-2 py-0.5 rounded bg-surface-container text-secondary font-label-sm text-label-sm uppercase tracking-wider">Margashirsha Masa</span>
+<h3 class="font-headline-sm text-headline-sm text-primary" id="cal-month-title">Loading Month...</h3>
+<span class="px-2 py-0.5 rounded bg-surface-container text-secondary font-label-sm text-label-sm uppercase tracking-wider" id="cal-sub-title">Shubha Muhurta</span>
 </div>
 <div class="flex items-center gap-1">
-<button class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center text-on-surface-variant hover:text-primary hover:bg-surface-container-high transition-colors" type="button">
+<button class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center text-on-surface-variant hover:text-primary hover:bg-surface-container-high transition-colors" onclick="changeCalendarMonth(-1)" title="Previous Month" type="button">
 <span class="material-symbols-outlined notranslate text-[18px]" translate="no">chevron_left</span>
 </button>
-<button class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center text-on-surface-variant hover:text-primary hover:bg-surface-container-high transition-colors" type="button">
+<button class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center text-on-surface-variant hover:text-primary hover:bg-surface-container-high transition-colors" onclick="changeCalendarMonth(1)" title="Next Month" type="button">
 <span class="material-symbols-outlined notranslate text-[18px]" translate="no">chevron_right</span>
 </button>
 </div>
@@ -328,53 +328,7 @@ Recommended Protocol
 </div>
 <!-- Calendar Days Grid -->
 <div class="grid grid-cols-7 gap-2 text-center font-body-md text-body-md" id="calendar-days">
-<!-- Row 1: Disabled / Past -->
-<span class="p-2.5 rounded text-outline-variant opacity-40">26</span>
-<span class="p-2.5 rounded text-outline-variant opacity-40">27</span>
-<span class="p-2.5 rounded text-outline-variant opacity-40">28</span>
-<span class="p-2.5 rounded text-outline-variant opacity-40">29</span>
-<span class="p-2.5 rounded text-outline-variant opacity-40">30</span>
-<span class="p-2.5 rounded text-outline-variant opacity-40">31</span>
-<span class="p-2.5 rounded text-on-surface-variant/40">1</span>
-<!-- Row 2 -->
-<span class="p-2.5 rounded text-on-surface-variant/40">2</span>
-<span class="p-2.5 rounded text-on-surface-variant/40">3</span>
-<span class="p-2.5 rounded text-on-surface-variant/40">4</span>
-<span class="p-2.5 rounded text-on-surface-variant/40">5</span>
-<span class="p-2.5 rounded text-on-surface-variant/40">6</span>
-<span class="p-2.5 rounded text-on-surface-variant/40">7</span>
-<span class="p-2.5 rounded text-on-surface-variant/40">8</span>
-<!-- Row 3 -->
-<span class="p-2.5 rounded text-on-surface-variant/40">9</span>
-<span class="p-2.5 rounded text-on-surface-variant/40">10</span>
-<span class="p-2.5 rounded text-on-surface-variant/40">11</span>
-<span class="p-2.5 rounded text-on-surface-variant/40">12</span>
-<span class="p-2.5 rounded text-on-surface-variant/40">13</span>
-<span class="p-2.5 rounded text-on-surface-variant/40">14</span>
-<span class="p-2.5 rounded text-on-surface-variant/40">15</span>
-<!-- Row 4: Active Dates -->
-<button class="cal-day p-2.5 rounded-lg hover:bg-surface-container font-medium text-on-surface transition-colors" onclick="selectDate('Sun, Nov 16, 2025', this)" type="button">16</button>
-<button class="cal-day p-2.5 rounded-lg hover:bg-surface-container font-medium text-on-surface transition-colors" onclick="selectDate('Mon, Nov 17, 2025', this)" type="button">17</button>
-<!-- Selected Date (Nov 18) -->
-<button class="cal-day p-2.5 rounded-lg bg-primary text-on-primary font-bold shadow-sm relative transition-colors" onclick="selectDate('Tue, Nov 18, 2025', this)" type="button">
-                  18
-                  <span class="w-1.5 h-1.5 rounded-full bg-secondary-fixed absolute bottom-1 left-1/2 -translate-x-1/2"></span>
-</button>
-<button class="cal-day p-2.5 rounded-lg hover:bg-surface-container font-medium text-on-surface transition-colors relative" onclick="selectDate('Wed, Nov 19, 2025', this)" type="button">
-                  19
-                  <span class="w-1.5 h-1.5 rounded-full bg-secondary absolute bottom-1 left-1/2 -translate-x-1/2"></span>
-</button>
-<button class="cal-day p-2.5 rounded-lg hover:bg-surface-container font-medium text-on-surface transition-colors" onclick="selectDate('Thu, Nov 20, 2025', this)" type="button">20</button>
-<button class="cal-day p-2.5 rounded-lg hover:bg-surface-container font-medium text-on-surface transition-colors" onclick="selectDate('Fri, Nov 21, 2025', this)" type="button">21</button>
-<button class="cal-day p-2.5 rounded-lg hover:bg-surface-container font-medium text-on-surface transition-colors" onclick="selectDate('Sat, Nov 22, 2025', this)" type="button">22</button>
-<!-- Row 5 -->
-<button class="cal-day p-2.5 rounded-lg hover:bg-surface-container font-medium text-on-surface transition-colors" onclick="selectDate('Sun, Nov 23, 2025', this)" type="button">23</button>
-<button class="cal-day p-2.5 rounded-lg hover:bg-surface-container font-medium text-on-surface transition-colors" onclick="selectDate('Mon, Nov 24, 2025', this)" type="button">24</button>
-<button class="cal-day p-2.5 rounded-lg hover:bg-surface-container font-medium text-on-surface transition-colors" onclick="selectDate('Tue, Nov 25, 2025', this)" type="button">25</button>
-<button class="cal-day p-2.5 rounded-lg hover:bg-surface-container font-medium text-on-surface transition-colors" onclick="selectDate('Wed, Nov 26, 2025', this)" type="button">26</button>
-<button class="cal-day p-2.5 rounded-lg hover:bg-surface-container font-medium text-on-surface transition-colors" onclick="selectDate('Thu, Nov 27, 2025', this)" type="button">27</button>
-<button class="cal-day p-2.5 rounded-lg hover:bg-surface-container font-medium text-on-surface transition-colors" onclick="selectDate('Fri, Nov 28, 2025', this)" type="button">28</button>
-<button class="cal-day p-2.5 rounded-lg hover:bg-surface-container font-medium text-on-surface transition-colors" onclick="selectDate('Sat, Nov 29, 2025', this)" type="button">29</button>
+<!-- Dynamic Day Buttons populated via JS -->
 </div>
 </div>
 <!-- Calendar Legend -->
@@ -399,58 +353,53 @@ Recommended Protocol
 <div class="flex items-center justify-between pb-space-sm">
 <div>
 <span class="font-label-sm text-label-sm uppercase tracking-wider text-secondary font-bold">Selected Consultation Day</span>
-<h3 class="font-headline-sm text-headline-sm text-primary" id="current-chosen-date">Tuesday, November 18, 2025</h3>
+<h3 class="font-headline-sm text-headline-sm text-primary" id="current-chosen-date">Select a Date</h3>
 </div>
 <span class="material-symbols-outlined notranslate text-primary text-[24px]" translate="no">event_available</span>
 </div>
+
+<!-- Closed Day Banner (Hidden by default) -->
+<div id="clinic-closed-notice" class="hidden p-4 rounded-lg bg-amber-50 border border-amber-200 text-amber-900 font-body-sm text-sm">
+  <div class="flex items-center gap-2 font-semibold mb-1">
+    <span class="material-symbols-outlined text-[18px] text-amber-700">event_busy</span>
+    <span>Sanctuary Schedule Notice</span>
+  </div>
+  <p id="clinic-closed-msg">The sanctuary is closed for appointments on this date. Please choose an alternate date from the calendar.</p>
+</div>
+
+<!-- Loading Slots State -->
+<div id="slots-loading" class="hidden py-8 text-center text-on-surface-variant font-body-sm">
+  <div class="inline-block w-6 h-6 border-2 border-primary border-t-transparent rounded-full animate-spin mb-2"></div>
+  <p>Checking available muhurta slots...</p>
+</div>
+
+<div id="slots-container" class="flex flex-col gap-space-md">
 <!-- Time Slot Section 1: Morning -->
-<div class="flex flex-col gap-space-xs">
+<div class="flex flex-col gap-space-xs" id="morning-slots-wrapper">
 <div class="flex items-center justify-between">
 <span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface font-semibold">Morning Muhurta (09:00 – 12:30 IST)</span>
 <span class="font-label-sm text-label-sm text-outline">High Bio-Prana Flow</span>
 </div>
-<div class="grid grid-cols-2 gap-space-sm pt-1">
-<button class="time-slot-btn px-4 py-3 rounded-lg bg-surface-container text-on-surface font-body-sm text-body-sm font-medium hover:bg-surface-container-high transition-all text-left flex items-center justify-between" onclick="selectTimeSlot('09:30 AM – 11:00 AM IST', this)" type="button">
-<span>09:30 AM IST</span>
-<span class="material-symbols-outlined notranslate text-[16px] text-primary" translate="no">circle</span>
-</button>
-<!-- Active Selected Slot (11:00 AM) -->
-<button class="time-slot-btn selected-slot px-4 py-3 rounded-lg bg-primary text-on-primary font-body-sm text-body-sm font-semibold shadow-sm transition-all text-left flex items-center justify-between" onclick="selectTimeSlot('11:00 AM – 12:30 PM IST', this)" type="button">
-<span>11:00 AM IST</span>
-<span class="material-symbols-outlined notranslate text-[16px] text-on-primary" translate="no">check_circle</span>
-</button>
+<div class="grid grid-cols-2 gap-space-sm pt-1" id="morning-slots-grid">
+<!-- Populated by fetchAvailableSlots -->
 </div>
 </div>
 <!-- Time Slot Section 2: Afternoon & Evening -->
-<div class="flex flex-col gap-space-xs pt-space-xs">
+<div class="flex flex-col gap-space-xs pt-space-xs" id="afternoon-slots-wrapper">
 <div class="flex items-center justify-between">
 <span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface font-semibold">Afternoon &amp; Twilight (14:00 – 18:30 IST)</span>
 <span class="font-label-sm text-label-sm text-outline">Reflective Analysis</span>
 </div>
-<div class="grid grid-cols-2 gap-space-sm pt-1">
-<!-- Disabled / Booked Slot -->
-<div class="px-4 py-3 rounded-lg bg-surface-container-highest text-on-surface-variant/50 font-body-sm text-body-sm flex items-center justify-between cursor-not-allowed">
-<span class="line-through">02:30 PM IST</span>
-<span class="font-label-sm text-label-sm uppercase tracking-widest text-outline text-[9px]">Booked</span>
-</div>
-<button class="time-slot-btn px-4 py-3 rounded-lg bg-surface-container text-on-surface font-body-sm text-body-sm font-medium hover:bg-surface-container-high transition-all text-left flex items-center justify-between" onclick="selectTimeSlot('04:00 PM – 05:30 PM IST', this)" type="button">
-<span>04:00 PM IST</span>
-<span class="material-symbols-outlined notranslate text-[16px] text-primary" translate="no">circle</span>
-</button>
-<button class="time-slot-btn px-4 py-3 rounded-lg bg-surface-container text-on-surface font-body-sm text-body-sm font-medium hover:bg-surface-container-high transition-all text-left flex items-center justify-between" onclick="selectTimeSlot('05:30 PM – 07:00 PM IST', this)" type="button">
-<span>05:30 PM IST</span>
-<span class="material-symbols-outlined notranslate text-[16px] text-primary" translate="no">circle</span>
-</button>
-<div class="px-4 py-3 rounded-lg bg-surface-container-highest text-on-surface-variant/50 font-body-sm text-body-sm flex items-center justify-between cursor-not-allowed">
-<span class="line-through">07:00 PM IST</span>
-<span class="font-label-sm text-label-sm uppercase tracking-widest text-outline text-[9px]">Reserved</span>
+<div class="grid grid-cols-2 gap-space-sm pt-1" id="afternoon-slots-grid">
+<!-- Populated by fetchAvailableSlots -->
 </div>
 </div>
 </div>
+
 <!-- Timezone & Notification Notice -->
 <div class="bg-surface-container p-space-sm rounded-lg flex items-start gap-space-xs text-on-surface-variant font-body-sm text-body-sm text-[12px] leading-relaxed">
 <span class="material-symbols-outlined notranslate text-primary text-[18px] shrink-0" translate="no">public</span>
-<p>All consultation times are shown in Indian Standard Time (IST · UTC+5:30). An automatic calendar invite with local timezone conversion will be dispatched upon confirmation.</p>
+<p>All consultation times are shown in Indian Standard Time (IST · UTC+5:30). An automatic Google Calendar invite with local timezone conversion will be dispatched upon confirmation.</p>
 </div>
 </div>
 <!-- Step 2 Navigation -->
@@ -458,7 +407,7 @@ Recommended Protocol
 <button class="px-5 py-2.5 rounded-lg bg-surface-container text-on-surface font-label-md text-label-md uppercase tracking-wider hover:bg-surface-container-high transition-colors" onclick="goToStep(1)" type="button">
                 Back
               </button>
-<button class="inline-flex items-center gap-space-xs px-6 py-2.5 rounded-lg bg-primary text-on-primary font-label-md text-label-md uppercase tracking-wider hover:bg-tertiary transition-colors shadow-sm" onclick="goToStep(3)" type="button">
+<button id="step2-continue-btn" class="inline-flex items-center gap-space-xs px-6 py-2.5 rounded-lg bg-primary text-on-primary font-label-md text-label-md uppercase tracking-wider hover:bg-tertiary transition-colors shadow-sm disabled:opacity-50 disabled:cursor-not-allowed" onclick="goToStep(3)" type="button">
 <span>Continue to Details</span>
 <span class="material-symbols-outlined notranslate text-[16px]" translate="no">arrow_forward</span>
 </button>
@@ -793,7 +742,7 @@ $wc_gateways = function_exists( 'WC' ) && WC()->payment_gateways ? WC()->payment
 <p class="font-semibold text-on-surface">Secure Video Call (Google Meet)</p>
 </div>
 </div>
-<div class="bg-surface-container-low p-space-md rounded-lg flex items-center justify-between mt-space-sm">
+<div class="bg-surface-container-low p-space-md rounded-lg flex flex-col sm:flex-row items-start sm:items-center justify-between gap-space-sm mt-space-sm">
 <div class="flex items-center gap-space-sm">
 <span class="material-symbols-outlined notranslate text-secondary text-[24px]" translate="no">calendar_add_on</span>
 <div class="flex flex-col">
@@ -801,7 +750,16 @@ $wc_gateways = function_exists( 'WC' ) && WC()->payment_gateways ? WC()->payment
 <span class="font-body-sm text-body-sm text-outline text-[12px]">Google Calendar · Apple Calendar · Outlook</span>
 </div>
 </div>
-<a class="px-4 py-2 rounded bg-surface-container text-primary font-label-sm text-label-sm uppercase tracking-wider font-bold hover:bg-surface-container-high transition-colors" href="#">Download .ICS</a>
+<div class="flex items-center gap-2">
+  <a id="success-gcal-link" target="_blank" class="px-4 py-2 rounded bg-primary text-on-primary font-label-sm text-label-sm uppercase tracking-wider font-bold hover:bg-tertiary transition-colors inline-flex items-center gap-1.5 shadow-sm" href="#">
+    <span class="material-symbols-outlined notranslate text-[16px]" translate="no">event</span>
+    Google Calendar
+  </a>
+  <a id="success-ics-link" class="px-4 py-2 rounded bg-surface-container text-primary font-label-sm text-label-sm uppercase tracking-wider font-bold hover:bg-surface-container-high transition-colors inline-flex items-center gap-1.5" href="#">
+    <span class="material-symbols-outlined notranslate text-[16px]" translate="no">download</span>
+    Download .ICS
+  </a>
+</div>
 </div>
 </div>
 <div class="flex flex-wrap items-center justify-center gap-space-md">
@@ -825,12 +783,21 @@ $wc_gateways = function_exists( 'WC' ) && WC()->payment_gateways ? WC()->payment
     duration: '90 mins',
     format: 'Complete 4-Pillar Master Consultation',
     price: 5100,
-    date: 'Tuesday, November 18, 2025',
-    slot: '11:00 AM – 12:30 PM IST',
+    date: '',
+    dateYmd: '',
+    slot: '',
     name: 'Ananya Deshmukh',
     email: 'ananya.deshmukh@wellness.in',
     phone: '98201 44521'
   };
+
+  // Calendar State
+  let currentCalDate = new Date();
+  if (currentCalDate.getHours() >= 18) {
+    currentCalDate.setDate(currentCalDate.getDate() + 1);
+  }
+  let calYear = currentCalDate.getFullYear();
+  let calMonth = currentCalDate.getMonth();
 
   // Step Navigation
   function goToStep(stepNumber) {
@@ -914,43 +881,257 @@ $wc_gateways = function_exists( 'WC' ) && WC()->payment_gateways ? WC()->payment
     updateSummaryViews();
   }
 
-  // Step 2: Select Date & Time
-  function selectDate(dateString, element) {
+  // Dynamic Calendar Engine
+  function renderCalendar(year, month) {
+    const monthNames = [
+      "January", "February", "March", "April", "May", "June",
+      "July", "August", "September", "October", "November", "December"
+    ];
+    const calTitle = document.getElementById('cal-month-title');
+    if (calTitle) {
+      calTitle.textContent = `${monthNames[month]} ${year}`;
+    }
+
+    const daysGrid = document.getElementById('calendar-days');
+    if (!daysGrid) return;
+    daysGrid.innerHTML = '';
+
+    const firstDay = new Date(year, month, 1).getDay(); // 0 is Sun
+    const daysInMonth = new Date(year, month + 1, 0).getDate();
+    const prevMonthDays = new Date(year, month, 0).getDate();
+
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+
+    // Trailing days from previous month
+    for (let i = firstDay - 1; i >= 0; i--) {
+      const span = document.createElement('span');
+      span.className = "p-2.5 rounded text-outline-variant opacity-40 select-none";
+      span.textContent = (prevMonthDays - i).toString();
+      daysGrid.appendChild(span);
+    }
+
+    // Current month days
+    for (let d = 1; d <= daysInMonth; d++) {
+      const thisDate = new Date(year, month, d);
+      thisDate.setHours(0, 0, 0, 0);
+
+      const isPast = thisDate < today;
+      const isToday = thisDate.getTime() === today.getTime();
+
+      const ymd = `${year}-${String(month + 1).padStart(2, '0')}-${String(d).padStart(2, '0')}`;
+      const dateFormatted = thisDate.toLocaleDateString('en-US', {
+        weekday: 'short',
+        year: 'numeric',
+        month: 'short',
+        day: 'numeric'
+      });
+
+      const isSelected = (state.dateYmd === ymd);
+
+      if (isPast) {
+        const span = document.createElement('span');
+        span.className = "p-2.5 rounded text-on-surface-variant/30 select-none";
+        span.textContent = d.toString();
+        daysGrid.appendChild(span);
+      } else {
+        const btn = document.createElement('button');
+        btn.type = 'button';
+        btn.setAttribute('data-ymd', ymd);
+        btn.setAttribute('data-formatted', dateFormatted);
+        btn.className = isSelected 
+          ? "cal-day p-2.5 rounded-lg bg-primary text-on-primary font-bold shadow-sm relative transition-colors"
+          : "cal-day p-2.5 rounded-lg hover:bg-surface-container font-medium text-on-surface transition-colors relative";
+        
+        btn.innerHTML = `<span>${d}</span>` + (isToday ? `<span class="w-1.5 h-1.5 rounded-full bg-secondary-fixed absolute bottom-1 left-1/2 -translate-x-1/2"></span>` : '');
+        
+        btn.onclick = function() {
+          selectDate(dateFormatted, ymd, this);
+        };
+        daysGrid.appendChild(btn);
+      }
+    }
+  }
+
+  function changeCalendarMonth(delta) {
+    calMonth += delta;
+    if (calMonth < 0) {
+      calMonth = 11;
+      calYear--;
+    } else if (calMonth > 11) {
+      calMonth = 0;
+      calYear++;
+    }
+    renderCalendar(calYear, calMonth);
+  }
+
+  // Step 2: Select Date & Time (Invokes Live AJAX Slots Availability)
+  function selectDate(dateString, ymd, element) {
     state.date = dateString;
+    state.dateYmd = ymd;
+
     document.querySelectorAll('.cal-day').forEach(b => {
-      b.classList.remove('bg-primary', 'text-on-primary', 'shadow-sm');
-      b.classList.add('hover:bg-surface-container', 'text-on-surface');
+      b.classList.remove('bg-primary', 'text-on-primary', 'shadow-sm', 'font-bold');
+      b.classList.add('hover:bg-surface-container', 'text-on-surface', 'font-medium');
     });
     if (element) {
-      element.classList.remove('hover:bg-surface-container', 'text-on-surface');
-      element.classList.add('bg-primary', 'text-on-primary', 'shadow-sm');
+      element.classList.remove('hover:bg-surface-container', 'text-on-surface', 'font-medium');
+      element.classList.add('bg-primary', 'text-on-primary', 'shadow-sm', 'font-bold');
     }
+
     const chosenDateElem = document.getElementById('current-chosen-date');
     if (chosenDateElem) chosenDateElem.textContent = dateString;
+
+    fetchAvailableSlots(ymd);
     updateSummaryViews();
+  }
+
+  function fetchAvailableSlots(dateYmd) {
+    const loading = document.getElementById('slots-loading');
+    const container = document.getElementById('slots-container');
+    const closedNotice = document.getElementById('clinic-closed-notice');
+    const closedMsg = document.getElementById('clinic-closed-msg');
+    const morningGrid = document.getElementById('morning-slots-grid');
+    const afternoonGrid = document.getElementById('afternoon-slots-grid');
+    const continueBtn = document.getElementById('step2-continue-btn');
+
+    if (loading) loading.classList.remove('hidden');
+    if (container) container.classList.add('hidden');
+    if (closedNotice) closedNotice.classList.add('hidden');
+
+    const formData = new FormData();
+    formData.append('action', 'anukul_get_available_slots');
+    formData.append('nonce', '<?php echo wp_create_nonce( "anukul_booking_nonce" ); ?>');
+    formData.append('date', dateYmd);
+
+    fetch('<?php echo esc_url( admin_url( "admin-ajax.php" ) ); ?>', {
+      method: 'POST',
+      body: formData
+    })
+    .then(res => res.json())
+    .then(res => {
+      if (loading) loading.classList.add('hidden');
+
+      if (!res.success || !res.data) {
+        if (closedNotice) {
+          closedNotice.classList.remove('hidden');
+          if (closedMsg) closedMsg.textContent = 'Could not load schedule for this date. Please select an alternate date.';
+        }
+        if (continueBtn) continueBtn.disabled = true;
+        return;
+      }
+
+      const data = res.data;
+      if (!data.is_date_open) {
+        if (closedNotice) {
+          closedNotice.classList.remove('hidden');
+          if (closedMsg) closedMsg.textContent = 'The clinic sanctuary is closed on this date (Scheduled off or Vedic holiday). Please choose another date on the calendar.';
+        }
+        if (continueBtn) continueBtn.disabled = true;
+        state.slot = '';
+        updateSummaryViews();
+        return;
+      }
+
+      if (container) container.classList.remove('hidden');
+      if (morningGrid) morningGrid.innerHTML = '';
+      if (afternoonGrid) afternoonGrid.innerHTML = '';
+
+      let firstAvailableSlot = null;
+      let hasAvailableSlots = false;
+
+      data.slots.forEach(s => {
+        const grid = (s.period === 'morning') ? morningGrid : afternoonGrid;
+        if (!grid) return;
+
+        if (s.is_available) {
+          hasAvailableSlots = true;
+          if (!firstAvailableSlot) firstAvailableSlot = s.time;
+
+          const isCurrentlySelected = (state.slot === s.time);
+          const btn = document.createElement('button');
+          btn.type = 'button';
+          btn.className = isCurrentlySelected
+            ? "time-slot-btn selected-slot px-4 py-3 rounded-lg bg-primary text-on-primary font-body-sm text-body-sm font-semibold shadow-sm transition-all text-left flex items-center justify-between"
+            : "time-slot-btn px-4 py-3 rounded-lg bg-surface-container text-on-surface font-body-sm text-body-sm font-medium hover:bg-surface-container-high transition-all text-left flex items-center justify-between";
+          btn.setAttribute('data-slot-time', s.time);
+          btn.onclick = function() {
+            selectTimeSlot(s.time, this);
+          };
+          btn.innerHTML = `
+            <div class="flex flex-col">
+              <span class="font-semibold">${s.time.split('–')[0].trim()} IST</span>
+              ${s.label ? `<span class="text-[11px] opacity-80">${s.label}</span>` : ''}
+            </div>
+            <span class="material-symbols-outlined notranslate text-[16px] ${isCurrentlySelected ? 'text-on-primary' : 'text-primary'}" translate="no">${isCurrentlySelected ? 'check_circle' : 'circle'}</span>
+          `;
+          grid.appendChild(btn);
+        } else {
+          const div = document.createElement('div');
+          div.className = "px-4 py-3 rounded-lg bg-surface-container-highest text-on-surface-variant/50 font-body-sm text-body-sm flex items-center justify-between cursor-not-allowed";
+          div.innerHTML = `
+            <div class="flex flex-col">
+              <span class="line-through">${s.time.split('–')[0].trim()} IST</span>
+              ${s.label ? `<span class="text-[11px] opacity-60">${s.label}</span>` : ''}
+            </div>
+            <span class="font-label-sm text-label-sm uppercase tracking-widest text-outline text-[9px]">${s.reason || 'Booked'}</span>
+          `;
+          grid.appendChild(div);
+        }
+      });
+
+      if (!hasAvailableSlots) {
+        if (closedNotice) {
+          closedNotice.classList.remove('hidden');
+          if (closedMsg) closedMsg.textContent = 'All consultation slots are fully reserved for this date. Please pick an alternative date.';
+        }
+        if (continueBtn) continueBtn.disabled = true;
+        state.slot = '';
+      } else {
+        if (continueBtn) continueBtn.disabled = false;
+        // Check if previously selected slot is still available on new date
+        const stillValid = data.slots.some(s => s.is_available && s.time === state.slot);
+        if (!stillValid && firstAvailableSlot) {
+          const firstBtn = document.querySelector(`.time-slot-btn[data-slot-time="${firstAvailableSlot}"]`);
+          selectTimeSlot(firstAvailableSlot, firstBtn);
+        }
+      }
+      updateSummaryViews();
+    })
+    .catch(err => {
+      console.error('Slot loading error:', err);
+      if (loading) loading.classList.add('hidden');
+      if (closedNotice) {
+        closedNotice.classList.remove('hidden');
+        if (closedMsg) closedMsg.textContent = 'Unable to check slot availability. Please refresh and try again.';
+      }
+    });
   }
 
   function selectTimeSlot(slotString, element) {
     state.slot = slotString;
     document.querySelectorAll('.time-slot-btn').forEach(btn => {
-      btn.classList.remove('bg-primary', 'text-on-primary', 'selected-slot', 'shadow-sm');
-      btn.classList.add('bg-surface-container', 'text-on-surface');
+      btn.classList.remove('bg-primary', 'text-on-primary', 'selected-slot', 'shadow-sm', 'font-semibold');
+      btn.classList.add('bg-surface-container', 'text-on-surface', 'font-medium');
       const icon = btn.querySelector('.material-symbols-outlined');
       if (icon) {
         icon.textContent = 'circle';
-        icon.className = 'material-symbols-outlined text-[16px] text-primary';
+        icon.className = 'material-symbols-outlined notranslate text-[16px] text-primary';
       }
     });
 
     if (element) {
-      element.classList.remove('bg-surface-container', 'text-on-surface');
-      element.classList.add('bg-primary', 'text-on-primary', 'selected-slot', 'shadow-sm');
+      element.classList.remove('bg-surface-container', 'text-on-surface', 'font-medium');
+      element.classList.add('bg-primary', 'text-on-primary', 'selected-slot', 'shadow-sm', 'font-semibold');
       const activeIcon = element.querySelector('.material-symbols-outlined');
       if (activeIcon) {
         activeIcon.textContent = 'check_circle';
-        activeIcon.className = 'material-symbols-outlined text-[16px] text-on-primary';
+        activeIcon.className = 'material-symbols-outlined notranslate text-[16px] text-on-primary';
       }
     }
+
+    const continueBtn = document.getElementById('step2-continue-btn');
+    if (continueBtn) continueBtn.disabled = !state.slot;
 
     updateSummaryViews();
   }
@@ -979,7 +1160,7 @@ $wc_gateways = function_exists( 'WC' ) && WC()->payment_gateways ? WC()->payment
     const sideDur = document.getElementById('summary-sidebar-duration');
     const sideTotal = document.getElementById('summary-sidebar-total');
     if (sideType) sideType.textContent = state.consultationTitle;
-    if (sideSlot) sideSlot.textContent = `${state.date} · ${state.slot.split('–')[0].trim()}`;
+    if (sideSlot) sideSlot.textContent = `${state.date} · ${state.slot ? state.slot.split('–')[0].trim() : 'Select Slot'}`;
     if (sideDur) sideDur.textContent = `${state.duration} Assessment`;
     if (sideTotal) sideTotal.textContent = `₹ ${state.price.toLocaleString('en-IN')}`;
 
@@ -993,7 +1174,7 @@ $wc_gateways = function_exists( 'WC' ) && WC()->payment_gateways ? WC()->payment
     if (checkTitle) checkTitle.textContent = state.consultationTitle;
     if (checkDur) checkDur.textContent = `${state.duration} Assessment Protocol`;
     if (checkDate) checkDate.textContent = state.date;
-    if (checkTime) checkTime.textContent = state.slot;
+    if (checkTime) checkTime.textContent = state.slot || 'Muhurta Pending';
     if (checkGrand) checkGrand.textContent = `₹ ${state.price.toLocaleString('en-IN')}`;
     if (payLabel) payLabel.textContent = `PAY & CONFIRM BOOKING — ₹ ${state.price.toLocaleString('en-IN')}`;
 
@@ -1060,10 +1241,20 @@ $wc_gateways = function_exists( 'WC' ) && WC()->payment_gateways ? WC()->payment
     .then(res => res.json())
     .then(data => {
       if (data.success && data.data) {
-        if (label) label.textContent = "MUHURTA SECURED · REDIRECTING TO SETTLEMENT...";
+        if (label) label.textContent = "MUHURTA SECURED · REDIRECTING...";
         
-        // If a redirect URL is provided by WooCommerce, seamlessly redirect there
-        if (data.data.redirect_url) {
+        // Populate Google Calendar & ICS links in Confirmation Screen
+        if (data.data.gcal_url) {
+          const gcalBtn = document.getElementById('success-gcal-link');
+          if (gcalBtn) gcalBtn.href = data.data.gcal_url;
+        }
+        if (data.data.ics_url) {
+          const icsBtn = document.getElementById('success-ics-link');
+          if (icsBtn) icsBtn.href = data.data.ics_url;
+        }
+
+        // If redirect URL provided by WooCommerce checkout, redirect to complete gateway transaction
+        if (data.data.redirect_url && !data.data.redirect_url.includes('booking-confirmation')) {
           window.location.href = data.data.redirect_url;
           return;
         }
@@ -1144,6 +1335,18 @@ $wc_gateways = function_exists( 'WC' ) && WC()->payment_gateways ? WC()->payment
 
   // Initialize view on load
   document.addEventListener('DOMContentLoaded', () => {
+    // 1. Initialize Calendar
+    renderCalendar(calYear, calMonth);
+
+    // 2. Select first available calendar day
+    const firstActiveDayBtn = document.querySelector('.cal-day');
+    if (firstActiveDayBtn) {
+      const ymd = firstActiveDayBtn.getAttribute('data-ymd');
+      const fmt = firstActiveDayBtn.getAttribute('data-formatted');
+      selectDate(fmt, ymd, firstActiveDayBtn);
+    }
+
+    // 3. Modality Selection from URL parameter
     const urlParams = new URLSearchParams(window.location.search);
     const type = urlParams.get('type');
     if (type === 'health' || type === 'ayurveda') {

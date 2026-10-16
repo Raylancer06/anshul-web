@@ -19,6 +19,9 @@ define( 'ANUKUL_BOOKING_DIR', plugin_dir_path( __FILE__ ) );
 define( 'ANUKUL_BOOKING_URI', plugin_dir_url( __FILE__ ) );
 define( 'ANUKUL_ADMIN_WHATSAPP_DEFAULT', '917624012501' );
 
+require_once ANUKUL_BOOKING_DIR . 'includes/class-anukul-slots.php';
+require_once ANUKUL_BOOKING_DIR . 'includes/class-anukul-gcal.php';
+
 class ANUKUL_Booking_Engine {
 
     private static $instance = null;
@@ -209,6 +212,7 @@ class ANUKUL_Booking_Engine {
             'slot'        => __( 'Date & Muhurta', 'anukul-booking' ),
             'fee'         => __( 'Fee (INR)', 'anukul-booking' ),
             'status'      => __( 'Payment Status', 'anukul-booking' ),
+            'gcal'        => __( 'Google Calendar', 'anukul-booking' ),
             'quick_act'   => __( 'WhatsApp & Actions', 'anukul-booking' ),
         );
         return $new_cols;
@@ -260,19 +264,50 @@ class ANUKUL_Booking_Engine {
                 echo '<span style="background:' . $bg . '; color:' . $color . '; padding:4px 8px; border-radius:4px; font-weight:600; font-size:11px; text-transform:uppercase;">' . esc_html( $label ) . '</span>';
                 break;
 
+            case 'gcal':
+                $gcal_synced = get_post_meta( $post_id, '_anukul_gcal_synced', true );
+                $gcal_link   = get_post_meta( $post_id, '_anukul_gcal_event_link', true );
+                $gcal_url    = get_post_meta( $post_id, '_anukul_gcal_url', true );
+                if ( empty( $gcal_url ) && class_exists( 'ANUKUL_GCal_Sync' ) ) {
+                    $gcal_url = ANUKUL_GCal_Sync::generate_gcal_url( $post_id );
+                }
+
+                $gcal_nonce = wp_create_nonce( 'anukul_sync_gcal_nonce' );
+                $sync_action_url = admin_url( 'admin.php?action=anukul_sync_gcal&id=' . $post_id . '&_wpnonce=' . $gcal_nonce );
+
+                echo '<div style="display:flex; flex-direction:column; gap:4px;">';
+                if ( 'yes' === $gcal_synced ) {
+                    echo '<span style="color:#155724; background:#d4edda; padding:3px 6px; border-radius:4px; font-weight:bold; font-size:10px; display:inline-block;">✓ GCAL SYNCED</span>';
+                    if ( ! empty( $gcal_link ) ) {
+                        echo '<a href="' . esc_url( $gcal_link ) . '" target="_blank" style="font-size:11px; text-decoration:none;">🔗 Open in GCal</a>';
+                    }
+                } else {
+                    echo '<a href="' . esc_url( $sync_action_url ) . '" class="button button-small" style="font-size:10px; line-height:20px; height:22px; padding:0 6px;">🔄 Sync to GCal</a>';
+                }
+                if ( ! empty( $gcal_url ) ) {
+                    echo '<a href="' . esc_url( $gcal_url ) . '" target="_blank" style="color:#4285F4; font-size:11px; text-decoration:none; font-weight:500;">📅 1-Click Add</a>';
+                }
+                echo '</div>';
+                break;
+
             case 'quick_act':
                 $admin_wa = self::get_admin_whatsapp_number();
+                $gcal_url = get_post_meta( $post_id, '_anukul_gcal_url', true );
+                if ( empty( $gcal_url ) && class_exists( 'ANUKUL_GCal_Sync' ) ) {
+                    $gcal_url = ANUKUL_GCal_Sync::generate_gcal_url( $post_id );
+                }
+
                 $admin_msg = sprintf(
-                    "🌿 *ANUKUL Harmony Clinic Booking Alert*\nRef: %s\nClient: %s (%s)\nTier: %s\nDate: %s @ %s\nFee: ₹%s\nStatus: %s",
-                    $ref, $name, $phone, $tier, $date, $slot, $price, $status
+                    "🌿 *ANUKUL Harmony Clinic Booking Alert*\nRef: %s\nClient: %s (%s)\nTier: %s\nDate: %s @ %s\nFee: ₹%s\nStatus: %s\n📅 GCal: %s",
+                    $ref, $name, $phone, $tier, $date, $slot, $price, $status, $gcal_url
                 );
                 $admin_wa_url = 'https://wa.me/' . $admin_wa . '?text=' . rawurlencode( $admin_msg );
 
                 $client_clean_phone = preg_replace( '/[^0-9]/', '', $phone );
                 if ( strlen( $client_clean_phone ) === 10 ) $client_clean_phone = '91' . $client_clean_phone;
                 $client_msg = sprintf(
-                    "Namaste %s,\nYour ANUKUL Consultation (Ref: %s) for %s on %s at %s is noted.\nFor queries, reply to this message.",
-                    $name, $ref, $tier, $date, $slot
+                    "Namaste %s,\nYour ANUKUL Consultation (Ref: %s) for %s on %s at %s is noted.\nAdd to Google Calendar: %s\nFor queries, reply to this message.",
+                    $name, $ref, $tier, $date, $slot, $gcal_url
                 );
                 $client_wa_url = 'https://wa.me/' . $client_clean_phone . '?text=' . rawurlencode( $client_msg );
 
@@ -731,11 +766,21 @@ class ANUKUL_Booking_Engine {
             }
         }
 
+        // Trigger Google Calendar Sync & generate 1-click add link
+        $gcal_url = '';
+        if ( class_exists( 'ANUKUL_GCal_Sync' ) ) {
+            ANUKUL_GCal_Sync::sync_booking( $booking_id );
+            $gcal_url = ANUKUL_GCal_Sync::generate_gcal_url( $booking_id );
+        }
+        $ics_url = home_url( '/?anukul_download_ics=' . $booking_id );
+
         wp_send_json_success( array(
             'booking_id'   => $booking_id,
             'order_id'     => isset( $order_id ) ? $order_id : 0,
             'reference'    => $reference,
             'redirect_url' => $redirect_url,
+            'gcal_url'     => $gcal_url,
+            'ics_url'      => $ics_url,
             'message'      => __( 'Slot provisionally secured. Proceeding to settlement.', 'anukul-booking' ),
         ) );
     }
@@ -769,6 +814,14 @@ class ANUKUL_Booking_Engine {
              . "📝 *Intake Notes:* " . ( ! empty( $notes ) ? $notes : 'None' ) . "\n"
              . "━━━━━━━━━━━━━━━━━━\n"
              . "✅ *Status:* " . strtoupper( str_replace( '_', ' ', $status ) );
+
+        $gcal_url = get_post_meta( $booking_id, '_anukul_gcal_url', true );
+        if ( empty( $gcal_url ) && class_exists( 'ANUKUL_GCal_Sync' ) ) {
+            $gcal_url = ANUKUL_GCal_Sync::generate_gcal_url( $booking_id );
+        }
+        if ( ! empty( $gcal_url ) ) {
+            $msg .= "\n📅 *Add to Google Calendar:* " . $gcal_url;
+        }
 
         $dispatch_url = 'https://wa.me/' . $admin_wa . '?text=' . rawurlencode( $msg );
         update_post_meta( $booking_id, '_anukul_whatsapp_admin_url', $dispatch_url );
@@ -909,6 +962,11 @@ class ANUKUL_Booking_Engine {
         if ( $booking_id ) {
             update_post_meta( $booking_id, '_anukul_payment_status', 'confirmed' );
             update_post_meta( $booking_id, '_anukul_verified_at', current_time( 'mysql' ) );
+
+            // Sync with Google Calendar upon payment confirmation
+            if ( class_exists( 'ANUKUL_GCal_Sync' ) ) {
+                ANUKUL_GCal_Sync::sync_booking( $booking_id );
+            }
 
             // Client Notification Dispatch
             $email = get_post_meta( $booking_id, '_anukul_client_email', true );

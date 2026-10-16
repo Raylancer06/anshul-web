@@ -10,6 +10,61 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 get_header();
+
+$ref_query = isset( $_GET['ref'] ) ? sanitize_text_field( $_GET['ref'] ) : '';
+$live_booking = null;
+if ( ! empty( $ref_query ) ) {
+    $found = get_posts( array(
+        'post_type'      => 'anukul_booking',
+        'post_status'    => 'any',
+        'posts_per_page' => 1,
+        'meta_query'     => array(
+            array(
+                'key'     => '_anukul_reference',
+                'value'   => $ref_query,
+                'compare' => '=',
+            ),
+        ),
+    ) );
+    if ( ! empty( $found ) ) {
+        $live_booking = $found[0];
+    }
+}
+
+// Dynamic Booking Details
+$b_ref    = $live_booking ? get_post_meta( $live_booking->ID, '_anukul_reference', true ) : ( ! empty( $ref_query ) ? $ref_query : 'ANK-CNS-94812' );
+$b_name   = $live_booking ? get_post_meta( $live_booking->ID, '_anukul_client_name', true ) : 'Ananya Sharma';
+$b_phone  = $live_booking ? get_post_meta( $live_booking->ID, '_anukul_client_phone', true ) : '+91 98112 00482';
+$b_email  = $live_booking ? get_post_meta( $live_booking->ID, '_anukul_client_email', true ) : 'ananya.sharma@example.com';
+$b_tier   = $live_booking ? get_post_meta( $live_booking->ID, '_anukul_tier_title', true ) : 'Integrated Health & Space Consultation';
+$b_date   = $live_booking ? get_post_meta( $live_booking->ID, '_anukul_slot_date', true ) : 'Thursday, November 14, 2025';
+$b_slot   = $live_booking ? get_post_meta( $live_booking->ID, '_anukul_slot_time', true ) : '10:30 AM – 11:45 AM IST';
+$b_price  = $live_booking ? floatval( get_post_meta( $live_booking->ID, '_anukul_price', true ) ) : 5310;
+$b_status = $live_booking ? get_post_meta( $live_booking->ID, '_anukul_payment_status', true ) : 'confirmed';
+$b_order  = $live_booking ? get_post_meta( $live_booking->ID, '_anukul_order_id', true ) : 0;
+
+$gcal_url = '';
+$ics_url  = '#';
+if ( $live_booking ) {
+    if ( class_exists( 'ANUKUL_GCal_Sync' ) ) {
+        $gcal_url = ANUKUL_GCal_Sync::generate_gcal_url( $live_booking->ID );
+    }
+    $ics_url = home_url( '/?anukul_download_ics=' . $live_booking->ID );
+} else {
+    $gcal_url = 'https://calendar.google.com/calendar/render?action=TEMPLATE&text=' . rawurlencode( 'ANUKUL Consultation: ' . $b_tier );
+    $ics_url  = home_url( '/?anukul_download_ics=demo' );
+}
+
+$gst_rate = 0.18;
+$base_fee = round( $b_price / ( 1 + $gst_rate ), 2 );
+$gst_val  = round( $b_price - $base_fee, 2 );
+
+$initial_state = 'state-confirmed';
+if ( 'pending_verification' === $b_status ) {
+    $initial_state = 'state-pending';
+} elseif ( 'payment_failed' === $b_status ) {
+    $initial_state = 'state-failed';
+}
 ?>
 
 <div class="flex flex-col w-full">
@@ -18,16 +73,16 @@ get_header();
 <div class="max-w-[1440px] mx-auto flex flex-col md:flex-row items-start md:items-center justify-between gap-3">
 <div class="flex items-center gap-2">
 <span class="inline-block w-2 h-2 rounded-full bg-secondary animate-pulse"></span>
-<span class="font-label-sm text-label-sm tracking-wider uppercase text-on-surface-variant">Reviewer Switcher • Transaction State Matrix</span>
+<span class="font-label-sm text-label-sm tracking-wider uppercase text-on-surface-variant">Reviewer Switcher • Transaction State Matrix <?php if ( $live_booking ) : ?><span class="text-primary font-bold">(Live Booking: #<?php echo esc_html( $b_ref ); ?>)</span><?php endif; ?></span>
 </div>
 <div class="flex flex-wrap gap-1.5 sm:gap-2">
-<button class="state-btn active-state px-3 py-1.5 rounded font-label-sm text-label-sm uppercase tracking-wider bg-primary text-on-primary transition-all shadow-sm" data-state-btn="state-confirmed" onclick="switchBookingState('state-confirmed')" type="button">
+<button class="state-btn <?php echo $initial_state === 'state-confirmed' ? 'active-state bg-primary text-on-primary shadow-sm' : 'bg-surface-container text-on-surface hover:bg-surface-variant'; ?> px-3 py-1.5 rounded font-label-sm text-label-sm uppercase tracking-wider transition-all" data-state-btn="state-confirmed" onclick="switchBookingState('state-confirmed')" type="button">
           A: Confirmed (Success)
         </button>
-<button class="state-btn px-3 py-1.5 rounded font-label-sm text-label-sm uppercase tracking-wider bg-surface-container text-on-surface hover:bg-surface-variant transition-all" data-state-btn="state-pending" onclick="switchBookingState('state-pending')" type="button">
+<button class="state-btn <?php echo $initial_state === 'state-pending' ? 'active-state bg-primary text-on-primary shadow-sm' : 'bg-surface-container text-on-surface hover:bg-surface-variant'; ?> px-3 py-1.5 rounded font-label-sm text-label-sm uppercase tracking-wider transition-all" data-state-btn="state-pending" onclick="switchBookingState('state-pending')" type="button">
           B: Payment Pending
         </button>
-<button class="state-btn px-3 py-1.5 rounded font-label-sm text-label-sm uppercase tracking-wider bg-surface-container text-on-surface hover:bg-surface-variant transition-all" data-state-btn="state-failed" onclick="switchBookingState('state-failed')" type="button">
+<button class="state-btn <?php echo $initial_state === 'state-failed' ? 'active-state bg-primary text-on-primary shadow-sm' : 'bg-surface-container text-on-surface hover:bg-surface-variant'; ?> px-3 py-1.5 rounded font-label-sm text-label-sm uppercase tracking-wider transition-all" data-state-btn="state-failed" onclick="switchBookingState('state-failed')" type="button">
           C: Declined / Retry
         </button>
 <button class="state-btn px-3 py-1.5 rounded font-label-sm text-label-sm uppercase tracking-wider bg-surface-container text-on-surface hover:bg-surface-variant transition-all" data-state-btn="state-unavailable" onclick="switchBookingState('state-unavailable')" type="button">
@@ -75,9 +130,9 @@ get_header();
 <div class="pt-2 flex flex-wrap items-center gap-4">
 <div class="inline-flex items-center gap-2 px-4 py-2 bg-surface-container rounded font-label-md text-label-md text-on-surface">
 <span class="w-2.5 h-2.5 rounded-full bg-primary-container"></span>
-<span class="font-semibold text-primary">Payment Confirmed &amp; Slot Reserved</span>
+<span class="font-semibold text-primary"><?php echo 'confirmed' === $b_status ? 'Payment Confirmed &amp; Slot Reserved' : 'Slot Provisionally Held (Pending Verification)'; ?></span>
 <span class="text-outline">•</span>
-<span class="font-mono text-secondary">Reference #ANK-CNS-94812</span>
+<span class="font-mono text-secondary">Reference #<?php echo esc_html( $b_ref ); ?></span>
 </div>
 <div class="text-body-sm font-body-sm text-outline flex items-center gap-1.5">
 <span class="material-symbols-outlined notranslate text-[16px]" translate="no">verified_user</span>
@@ -111,7 +166,7 @@ get_header();
 <div class="space-y-1">
 <span class="font-label-sm text-label-sm uppercase tracking-wider text-outline block">Consultation Type</span>
 <p class="font-body-md text-body-md font-semibold text-primary">
-                  Integrated Health &amp; Space Consultation
+                  <?php echo esc_html( $b_tier ); ?>
                 </p>
 <p class="font-body-sm text-body-sm text-on-surface-variant">
                   Ayurveda (Dosha Analysis) + Vastu Shastra Spatial Harmony
@@ -135,16 +190,16 @@ get_header();
 <div>
 <span class="font-label-sm text-label-sm uppercase tracking-wider text-outline block">Confirmed Timing</span>
 <p class="font-body-md text-body-md font-medium text-on-surface">
-                      Thursday, November 14, 2025 • 10:30 AM – 11:45 AM IST
+                      <?php echo esc_html( $b_date ); ?> • <?php echo esc_html( $b_slot ); ?>
                     </p>
 <p class="font-body-sm text-body-sm text-on-surface-variant">
-                      Indian Standard Time (GMT+5:30) • Planetary Hora: Mercury / Budha
+                      Indian Standard Time (IST · UTC+5:30) • Classical Muhurta
                     </p>
 </div>
 </div>
 <div class="sm:text-right shrink-0">
 <span class="font-label-sm text-label-sm uppercase tracking-wider text-outline block">Session Duration</span>
-<span class="font-body-md text-body-md font-semibold text-primary">75 Minutes Full Diagnostic</span>
+<span class="font-body-md text-body-md font-semibold text-primary">Master Assessment Protocol</span>
 </div>
 </div>
 <div class="flex items-start gap-3 p-4 bg-surface-container rounded-lg">
@@ -155,20 +210,20 @@ get_header();
                     Private Video Sanctuary (Encrypted Tele-Consultation)
                   </p>
 <p class="font-body-sm text-body-sm text-on-surface-variant">
-                    Your unique, end-to-end encrypted video meeting link will be dispatched to your email and SMS 30 minutes prior to session commencement.
+                    Your unique, end-to-end encrypted video meeting link will be dispatched to your email (<?php echo esc_html( $b_email ); ?>) and WhatsApp prior to session commencement.
                   </p>
 </div>
 </div>
 </div>
 <!-- Calendar Synchronisation Actions -->
 <div class="pt-2 flex flex-wrap items-center gap-3">
-<a class="inline-flex items-center gap-2 bg-primary text-on-primary hover:bg-tertiary transition-colors px-5 py-3 rounded font-label-md text-label-md tracking-wider uppercase" href="#add-to-calendar" onclick="alert('Adding appointment to Google Calendar...')">
+<a class="inline-flex items-center gap-2 bg-primary text-on-primary hover:bg-tertiary transition-colors px-5 py-3 rounded font-label-md text-label-md tracking-wider uppercase shadow-sm" href="<?php echo esc_url( $gcal_url ); ?>" target="_blank" rel="noopener">
 <span class="material-symbols-outlined notranslate text-[18px]" translate="no">event_available</span>
 <span>Add to Google Calendar</span>
 </a>
-<a class="inline-flex items-center gap-2 bg-surface-container text-primary hover:bg-surface-variant transition-colors px-5 py-3 rounded font-label-md text-label-md tracking-wider uppercase" href="#download-ical" onclick="alert('Downloading iCal (.ics) invite...')">
+<a class="inline-flex items-center gap-2 bg-surface-container text-primary hover:bg-surface-variant transition-colors px-5 py-3 rounded font-label-md text-label-md tracking-wider uppercase" href="<?php echo esc_url( $ics_url ); ?>">
 <span class="material-symbols-outlined notranslate text-[18px]" translate="no">download</span>
-<span>Download iCal / Outlook</span>
+<span>Download iCal / Outlook (.ICS)</span>
 </a>
 </div>
 </div>
@@ -250,46 +305,46 @@ get_header();
 <span class="font-label-sm text-label-sm uppercase tracking-widest text-secondary block">Official Ledger</span>
 <h2 class="font-headline-sm text-headline-sm text-primary">Receipt &amp; Tax Invoice</h2>
 </div>
-<span class="px-2.5 py-1 rounded bg-primary-fixed text-on-primary-fixed font-label-sm text-label-sm uppercase tracking-wider font-semibold">
-                Settled
+<span class="px-2.5 py-1 rounded <?php echo 'confirmed' === $b_status ? 'bg-primary-fixed text-on-primary-fixed' : 'bg-surface-container text-on-surface-variant'; ?> font-label-sm text-label-sm uppercase tracking-wider font-semibold">
+                <?php echo esc_html( ucfirst( str_replace( '_', ' ', $b_status ) ) ); ?>
               </span>
 </div>
 <!-- Booking & Payment Metadata -->
 <div class="space-y-3 font-body-sm text-body-sm">
 <div class="flex items-center justify-between py-2 border-b border-surface-container">
 <span class="text-on-surface-variant">Booking Reference</span>
-<span class="font-mono font-semibold text-primary">#ANK-CNS-94812</span>
+<span class="font-mono font-semibold text-primary">#<?php echo esc_html( $b_ref ); ?></span>
 </div>
 <div class="flex items-center justify-between py-2 border-b border-surface-container">
-<span class="text-on-surface-variant">Transaction ID</span>
-<span class="font-mono text-on-surface">TXN_RAZOR_ANK_773192</span>
+<span class="text-on-surface-variant">Order / System ID</span>
+<span class="font-mono text-on-surface"><?php echo $b_order ? '#' . esc_html( $b_order ) : esc_html( $b_ref ); ?></span>
 </div>
 <div class="flex items-start justify-between py-2 border-b border-surface-container">
 <span class="text-on-surface-variant">Billed Client</span>
 <div class="text-right">
-<span class="font-medium text-primary block">Ananya Sharma</span>
-<span class="text-on-surface-variant block">ananya.sharma@example.com</span>
-<span class="text-outline font-mono block">+91 98112 00482</span>
+<span class="font-medium text-primary block"><?php echo esc_html( $b_name ); ?></span>
+<span class="text-on-surface-variant block"><?php echo esc_html( $b_email ); ?></span>
+<span class="text-outline font-mono block"><?php echo esc_html( $b_phone ); ?></span>
 </div>
 </div>
 <div class="flex items-center justify-between py-2 border-b border-surface-container">
-<span class="text-on-surface-variant">Payment Channel</span>
-<span class="text-on-surface">Razorpay UPI (Verified)</span>
+<span class="text-on-surface-variant">Payment Mode</span>
+<span class="text-on-surface">Secure Gateway / Direct Settlement</span>
 </div>
 </div>
 <!-- Price Breakdown Calculation -->
 <div class="bg-surface-container-low p-4 rounded-lg space-y-2.5">
 <div class="flex items-center justify-between font-body-sm text-body-sm">
 <span class="text-on-surface-variant">Consultation Base Fee</span>
-<span class="font-mono text-on-surface">₹ 4,500.00</span>
+<span class="font-mono text-on-surface">₹ <?php echo esc_html( number_format( $base_fee, 2 ) ); ?></span>
 </div>
 <div class="flex items-center justify-between font-body-sm text-body-sm">
 <span class="text-on-surface-variant">GST / Integrated Services Tax (18%)</span>
-<span class="font-mono text-on-surface">₹ 810.00</span>
+<span class="font-mono text-on-surface">₹ <?php echo esc_html( number_format( $gst_val, 2 ) ); ?></span>
 </div>
 <div class="pt-2 border-t border-surface-variant flex items-center justify-between font-body-md text-body-md font-semibold">
-<span class="text-primary">Total Paid</span>
-<span class="font-headline-sm text-headline-sm text-primary">₹ 5,310.00</span>
+<span class="text-primary">Total Amount</span>
+<span class="font-headline-sm text-headline-sm text-primary">₹ <?php echo esc_html( number_format( $b_price, 2 ) ); ?></span>
 </div>
 </div>
 <!-- Invoice Actions -->
@@ -569,6 +624,13 @@ get_header();
         switchBookingState('state-confirmed');
       }, 1500);
     }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const initSt = '<?php echo esc_js( $initial_state ); ?>';
+      if (initSt && initSt !== 'state-confirmed') {
+        switchBookingState(initSt);
+      }
+    });
   </script>
 </div>
 
