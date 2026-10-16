@@ -17,7 +17,7 @@ if ( WC()->cart->is_empty() ) : ?>
 <div class="flex flex-col w-full">
     <!-- Stepper & Editorial Cart Header -->
     <section class="w-full bg-surface-container-low/60 border-b border-surface-variant/70">
-        <div class="max-w-[1440px] mx-auto px-6 lg:px-margin pt-8 pb-10">
+        <div class="max-w-[1320px] mx-auto px-6 sm:px-10 lg:px-16 pt-8 pb-10">
             <!-- Breadcrumb -->
             <nav aria-label="Breadcrumb" class="flex items-center gap-2 font-label-md text-label-md uppercase tracking-widest text-on-surface-variant/80 mb-6">
                 <a class="hover:text-primary transition-colors" data-path="home" href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php esc_html_e( 'Home', 'anukul' ); ?></a>
@@ -92,7 +92,7 @@ if ( WC()->cart->is_empty() ) : ?>
 <div class="flex flex-col w-full">
     <!-- Stepper & Editorial Cart Header -->
     <section class="w-full bg-surface-container-low/60 border-b border-surface-variant/70">
-        <div class="max-w-[1440px] mx-auto px-6 lg:px-margin pt-8 pb-10">
+        <div class="max-w-[1320px] mx-auto px-6 sm:px-10 lg:px-16 pt-8 pb-10">
             <!-- Breadcrumb -->
             <nav aria-label="Breadcrumb" class="flex items-center gap-2 font-label-md text-label-md uppercase tracking-widest text-on-surface-variant/80 mb-6">
                 <a class="hover:text-primary transition-colors" data-path="home" href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php esc_html_e( 'Home', 'anukul' ); ?></a>
@@ -153,7 +153,7 @@ if ( WC()->cart->is_empty() ) : ?>
 
     <!-- Top Dispatch Banner -->
     <div class="w-full bg-surface-container-high/40 border-b border-surface-variant/40">
-        <div class="max-w-[1440px] mx-auto px-6 lg:px-margin py-2.5 flex items-center justify-between">
+        <div class="max-w-[1320px] mx-auto px-6 sm:px-10 lg:px-16 py-2.5 flex items-center justify-between">
             <div class="flex items-center gap-2 font-body-sm text-body-sm text-on-surface-variant">
                 <span class="material-symbols-outlined notranslate text-[16px] text-secondary" translate="no">local_shipping</span>
                 <span><?php esc_html_e( 'Complimentary Sanctuary Surface Dispatch on all sacred orders across India.', 'anukul' ); ?></span>
@@ -166,7 +166,7 @@ if ( WC()->cart->is_empty() ) : ?>
     </div>
 
     <!-- Primary Cart Form Area -->
-    <div class="w-full max-w-[1440px] mx-auto px-6 lg:px-margin py-10 lg:py-14">
+    <div class="w-full max-w-[1320px] mx-auto px-6 sm:px-10 lg:px-16 py-10 lg:py-14">
         <?php wc_print_notices(); ?>
 
         <form class="woocommerce-cart-form" action="<?php echo esc_url( wc_get_cart_url() ); ?>" method="post">

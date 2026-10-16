@@ -19,13 +19,13 @@ if ( ! $checkout->is_registration_enabled() && $checkout->is_registration_requir
     echo '</div>';
     return;
 }
-
-do_action( 'woocommerce_before_checkout_form', $checkout );
 ?>
 
 <div class="flex flex-col w-full">
     <!-- Subtle Architectural Watermark / Atmosphere Accent -->
-    <div class="relative w-full max-w-[1440px] mx-auto px-6 lg:px-margin pt-6 pb-20">
+    <div class="relative w-full max-w-[1320px] mx-auto px-6 sm:px-10 lg:px-16 pt-6 pb-24">
+        
+        <?php do_action( 'woocommerce_before_checkout_form', $checkout ); ?>
         
         <!-- BREADCRUMBS & TOP EDITORIAL PROGRESS -->
         <div class="flex flex-col gap-4 mb-8">

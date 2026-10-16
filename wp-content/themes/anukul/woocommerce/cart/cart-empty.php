@@ -12,7 +12,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 <div class="flex flex-col w-full">
     <!-- Stepper & Editorial Cart Header -->
     <section class="w-full bg-surface-container-low/60 border-b border-surface-variant/70">
-        <div class="max-w-[1440px] mx-auto px-6 lg:px-margin pt-8 pb-10">
+        <div class="max-w-[1320px] mx-auto px-6 sm:px-10 lg:px-16 pt-8 pb-10">
             <!-- Breadcrumb -->
             <nav aria-label="Breadcrumb" class="flex items-center gap-2 font-label-md text-label-md uppercase tracking-widest text-on-surface-variant/80 mb-6">
                 <a class="hover:text-primary transition-colors" data-path="home" href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php esc_html_e( 'Home', 'anukul' ); ?></a>

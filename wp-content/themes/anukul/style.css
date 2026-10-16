@@ -185,3 +185,50 @@ body.admin-bar #mobile-menu > div {
     position: fixed !important;
   }
 }
+
+/* ==========================================================================
+   WooCommerce Global Layout & Breathing Room
+   Ensures forms, carts, checkouts, and notices never touch screen edges
+   ========================================================================== */
+.woocommerce,
+.woocommerce-page,
+.woocommerce-cart,
+.woocommerce-checkout,
+.wc-block-checkout,
+.wc-block-cart,
+.wp-block-woocommerce-checkout,
+.wp-block-woocommerce-cart {
+  box-sizing: border-box;
+}
+
+/* Container safety for any WooCommerce view */
+.woocommerce-cart .woocommerce,
+.woocommerce-checkout .woocommerce,
+.woocommerce-account .woocommerce,
+.wp-block-woocommerce-checkout,
+.wp-block-woocommerce-cart {
+  width: 100% !important;
+  max-width: 1360px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  padding-left: clamp(1.25rem, 4vw, 3.5rem) !important;
+  padding-right: clamp(1.25rem, 4vw, 3.5rem) !important;
+}
+
+/* Notice banners breathing space */
+.woocommerce-notices-wrapper,
+.woocommerce-form-coupon-toggle,
+.checkout_coupon {
+  width: 100%;
+  max-width: 1360px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 1.5rem;
+}
+
+.woocommerce-info,
+.woocommerce-message,
+.woocommerce-error {
+  margin-bottom: 1.5rem !important;
+  padding: 1rem 1.5rem !important;
+}
