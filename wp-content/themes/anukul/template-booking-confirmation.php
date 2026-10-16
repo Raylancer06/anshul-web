@@ -32,14 +32,15 @@ if ( ! empty( $ref_query ) ) {
 }
 
 // Dynamic Booking Details
-$b_ref    = $live_booking ? get_post_meta( $live_booking->ID, '_anukul_reference', true ) : ( ! empty( $ref_query ) ? $ref_query : 'ANK-CNS-94812' );
-$b_name   = $live_booking ? get_post_meta( $live_booking->ID, '_anukul_client_name', true ) : 'Ananya Sharma';
-$b_phone  = $live_booking ? get_post_meta( $live_booking->ID, '_anukul_client_phone', true ) : '+91 98112 00482';
-$b_email  = $live_booking ? get_post_meta( $live_booking->ID, '_anukul_client_email', true ) : 'ananya.sharma@example.com';
-$b_tier   = $live_booking ? get_post_meta( $live_booking->ID, '_anukul_tier_title', true ) : 'Integrated Health & Space Consultation';
-$b_date   = $live_booking ? get_post_meta( $live_booking->ID, '_anukul_slot_date', true ) : 'Thursday, November 14, 2025';
-$b_slot   = $live_booking ? get_post_meta( $live_booking->ID, '_anukul_slot_time', true ) : '10:30 AM – 11:45 AM IST';
-$b_price  = $live_booking ? floatval( get_post_meta( $live_booking->ID, '_anukul_price', true ) ) : 5310;
+$curr_u   = wp_get_current_user();
+$b_ref    = $live_booking ? get_post_meta( $live_booking->ID, '_anukul_reference', true ) : ( ! empty( $ref_query ) ? $ref_query : 'ANK-CNS-' . rand( 10000, 99999 ) );
+$b_name   = $live_booking ? get_post_meta( $live_booking->ID, '_anukul_client_name', true ) : ( $curr_u->ID ? ( $curr_u->display_name ?: $curr_u->user_nicename ) : 'Sanctuary Seeker' );
+$b_phone  = $live_booking ? get_post_meta( $live_booking->ID, '_anukul_client_phone', true ) : ( $curr_u->ID ? get_user_meta( $curr_u->ID, 'billing_phone', true ) : '' );
+$b_email  = $live_booking ? get_post_meta( $live_booking->ID, '_anukul_client_email', true ) : ( $curr_u->ID ? $curr_u->user_email : '' );
+$b_tier   = $live_booking ? get_post_meta( $live_booking->ID, '_anukul_tier_title', true ) : 'Vedic Health & Space Consultation';
+$b_date   = $live_booking ? get_post_meta( $live_booking->ID, '_anukul_slot_date', true ) : date_i18n( 'l, F j, Y', strtotime( '+1 day' ) );
+$b_slot   = $live_booking ? get_post_meta( $live_booking->ID, '_anukul_slot_time', true ) : '11:00 AM IST';
+$b_price  = $live_booking ? floatval( get_post_meta( $live_booking->ID, '_anukul_price', true ) ) : 0;
 $b_status = $live_booking ? get_post_meta( $live_booking->ID, '_anukul_payment_status', true ) : 'confirmed';
 $b_order  = $live_booking ? get_post_meta( $live_booking->ID, '_anukul_order_id', true ) : 0;
 

@@ -118,19 +118,19 @@ if ( ! $checkout->is_registration_enabled() && $checkout->is_registration_requir
                                 <label class="block font-label-md text-label-md uppercase text-on-surface-variant tracking-wider mb-2" for="billing_first_name">
                                     <?php esc_html_e( 'First Name', 'anukul' ); ?> <span class="text-tertiary">*</span>
                                 </label>
-                                <input class="input-text w-full bg-surface/70 border border-surface-variant rounded-lg px-4 py-3 font-body-md text-on-surface focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all placeholder:text-outline-variant/60" id="billing_first_name" name="billing_first_name" placeholder="Aarav" required="" type="text" value="<?php echo esc_attr( $checkout->get_value( 'billing_first_name' ) ); ?>" autocomplete="given-name" />
+                                <input class="input-text w-full bg-surface/70 border border-surface-variant rounded-lg px-4 py-3 font-body-md text-on-surface focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all placeholder:text-outline-variant/60" id="billing_first_name" name="billing_first_name" placeholder="First Name" required="" type="text" value="<?php echo esc_attr( $checkout->get_value( 'billing_first_name' ) ); ?>" autocomplete="given-name" />
                             </div>
                             <div>
                                 <label class="block font-label-md text-label-md uppercase text-on-surface-variant tracking-wider mb-2" for="billing_last_name">
                                     <?php esc_html_e( 'Last Name', 'anukul' ); ?> <span class="text-tertiary">*</span>
                                 </label>
-                                <input class="input-text w-full bg-surface/70 border border-surface-variant rounded-lg px-4 py-3 font-body-md text-on-surface focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all placeholder:text-outline-variant/60" id="billing_last_name" name="billing_last_name" placeholder="Nambiar" required="" type="text" value="<?php echo esc_attr( $checkout->get_value( 'billing_last_name' ) ); ?>" autocomplete="family-name" />
+                                <input class="input-text w-full bg-surface/70 border border-surface-variant rounded-lg px-4 py-3 font-body-md text-on-surface focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all placeholder:text-outline-variant/60" id="billing_last_name" name="billing_last_name" placeholder="Last Name" required="" type="text" value="<?php echo esc_attr( $checkout->get_value( 'billing_last_name' ) ); ?>" autocomplete="family-name" />
                             </div>
                             <div class="sm:col-span-2">
                                 <label class="block font-label-md text-label-md uppercase text-on-surface-variant tracking-wider mb-2" for="billing_email">
                                     <?php esc_html_e( 'Email Address', 'anukul' ); ?> <span class="text-tertiary">*</span>
                                 </label>
-                                <input class="input-text w-full bg-surface/70 border border-surface-variant rounded-lg px-4 py-3 font-body-md text-on-surface focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all placeholder:text-outline-variant/60" id="billing_email" name="billing_email" placeholder="aarav.nambiar@sanctuary.in" required="" type="email" value="<?php echo esc_attr( $checkout->get_value( 'billing_email' ) ); ?>" autocomplete="email username" />
+                                <input class="input-text w-full bg-surface/70 border border-surface-variant rounded-lg px-4 py-3 font-body-md text-on-surface focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all placeholder:text-outline-variant/60" id="billing_email" name="billing_email" placeholder="name@domain.com" required="" type="email" value="<?php echo esc_attr( $checkout->get_value( 'billing_email' ) ); ?>" autocomplete="email username" />
                                 <p class="font-body-sm text-body-sm text-outline mt-1.5 flex items-center gap-1.5">
                                     <span class="material-symbols-outlined notranslate text-[14px]" translate="no">lock</span>
                                     <?php esc_html_e( 'Your invoice and clinical batch test certs will be dispatched to this address.', 'anukul' ); ?>

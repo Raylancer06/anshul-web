@@ -10,6 +10,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 get_header();
+
+$b_curr_user = wp_get_current_user();
+$default_booking_name  = $b_curr_user->ID ? ($b_curr_user->display_name ?: $b_curr_user->user_nicename) : '';
+$default_booking_email = $b_curr_user->ID ? $b_curr_user->user_email : '';
+$default_booking_phone = $b_curr_user->ID ? get_user_meta( $b_curr_user->ID, 'billing_phone', true ) : '';
 ?>
 
 <div class="flex flex-col w-full">
@@ -435,11 +440,11 @@ Recommended Protocol
 <div class="grid grid-cols-1 md:grid-cols-2 gap-space-md">
 <div class="flex flex-col gap-1.5">
 <label class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface font-bold" for="full-name">Full Legal Name <span class="text-error">*</span></label>
-<input class="w-full bg-surface-container-low px-4 py-3 rounded-lg text-on-surface font-body-md text-body-md placeholder:text-outline focus:outline-none focus:ring-1 focus:ring-primary shadow-inner" id="full-name" placeholder="e.g. Ananya Deshmukh" required="" type="text" value="Ananya Deshmukh"/>
+<input class="w-full bg-surface-container-low px-4 py-3 rounded-lg text-on-surface font-body-md text-body-md placeholder:text-outline focus:outline-none focus:ring-1 focus:ring-primary shadow-inner" id="full-name" placeholder="e.g. Ramesh Patel" required="" type="text" value="<?php echo esc_attr( $default_booking_name ); ?>"/>
 </div>
 <div class="flex flex-col gap-1.5">
 <label class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface font-bold" for="email">Email Address <span class="text-error">*</span></label>
-<input class="w-full bg-surface-container-low px-4 py-3 rounded-lg text-on-surface font-body-md text-body-md placeholder:text-outline focus:outline-none focus:ring-1 focus:ring-primary shadow-inner" id="email" placeholder="name@domain.com" required="" type="email" value="ananya.deshmukh@wellness.in"/>
+<input class="w-full bg-surface-container-low px-4 py-3 rounded-lg text-on-surface font-body-md text-body-md placeholder:text-outline focus:outline-none focus:ring-1 focus:ring-primary shadow-inner" id="email" placeholder="name@domain.com" required="" type="email" value="<?php echo esc_attr( $default_booking_email ); ?>"/>
 <span class="font-body-sm text-body-sm text-outline text-[11px]">Appointment calendar invites and prep dossier will be sent here.</span>
 </div>
 </div>
@@ -449,7 +454,7 @@ Recommended Protocol
 <label class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface font-bold" for="phone">Phone Number (WhatsApp Ready) <span class="text-error">*</span></label>
 <div class="flex">
 <span class="inline-flex items-center px-3 rounded-l-lg bg-surface-container text-on-surface font-body-md text-body-md select-none">+91</span>
-<input class="w-full bg-surface-container-low px-4 py-3 rounded-r-lg text-on-surface font-body-md text-body-md placeholder:text-outline focus:outline-none focus:ring-1 focus:ring-primary shadow-inner" id="phone" placeholder="98201 44521" required="" type="tel" value="98201 44521"/>
+<input class="w-full bg-surface-container-low px-4 py-3 rounded-r-lg text-on-surface font-body-md text-body-md placeholder:text-outline focus:outline-none focus:ring-1 focus:ring-primary shadow-inner" id="phone" placeholder="98201 00000" required="" type="tel" value="<?php echo esc_attr( $default_booking_phone ); ?>"/>
 </div>
 </div>
 <div class="flex flex-col gap-1.5">
@@ -466,7 +471,7 @@ Recommended Protocol
 <label class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface font-bold" for="intake-notes">Health &amp; Space Focus / Preliminary Notes</label>
 <span class="font-label-sm text-label-sm text-outline">Optional</span>
 </div>
-<textarea class="w-full bg-surface-container-low p-4 rounded-lg text-on-surface font-body-md text-body-md placeholder:text-outline focus:outline-none focus:ring-1 focus:ring-primary shadow-inner" id="intake-notes" placeholder="Briefly describe recurring symptoms, current lifestyle imbalances, or specific spatial questions regarding your residence or workspace layout..." rows="4">Experiencing chronic evening fatigue and erratic sleep cycles over the past 4 months. We recently relocated our master bedroom toward the Northeast quadrant of our apartment and would like guidance on harmonizing the layout alongside dietary balancing.</textarea>
+<textarea class="w-full bg-surface-container-low p-4 rounded-lg text-on-surface font-body-md text-body-md placeholder:text-outline focus:outline-none focus:ring-1 focus:ring-primary shadow-inner" id="intake-notes" placeholder="Briefly describe recurring symptoms, current lifestyle imbalances, or specific spatial questions regarding your residence or workspace layout..." rows="4"></textarea>
 </div>
 <!-- Consent Checkbox -->
 <div class="flex items-start gap-space-sm pt-space-xs">
@@ -735,7 +740,7 @@ $wc_gateways = function_exists( 'WC' ) && WC()->payment_gateways ? WC()->payment
 </div>
 <div>
 <span class="font-label-sm text-label-sm uppercase text-outline">Patient</span>
-<p class="font-semibold text-on-surface" id="success-name">Ananya Deshmukh</p>
+<p class="font-semibold text-on-surface" id="success-name"><?php echo esc_html( $default_booking_name ?: 'Sanctuary Seeker' ); ?></p>
 </div>
 <div>
 <span class="font-label-sm text-label-sm uppercase text-outline">Channel</span>
@@ -786,9 +791,9 @@ $wc_gateways = function_exists( 'WC' ) && WC()->payment_gateways ? WC()->payment
     date: '',
     dateYmd: '',
     slot: '',
-    name: 'Ananya Deshmukh',
-    email: 'ananya.deshmukh@wellness.in',
-    phone: '98201 44521'
+    name: <?php echo json_encode( $default_booking_name ); ?>,
+    email: <?php echo json_encode( $default_booking_email ); ?>,
+    phone: <?php echo json_encode( $default_booking_phone ); ?>
   };
 
   // Calendar State

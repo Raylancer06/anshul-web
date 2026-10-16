@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 /**
  * My Account page (ANUKUL Sanctuary Dashboard)
  *
@@ -20,6 +20,10 @@ if ( empty( $full_name ) ) {
 }
 $user_email   = $current_user->user_email;
 $avatar_url   = get_avatar_url( $user_id, array( 'size' => 128 ) );
+
+// Fetch Real Customer Downloads
+$customer_downloads = function_exists( 'wc_get_customer_available_downloads' ) ? wc_get_customer_available_downloads( $user_id ) : array();
+$download_count     = count( $customer_downloads );
 
 // Fetch Real WooCommerce Orders
 $customer_orders = function_exists( 'wc_get_orders' ) ? wc_get_orders( array(
@@ -63,9 +67,39 @@ $has_booking    = ! empty( $customer_bookings );
 $latest_booking = $has_booking ? $customer_bookings[0] : null;
 $booking_post   = $latest_booking;
 
+// Dynamic Prakriti & Vastu Data
+$user_prakriti = get_user_meta( $user_id, '_anukul_prakriti', true );
+if ( empty( $user_prakriti ) ) {
+    foreach ( $customer_bookings as $b ) {
+        $meta_p = get_post_meta( $b->ID, '_anukul_prakriti_status', true );
+        if ( ! empty( $meta_p ) ) {
+            $user_prakriti = $meta_p;
+            break;
+        }
+    }
+}
+
+$user_vastu = get_user_meta( $user_id, '_anukul_vastu_status', true );
+if ( empty( $user_vastu ) ) {
+    foreach ( $customer_bookings as $b ) {
+        $tier = get_post_meta( $b->ID, '_anukul_tier_title', true );
+        if ( stripos( $tier, 'vastu' ) !== false || stripos( $tier, 'spatial' ) !== false ) {
+            $user_vastu = 'Spatial Audit Scheduled (' . $tier . ')';
+            break;
+        }
+    }
+}
+
 // Formatted Addresses
 $billing_address = function_exists( 'wc_get_account_formatted_address' ) ? wc_get_account_formatted_address( 'billing' ) : '';
 $shipping_address = function_exists( 'wc_get_account_formatted_address' ) ? wc_get_account_formatted_address( 'shipping' ) : '';
+
+// Endpoint handling for view-order and edit-address
+$is_view_order   = function_exists( 'is_wc_endpoint_url' ) && is_wc_endpoint_url( 'view-order' );
+$view_order_id   = $is_view_order ? absint( get_query_var( 'view-order' ) ) : 0;
+$view_order      = $view_order_id ? wc_get_order( $view_order_id ) : null;
+$is_edit_address = function_exists( 'is_wc_endpoint_url' ) && is_wc_endpoint_url( 'edit-address' );
+$load_address    = $is_edit_address ? sanitize_key( get_query_var( 'edit-address' ) ) : '';
 ?>
 
 <!-- Breadcrumb Bar -->
@@ -123,7 +157,7 @@ $shipping_address = function_exists( 'wc_get_account_formatted_address' ) ? wc_g
         <div class="mt-5 pt-4 border-t border-[#E8D8BC]/50 flex items-center justify-between text-xs">
           <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-surface-container-high text-secondary font-label-md tracking-wider uppercase font-semibold">
             <span class="material-symbols-outlined notranslate text-[14px]" translate="no">spa</span>
-            Prakriti Sanctuary Pass
+            <?php echo ! empty( $user_prakriti ) ? esc_html( $user_prakriti ) . ' Regimen' : 'Sanctuary Seeker'; ?>
           </span>
           <span class="font-label-sm text-outline font-semibold">ID: ANK-<?php echo esc_html( 1000 + $user_id ); ?></span>
         </div>
@@ -193,7 +227,12 @@ $shipping_address = function_exists( 'wc_get_account_formatted_address' ) ? wc_g
             <span class="material-symbols-outlined notranslate text-[20px]" translate="no">file_download</span>
             <span>Downloads</span>
           </div>
-          <span class="material-symbols-outlined notranslate text-[16px] text-outline-variant tab-chevron" translate="no">chevron_right</span>
+          <div class="flex items-center gap-2">
+            <span class="px-2 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm text-[11px] font-bold">
+              <?php echo esc_html( $download_count ); ?> <?php echo $download_count === 1 ? 'file' : 'files'; ?>
+            </span>
+            <span class="material-symbols-outlined notranslate text-[16px] text-outline-variant tab-chevron" translate="no">chevron_right</span>
+          </div>
         </button>
 
         <div class="my-1.5 mx-2 h-px bg-surface-container-highest opacity-70"></div>
@@ -239,8 +278,13 @@ $shipping_address = function_exists( 'wc_get_account_formatted_address' ) ? wc_g
           </svg>
         </div>
         <div>
-          <p class="font-label-sm text-[11px] tracking-wider uppercase text-outline font-bold">Vastu Harmony Index</p>
-          <p class="font-body-sm text-xs text-on-surface font-semibold">Brahmasthan Alignment: 98.4% Balanced</p>
+          <p class="font-label-sm text-[11px] tracking-wider uppercase text-outline font-bold">Vastu Spatial Harmony</p>
+          <?php if ( ! empty( $user_vastu ) ) : ?>
+            <p class="font-body-sm text-xs text-on-surface font-semibold"><?php echo esc_html( $user_vastu ); ?></p>
+          <?php else : ?>
+            <p class="font-body-sm text-xs text-on-surface-variant">Spatial Audit: <span class="text-secondary font-medium">Pending</span></p>
+            <a href="<?php echo esc_url( home_url( '/book-your-consultation/' ) ); ?>" class="font-label-sm text-[10px] text-primary hover:text-secondary uppercase tracking-wider font-semibold block mt-0.5">Schedule Review &rarr;</a>
+          <?php endif; ?>
         </div>
       </div>
     </aside>
@@ -249,6 +293,118 @@ $shipping_address = function_exists( 'wc_get_account_formatted_address' ) ? wc_g
     <!-- MAIN WORKSPACE TAB PANES (Span 8)          -->
     <!-- ========================================== -->
     <main class="lg:col-span-8 flex flex-col gap-6 min-h-[600px]">
+
+      <?php if ( $is_view_order && $view_order ) : 
+        $items    = $view_order->get_items();
+        $v_status = $view_order->get_status();
+      ?>
+        <!-- Dedicated Order Details Pane -->
+        <div class="space-y-6">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-[#E8D8BC]">
+            <div>
+              <div class="flex items-center gap-2 mb-1">
+                <a href="<?php echo esc_url( function_exists( 'wc_get_page_permalink' ) ? wc_get_page_permalink( 'myaccount' ) : home_url( '/my-account/' ) ); ?>#orders" class="text-xs uppercase font-label-sm text-secondary hover:text-primary transition-colors font-bold flex items-center gap-1">
+                  <span class="material-symbols-outlined notranslate text-[14px]" translate="no">arrow_back</span>
+                  Back to Orders
+                </a>
+                <span class="text-outline-variant">&bull;</span>
+                <span class="font-label-sm text-xs text-outline uppercase tracking-wider">Sanctuary Dispatch</span>
+              </div>
+              <h1 class="font-headline-lg text-3xl text-primary tracking-tight">ORDER #<?php echo esc_html( $view_order->get_order_number() ); ?></h1>
+              <p class="font-body-sm text-xs text-on-surface-variant mt-1">
+                Placed on <?php echo esc_html( wc_format_datetime( $view_order->get_date_created() ) ); ?> &bull; Payment via <?php echo esc_html( $view_order->get_payment_method_title() ); ?>
+              </p>
+            </div>
+            <div class="flex items-center gap-2">
+              <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-md text-xs uppercase tracking-wider font-bold">
+                <span class="w-2 h-2 rounded-full bg-secondary"></span>
+                Status: <?php echo esc_html( wc_get_order_status_name( $v_status ) ); ?>
+              </span>
+            </div>
+          </div>
+
+          <!-- Items Table -->
+          <div class="bg-surface-container-low rounded-xl border border-[#E8D8BC]/60 p-6 shadow-sm">
+            <h3 class="font-headline-sm text-lg text-primary mb-4 pb-2 border-b border-[#E8D8BC]/40 font-bold">Consignment Remedies</h3>
+            <div class="divide-y divide-[#E8D8BC]/40">
+              <?php foreach ( $items as $item ) : ?>
+                <div class="py-3.5 flex items-center justify-between gap-4">
+                  <div class="flex items-center gap-3">
+                    <span class="w-2.5 h-2.5 rounded-full bg-secondary"></span>
+                    <div>
+                      <p class="font-semibold text-primary text-sm"><?php echo esc_html( $item->get_name() ); ?></p>
+                      <p class="font-body-sm text-xs text-on-surface-variant">Quantity: &times; <?php echo esc_html( $item->get_quantity() ); ?></p>
+                    </div>
+                  </div>
+                  <p class="font-headline-sm text-base text-primary font-bold">
+                    <?php echo wp_kses_post( $view_order->get_formatted_line_subtotal( $item ) ); ?>
+                  </p>
+                </div>
+              <?php endforeach; ?>
+            </div>
+
+            <!-- Totals Breakdown -->
+            <div class="mt-6 pt-4 border-t border-[#E8D8BC]/60 space-y-2 text-sm">
+              <div class="flex justify-between text-on-surface-variant text-xs">
+                <span>Subtotal</span>
+                <span class="font-medium text-primary"><?php echo wp_kses_post( wc_price( $view_order->get_subtotal() ) ); ?></span>
+              </div>
+              <?php if ( (float) $view_order->get_shipping_total() > 0 ) : ?>
+                <div class="flex justify-between text-on-surface-variant text-xs">
+                  <span>Shipping (<?php echo esc_html( $view_order->get_shipping_method() ); ?>)</span>
+                  <span class="font-medium text-primary"><?php echo wp_kses_post( wc_price( $view_order->get_shipping_total() ) ); ?></span>
+                </div>
+              <?php endif; ?>
+              <?php foreach ( $view_order->get_tax_totals() as $code => $tax ) : ?>
+                <div class="flex justify-between text-on-surface-variant text-xs">
+                  <span><?php echo esc_html( $tax->label ); ?></span>
+                  <span class="font-medium text-primary"><?php echo wp_kses_post( $tax->formatted_amount ); ?></span>
+                </div>
+              <?php endforeach; ?>
+              <div class="flex justify-between items-center pt-3 border-t border-[#E8D8BC]/40 text-base font-bold text-primary">
+                <span>Total</span>
+                <span class="text-xl font-headline-sm"><?php echo wp_kses_post( $view_order->get_formatted_order_total() ); ?></span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Addresses Grid -->
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="bg-surface-container-low rounded-xl border border-[#E8D8BC]/60 p-5 shadow-sm">
+              <h4 class="font-label-md text-xs uppercase tracking-wider text-secondary font-bold mb-2">Billing Coordinates</h4>
+              <div class="text-xs text-on-surface-variant leading-relaxed">
+                <?php echo wp_kses_post( $view_order->get_formatted_billing_address() ?: 'No billing address recorded.' ); ?>
+              </div>
+            </div>
+            <div class="bg-surface-container-low rounded-xl border border-[#E8D8BC]/60 p-5 shadow-sm">
+              <h4 class="font-label-md text-xs uppercase tracking-wider text-secondary font-bold mb-2">Delivery Coordinates</h4>
+              <div class="text-xs text-on-surface-variant leading-relaxed">
+                <?php echo wp_kses_post( $view_order->get_formatted_shipping_address() ?: 'No delivery address recorded.' ); ?>
+              </div>
+            </div>
+          </div>
+        </div>
+      <?php elseif ( $is_edit_address ) : ?>
+        <!-- Dedicated Edit Address Pane -->
+        <div class="space-y-6">
+          <div class="pb-3 border-b border-[#E8D8BC] flex items-center justify-between">
+            <div>
+              <a href="<?php echo esc_url( function_exists( 'wc_get_page_permalink' ) ? wc_get_page_permalink( 'myaccount' ) : home_url( '/my-account/' ) ); ?>#addresses" class="text-xs uppercase font-label-sm text-secondary hover:text-primary transition-colors font-bold flex items-center gap-1 mb-1">
+                <span class="material-symbols-outlined notranslate text-[14px]" translate="no">arrow_back</span>
+                Back to Addresses
+              </a>
+              <h1 class="font-headline-lg text-3xl text-primary tracking-tight">Edit <?php echo esc_html( ucfirst( $load_address ) ); ?> Coordinates</h1>
+            </div>
+          </div>
+          <div class="bg-surface-container-low rounded-xl border border-[#E8D8BC]/60 p-6 shadow-sm">
+            <?php 
+              if ( function_exists( 'woocommerce_account_edit_address' ) ) {
+                woocommerce_account_edit_address( $load_address );
+              }
+            ?>
+          </div>
+        </div>
+      <?php else : ?>
 
       <!-- ====================================== -->
       <!-- 1. DASHBOARD TAB PANE                  -->
@@ -282,8 +438,15 @@ $shipping_address = function_exists( 'wc_get_account_formatted_address' ) ? wc_g
               <span class="font-label-sm text-[11px] uppercase tracking-wider text-secondary font-bold">Prakriti Status</span>
               <span class="material-symbols-outlined notranslate text-primary text-[20px]" translate="no">spa</span>
             </div>
-            <p class="font-headline-sm text-2xl text-primary font-serif whitespace-nowrap">Pitta-Vata</p>
-            <p class="font-body-sm text-xs text-on-surface-variant mt-1">Holistic Harmony Regimen</p>
+            <?php if ( ! empty( $user_prakriti ) ) : ?>
+              <p class="font-headline-sm text-2xl text-primary font-serif whitespace-nowrap"><?php echo esc_html( $user_prakriti ); ?></p>
+              <p class="font-body-sm text-xs text-secondary mt-1 font-medium">Holistic Regimen Active</p>
+            <?php else : ?>
+              <p class="font-headline-sm text-2xl text-primary font-serif whitespace-nowrap">Assessment Pending</p>
+              <a href="<?php echo esc_url( home_url( '/book-your-consultation/' ) ); ?>" class="font-body-sm text-xs text-secondary hover:text-primary mt-1 flex items-center gap-1 font-medium">
+                Book Diagnosis <span class="material-symbols-outlined notranslate text-[14px]" translate="no">arrow_forward</span>
+              </a>
+            <?php endif; ?>
           </div>
 
           <div onclick="switchAccountTab('orders')" class="bg-surface-container-low p-5 rounded-xl border border-[#E8D8BC]/60 shadow-sm relative overflow-hidden group hover:border-primary/40 transition-colors cursor-pointer">
@@ -309,8 +472,14 @@ $shipping_address = function_exists( 'wc_get_account_formatted_address' ) ? wc_g
               <span class="font-label-sm text-[11px] uppercase tracking-wider text-secondary font-bold">Vedic Blueprints</span>
               <span class="material-symbols-outlined notranslate text-primary text-[20px]" translate="no">file_download</span>
             </div>
-            <p class="font-headline-sm text-2xl text-primary font-serif whitespace-nowrap">4 Documents</p>
-            <p class="font-body-sm text-xs text-secondary mt-1 flex items-center gap-1 font-medium">Download PDFs <span class="material-symbols-outlined notranslate text-[14px]" translate="no">arrow_forward</span></p>
+            <p class="font-headline-sm text-2xl text-primary font-serif whitespace-nowrap">
+              <?php echo esc_html( $download_count ); ?> <?php echo $download_count === 1 ? 'Document' : 'Documents'; ?>
+            </p>
+            <?php if ( $download_count > 0 ) : ?>
+              <p class="font-body-sm text-xs text-secondary mt-1 flex items-center gap-1 font-medium">Download PDFs <span class="material-symbols-outlined notranslate text-[14px]" translate="no">arrow_forward</span></p>
+            <?php else : ?>
+              <p class="font-body-sm text-xs text-on-surface-variant mt-1">None Purchased</p>
+            <?php endif; ?>
           </div>
         </div>
 
@@ -880,28 +1049,78 @@ $shipping_address = function_exists( 'wc_get_account_formatted_address' ) ? wc_g
               Certified Vastu spatial audit blueprints, personalized Ayurvedic dinacharya regimens, and consultation files available for permanent reference.
             </p>
           </div>
+          <?php if ( ! empty( $customer_downloads ) ) : ?>
+            <div class="flex items-center gap-2">
+              <span class="px-3 py-1 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm text-xs font-bold">
+                <?php echo esc_html( $download_count ); ?> available
+              </span>
+            </div>
+          <?php endif; ?>
         </div>
 
-        <!-- Downloads List -->
-        <div class="space-y-4">
-          <div class="bg-surface-container-low rounded-xl p-5 border border-[#E8D8BC]/60 shadow-sm flex flex-col sm:flex-row sm:items-center justify-between gap-4 hover:border-primary/40 transition-colors">
-            <div class="flex items-start gap-4">
-              <div class="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary shrink-0">
-                <span class="material-symbols-outlined notranslate text-[26px]" translate="no">architecture</span>
+        <?php if ( ! empty( $customer_downloads ) ) : ?>
+          <!-- Downloads List (Dynamic WooCommerce Downloads) -->
+          <div class="space-y-4">
+            <?php foreach ( $customer_downloads as $download ) : 
+              $file_name   = ! empty( $download['download_name'] ) ? $download['download_name'] : ( ! empty( $download['product_name'] ) ? $download['product_name'] : 'Sanctuary Document' );
+              $file_url    = ! empty( $download['download_url'] ) ? $download['download_url'] : '#';
+              $order_num   = ! empty( $download['order_id'] ) ? $download['order_id'] : '';
+              $remaining   = isset( $download['downloads_remaining'] ) ? $download['downloads_remaining'] : '';
+              $expires     = ! empty( $download['access_expires'] ) ? date_i18n( get_option( 'date_format' ), strtotime( $download['access_expires'] ) ) : 'Never';
+            ?>
+              <div class="bg-surface-container-low rounded-xl p-5 border border-[#E8D8BC]/60 shadow-sm flex flex-col sm:flex-row sm:items-center justify-between gap-4 hover:border-primary/40 transition-colors">
+                <div class="flex items-start gap-4">
+                  <div class="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary shrink-0">
+                    <span class="material-symbols-outlined notranslate text-[26px]" translate="no">description</span>
+                  </div>
+                  <div>
+                    <h3 class="font-headline-sm text-lg text-primary font-bold"><?php echo esc_html( $file_name ); ?></h3>
+                    <p class="font-body-sm text-xs text-on-surface-variant mt-0.5">
+                      <?php if ( ! empty( $download['product_name'] ) && $download['product_name'] !== $file_name ) : ?>
+                        <?php echo esc_html( $download['product_name'] ); ?> &bull; 
+                      <?php endif; ?>
+                      <?php if ( $order_num ) : ?>
+                        Order #<?php echo esc_html( $order_num ); ?> &bull; 
+                      <?php endif; ?>
+                      Downloads: <?php echo esc_html( $remaining === '' || $remaining === 'unlimited' ? 'Unlimited' : $remaining . ' remaining' ); ?>
+                      <?php if ( $expires !== 'Never' ) : ?>
+                        &bull; Expires: <?php echo esc_html( $expires ); ?>
+                      <?php endif; ?>
+                    </p>
+                  </div>
+                </div>
+                <div class="flex items-center gap-2 self-start sm:self-auto shrink-0">
+                  <a href="<?php echo esc_url( $file_url ); ?>" class="px-5 py-2.5 rounded-lg bg-primary text-on-primary font-label-md text-xs uppercase tracking-wider font-semibold hover:bg-secondary transition-colors shadow-sm flex items-center gap-2" download>
+                    <span class="material-symbols-outlined notranslate text-[18px]" translate="no">download</span> Download File
+                  </a>
+                </div>
               </div>
-              <div>
-                <h3 class="font-headline-sm text-lg text-primary font-bold">Ishanya &amp; Brahmasthan Spatial Alignment Blueprint</h3>
-                <p class="font-body-sm text-xs text-on-surface-variant mt-0.5">Vastu Spatial Audit &bull; Consecrated by Dr. Nishigandha Chaudhari &bull; High-Res Vector PDF</p>
-              </div>
+            <?php endforeach; ?>
+          </div>
+        <?php else : ?>
+          <!-- Clean Empty State When No Downloads Exist -->
+          <div class="bg-surface-container-low rounded-xl border border-[#E8D8BC]/60 p-12 text-center space-y-4">
+            <div class="w-16 h-16 mx-auto rounded-full bg-primary/10 flex items-center justify-center text-primary">
+              <span class="material-symbols-outlined notranslate text-[36px]" translate="no">folder_open</span>
             </div>
-            <div class="flex items-center gap-2 self-start sm:self-auto shrink-0">
-              <a href="<?php echo esc_url( home_url( '/contact/' ) ); ?>" class="px-4 py-2.5 rounded-lg bg-primary text-on-primary font-label-md text-xs uppercase tracking-wider font-semibold hover:bg-secondary transition-colors shadow-sm flex items-center gap-1.5">
-                <span class="material-symbols-outlined notranslate text-[16px]" translate="no">support_agent</span> Request Dossier
+            <h3 class="font-headline-sm text-2xl text-primary">No Downloadable Files Yet</h3>
+            <p class="font-body-md text-sm text-on-surface-variant max-w-md mx-auto">
+              You have not purchased any downloadable blueprints, consecrated PDF regimens, or architectural dossiers yet. Any digital guides from your purchases or consultation reviews will appear here.
+            </p>
+            <div class="pt-2 flex flex-wrap items-center justify-center gap-3">
+              <a href="<?php echo esc_url( function_exists( 'wc_get_page_permalink' ) ? wc_get_page_permalink( 'shop' ) : home_url( '/shop/' ) ); ?>" class="inline-flex items-center gap-2 px-6 py-2.5 rounded-lg bg-[#1F4D3A] text-on-primary font-label-md text-xs uppercase tracking-wider font-semibold hover:bg-secondary transition-colors shadow-sm">
+                <span class="material-symbols-outlined notranslate text-[16px]" translate="no">storefront</span>
+                Explore Dispensary
+              </a>
+              <a href="<?php echo esc_url( home_url( '/book-your-consultation/' ) ); ?>" class="inline-flex items-center gap-2 px-6 py-2.5 rounded-lg border border-primary text-primary font-label-md text-xs uppercase tracking-wider font-semibold hover:bg-primary hover:text-white transition-colors">
+                <span class="material-symbols-outlined notranslate text-[16px]" translate="no">calendar_month</span>
+                Book Consultation
               </a>
             </div>
           </div>
-        </div>
+        <?php endif; ?>
       </div>
+      <?php endif; // End endpoint check ?>
 
     </main>
   </div>
@@ -966,10 +1185,23 @@ $shipping_address = function_exists( 'wc_get_account_formatted_address' ) ? wc_g
   }
 
   document.addEventListener('DOMContentLoaded', function() {
-    const hash = window.location.hash.replace('#', '');
+    let activeTab = window.location.hash.replace('#', '');
     const validTabs = ['dashboard', 'bookings', 'orders', 'addresses', 'account-details', 'downloads'];
-    if (hash && validTabs.includes(hash)) {
-      switchAccountTab(hash, false);
+
+    <?php if ( function_exists( 'is_wc_endpoint_url' ) ) : ?>
+      <?php if ( is_wc_endpoint_url( 'orders' ) ) : ?>
+        if (!activeTab) activeTab = 'orders';
+      <?php elseif ( is_wc_endpoint_url( 'downloads' ) ) : ?>
+        if (!activeTab) activeTab = 'downloads';
+      <?php elseif ( is_wc_endpoint_url( 'edit-address' ) && empty( $load_address ) ) : ?>
+        if (!activeTab) activeTab = 'addresses';
+      <?php elseif ( is_wc_endpoint_url( 'edit-account' ) ) : ?>
+        if (!activeTab) activeTab = 'account-details';
+      <?php endif; ?>
+    <?php endif; ?>
+
+    if (activeTab && validTabs.includes(activeTab)) {
+      switchAccountTab(activeTab, false);
     }
   });
 </script>
