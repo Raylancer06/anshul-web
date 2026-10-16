@@ -244,29 +244,41 @@ if ( ! defined( 'ABSPATH' ) ) {
 <body <?php body_class( 'bg-surface font-body-md text-on-surface antialiased selection:bg-primary-container selection:text-on-primary' ); ?>>
 <?php wp_body_open(); ?>
 
+<?php
+$sanskrit_motto   = get_theme_mod( 'anukul_sanskrit_motto', 'सर्वे भवन्तु सुखिनः सर्वे सन्तु निरामयाः' );
+$hours            = get_theme_mod( 'anukul_hours', 'Mon–Sat: 9:30 AM TO 6:30 PM' );
+$phone            = get_theme_mod( 'anukul_phone', '+91 7624012501' );
+$phone_secondary  = get_theme_mod( 'anukul_phone_secondary', '+91 63560 19951' );
+$header_cta_text  = get_theme_mod( 'anukul_header_cta_text', 'BOOK CONSULTATION' );
+$header_cta_url   = get_theme_mod( 'anukul_header_cta_url', home_url( '/book-your-consultation/' ) );
+$sticky_header    = get_theme_mod( 'anukul_sticky_header', 1 );
+$header_fixed_cls = $sticky_header ? 'fixed top-0' : 'relative';
+$wa_digits        = preg_replace( '/[^0-9]/', '', $phone );
+$sec_digits       = preg_replace( '/[^0-9\+]/', '', $phone_secondary );
+?>
 <!-- Header / Navigation Bar -->
-<header id="site-header" class="fixed top-0 w-full z-50 bg-[#F7F1E3]/95 backdrop-blur-md border-b border-[#E8D8BC] shadow-[0_1px_8px_rgba(0,0,0,0.03)] transition-[top] duration-200">
+<header id="site-header" class="<?php echo esc_attr( $header_fixed_cls ); ?> w-full z-50 bg-[#F7F1E3]/95 backdrop-blur-md border-b border-[#E8D8BC] shadow-[0_1px_8px_rgba(0,0,0,0.03)] transition-[top] duration-200">
     <!-- Top Utility Bar: Sanskrit Invocation, Operating Hours & Contact Coordinates -->
     <div id="top-utility-bar" class="w-full bg-[#1F4D3A] text-[#F7F1E3] text-[11px] font-label-md uppercase tracking-wider py-1.5 px-4 lg:px-margin border-b border-[#023625] notranslate" translate="no">
         <div class="max-w-[1440px] mx-auto flex items-center justify-between gap-3">
             <!-- Left: Sacred Clinic Motto & Hours -->
             <div class="flex items-center gap-2 overflow-hidden text-ellipsis whitespace-nowrap">
                 <span class="inline-block w-1.5 h-1.5 rounded-full bg-[#B38A3E] animate-pulse shrink-0"></span>
-                <span class="hidden lg:inline font-medium tracking-widest text-[#E8D8BC]">सर्वे भवन्तु सुखिनः सर्वे सन्तु निरामयाः</span>
+                <span class="hidden lg:inline font-medium tracking-widest text-[#E8D8BC]"><?php echo esc_html( $sanskrit_motto ); ?></span>
                 <span class="hidden lg:inline text-[#B38A3E]/60">·</span>
-                <span class="font-medium text-white/95 tracking-wider">Mon–Sat: 9:30 AM TO 6:30 PM</span>
+                <span class="font-medium text-white/95 tracking-wider"><?php echo esc_html( $hours ); ?></span>
             </div>
 
             <!-- Right: Clinic Phones & Top Language Selector -->
             <div class="flex items-center gap-3 shrink-0">
                 <!-- Phone Coordinates -->
                 <div class="hidden sm:flex items-center gap-3 text-[11px] text-[#E8D8BC]">
-                    <a href="https://wa.me/917624012501" target="_blank" class="hover:text-white transition-colors flex items-center gap-1 font-semibold">
-                        <span class="text-[#25D366]">WhatsApp:</span> +91 7624012501
+                    <a href="https://wa.me/<?php echo esc_attr( $wa_digits ); ?>" target="_blank" class="hover:text-white transition-colors flex items-center gap-1 font-semibold">
+                        <span class="text-[#25D366]">WhatsApp:</span> <?php echo esc_html( $phone ); ?>
                     </a>
                     <span class="text-[#B38A3E]/40">·</span>
-                    <a href="tel:+916356019951" class="hover:text-white transition-colors">
-                        Desk: +91 63560 19951
+                    <a href="tel:<?php echo esc_attr( $sec_digits ); ?>" class="hover:text-white transition-colors">
+                        Desk: <?php echo esc_html( $phone_secondary ); ?>
                     </a>
                 </div>
 
@@ -339,12 +351,8 @@ if ( ! defined( 'ABSPATH' ) ) {
             </a>
 
             <!-- Book Consultation CTA Button -->
-            <?php
-            $booking_page = get_page_by_path( 'book-your-consultation' );
-            $booking_url = $booking_page ? get_permalink( $booking_page ) : home_url( '/book-your-consultation/' );
-            ?>
-            <a href="<?php echo esc_url( $booking_url ); ?>" class="hidden sm:inline-flex items-center justify-center bg-[#1F4D3A] text-[#F7F1E3] font-label-md text-label-md px-5 py-2.5 rounded-lg tracking-wider uppercase transition-colors duration-200 hover:bg-secondary shadow-sm font-semibold">
-                <?php esc_html_e( 'BOOK CONSULTATION', 'anukul' ); ?>
+            <a href="<?php echo esc_url( $header_cta_url ); ?>" class="hidden sm:inline-flex items-center justify-center bg-[#1F4D3A] text-[#F7F1E3] font-label-md text-label-md px-5 py-2.5 rounded-lg tracking-wider uppercase transition-colors duration-200 hover:bg-secondary shadow-sm font-semibold">
+                <?php echo esc_html( $header_cta_text ); ?>
             </a>
 
             <!-- Client Account Icon -->
@@ -392,15 +400,15 @@ if ( ! defined( 'ABSPATH' ) ) {
                 <div class="text-[#E8D8BC] font-semibold uppercase tracking-wider text-[11px]">Sanctuary Concierge</div>
                 <div class="flex items-center justify-between">
                     <span>WhatsApp / Booking:</span>
-                    <a href="https://wa.me/917624012501" target="_blank" class="text-[#25D366] font-bold">+91 7624012501</a>
+                    <a href="https://wa.me/<?php echo esc_attr( $wa_digits ); ?>" target="_blank" class="text-[#25D366] font-bold"><?php echo esc_html( $phone ); ?></a>
                 </div>
                 <div class="flex items-center justify-between">
                     <span>Helpline Desk:</span>
-                    <a href="tel:+916356019951" class="text-white font-medium">+91 63560 19951</a>
+                    <a href="tel:<?php echo esc_attr( $sec_digits ); ?>" class="text-white font-medium"><?php echo esc_html( $phone_secondary ); ?></a>
                 </div>
                 <div class="flex items-center justify-between text-[#E8D8BC]/80 pt-1 border-t border-white/10 text-[11px]">
                     <span>Operating Hours:</span>
-                    <span>9:30 AM TO 6:30 PM (Mon–Sat)</span>
+                    <span><?php echo esc_html( $hours ); ?></span>
                 </div>
             </div>
 
@@ -408,8 +416,8 @@ if ( ! defined( 'ABSPATH' ) ) {
                 <?php anukul_render_nav_mobile(); ?>
             </nav>
             <div class="pt-4 border-t border-[#E8D8BC] flex flex-col gap-3">
-                <a href="<?php echo esc_url( $booking_url ); ?>" class="w-full text-center bg-[#1F4D3A] text-[#F7F1E3] font-label-md text-label-md py-3 rounded-lg tracking-wider uppercase font-semibold hover:bg-secondary transition-colors shadow-sm">
-                    <?php esc_html_e( 'BOOK CONSULTATION', 'anukul' ); ?>
+                <a href="<?php echo esc_url( $header_cta_url ); ?>" class="w-full text-center bg-[#1F4D3A] text-[#F7F1E3] font-label-md text-label-md py-3 rounded-lg tracking-wider uppercase font-semibold hover:bg-secondary transition-colors shadow-sm">
+                    <?php echo esc_html( $header_cta_text ); ?>
                 </a>
                 <div class="grid grid-cols-3 gap-2 pt-1 text-center text-xs font-label-md notranslate" translate="no">
                     <a href="<?php echo esc_url( home_url( '/?s=' ) ); ?>" class="flex flex-col items-center justify-center p-2 rounded-lg bg-surface-container hover:bg-[#E8D8BC]/70 text-primary transition-colors">

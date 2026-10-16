@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 /**
  * Front Page - Editorial Master
  *
@@ -12,6 +12,17 @@ if ( ! defined( 'ABSPATH' ) ) {
 get_header();
 ?>
 
+<?php
+$page_id   = get_the_ID();
+$eyebrow   = get_post_meta( $page_id, '_anukul_page_eyebrow', true ) ?: get_theme_mod( 'anukul_hero_eyebrow', 'AYURVEDA • VASTU • SPIRITUAL LIVING' );
+$raw_title = get_post_meta( $page_id, '_anukul_page_headline', true ) ?: get_theme_mod( 'anukul_hero_title', "UNDERSTAND THE PERSON.<br>\n<span class=\"italic font-light text-[#2E2924]\">UNDERSTAND THE SPACE.</span><br>\nCREATE HARMONY." );
+$subtitle  = get_post_meta( $page_id, '_anukul_page_subheading', true ) ?: get_theme_mod( 'anukul_hero_subtitle', 'Traditional Indian wisdom for a more conscious relationship between health, lifestyle, and space. Grounded in classical insight, calibrated for modern living.' );
+$cta1_text = get_post_meta( $page_id, '_anukul_page_cta_text', true ) ?: get_theme_mod( 'anukul_hero_cta_primary_text', 'BOOK A CONSULTATION' );
+$cta1_url  = get_post_meta( $page_id, '_anukul_page_cta_url', true ) ?: get_theme_mod( 'anukul_hero_cta_primary_url', home_url( '/book-your-consultation/' ) );
+$cta2_text = get_theme_mod( 'anukul_hero_cta_secondary_text', 'EXPLORE ANUKUL' );
+$cta2_url  = get_theme_mod( 'anukul_hero_cta_secondary_url', '#anukul-intro' );
+$hero_img  = get_post_meta( $page_id, '_anukul_hero_image_url', true ) ?: ( has_post_thumbnail( $page_id ) ? get_the_post_thumbnail_url( $page_id, 'full' ) : get_theme_mod( 'anukul_hero_image', 'https://lh3.googleusercontent.com/aida-public/AB6AXuARURrR0Kw5gjirMZTLQppRiurndYOzz-q26ZyVH5BRqjan8gZ03mJK25nedxOY61sM_O-6tgKqV7PXM71xDlTQu3cfOyQGC4U8PPinjsiq1xlMQdVZKzjUVCPpmCzaDnfmKMEOgNFcVSuv8ECgV_hpgCfDPl0pvmVWgx9mM4OmRNej83R2A7vvhxVHds-YP19hxjBSFbP6nEkcamfdpvU-Aw5o8zEUt-2DTRmgYL_VwmLWgUvgGBVuzw' ) );
+?>
 <div class="flex flex-col w-full">
 <!-- 1. HERO SECTION (Variant 2: Centered Majestic Sanctuary Layout) -->
 <section class="w-full bg-[#F7F1E3] text-[#2E2924] pt-12 md:pt-20 pb-16 px-6 lg:px-margin border-b border-[#B38A3E]/30 relative overflow-hidden">
@@ -20,32 +31,30 @@ get_header();
 <div class="flex items-center justify-center gap-3">
 <span class="w-2 h-2 rounded-full bg-[#C66A22]"></span>
 <span class="font-label-sm text-[13px] uppercase tracking-[0.25em] text-[#C66A22] font-semibold">
-          AYURVEDA • VASTU • SPIRITUAL LIVING
-        </span>
+  <?php echo esc_html( $eyebrow ); ?>
+</span>
 <span class="w-2 h-2 rounded-full bg-[#C66A22]"></span>
 </div>
 <!-- Grand Centered Typography -->
 <h1 class="font-display text-4xl sm:text-6xl lg:text-[68px] leading-[1.08] tracking-[-0.015em] text-[#1F4D3A] font-normal uppercase max-w-5xl">
-        UNDERSTAND THE PERSON.<br>
-<span class="italic font-light text-[#2E2924]">UNDERSTAND THE SPACE.</span><br>
-        CREATE HARMONY.
-      </h1>
+  <?php echo wp_kses_post( $raw_title ); ?>
+</h1>
 <p class="font-body-lg text-[18px] sm:text-[20px] leading-[1.75] text-[#2E2924]/85 max-w-2xl font-light">
-        Traditional Indian wisdom for a more conscious relationship between health, lifestyle, and space. Grounded in classical insight, calibrated for modern living.
-      </p>
+  <?php echo esc_html( $subtitle ); ?>
+</p>
 <!-- Centered Dual CTA -->
 <div class="pt-2 flex flex-wrap items-center justify-center gap-4">
-<a class="inline-flex items-center justify-center bg-[#1F4D3A] text-[#F7F1E3] font-label-md text-label-md px-8 py-4 rounded-[4px] uppercase tracking-wider transition-colors duration-200 hover:bg-[#C66A22] shadow-sm" data-path="book-consultation" href="<?php echo esc_url( home_url( "/book-your-consultation/" ) ); ?>">
-          BOOK A CONSULTATION
-        </a>
-<a class="inline-flex items-center justify-center border border-[#1F4D3A] text-[#1F4D3A] font-label-md text-label-md px-8 py-4 rounded-[4px] uppercase tracking-wider transition-colors duration-200 hover:bg-[#1F4D3A]/5" href="#anukul-intro">
-          EXPLORE ANUKUL
-        </a>
+<a class="inline-flex items-center justify-center bg-[#1F4D3A] text-[#F7F1E3] font-label-md text-label-md px-8 py-4 rounded-[4px] uppercase tracking-wider transition-colors duration-200 hover:bg-[#C66A22] shadow-sm" data-path="book-consultation" href="<?php echo esc_url( $cta1_url ); ?>">
+  <?php echo esc_html( $cta1_text ); ?>
+</a>
+<a class="inline-flex items-center justify-center border border-[#1F4D3A] text-[#1F4D3A] font-label-md text-label-md px-8 py-4 rounded-[4px] uppercase tracking-wider transition-colors duration-200 hover:bg-[#1F4D3A]/5" href="<?php echo esc_url( $cta2_url ); ?>">
+  <?php echo esc_html( $cta2_text ); ?>
+</a>
 </div>
 <!-- Majestic Sanctuary Visual Showcase with Flanking Architectural Badges -->
 <div class="w-full max-w-5xl mt-6 relative">
 <div class="relative w-full aspect-[16/9] lg:aspect-[21/9] overflow-hidden rounded-xl shadow-[0_16px_40px_-10px_rgba(46,41,36,0.16)] border border-[#B38A3E]/35 bg-[#E8D8BC]">
-<img alt="Courtyard Sanctuary at Dawn" class="w-full h-full object-cover rounded-xl" data-alt="Serene contemporary Indian architectural courtyard at dawn, morning golden sun rays streaming softly through hand-carved sandstone jali latticework, pristine brass diya with gentle flicker, lush green sacred tulsi plant in terracotta planter, polished warm stone floor reflecting calm meditative light in an authentic high-end Vedic sanctuary." src="https://lh3.googleusercontent.com/aida-public/AB6AXuARURrR0Kw5gjirMZTLQppRiurndYOzz-q26ZyVH5BRqjan8gZ03mJK25nedxOY61sM_O-6tgKqV7PXM71xDlTQu3cfOyQGC4U8PPinjsiq1xlMQdVZKzjUVCPpmCzaDnfmKMEOgNFcVSuv8ECgV_hpgCfDPl0pvmVWgx9mM4OmRNej83R2A7vvhxVHds-YP19hxjBSFbP6nEkcamfdpvU-Aw5o8zEUt-2DTRmgYL_VwmLWgUvgGBVuzw">
+<img alt="Courtyard Sanctuary at Dawn" class="w-full h-full object-cover rounded-xl" src="<?php echo esc_url( $hero_img ); ?>">
 <div class="absolute inset-0 bg-gradient-to-t from-[#1F4D3A]/75 via-transparent to-black/20"></div>
 <div class="absolute bottom-6 left-6 right-6 flex flex-col sm:flex-row justify-between items-start sm:items-end text-[#F7F1E3] p-5 sm:p-6 bg-[#1F4D3A]/90 backdrop-blur-md rounded-xl border border-[#B38A3E]/40 gap-4">
 <div class="text-left">
@@ -763,8 +772,8 @@ get_header();
 <span class="font-label-sm text-[11px] uppercase tracking-widest text-[#1F4D3A] font-bold">Responsible Vedic Practice Standard</span>
 </div>
 <p class="font-body-sm text-[12px] text-[#2E2924]/75 max-w-4xl leading-normal italic">
-        Ayurveda, Vastu and AstroNadi are traditional and complementary frameworks. They should not be used as substitutes for acute medical diagnosis, emergency medical care, prescribed treatment, qualified professional care, architecture, engineering or civic building regulations.
-      </p>
+  <?php echo esc_html( get_theme_mod( 'anukul_practice_notice', 'Ayurveda, Vastu and AstroNadi are traditional and complementary frameworks. They should not be used as substitutes for acute medical diagnosis, emergency medical care, prescribed treatment, qualified professional care, architecture, engineering or civic building regulations.' ) ); ?>
+</p>
 </div>
 </section>
 </div>
