@@ -53,8 +53,8 @@ $col3_class       = $has_col_4 ? 'md:col-span-3' : 'md:col-span-3';
                     <?php dynamic_sidebar( 'footer-1' ); ?>
                 <?php else : ?>
                     <div class="flex flex-col items-start">
-                        <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="inline-block select-none mb-2 notranslate" translate="no">
-                            <img src="<?php echo esc_url( $footer_logo_url ); ?>" alt="<?php bloginfo( 'name' ); ?>" class="h-14 sm:h-16 w-auto object-contain brightness-105">
+                        <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="inline-block select-none mb-2 notranslate footer-logo" translate="no">
+                            <img src="<?php echo esc_url( $footer_logo_url ); ?>" alt="<?php bloginfo( 'name' ); ?>" class="h-12 sm:h-14 w-auto max-h-[56px] max-w-[190px] object-contain bg-[#F7F1E3] p-1.5 rounded shadow-sm" style="max-height: 56px !important; width: auto !important; max-width: 190px !important; object-fit: contain !important;">
                         </a>
                     </div>
                     <p class="font-body-md text-body-md text-[#F7F1E3]/95 max-w-md pt-1 font-medium">

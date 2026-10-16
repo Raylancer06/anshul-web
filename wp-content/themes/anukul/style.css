@@ -232,3 +232,21 @@ body.admin-bar #mobile-menu > div {
   margin-bottom: 1.5rem !important;
   padding: 1rem 1.5rem !important;
 }
+
+/* ==========================================================================
+   Logo Sizing Protection
+   Ensures brand identity logo never explodes in header, footer, or drawers
+   ========================================================================== */
+header a img,
+footer a img,
+.footer-logo img,
+.custom-logo,
+a.footer-logo img {
+  max-height: 56px !important;
+  height: 56px !important;
+  width: auto !important;
+  max-width: 190px !important;
+  object-fit: contain !important;
+  display: block;
+}
+

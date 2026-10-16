@@ -302,7 +302,7 @@ $sec_digits       = preg_replace( '/[^0-9\+]/', '', $phone_secondary );
         
         <!-- Logo -->
         <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="flex items-center select-none py-1 notranslate" translate="no">
-            <img src="<?php echo esc_url( anukul_get_logo_url() ); ?>" alt="<?php bloginfo( 'name' ); ?>" class="h-14 sm:h-16 w-auto max-h-[64px] object-contain">
+            <img src="<?php echo esc_url( anukul_get_logo_url() ); ?>" alt="<?php bloginfo( 'name' ); ?>" class="h-12 sm:h-14 w-auto max-h-[56px] max-w-[190px] object-contain" style="max-height: 56px !important; width: auto !important; max-width: 190px !important; object-fit: contain !important;">
         </a>
 
         <!-- Desktop Navigation -->
