@@ -30,3 +30,4 @@ build/
 # Local WordPress Environment
 wordpress/
 wp-cli.phar
+scratch/

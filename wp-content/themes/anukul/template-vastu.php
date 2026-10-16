@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 /**
  * Template Name: Vastu Shastra & Space Harmonisation
  *
@@ -143,7 +143,7 @@ get_header();
 <section class="w-full bg-surface-container py-space-2xl">
 <div class="max-w-[1440px] mx-auto px-6 lg:px-margin flex flex-col space-y-space-xl">
 <!-- Section Header -->
-<div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-4 anukul-fade-up">
 <div class="flex flex-col space-y-1">
 <span class="font-label-sm text-label-sm text-secondary uppercase tracking-[0.16em]">
             Consultation Disciplines
@@ -157,9 +157,9 @@ get_header();
         </p>
 </div>
 <!-- Service Cards (3-Column Layout) -->
-<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter-lg">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter-lg anukul-stagger">
 <!-- Card 1: Residential Vastu -->
-<div class="flex flex-col justify-between bg-surface-container-lowest p-8 rounded-xl border border-[#B38A3E]/25 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+<div class="flex flex-col justify-between bg-surface-container-lowest p-8 rounded-xl border border-[#B38A3E]/25 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 anukul-card-lift">
 <div class="flex flex-col space-y-4">
 <div class="flex items-center justify-between">
 <span class="px-3 py-1 rounded bg-secondary-fixed/50 text-on-secondary-fixed font-label-sm text-label-sm uppercase tracking-wider">
@@ -194,7 +194,7 @@ get_header();
 </div>
 </div>
 <!-- Card 2: Commercial Vastu -->
-<div class="flex flex-col justify-between bg-surface-container-lowest p-8 rounded-xl border border-[#B38A3E]/25 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+<div class="flex flex-col justify-between bg-surface-container-lowest p-8 rounded-xl border border-[#B38A3E]/25 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 anukul-card-lift">
 <div class="flex flex-col space-y-4">
 <div class="flex items-center justify-between">
 <span class="px-3 py-1 rounded bg-primary-fixed/60 text-on-primary-fixed font-label-sm text-label-sm uppercase tracking-wider">
@@ -229,7 +229,7 @@ get_header();
 </div>
 </div>
 <!-- Card 3: Medico-Vastu Perspective -->
-<div class="flex flex-col justify-between bg-surface-container-lowest p-8 rounded-xl border border-[#B38A3E]/25 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+<div class="flex flex-col justify-between bg-surface-container-lowest p-8 rounded-xl border border-[#B38A3E]/25 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 anukul-card-lift">
 <div class="flex flex-col space-y-4">
 <div class="flex items-center justify-between">
 <span class="px-3 py-1 rounded bg-tertiary-fixed/70 text-on-tertiary-fixed font-label-sm text-label-sm uppercase tracking-wider">

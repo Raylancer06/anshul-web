@@ -161,7 +161,7 @@ get_header();
 </div>
 
 <!-- Grid Gallery with Varied Editorial Spans -->
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="gallery-grid">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 anukul-stagger" id="gallery-grid">
 <?php
 $gallery_query = new WP_Query( array(
     'post_type'      => 'anukul_gallery',
@@ -196,7 +196,7 @@ if ( $gallery_query->have_posts() ) :
         // Layout span: alternate 2-col span on every 4th card
         $col_span = ( 1 === $card_idx % 5 || 4 === $card_idx % 5 ) ? 'md:col-span-2' : 'md:col-span-1';
         ?>
-        <article class="gallery-card group <?php echo esc_attr( $col_span ); ?> rounded-xl overflow-hidden bg-surface-container-low shadow-sm cursor-pointer transition-all duration-300 hover:shadow-xl hover:-translate-y-1 border border-[#E8D8BC]/60"
+        <article class="gallery-card group <?php echo esc_attr( $col_span ); ?> rounded-xl overflow-hidden bg-surface-container-low shadow-sm cursor-pointer transition-all duration-300 hover:shadow-xl hover:-translate-y-1 border border-[#E8D8BC]/60 anukul-card-lift"
                  data-cat-label="<?php echo esc_attr( $cat_name ); ?>"
                  data-category="<?php echo esc_attr( $cat_slug ); ?>"
                  data-id="<?php echo esc_attr( get_the_ID() ); ?>"

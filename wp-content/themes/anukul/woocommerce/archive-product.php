@@ -305,7 +305,7 @@ foreach ( $dispensary_cat_defs as $c_slug => $c_label ) {
             </div>
 
             <!-- PRODUCT GRID -->
-            <div id="products-grid-container" class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6 transition-all duration-300">
+            <div id="products-grid-container" class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6 transition-all duration-300 anukul-stagger">
 
               <?php
               $args = array(
@@ -357,7 +357,7 @@ foreach ( $dispensary_cat_defs as $c_slug => $c_label ) {
 
                       $dosha_label = ( $dosha === 'vata' ) ? 'Vata Pacifying' : ( ( $dosha === 'pitta' ) ? 'Pitta Cooling' : 'Tridoshic' );
                       ?>
-                      <article class="product-item group bg-white rounded-xl overflow-hidden border border-surface-variant hover:border-[#B38A3E] shadow-xs hover:shadow-md transition-all duration-300 flex flex-col justify-between"
+                      <article class="product-item group bg-white rounded-xl overflow-hidden border border-surface-variant hover:border-[#B38A3E] shadow-xs hover:shadow-md transition-all duration-300 flex flex-col justify-between anukul-card-lift"
                                data-id="<?php echo esc_attr( $p_id ); ?>"
                                data-category="<?php echo esc_attr( $cat_slug ); ?>"
                                data-dosha="<?php echo esc_attr( $dosha ); ?>"

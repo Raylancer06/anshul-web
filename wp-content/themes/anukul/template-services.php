@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 /**
  * Template Name: Clinical Pathways & Services
  *
@@ -111,14 +111,14 @@ get_header();
 <!-- SECTION 3: CORE SERVICE CATEGORIES -->
 <section class="w-full bg-surface-bright py-20 lg:py-28" id="core-services">
 <div class="max-w-[1440px] mx-auto px-6 lg:px-margin">
-<div class="text-center max-w-2xl mx-auto mb-16">
+<div class="text-center max-w-2xl mx-auto mb-16 anukul-fade-up">
 <span class="font-label-sm text-label-sm text-secondary tracking-[0.2em] uppercase block mb-2">Core Pathways</span>
 <h2 class="font-headline-lg text-headline-lg text-primary mb-3">EXPLORE OUR SERVICES</h2>
 <p class="font-body-md text-body-md text-on-surface-variant">Three distinct pathways to restore constitutional and spatial balance.</p>
 </div>
-<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8 anukul-stagger">
 <!-- Card 1: Ayurveda Consultation -->
-<div class="flex flex-col bg-surface-container-lowest p-8 lg:p-10 rounded-xl shadow-md hover:shadow-xl transition-all duration-300">
+<div class="flex flex-col bg-surface-container-lowest p-8 lg:p-10 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 anukul-card-lift">
 <div class="w-12 h-12 rounded-full bg-primary-container text-on-primary flex items-center justify-center mb-6">
 <span class="material-symbols-outlined notranslate text-[24px]" translate="no">psychiatry</span>
 </div>
@@ -146,7 +146,7 @@ get_header();
           </a>
 </div>
 <!-- Card 2: Vastu Consultation -->
-<div class="flex flex-col bg-surface-container-lowest p-8 lg:p-10 rounded-xl shadow-md hover:shadow-xl transition-all duration-300">
+<div class="flex flex-col bg-surface-container-lowest p-8 lg:p-10 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 anukul-card-lift">
 <div class="w-12 h-12 rounded-full bg-primary-container text-on-primary flex items-center justify-center mb-6">
 <span class="material-symbols-outlined notranslate text-[24px]" translate="no">explore</span>
 </div>
@@ -174,7 +174,7 @@ get_header();
           </a>
 </div>
 <!-- Card 3: Integrated Harmony Approach -->
-<div class="flex flex-col bg-surface-container-lowest p-8 lg:p-10 rounded-xl shadow-md hover:shadow-xl transition-all duration-300">
+<div class="flex flex-col bg-surface-container-lowest p-8 lg:p-10 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 anukul-card-lift">
 <div class="w-12 h-12 rounded-full bg-tertiary-container text-on-primary flex items-center justify-center mb-6">
 <span class="material-symbols-outlined notranslate text-[24px]" translate="no">all_inclusive</span>
 </div>
@@ -207,13 +207,13 @@ get_header();
 <!-- SECTION 4: MORE FOCUSED CONSULTATION AREAS -->
 <section class="w-full bg-surface-container py-20 lg:py-24">
 <div class="max-w-[1440px] mx-auto px-6 lg:px-margin">
-<div class="max-w-xl mb-12">
+<div class="max-w-xl mb-12 anukul-fade-up">
 <span class="font-label-sm text-label-sm text-secondary uppercase tracking-[0.2em] block mb-2">FIND THE RIGHT DIRECTION</span>
 <h2 class="font-headline-lg text-headline-lg text-primary">Different questions. A considered approach.</h2>
 </div>
-<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8 anukul-stagger">
 <!-- Area 1 -->
-<div class="bg-surface-bright p-8 rounded-xl shadow-md flex flex-col justify-between">
+<div class="bg-surface-bright p-8 rounded-xl shadow-md flex flex-col justify-between anukul-card-lift">
 <div>
 <div class="flex items-center justify-between mb-4">
 <span class="font-label-sm text-label-sm text-secondary tracking-widest uppercase">Specialty Analysis</span>
@@ -229,7 +229,7 @@ get_header();
 </a>
 </div>
 <!-- Area 2 -->
-<div class="bg-surface-bright p-8 rounded-xl shadow-md flex flex-col justify-between">
+<div class="bg-surface-bright p-8 rounded-xl shadow-md flex flex-col justify-between anukul-card-lift">
 <div>
 <div class="flex items-center justify-between mb-4">
 <span class="font-label-sm text-label-sm text-secondary tracking-widest uppercase">Professional Environments</span>
@@ -245,7 +245,7 @@ get_header();
 </a>
 </div>
 <!-- Area 3 -->
-<div class="bg-surface-bright p-8 rounded-xl shadow-md flex flex-col justify-between">
+<div class="bg-surface-bright p-8 rounded-xl shadow-md flex flex-col justify-between anukul-card-lift">
 <div>
 <div class="flex items-center justify-between mb-4">
 <span class="font-label-sm text-label-sm text-secondary tracking-widest uppercase">Environmental Health</span>

@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 /**
  * Template Name: Ayurveda Consultation & Principles
  *
@@ -123,7 +123,7 @@ get_header();
 <section class="w-full bg-surface py-space-xl lg:py-space-2xl">
 <div class="max-w-[1440px] mx-auto px-6 lg:px-margin">
 <!-- Section Header -->
-<div class="max-w-2xl mb-space-xl">
+<div class="max-w-2xl mb-space-xl anukul-fade-up">
 <span class="font-label-sm text-label-sm text-secondary uppercase tracking-[0.2em] block mb-2">THE CORE DIMENSIONS</span>
 <h2 class="font-headline-lg text-headline-lg text-primary">The Anatomy of Individuality.</h2>
 <p class="font-body-md text-body-md text-on-surface-variant mt-3">
@@ -131,9 +131,9 @@ get_header();
         </p>
 </div>
 <!-- Asymmetrical Editorial Modules -->
-<div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-6 anukul-stagger">
 <!-- 01: Prakriti (Spans 6 cols) -->
-<div class="md:col-span-6 bg-surface-container-low p-space-lg rounded-xl border border-outline-variant/50 flex flex-col justify-between hover:border-secondary transition-colors duration-300">
+<div class="md:col-span-6 bg-surface-container-low p-space-lg rounded-xl border border-outline-variant/50 flex flex-col justify-between hover:border-secondary transition-colors duration-300 anukul-card-lift">
 <div>
 <div class="flex items-center justify-between mb-4">
 <span class="font-display text-headline-md italic text-secondary">01</span>
@@ -150,7 +150,7 @@ get_header();
 </div>
 </div>
 <!-- 02: Vikriti (Spans 6 cols) -->
-<div class="md:col-span-6 bg-surface-container-low p-space-lg rounded-xl border border-outline-variant/50 flex flex-col justify-between hover:border-secondary transition-colors duration-300">
+<div class="md:col-span-6 bg-surface-container-low p-space-lg rounded-xl border border-outline-variant/50 flex flex-col justify-between hover:border-secondary transition-colors duration-300 anukul-card-lift">
 <div>
 <div class="flex items-center justify-between mb-4">
 <span class="font-display text-headline-md italic text-secondary">02</span>

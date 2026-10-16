@@ -165,7 +165,7 @@ $hero_img  = get_post_meta( $page_id, '_anukul_hero_image_url', true ) ?: ( has_
 <section class="w-full bg-[#E8D8BC]/30 text-[#2E2924] py-20 lg:py-28 px-6 lg:px-margin border-y border-[#B38A3E]/25">
 <div class="max-w-[1440px] mx-auto space-y-20">
 <!-- Section Header -->
-<div class="flex flex-col md:flex-row md:items-end justify-between gap-6 max-w-4xl">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-6 max-w-4xl anukul-fade-up">
 <div>
 <span class="font-label-sm text-[12px] uppercase tracking-[0.24em] text-[#C66A22] font-semibold">FOUNDATIONAL INTEGRATION</span>
 <h2 class="font-display text-4xl sm:text-5xl text-[#1F4D3A] mt-2">The Three Core Disciplines</h2>
@@ -175,7 +175,7 @@ $hero_img  = get_post_meta( $page_id, '_anukul_hero_image_url', true ) ?: ( has_
       </p>
 </div>
 <!-- Pillar 01: Image Left, Content Right -->
-<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14 items-center bg-[#F7F1E3] p-8 lg:p-12 rounded-[4px] border border-[#B38A3E]/35 shadow-sm">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14 items-center bg-[#F7F1E3] p-8 lg:p-12 rounded-[4px] border border-[#B38A3E]/35 shadow-sm anukul-card-lift anukul-reveal">
 <div class="lg:col-span-5 relative">
 <div class="relative aspect-[4/3] rounded-xl overflow-hidden bg-[#E8D8BC] border border-[#B38A3E]/30">
 <img alt="Conscious Daily Living" class="w-full h-full object-cover rounded-xl transition-transform duration-500 hover:scale-105" data-alt="Atmospheric still life of an authentic morning contemplation alcove in India with warm natural morning sunlight, an understated brass oil lamp diya glowing, pure hand-loomed linen cushion, sandalwood stick smoke softly rising, serene restrained warm palette." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAAxANp6HqXRnR1sgUMDpSbHGObTTF11SkfDEV91av6pyO7l1JnBAdsV5n_7KItQViQCoYrSAMUWCMDV6sZ2Ngz_yzB2p6merhzWjgFQLW7Ep3x6noMHoKqzXIGwkuZ0p4RMfNz4H8JvL9ifbQ_acjv3dcgfc_faNev8hFYNTpAfwAxjwmRv5I8n48YWKoAF50wPaJe9He3zh84QRKTV1T2Wz_S1XEr-kFNU6BeraoAiFuxphjwW_3YUw">
@@ -194,7 +194,7 @@ $hero_img  = get_post_meta( $page_id, '_anukul_hero_image_url', true ) ?: ( has_
 </div>
 </div>
 <!-- Pillar 02: Content Left, Image Right -->
-<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14 items-center bg-[#F7F1E3] p-8 lg:p-12 rounded-[4px] border border-[#B38A3E]/35 shadow-sm">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14 items-center bg-[#F7F1E3] p-8 lg:p-12 rounded-[4px] border border-[#B38A3E]/35 shadow-sm anukul-card-lift anukul-reveal">
 <div class="lg:col-span-7 space-y-4 order-2 lg:order-1">
 <span class="font-label-sm text-[11px] uppercase tracking-widest text-[#1F4D3A] font-semibold block">ARCHITECTURE &amp; GEOMETRY</span>
 <h3 class="font-display text-3xl sm:text-4xl text-[#1F4D3A]">VASTU SHASTRA</h3>
@@ -213,7 +213,7 @@ $hero_img  = get_post_meta( $page_id, '_anukul_hero_image_url', true ) ?: ( has_
 </div>
 </div>
 <!-- Pillar 03: Image Left, Content Right -->
-<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14 items-center bg-[#F7F1E3] p-8 lg:p-12 rounded-[4px] border border-[#B38A3E]/35 shadow-sm">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14 items-center bg-[#F7F1E3] p-8 lg:p-12 rounded-[4px] border border-[#B38A3E]/35 shadow-sm anukul-card-lift anukul-reveal">
 <div class="lg:col-span-5 relative">
 <div class="relative aspect-[4/3] rounded-xl overflow-hidden bg-[#E8D8BC] border border-[#B38A3E]/30">
 <img alt="Conscious Daily Living" class="w-full h-full object-cover rounded-xl transition-transform duration-500 hover:scale-105" data-alt="Atmospheric still life of an authentic morning contemplation alcove in India with warm natural morning sunlight, an understated brass oil lamp diya glowing, pure hand-loomed linen cushion, sandalwood stick smoke softly rising, serene restrained warm palette." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAAxANp6HqXRnR1sgUMDpSbHGObTTF11SkfDEV91av6pyO7l1JnBAdsV5n_7KItQViQCoYrSAMUWCMDV6sZ2Ngz_yzB2p6merhzWjgFQLW7Ep3x6noMHoKqzXIGwkuZ0p4RMfNz4H8JvL9ifbQ_acjv3dcgfc_faNev8hFYNTpAfwAxjwmRv5I8n48YWKoAF50wPaJe9He3zh84QRKTV1T2Wz_S1XEr-kFNU6BeraoAiFuxphjwW_3YUw">
@@ -293,7 +293,7 @@ $hero_img  = get_post_meta( $page_id, '_anukul_hero_image_url', true ) ?: ( has_
 <!-- 5. THE ANUKUL APPROACH (Variant 2: Staggered Two-Tier Timeline Process) -->
 <section class="w-full bg-[#F7F1E3] text-[#2E2924] py-20 lg:py-28 px-6 lg:px-margin">
 <div class="max-w-[1440px] mx-auto space-y-16">
-<div class="max-w-3xl space-y-3">
+<div class="max-w-3xl space-y-3 anukul-fade-up">
 <span class="font-label-sm text-[12px] uppercase tracking-[0.24em] text-[#C66A22] font-semibold">METHODOLOGY</span>
 <h2 class="font-display text-3xl sm:text-5xl lg:text-[48px] leading-tight text-[#1F4D3A]">
           WE DON’T BEGIN WITH A RULE.<br>WE BEGIN WITH YOU.
@@ -308,9 +308,9 @@ $hero_img  = get_post_meta( $page_id, '_anukul_hero_image_url', true ) ?: ( has_
 <span class="font-label-sm text-xs uppercase tracking-widest text-[#7A2638] font-bold">DISCOVERY &amp; EVALUATION</span>
 <div class="h-[1px] flex-1 bg-[#B38A3E]/30"></div>
 </div>
-<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8 anukul-stagger">
 <!-- Step 01 -->
-<div class="p-8 bg-[#FFFFFF] rounded-[4px] border border-[#B38A3E]/30 relative flex flex-col justify-between shadow-sm">
+<div class="p-8 bg-[#FFFFFF] rounded-[4px] border border-[#B38A3E]/30 relative flex flex-col justify-between shadow-sm anukul-card-lift">
 <div>
 <div class="flex items-center justify-between border-b border-[#B38A3E]/20 pb-4 mb-4">
 <span class="font-display text-4xl text-[#B38A3E] italic">01</span>
@@ -326,7 +326,7 @@ $hero_img  = get_post_meta( $page_id, '_anukul_hero_image_url', true ) ?: ( has_
           </div>
 </div>
 <!-- Step 02 -->
-<div class="p-8 bg-[#FFFFFF] rounded-[4px] border border-[#B38A3E]/30 relative flex flex-col justify-between shadow-sm">
+<div class="p-8 bg-[#FFFFFF] rounded-[4px] border border-[#B38A3E]/30 relative flex flex-col justify-between shadow-sm anukul-card-lift">
 <div>
 <div class="flex items-center justify-between border-b border-[#B38A3E]/20 pb-4 mb-4">
 <span class="font-display text-4xl text-[#B38A3E] italic">02</span>
@@ -342,7 +342,7 @@ $hero_img  = get_post_meta( $page_id, '_anukul_hero_image_url', true ) ?: ( has_
           </div>
 </div>
 <!-- Step 03 -->
-<div class="p-8 bg-[#FFFFFF] rounded-[4px] border border-[#B38A3E]/30 relative flex flex-col justify-between shadow-sm">
+<div class="p-8 bg-[#FFFFFF] rounded-[4px] border border-[#B38A3E]/30 relative flex flex-col justify-between shadow-sm anukul-card-lift">
 <div>
 <div class="flex items-center justify-between border-b border-[#B38A3E]/20 pb-4 mb-4">
 <span class="font-display text-4xl text-[#B38A3E] italic">03</span>
@@ -365,9 +365,9 @@ $hero_img  = get_post_meta( $page_id, '_anukul_hero_image_url', true ) ?: ( has_
 <span class="font-label-sm text-xs uppercase tracking-widest text-[#7A2638] font-bold">SYNTHESIS &amp; REALIGNMENT</span>
 <div class="h-[1px] flex-1 bg-[#B38A3E]/30"></div>
 </div>
-<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8 anukul-stagger">
 <!-- Step 04 -->
-<div class="p-8 bg-[#FFFFFF] rounded-[4px] border border-[#B38A3E]/30 relative flex flex-col justify-between shadow-sm">
+<div class="p-8 bg-[#FFFFFF] rounded-[4px] border border-[#B38A3E]/30 relative flex flex-col justify-between shadow-sm anukul-card-lift">
 <div>
 <div class="flex items-center justify-between border-b border-[#B38A3E]/20 pb-4 mb-4">
 <span class="font-display text-4xl text-[#B38A3E] italic">04</span>
@@ -383,7 +383,7 @@ $hero_img  = get_post_meta( $page_id, '_anukul_hero_image_url', true ) ?: ( has_
           </div>
 </div>
 <!-- Step 05 -->
-<div class="p-8 bg-[#FFFFFF] rounded-[4px] border border-[#B38A3E]/30 relative flex flex-col justify-between shadow-sm">
+<div class="p-8 bg-[#FFFFFF] rounded-[4px] border border-[#B38A3E]/30 relative flex flex-col justify-between shadow-sm anukul-card-lift">
 <div>
 <div class="flex items-center justify-between border-b border-[#B38A3E]/20 pb-4 mb-4">
 <span class="font-display text-4xl text-[#B38A3E] italic">05</span>
@@ -399,7 +399,7 @@ $hero_img  = get_post_meta( $page_id, '_anukul_hero_image_url', true ) ?: ( has_
           </div>
 </div>
 <!-- Step 06 -->
-<div class="p-8 bg-[#FFFFFF] rounded-[4px] border border-[#B38A3E]/30 relative flex flex-col justify-between shadow-sm">
+<div class="p-8 bg-[#FFFFFF] rounded-[4px] border border-[#B38A3E]/30 relative flex flex-col justify-between shadow-sm anukul-card-lift">
 <div>
 <div class="flex items-center justify-between border-b border-[#B38A3E]/20 pb-4 mb-4">
 <span class="font-display text-4xl text-[#B38A3E] italic">06</span>
@@ -572,7 +572,7 @@ $hero_img  = get_post_meta( $page_id, '_anukul_hero_image_url', true ) ?: ( has_
 </section>
 <!-- 8. SPIRITUAL INDIA SECTION -->
 <section class="w-full bg-[#F7F1E3] text-[#2E2924] py-20 lg:py-28 px-6 lg:px-margin border-b border-[#B38A3E]/30 relative overflow-hidden">
-<div class="max-w-[1000px] mx-auto text-center space-y-6">
+<div class="max-w-[1000px] mx-auto text-center space-y-6 anukul-fade-up">
 <div class="flex items-center justify-center gap-3">
 <span class="w-8 h-[1px] bg-[#B38A3E]"></span>
 <span class="font-label-sm text-[12px] uppercase tracking-[0.25em] text-[#C66A22] font-semibold">TIMELESS ROOTS</span>
@@ -585,16 +585,16 @@ $hero_img  = get_post_meta( $page_id, '_anukul_hero_image_url', true ) ?: ( has_
 <p class="font-body-lg text-[18px] sm:text-[20px] leading-[1.8] text-[#2E2924]/90 max-w-3xl mx-auto font-light">
         “Indian traditions have long explored the intimate relationship between the individual, nature, space, daily life, and consciousness. We honor this lineage not as rigid superstition, but as an enduring science of wholesome living.”
       </p>
-<div class="pt-6 grid grid-cols-1 sm:grid-cols-3 gap-6 text-left max-w-3xl mx-auto">
-<div class="p-6 border-l-2 border-[#B38A3E] bg-[#FFFFFF] rounded-r-[4px] shadow-sm">
+<div class="pt-6 grid grid-cols-1 sm:grid-cols-3 gap-6 text-left max-w-3xl mx-auto anukul-stagger">
+<div class="p-6 border-l-2 border-[#B38A3E] bg-[#FFFFFF] rounded-r-[4px] shadow-sm anukul-card-lift">
 <span class="font-label-sm text-[11px] uppercase tracking-wider text-[#7A2638] font-bold">RTA (COSMIC ORDER)</span>
 <p class="font-body-sm text-xs text-[#2E2924]/75 mt-1">Living in unison with planetary day-night rhythms and celestial seasons.</p>
 </div>
-<div class="p-6 border-l-2 border-[#B38A3E] bg-[#FFFFFF] rounded-r-[4px] shadow-sm">
+<div class="p-6 border-l-2 border-[#B38A3E] bg-[#FFFFFF] rounded-r-[4px] shadow-sm anukul-card-lift">
 <span class="font-label-sm text-[11px] uppercase tracking-wider text-[#7A2638] font-bold">PRANA (VITAL ENERGY)</span>
 <p class="font-body-sm text-xs text-[#2E2924]/75 mt-1">Facilitating unhindered life energy through conscious respiration, pure water, and air.</p>
 </div>
-<div class="p-6 border-l-2 border-[#B38A3E] bg-[#FFFFFF] rounded-r-[4px] shadow-sm">
+<div class="p-6 border-l-2 border-[#B38A3E] bg-[#FFFFFF] rounded-r-[4px] shadow-sm anukul-card-lift">
 <span class="font-label-sm text-[11px] uppercase tracking-wider text-[#7A2638] font-bold">SATTVA (PURITY)</span>
 <p class="font-body-sm text-xs text-[#2E2924]/75 mt-1">Creating peaceful, uncluttered physical spaces that foster a quiet, contemplative mind.</p>
 </div>
@@ -604,7 +604,7 @@ $hero_img  = get_post_meta( $page_id, '_anukul_hero_image_url', true ) ?: ( has_
 <!-- 9. WHY ANUKUL? (Variant 2: Staggered Alternating 2-Column Editorial Blocks) -->
 <section class="w-full bg-[#F7F1E3] text-[#2E2924] py-20 lg:py-28 px-6 lg:px-margin">
 <div class="max-w-[1440px] mx-auto space-y-16">
-<div class="flex flex-col md:flex-row md:items-end justify-between gap-4 border-b border-[#B38A3E]/30 pb-6">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-4 border-b border-[#B38A3E]/30 pb-6 anukul-fade-up">
 <div>
 <span class="font-label-sm text-[12px] uppercase tracking-[0.24em] text-[#C66A22] font-semibold">DISTINCTIVE INTEGRITY</span>
 <h2 class="font-display text-4xl sm:text-5xl text-[#1F4D3A] mt-1">Why Choose ANUKUL?</h2>
@@ -613,9 +613,9 @@ $hero_img  = get_post_meta( $page_id, '_anukul_hero_image_url', true ) ?: ( has_
         Six Cardinal Standards of Practice
       </span>
 </div>
-<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8 anukul-stagger">
 <!-- Standard 1 -->
-<div class="p-8 bg-[#FFFFFF] border-l-4 border-l-[#C66A22] border border-[#B38A3E]/30 rounded-[4px] space-y-3 shadow-sm">
+<div class="p-8 bg-[#FFFFFF] border-l-4 border-l-[#C66A22] border border-[#B38A3E]/30 rounded-[4px] space-y-3 shadow-sm anukul-card-lift">
 <div class="flex items-center gap-2 text-[#7A2638]">
 <span class="material-symbols-outlined notranslate text-[22px]" translate="no">person_outline</span>
 <span class="font-label-sm text-[11px] uppercase tracking-widest font-bold">01 / DISTINCT</span>
@@ -626,7 +626,7 @@ $hero_img  = get_post_meta( $page_id, '_anukul_hero_image_url', true ) ?: ( has_
         </p>
 </div>
 <!-- Standard 2 -->
-<div class="p-8 bg-[#FFFFFF] border-l-4 border-l-[#B38A3E] border border-[#B38A3E]/30 rounded-[4px] space-y-3 shadow-sm">
+<div class="p-8 bg-[#FFFFFF] border-l-4 border-l-[#B38A3E] border border-[#B38A3E]/30 rounded-[4px] space-y-3 shadow-sm anukul-card-lift">
 <div class="flex items-center gap-2 text-[#7A2638]">
 <span class="material-symbols-outlined notranslate text-[22px]" translate="no">build_circle</span>
 <span class="font-label-sm text-[11px] uppercase tracking-widest font-bold">02 / FEASIBLE</span>
@@ -637,7 +637,7 @@ $hero_img  = get_post_meta( $page_id, '_anukul_hero_image_url', true ) ?: ( has_
         </p>
 </div>
 <!-- Standard 3 -->
-<div class="p-8 bg-[#FFFFFF] border-l-4 border-l-[#1F4D3A] border border-[#B38A3E]/30 rounded-[4px] space-y-3 shadow-sm">
+<div class="p-8 bg-[#FFFFFF] border-l-4 border-l-[#1F4D3A] border border-[#B38A3E]/30 rounded-[4px] space-y-3 shadow-sm anukul-card-lift">
 <div class="flex items-center gap-2 text-[#7A2638]">
 <span class="material-symbols-outlined notranslate text-[22px]" translate="no">all_inclusive</span>
 <span class="font-label-sm text-[11px] uppercase tracking-widest font-bold">03 / UNIFIED</span>
@@ -648,7 +648,7 @@ $hero_img  = get_post_meta( $page_id, '_anukul_hero_image_url', true ) ?: ( has_
         </p>
 </div>
 <!-- Standard 4 -->
-<div class="p-8 bg-[#FFFFFF] border-l-4 border-l-[#7A2638] border border-[#B38A3E]/30 rounded-[4px] space-y-3 shadow-sm">
+<div class="p-8 bg-[#FFFFFF] border-l-4 border-l-[#7A2638] border border-[#B38A3E]/30 rounded-[4px] space-y-3 shadow-sm anukul-card-lift">
 <div class="flex items-center gap-2 text-[#7A2638]">
 <span class="material-symbols-outlined notranslate text-[22px]" translate="no">handyman</span>
 <span class="font-label-sm text-[11px] uppercase tracking-widest font-bold">04 / RESPECTFUL</span>
@@ -659,7 +659,7 @@ $hero_img  = get_post_meta( $page_id, '_anukul_hero_image_url', true ) ?: ( has_
         </p>
 </div>
 <!-- Standard 5 -->
-<div class="p-8 bg-[#FFFFFF] border-l-4 border-l-[#1F4D3A] border border-[#B38A3E]/30 rounded-[4px] space-y-3 shadow-sm">
+<div class="p-8 bg-[#FFFFFF] border-l-4 border-l-[#1F4D3A] border border-[#B38A3E]/30 rounded-[4px] space-y-3 shadow-sm anukul-card-lift">
 <div class="flex items-center gap-2 text-[#7A2638]">
 <span class="material-symbols-outlined notranslate text-[22px]" translate="no">sync</span>
 <span class="font-label-sm text-[11px] uppercase tracking-widest font-bold">05 / INTEGRATED</span>
@@ -670,7 +670,7 @@ $hero_img  = get_post_meta( $page_id, '_anukul_hero_image_url', true ) ?: ( has_
         </p>
 </div>
 <!-- Standard 6 -->
-<div class="p-8 bg-[#FFFFFF] border-l-4 border-l-[#C66A22] border border-[#B38A3E]/30 rounded-[4px] space-y-3 shadow-sm">
+<div class="p-8 bg-[#FFFFFF] border-l-4 border-l-[#C66A22] border border-[#B38A3E]/30 rounded-[4px] space-y-3 shadow-sm anukul-card-lift">
 <div class="flex items-center gap-2 text-[#7A2638]">
 <span class="material-symbols-outlined notranslate text-[22px]" translate="no">health_and_safety</span>
 <span class="font-label-sm text-[11px] uppercase tracking-widest font-bold">06 / ETHICAL</span>
@@ -687,7 +687,7 @@ $hero_img  = get_post_meta( $page_id, '_anukul_hero_image_url', true ) ?: ( has_
 <section class="w-full bg-[#E8D8BC]/40 text-[#2E2924] py-20 lg:py-28 px-6 lg:px-margin border-t border-[#B38A3E]/30">
 <div class="max-w-[1440px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-gutter-lg items-center">
 <!-- Portrait Column -->
-<div class="lg:col-span-5 relative">
+<div class="lg:col-span-5 relative anukul-fade-up">
 <div class="w-full aspect-[3/4] max-w-md mx-auto rounded-xl overflow-hidden border-2 border-[#B38A3E] bg-[#E8D8BC] p-2 bg-clip-content shadow-lg">
 <img alt="Dr. Nishigandha Chaudhari" class="w-full h-full object-cover object-top rounded-xl" data-alt="Dignified professional portrait of Dr. Nishigandha Chaudhari, Indian female Ayurvedic physician and Vastu consultant with warm poised expression, wearing an elegant earthen cotton saree, standing in a serene clinic sanctuary library with classical Vedic texts and brass instruments in soft natural light." src="<?php echo esc_url( ANUKUL_URI . "/assets/images/doctor.jpg" ); ?>">
 </div>
@@ -696,7 +696,7 @@ $hero_img  = get_post_meta( $page_id, '_anukul_hero_image_url', true ) ?: ( has_
         </div>
 </div>
 <!-- Biography & Guiding Philosophy Column -->
-<div class="lg:col-span-7 space-y-6">
+<div class="lg:col-span-7 space-y-6 anukul-fade-up">
 <div>
 <span class="font-label-sm text-[12px] uppercase tracking-[0.24em] text-[#C66A22] font-semibold">CLINICAL LEADERSHIP</span>
 <h2 class="font-display text-4xl sm:text-5xl text-[#1F4D3A] mt-2">

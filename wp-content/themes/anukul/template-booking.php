@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 /**
  * Template Name: Book Your Consultation
  *
@@ -140,9 +140,9 @@ get_header();
 </div>
 </div>
 <!-- 4 Cards Responsive Grid -->
-<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-space-md">
+<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-space-md anukul-stagger">
 <!-- CARD 1: Only Online Health Consultation -->
-<div class="consultation-card cursor-pointer bg-surface-container-lowest p-space-md lg:p-space-lg rounded-xl flex flex-col justify-between transition-all duration-300 shadow-sm hover:shadow-md relative group" id="card-health" onclick="selectConsultation('health', 1000, 'Only Online Health Consultation', '45 mins', 'Video Call (Secure Tele-Health)')">
+<div class="consultation-card cursor-pointer bg-surface-container-lowest p-space-md lg:p-space-lg rounded-xl flex flex-col justify-between transition-all duration-300 shadow-sm hover:shadow-md relative group anukul-card-lift" id="card-health" onclick="selectConsultation('health', 1000, 'Only Online Health Consultation', '45 mins', 'Video Call (Secure Tele-Health)')">
 <div class="flex flex-col">
 <div class="flex items-start justify-between gap-space-sm mb-space-sm">
 <span class="px-2 py-0.5 rounded bg-surface-container text-on-surface-variant font-label-sm text-[11px] uppercase tracking-wider font-semibold">Prakriti &amp; Health</span>
@@ -176,7 +176,7 @@ get_header();
 </div>
 
 <!-- CARD 2: Medico-Vastu Consultation -->
-<div class="consultation-card cursor-pointer bg-surface-container-lowest p-space-md lg:p-space-lg rounded-xl flex flex-col justify-between transition-all duration-300 shadow-sm hover:shadow-md relative group" id="card-medico-vastu" onclick="selectConsultation('medico-vastu', 3100, 'Medico-Vastu Consultation', '60 mins', 'Floor Plan Audit &amp; Video Analysis')">
+<div class="consultation-card cursor-pointer bg-surface-container-lowest p-space-md lg:p-space-lg rounded-xl flex flex-col justify-between transition-all duration-300 shadow-sm hover:shadow-md relative group anukul-card-lift" id="card-medico-vastu" onclick="selectConsultation('medico-vastu', 3100, 'Medico-Vastu Consultation', '60 mins', 'Floor Plan Audit &amp; Video Analysis')">
 <div class="flex flex-col">
 <div class="flex items-start justify-between gap-space-sm mb-space-sm">
 <span class="px-2 py-0.5 rounded bg-surface-container text-on-surface-variant font-label-sm text-[11px] uppercase tracking-wider font-semibold">Spatial Geometry</span>
@@ -210,7 +210,7 @@ get_header();
 </div>
 
 <!-- CARD 3: Medico-Astro-Vastu Construction -->
-<div class="consultation-card cursor-pointer bg-surface-container-lowest p-space-md lg:p-space-lg rounded-xl flex flex-col justify-between transition-all duration-300 shadow-sm hover:shadow-md relative group" id="card-astro-construction" onclick="selectConsultation('astro-construction', 4100, 'Medico-Astro-Vastu Construction', '75 mins', 'Architectural &amp; Planetary Blueprint Audit')">
+<div class="consultation-card cursor-pointer bg-surface-container-lowest p-space-md lg:p-space-lg rounded-xl flex flex-col justify-between transition-all duration-300 shadow-sm hover:shadow-md relative group anukul-card-lift" id="card-astro-construction" onclick="selectConsultation('astro-construction', 4100, 'Medico-Astro-Vastu Construction', '75 mins', 'Architectural &amp; Planetary Blueprint Audit')">
 <div class="flex flex-col">
 <div class="flex items-start justify-between gap-space-sm mb-space-sm">
 <span class="px-2 py-0.5 rounded bg-surface-container text-on-surface-variant font-label-sm text-[11px] uppercase tracking-wider font-semibold">Architectural &amp; Astro</span>
@@ -244,7 +244,7 @@ get_header();
 </div>
 
 <!-- CARD 4: Complete Medico-Astro Vastu Numerology Consultation (RECOMMENDED DEFAULT) -->
-<div class="consultation-card active-card cursor-pointer bg-surface-container-lowest p-space-md lg:p-space-lg rounded-xl flex flex-col justify-between transition-all duration-300 shadow-md relative group ring-2 ring-primary" id="card-complete" onclick="selectConsultation('complete', 5100, 'Complete Medico-Astro Vastu Numerology Consultation', '90 mins', 'Complete 4-Pillar Master Consultation')">
+<div class="consultation-card active-card cursor-pointer bg-surface-container-lowest p-space-md lg:p-space-lg rounded-xl flex flex-col justify-between transition-all duration-300 shadow-md relative group ring-2 ring-primary anukul-card-lift" id="card-complete" onclick="selectConsultation('complete', 5100, 'Complete Medico-Astro Vastu Numerology Consultation', '90 mins', 'Complete 4-Pillar Master Consultation')">
 <!-- Active Recommended Badge -->
 <div class="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-secondary text-on-secondary px-3 py-0.5 rounded-full font-label-sm text-[10px] uppercase tracking-widest font-bold shadow-sm flex items-center gap-1 whitespace-nowrap">
 <span class="material-symbols-outlined notranslate text-[13px]" translate="no">auto_awesome</span>
