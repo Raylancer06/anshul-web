@@ -432,14 +432,34 @@ if ( WC()->cart->is_empty() ) : ?>
                                 </span>
                             </div>
 
-                            <!-- Taxes -->
-                            <div class="flex items-center justify-between font-body-sm text-body-sm text-outline">
-                                <span class="flex items-center gap-1">
-                                    <?php esc_html_e( 'Applicable Taxes (GST 5% & 18%)', 'anukul' ); ?>
-                                    <span class="material-symbols-outlined notranslate text-[14px]" translate="no" title="<?php esc_attr_e( 'Taxes calculated according to classical botanical and metallurgical schedules.', 'anukul' ); ?>">help_outline</span>
-                                </span>
-                                <span><?php esc_html_e( 'Included in INR', 'anukul' ); ?></span>
-                            </div>
+                            <!-- Dynamic Taxes from WooCommerce -->
+                            <?php if ( wc_tax_enabled() ) : ?>
+                                <?php
+                                $tax_totals = WC()->cart->get_tax_totals();
+                                if ( ! empty( $tax_totals ) ) :
+                                    foreach ( $tax_totals as $code => $tax ) : ?>
+                                        <div class="tax-rate tax-rate-<?php echo esc_attr( sanitize_title( $code ) ); ?> flex items-center justify-between font-body-sm text-body-sm text-outline">
+                                            <span class="flex items-center gap-1">
+                                                <?php echo esc_html( $tax->label ); ?>
+                                                <?php if ( WC()->cart->display_prices_including_tax() ) : ?>
+                                                    <span class="text-[11px] text-surface-tint font-medium">(<?php esc_html_e( 'Included', 'anukul' ); ?>)</span>
+                                                <?php endif; ?>
+                                            </span>
+                                            <span class="font-medium text-on-surface"><?php echo wp_kses_post( $tax->formatted_amount ); ?></span>
+                                        </div>
+                                    <?php endforeach;
+                                elseif ( WC()->cart->get_taxes_total() > 0 ) : ?>
+                                    <div class="tax-total flex items-center justify-between font-body-sm text-body-sm text-outline">
+                                        <span class="flex items-center gap-1">
+                                            <?php echo esc_html( WC()->countries->tax_or_vat() ); ?>
+                                            <?php if ( WC()->cart->display_prices_including_tax() ) : ?>
+                                                <span class="text-[11px] text-surface-tint font-medium">(<?php esc_html_e( 'Included', 'anukul' ); ?>)</span>
+                                            <?php endif; ?>
+                                        </span>
+                                        <span class="font-medium text-on-surface"><?php echo wc_price( WC()->cart->get_taxes_total() ); ?></span>
+                                    </div>
+                                <?php endif; ?>
+                            <?php endif; ?>
                         </div>
 
                         <!-- Grand Total Calculation -->
