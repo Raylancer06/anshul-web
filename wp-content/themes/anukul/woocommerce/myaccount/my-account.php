@@ -140,12 +140,18 @@ $load_address    = $is_edit_address ? sanitize_key( get_query_var( 'edit-address
       <div class="bg-surface-container-low rounded-xl p-6 shadow-sm border border-[#E8D8BC]/60 relative overflow-hidden">
         <div class="absolute -right-6 -bottom-6 w-24 h-24 bg-surface-container-high rounded-full opacity-60 pointer-events-none"></div>
         <div class="flex items-center gap-4">
-          <div class="relative">
-            <div class="w-16 h-16 rounded-full bg-cover bg-center overflow-hidden shadow-inner ring-2 ring-primary-container/20" style="background-image: url('<?php echo esc_url( $avatar_url ); ?>')"></div>
+          <div class="relative group/avatar cursor-pointer" onclick="document.getElementById('anukul-avatar-sidebar-input').click();" title="<?php esc_attr_e( 'Click to change avatar photo', 'anukul' ); ?>">
+            <div id="sanctuary-user-sidebar-avatar" class="w-16 h-16 rounded-full bg-cover bg-center overflow-hidden shadow-inner ring-2 ring-primary-container/20 group-hover/avatar:ring-primary-container transition-all relative" style="background-image: url('<?php echo esc_url( $avatar_url ); ?>')">
+              <div class="absolute inset-0 bg-black/40 flex flex-col items-center justify-center text-white opacity-0 group-hover/avatar:opacity-100 transition-opacity">
+                <span class="material-symbols-outlined notranslate text-[20px]" translate="no">photo_camera</span>
+                <span class="text-[9px] font-bold uppercase tracking-wider">Edit</span>
+              </div>
+            </div>
             <span class="absolute bottom-0 right-0 w-5 h-5 rounded-full bg-primary-container flex items-center justify-center text-on-primary text-[10px] shadow" title="Clinical Sanctuary Verified">
               <span class="material-symbols-outlined notranslate text-[12px]" translate="no" style="font-variation-settings: 'FILL' 1;">verified</span>
             </span>
           </div>
+          <input type="file" id="anukul-avatar-sidebar-input" accept="image/jpeg,image/png,image/webp" class="hidden" onchange="handleSanctuaryAvatarUpload(this)">
           <div class="min-w-0 flex-1">
             <div class="flex items-center gap-1.5 mb-1">
               <span class="font-label-sm text-xs uppercase tracking-wider text-secondary font-bold">Seeker Profile</span>
@@ -961,6 +967,53 @@ $load_address    = $is_edit_address ? sanitize_key( get_query_var( 'edit-address
           <form class="woocommerce-EditAccountForm edit-account space-y-8" action="" method="post" <?php do_action( 'woocommerce_edit_account_form_tag' ); ?> >
             <?php do_action( 'woocommerce_edit_account_form_start' ); ?>
 
+            <!-- SECTION 0: Profile Avatar Setup -->
+            <section class="p-6 rounded-xl bg-surface border border-[#E8D8BC]/80 space-y-4">
+              <div class="flex items-center justify-between pb-3 border-b border-[#E8D8BC]/50">
+                <div class="flex items-center gap-3">
+                  <span class="w-7 h-7 rounded-full bg-primary/10 text-primary flex items-center justify-center">
+                    <span class="material-symbols-outlined notranslate text-[18px]" translate="no">account_circle</span>
+                  </span>
+                  <div>
+                    <h2 class="font-headline-md text-lg text-primary tracking-tight">SANCTUARY PROFILE AVATAR</h2>
+                    <p class="font-body-sm text-xs text-on-surface-variant">Personalize your seeker identity across your consultations and account</p>
+                  </div>
+                </div>
+                <div id="sanctuary-avatar-status" class="hidden text-xs font-semibold px-3 py-1 rounded-full"></div>
+              </div>
+
+              <div class="flex flex-col sm:flex-row items-center gap-6 pt-1">
+                <!-- Avatar Preview -->
+                <div class="relative group/avatar cursor-pointer shrink-0" onclick="document.getElementById('anukul-avatar-main-input').click();" title="<?php esc_attr_e( 'Click to choose new photo', 'anukul' ); ?>">
+                  <div id="sanctuary-avatar-preview" class="w-24 h-24 rounded-full bg-cover bg-center overflow-hidden shadow-md ring-4 ring-primary-container/20 group-hover/avatar:ring-primary-container transition-all relative" style="background-image: url('<?php echo esc_url( $avatar_url ); ?>')">
+                    <div class="absolute inset-0 bg-black/40 flex flex-col items-center justify-center text-white opacity-0 group-hover/avatar:opacity-100 transition-opacity">
+                      <span class="material-symbols-outlined notranslate text-[24px]" translate="no">photo_camera</span>
+                      <span class="text-[10px] font-bold tracking-wider uppercase mt-0.5">Change</span>
+                    </div>
+                  </div>
+                </div>
+
+                <input type="file" id="anukul-avatar-main-input" accept="image/jpeg,image/png,image/webp" class="hidden" onchange="handleSanctuaryAvatarUpload(this)">
+
+                <!-- Controls & Info -->
+                <div class="flex-1 space-y-2.5 text-center sm:text-left">
+                  <div class="flex flex-wrap items-center justify-center sm:justify-start gap-3">
+                    <button type="button" onclick="document.getElementById('anukul-avatar-main-input').click();" id="btn-upload-avatar" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-primary text-white font-label-md text-xs font-bold uppercase tracking-wider hover:bg-primary-container transition-colors shadow-sm">
+                      <span class="material-symbols-outlined notranslate text-[16px]" translate="no">upload</span>
+                      <span>Upload Avatar Image</span>
+                    </button>
+                    <button type="button" onclick="handleSanctuaryAvatarRemove();" id="btn-remove-avatar" class="inline-flex items-center gap-1.5 px-3 py-2 rounded-lg border border-[#E8D8BC] bg-surface-container text-outline hover:text-red-700 hover:border-red-300 font-label-md text-xs font-semibold transition-colors">
+                      <span class="material-symbols-outlined notranslate text-[16px]" translate="no">delete</span>
+                      <span>Remove</span>
+                    </button>
+                  </div>
+                  <p class="font-body-sm text-xs text-on-surface-variant leading-relaxed">
+                    Accepted formats: JPG, PNG, WebP (Max 5MB). Updates instantly on your consultation portal and header dropdown.
+                  </p>
+                </div>
+              </div>
+            </section>
+
             <!-- SECTION 1: Personal Information -->
             <section class="space-y-5">
               <div class="flex items-center gap-3 pb-2 border-b border-[#E8D8BC]/40">
@@ -1204,4 +1257,136 @@ $load_address    = $is_edit_address ? sanitize_key( get_query_var( 'edit-address
       switchAccountTab(activeTab, false);
     }
   });
+
+  // Sanctuary Avatar AJAX Handlers
+  window.anukulAvatarConfig = window.anukulAvatarConfig || {
+    ajaxUrl: '<?php echo esc_url( admin_url( 'admin-ajax.php' ) ); ?>',
+    nonce: '<?php echo esc_js( wp_create_nonce( 'anukul_avatar_nonce' ) ); ?>'
+  };
+
+  function setAvatarStatus(message, isError) {
+    const statusElem = document.getElementById('sanctuary-avatar-status');
+    if (!statusElem) return;
+    statusElem.textContent = message;
+    statusElem.className = 'text-xs font-semibold px-3 py-1 rounded-full ' + (isError ? 'bg-red-100 text-red-800 border border-red-200' : 'bg-emerald-100 text-emerald-800 border border-emerald-200');
+    statusElem.style.display = 'inline-block';
+    setTimeout(function() {
+      statusElem.style.display = 'none';
+    }, 5000);
+  }
+
+  function updateAllAvatarElements(newUrl) {
+    const ids = [
+      'sanctuary-user-sidebar-avatar',
+      'sanctuary-avatar-preview',
+      'header-avatar-badge',
+      'header-dropdown-avatar-badge',
+      'mob-header-avatar-badge'
+    ];
+    ids.forEach(function(id) {
+      const el = document.getElementById(id);
+      if (el) {
+        el.style.backgroundImage = 'url("' + newUrl + '")';
+      }
+    });
+  }
+
+  function handleSanctuaryAvatarUpload(input) {
+    if (!input.files || !input.files[0]) return;
+    const file = input.files[0];
+
+    // Check size on client side (5MB)
+    if (file.size > 5 * 1024 * 1024) {
+      setAvatarStatus('Image exceeds maximum size of 5MB. Please choose a smaller photo.', true);
+      input.value = '';
+      return;
+    }
+
+    const btnUpload = document.getElementById('btn-upload-avatar');
+    let originalText = '';
+    if (btnUpload) {
+      originalText = btnUpload.innerHTML;
+      btnUpload.disabled = true;
+      btnUpload.innerHTML = '<span class="material-symbols-outlined notranslate animate-spin text-[16px]" translate="no">sync</span><span>Uploading...</span>';
+    }
+
+    const formData = new FormData();
+    formData.append('action', 'anukul_upload_avatar');
+    formData.append('security', window.anukulAvatarConfig.nonce);
+    formData.append('avatar', file);
+
+    fetch(window.anukulAvatarConfig.ajaxUrl, {
+      method: 'POST',
+      body: formData,
+      credentials: 'same-origin'
+    })
+    .then(function(res) { return res.json(); })
+    .then(function(data) {
+      if (btnUpload) {
+        btnUpload.disabled = false;
+        btnUpload.innerHTML = originalText;
+      }
+      if (data && data.success && data.data && data.data.avatar_url) {
+        updateAllAvatarElements(data.data.avatar_url);
+        setAvatarStatus(data.data.message || 'Sanctuary avatar updated successfully.', false);
+      } else {
+        const msg = (data && data.data && data.data.message) ? data.data.message : 'Upload failed. Please try again.';
+        setAvatarStatus(msg, true);
+      }
+      input.value = '';
+    })
+    .catch(function(err) {
+      if (btnUpload) {
+        btnUpload.disabled = false;
+        btnUpload.innerHTML = originalText;
+      }
+      setAvatarStatus('Network error occurred while uploading avatar.', true);
+      input.value = '';
+    });
+  }
+
+  function handleSanctuaryAvatarRemove() {
+    if (!confirm('Revert profile photo to the default seeker avatar?')) {
+      return;
+    }
+
+    const btnRemove = document.getElementById('btn-remove-avatar');
+    let originalText = '';
+    if (btnRemove) {
+      originalText = btnRemove.innerHTML;
+      btnRemove.disabled = true;
+      btnRemove.innerHTML = '<span class="material-symbols-outlined notranslate animate-spin text-[16px]" translate="no">sync</span><span>Removing...</span>';
+    }
+
+    const formData = new FormData();
+    formData.append('action', 'anukul_remove_avatar');
+    formData.append('security', window.anukulAvatarConfig.nonce);
+
+    fetch(window.anukulAvatarConfig.ajaxUrl, {
+      method: 'POST',
+      body: formData,
+      credentials: 'same-origin'
+    })
+    .then(function(res) { return res.json(); })
+    .then(function(data) {
+      if (btnRemove) {
+        btnRemove.disabled = false;
+        btnRemove.innerHTML = originalText;
+      }
+      if (data && data.success && data.data && data.data.default_url) {
+        updateAllAvatarElements(data.data.default_url);
+        setAvatarStatus(data.data.message || 'Avatar photo removed.', false);
+      } else {
+        const msg = (data && data.data && data.data.message) ? data.data.message : 'Could not remove avatar.';
+        setAvatarStatus(msg, true);
+      }
+    })
+    .catch(function(err) {
+      if (btnRemove) {
+        btnRemove.disabled = false;
+        btnRemove.innerHTML = originalText;
+      }
+      setAvatarStatus('Network error while removing avatar.', true);
+    });
+  }
 </script>

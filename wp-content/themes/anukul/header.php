@@ -355,13 +355,110 @@ $sec_digits       = preg_replace( '/[^0-9\+]/', '', $phone_secondary );
                 <?php echo esc_html( $header_cta_text ); ?>
             </a>
 
-            <!-- Client Account Icon -->
+            <!-- Client Account & Sanctuary Portal Dropdown -->
             <?php
-            $account_url = function_exists( 'wc_get_page_permalink' ) ? wc_get_page_permalink( 'myaccount' ) : home_url( '/my-account/' );
+            $account_url  = function_exists( 'wc_get_page_permalink' ) ? wc_get_page_permalink( 'myaccount' ) : home_url( '/my-account/' );
+            $is_logged_in = is_user_logged_in();
             ?>
-            <a href="<?php echo esc_url( $account_url ); ?>" title="<?php esc_attr_e( 'Client Sanctuary Portal', 'anukul' ); ?>" class="w-9 h-9 rounded-full bg-primary flex items-center justify-center text-on-primary hover:bg-secondary transition-colors shadow-sm notranslate" translate="no">
-                <span class="material-symbols-outlined notranslate text-[18px]" translate="no">person</span>
-            </a>
+            <div class="relative group/account" id="header-user-account-dropdown">
+                <?php if ( $is_logged_in ) : 
+                    $h_current_user = wp_get_current_user();
+                    $h_user_id      = $h_current_user->ID;
+                    $h_display_name = ! empty( $h_current_user->display_name ) ? $h_current_user->display_name : $h_current_user->user_nicename;
+                    $h_email        = $h_current_user->user_email;
+                    $h_avatar_url   = get_avatar_url( $h_user_id, array( 'size' => 96 ) );
+                ?>
+                    <a href="<?php echo esc_url( $account_url ); ?>" title="<?php echo esc_attr( $h_display_name ); ?> &mdash; <?php esc_attr_e( 'Client Sanctuary Portal', 'anukul' ); ?>" class="flex items-center gap-2 p-0.5 rounded-full ring-2 ring-transparent group-hover/account:ring-[#B38A3E]/60 transition-all focus:outline-none notranslate" translate="no" aria-haspopup="true">
+                        <div id="header-avatar-badge" class="w-9 h-9 rounded-full bg-cover bg-center shadow-sm border border-[#E8D8BC]/90 overflow-hidden ring-1 ring-primary/20" style="background-image: url('<?php echo esc_url( $h_avatar_url ); ?>')"></div>
+                    </a>
+
+                    <!-- Hover Dropdown Menu -->
+                    <div class="invisible opacity-0 group-hover/account:visible group-hover/account:opacity-100 group-focus-within/account:visible group-focus-within/account:opacity-100 transition-all duration-200 ease-out absolute right-0 top-full pt-2 z-50 w-72 pointer-events-none group-hover/account:pointer-events-auto group-focus-within/account:pointer-events-auto">
+                        <div class="bg-surface-container-low rounded-xl shadow-xl border border-[#E8D8BC]/90 overflow-hidden divide-y divide-[#E8D8BC]/60">
+                            <!-- User Plaque Header -->
+                            <div class="p-4 bg-surface-container/70 flex items-center gap-3">
+                                <div id="header-dropdown-avatar-badge" class="w-11 h-11 rounded-full bg-cover bg-center shrink-0 border border-[#E8D8BC] shadow-sm" style="background-image: url('<?php echo esc_url( $h_avatar_url ); ?>')"></div>
+                                <div class="min-w-0 flex-1">
+                                    <p class="font-headline-sm text-sm font-bold text-primary truncate leading-tight"><?php echo esc_html( $h_display_name ); ?></p>
+                                    <p class="font-body-sm text-[11px] text-on-surface-variant truncate"><?php echo esc_html( $h_email ); ?></p>
+                                    <span class="inline-block mt-1 font-label-sm text-[9px] uppercase tracking-wider text-secondary font-bold px-2 py-0.5 rounded-full bg-secondary-fixed/50">
+                                        Sanctuary Seeker &bull; ID: ANK-<?php echo esc_html( 1000 + $h_user_id ); ?>
+                                    </span>
+                                </div>
+                            </div>
+
+                            <!-- Fast Navigation Links -->
+                            <nav class="py-2 px-1.5 text-xs font-body-sm text-on-surface-variant space-y-0.5">
+                                <a href="<?php echo esc_url( $account_url ); ?>#dashboard" class="flex items-center gap-2.5 px-3 py-2 rounded-lg hover:bg-surface-container hover:text-primary transition-colors">
+                                    <span class="material-symbols-outlined notranslate text-[18px] text-secondary" translate="no">dashboard</span>
+                                    <span>Sanctuary Dashboard</span>
+                                </a>
+                                <a href="<?php echo esc_url( $account_url ); ?>#bookings" class="flex items-center gap-2.5 px-3 py-2 rounded-lg hover:bg-surface-container hover:text-primary transition-colors">
+                                    <span class="material-symbols-outlined notranslate text-[18px] text-secondary" translate="no">calendar_month</span>
+                                    <span>My Consultations</span>
+                                </a>
+                                <a href="<?php echo esc_url( $account_url ); ?>#orders" class="flex items-center gap-2.5 px-3 py-2 rounded-lg hover:bg-surface-container hover:text-primary transition-colors">
+                                    <span class="material-symbols-outlined notranslate text-[18px] text-secondary" translate="no">inventory_2</span>
+                                    <span>Dispensary Orders</span>
+                                </a>
+                                <a href="<?php echo esc_url( $account_url ); ?>#downloads" class="flex items-center gap-2.5 px-3 py-2 rounded-lg hover:bg-surface-container hover:text-primary transition-colors">
+                                    <span class="material-symbols-outlined notranslate text-[18px] text-secondary" translate="no">file_download</span>
+                                    <span>Vedic Blueprints &amp; PDFs</span>
+                                </a>
+                                <a href="<?php echo esc_url( $account_url ); ?>#addresses" class="flex items-center gap-2.5 px-3 py-2 rounded-lg hover:bg-surface-container hover:text-primary transition-colors">
+                                    <span class="material-symbols-outlined notranslate text-[18px] text-secondary" translate="no">pin_drop</span>
+                                    <span>Delivery Addresses</span>
+                                </a>
+                                <a href="<?php echo esc_url( $account_url ); ?>#account-details" class="flex items-center gap-2.5 px-3 py-2 rounded-lg hover:bg-surface-container hover:text-primary transition-colors">
+                                    <span class="material-symbols-outlined notranslate text-[18px] text-secondary" translate="no">photo_camera</span>
+                                    <span>Profile &amp; Avatar Setup</span>
+                                </a>
+                                <?php if ( current_user_can( 'manage_options' ) ) : ?>
+                                    <a href="<?php echo esc_url( admin_url() ); ?>" class="flex items-center gap-2.5 px-3 py-2 rounded-lg hover:bg-surface-container hover:text-primary transition-colors text-primary font-semibold">
+                                        <span class="material-symbols-outlined notranslate text-[18px] text-primary" translate="no">admin_panel_settings</span>
+                                        <span>WordPress Admin</span>
+                                    </a>
+                                <?php endif; ?>
+                            </nav>
+
+                            <!-- Sign Out Link -->
+                            <div class="p-2 bg-surface-container/30">
+                                <a href="<?php echo esc_url( wc_logout_url() ); ?>" class="flex items-center justify-between px-3 py-2 rounded-lg text-error hover:bg-error-container/20 transition-colors text-xs font-semibold">
+                                    <div class="flex items-center gap-2">
+                                        <span class="material-symbols-outlined notranslate text-[18px]" translate="no">logout</span>
+                                        <span>Sign Out</span>
+                                    </div>
+                                    <span class="material-symbols-outlined notranslate text-[14px]" translate="no">chevron_right</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                <?php else : ?>
+                    <a href="<?php echo esc_url( $account_url ); ?>" title="<?php esc_attr_e( 'Client Sanctuary Portal', 'anukul' ); ?>" class="w-9 h-9 rounded-full bg-primary flex items-center justify-center text-on-primary hover:bg-secondary transition-colors shadow-sm notranslate" translate="no">
+                        <span class="material-symbols-outlined notranslate text-[18px]" translate="no">person</span>
+                    </a>
+
+                    <!-- Guest Dropdown on Hover -->
+                    <div class="invisible opacity-0 group-hover/account:visible group-hover/account:opacity-100 group-focus-within/account:visible group-focus-within/account:opacity-100 transition-all duration-200 ease-out absolute right-0 top-full pt-2 z-50 w-64 pointer-events-none group-hover/account:pointer-events-auto group-focus-within/account:pointer-events-auto">
+                        <div class="bg-surface-container-low rounded-xl shadow-xl border border-[#E8D8BC]/90 overflow-hidden divide-y divide-[#E8D8BC]/60">
+                            <div class="p-4 bg-surface-container/60">
+                                <p class="font-headline-sm text-sm font-bold text-primary"><?php esc_html_e( 'Welcome to ANUKUL', 'anukul' ); ?></p>
+                                <p class="font-body-sm text-[11px] text-on-surface-variant mt-0.5 leading-relaxed"><?php esc_html_e( 'Sign in to access your consultations, prescriptions, and botanical orders.', 'anukul' ); ?></p>
+                            </div>
+                            <div class="p-2.5 space-y-1.5">
+                                <a href="<?php echo esc_url( $account_url ); ?>" class="w-full flex items-center justify-center gap-2 px-4 py-2 rounded-lg bg-primary text-on-primary font-label-md text-xs uppercase tracking-wider font-bold hover:bg-secondary transition-colors shadow-sm">
+                                    <span class="material-symbols-outlined notranslate text-[16px]" translate="no">login</span>
+                                    <span><?php esc_html_e( 'Sign In', 'anukul' ); ?></span>
+                                </a>
+                                <a href="<?php echo esc_url( home_url( '/register/' ) ); ?>" class="w-full flex items-center justify-center gap-2 px-4 py-2 rounded-lg border border-[#E8D8BC] bg-surface text-primary font-label-md text-xs uppercase tracking-wider font-semibold hover:bg-surface-container transition-colors">
+                                    <span class="material-symbols-outlined notranslate text-[16px]" translate="no">person_add</span>
+                                    <span><?php esc_html_e( 'Create Account', 'anukul' ); ?></span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                <?php endif; ?>
+            </div>
 
             <!-- Mobile Drawer Button -->
             <button id="mobile-menu-btn" type="button" aria-label="<?php esc_attr_e( 'Toggle navigation', 'anukul' ); ?>" class="xl:hidden inline-flex items-center justify-center w-10 h-10 rounded-lg text-primary hover:bg-[#E8D8BC]/60 focus:outline-none transition-colors notranslate" translate="no">
@@ -427,7 +524,12 @@ $sec_digits       = preg_replace( '/[^0-9\+]/', '', $phone_secondary );
                         <span class="material-symbols-outlined notranslate text-[20px] mb-1" translate="no">shopping_bag</span><?php printf( esc_html__( 'Cart (%d)', 'anukul' ), esc_html( $cart_count ) ); ?>
                     </a>
                     <a href="<?php echo esc_url( $account_url ); ?>" class="flex flex-col items-center justify-center p-2 rounded-lg bg-surface-container hover:bg-[#E8D8BC]/70 text-primary transition-colors">
-                        <span class="material-symbols-outlined notranslate text-[20px] mb-1" translate="no">person</span><?php esc_html_e( 'Account', 'anukul' ); ?>
+                        <?php if ( $is_logged_in ) : ?>
+                            <div id="mob-header-avatar-badge" class="w-6 h-6 rounded-full bg-cover bg-center mb-1 border border-[#E8D8BC]" style="background-image: url('<?php echo esc_url( $h_avatar_url ); ?>')"></div>
+                        <?php else : ?>
+                            <span class="material-symbols-outlined notranslate text-[20px] mb-1" translate="no">person</span>
+                        <?php endif; ?>
+                        <?php esc_html_e( 'Account', 'anukul' ); ?>
                     </a>
                 </div>
             </div>

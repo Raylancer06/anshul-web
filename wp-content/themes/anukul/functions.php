@@ -358,6 +358,7 @@ require_once ANUKUL_DIR . '/inc/nav-walkers.php';
 require_once ANUKUL_DIR . '/inc/customizer.php';
 require_once ANUKUL_DIR . '/inc/widgets.php';
 require_once ANUKUL_DIR . '/inc/meta-boxes.php';
+require_once ANUKUL_DIR . '/inc/custom-avatar.php';
 
 /**
  * Authentication & Registration Security Enhancements
