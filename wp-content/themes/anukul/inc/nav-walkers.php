@@ -272,11 +272,15 @@ function anukul_default_footer_nav() {
  * Default Policy Navigation Fallback
  */
 function anukul_default_policy_nav() {
-    echo '<a class="hover:text-[#B38A3E] transition-colors" href="' . esc_url( home_url( '/contact/#privacy' ) ) . '">' . esc_html__( 'Privacy Policy', 'anukul' ) . '</a>';
+    echo '<a class="hover:text-[#B38A3E] transition-colors" href="' . esc_url( home_url( '/terms-and-conditions/' ) ) . '">' . esc_html__( 'Terms & Conditions', 'anukul' ) . '</a>';
     echo '<span class="text-[#B38A3E]/40">&bull;</span>';
-    echo '<a class="hover:text-[#B38A3E] transition-colors" href="' . esc_url( home_url( '/contact/#terms' ) ) . '">' . esc_html__( 'Terms', 'anukul' ) . '</a>';
+    echo '<a class="hover:text-[#B38A3E] transition-colors" href="' . esc_url( home_url( '/shipping-policy/' ) ) . '">' . esc_html__( 'Shipping Policy', 'anukul' ) . '</a>';
     echo '<span class="text-[#B38A3E]/40">&bull;</span>';
-    echo '<a class="hover:text-[#B38A3E] transition-colors" href="' . esc_url( home_url( '/contact/#disclaimer' ) ) . '">' . esc_html__( 'Disclaimer', 'anukul' ) . '</a>';
+    echo '<a class="hover:text-[#B38A3E] transition-colors" href="' . esc_url( home_url( '/return-policy/' ) ) . '">' . esc_html__( 'Return & Refund', 'anukul' ) . '</a>';
+    echo '<span class="text-[#B38A3E]/40">&bull;</span>';
+    echo '<a class="hover:text-[#B38A3E] transition-colors" href="' . esc_url( home_url( '/privacy-policy/' ) ) . '">' . esc_html__( 'Privacy Policy', 'anukul' ) . '</a>';
+    echo '<span class="text-[#B38A3E]/40">&bull;</span>';
+    echo '<a class="hover:text-[#B38A3E] transition-colors" href="' . esc_url( home_url( '/disclaimer/' ) ) . '">' . esc_html__( 'Disclaimer', 'anukul' ) . '</a>';
 }
 
 /**
