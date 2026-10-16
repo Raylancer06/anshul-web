@@ -417,4 +417,26 @@ function anukul_validate_extra_register_fields( $username, $email, $validation_e
 }
 add_filter( 'woocommerce_process_registration_errors', 'anukul_validate_extra_register_fields', 10, 3 );
 
+/**
+ * Single Currency Enforcement: Pan-India INR (₹) Only
+ * Ensure no other currency can be selected or displayed anywhere on the website.
+ */
+add_filter( 'woocommerce_currency', function( $currency ) {
+    return 'INR';
+}, 999 );
+
+add_filter( 'woocommerce_currency_symbol', function( $currency_symbol, $currency ) {
+    if ( 'INR' === $currency ) {
+        return '₹';
+    }
+    return $currency_symbol;
+}, 999, 2 );
+
+// Force order currency on creation to INR
+add_action( 'woocommerce_checkout_create_order', function( $order ) {
+    if ( $order && is_a( $order, 'WC_Order' ) ) {
+        $order->set_currency( 'INR' );
+    }
+}, 10, 1 );
+
 
